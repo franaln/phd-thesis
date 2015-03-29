@@ -31,46 +31,48 @@ def get_dependence(fname):
 
 # Colorize LaTeX output.
 C_WARNING = '\033[93m'
-C_ERROR   = '\033[1;31m'
-C_INFO    = '\033[1;34m'
+C_ERROR   = '\033[0;31m'
+C_INFO    = '\033[0;32m'
 C_RESET   = '\033[0m'
 
 def colorize_latex_output():
 
     log = open(main_log).read().split('\n')
 
-    p = re.compile('.*Output written on \([^(]*\)(\([^)]\{1,\}\)).*')
+    #p = re.compile('.*Output written on \([^(]*\)(\([^)]\{1,\}\)).*')
 
-    line_error = re.compile('^l\.\d*')
+    line_error = re.compile('^\./%s\:(\d*)\: (.*)' % main_tex)
+    #line_error = re.compile('^l\.\d*')
 
     for line in log:
 
         if 'Output written on' in line:
             print(C_INFO + line + C_RESET)
+        elif 'No pages of output' in line:
+            print(C_INFO + line + C_RESET)
 
         if 'LaTeX Error:' in line:
-            print(C_ERROR + line + C_RESET + '\n')
+            print(C_ERROR + line + C_RESET)
 
         if 'Underfull' in line:
-            print(C_WARNING + line + C_RESET + '\n')
+            print(C_WARNING + line + C_RESET)
 
         if 'Overfull' in line:
-            print(C_WARNING + line + C_RESET + '\n')
+            print(C_WARNING + line + C_RESET)
 
         if 'Warning:' in line:
-            print(C_WARNING + line + C_RESET + '\n')
+            print(C_WARNING + line + C_RESET)
 
-        if 'Undefined control sequence' in line:
-            print(C_ERROR + line + C_RESET + '\n')
-
-        if line_error.findall(line):
-            print(C_ERROR + line + C_RESET +'\n')
+        le = line_error.match(line)
+        if le:
+            print(C_ERROR + 'Error: %s (line %s)' % (le.groups()[1], le.groups()[0]) + C_RESET)
 
 
 def compile_tex():
 
     pdflatex_cmd = 'pdflatex -interaction=batchmode -file-line-error %s > /dev/null' % main_tex
 
+    os.system(pdflatex_cmd)
     os.system(pdflatex_cmd)
 
     colorize_latex_output()
@@ -92,7 +94,10 @@ def clean_all():
         ]
 
     for f in to_rm:
-        os.system('rm -f %s' % f)
+        try:
+            os.unlink(f)
+        except FileNotFoundError:
+            pass
 
 def main():
 
@@ -126,7 +131,7 @@ def main():
     if need_compile:
         compile_tex()
     else:
-        print('nothing to be done')
+        print(C_INFO + 'nothing to be done' + C_RESET)
 
 if __name__ == '__main__':
     main()
