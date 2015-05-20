@@ -37,14 +37,20 @@ C_RESET   = '\033[0m'
 
 def colorize_latex_output():
 
-    log = open(main_log).read().split('\n')
-
-    #p = re.compile('.*Output written on \([^(]*\)(\([^)]\{1,\}\)).*')
+    try:
+        log = open(main_log).read().split('\n')
+    except UnicodeDecodeError as e:
+        try:
+            for i, line in enumerate(log):
+                pass
+        except UnicodeDecodeError:
+            print(i, line)
+            print(C_ERROR + 'Weird character in the last line!' + C_RESET)
+            return
 
     line_error = re.compile('^\./%s\:(\d*)\: (.*)' % main_tex)
-    #line_error = re.compile('^l\.\d*')
 
-    for line in log:
+    for i, line in enumerate(log):
 
         if 'Output written on' in line:
             print(C_INFO + line + C_RESET)
