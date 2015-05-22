@@ -1,0 +1,64 @@
+\chapter[An\'alisis de Datos: An\'alisis Estad\'istico]{An\'alisis de Datos:\\[0.5cm] An\'alisis Estad\'istico}
+
+%% some definitions for this chapter
+\def\qmu{\ensuremath{q_\mu}}
+\def\pdf{p.d.f.}
+
+\section{M\'etodos estad\'isticos para ... } %%para el descrubimiento y los limites de exclusion}
+
+\subsection{Test de hip\'otesis}
+
+El objetivo de un test estad\'istico es determinar cual es el acuerdo entre los datos observados y
+lo que predice la teor\'ia, es decir, una hip\'otesis.
+La hip\'otesis codiderada se llama tradicionalmente hip\'otesis nula, $H_0$, y en general \'esta
+es constrastada con una hip\'otesis alternativa, $H_1$.
+
+Un test estad\'istico es una funci\'on  de las variables medidas $q(\vec{x}) = q(x_1, x_2, ..., x_n)$.
+
+Por cada hipotesis se tiene una pdf para el test estadistico $f_0(q|H_0)$ y $f_1(q|H_1)$.
+
+En principio un test estadistico puede tener N dimensiones, pero la ventaja de construir un test de dimension menor es la de reducir la complejidad sin perder
+la potencia discriminatoria entre las hipotesis.
+
+\begin{equation}
+   p_\mu = \int_{q^{obs}_\mu}^{\infty} dq_\mu \, f(q_\mu | \hat{\hat{\theta}}) \equiv CL_{s+b}
+\end{equation}
+
+\begin{equation}
+  p_0 = 1 - \int_{q^{obs}_1}^{\infty} dq_0 \, f(q_1 | \hat{\hat{\theta}}) \equiv CL_{b}
+\end{equation}
+
+
+\begin{equation}
+  CL_{s} \equiv \frac{p_1}{1-p_0} = \frac{CL_{s+b}}{CL_b}
+\end{equation}
+
+
+And new physics with $CL_s < 0.05$ is excluded at $\geq 95 \%$ CL.
+
+
+Profile likelihood ratio:
+
+\begin{equation}
+  q_\mu = -2 \log \left( \frac{L(\mu, \hat{\hat{\theta}})}{L(\widehat{\mu}, \hat{\theta})} \right)
+\end{equation}
+
+Para cuantificar el nivel de acuerdo o desacuerdo, calculamos el p-value:
+
+\begin{equation}
+   p_\mu = \int_{q^{obs}_\mu}^{\infty} dq_\mu \, f(q_\mu | \mu)
+\end{equation}
+%
+donde $q^\text{obs}_\mu$ es el valor del estadistico \qmu\ observado en los datos y f() es la \pdf\ de \qmu\ asumiendo
+signal strength \todo{Buscar traduccion para signal strength} $\mu$.
+
+Wilks theorem: asymmtotic
+
+%% biblio
+%% - Presentation of search results: the CLs technique. A. L. Read
+%% - Cowan
+%% - Tesis Gaston
+%% - Practical statistics for the LHC. Crammer
+
+
+%%\section{Herramientas para el HistFitter}

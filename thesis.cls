@@ -49,11 +49,15 @@
 
 
 %-- Draft mode
-\if@draftmode
-\usepackage{todonotes} % draft with TODOs
-\else
-\usepackage[disable]{todonotes} % final without TODOs
-\fi
+
+%% todo notes
+%% \if@draftmode
+%% \usepackage[colorinlistoftodos,textsize=tiny,textwidth=2.5cm]{todonotes} % draft with TODOs
+%% \else
+%% \usepackage[disable]{todonotes} % final without TODOs
+%% \fi
+%% \presetkeys{todonotes}{color=yellow!40}{} %%,linecolor=blue!40,bordercolor=blue!40}{}
+\newcommand{\todo}[1]{{\color{red!60}(#1)}}
 
 \newcommand{\draftheading}%
 {
@@ -68,9 +72,9 @@
   % --- Left mark
   {\hspace*{\fill}{\protect\small\bf \fbox{DRAFT}}
     \hspace*{\fill}
-    \protect\makebox[0pt][r]{\protect\small\sl\today\ - \ifnum\timehh<10 0\fi\number\timehh\,:\,\ifnum\timemm<10 0\fi\number\timemm}
+    \protect\makebox[0pt][r]{\protect\small\sl\today. \ifnum\timehh<10 0\fi\number\timehh:\ifnum\timemm<10 0\fi\number\timemm}
   }%--- right mark
-  {\protect\makebox[0pt][l]{\protect\small\sl\today\ - \ifnum\timehh<10 0\fi\number\timehh\,:\,\ifnum\timemm<10 0\fi\number\timemm}
+  {\protect\makebox[0pt][l]{\protect\small\sl\today. \ifnum\timehh<10 0\fi\number\timehh:\ifnum\timemm<10 0\fi\number\timemm}
     \hspace*{\fill}
     {\protect\small\bf \fbox{DRAFT}}
     \hspace*{\fill}}
