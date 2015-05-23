@@ -1,8 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{thesis}[2015/03/22 Thesis class]
 
-%%-- Book options
-
 % Draft Option
 \newif\if@draftmode
 \@draftmodefalse
@@ -51,13 +49,13 @@
 %-- Draft mode
 
 %% todo notes
-%% \if@draftmode
-%% \usepackage[colorinlistoftodos,textsize=tiny,textwidth=2.5cm]{todonotes} % draft with TODOs
-%% \else
-%% \usepackage[disable]{todonotes} % final without TODOs
-%% \fi
-%% \presetkeys{todonotes}{color=yellow!40}{} %%,linecolor=blue!40,bordercolor=blue!40}{}
-\newcommand{\todo}[1]{{\color{red!60}(#1)}}
+\if@draftmode
+\usepackage[colorinlistoftodos,textsize=footnotesize,textwidth=2.3cm]{todonotes} % draft with TODOs
+\else
+\usepackage[disable]{todonotes} % final without TODOs
+\fi
+\presetkeys{todonotes}{color=red!40, bordercolor=red!40}{} %%,linecolor=blue!40,bordercolor=blue!40}{}
+%%\newcommand{\todo}[1]{{\color{red!60}(#1)}}
 
 \newcommand{\draftheading}%
 {
