@@ -27,7 +27,7 @@
 
 %%-- Load additional packages and commands.
 \RequirePackage[final]{microtype}
-\RequirePackage[latin1]{inputenc}
+\RequirePackage[utf8]{inputenc}
 \RequirePackage{lineno}
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
