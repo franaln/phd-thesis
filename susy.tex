@@ -1,9 +1,129 @@
-\chapter{Contexto Te\'orico}
+\chapter{Supersimetría y su fenomenología} %%Contexto Te\'orico}
 
-Supersymmetry (SUSY) \cite{Miyazawa:1966,Ramond:1971gb,Golfand:1971iw,Neveu:1971rx,Neveu:1971iv,Gervais:1971ji,Volkov:1973ix,Wess:1973kz,Wess:1974tw}
- is a theoretically well motivated candidate for physics beyond the Standard Model (SM). If strongly interacting supersymmetric particles, i.e.
- squarks and gluinos, are present at the TeV-scale, such particles should be produced already in the 7 TeV collisions at the Large Hadron Collider (LHC).
-Theories of Gauge Mediated Symmetry Breaking (GMSB) \cite{Dine:1981gu,AlvarezGaume:1981wy,Nappi:1982hm,Dine:1993yw, Dine:1994vc,Dine:1995ag} presume a hidden sector in which supersymmetry is
+\todo{Add chapter introduction}
+
+
+
+%%
+
+% Motivacion (From arxiv 9709356: A susy primer Introduction)
+%% The SM of high energy physics, augmneted by neutrino masses, provides a remarkably succesful description of presently known phenomena. The experimental frontier has advance into the
+%% TeV range with no uambiguous hints of additinal structure. Still, it seems clear that the SM is a work in progress and will have to be extended to describe physcis at higher energies. Certainly,
+%% a new framework will be required at the reduced Planck scale $M_P =  (8\pi G_\text{Newton})^{-1/2} = 2.4 \times 10^{18} \gev$, where quatum gravitational effects become important. Based only
+%% on a proper respect for the power of Nature to surprise us, it seems nearly as obvious that new physcis exists in the 16 order of magnitude in eenrgy between the presently explored territory near the electroweak scale,
+%% $M_W$, and the Planck scale. ...
+
+El Modelo Est\'andar de la f\'isica de altas energ\'ias, con el agregado de la masa de los neutrinos,
+ha tenido un gran \'exito en la correcta descripci\'on de los fenomenos conocidos.
+La frontera experimental ha avanzado hasta la escala del \tev\ sin ninguna pista concreta de una
+estructura adicional.
+Sin embargo, resulta claro que el Modelo Est\'andar es un trabajo preliminar y va a ha tener que ser
+extendido para describir la f\'isica de altas energ\'ias.
+
+No hay dudas respecto a que una nueva teor\'ia va a ser necesaria a la escala reducida de Planck
+$M_P =  (8\pi G_\text{Newton})^{-1/2} = 2.4 \times 10^{18} \gev$ , donde los efectos cu\'anticos
+gravitacionales son importantes. Es bastante claro que tiene que existir nueva f\'isica en los 16
+ordenes de magnitud en energ\'ia entre el territorio explorado cerca de la escala electrod\'ebil y
+la escala de Planck.
+
+El s\'olo hecho de que la relaci\'on $M_P/M_W$ es tan grande es una gran pista para la f\'isica m\'as
+all\'a del Modelo Est\'andar, por el llamado ``problema de jerarquia''. Esta no es una dificultad
+intrinseca del Modelo Est\'andar,  but rather a disturbing sensitivity of the Higgs
+potential to new physics in almost any imaginable extension of the Standard Model.
+
+The electrically neutral part del campo de Higgs del Modelo Est\'andar es un escalar complejo $H$ con
+un potencial clasico $V=m_H^2 |H|^2 + \lambda|H|^4$.
+
+El ME necesita un valor de expectaci\'on del vacio (VEV) para $H$ en el m\'inimo del potencial no nulo.
+Esto ocurre si $\lambda>0$ y $m_H^2<0$, resultando en $\langle H \rangle = \sqrt{-m_H^2/2\lambda}$.
+Como experimentalmente sabemos que $\langle H \rangle$ es aproximadamente 174 \gev, de las medidas
+de las propiedades de las interacciones debiles, el valor de  $m_H^2$ debe ser del orden de $-(100 \gev)^2$.
+
+El problema es que $m_H^2$ recibe grandes correcciones cuanticas de los efectos virtuales de cada
+particula a la cual se acopla, directa o indirectamente, al campo de Higgs.
+
+Por ejemplo, en la figura 1.1 tenemos una correci\'on a $m_H^2$ del loop que contiene un fermion de
+Dirac $f$ con masa $m_f$. Si el campo de Higgs se acopla a $f$ con un termino en el lagrangiano
+$-\lambda_f H \bar{f}f$, el diagrama de Feynman en la figura 1.1 lleva a una correci\'on
+
+\begin{equation}
+  \Delta m_H^2 = -\frac{|\lambda_f|^2}{8\pi^2} \Lambda^2_\text{UV} + \ldots
+\end{equation}
+
+Ac\'a  $\Lambda_\text{UV}$ es \emph{ultraviolet momentum cutoff} usado para regular \emph{the loop integral}.
+%%Debe ser interpretado como la energia minima a la cual entra la nueva fisica que altera el comportamiento
+%%it should be interpreted as at least the energy scale at which new physics enters to alter the high-energy behavior of the theory.
+
+Los puntos suspensivos representan terminos proporcioanles a $m_f^2$, que crecen a lo sumo logaritmicamente con
+$\Lambda_\text{UV}$. Cualquiera de los leptones o quarks del ME puede jugar el rol de $f$. Para quarks la correccion
+tiene que ser multiplicada por 3 para tener en cuenta el color.
+La correcion mas grande viene de cuando $f$ el quark \emph{top} con $\lambda_f \approx 1$.
+
+El problema es que si $\Lambda_\text{UV}$ es del orden de $M_P$, la correcion a $m_H^2$ es
+30 ordenes de magnitud mas grande que el valor necesario de $m_H^2 \sim (100 \gev)^2$.
+Este es solo un problema para las correcciones a la masa al cuadrado del boson de Higgs escalar, porque
+las correcciones cuanticas a las masas de los fermiones y los bosones de gauge no tienen una sensibilidad
+cuadratica directa a $\Lambda_\text{UV}$ como la que estan en la ecuacion 1.2. Sin embargo, los quarks, leptones
+y los bosones de gauge electrodebiles $Z^0$, $W^{\pm}$ del ME, todos obitenen masa de $\langle H \rangle$, por lo
+tanto el espectro completo de masas del ME es directa o indirectamnte sensible al cutoff Lambda.
+
+\todo{continue ...}
+
+Afortunadamente la cancelacion de todas estas contribuciones a las masas escalares no solo es posible,
+sino es unavoidable, si consideramos que existe una simetria que relaciona fermiones y bosones llamada
+supersimetria (SUSY).
+Una transformacion supersimetrica convierte un estado bosonico en uno fermionico, y viceversa.
+El oprador $Q$ que genera estas transformaciones debe ser un spinor anticonmutativo, con
+
+\begin{equation}
+  Q \ket{\text{Boson}} = \ket{\text{Fermion}} \quadd \quadd Q \ket{\text{Fermion}} = \ket{\text{Boson}}
+\end{equation}
+
+Los espinores son intrinsecamente objectos complejos, por lo tanto el conjugado hermitico de Q es tambien
+un generador de la simetria. Debido a que Q y Qdaga son operadores fermionicos, llevan momento angular de spin
+1/2, por lo tanto es claro que susy debe ser una simetria espacio-temporal.
+
+
+
+\section{El Modelo Estandar Supersimetrico Minimo (MSSM)} %%The Minimal Supersymmetric Standard Model
+
+\section{Origen del rompimeinto de supersimetria}
+
+
+
+
+
+%% \begin{figure}[h]
+%%   \includegraphics[width=0.8\textwidth]{figures/higgs_loop_correction}
+%%   \caption{One-loop quantum corrections to the Higgs squared mass parameter mH2, due to (a) a Dirac fermion $f$, and (b) a scalar S.
+%% \end{figure}
+
+
+%% \begin{fmfgraph}(40,40)
+%%   \fmfleft{i}
+%%   \fmfright{o}
+%%   \fmf{phantom,tension=5}{i,v1}
+%%   \fmf{phantom,tension=5}{v2,o}
+%%   \fmf{fermion,left,tension=0.4}{v1,v2,v1}
+%%   \fmf{photon}{v1,v2}
+%% \end{fmfgraph}
+
+\section{Supersimetr\'ia}
+
+Supersimetría (SUSY) \cite{Miyazawa:1966,Ramond:1971gb,Golfand:1971iw,Neveu:1971rx,Neveu:1971iv,%
+  Gervais:1971ji,Volkov:1973ix,Wess:1973kz,Wess:1974tw}
+es uno de los candidatos teoricos mejores motivados para fisica mas alla del Modelo Estandar.
+Si las particulas supersimetricas que interactuan fuertemente, es decir squarks y gluinos, estan
+presentes a la scala del \tev, estas deberian haber sido producidas en el LHC incluso a 7 \tev.
+
+Las teorias Gauge Mediated Symmetry Breaking (GMSB) \cite{Dine:1981gu,AlvarezGaume:1981wy,%
+  Nappi:1982hm,Dine:1993yw, Dine:1994vc,Dine:1995ag}
+consideran un sector oculto en el cual la supersimetria esta rota y la rotura de la simetria
+es comunicada a los sectores visibles a traves de las interacciones de bosones de gauge del
+modelo estandard.
+Estan teorias son especialmente atractivas
+
+Theories of Gauge Mediated Symmetry Breaking (GMSB)  presume a hidden sector in which supersymmetry is
 broken and the symmetry breaking is communicated to the visible sectors through Standard Model gauge boson
 interactions. Such theories are especially attractive because the hypothesis of an intermediate hidden sector
 suppresses the magnitude of flavor-changing neutral currents. The lightest supersymmetric particle (LSP) in GMSB
@@ -279,14 +399,14 @@ Typical production and decay-chain processes for the gluino-production (left)
   \end{center}
   \caption{
     Typical production and decay-chain processes for the gluino-production
-      and electroweak-production instances of the
-      GGM model for which the NLSP is a higgsino-bino neutralino admixture.
-      For the model with $\mu < 0$ (left), the final
-      step of the cascade (the \neutralino decay) would have a
-      probability of order 50\% of producing a Higgs boson rather than a
-      photon or $Z$ boson; for the model
-      with $\mu > 0$ (right), the \neutralino decay would have a
-      probability of order 50\% of producing a Z boson rather than a photon.
+    and electroweak-production instances of the
+    GGM model for which the NLSP is a higgsino-bino neutralino admixture.
+    For the model with $\mu < 0$ (left), the final
+    step of the cascade (the \neutralino decay) would have a
+    probability of order 50\% of producing a Higgs boson rather than a
+    photon or $Z$ boson; for the model
+    with $\mu > 0$ (right), the \neutralino decay would have a
+    probability of order 50\% of producing a Z boson rather than a photon.
     \label{fig:feynman_higgsino_bino}
   }
 \end{figure}
@@ -313,11 +433,9 @@ identical in nature to those of the
 gluino-bino model. % and squark-bino models, respectively.
 For the first %two
 of these models, which is the focus of the photon+b analysis,
-the higgsino mass parameter $\mu$
-is required to be negative, and the composition
+the higgsino mass parameter $\mu$ is required to be negative, and the composition
 of the NLSP is set by adjusting $\mu$ and the GGM U(1) mass parameter
-$M_1$ so that a constant
-ratio of the branching fraction of $\neutralino \to h + \gravitino$
+$M_1$ so that a constant ratio of the branching fraction of $\neutralino \to h + \gravitino$
 to that of $\neutralino \to \gamma + \gravitino$ is maintained at
 approximately 1.7:1 over the full range of NLSP masses.
 In the limit that $m_{\neutralino} \gg m_Z$, the NLSP
@@ -332,8 +450,7 @@ model, with all squark states decoupled.
 The GGM SU(2) mass parameter $M_2$ is set to a value of 2.5 TeV.
 Four other electroweak gaugino states typically lie
 within 25 GeV of the \neutralino NLSP: the two lightest charginos \chargino, and two
-additional neutralinos
-\neutralinotwo and \neutralinothree.
+additional neutralinos \neutralinotwo and \neutralinothree.
 The pair production of gluinos or any of these four additional gaugino
 states leads to decays to the \neutralino via
 cascades involving SM particles.
@@ -342,8 +459,7 @@ For the second of the higgsino-bino models, which is
 the focus of the photon+j analysis, the $\mu$ parameter is
 chosen to be positive, which suppresses the $h + \gravitino$
 decay mode of the higgsino. As for the models described above,
-the NLSP mass is taken to be a
-free parameter.
+the NLSP mass is taken to be a free parameter.
 The $M_1$ and $\mu$ parameters are adjusted so that the branching
 fractions of the $\neutralino$ to $\gamma + \gravitino$, $Z + \gravitino$
 and $h + \gravitino$ are maintained close to 50\%, 49\% and 1\% for
@@ -358,8 +474,7 @@ be produced in the cascade.
 Three additional electroweak gaugino states
 lie close in mass to the \neutralino, allowing for the
 possibility of SUSY production through pairs of these
-states. Such events tend to produce
-fewer jets than those that proceed through gluino production,
+states. Such events tend to produce fewer jets than those that proceed through gluino production,
 but in certain regions of the model space can provide a significant
 contribution to data samples selected to isolate the photon-plus-jets
 signature. As for the $\mu < 0$ higgsino-bino model, the value of $M_3$, which is directly
@@ -381,8 +496,7 @@ through the direct production of pairs of NLSP states;
 %the decay procedes through two wino-like NLSPs, and as a result
 such events usually contain at least one \winon NLSP. Although
 the \winon couples preferentially to the $Z$ boson relative to
-the photon, the \winon decays
-into a photon+gravitino final state with unit branching fraction
+the photon, the \winon decays into a photon+gravitino final state with unit branching fraction
 for wino mass below that of the $Z$ boson.
 The \winon branching fraction to photon+gravitino approaches
 $\sin^2 \theta_W$ for wino masses far above that of the $Z$ boson.
@@ -393,16 +507,14 @@ will contain both a photon and a lepton. In this model,
 %a common squark and guino mass is taken as a free parameter
 %along with the wino NLSP mass scale;
 a common wino mass scale is taken as a free parameter, with
-all other GGM mass parameters
-set to a value of \unit[2.5]{TeV}, except the squark masses,
+all other GGM mass parameters set to a value of \unit[2.5]{TeV}, except the squark masses,
 which are set to infinity.
 A production and decay diagram typical for this model is shown in Fig.~\ref{fig:feynman_wino}.
 %In all cases, the decay chain
 %procedes through the wino-like NLSP states.
 
 
-For all five
-models considered here, the mass of the gravitino is chosen so that
+For all five models considered here, the mass of the gravitino is chosen so that
 the NLSP decay length is never greater than 1 mm. This ensures that all
 particles arising from the decay of the NLSP are prompt, and in particular that
 that the relationship between the point and direction of impact
@@ -413,7 +525,5 @@ In addition, the ratio
 $\tan \beta$ of the two SUSY Higgs-doublet vacuum-expectation values is set to a value of 1.5;
 %for all but the higgsino-bino model with positive $\mu$ and the wino-NLSP model; for those models
 %$\tan \beta$ is set to 1.5.
-for all five
-models, the
-phenomenology relevant to this search is only
+for all five models, the phenomenology relevant to this search is only
 weakly dependent on the value of $\tan \beta$.

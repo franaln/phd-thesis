@@ -17,7 +17,7 @@
 }
 
 %%-- Execute default options
-\ExecuteOptions{a4paper,12pt}
+\ExecuteOptions{a4paper,12pt,twoside}
 
 %%-- Process given options
 \ProcessOptions\relax
@@ -31,31 +31,32 @@
 \RequirePackage{lineno}
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
+\RequirePackage{bm}
 \RequirePackage{tikz}
 \RequirePackage{booktabs}
 \RequirePackage{titlesec} % to format chapter title pages
-\RequirePackage{graphicx}
+\RequirePackage[final]{graphicx}
 \RequirePackage[unicode=true]{hyperref}
 \RequirePackage[spanish]{babel}
+%\RequirePackage{feynmp}
 
 %%-- Additional TeX/LaTeX code...
-
 \renewcommand\baselinestretch{1.2}
-
 \pdfpagewidth=\the\paperwidth
 \pdfpageheight=\the\paperheight
-
 
 %-- Draft mode
 
 %% todo notes
 \if@draftmode
-\usepackage[colorinlistoftodos,textsize=footnotesize,textwidth=2.3cm]{todonotes} % draft with TODOs
+\usepackage[colorinlistoftodos,textsize=footnotesize,textwidth=2cm]{todonotes} % draft with TODOs
 \else
 \usepackage[disable]{todonotes} % final without TODOs
 \fi
-\presetkeys{todonotes}{color=red!40, bordercolor=red!40}{} %%,linecolor=blue!40,bordercolor=blue!40}{}
-%%\newcommand{\todo}[1]{{\color{red!60}(#1)}}
+\presetkeys{todonotes}{color=red!40,bordercolor=red!40}{}
+
+%%\reversemarginpar
+%%\setlength{\marginparwidth}{2cm}
 
 \newcommand{\draftheading}%
 {
@@ -88,13 +89,16 @@
 }
 
 % Redefine '/chapter' to always start on an odd page. Should make no difference in singleside mode.
-%% \def\chapter{\cleardoublepage	% Starts new page.
-%%   \thispagestyle{plain}         % Page style of chapter page is 'plain'
-%%   \global\@topnum\z@            % Prevents figures from going at top of page.
-%%   \@afterindentfalse            % Suppresses indent in first paragraph.  Change
-%%   \secdef\@chapter\@schapter}	% to \@afterindenttrue to have indent.
+\def\chapter{\cleardoublepage	% Starts new page.
+  \thispagestyle{plain}         % Page style of chapter page is 'plain'
+  \global\@topnum\z@            % Prevents figures from going at top of page.
+  \@afterindentfalse            % Suppresses indent in first paragraph.  Change
+  \secdef\@chapter\@schapter}	% to \@afterindenttrue to have indent.
 
 % format chapter title pages
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
+%%\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{$|$ }\hsp}{0pt}{\Huge\bfseries}
 \titleformat{\chapter}
             [display] % shape/type of title
             {} % formatting commands applied to both label and title
@@ -103,19 +107,29 @@
             {\fontsize{6cm}{1em}\selectfont \sc\centering} % code preceding title. Last cmd can take arg, which is title
             []  % everything inside [] comes after the title
 
-%\setlength{\marginparwidth}{2cm}
+\titleformat{\part}
+            [display]
+            {\centering\fontsize{10cm}{1em}\selectfont\sc}
+            {Parte \thepart}
+            {1cm}
+            {}
+            []
+
+\RequirePackage{tocloft}
+\renewcommand{\cftpartfont}{\sc Parte }
+
+\setlength{\marginparwidth}{2cm}
 
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhead{}
-\fancyhead[RO,LE]{\chaptername} %Thesis Title}
+\fancyhead[RO,LE]{\chaptername}
 \fancyfoot{}
 \fancyfoot[RE,LO]{\thepage}
-%\fancyfoot[CO,CE]{Chapter \thechapter}
 
 
 \if@printmode
-    % For Print version
+% For Print version
     \hypersetup{
       final=true,
       plainpages=false,
@@ -132,9 +146,9 @@
       citecolor=black,
       anchorcolor=black
     }
-    \RequirePackage[pdftex,paper=a4paper,hmarginratio=1:1,
-      vmarginratio=1:1,scale=0.75,bindingoffset=5mm]{geometry}
-    \hypersetup{pdfpagelayout=OneColumn}
+\RequirePackage[pdftex,paper=a4paper,hmarginratio=1:1,
+  vmarginratio=1:1,scale=0.75,bindingoffset=5mm]{geometry}
+\hypersetup{pdfpagelayout=OneColumn}
 \else
     % For PDF Online version
     \hypersetup{
@@ -158,5 +172,7 @@
       vmarginratio=1:1,scale=0.75,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
     \hypersetup{pdfpagelayout=OneColumn}
 \fi
+
+
 
 \endinput

@@ -1,0 +1,211 @@
+\chapter{M\'etodos estad\'isticos para la b\'usqueda de nueva f\'isica}
+
+%% \section{M\'etodos estad\'isticos para la b\'usqueda de nueva f\'isica}
+
+%%\subsection{Test de hip\'otesis}
+
+Con el propósito de descubrir la se\~nal de un nuevo proceso se define una hipótesis nula,
+$H_0$, que describe solo los procesos conocidos, lo que llamamos fondo.
+
+Esta hipótesis es comparada contra una hipótesis alternativa, $H_1$, que además del fondo, incluye
+la se\~nal buscada.
+
+(Para la determinación de los limites de exclusión, el modelo de señal + fondo  juega el rol de
+$H_0$, y es testeado contra la hipótesis de solo-fondo, $H_1$.)
+
+Para una dada obervacion $\vec{x} \equiv (x_1, ..., x_n)$, de $n$ eventos, se debe definir cual es
+el criterio para aceptar $H_0$ y rechazar $H_1$. La medida de compatibilidad entre un conjunto de
+datos y una hipótesis generalmente se cuantifica por medio de un test estadístico $q(\vec{x})$,
+descripto por las funciones de densidad de probabilidad (\pdf) para cada hipótesis, $f_0(q|H_0)$ y
+$f_1(q|H_1)$.
+En general, cualquier función $\mathcal{T}(\mathcal{D}) \rightarrow \mathbb{R}$ puede ser considerada
+un test estadistico.
+
+Asumiendo que $H_0$ es verdadera, se puede definir una región critica $R$ tal que la probabilidad
+de que $q$ pertenezca a $R$ sea igual o menor a un cierto valor. El hecho de que $q_\text{obs}$
+este dentro de $R$, implica que $H_0$ sea rechazada, y de lo contrario aceptada. Esta probabilidad
+$\alpha$ se denomina size del test:
+
+\begin{equation}
+  P(q \in R) = \int_R f_0(q|H_0)\, dq \equiv \alpha
+\end{equation}
+%
+y determina el nivel de significancia del test a $100 - \alpha \%$. El error de rechazar $H_0$ cuando
+es verdadera es llamado error de tipo I. Por otro lado el error de aceptar $H_0$ cuando es falsa se
+llama error de tipo II, y su probabilidad de ocurrencia ($\beta$), depende de la hipótesis
+alternativa $H_1$. El poder del test se define como la probabilidad de rechazar la hipótesis cuando
+es falsa:
+
+\begin{equation}
+  \text{Poder del test} \equiv\ 1-\beta = \int_R f_1(q|H_1)\, dq
+\end{equation}
+
+El test estadístico $q(\vec{x})$ contiene toda la información de discriminación entre $H_0$ y $H_1$
+en un solo número. El lema de Neyman-Pearson prueba que el cociente de likelihoods es el
+discriminador mas poderoso \todo{buscar referencia}. El cociente de likelihoods se define como
+
+\begin{equation}
+  q(\vec{x}) = -2 \ln \frac{\mathcal{L}(\vec{x}|H_0)}{\mathcal{L}(\vec{x}|H_1)}, \quad \quad \quad  -\infty < q < \infty
+\end{equation}
+
+
+%% from arxiv:1007.1727
+El nivel de acuerdo entre los datos observados y una dada hipótesis es cuantificado calculando
+el p-value, es decir, una probabilidad, bajo la suposición de $H$ es cierta, de encontrar datos de
+igual o mayor incompatibilidad con la predicción de $H$.
+
+\begin{equation}
+  \text{p-value} = P(q>q_\text{obs}|H)
+\end{equation}
+%
+donde $q_\text{obs}$ es el valor del test estadístico obtenido comparando los datos observados con
+la hipótesis $H$. Se dice que la hipótesis es excluida si el valor-$p$ esta por debajo de un valor
+especifico dado por el size del test $\alpha$, $p-value \leq \alpha$, donde $\alpha \in [0,1]$.
+
+En física de partículas es usual convertir el valor-$p$ en la signifícancia equivalente, $Z$,
+definida como, dada una variable con distribución gaussiana, tenga un valor medio con $Z$
+desviaciones estandar por \todo{AHHHHH!}.
+
+\begin{equation}
+  Z = \Phi^{-1}(1-p)
+\end{equation}
+%
+donde $\Phi^{-1}$ es el cuantil (la funcion inversa de la distribucion acumulativa) de la distribucion
+gaussiana estandar.
+
+***Es importante hacer notar que el contexto cientifico actual, el hecho de rechazar la hipotesis de
+solo-fondo en un sentido estadistico es solo parte de descrubir un fenomeno nuevo... ***
+
+%%
+%% El primer paso para definir un analisis de busqueda es determinar la hipotesis nula y la alternativa,
+%% e identificar los observables del experimento a utilizar (por ejemple, el numero de eventos que
+%% pasan una serie de criterios, la masa invariante, etc.)
+
+Para ilustrar el uso del likelihood ratio, consideremos un experimento en el cual por cada evento,
+se miden los valores de ciertas variables cinematicas, entonces los datos pueden ser representados
+por uno o mas histogramas.
+
+Supongamos el histograma $\vec{n} = (n_1, n_2, \ldots, n_n)$. El valor esperado para $n_i$ puede
+escribirse $E[n_i] = \mu s_i + b_i$, donde el valor medio de entradas del bin $i$ de se\~nal y fondo
+son:
+
+\begin{align}
+  s_i &= s_\text{tot} \int_{\text{bin}\, i} f_s (x; \theta_s)\, dx \\
+  b_i &= b_\text{tot} \int_{\text{bin}\, i} f_b (x; \theta_b)\, dx
+\end{align}
+
+El parametro $\mu$ determina la intensidad de la nueva se\~nal, donde $\mu=0$ corresponde a la
+hipotesis de solo-fondo, y $\mu=1$ es la hipotesis de se\~nal.
+Las funciones $f_s$ y $f_b$ son las \pdf\ de la variable x para los eventos de se\~nal y fondo, y
+$\theta_s$ y $\theta_b$ representan parametros que caracterizan la forma de las pdfs. Las
+cantidades $s_\text{tot}$ y $b_\text{tot}$ son el valor medio total de se\~nal y fondo, y las
+integrales en \ref{} y \ref{} representan la probabilidad de que un evento sea encontrado en el
+bin $i$. En lo que sigue $\bm{\theta} = (\bm{\theta}_s, \bm{\theta}_b, b_\text{tot})$
+
+Además del histograma $\bm{n}$, se utilizan otras medidas adicionales que ayuden a restringir
+los parametros nuisance. Por ejemplo, se pueden elegir regiones de control donde uno espera
+mayormente fondo, y construit un histograma $\bm{m}$. Los valores esperados de $m_i$ pueden
+escribirse como $E[m_i] = u_i(\bm{\theta})$, donde los $u_i$ son cantidades calculadas a partir
+de $\bm{\theta}$.
+
+La funcion likelihood es el producto de las probabilidades de Poisson para todos los bines:
+
+\begin{equation}
+  L(\mu, \bm{\theta}) = \prod_{j=1}^N \frac{(\mu s_j + b_j)^{n_j}}{n_j!} \,  e^{-(\mu s_j + b_j)} \, \prod_{k=1}^M \frac{u_k^{m_k}}{m_k!} e^{-u_k}
+\end{equation}
+
+
+El likelihood ratio es
+
+\begin{equation}
+  \lambda(\mu) = \frac{L(\mu, \hat{\hat{\bm{\theta}}})}{L(\hat{\mu}, \hat{\bm{\theta}})}
+\end{equation}
+%
+donde $\bm{\hat{\hat{\theta}}}$ es el valor de \btheta\ que maximiza $L$ para el $\mu$ dado y por
+lo tanto es función de $\mu$.
+
+El denominador la funcion likelihood maximizada, es decir, $\hat{\mu}$ y $\hat{\btheta}$ son ...
+
+La presencia de los parametros nuisance ....
+
+
+DE la defincion de $\lambda(\mu)$ en la ecuacion \ref{}, se puede ver que $0 \leq \lambda \leq 1$,
+con $\lambda$ cercana a 1 implica que el buen acuerdo enre datos y H. Es conveniente definir
+
+
+%% from Kramer
+Si consideramos el escenario mas simple, donde contamos eventos en la region de se\~nal
+($n_\text{SR}$) y esperamos $\nu_B$
+
+
+%% El objetivo de un test estad\'istico es determinar cual es el acuerdo entre los datos observados y
+%% lo que predice la teor\'ia, es decir, una hip\'otesis.
+%% La hip\'otesis codiderada se llama tradicionalmente hip\'otesis nula, $H_0$, y en general \'esta
+%% es constrastada con una hip\'otesis alternativa, $H_1$.
+
+%% Un test estad\'istico es una funci\'on  de las variables medidas $q(\vec{x}) = q(x_1, x_2, ..., x_n)$.
+
+%% En principio un test estadistico puede tener N dimensiones, pero la ventaja de construir un test de dimension menor es la de reducir la complejidad sin perder
+%% la potencia discriminatoria entre las hipotesis.
+
+%% \begin{equation}
+%%    p_\mu = \int_{q^{obs}_\mu}^{\infty} dq_\mu \, f(q_\mu | \hat{\hat{\theta}}) \equiv CL_{s+b}
+%% \end{equation}
+
+%% \begin{equation}
+%%   p_0 = 1 - \int_{q^{obs}_1}^{\infty} dq_0 \, f(q_1 | \hat{\hat{\theta}}) \equiv CL_{b}
+%% \end{equation}
+
+
+%% \begin{equation}
+%%   CL_{s} \equiv \frac{p_1}{1-p_0} = \frac{CL_{s+b}}{CL_b}
+%% \end{equation}
+
+
+%% And new physics with $CL_s < 0.05$ is excluded at $\geq 95 \%$ CL.
+
+
+%% Profile likelihood ratio:
+
+%% \begin{equation}
+%%   q_\mu = -2 \log \left( \frac{L(\mu, \hat{\hat{\theta}})}{L(\widehat{\mu}, \hat{\theta})} \right)
+%% \end{equation}
+
+%% Para cuantificar el nivel de acuerdo o desacuerdo, calculamos el p-value:
+
+%% \begin{equation}
+%%    p_\mu = \int_{q^{obs}_\mu}^{\infty} dq_\mu \, f(q_\mu | \mu)
+%% \end{equation}
+%% %
+%% donde $q^\text{obs}_\mu$ es el valor del estadistico \qmu\ observado en los datos y f() es la \pdf\ de \qmu\ asumiendo
+%% signal strength \todo{Buscar traduccion para signal strength} $\mu$.
+
+%% Wilks theorem: asymmtotic
+\subsection{Aproximación asimpotica}
+
+
+
+
+
+
+
+
+
+
+
+
+
+%% biblio
+%% - Presentation of search results: the CLs technique. A. L. Read
+%% - Cowan
+%% - Tesis Gaston
+%% - Practical statistics for the LHC. Crammer
+
+
+\section{Herramientas para el análisis estadístico}
+
+Para el analisis estadistico se utilizo el software \texttt{HistFitter} \cite{histfitter}
+desarrollado dentro del grupo de SUSY en ATLAS, que es una interfaz para herramientas
+como \texttt{RooFit}, \texttt{RooStats}\cite{Moneta:2010pm} y \texttt{HistFactory}
+\cite{Cranmer:1456844} y ademas posee una serie de scripts que facilitan el analisis cuando este
+es muy complejo.
