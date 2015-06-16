@@ -10,16 +10,16 @@
 \RequirePackage{calc}
 
 \newcommand{\@todonotes@text}{}%
-\newcommand{\@todonotes@backgroundcolor}{pink}
+\newcommand{\@todonotes@backgroundcolor}{red!50}
 \newcommand{\@todonotes@linecolor}{red!60}
 \newcommand{\@todonotes@bordercolor}{red!60}
 \newcommand{\@todonotes@textwidth}{\marginparwidth}
 \newcommand{\@todonotes@textsize}{\normalsize}
 \newcommand{\@todonotes@figwidth}{\columnwidth}
 \AtBeginDocument{
-\ifx\undefined\phantomsection
-\newcommand{\phantomsection}{}
-\fi
+  \ifx\undefined\phantomsection
+  \newcommand{\phantomsection}{}
+  \fi
 }
 
 \newcommand{\@todonotes@todolistname}{Todo list}
@@ -115,9 +115,9 @@
 \newif\if@todonotes@inlinenote%
 \define@key{todonotes}{inline}[]{\@todonotes@inlinenotetrue}%
 \define@key{todonotes}{noinline}[]{\@todonotes@inlinenotefalse}%
-\newif\if@todonotes@prependcaption%
-\define@key{todonotes}{prepend}[]{\@todonotes@prependcaptiontrue}%
-\define@key{todonotes}{noprepend}[]{\@todonotes@prependcaptionfalse}%
+\newif\if@todonotes@intextnote%
+\define@key{todonotes}{intext}[]{\@todonotes@intextnotetrue}%
+\define@key{todonotes}{nointext}[]{\@todonotes@intextnotefalse}%
 \newif\if@todonotes@line%
 \define@key{todonotes}{line}[]{\@todonotes@linetrue}%
 \define@key{todonotes}{noline}[]{\@todonotes@linefalse}%
@@ -138,6 +138,7 @@
     bordercolor=\@todonotes@bordercolor,%
     nodisable,%
     noinline,%
+    nointext,%
     nocaption,%
     figwidth=\@todonotes@figwidth,%
     line, list, size=\@todonotes@textsize}{}%
@@ -162,12 +163,8 @@
 \tikzstyle{notestyleleft} = [notestyle]
 \tikzstyle{connectstyle} = [thick, draw=\@todonotes@currentlinecolor]
 \tikzstyle{inlinenotestyle} = [notestyle, text width=\linewidth - 1.6 ex - 1 pt]
+\tikzstyle{intextnotestyle} = [rectangle, fill=red!60, anchor=text]
 \newcommand{\@todo}[2][]{%
-\if@todonotes@prependcaptionglobal%
-\@todonotes@prependcaptiontrue%
-\else%
-\@todonotes@prependcaptionfalse%
-\fi%
 \renewcommand{\@todonotes@text}{#2}%
 \renewcommand{\@todonotes@caption}{#2}%
 \setkeys{todonotes}{#1}%
@@ -182,17 +179,16 @@
     \fi%
     \@todonotes@addElementToListOfTodos
 \fi%
-\if@todonotes@captiongiven%
-    \if@todonotes@prependcaption%
-        \renewcommand{\@todonotes@text}{\@todonotes@caption: #2}%
-    \fi%
-\fi%
+\if@todonotes@intextnote%
+\@todonotes@drawInTextNote
+\else%
 \if@todonotes@inlinenote%
     \@todonotes@drawInlineNote
 \else%
     \@todonotes@drawMarginNoteWithLine
 \fi %\if@todonotes@inlinenote
-\fi %\if@todonotes@localdisable
+\fi %
+\fi%
 \ignorespaces%
 }%
 \newcommand{\@todonotes@drawMarginNoteWithLine}{%
@@ -217,20 +213,20 @@
   \else%
   \addcontentsline{tdo}{todo}{\protect{\@todonotes@caption}}%
   \fi}%
-
-\newcommand{\@todonotes@drawInlineNote}{%
-  {\par\noindent\begin{tikzpicture}[remember picture]%
-    \draw node[inlinenotestyle] {\@todonotes@sizecommand \@todonotes@text};%
-    \end{tikzpicture}\par}%
+\newcommand{\@todonotes@drawInTextNote}{%
+  \tikz[overlay]\node[intextnotestyle]{\@todonotes@text};\phantom{\@todonotes@text}
 }%
-
+\newcommand{\@todonotes@drawInlineNote}{%
+  {\vspace{0.2cm}\par\noindent\begin{tikzpicture}[remember picture]%
+    \draw node[inlinenotestyle] {\@todonotes@sizecommand \@todonotes@text};%
+    \end{tikzpicture}\par\vspace{0.2cm}}%
+}%
 \newcommand{\@todonotes@drawMarginNote}{%
   \begin{tikzpicture}[remember picture]%
     \draw node[notestyle] (inNote)%
           {\@todonotes@sizecommand \@todonotes@text};%
   \end{tikzpicture}%
 }%
-
 \newcommand{\@todonotes@drawLineToRightMargin}{%
 \if@todonotes@line%
 \begin{tikzpicture}[remember picture, overlay]%
@@ -269,10 +265,10 @@
 \fi % Ending \@todonotes@ifdisabled
 \newcommand{\todototoc}
 {
-    \if@todonotes@disabled
-    \else
-\addcontentsline{toc}{\@ifundefined{chapter}{section}{chapter}}{\@todonotes@todolistname}
-    \fi
+  \if@todonotes@disabled
+  \else
+  \addcontentsline{toc}{\@ifundefined{chapter}{section}{chapter}}{\@todonotes@todolistname}
+  \fi
 }
 \newcommand{\todo}[2][]{\@todo[#1]{#2}}
 \endinput
