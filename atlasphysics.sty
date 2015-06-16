@@ -1,32 +1,7 @@
-%
-%   atlasphysics.sty for ATLAS papers
-%
-% In your own directory, you may of course change this
-% as you like. If you don't understand it or want to change
-% or add something publicly, contact the ATLAS Publications
-% Committee.
-%
-
-%
-%\usepackage{xspace}
-%
 \let\sst=\scriptscriptstyle % Needed for some definitions (psi and eta prime, etc.) (EE)
 \chardef\letterchar=11
 \chardef\otherchar=12
 \chardef\eolinechar=5
-%
-% +--------------------------------------------------------------------+
-% |                                                                    |
-% |  Hours:minutes macro                                               |
-% |                                                                    |
-% +--------------------------------------------------------------------+
-%
-\newcount\hrs\newcount\minu\newcount\temptime
-\def\hm{\hrs=\time \divide\hrs by 60 \minu=\time\temptime=\hrs
-\multiply\temptime by 60%
-\advance\minu by -\temptime
-\ifnum\minu<10 \let\zerofill=0\else \let\zerofill=\relax\fi
- \the\hrs:\zerofill\the\minu}
 %
 % +--------------------------------------------------------------------+
 % |                                                                    |
@@ -44,22 +19,6 @@
 \def\rts {\ensuremath{\sqrt{s}}}
 \def\stat{\mbox{$\;$(stat.)}}
 \def\syst{\mbox{$\;$(syst.)}}
-%
-% +--------------------------------------------------------------------+
-% |                                                                    |
-% |  sin2thetaW m_W m_Z etc.                                           |
-% |                                                                    |
-% +--------------------------------------------------------------------+
-%
-\def\Mtau{\ensuremath{m_{\tau}}}
-\def\swsq{\ensuremath{\sin^2\!\theta_{W}}}
-\def\swel{\ensuremath{\sin^2\!\theta_{\mathrm{eff}}^{\mathrm{lept}}}}
-\def\swsqb{\ensuremath{\sin^2\!\overline{\theta}_{W}}}
-\def\swsqon{\ensuremath{\swsq\equiv 1-\mW^2/\mZ^2}} % Lower-case masses (EE)
-\def\gv{\ensuremath{g_{\mathrm{V}}}} % Subscripts roman not italic (EE)
-\def\ga{\ensuremath{g_{\mathrm{A}}}} % Subscripts roman not italic (EE)
-\def\gvbar{\ensuremath{\bar{g}_\mathrm{V}}} % Subscripts roman not italic (EE)
-\def\gabar{\ensuremath{\bar{g}_\mathrm{A}}} % Subscripts roman not italic (EE)
 %
 % +--------------------------------------------------------------------+
 % |                                                                    |
@@ -128,52 +87,6 @@
 \def\Gcc{\ensuremath{\Gamma_{\ccbar}}}
 \def\Gvis{\ensuremath{\Gamma_{\mathrm{vis}}}}
 \def\Ginv{\ensuremath{\Gamma_{\mathrm{inv}}}}
-% +--------------------------------------------------------------------+
-% |                                                                    |
-% |  B-physics                                                         |
-% |                                                                    |
-% +--------------------------------------------------------------------+
-%
-\def\Bstar{\ensuremath{B^{*}}}
-\def\chic{\ensuremath{\raise.4ex\hbox{$\chi$}_{{c}}}} % Raised & tightened, as chib (EE)
-\def\BoBo{\ensuremath{B^{0}\mbox{--}\bar{B}^{0}}} % en-dash not hyphen (EE)
-\def\BodBod{\ensuremath{B^{0}_{d}\mbox{--}\bar{B}^{0}_{d}}} % en-dash not hyphen (EE)
-\def\BosBos{\ensuremath{B^{0}_{s}\mbox{--}\bar{B}^{0}_{s}}} % en-dash not hyphen (EE)
-\def\chib{\ensuremath{\raise.4ex\hbox{$\chi$}_{{b}}}} % Bit of space removed (EE)
-\def\Epsb  {\ensuremath{\epsilon_{b}}} % Subscript italic not roman (EE)
-\def\Epsc  {\ensuremath{\epsilon_{c}}} % Subscript italic not roman (EE)
-\def\Kstar    {\ensuremath{K^{*}}}
-\def\Dstar   {\ensuremath{D^{*}}} % Italic not roman (EE)
-\def\Dsstar   {\ensuremath{D^{**}}} % Italic not roman (EE)
-\def\etpt     {\ensuremath{1/p_{\mathrm{T}} - 1/E_{\mathrm{T}}}}
-    % p not P, and subscripts roman not italic (EE)
-\def\etptsig  {\ensuremath{(1/p_{\mathrm{T}} - 1/E_{\mathrm{T}})/(\sigma(1/p_{\mathrm{T}}))}}
-    % p not P, and subscripts roman not italic (EE)
-\newcommand{\Bd} {\ensuremath{B_d^0}}
-\newcommand{\Bs} {\ensuremath{B_s^0}}
-\newcommand{\Bu} {\ensuremath{B_u}}
-\newcommand{\Bc} {\ensuremath{B_c}}
-\newcommand{\Lb} {\ensuremath{\Lambda_b}}
-\newcommand{\btol} {\ensuremath{b \rightarrow \ell}} % Italic not roman (EE)
-\newcommand{\ctol} {\ensuremath{c \rightarrow \ell}} % Italic not roman (EE)
-\newcommand{\btoctol} {\ensuremath{b \rightarrow c \rightarrow \ell}} % Italic not roman (EE)
-%
-% +--------------------------------------------------------------------+
-% |                                                                    |
-% |  J/psi, psi prime, etc.                                            |
-% |                                                                    |
-% +--------------------------------------------------------------------+
-%
-\let\psii=\psi  %  Save normal "\psi" definition, since I redefine it.
-\def\psi{\ensuremath{\psii}}%
-\def\jpsi{\ensuremath{J/\psi}}
-\def\Jpsi{\ensuremath{J/\psi}}
-\def\Jee{\ensuremath{\Jpsi\ra\epem}}
-\def\Jmm{\ensuremath{\Jpsi\ra\mumu}}
-\def\Jmumu{\ensuremath{\Jpsi\ra\mumu}}
-\def\Brjl{\ensuremath{\mathrm{Br}(\Jpsi \ra \leplep)}} % Italic not roman (EE)
-\def\psip{\ensuremath{\psi^{\sst\prime}}}
-
 %
 % +--------------------------------------------------------------------+
 % |                                                                    |
@@ -341,6 +254,13 @@
 \def\stauone{\ensuremath{\tilde{\tau}_1}}
 \def\stautwo{\ensuremath{\tilde{\tau}_2}}
 \def\snu{\ensuremath{\tilde{\nu}}}
+
+\def\bino{\ensuremath{\tilde{B}}}
+\def\winozero{\ensuremath{\tilde{W^0}}}
+\def\winop{\ensuremath{\tilde{W^+}}}
+\def\winom{\ensuremath{\tilde{W^-}}}
+
+
 %
 % +--------------------------------------------------------------------+
 % |                                                                    |
@@ -358,59 +278,7 @@
 \let\etaa=\eta
 \def\eta{\ensuremath{\etaa}}%
 \def\etaprime{\ensuremath{\eta^{\sst\prime}}}%
-%
-% +--------------------------------------------------------------------+
-% |                                                                    |
-% |  K0, K+, K-, K0L, K0S                                              |
-% |                                                                    |
-% +--------------------------------------------------------------------+
-%
-\def\kzero{\ensuremath{K^0}}%
-\def\kzerobar{\ensuremath{\overline{K}\vphantom{K}^0}}%
-%
-\def\kaon{\ensuremath{K}}%
-\def\kplus{\ensuremath{K^+}}%
-\def\kminus{\ensuremath{K^-}}%
-\def\kzeroL{\ensuremath{K^0_{\mathrm{L}}}} % Subscript roman not italic (EE)
-\def\kzerol{\ensuremath{K^0_{\mathrm{L}}}} % Subscript roman not italic (EE)
-\def\klong{\ensuremath{K^0_{\mathrm{L}}}} % Subscript roman not italic (EE)
-\def\kzeroS{\ensuremath{K^0_{\mathrm{S}}}} % Subscript roman not italic (EE)
-\def\kzeros{\ensuremath{K^0_{\mathrm{S}}}} % Subscript roman not italic (EE)
-\def\kshort{\ensuremath{K^0_{\mathrm{S}}}} % Subscript roman not italic (EE)
-%
-% +--------------------------------------------------------------------+
-% |                                                                    |
-% |  Upsilons of various sorts                                         |
-% |                                                                    |
-% +--------------------------------------------------------------------+
-%
-\def\Ups{\ensuremath{\mit\Upsilon}} % Should be italic (EE)
-\def\Upsp{\ensuremath{\mit\Upsilon^{\sst\prime}}} % Should be italic (EE)
-\def\Upspp{\ensuremath{\mit\Upsilon^{\sst\prime\prime}}} % Should be italic (EE)
-\def\Upsppp{\ensuremath{\mit\Upsilon^{\sst\prime\prime\prime}}} % Should be italic (EE)
-\def\Upspppp{\ensuremath{\mit\Upsilon^{\sst\prime\prime\prime\prime}}} % Should be italic (EE)
-\def\itUpsp{\ensuremath{\mit\Upsilon^{\sst\prime}}}%
-\def\UoneS{\ensuremath{\Upsilon(\mathrm{1S})}}%
 
-%
-% +--------------------------------------------------------------------+
-% |                                                                    |
-% |  Things like \ups4 --> Y(4S)                                       |
-% |                                                                    |
-% +--------------------------------------------------------------------+
-%
-\def\ups#1{\ensuremath{\mit{\Upsilon}(\mathrm{#1S})}} % Italic, fixed and simplified (EE)
-%
-% +--------------------------------------------------------------------+
-% |                                                                    |
-% |  Notation for the P-lines: \nspj211 -->  2 1P1, etc.               |
-% |                                                                    |
-% +--------------------------------------------------------------------+
-%
-\def\nsPj#1#2#3{\ensuremath{#1\,^{#2}\!P_{#3}}}%
-\let\nspj=\nsPj
-\def\nsSj#1#2#3{\ensuremath{#1\,^{#2}\!S_{#3}}}%
-\let\nssj=\nsSj
 %
 % +--------------------------------------------------------------------+
 % |                                                                    |
@@ -614,32 +482,6 @@
 }%
 %\lock
 %
-% +--------------------------------------------------------------------+
-% |                                                                    |
-% |  JOURNALS (for MISC definitions, see also ../biblio/ATLASstyle.bst)|
-% |                                                                    |
-% +--------------------------------------------------------------------+
-%
-\newcommand {\AcPA}   {Acta Phys. Austriaca{} }
-\newcommand {\ARevNS} {Ann.{} Rev.{} Nucl.{} Sci.{} }
-\newcommand {\CPC}    {Comp.{} Phys.{} Comm.{} }
-\newcommand {\FortP}  {Fortschr.{} Phys.{} }
-\newcommand {\IJMP}   {Int.{} J.{} Mod.{} Phys.{} }
-\newcommand {\JETP}   {Sov.{} Phys.{} JETP{} }
-\newcommand {\JETPL}  {JETP Lett.{} }
-\newcommand {\JaFi}   {Jad.{} Fiz.{} }
-\newcommand {\JMP}    {J.{} Math.{} Phys.{} }
-\newcommand {\MPL}    {Mod.{} Phys.{} Lett.{} }
-\newcommand {\NCim}   {Nuovo Cimento{} }
-\newcommand {\NIM}    {Nucl.{} Instrum.{} Meth.{} }
-\newcommand {\NP}     {Nucl.{} Phys.{} }
-\newcommand {\PL}     {Phys.{} Lett.{} }
-\newcommand {\PR}     {Phys.{} Rev.{} }
-\newcommand {\PRL}    {Phys.{} Rev.{} Lett.{} }
-\newcommand {\PRep}   {Phys.{} Rep.{} }
-\newcommand {\RMP}    {Rev.{} Mod.{} Phys.{} }
-\newcommand {\ZfP}    {Z.{} Phys.{} }
-\newcommand {\EPJ}    {Eur.{} Phys.{} J.{} }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
