@@ -38,23 +38,51 @@
 \RequirePackage[final]{graphicx}
 \RequirePackage[unicode=true]{hyperref}
 \RequirePackage[spanish]{babel}
+\RequirePackage{multirow}
 
 %%-- Additional TeX/LaTeX code...
 \renewcommand\baselinestretch{1.2}
 \pdfpagewidth=\the\paperwidth
 \pdfpageheight=\the\paperheight
 
-%-- Draft mode
+% increase headheight to accomodate fancy headers
+\addtolength{\headheight}{2.5pt}
 
+% minor changes to tables
+%%\setlength{\extrarowheight}{2pt}
+\setlength{\arrayrulewidth}{0.4pt}
+\setlength{\doublerulesep}{0pt}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.05}
+
+% enter only chapters and sections in TOC---subsecs as a try
+\setcounter{tocdepth}{2}
+
+% enumerate down to subsections
+\setcounter{secnumdepth}{2}
+
+\def\chaptername{Cap\'{\i}tulo}
+\addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
+\def\bibname{Bibliograf\'{\i}a}
+\addto\captionsspanish{\renewcommand{\bibname}{Bibliografía}}
+\def\figurename{Figura}
+
+\spanishdecimal{.}
+
+\linespread{1.25}
+
+
+%-- Draft mode
 \if@draftmode
 \RequirePackage[centering,marginparwidth=2.5cm]{geometry}
 \RequirePackage[colorinlistoftodos,textsize=footnotesize,textwidth=2.5cm]{todonotes} % draft with TODOs
-\RequirePackage{etoolbox}
 \newcommand{\itodo}[1]{\todo[inline]{#1}}
+\newcommand{\fix}[1]{\todo[intext]{#1}}
 \else
 \usepackage[disable]{todonotes} % final without TODOs
 \setlength{\marginparwidth}{2cm}
 \fi
+
 
 \newcommand{\draftheading}%
 {
@@ -166,7 +194,7 @@
     \hypersetup{pdfpagelayout=OneColumn}
 \fi
 
-
+\RequirePackage{etoolbox}
 \makeatletter
 \patchcmd{\@addmarginpar}{\ifodd\c@page}{\ifodd\c@page\@tempcnta\m@ne}{}{}
 \makeatother
