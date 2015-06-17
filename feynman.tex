@@ -1,0 +1,24 @@
+\usepackage{pgfplots}
+\usepackage{xparse}
+
+\usetikzlibrary{positioning,arrows,patterns}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{calc}
+
+\tikzset{
+  proton/.style={line width=1pt,preaction={preaction={draw,line width=5pt},draw,white,line width=3pt}},
+  photon/.style={decorate, decoration={snake}, draw=black},
+  higgs/.style={draw, dashed},
+  %fermion/.style={draw=black, postaction={decorate},decoration={markings,mark=at position .55 with {\arrow{>}}}},
+  fermion/.style={draw=black, postaction={decorate},decoration={markings}},
+  %gluino/.style={decorate, decoration={snake}, draw=black},
+  gluon/.style={decorate, draw=magenta, decoration={coil,amplitude=4pt, segment length=5pt}},
+  gluino/.style={decorate, decoration={coil,amplitude=4pt, segment length=5pt}, preaction={draw}},
+  vertex/.style={draw,shape=circle,fill=black,minimum size=0pt,inner sep=0pt},
+}
+
+%% \semiloop[fermion][<draw options>]{<first node>}{<second node>}{<angle>}[<label>][<below, default: above>];
+\NewDocumentCommand\semiloop{O{black}mmmO{}O{above}}
+{%
+  \draw[#1] let \p1 = ($(#3)-(#2)$) in (#3) arc (#4:({#4+180}):({0.5*veclen(\x1,\y1)})node[midway, #6] {#5};)
+}
