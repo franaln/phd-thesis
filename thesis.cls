@@ -56,7 +56,7 @@
 \renewcommand{\arraystretch}{1.05}
 
 % enter only chapters and sections in TOC---subsecs as a try
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{1}
 
 % enumerate down to subsections
 \setcounter{secnumdepth}{2}
@@ -83,30 +83,10 @@
 \setlength{\marginparwidth}{2cm}
 \fi
 
-
-\newcommand{\draftheading}%
-{
-  % compute the time in hours and minutes
-  % make new variables \timehh and \timemm
-  \newcount\timehh\newcount\timemm
-  \timehh=\time
-  \divide\timehh by 60 \timemm=\time
-  \count255=\timehh\multiply\count255 by -60 \advance\timemm by \count255
-  % put in header
-  \markboth%
-  {\hspace*{\fill}{\protect\small\bf \fbox{DRAFT $\cdot$ \today}}
-  }%
-  {%
-    {\protect\small\bf \fbox{DRAFT $\cdot$ \today}}
-    \hspace*{\fill}}
-  %
-  \pagestyle{myheadings}
-}
-
+% Add  line numbers
 \AtBeginDocument{
-  % Add draft heading and line numbers
   \if@draftmode
-  \linenumbers \draftheading
+  \linenumbers
   \fi
 }
 
@@ -140,14 +120,18 @@
 \RequirePackage{tocloft}
 \renewcommand{\cftpartfont}{\sc Parte }
 
-
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
+\if@draftmode
+\fancyhead{}
+\fancyhead[RO,LE]{{\bf \fbox{DRAFT $\cdot$ \today}}}
+\renewcommand{\headrulewidth}{0pt}
+\else
 \fancyhead{}
 \fancyhead[RO,LE]{\chaptername}
 \fancyfoot{}
 \fancyfoot[RE,LO]{\thepage}
-
+\fi
 
 \if@printmode
 % For Print version
@@ -186,12 +170,12 @@
       linkcolor=blue,
       urlcolor=blue,
       citecolor=blue,
-      anchorcolor=green
+      anchorcolor=green,
+      pdfpagelayout=OneColumn
     }
 
-    \RequirePackage[pdftex,paper=a4paper,hmarginratio=1:1,
-      vmarginratio=1:1,scale=0.75,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
-    \hypersetup{pdfpagelayout=OneColumn}
+    %% \RequirePackage[pdftex,paper=a4paper,hmarginratio=1:1,
+    %%   vmarginratio=1:1,scale=0.75,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
 \fi
 
 \RequirePackage{etoolbox}
