@@ -4,6 +4,11 @@
 %- Abreviaciones
 \newcommand{\SM}{Modelo Est\'andar}
 
+%- References
+\newcommand{\tab}{Tabla}
+\newcommand{\fig}{Figura}
+\newcommand{\eq}{eq.}
+
 %- Physics
 \let\vaccent=\v % rename builtin command \v{} to \vaccent{}
 \renewcommand{\v}[1]{\ensuremath{\mathbf{#1}}} % for vectors
@@ -27,16 +32,15 @@
 \let\baraccent=\= % rename builtin command \= to \baraccent
 \renewcommand{\=}[1]{\stackrel{#1}{=}} % for putting numbers above =
 
-%LUMI
+%- SUSY
+\newcommand{\M}[1]{\ensuremath{M_{#1}}}
+
+%- LUMI
 \newcommand{\invfb}{$fb^{-1}$}
 \newcommand{\invpb}{$pb^{-1}$}
 \newcommand{\invnb}{$nb^{-1}$}
+\newcommand{\ilumi}{20.3{~\ifb}}
 
-\newcommand{\integLumi}{20.3{~\ifb}}
-\newcommand{\integLumiPrior}{4.8{~\ifb}}
-\newcommand{\integLumiE}{$(20.3 \pm 0.6)$ \ifb}
-
-\newcommand{\M}[1]{\ensuremath{M_{#1}}}
 
 %- Backgrounds
 \newcommand{\Zgg}{\ensuremath{Z(\to \nu\bar{\nu})+\gamma\gamma}}
@@ -92,7 +96,6 @@
 \newcommand{\sdecay}{\texttt{SDECAY}}
 \newcommand{\prospino}{\texttt{PROSPINO}}
 \newcommand{\nllfast}{\texttt{NLL-fast}}
-%%\newcommand{\pythia}{{\sc Pythia}~}
 \newcommand{\pythiasix}{\texttt{Pythia6}}
 \newcommand{\pythiaeight}{\texttt{Pythia8}}
 \newcommand{\powheg}{\texttt{Powheg}}
@@ -118,6 +121,9 @@
 \newcommand{\rt}{\ensuremath{R_{\mathrm{T}}^{4}}}
 
 %- Stat
-\def\qmu{\ensuremath{q_\mu}}
-\def\pdf{p.d.f.}
-\def\btheta{\ensuremath{\bm{\theta}}}
+\newcommand{\qmu}{\ensuremath{q_\mu}}
+\newcommand{\pdf}{p.d.f.}
+\newcommand{\btheta}{\ensuremath{\bm{\theta}}}
+\DeclareMathOperator{\Pois}{Pois}
+\newcommand{\dhat}[1]{\ensuremath{\hat{\vphantom{\rule{1pt}{6pt}}\smash{\hat{#1}}}}}
+\newcommand{\bdhat}[1]{\ensuremath{\hat{\vphantom{\rule{1pt}{6pt}}\smash{\hat{\bm{#1}}}}}}
