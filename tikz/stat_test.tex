@@ -1,0 +1,32 @@
+\begin{tikzpicture}
+
+    \colorlet{red}{red!60}
+    \colorlet{blue}{blue!60}
+
+    \draw[blue,line width=1] plot[domain=0:10, samples=500] ({\x},{5*exp(-((\x-3)^2/1.5))});
+    \fill[blue, pattern=north west lines, pattern color=blue] (5,0) -- plot[domain=5:10, smooth] ({\x},{5*exp(-((\x-3)^2/1.5))}) -- cycle;
+
+    \draw[red, line width=1] plot[domain=0:10, samples=500] ({\x},{5*exp(-((\x-6)^2)/1)});
+    \fill[red, pattern=north west lines, pattern color=red] (5,0) -- plot[domain=0:5,smooth] ({\x},{5*exp(-((\x-6)^2)/1)}) -- cycle;
+
+    \draw[line width=1, ->] (0,0) -- (10,0) node[below] {\large $t$};
+    \draw[line width=1, ->] (0,0) -- (0,7) node[left] {\large $g(t)$};
+
+    \draw[dashed, line width=0.8] (5, 0) -- (5, 7);
+    \draw node at (5,-0.3) {\large $t_c$};
+
+    \draw node at (1.5, 4) {\large $g(t|H_0)$};
+    \draw node at (7.5, 4) {\large $g(t|H_1)$};
+
+    \draw node at (2.5, 6) {\large regi\'on de aceptancia};
+    \draw node at (7, 6) {\large regi\'on cr\'itica};
+
+    \draw node (alpha) at (3,-0.5) {\large $\beta$};
+    \draw node (p0) at (4.7,0.5) {};
+    \draw[->] (p0) edge[bend left] (alpha);
+
+    \draw node (beta) at (7,-0.5) {\large $\alpha$};
+    \draw node (p1) at (5.1,0.2) {};
+    \draw[->] (p1) edge[bend right] (beta);
+
+\end{tikzpicture}
