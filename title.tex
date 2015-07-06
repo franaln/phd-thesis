@@ -1,9 +1,14 @@
 \newcommand{\HRule}{\rule{\linewidth}{1pt}}
 
 \begin{titlepage}
-  \begin{center}
 
-    \includegraphics[width=0.30\textwidth]{figures/logo_unlp.pdf}
+  \centering
+
+  %%\includegraphics[width=0.30\textwidth]{figures/logo_unlp.pdf}
+  \begin{tikzpicture}[overlay,remember picture]
+    \node at ($(current page.west)+(1.5,0)$) [rotate=90] {\Huge \color{gray} DRAFT $\cdot$ \today};
+    \node at ($(current page.east)-(1.5,0)$) [rotate=90] {\Huge \color{gray} DRAFT $\cdot$ \today};
+  \end{tikzpicture}
 
     \vspace{0.5cm}
 
@@ -47,5 +52,4 @@
     % Bottom of the page
     {\large La Plata, \today}
 
-  \end{center}
 \end{titlepage}

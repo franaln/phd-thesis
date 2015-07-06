@@ -1,394 +1,453 @@
-\chapter{El detector ATLAS}
+\chapter{LHC y el detector ATLAS}
 
 
-\section{Seleccion de objetos}
-\label{sec:obj_selection}
+\section{LHC}
 
-%% In this section a description of the reconstruction and calibration is given for
-%% the main physics objects this analysis has to deal with (photons, \MET, jets, muons and electrons),
-%% following the standard ATLAS procedure \footnote{Objects are defined following the latest SUSY group
-%% recommendations which are implemented in the SUSY working group package SUSYTools-00-03-23-02.}.
-%% The use of these objects in the different signal and control regions is described in \Sec \ref{sec:signal_regions}
-%% and \ref{sec:CRs}, respectively.
+El Gran Colisionador de Hadrones (LHC, del ingles Large Hadron Collider) es el acelerador
+de hadrones ubicado en el laboratorio CERN\footnote{CERN son las siglas en francés de
+  \emph{Conseil Européen pour la Recherche Nucléaire}}, en la frontera entre Francia y Suiza.
+Posee una longitud de 27 km y fue construido en el mismo túnel en el que funcionaba el acelerador
+de electrones LEP entre 1989 y el 2000.
 
-En esta secci\'on se describe la reconstrucci\'on y calibraci\'on de los principales objectos usados en este an\'alisis
-(fotones, \met, jets, muones y electrones), siguiendo el procedimeinto estandar de ATLAS \footnote{Objects are defined following the latest SUSY group
-  recommendations which are implemented in the SUSY working group package SUSYTools-00-03-23-02.}.
-
-
-\subsection{Fotones}
-\label{sec:obj_photons}
-Photons are reconstructed from clusters in the electromagnetic calorimeter measured in
-projective towers of $3\times5$ cells in $\eta\times\phi$ of the second layer of the calorimeter.
-Photons are classified as unconverted
-photons if they do not have tracks from a conversion vertex matched to the
-cluster, and as converted if they do. A two-track conversion vertex is
-formed when two tracks passing a TRT high-threshold requirement form a
-vertex consistent with coming from a massless particle. To increase the reconstruction efficiency
-of converted photons, conversion candidates where only one of the two tracks is reconstructed
-(and does not have any hit in the innermost layer of the pixel detector) are also retained. %\ref{fromsmxspaper}.
-
-Baseline photons are required to have a \pt\ greater than 20 \gev, with
-$|\eta| < 2.37$, removing the crack region of $1.37 < |\eta| < 1.52$,
-where $\eta$ of the cluster in the 2nd calorimeter sampling layer is used.
-When calculating the \pt\ of a photon, the
-energy is always taken to be from the calorimeter cluster, suitably
-calibrated~\cite{Banfi:1259219}. For unconverted photons, the $\eta$
-is calculated from the calorimeter pointing calculated using the first
-two layers of the electromagnetic calorimeters. For converted photons, where the track
-or tracks coming from the conversion vertex each contain more than
-three silicon hits, the $\eta$ direction is determined by
-extrapolating from the calorimeter cluster to the conversion vertex.
-For converted photons that have any TRT stand-alone tracks, the
-$\eta$ is calculated from the calorimeter pointing, as in the
-unconverted case. Furthermore, the photon energy scale is corrected
-for data and smeared for Monte Carlo, following
-\Ref \cite{EGScaleTwiki}.
-
-Cleaning cuts are applied on photon candidates in order to identify bad quality or fake clusters coming from instrumental
-problems \footnote{\url{https://twiki.cern.ch/twiki/bin/view/AtlasProtected/LArCleaningAndObjectQuality\#Photon_Cleaning}}.
-We also apply an event cleaning based on the photons. A bad photon is
-defined as either having a cluster time
-$|t|>(10+2/|E_\mathrm{clus}|)~\mathrm{ns}$, where $E_\mathrm{clus}$ is
-measured in GeV for the energy correction to the cluster time, or if
-the value:
-\begin{equation}
-  \frac{\sum_{cluster} E_{cell}(Q>4000)}{\sum_{cluster} E_{cell} } > 0.8\%
-\end{equation}
-and either the isEM variables $R_\phi > 1.0$ or $R_\eta > 0.98$, as
-defined in \Ref \cite{PhotonCleaning}. The
-cell Q-factor measures the difference between the measured pulse shape
-and the predicted pulse shape that is used to reconstruct the cell energy.
-
-Identification cuts are further imposed in order to separate the photon candidates from the contamination coming
-from \pizero\ or other neutral hadrons decaying in two photons. The photon identification is based on the profile
-of the energy deposit in the first (strip) and second (middle) layer of the electromagnetic calorimeter \cite{ATL-PHYS-PUB-2011-007}.
-The selection criteria on the shower-shape variables are
-independent of the photon candidates transverse energy,
-but vary as a function of the photon reconstructed pseudorapidity, to take into account variations in the total
-thickness of the upstream material and in the calorimeter
-geometry. They are optimized independently for unconverted and converted photons to account for the different developments of the showers in each case.
-The analysis makes use of both `tight' and `loose' photons, as
-defined in \cite{ATL-PHYS-PUB-2011-007}.
-
-In areas with a dead pixel b-layer module, electrons are often reconstructed as converted photons.
-This ambiguity is resolved taking into account the dead b-layer pixel map as a function of time
-during the data taking period. The fake single-track conversions (and some two-track conversions)
-are in this way much reduced, with only a small decrease in efficiency. % \cite{citehere}.
-
-For signal selection, a transverse isolation energy (\etiso) cut is further applied.
-The isolation energy is computed as the sum of the topological cluster transverse energies
-(calibrated at the electromagnetic scale) within an $\eta-\phi$ cone of a radius $\Delta R = 0.20$
-around the cluster barycenter\footnote{internally referred as \texttt{topoEtCone20} in ATLAS.}.
-Only positive energy topoclusters are used. The topoclusters include cells from the EM and
-hadronic calorimeter, but the TileGap3 cells are explicitly removed.
-The energy from the core of the cone in the electromagnetic calorimeter ($5\times7$ cells around the object
-barycenter) is also subtracted from the sum. Ambient energy corrections due to pileup activity, calculated
-according to \cite{Hance:1379530}, are also applied, improving the performance of the isolation variable
-for large pileup \cite{Laplace:1444890}. The resulting pileup-corrected isolation energy sum is required to be less than 5 \gev.
-
-\subsubsection{Photon Corrections}
-
-Some corrections are ultimately applied to improve the agreement between the data and the
-MC modelling of the photon shower and its development through the detector.
-
-\begin{itemize}
-\item[]{\bf Identification Correction}
-
-The distributions of the calorimeter variables that are used to
-discriminate between photons and jets differ between data and Monte
-Carlo. The differences in each discriminating variable (DV$^i$) can be approximated by a simple shift or {\it fudge-factor} ($\mu^i$), computed from the average values in data and MC~\cite{ATLAS-CONF-2012-123}
-\footnote{\url{https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/PhotonFudgeFactors}}:
-\begin{equation}
-  \bigtriangleup \mu^i =
-\left< DV^i_\mathrm{DATA}\right> - \left<DV^i_\mathrm{MC}\right>.
-\end{equation}
-As a correction, the variables are shifted in the Monte Carlo samples,
-and the photon identification cuts are reapplied. The photon
-identification efficiency is thus adjusted to better match the
-one measured in data.
-
-These shifts are computed by comparing all shower shapes of all isolated tight
-photons observed in 2012 data and JF17-140 MC12a samples, and centrally provided
-as part of the egammaAnalysisUtils package (v-00-04-52).
-The difference induced on the identification efficiencies by the different isolation
-selection used to derive these factors is evaluated in \Sec \ref{sec:syst_photonid}.
-
-Scale factors are also applied to all identified photons in MC to account for efficiency differences
-observed with respect to the data. These factors are derived for converted and unconverted photons
-separately and are centrally provided by the egamma group as part of the PhotonEfficiencyCorrectionTool package (tag 00-00-05).
-
-\item[]{\bf Photon Isolation Correction}
-
-A difference between the photon energy leakage into the isolation cone is
-observed between data and Monte Carlo for photons. Therefore, the
-corrections applied as described in \Ref \cite{Hance:1379530} are slightly
-different for data and MC. Evenmore, a remanent dependency of the isolation
-energy with the photon \pt\ is observed in data, for what an extra correction factor
-has been derived as explained in \Sec \ref{sec:opt_ph_iso}.
-
-\end{itemize}
-
-\subsection{Electrons}
-\label{sec:elec_obj}
-
-The electrons are reconstructed on the same basis as photons, with additional requests on tracker \cite{Aad:2011mk}. Similar quality flags to those described in the previous section are assigned to all the electron candidates in order to identify fakes produced by instrumental problems.
-The energy of the electrons is reconstructed from clusters in the electromagnetic calorimeter with its mass neglected, while tracker information is used to reconstruct its direction. The energy scale on data is corrected to match that observed in the data \cite{EGScaleTwiki}. An extra spread is introduced on the MC electron energy in order to reproduce the resolution measured on data for benchmark channels. Preselected electrons are required to have a $\pt>10\gev$ and $|\eta|<2.47$.
-
-A medium set of identification criteria is imposed \cite{ATL-PHYS-PUB-2011-006}, which is based on the characteristics of the EM shower development, the quality of the associated reconstructed track, and the closeness of the match between the track and the calorimeter deposition. This set of requirements provides a rather high and uniform identification efficiency with a low background.
-These pre-selected electrons are used to perform the overlap removal
-between electrons and jets/photons, as described in \Sec \ref{sec:overlap_romoval_event_veto}.
-
-%To keep this analysis statistically independent to other searches in ATLAS \cite{leptonphoton}, %making easier the combination of the results,
-To keep this analysis complementary to other searches in ATLAS \cite{leptonphoton7,Zplusmet7}, %making easier the combination of the results,
-events containing (at least) a good identified lepton have to be rejected. For this selection, an additional isolation requirement is applied requiring that the sum of the tracks $p_{\rm T}$ in a cone of $\Delta R = 0.30$ around the electron, excluding its own track and any conversion vertex tracks, must be at most 16\% of the electron \pt \footnote{This criteria is referred as LooseIso within the SUSYTools package.}. The tracks have to have 7 silicon hits, at least one of which must be a b-layer hit, and the impact parameter along the beam line (z$_0$), must be less than 1 mm for pileup tolerance. Additionally,  $|z_0 \times \mathrm{sin} \theta | < 0.4$ is required for the electron track.
-
-Scale factors, as provided by the e/gamma group, are finally applied to all electron candidates in MC to account for efficiency differences observed with respect to the data.
-
-
-\subsection{Muons}
-\label{sec:muon_obj}
-Muon candidates are reconstructed using the STACO muon reconstruction algorithm \footnote{\url{https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/STACODocumentation}}, which
-combines the track information from the Muon
-Spectrometer (MS) and the Inner Detector (ID). All
-muon identification cuts are taken from recommendations proposed by
-the muon combined performance group \cite{MCPTwiki}.
-The muons are required to be either \textit{Combined}, where the muon
-is reconstructed independently in both the Muon Spectrometer (MS) and
-the Inner Detector (ID), or \textit{Segment-tagged} muons, where the
-MS is used to tag ID tracks as muons, without requiring a fully
-reconstructed MS track.
-The reconstructed muon transverse momentum measured in both tracking sub-detectors (ID and MS) is smeared in MC to reproduce the momentum resolution in data.
-All the reconstructed muons with $\pt>6 \gev$ (after smearing) and $|\eta|<2.5$ are regarded as candidates.
-Furthermore, muons are required to pass the \textit{Loose} quality \footnote{\url{https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/QualityDefinitionStaco}}, plus some quality criteria on the inner detector track as follows:
-\begin{itemize}\itemsep0.1cm
-\item[-] The ID track must have a b-layer pixel hit, unless the b-layer module is dead.
-\item[-] The sum of the number of pixel hits and crossed dead pixel sensors must be greater than one.
-\item[-] The sum of the number of SCT hits and crossed dead SCT sensors must be at least six.
-\item[-] The sum of the number of pixel and SCT holes must be less than three.
-\item[-] If the ID track is within the TRT acceptance a TRT extension is required:
-\begin{itemize}\itemsep0.1cm
-\item[-] Let $n = n_{TRT}^{hits} + n_{TRT}^{outliers}$
-\item[-] Case 1: $|\eta| < 1.9$. Require $n > 5$ and $n_{TRT}^{outliers} < 0.9n$.
-\item[-] Case 2: $|\eta| \geq 1.9$. If $n > 5$, then require $n_{TRT}^{outliers} < 0.9n$.
-\end{itemize}
-\end{itemize}
-
-As for electrons, the signal selection in this analysis vetoes the presence of any good muon in the events.
-These are required to additionally pass a track isolation requirement that the sum of the track $p_{\rm T}$s, excluding the muon track, in a cone of $\Delta R < 0.3$ to be less than  \unit[12]{\%} of the
-muon \pt.  The tracks have to
-have 4 silicon hits and the impact parameter along the beam line (z$_{0}$), must be less than 10 mm for pileup tolerance. The muon \pt\ threshold for the veto is raised to 25 \gev. Correction factors are ultimately
-applied to bring the MC efficiency to the one measured on data muons from Z decay, as provided by the Muon Performance group.
-
-\subsection{Jets}
-\label{sec:jet_obj}
-Jets are reconstructed using the anti-kt algorithm \cite{Cacciari:2008gp} with a distance parameter R = 0.4  (in $\eta - \phi$ space) and
-are seeded by topological calorimeter clusters \cite{Lampl:1099735}. They are calibrated using the local cluster weighting
-(LCW) calibration method which consists of weighting differently energy deposits arising from electromagnetic and hadronic showers. These energy corrections applied to the topological clusters are derived
-from Monte Carlo simulation. The final jet energy calibration also includes the jet energy scale (JES)  %\cite{ATLAS:jes}
-which corrects the calorimeter response to the true jet energy. It corresponds to the LCW+JES calibration.
-Except for the \MET\ computation and events cleaning, where no $\eta$ cut is applied, jets are kept only if they are in the
-central region of the detector ($|\eta|<2.8$) and with $\pt > 20\gev$.
-
-To reduce the contamination of fake jets from non-collision sources and to improve the \MET\ resolution, events with at
-least one jet failing the following quality cuts  \cite{JetCleaning} are vetoed:
-\begin{itemize}\itemsep0.1cm
-\item[-] If the fraction of energy in the hadronic endcap calorimeter is
-  larger than 0.5 $\left(\mathrm{HEC}f > 0.5\right)$, the measured absolute
-  value of quality of the jet is greater than 0.5 $\left(|\mathrm{HEC}Q| > 0.5\right)$,
- and the normalized jet quality computed as the energy squared cells mean
-quality is larger than 0.8 $LArQmean > 0.8$.
-\item[-] If absolute value of the total energy in cells with a negative value
-  is greater than $\unit[60]{GeV}$ the jet is considered bad
-  $\left(|\mathrm{neg.}\,E| > \unit[60]{GeV}\right)$.
-  For this and the previous item, the signal is consistent with sporadic
-  noise in the hadronic endcap calorimeters.
-\item[-] If the electromagnetic energy fraction is larger than 0.95
-  $\left(\mathrm{EM}f > 0.95\right)$, the absolute jet quality value is greater than
-  0.8 $\left(|\mathrm{LAr}Q| > 0.8\right)$, and the normalized jet quality is larger than 0.8
- $LArQmean > 0.8$ for jets with $|\eta| < 2.8$.
-\item[-] If the electromagnetic energy fraction is less than 0.05
-  $\left(\mathrm{EM}f < 0.05\right)$ and the ratio of the sum \pt\ of the
-  tracks associated to the jets divided by the calibrated jet \pt\ is less than 0.05
-  $\left(\mathrm{ch}f < 0.05\right)$ for jets with $|\eta| < 2$.
-  In the case where the jet has $|\eta| \ge 2$ the jet is considered bad if
-  the electromagnetic energy fraction is less than 0.05 with no requirement on
-  the jet charge fraction.
-\item[-] If a jet has greater than $99\%$ of its energy contained in a
-  single layer in the calorimeter $(\mathrm{F}max > 0.99)$
-   and has an $|\eta|$ of less than 2, it is consistent with the signal
-  from either cosmic ray or beam halo muons.
-\end{itemize}
-
-Except during \etmiss\ computation, two minimal jet acceptance cuts are required: $\pt > 40 \gev$ and
-$|\eta| < 2.8$. All jets passing this loose selection are considered when applying the object identification described in \Sec \ref{sec:overlap_romoval_event_veto}. The $\pt$ cut was chosen to ensure a robust selection against pile-up, as shown in \Fig \ref{fig:NjetvsPV}. The average number of selected jets in the data is this way a flat distribution as a function of the number of primary vertices.
-Higher \pt\ cuts are required for jets entering the final selections described in \Sec \ref{sec:opt_njet}.
-
- \begin{figure*}[ht!]
- \centering
-   \includegraphics[width=0.70\textwidth]{figures/data_npv_njets.eps}
- \caption{Average number of jets vs primary vertices observed in data, for different ${\rm p_{T}^{jet}}$ selections. An upper cut of 100 \gev\ is placed in the \etmiss\ to keep the data blind in the signal regions. }
-\label{fig:NjetvsPV}
-\end{figure*}
-
-
-\subsection{b-jets}
-\label{sec:bjet_obj}
-
-Although b-jets are not explicitly used for the analysis selection, they are useful in the definition of control regions
-from which the \wgamma\ %and \ttbargam
-MC normalization is extracted as described in \Sec \ref{sec:CRs}. b-jets are identified using
-the MV1 jet tagger \cite{ATLAS-CONF-2012-043} at the 70\% efficiency operating point, corresponding
-to the requirement $w > 0.7892$ where $w$ is a weight computed from the different discriminating
-variables forming the jet tagger. The b-tagging efficiencies have been determined by the flavour
-tagging working group using the \pt\ of muons relative to the axis of the jet ($p_{T}^{rel}$) \cite{ATLAS-CONF-2012-043} and the
-derived default scale factors (without JVF cut) are applied to Monte Carlo following the official recommendations \cite{bjetsCalib}.
-In this analysis, only b-tagged jets with $\pt >$~40 GeV and $|\eta| < 2.5$ will be identified as b-jets.
-An uncertainty on the jet weight and the event weight is calculated propagating the estimated uncertainties
-on the scale factors. Scale factor uncertainties depend on the kinematics of the jet and also on the jet flavor.
-
-%See https://indico.cern.ch/getFile.py/access?contribId=37&resId=0&materialId=slides&confId=194205
-%or https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/JetEtmissDataAnalysisRecommendationSummer2010#Recommendation_for_MET_reconstru
-\subsection{Missing Transverse Momentum}
-\label{sec:met_obj}
-
-Missing transverse momentum is calculated with an object-based algorithm at the AOD level \\ (\texttt{MET\_Egamma10NoTau\_RefFinal}). As a consequence, the computation of \met\ uses reconstructed and calibrated physics objects. Calorimeter energy
-deposits (TopoClusters) are associated to high-pT objects in the following order: electrons, photons, jets and muons. Deposits not associated with any such objects are included in the SoftTerm. The \met\ is calculated as the sum of the following terms:
+El LHC está diseñado para acelerar protones a 7 \tev, alcanzando energías de centro de masa de 14 \tev,
+y una luminosidad de $10^{34}$ cm$^{-2}$s$^{-1}$.
+Uno de los parámetros mas importantes para caracterizar el funcionamiento del acelerador es la
+luminosidad instantánea (L), definida como el numero de partículas por unidad de tiempo por unidad de
+área, que puede calcularse mediante la relación:
 
 \begin{equation}
-  (\etmiss)^\text{RefFinal}_{x(y)} = (\etmiss)^\text{RefEle}_{x(y)} + (\etmiss)^\text{RefGamma}_{x(y)}+(\etmiss)^\text{RefJet}_{x(y)}+(\etmiss)^\text{Muon}_{x(y)}+(\etmiss)^\text{SoftTerm}_{x(y)}
+  L = f_\text{rev} n_b \frac{N_1 N_2}{A}
+\end{equation}
+%
+donde $f$ es la frecuencia de revolucion (sim 11 kHz), $n_b$ es el numero de \emph{bunches}
+(paquetes de protones) por haz, $N_i$ es el numero de partículas en cada bunch y A es la
+sección efectiva del haz, que puede expresarse en termino de los parámetros del acelerador
+como:
+
+\begin{equation}
+  A = \frac{4\pi \epsilon_n \beta^{*}}{\gamma F}
+\end{equation}
+%
+donde $\epsilon_n$ es la emitancia transversal normalizada (la dispersión transversal media de las
+partículas del haz en el espacio de coordenadas e impulsos), $\beta^{*}$ es la función de amplitud
+en el punto de interacción (IP), relacionada al poder de focalización de los cuadrupolos), $\gamma$
+es el factor relativista de Lorentz y $F$ es un factor de reducción geométrico, debido al ángulo
+de cruce de los haces en el IP.
+
+
+Durante el año 2010, las colisiones se realizaron a 3.5 TeV por haz (7 TeV de energía de centro de masa)
+y con una luminosidad que fue incrementándose hasta alcanzar los $2 \times 10^{32}$ cm$^{-2}$ s$^{-1}$
+en Octubre. %%\todo{complete with 8 TeV run}
+
+El diseño contempla trenes de 2808 paquetes de $\sim 10^{11}$ protones cada uno,
+espaciados temporalmente en 25 ns.
+
+Para acelerar los haces de protones y mantenerlos en sus orbitas circulares el LHC cuenta con 1232
+dipolos magnéticos superconductores que generan un campo magnético de 8.4 T enfriados a 1.9 K.
+El sistema de focalización de los haces consiste de 392 cuadrupolos magnéticos que generan campos
+magnéticos de 6.8 T. Los haces circulan en direcciones opuestas en cavidades de ultra alto vacío
+separadas a presión de 10$^{-10}$ torr.
+
+
+\section{ATLAS}
+
+ATLAS es un detector de partículas multipropósito del LHC diseñado y construido para estudiar
+las colisiones protón-protón a una energía de centro de masa de hasta 14 TeV.
+El nombre significa \textbf{A T}orodial \textbf{L}HC aparatu\textbf{S}.
+
+%% Los criterios básicos para el diseño del detector de ATLAS fueron:
+
+%% \begin{itemize}
+%% \item Un muy buen calorímetro electromagnético para la identificación y medidas de fotones y electrones, complementado con un calorímetro hadrónico para las medidas precisas de \emph{jets} y energía transversa perdida.
+%% \item Medidas de alta precisión de momentos de muones, con la capacidad de garantizar mediciones precisas a la mas alta luminosidad usando sólo el espectrómetro de muones externo.
+%% \item Alta eficiencia de la detección de trazas a alta luminosidad para medidas de momentos de leptones con alto \pt, identificación de electrones y fotones, identificación de $\tau$,  y capacidad de reconstrucción total de eventos con luminosidad baja.
+%% \item Gran aceptancia en pseudorapidez ($\eta$) cubriendo casi todo el ángulo azimutal ($\phi$) en todo el detector.
+%% \item Selección y medidas de partículas con bajo \pt, proveyendo alta eficiencia para la mayor parte de los procesos físicos de interés en el LHC.
+%% \end{itemize}
+
+
+El esquema general del detector se muestra en la figura \ref{fig:atlas}, donde se señalan los
+componentes principales.
+ATLAS está diseñado en capas de subdetectores que cumplen diferentes roles en la identificación
+de las partículas producidas en las colisiones pp del LHC.
+Desde el punto de colision hacia afuera ATLAS se compone de un ID subdividido a su vez en un
+detector de píxeles (o capa B), un detector de bandas de silicio (SCT) y un detector de radiación
+de transición (TRT).
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.85\textwidth]{figures/figura}
+  \caption{Esquema general del detector de ATLAS}\label{fig:atlas}
+\end{figure}
+
+
+Envolviendo este detector interno se encuentra un solenoide superconductor que genera un campo
+magnético de $\sim$2 Tesla para que las partículas cargadas curven su trayectoria.
+A continuación están ubicados los calorímetros: el calorímetro electromagnético para medir la
+energía cinética de electrones y fotones, y posteriormente el calorímetro hadrónico para medir
+la energía de los \emph{jets} de hadrones.
+
+En la capa más externa se encuentra el espectrómetro de muones que le da a ATLAS el tamaño total
+de aproximadamente 45m de largo y más de 25m de alto.
+Intercalado con éste se encuentra el sistema de toroides que genera el campo magnético de $\sim$4
+Tesla para curvar la trayectoria de los muones hacia el final de su pasaje por el detector ATLAS.
+
+El detector ATLAS se divide geométricamente en dos regiones, la región del barril
+(la parte central, \emph{barrel}) y la región de las tapas (ambos extremos, \emph{end-cap}).
+En cada una de estas regiones la ubicación de los subdetectores es distinta. En la región del barril,
+los subdetectores están ubicadas como cilindros concéntricos, mientras que en la región de las tapas
+están ubicados como discos consecutivos.
+
+\subsection{Sistema de coordenadas}
+
+El sistema de coordenadas de ATLAS corresponde a un sistema cartesiano, cuyo origen
+coincide con el punto de interacción nominal. El eje z es escogido, naturalmente dada la
+concepción cilíndrica del detector, a lo largo del eje del haz, en sentido antihorario. El eje
+$z$ positivo (negativo) define el lado A (C) del detector, en vista de la simetría nominal del
+
+mismo. El plano transversal $x-y$ es definido con valores positivos de $x$ e $y$ desde el origen
+en dirección hacia el centro del anillo del LHC y hacia la superficie, respectivamente.
+Para describir la posición de los distintos subdetectores y la trayectoria de las partículas
+dentro de ATLAS se utilizan frecuentemente sistemas de coordenadas cilíndricas o polares.
+El radio R se define como la distancia perpendicular al eje del haz.  El ángulo azimutal
+$\phi = 0$ corresponde al eje $x$ positivo y crece en sentido horario entorno al eje $z$ positivo,
+mientras que el angulo $\theta$ se mide con respecto a este ultimo. Una cantidad muy importante
+utilizada en física de altas energías es la llamada rapidez:
+
+\begin{equation}
+  y = \frac{1}{2} \ln \frac{E+p_z}{E-p_z}
+\end{equation}
+%
+donde E es la energia total de la particula y $p_z$ es la componente longitudinal de su impulso.
+En el limite de altas energias esta cantidad se aproxima (en forma exacta para objetos no masivos)
+por la llamada \emph{pseudorapidez}, $\eta$, relacionada con el angulo polar $\theta$ como:
+
+\begin{equation}
+  \eta = - \ln \tan \frac{\theta}{2}
 \end{equation}
 
+La razon detras de esta transformacion de coordenadas es el hecho que la multiplicidad de particulas
+producidas es aproximadamente constante como funcion de $\eta$, y que la
+diferencia de pseudorapidez entre dos particulas es invariante frente a transformaciones
+(boosts) de Lorentz a lo largo de la direccion del haz. En el caso de colisiones hadronicas,
+la fraccion del impulso del proton adquirida por cada uno de las partones interactuantes
+es desconocida; parte de este impulso es transferido en la interaccion dura, mientras cierta
+fraccion remanente escapa el detector a lo largo del haz. Asi, no es posible reconstruir el
+movimiento longitudinal del centro de masa en la interaccion, y aplicar leyes de conservacion
+sobre la cinematica de cada evento. Sin embargo, dado que los protones inciden a lo
+largo de la direccion del haz, el impulso total transverso es conservado durante la colision.
+Por esta razon, solo las componentes transversales son utilizadas en la descripcion de la
+cinematica del evento, e.g. $\et (= E \sin \theta)$ y $\pt (= p \sin \theta)$.
+En terminos de la pseudorapidez, la energia transversa de una particula resulta:
 
-where each term is computed from the negative sum of calibrated reconstructed objects and from the SoftTerm.
-Contribution from electrons are included in $(\etmiss)^\text{RefEle}_{x(y)}$ using electrons passing medium purity criteria
-with $\pt>10\gev$ and before overlap removal. Contribution from photons are included in $(\etmiss)^\text{RefGamma}_{x(y)}$
-using photons passing tight purity criteria with $\pt>20\gev$. Contribution from jets are included at the jet energy scale
-in $(\etmiss)^\text{RefJet}_{x(y)}$ for calibrated jets with $\pt>20\gev$, independently of $\eta$. Contributions from muons
-are included in $(\etmiss)^\text{Muon}_{x(y)}$, using the muons passing the criteria described above (including $\pt>10\gev$)
-except the isolation requirement and before overlap removal. $(\etmiss)^\text{SoftTerm}_{x(y)}$ is computed from locally
-calibrated TopoClusters and tracks unmatched to any reconstructed object, using an energy-flow algorithm. The main differences in \etmiss algorithm
-used in this analysis with respect to the standard \texttt{MET\_RefFinal} algorithm are: the absence of hadronically decaying
-$\tau$-leptons term, and a slightly redefined muon term which contain only muons passing selection defined in this analysis.
-The lack of specific $(\etmiss)^\text{RefTau}_{x(y)}$ term means that hadronic taus are included either in $(\etmiss)^\text{RefJet}_{x(y)}$ term
-or in $(\etmiss)^\text{SoftTerm}_{x(y)}$ term depending in the \pt\ of the associated jet.
 
-The MissingETUtility algorithm is used to correct \etmiss\ for small differences between object definitions used in the standard \texttt{MET\_Egamma10NoTau\_RefFinal} and the baseline %SUSY group standard
-definitions outlined above (e.g. the smearing of the lepton \pt\ in MC). The tool also allows to propagate the individual objects uncertainties through the \etmiss\ calculation.
+\begin{equation}
+  \et = \frac{E}{\cosh \eta}
+\end{equation}
+%
+donde $E$ es su energia total.
 
-% Uncertainties affecting the individual objects are propagated to \etmiss via the MissingETUtility algorithm. %In addition, specific systematic uncertainties on the scale and resolution of the soft term
-% have been evaluated in  two different in-situ methods using Z$\to\mu\mu$ events \cite{}.
 
-%Due to conservation of transverse momentum, if all particles produced
-%in the primary collision are detectable then there should be no \MET
-%in the event unless it arises from detector effects e.g. resolution,
-%material effects, or
-%non-instrumented regions of the detector.
-%Events in which undetectable particles are
-%produced, such as the gravitino, can be expected to have large \MET.
-%
-%
-%The missing transverse momentum $\ETM$ is calculated from the energy
-%deposited in calorimeter cells up to $|\eta|<4.9$, and from muons.
-%Each cell is associated with some object, which is then used to
-%define a calibration for the signal observed in the cell. Since this
-%analysis will make use of loose photons to form control samples
-%for its data-driven background estimates,
-%the possibility of using loose rather than tight
-%selection criteria for photon-like objects was explored.
-%The objects are:
-%\begin{itemize}
-%\item Medium electrons with $\pt >$ \unit[10]{GeV}, using the default calibration from the egamma group and $\pt >$ \unit[10]{GeV};
-%\item Photons (loose or tight depending on the \MET definition in play) with $\pt >$ \unit[10]{GeV}, calibrated at the EM scale;
-%\item Tight taus with LCW calibration;
-%\item LC topo anti-kT R=0.4 jets (with $\pt >$ \unit[20]{GeV}), using the default JES calibration of the Jet/Etmiss group;
-%\item LC topo anti-kT R=0.4 jets (with \unit[10]{GeV}$< \pt <$ \unit[20]{GeV}, calibrated with LCW (not applying the JES) ;
-%\item Out-of-cell (CellOut) energy, as determined by the track-cluster matching algorithm, calibrated with LCW;
-%\item Muons, as define in https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/EtMissMu.
-%\end{itemize}
-%These directional object energies are combined vectorially, with the resultant being the negative of the missing-tranverse-momentum vector;
-%the magnitide of this vector is the missing energy $\MET$.
-%
-%In developing the event selection for the analysis, several different definitions of the missing transverse energy
-%observable were explored. The \unit[5]{fb$^{-1}$} analysis made use of the LocHadTopo $\MET$ observable, calculated from the energy
-%deposited in calorimeter cells associated to a topocluster,
-%with the calorimeter cell energy is calibrated by applying weights from Local
-%Hadron Calibration~\cite{REF_LH} of Topoclusters~\cite{TopoCluster},
-%optimized from single pions. For object-based $\MET$ observables, three \MET variables were
-%considered: EGamma10NoTauLoosePhotonRef (for which loose photons were calibrated at the EM scale),
-%EGamma10NoTauPhotonRef, and the standard MetRefFinal variable used by groups exploring non-photonic signatures.
-%
-%A number of studies were done with both data and MC to explore the performance of these four \MET variables
-%in the p1328 reconstruction. Since the data was blinded above $\MET = 100$ GeV, we report here on the result of
-%a study making use of a MC sample of SM $\gamma \gamma$ events. To ensure reasonable statistics for large values of
-%\MET, a generator-level filter of $\ET > 95$ GeV was applied to the two leading tight, isolated photons in the sample, and an
-%offline cut of $\ET > 100$ GeV was applied. Figure~\ref{fig:met_comp_hist} shows a comparison of the resulting
-%\MET distributions for the four candidate \MET varilables. For both intermediate and large values of \MET,
-%the MetRefFinal and EGamma10NoTauPhotonRef variables are seen to provide the best performance, while LocHadTopo
-%and EGamma10NoTauLoosePhotonRef are observed to be somewhat worse. For reasons that will be motivated in the section
-%on QCD backgrounds, the MetRefFinal is chosen as the varialbe to be used in the analysis, with LocHadTopo retained as a
-%cross-check.
-%
-%
-%\begin{figure}
+\section{Los subdetectores de ATLAS}
+
+A continuacion se describen brevemente cada uno de los subdetectores, particularmente
+aquellos subsistemas utilizados para la identificacion de electrones y fotones, pertinentes
+al analisis presentado en esta tesis.
+
+\subsection{El detector interno}
+
+El esquema del detector interno se muestra en la figura \ref{fig:innerdetector}\cite{IDTDR}.
+Este sistema combina detectores de muy alta resolución para distancias cortas al punto de interacción con detectores continuos de trazas a distancias más lejanas. El detector interno está contenido dentro del solenoide que provee un campo magnético nominal de 2T.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.55\textwidth]{figures/figura}
+  \caption{Esquema del detector interno}\label{fig:innerdetector}
+\end{figure}
+
+\subsubsection{Pixel}
+Más cerca del punto de interacción se encuentra el detector de píxeles que se compone de tres capas en el barril (a 4cm, a 10cm y a 13 cm del tubo del haz de protones) y tres discos en cada tapa.  Proveen mediciones de altísima precisión y granularidad tan cerca del punto de interacción como es posible. El sistema contiene en total 80 millones de elementos de 14x115 $\mu$m en (R$\phi$,z), capaces de resolver la posición de las partículas mejor que 14$\mu$m.
+
+\subsubsection{SCT}
+Por fuera del detector de píxeles se encuentra el detector semiconductor de trazas (SCT) que consta de ocho capas de detectores de micro bandas de silicio que provee puntos de alta precisión en las coordenadas (R$\phi$,z).
+La resolución espacial es de 16 $\mu$m en R$\phi$ y de 580 $\mu$m en z y tiene 6.2 millones de canales.
+Las trazas pueden distinguirse si están separadas más de $\sim$200 $ \mu$m.
+El SCT cubre el rango de pseudorapidez de $|\eta|<$2.5.
+
+
+\subsubsection{TRT}
+La parte más externa del detector de trazas es el detector de radiación de transición (TRT).
+Este detector está basado en el uso de detectores tubos que pueden operar a alta frecuencia de eventos gracias a su pequeño diámetro (4mm) y la aislación de sus hilos centrales en volúmenes de gas individuales.
+
+El TRT además de detectar el pasaje de partículas cargadas, detecta la radiación de transición que permite distinguir entre partículas cargadas pesadas y livianas.
+La separación entre señales de trazas y de radiación por transición se hace analizando tubo por tubo impactos de alto umbral e impactos de baja señal.
+El largo de los tubos varía segun la zona del detector, llegando hasta los 144 cm en la zona del barril.
+El Barril contiene 50000 tubos y las tapas contienen 320000 tubos orientados radialmente. El número total de canales es de 420000 y la resolución espacial es de 0.17mm.
+
+
+\subsection{Calorímetros}
+
+Una vista de los calorímetros de ATLAS puede verse en la figura \ref{fig:calo}. Consiste en un calorímetro electromagnético cubriendo la región de pseudorapidez $|\eta| < 3.2$, un calorímetro hadrónico en la sección \emph{barrel} cubriendo la región $|\eta| < 3.2$, calorímetro hadrónicos en las \emph{end-cap} cubriendo la región $1.5 < |\eta| < 3.2$, y calorímetros \emph{forward} cubriendo $3.1 < |\eta| < 4.9$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/figura}
+  \caption{Esquema general del calorímetro del detector de ATLAS}\label{fig:calo}
+\end{figure}
+
+
+\subsubsection{Calorímetro electromagnético}
+El calorímetro electromagnético \cite{caloemTDR} se divide en una parte central
+(\emph{barrel}): $|\eta|<$1.475) y los extremos (\emph{end-caps}): 1.375$<|\eta|<$3.2.
+El barril está compuesto por dos mitades, separadas por una distancia pequeña (6 mm) a $z = 0$.
+Las tapas del calorímetro están divididas en dos ruedas coaxiales: una rueda
+externa cubriendo la región 1.375$<|\eta|<$2.5 y una parte interna que cubre la
+región 2.5$<|\eta|<$3.2.
+
+El calorímetro electromagnético es un detector de muestreo de Argón Líquido (LAr)
+con electrodos de kaptón en forma de acordeón y planchas absorbentes de plomo.
+El espesor total del calorimetro electromagnetico\ es $>$24 $X_0$ en el barril
+y $>$26 $X_0$ en las tapas, ($X_0$ = longitud de radiación).
+
+En la región dedicada a los estudios de física de precisión ($|\eta|<$2.5) el
+calorímetro electromagnético está segmentado en tres secciones longitudinales.% como se esquematiza en la figura \ref{fig:caloem}.
+
+%\begin{figure}[H]
 %  \centering
-%  \includegraphics[width=0.7\textwidth]{figures/dummy.eps}
-%%Figure is p3 of https://indico.cern.ch/getFile.py/access?contribId=1&resId=1&materialId=slides&confId=254874 (Osamu)
-%  \caption{$\MET$ distributions for the four candidate $\MET$ definitions for a sample of diphoton MC events. MetRefFinal
-%and EGamma10NoTauPhotonRef are seen to provide the best performance for intermediate and high values of \MET.
-%}   \label{fig:met_comp_hist}
+%  \includegraphics[width=0.85\textwidth]{./chapters/atlas/images/caloem}
+%  \caption{Calorímetro Electromagnético del detector de ATLAS}\label{fig:caloem}
 %\end{figure}
-%
 
-%%%MOVED TO OPTIMIZATION SECTION!!
-%\subsection{Total Transverse Energy (\HT)}
-%\label{sec:ht_obj}
-%Given the high-mass gluinos produced in the GGM model-space explored in this analysis, the total visible transverse energy
-%is expected to be large. Thus, the observable \HT is defined as the scalar sum of the transverse energy of all individual visible
-%objects in the final state. After the lepton veto described in \Sec \ref{}, it is effectively defined as:
-%
-%\begin{eqnarray} \label{eq:htaddition}
-%\HT  &\equiv& \pt^{\gamma} + \sum_{i=1}^{N_{jets}} \pt^{jet}
-%\end{eqnarray}
-%
-%
-%\subsection{Jet-\MET $\phi$ Separation}
-%\label{sec:dphi_obj}
-%If significant \MET arises due to mis-measurement of jet energies,
-%backgrounds might be expected to accumulate for which there is only
-%a smallazimuthal separation between the \ETM vector and the
-%direction of a leading or subleading jet. The minimum
-%azimuthal angle between \ETM and the direction of
-%the leading or subleading jet is defined as
-%\begin{eqnarray} \label{eq:dphi}
-%\cos \Delta \phi_{min}^{jet}  &\equiv& min [\frac{\vec{\MET} \cdot \vec{E}_{T}^{jet,i}}{\MET |\vec{E}_{T}^{jet,i}|}]; \;\; i = 1,2
-%\end{eqnarray}
-%where the $x$ and $y$ indicate the projections of the \ETM and jet-energy vectors onto the $x$ and $y$ axes.
 
-\subsection{Overlap Removal and Event Veto}
-\label{sec:overlap_romoval_event_veto}
+La sección de las bandas (\emph{strips}) que tiene un espesor constante de $\sim$6 $X_0$ en función de $\eta$, está equipado con bandas finas de 4 mm de largo en la dirección $\eta$.
+Esta sección actúa como un detector de pre-cascada (\emph{pre-shower}) aumentando la capacidad de identificación de partículas, (como por ejemplo la distinción entre $\gamma$ y $\pi_0$ o entre electrón y $\pi^\pm$) y dando una precisa medición de la posición en $\eta$.
 
-According to the above definitions, one single final state object can
-fall in more than one category, being therefore effectively double-counted. A procedure to remove
-these overlaps was therefore put in place, and applied on pre-selected objects before the corresponding
-isolation requirements are imposed. The order of removal is as follows:
+La sección del medio está segmentada transversalmente en torres cuadradas de $\Delta \phi \times \Delta \eta=$0.025 $\times$ 0.025 (4 $\times$ 4 cm$^2$ en $\eta=0$).
+El espesor total del detector hasta el final de la sección del medio es $\sim$24$X_0$.
 
-\begin{itemize}\itemsep0.1cm
-\item[-] If the clusters of a photon and an electron are found within $\Delta R < 0.01$, the object is interpreted as an electron and the
-  photon is removed. This choice reduces the expected electron to photon fake rate.
-\item[-] jets that are angularly close ($\Delta R<0.2$) to a pre-selected electron or photon are removed
-\item[-] pre-selected photons (electrons) are removed if their distance to the closest jet is $\Delta R < 0.4$
-\item[-] pre-selected muons are removed if their distance to the closest jet is $\Delta R < 0.4$
-\end{itemize}
+La sección mas externa tiene una granularidad de $\Delta\phi\times\Delta\eta=$0.025 $\times$ 0.05 y su espesor varía entre 2 y 12 $X_0$.
 
-In order to ensure a well measured \MET, events are vetoed from the
-selection if they satisfy any of the following criteria:
+\subsubsection{Calorímetro hadrónico}
+El calorímetro hadrónico de ATLAS \cite{calohadTDR} cubre el rango $|\eta|<$4.9 usando diferentes materiales.
 
-\begin{itemize}\itemsep0.1cm
-\item[-] If the event contains jets after overlap removal and at least one of the jets fail the
-  jet cleaning cuts as defined in \Sec \ref{sec:jet_obj} the event
-  is rejected.
-\item[-] The event has at least one selected muon with a $|z_{0}| >
-  \unit[1]{mm}$ or $|d_0| > \unit[0.2]{mm}$, where the values are
-  calculated with respect to the primary vertex.
-\end{itemize}
+La parte del barril de este sistema consiste en un calorímetro de muestreo que utiliza
+acero como absorbente y tejas centelladoras como material activo.
+Las tejas están ubicadas radialmente y apiladas en profundidad.
+
+%\begin{figure}[H]
+%  \centering
+%  \includegraphics[width=0.85\textwidth]{./chapters/atlas/images/calohad}
+% \caption{Calorímetro Hadrónico del detector de ATLAS}\label{fig:calohad}
+% \end{figure}
+
+La estructura es periódica en z. Las tejas tienen un espesor de 3 mm y el
+espesor de las placas de acero en un período es de 14 mm.
+
+El calorímetro de tejas se extiende radialmente desde un radio interno de 2.28 m
+hasta un radio externo de 4.25 m.
+
+En la región de las tapas, el calorímetro hadrónico consiste en dos ruedas de 2.3 m de
+radio, perpendiculares al tubo del haz, hechas con placas de cobre y tungsteno como material
+absorbente y argón líquido como material activo.
+Estos detectores extienden la aceptancia del calorímetro de ATLAS hasta prácticamente
+cubrir el ángulo sólido del punto de colisión.
+
+
+\subsection{Espectrómetro de muones}
+Los muones de alto {\pt} generados en el punto de interacción tienen un altísimo poder de
+penetración y son poco interactuantes.
+Por ello el espectrómetro de muones \cite{muonTDR} se encuentra situado en la parte más
+exterior del detector ATLAS, alrededor del sistema de imanes de toroides,
+y está diseñado para obtener mediciones de alta precisión de posición e impulso de muones de alto \pt.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/figura}
+  \caption{Espectrómetro de muones del detector de ATLAS}\label{fig:especmuones}
+\end{figure}
+
+La figura \ref{fig:especmuones} muestra un esquema del espectrómetro de muones de ATLAS.
+Es el subdetector más grande y el que le da a ATLAS su tamaño.
+
+La región del barril está compuesta por tres capas concéntricas de cámaras de trigger
+y de cámaras de precisión posicionadas a  5m, 7.5m y 10m del tubo del LHC, cubriendo
+la región $|\eta|<1$.
+Las regiones de las tapas están compuestas por cuatro capas de cámaras de trigger y
+cámaras de precisión a $|z|$= 7.4m, 10.8m, 14m y 21.5m cubriendo el rango de 1.0$<|\eta|<$2.7.
+Hay una pequeña brecha en $|z|=0$ que permite el acceso de los servicios al ID.
+
+%---------
+% Trigger
+%---------
+\section{El sistema de Trigger}
+
+Bajo las condiciones nominales de dise\~no del LHC, la tasa de interaccion proton-proton
+en el LHC sera de $\mathcal{O}(1)$ GHz, considerando una frecuencia de bunch crossing
+de 40 MHz y $\sim$ 23 interacciones por cruce. Dado que la mayoria de los eventos son
+de baja energia y no son de interes para los analisis mas relevantes en ATLAS, y tambien
+debido a las limitaciones de almacenamiento y del poder de computo, el flujo de datos
+incidente debe ser reducido al maximo permitido para su almacenamiento permanente
+($\sim 200$ Hz). El tamano tipico por evento es de $\sim 1.4$ MB, lo que resulta en un
+ancho de banda requerido de $\sim 300$ MB/$s$. Esta reduccion se logra mediante una rapida
+y eficiente preseleccion de eventso, conocida como \emph{trigger}. El sistema de trigger
+de ATLAS [ref] esta organizado en tres niveles jerarquicos: \emph{Nivel 1} (L1),
+\emph{Nivel 2} (L2) y \emph{Filtro de eventos} (EF), dondoe los dos ultimos conforman
+el \emph{High Level Trigger} (HLT). Cada nivel permite analizar los eventos con mayor detalle,
+aumentando la precision de los criterios de seleccion y la complejidad
+de los algortimos utilizados. El sistema de adquisicion de datos (DAQ) transfiere y almacena
+los datos seleccionados por el trigger. La {\fig} {\XXX} muestra un esquema del sistema de
+Trigger-DAQ de ATLAS.
+
+El primer nivel del trigger se encarga de la seleccion inicial, reduciendo la frecuencia
+de eventos que pasaran al siguiente nivel a $\sim 75$ kHz. Debido al tamano limitado
+de las memorias temporales (buffers) donde se guardan los datos de cada subdetector y al
+considerable tiempo de vuelo de las particulas hasta el espctrometro de muones, la decision
+debe tomarse en una escala de tiempo muy limitada ($2.5 \mu s$). El nivel 1 esta basado
+en hardware y selecciona objetso de alto {\pt} construidos a partir de la informacion
+de varios subdetectores. Los muones son identificados en las camaras de trigger descriptas
+en la sec XXX, mientras que la informacion de los calorimetros, con una resolucion reducida,
+se utiliza para identificar candidatos a electrones, fotones, jets y taus decayendo
+hadronicamente. La posicion de cada objeto encontrado define una \emph{region de interes}
+(RoI) en un evento potencialmente interesante, que se extiende como un cono desde el punto de
+interaccion a lo largo del detector.
+
+En el calorímetro, el L1 se basa en las se\~nales analógicas obtenidas en cada trigger
+tower (i.e. suma de celdas en una ventana $\Delta \eta \times \Delta \phi = 0.1 \times 0.1$),
+definida separadamente para el ECAL y el HCAL (Fig. 3.7). El trigger de muones en el L1 utiliza las medidas de
+las trayectorias en las diferentes estaciones de las cámaras de trigger: las RPCs en la región
+del barrel y las TGCs en los endcaps. La aceptancia geométrica del L1 trigger esta a ligada
+al dise\~no del detector, donde las medidas de precisión en los calorímetros y la cobertura
+del detector interno están limitadas a la región $\abseta < 2.5$. El trigger de fotones, electrones,
+muones y taus debe asegurar la cobertura en esta región. En el caso del trigger de jets,
+las trigger towers se extienden hasta $\abseta < 3.2$, mientras que para el calculo de la energía
+transversa total (perdida) se utiliza todo el sistema calorimétrico (i.e. $\abseta < 4.9$).
+Los resultados de los subsistemas del trigger son procesados en el Central Trigger Processor
+(CTP), en donde se aplica una serie de selecciones (\emph{menu}) definidas como una
+combinación de criterios individuales, que pueden ser ajustados según la luminosidad y los
+requerimientos físicos particulares de cada toma de datos. Un total de 256 configuraciones
+(\emph{items}) estan disponibles en el L1, donde se programa el tipo de RoI (EM, TAU, JET, etc.)
+y los umbrales de energía total y de aislamiento requeridos en cada caso. Por ejemplo,
+el  item L1EM14 acepta eventos donde al menos un (dos) cluster(s) en el calorímetro
+electromagnético posee(n) $\et \geq 14 \GeV$.
+
+El segundo nivel del trigger (L2) se centra unicamente en las RoIs donde el L1
+encontro actividad, combinando informacion de todos los subdetectores dentro de cada una
+($\sim 2$ % de la cobertura total del detector). El L2 consiste de una serie de algoritmos de
+reconstruccion y seleccion especializados, dise\~nados para reducir la frecuencia de
+eventos hasta aproximadamente 1 kHz. Estos algoritmos estan implementados en clusters de
+procesamiento dedicados (PC farms) que analizan cada evento dentro de un tiempo de
+latencia medio de $\sim \unit[40]{ms}$. El menor flujo de informacion en este nivel del trigger permite
+calcular las variables calorimetricas con mayor precision y hacer uso de la informacion
+de las trazas reconstruidas, haciendo posible la distincion entre fotones y electrones,
+y el rechazo de fondo proveniente en su mayoria de jets. 13 En general, si bien la
+seleccion se basa en las mismas variables que la identificacion offline descripta en la
+seccion 5.2 (sobre las caracteristicas de las lluvias electromagneticas), los valores
+de corte en cada variable son relajados (o a lo sumo igualados) respecto a la seleccion
+offline, para evitar el rechazo prematuro de candidatos que satisfacen los criterios
+identificacion durante el analisis final.
+La ultima etapa de la seleccion del trigger se lleva a cabo en el Event Filter (EF), que
+reduce la frecuencia de eventos a $\sim \unit[200]{Hz}$ ($\sim \unit[300]{MB/s}$).
+En este nivel se tiene acceso a toda la informacion del evento en los distintos subdetectores
+de ATLAS, con la
+maxima granularidad e incluyendo detalles sobre la calibracion de energia de los calormetros,
+la alineacion de los subdetectores y el mapa de campo magnetico. El tiempo de latencia
+relativamente largo disponible para tomar la decision final sobre el evento ($\avg{t} \sim \unit[4]{s}$)
+permite la reconstruccion completa del mismo, y el refinamiento de las variables y criterios
+de seleccion al nivel de aquellos implementados en el analisis offline. Los eventos aceptados
+por el EF son finalmente grabados a disco y distribuidos, accesibles offline para todos los
+analisis subsecuentes.
+
+Cabe mencionar que el sistema de TDAQ permite, en principio, una tasa de procesamiento/almacenamiento
+por encima de estos parametros de dise\~no, por periodos cortos de tiempo. Por ejemplo, durante el
+periodo de mas baja luminosidad instantanea en el 2010 ($L\sim 10^{32} \text{cm}^{-2} s^{-1}$) se alcanzaron
+frecuencias de lectura a la salida del EF de $\sim 600$ Hz, para beneficiar los primeros analisis
+fisicos de ATLAS. Asimismo, el tiempo medio de procesamiento por evento del EF fue de $\sim \unit[400]{ms}$,
+muy por debajo del esperado.
+Al igual que en el Level 1, en cada nivel del HLT se configuran ciertos criterios
+(\emph{signatures}) segun el tipo y multiplicidad de la particula que se busca en el evento,
+y el conjunto de cortes de identificacion aplicados. La nomenclatura adoptada como convencion
+en el trigger de ATLAS tiene la forma general L ipX Y, donde L es el nivel del
+trigger (L2,EF), i la multiplicidad, p la particula de interes (e.g. g=foton, e=electron),
+X el {\pt} minimo requerido e Y el tipo de identificacion aplicada (loose, tight, etc. segun
+se describe en la Sec. 5.2). 14 Las signatures del L2/EF y su  item asociado en el L1 (i.e. el
+que pasa las RoI al L2) definen en conjunto una de las \emph{cadenas} del trigger, que toman
+el nombre de la signature del HLT (i.e. ipX Y segun la convencion anterior) y conforman
+el \emph{menu} final del trigger.
+
+
+Para cada item (signature) del trigger a Level 1 (L2/EF) se puede asignar ademas un
+factor de escala o prescale (PS), que define la frecuencia con la que un dado item/signature
+es evaluado por el trigger (i.e. solo en uno de cada PS eventos). Se habla de una
+cadenade trigger \emph{unprescaled} si su factor de escala es PS=1 en cada nivel (i.e. si es evaluada
+evento a evento). La asignacion de estos factores se hace incluso dinamicamente durante
+una toma de datos, para tener en cuenta el descenso de la luminosidad instantanea con el
+tiempo y mantener la tasa de procesamiento aproximadamente constante.
+
+
+\section{Modelo computacional y distribucion de datos}
+
+El modelo computacional de ATLAS esta disenado para permitir a todos los miembros
+de la colaboracion un acceso agil, directo y distribuido a la gran cantidad de datos
+colectados por el detector ($\sim \text{PB}/\text{a\~no}$), asi como a las diversas
+simulaciones MC. El modelo se basa en la tecnologia GRID, compartiendo el poder de
+procesamiento y la capacidad de almacenamiento disponibles en distintos centros de
+computo asociados alrededor del mundo.
+El software de ATLAS se desarrolla dentro un entorno C++ comun llamado \texttt{ATHENA}
+[104–106], basado en el projecto GAUDI [107]. Todo el procesamiento de los datos en
+ATLAS se realiza dentro de este entorno, incluyendo la implementacion y configuracion
+del HLT, la simulacion de la respuesta del detector, la generacion de las muestras MC de
+los distintos procesos fisicos, y la reconstruccion y analisis de los datos.
+Los eventos aceptados por el trigger deben ser procesados para reducir su tamano y
+ser utilizados para los analisis offline. A la salida del EF, los eventos son almacenados
+como Raw Data Objects (RDOs). Luego de aplicar los algoritmos de reconstruccion y
+calibracion, las colecciones de los distintos objetos fisicos obtenidas (fotones, electrones,
+etc.) son almacenadas en formato ESD (Event Summary Data) y AOD (Analysis Data
+Object), una version reducida del primero ($\sim 100$ kB/evento). A partir de las ESDs/AODs,
+se ha definido un formato de datos significativamente mas pequeno (10-15 kB/evento)
+conocido como D3PD (Derived Physics Data), sobre el que se realiza el analisis final. Las
+D3PDs son archivos (\emph{ntuples}), accesibles via el entorno de analisis de datos ROOT [108],
+que contienen un conjunto de variables para diferentes objetos fisicos, segun las necesidades
+de cada grupo de analisis dentro de ATLAS. Para el analisis de esta tesis, se utilizaron las
+D3PDs definidas y producidas en forma centralizada por el SM Direct Photon group.
+La misma cadena de reconstruccion y distribucion se aplica a las simulaciones Monte
+Carlo, a fin de conservar un modelo de analisis unico y garantizar la consistencia en la
+comparacion de estas con los datos experimentales.
+
+
+\section{Datos}
+
+El presente analisis se basa en el conjunto de events colectados de las colisiones $pp$
+a una energia de centro de masa  $\sqrt{s} = 8\tev$ con el detector ATLAS en 2012.
+
+Estos corresponden a una luminosidad integrada $\int L dt = 20.3 \pm 0.7 \ifb$ \cite{lumi2012}
+%% after the application of beam, detector and data quality requirements \footnote{GRL \texttt{data12\_8TeV.periodAllYear\_DetStatus-v61\-pro14\-02\_DQDefects\-00\-01\-00\_PHYS\_StandardGRL\_All\_Good.xml}}.
+%% The collected integrated luminosities split up by run period is shown in {\tab} \ref{tab:data_periods}.
+%% The data sample is collected by a single photon trigger (\trigchain) with a transverse momentum threshold of 120 \gev, which selects events with at least one photon passing the loose identification criteria. This trigger has been kept unprescaled through the whole data taking, and is fully efficient selecting photons with $p_{T}>125 \gev$ accepted by the signal selection cuts described in {\sec} \ref{sec:event_selection}. The trigger efficiency extraction and the uncertainty evaluation is treated in {\sec} \ref{sec:trigger_eff}.
+
+\begin{table}[ht]
+  \centering
+  \caption{Integrated luminosity used in this analysis. For each data taking period the run range and the integrated luminosity are given.}
+  \begin{tabular}{c|c|r}
+    \hline
+    \hline
+    Period & Run range & Luminosity $[\ipb]$ \\
+    \hline
+    \hline
+    A & 200804--201556 &  795.91 \\
+    B & 202660--205113 &  5113.61 \\
+    C & 206248--207397 &  1409.06 \\
+    D & 207447--209025 &  3297.54 \\
+    E & 209074--210308 &  2534.11 \\
+    G & 211522--212272 &  1279.54 \\
+    H & 212619--213359 &  1449.04 \\
+    I  & 213431--213819 &  1018.45 \\
+    J & 213900--215091 &  2605.48 \\
+    L & 215414--215643 &  841.634 \\
+    \hline
+    \hline
+    Total & 200804--215643 & 20344.37 \tabularnewline
+    \hline
+    \hline
+  \end{tabular}
+  \label{tab:data_periods}
+\end{table}

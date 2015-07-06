@@ -1,0 +1,14 @@
+\begin{tikzpicture}[node distance=1cm and 1 cm]
+
+  \coordinate[vertex, label=above:$H$] (v1);
+  \coordinate[vertex, right=of v1] (v2);
+  \coordinate[vertex, right=of v2] (v3);
+  \coordinate[vertex, right=of v3] (v4);
+
+  \draw[higgs] (v1) -- (v2);
+  \draw[higgs] (v3) -- (v4);
+
+  \draw[fermion] (1.5, 0) circle (0.5);
+  \node at (1.5, 0.75) {$f$};
+
+\end{tikzpicture}

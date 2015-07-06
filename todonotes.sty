@@ -162,8 +162,8 @@
 \tikzstyle{notestyle} = [notestyleraw]
 \tikzstyle{notestyleleft} = [notestyle]
 \tikzstyle{connectstyle} = [thick, draw=\@todonotes@currentlinecolor]
-\tikzstyle{inlinenotestyle} = [notestyle, text width=\linewidth - 1.6 ex - 1 pt]
-\tikzstyle{intextnotestyle} = [rectangle, fill=red!50, anchor=text]
+\tikzstyle{inlinenotestyle} = [notestyle, draw=yellow!50, fill=yellow!50, text width=\textwidth, anchor=text]
+\tikzstyle{intextnotestyle} = [rectangle, fill=yellow!50, anchor=text]
 \newcommand{\@todo}[2][]{%
 \renewcommand{\@todonotes@text}{#2}%
 \renewcommand{\@todonotes@caption}{#2}%
@@ -271,4 +271,10 @@
   \fi
 }
 \newcommand{\todo}[2][]{\@todo[#1]{#2}}
+
+% Commands
+\newcommand{\note}[1]{\todo{#1}}
+\newcommand{\hl}[1]{\todo[intext]{#1}}
+\newcommand{\hll}[1]{\todo[inline]{#1}}
+
 \endinput

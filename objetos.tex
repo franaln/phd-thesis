@@ -1,0 +1,460 @@
+\chapter{Reconstrucción de objetos físicos} %\section{Selección de objetos}
+\label{sec:obj_selection}
+
+%% In this section a description of the reconstruction and calibration is given for
+%% the main physics objects this analysis has to deal with (photons, \MET, jets, muons and electrons),
+%% following the standard ATLAS procedure \footnote{Objects are defined following the latest SUSY group
+%% recommendations which are implemented in the SUSY working group package SUSYTools-00-03-23-02.}.
+%% The use of these objects in the different signal and control regions is described in \Sec \ref{sec:signal_regions}
+%% and \ref{sec:CRs}, respectively.
+
+En esta secci\'on se describe la reconstrucci\'on y calibraci\'on de los
+principales objectos usados en este an\'alisis
+(fotones, \met, jets, muones y electrones), siguiendo el procedimeinto
+estandar de ATLAS \footnote{Objects are defined following the latest SUSY
+  group recommendations which are implemented in the SUSY working group
+  package SUSYTools-00-03-23-02.}.
+
+
+\section{Fotones}
+\label{sec:obj_photons}
+
+Los fotones son reconstruidos de los clusters en el calorimetro electromagnetico
+medidos en torres de $3\times5$ cledas en $\eta\times\phi$ de la segunda capa del
+calorimetro.
+Los fotones son clasificados como \emph{no-convertidos} si no tienen trazas de un vertice
+de conversion asociadas al cluster, y como \emph{convertidos} sino.
+Un vertice de conversion es formado cuando dos trazas que pasan el TRT high-threshold requirement
+forman un vertice consistente como que vienen de una particula no masiva.
+Para aumentar la eficiencia de reconstruccion de fotones convertidos, los candidatos a conversion
+donde solo una de las dos trazas es reconstruida (y no tiene ningun hit en la capa mas interior
+del detector de pixeles) tambien son retendidas
+
+Los fotones pre-seleccionados son entonces lo que tengas un {\pt} mayor a
+20 {\gev} con $|\eta| < 2.37$, removiendo la region del crack $1.37 < |\eta| < 1.52$,
+donde $\eta$ se mide en el cluster de la segunda capa del calorimetro.
+
+Cuando se calcula el {\pt} del foton, la energia es tomada siempre del cluster
+del calorimetro, apropiadamente calibrada \cite{Banfi:1259219}.
+Para fotones no-convertidos, el $\eta$ es calculado usando las dos primeras
+capas del calorimetro electromagnetico. Para fotones convertidos, donde la traza
+o las trazas que provienen del vertice de la conversion contiene mas de tres
+silicon hits, la direccion $\eta$ se determina extrapolando del cluster del
+calorimetro al vertice de la conversion.
+Para fotones convertidos que tienen trazas solo en el TRT, $\eta$ es calculada
+del \fix{calorimeter pointing}, como en el caso de los no-convertidos. Ademas
+la escala de energia del fotone es corregida para datos y smeareada para MC,
+siguiendo \cite{EGScaleTwiki}.
+
+Algunos cortes de limpieza son aplicados a los candidatos a fotones para
+identificar clusters con mala calidad o falsos que vienen de problemas
+instrumentales \footnote{\url{https://twiki.cern.ch/twiki/bin/view/AtlasProtected/LArCleaningAndObjectQuality\#Photon_Cleaning}}.
+Tambien se aplica una limpieza de evntos basada en fotones. Un mal foton
+es definido como aquel que tiene un tiempo de cluster $|t|>(10+2/|E_\text{clus}|) \text{ns}$,
+donde $E_\text{clus}$ es la correccion de energia al tiempo del cluster,
+o si el valor:
+\begin{equation}
+  \frac{\sum_\text{cluster} E_\text{cell}(Q>4000)}{\sum_\text{cluster} E_\text{cell} } > 0.8\%
+\end{equation}
+%
+y las variables $R_\phi > 1.0$ o $R_\eta > 0.98$, definidas
+en \cite{PhotonCleaning}. El factor Q mide la diferencia entre la forma
+del pulso medido y la forma esperada que es usada para reconstruir
+la energia de la celda.
+
+Otros cortes de identificacion son ademas impuestos para separar los
+candidatos a foton de la contaminacion que proviene de {\pizero} o
+algun otro hadron neutro decayendo en dos fotones. La identificacion
+de fotones se basa en el perfil de la energia depositada en la primer
+y segunda capa del calorimetro electromagnetico \cite{ATL-PHYS-PUB-2011-007}.
+Los criterios de seleccion en las variables que describen la forma de
+la lluvia son independientes de la energia transversa del candidato a
+foton, pero varian segun la pseudorapidez reconstruida del foton, para
+tener en cuenta las variaciones en la cantidad de material y la geometria
+del calorimetro. Estos estan optimizados independientemente para fotones
+convertido sy no-convertidos para tener en cuneta las diferencias en las
+lluvias en cada caso. Este analisis hace uso de fotones que pasa los
+criterios de seleccion \emph{loose} y \emph{tight}, como se definen aca
+\cite{ATL-PHYS-PUB-2011-007}.
+
+En areas donde un modulo de la b-layer esta muerto, los electrones son
+comunmente reconstruido como fotones convertidos. Esta ambiguedad
+es resulta teneinedo en cuenta el mapa de los pixeles muertos como
+funcion del tiempo que dura la recolleccion de datos. Las conversiones
+con una sola traza falsas (y algunas de dos trazas) son de esta forma
+reducidas, con solo un minima reduccion de la eficiencia.
+
+Para la seleccion final, se aplica ademas un corte en la energia
+transversa de aislamiento {\etiso}. La anergia de aislamiento
+es calculada como la suma de la energia transversa de los clusters
+topologicos (calibrada a la escala electromagnetica) dentro de un
+cono en el plano $\eta-\phi$ de radio $\Delta R = 0.20$ alrededor
+del baricentro del cluster \footnote{internally referred as
+  \texttt{topoEtCone20} in ATLAS.}.
+Solo los opoclusters con energia positiva son usados. Los topoclusters
+incluyen celdas del calorimetro EM y del calorimetro hadronico, pero
+las celdas del TileGap3 son explicitamente removidas.
+La energia del centro del cono en el calorimetro EM ($5\times7$ celdas alrededor el
+baricentro del objeto) es sustraida de la suma. Luego se aplican correciones
+debido a la energia ambiente por la actividad del pileup calculadas de acuerdo
+a \cite{Hance:1379530}, mejorando la performance de la variable de aislamiento
+para alto pileup \cite{Laplace:1444890}. La resultante energia de aislamiento
+depues de aplicarle las correciones tiene que ser menor que 5 {\gev} para
+pasar la seleccion final.
+
+\subsection{Correciones para fotones}
+
+Algunas correcciones son aplicadas para mejorar el acuerdo entre datos y
+simulaciones MC del modelado de las lluvias que dejan los fotones al
+pasar por el detector.
+
+\subsubsection{Correccion de identificacion}
+
+Las distribuciones de las variables del calorimetro que son usadas
+para discriminar entre fotones y jets difieren entre datos y MC.
+Las diferencias en cada variable discriminatoria (DV$^i$) pueden
+aproximarse por un \emph{fudge-factor} ($\mu^i$), calculado de
+los valores promedio en datos y MC \cite{ATLAS-CONF-2012-123}.
+\footnote{\url{https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/PhotonFudgeFactors}}:
+
+\begin{equation}
+  \Delta \mu^i = \avg{DV^i_\text{DATA}} - \avg{DV^i_\mathrm{MC}}
+\end{equation}
+
+Estos factores son utilizados para corregir las variables de las
+muestras simuladas, y los cortes de identificacion son nuevamente
+aplicados a las variables corregidas. La eficiencia de identificacion
+de fotones es por lo tanto ajustadas para igualar las medidas en datos.
+
+Estas modificaciones son calculadas comparando todas las formas de lluvia
+de todos los fotones \emph{tight} aislados observados en los datos del 2012
+y las muestras MC12a JF17-140, y provistos de forma central como parte del
+paquete \texttt{egammaAnalysisUtils (v-00-04-52)}.
+La diferencia en las eficiencias de identificacion por los diferentes
+criterios de aislamiento utilizados para derivar los dusge factoes es
+evaluada en {\Sec} \ref{sec:syst_photonid}.
+
+Tambien son aplicados facotres de escala a todos los fotones identificados
+en el MC para tener en cuenta las diferencias observadas en la eficiencia
+respecto a los datos. Estos factores son derivados de forma separada para
+fotones convertidos y no-covnertidos y tambien son provistos de forma central
+por el grupo \emph{Egamma} como parte del paquete
+\texttt{PhotonEfficiencyCorrectionTool (tag 00-00-05)}.
+
+\subsubsection{Correccion al aislamiento}
+
+A difference between the photon energy leakage into the isolation cone is
+observed between data and Monte Carlo for photons. Therefore, the
+corrections applied as described in \cite{Hance:1379530} are slightly
+different for data and MC. Evenmore, a remanent dependency of the isolation
+energy with the photon \pt\ is observed in data, for what an extra correction factor
+has been derived as explained in \Sec \ref{sec:opt_ph_iso}.
+
+\section{Electrones}
+\label{sec:elec_obj}
+
+Los electrones son reconstruidos de forma similar a los otones, con
+requerimientos adicionales en el detector de trazas \cite{Aad:2011mk}.
+Similares criterios de calidad a los descriptos en la seccion anterior
+se aplican a todos los candidatos a electrones  para identificar fakes
+debidos a problemas intrumentales.
+La energia de los electrones es reconstruida de clusters en el calorimetro
+electromagnetico sin tener en cuenta su masa. Mientras que la informacion
+del detector de trazas es usada para reconstruir su direccion. \fix{La escala
+de energia en datos es coregida para igualar la observada en datos} \cite{EGScaleTwiki}.
+\fix{An extra spread is introduced on the MC electron energy in order to reproduce the
+  resolution measured on data for benchmark channels.}
+A los electrones pre-seleccionados se les pide que $\pt>10\gev$ y $|\eta|<2.47$.
+
+Se pide ademas un criterio de identificacion \emph{medium} \cite{ATL-PHYS-PUB-2011-006},
+que esta basado en las caracteristicas del desarrollo de la lluvia
+electromagentica, la calidad de las trazas reconstruidas y la cercania del match
+entre la traza y el deposito en el calorimetro. Este conjunto de requerimientos
+provee una alta y uniforma eficiencia de identificacion con un abjo fondo.
+
+%To keep this analysis statistically independent to other searches in ATLAS \cite{leptonphoton}, %making easier the combination of the results,
+%% To keep this analysis complementary to other searches in ATLAS \cite{leptonphoton7,Zplusmet7}, %making easier the combination of the results,
+%% events containing (at least) a good identified lepton have to be rejected. For this selection, an additional isolation requirement is applied requiring that the sum of the tracks $p_{\rm T}$ in a cone of $\Delta R = 0.30$ around the electron, excluding its own track and any conversion vertex tracks, must be at most 16\% of the electron \pt \footnote{This criteria is referred as LooseIso within the SUSYTools package.}. The tracks have to have 7 silicon hits, at least one of which must be a b-layer hit, and the impact parameter along the beam line (z$_0$), must be less than 1 mm for pileup tolerance. Additionally,  $|z_0 \times \mathrm{sin} \theta | < 0.4$ is required for the electron track.
+
+Al igual que en el caso de los fotones, se aplican factores de escala
+a los electrones del MC para corregir las diferencias observadas en la
+eficiencia entre datos y MC.
+
+\section{Muones}
+\label{sec:muon_obj}
+
+Los candidatos a muon son reconstruidos usando el algoritmo de reconstruccion
+\texttt{STACO} \footnote{\url{https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/STACODocumentation}},
+que combina la informacion del detector de trazas del espectrometro
+de muones y el detector interno. Todos los cortes de identificacion
+provienen de las recomedndaciones propuestas por el grupo de muones \cite{MCPTwiki}.
+Se pide que los muones sean \textit{Combined}, donde el muon es reconstruido
+independientemente en el espectrometro de muones y en el detector interno, o
+\textit{Segment-tagged}, donde el MS es usada para taggear trazas del ID
+como muones, sin requerir una reconstruccion total de la traza en el MS.
+El momento transverso reconstruido en ambos detectores (ID y MS)
+es esmeareado en MC para reproducir la resolucion del momento en datos.
+Todos los muones reconstruidos con $\pt>6 \gev$ (despues del smearing) y $|\eta|<2.5$
+se consideran candidatos.
+Ademas, se pide que los candidatos pasen un criterio de calidad \textit{Loose}
+\footnote{\url{https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/QualityDefinitionStaco}},
+mas algunas criterios de calidad en el detector interno de trazas como se describe a continuacion:
+\begin{itemize}\itemsep0.1cm
+\item[-] La traza en el ID debe tener un hit en la b-layer, a menos que el modulo de la b-layer este muerto.
+\item[-] La suma del numero de pixel hits y crossed dead pixel sensors must be greater than one.
+\item[-] La suma del numero of SCT hits and crossed dead SCT sensors must be at least six.
+\item[-] La suma del numero of pixel and SCT holes must be less than three.
+\item[-] Si la traza en el ID estra dentro de la aceptancia del TRT, se pide:
+  \begin{itemize}\itemsep0.1cm
+  \item[-] $n = n_{TRT}^{hits} + n_{TRT}^{outliers}$
+  \item[-] Caso 1: $|\eta| < 1.9$. Require $n > 5$ and $n_{TRT}^{outliers} < 0.9n$.
+  \item[-] Caso 2: $|\eta| \geq 1.9$. If $n > 5$, then require $n_{TRT}^{outliers} < 0.9n$.
+  \end{itemize}
+\end{itemize}
+
+Como para electrones, la seleccion final en este analisis veta la presencia
+de cualquier mal muon en los eventos.
+Se requiere que estos que adicionalmente pasen un criterio de aislamiento de la
+traza: que la suma del {\pt} de las trazas, excluyendo la traza del muon, en un
+cono de $\Delta R < 0.3$ que sea menor que \unit[12]{\%} del {\pt} del muon.
+Las trazas tiene que tener 4 silicon hits y el parametro de impacto a lo largo de
+la linea del haz ($z_{0}$), debe tener menos de $\unit[10]{mm}$ de tolerancia de pileup.
+El corte en el {\pt} de muones para el veto se sube a $25 \gev$. Ademas se aplican
+factores de correcion para llevar la eficiencia en el MC a la medida en datos a partit
+del decaimiento del $Z$, provistos por el grupo de performance de muones.
+
+\section{Jets}
+\label{sec:jet_obj}
+
+Los jets son reconstruidos usando el algoritmo anti-kt \cite{Cacciari:2008gp} con
+un parametro de distancia de $R = 0.4$  (en el espacio $\eta - \phi$) a partir
+de clusters calorimetricos topologicos \cite{Lampl:1099735}.
+Estos son calibrados usando el metodo de calibracion por pesado por clusters locales (LCW)
+que consiste en pesar de forma diferenciada los depositos de energia que vieen de lluvias en
+el calorimetro electromagnetico o hadronico.
+Estas correcciones en la energia aplicadas a los clusters topologicos son derivadas de
+simulaciones Monte Carlo. La calibracion final en la energia del jet tambien incluye la escala
+de energia (JES) que corrije la respuesta del calorimetro a la energia verdadera del jet.
+Esto corresponde a la calibracion LCW+JES.
+Excepto para el calculo de {\met} y la limpieza de eventos, donde ningun corte en $\eta$ es
+aplicado, los jets solo se consideran y estan en la region central del detector ($|\eta|<2.8$)
+y con un $\pt > 20\gev$.
+
+Para reducir la contaminacion de los jets \hl{falsos} que no provengan de colisiones y mejorar
+la resolucion de {\met}, los eventos con al menos un jet que falla alguno de los siguientes
+criterios  de calidad son removidos \cite{JetCleaning}.
+
+\begin{itemize}\itemsep0.1cm
+\item[-] Si la fraccion de energia en la endcap del calorimetro hadronico
+  es mayor a 0.5 $\left(\mathrm{HEC}f > 0.5\right)$, the measured absolute
+  value of quality of the jet is greater than 0.5 $\left(|\mathrm{HEC}Q| > 0.5\right)$,
+  and the normalized jet quality computed as the energy squared cells mean
+  quality is larger than 0.8 $LArQmean > 0.8$.
+\item[-] If absolute value of the total energy in cells with a negative value
+  is greater than $\unit[60]{GeV}$ the jet is considered bad
+  $\left(|\mathrm{neg.}\,E| > \unit[60]{GeV}\right)$.
+  For this and the previous item, the signal is consistent with sporadic
+  noise in the hadronic endcap calorimeters.
+\item[-] If the electromagnetic energy fraction is larger than 0.95
+  $\left(\mathrm{EM}f > 0.95\right)$, the absolute jet quality value is greater than
+  0.8 $\left(|\mathrm{LAr}Q| > 0.8\right)$, and the normalized jet quality is larger than 0.8
+ $LArQmean > 0.8$ for jets with $|\eta| < 2.8$.
+\item[-] If the electromagnetic energy fraction is less than 0.05
+  $\left(\mathrm{EM}f < 0.05\right)$ and the ratio of the sum \pt\ of the
+  tracks associated to the jets divided by the calibrated jet \pt\ is less than 0.05
+  $\left(\mathrm{ch}f < 0.05\right)$ for jets with $|\eta| < 2$.
+  In the case where the jet has $|\eta| \ge 2$ the jet is considered bad if
+  the electromagnetic energy fraction is less than 0.05 with no requirement on
+  the jet charge fraction.
+\item[-] Si un jet tiene mas del $99\%$ de su energia contenida en una sola capa
+  del calorimetro $(\mathrm{F}max > 0.99)$ y tiene $|\eta| < 2$, es consistente
+  con una senal de rayos cosmicos o \itodo{beam halo muons}.
+\end{itemize}
+
+Excepto durante calculo de {\met}, dos cortes de aceptacncia extra son requeridos
+para los jets: $\pt > 40 \gev$ y $|\eta| < 2.8$.
+Todos los jets pasando esta seleccion \emph{loose} son considerados cuando se aplica
+la identificacion de objetso descripta en {\Sec} \ref{sec:overlap_romoval_event_veto}.
+El corte en {\pt} fue elegido para asegurar una seleccion robusta contra el pile-up.
+Como se muesta en la {\fig} \ref{fig:NjetvsPV}, el numero medio de jets seleccionados
+es de esta forma una distribcuion \hl{flat} como funcion del numero de vertices
+primarios. Luego, en la seleccion final, cortes mas alto en el {\pt} de los jets
+son utilizados como se describe en {\Sec} \ref{sec:opt_njet}.
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=0.70\textwidth]{figures/data_npv_njets}
+  \caption{Valor medio del numero de jets vs. el numero de vertices primarios
+    observados en datos para disitntas selecciones de $\pt^{jet}$.}
+    \label{fig:NjetvsPV}
+\end{figure}
+
+
+\subsection{b-jets}
+\label{sec:bjet_obj}
+
+%% Aunque los $b$-jets no son explicitamente utilizados en la selecc
+%% Although b-jets are not explicitly used for the analysis selection, they are useful in the definition of control regions
+%% from which the \wgamma\ %and \ttbargam
+MC normalization is extracted as described in \Sec \ref{sec:CRs}. b-jets are identified using
+the MV1 jet tagger \cite{ATLAS-CONF-2012-043} at the 70\% efficiency operating point, corresponding
+to the requirement $w > 0.7892$ where $w$ is a weight computed from the different discriminating
+variables forming the jet tagger. The b-tagging efficiencies have been determined by the flavour
+tagging working group using the \pt\ of muons relative to the axis of the jet ($p_{T}^{rel}$) \cite{ATLAS-CONF-2012-043} and the
+derived default scale factors (without JVF cut) are applied to Monte Carlo following the official recommendations \cite{bjetsCalib}.
+In this analysis, only b-tagged jets with $\pt >$~40 GeV and $|\eta| < 2.5$ will be identified as b-jets.
+An uncertainty on the jet weight and the event weight is calculated propagating the estimated uncertainties
+on the scale factors. Scale factor uncertainties depend on the kinematics of the jet and also on the jet flavor.
+
+%See https://indico.cern.ch/getFile.py/access?contribId=37&resId=0&materialId=slides&confId=194205
+%or https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/JetEtmissDataAnalysisRecommendationSummer2010#Recommendation_for_MET_reconstru
+\section{Energia faltante transversa}
+\label{sec:met_obj}
+
+La energia faltante transversa es calculada con un algorimto basado en objetos.
+Missing transverse momentum is calculated with an object-based algorithm at the AOD level
+\\ (\texttt{MET\_Egamma10NoTau\_RefFinal}). As a consequence, the computation of \met\ uses reconstructed and calibrated physics objects. Calorimeter energy
+deposits (TopoClusters) are associated to high-pT objects in the following order: electrons, photons, jets and muons. Deposits not associated
+with any such objects are included in the SoftTerm. The \met\ is calculated as the sum of the following terms:
+
+\begin{equation}
+  (\etmiss)^\text{RefFinal}_{x(y)} = (\etmiss)^\text{RefEle}_{x(y)} + (\etmiss)^\text{RefGamma}_{x(y)}+(\etmiss)^\text{RefJet}_{x(y)}+(\etmiss)^\text{Muon}_{x(y)}+(\etmiss)^\text{SoftTerm}_{x(y)}
+\end{equation}
+
+
+where each term is computed from the negative sum of calibrated reconstructed objects and from the SoftTerm.
+Contribution from electrons are included in $(\etmiss)^\text{RefEle}_{x(y)}$ using electrons passing medium purity criteria
+with $\pt>10\gev$ and before overlap removal. Contribution from photons are included in $(\etmiss)^\text{RefGamma}_{x(y)}$
+using photons passing tight purity criteria with $\pt>20\gev$. Contribution from jets are included at the jet energy scale
+in $(\etmiss)^\text{RefJet}_{x(y)}$ for calibrated jets with $\pt>20\gev$, independently of $\eta$. Contributions from muons
+are included in $(\etmiss)^\text{Muon}_{x(y)}$, using the muons passing the criteria described above (including $\pt>10\gev$)
+except the isolation requirement and before overlap removal. $(\etmiss)^\text{SoftTerm}_{x(y)}$ is computed from locally
+calibrated TopoClusters and tracks unmatched to any reconstructed object, using an energy-flow algorithm. The main differences in \etmiss algorithm
+used in this analysis with respect to the standard \texttt{MET\_RefFinal} algorithm are: the absence of hadronically decaying
+$\tau$-leptons term, and a slightly redefined muon term which contain only muons passing selection defined in this analysis.
+The lack of specific $(\etmiss)^\text{RefTau}_{x(y)}$ term means that hadronic taus are included either in $(\etmiss)^\text{RefJet}_{x(y)}$ term
+or in $(\etmiss)^\text{SoftTerm}_{x(y)}$ term depending in the \pt\ of the associated jet.
+
+The MissingETUtility algorithm is used to correct \etmiss\ for small differences between object definitions used in the standard \texttt{MET\_Egamma10NoTau\_RefFinal} and the baseline %SUSY group standard
+definitions outlined above (e.g. the smearing of the lepton \pt\ in MC). The tool also allows to propagate the individual objects uncertainties through the \etmiss\ calculation.
+
+% Uncertainties affecting the individual objects are propagated to \etmiss via the MissingETUtility algorithm. %In addition, specific systematic uncertainties on the scale and resolution of the soft term
+% have been evaluated in  two different in-situ methods using Z$\to\mu\mu$ events \cite{}.
+
+%Due to conservation of transverse momentum, if all particles produced
+%in the primary collision are detectable then there should be no \MET
+%in the event unless it arises from detector effects e.g. resolution,
+%material effects, or
+%non-instrumented regions of the detector.
+%Events in which undetectable particles are
+%produced, such as the gravitino, can be expected to have large \MET.
+%
+%
+%The missing transverse momentum $\ETM$ is calculated from the energy
+%deposited in calorimeter cells up to $|\eta|<4.9$, and from muons.
+%Each cell is associated with some object, which is then used to
+%define a calibration for the signal observed in the cell. Since this
+%analysis will make use of loose photons to form control samples
+%for its data-driven background estimates,
+%the possibility of using loose rather than tight
+%selection criteria for photon-like objects was explored.
+%The objects are:
+%\begin{itemize}
+%\item Medium electrons with $\pt >$ \unit[10]{GeV}, using the default calibration from the egamma group and $\pt >$ \unit[10]{GeV};
+%\item Photons (loose or tight depending on the \MET definition in play) with $\pt >$ \unit[10]{GeV}, calibrated at the EM scale;
+%\item Tight taus with LCW calibration;
+%\item LC topo anti-kT R=0.4 jets (with $\pt >$ \unit[20]{GeV}), using the default JES calibration of the Jet/Etmiss group;
+%\item LC topo anti-kT R=0.4 jets (with \unit[10]{GeV}$< \pt <$ \unit[20]{GeV}, calibrated with LCW (not applying the JES) ;
+%\item Out-of-cell (CellOut) energy, as determined by the track-cluster matching algorithm, calibrated with LCW;
+%\item Muons, as define in https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/EtMissMu.
+%\end{itemize}
+%These directional object energies are combined vectorially, with the resultant being the negative of the missing-tranverse-momentum vector;
+%the magnitide of this vector is the missing energy $\MET$.
+%
+%In developing the event selection for the analysis, several different definitions of the missing transverse energy
+%observable were explored. The \unit[5]{fb$^{-1}$} analysis made use of the LocHadTopo $\MET$ observable, calculated from the energy
+%deposited in calorimeter cells associated to a topocluster,
+%with the calorimeter cell energy is calibrated by applying weights from Local
+%Hadron Calibration~\cite{REF_LH} of Topoclusters~\cite{TopoCluster},
+%optimized from single pions. For object-based $\MET$ observables, three \MET variables were
+%considered: EGamma10NoTauLoosePhotonRef (for which loose photons were calibrated at the EM scale),
+%EGamma10NoTauPhotonRef, and the standard MetRefFinal variable used by groups exploring non-photonic signatures.
+%
+%A number of studies were done with both data and MC to explore the performance of these four \MET variables
+%in the p1328 reconstruction. Since the data was blinded above $\MET = 100$ GeV, we report here on the result of
+%a study making use of a MC sample of SM $\gamma \gamma$ events. To ensure reasonable statistics for large values of
+%\MET, a generator-level filter of $\ET > 95$ GeV was applied to the two leading tight, isolated photons in the sample, and an
+%offline cut of $\ET > 100$ GeV was applied. Figure~\ref{fig:met_comp_hist} shows a comparison of the resulting
+%\MET distributions for the four candidate \MET varilables. For both intermediate and large values of \MET,
+%the MetRefFinal and EGamma10NoTauPhotonRef variables are seen to provide the best performance, while LocHadTopo
+%and EGamma10NoTauLoosePhotonRef are observed to be somewhat worse. For reasons that will be motivated in the section
+%on QCD backgrounds, the MetRefFinal is chosen as the varialbe to be used in the analysis, with LocHadTopo retained as a
+%cross-check.
+%
+%
+%\begin{figure}
+%  \centering
+%  \includegraphics[width=0.7\textwidth]{figures/dummy.eps}
+%%Figure is p3 of https://indico.cern.ch/getFile.py/access?contribId=1&resId=1&materialId=slides&confId=254874 (Osamu)
+%  \caption{$\MET$ distributions for the four candidate $\MET$ definitions for a sample of diphoton MC events. MetRefFinal
+%and EGamma10NoTauPhotonRef are seen to provide the best performance for intermediate and high values of \MET.
+%}   \label{fig:met_comp_hist}
+%\end{figure}
+%
+
+%%%MOVED TO OPTIMIZATION SECTION!!
+%\subsection{Total Transverse Energy (\HT)}
+%\label{sec:ht_obj}
+%Given the high-mass gluinos produced in the GGM model-space explored in this analysis, the total visible transverse energy
+%is expected to be large. Thus, the observable \HT is defined as the scalar sum of the transverse energy of all individual visible
+%objects in the final state. After the lepton veto described in \Sec \ref{}, it is effectively defined as:
+%
+%\begin{eqnarray} \label{eq:htaddition}
+%\HT  &\equiv& \pt^{\gamma} + \sum_{i=1}^{N_{jets}} \pt^{jet}
+%\end{eqnarray}
+%
+%
+%\subsection{Jet-\MET $\phi$ Separation}
+%\label{sec:dphi_obj}
+%If significant \MET arises due to mis-measurement of jet energies,
+%backgrounds might be expected to accumulate for which there is only
+%a smallazimuthal separation between the \ETM vector and the
+%direction of a leading or subleading jet. The minimum
+%azimuthal angle between \ETM and the direction of
+%the leading or subleading jet is defined as
+%\begin{eqnarray} \label{eq:dphi}
+%\cos \Delta \phi_{min}^{jet}  &\equiv& min [\frac{\vec{\MET} \cdot \vec{E}_{T}^{jet,i}}{\MET |\vec{E}_{T}^{jet,i}|}]; \;\; i = 1,2
+%\end{eqnarray}
+%where the $x$ and $y$ indicate the projections of the \ETM and jet-energy vectors onto the $x$ and $y$ axes.
+
+\section{Eliminacion de objetos superpuestos y veto de eventos\note{?}}
+\label{sec:overlap_romoval_event_veto}
+
+De acuerdo a las definiciones de objetso anteriores, un objeto puede estar en mas de una
+categoria, contandose dos veces. Por este motivo se relaiza un preocedimiento para remover
+este solapamiento, aplicandose sobre los objetos pre seleccionados antes que los criterios
+de aislamiento sean impuestos. El orden del overlap removal es el siguiente:
+
+\begin{itemize}\itemsep0.1cm
+\item[-] Si los clusters de un foton o electron se encuentran dentro de $\Delta R < 0.01$,
+  el objeto es considerado como un electron, removiendose el foton correspondiente. Esta
+  eleccion reduce la taza de electrones malreconstruidos como fotones.
+\item[-] Los jets que esten cerca ($\Delta R<0.2$) de un electron o foton pre seleccionado
+  se remueve.
+\item[-] Fotones y electrones pre-seleccionados son removidos si su distancia al jet mas
+  cercano es de $\Delta R < 0.4$.
+\item[-] Muones pre-seleccionados son removidos si su distancia al jet mas cercano es $\Delta R < 0.4$.
+\end{itemize}
+
+Para poder estar seguro que {\met} esta bien medida, los eventos que satisfacen
+alguna de las condiciones sigueintes son descartados.
+\begin{itemize}\itemsep0.1cm
+\item[-] Si el evento (despues del overlap removal) contiene jets y al menos uno de ellos
+  falla los cortes de limpieza de jets que se definen en {\Sec} \ref{sec:jet_obj}.
+\item[-] El evento tiene al menos un muon con  $|z_{0}| >   \unit[1]{mm}$ ó
+  $|d_0| > \unit[0.2]{mm}$, donde estos valores son calculados con respecto al vertice
+  primario.
+\end{itemize}
+
+
+\itodo{Add MET reconstruction, jets, btagging}

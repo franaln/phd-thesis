@@ -9,37 +9,54 @@
   pdfkeywords={SUSY} {GGM} {ATLAS} {LHC}
 }
 
+\tikzset{
+  every picture/.append style={
+    execute at begin picture={\deactivatequoting},
+    execute at end picture={\activatequoting}
+  }
+}
 \input{physics.sty}
 \input{commands.tex}
-\input{feynman.tex}
+\input{tikz/feynman.tex}
+
+\usepackage[]{units}
+
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{calc}
+
 
 \begin{document}
 
 % title
-%% \input{title.tex}
+\input{title.tex}
 
-%%\tableofcontents
+\tableofcontents
 
 %  body
-%% \input{introduccion.tex}
+\input{introduccion.tex}
 
-%%\part{Contexto del an\'alisis}
-%% \input{sm.tex}
-%% \input{susy.tex}
+\part{Motivaci\'on}
+\input{sm.tex}
+\input{susy.tex}
+
+\part{Experimento}
+\input{detector.tex}
+\input{objetos.tex}
+%%\input{datos_simulaciones.tex}
+
+\part{An\'alisis de Datos o Búsqueda de Supersimetría}
 \input{estadistica.tex}
+\input{estrategia.tex}
+\input{simulaciones.tex}
+\input{seleccion.tex}
+\input{fondos.tex}
+\input{sistematicos.tex}
+\input{resultados.tex}
 
-%% \part{Setup Experimental}
-%% \input{detector.tex}
-%% \input{objetos.tex}
-%% \input{datos_simulaciones.tex}
-
-%% \part{Búsqueda de Supersimetría}
-%% \input{seleccion.tex}
-%% \input{fondos.tex}
-%% \input{sistematicos.tex}
-%% \input{analisis.tex}
-
-%% \input{conclusion.tex}
+\input{conclusion.tex}
 
 % apendix
 

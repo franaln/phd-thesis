@@ -39,6 +39,12 @@
 \RequirePackage[unicode=true]{hyperref}
 \RequirePackage[spanish]{babel}
 \RequirePackage{multirow}
+\RequirePackage{pgfplots}
+\RequirePackage{xparse}
+\RequirePackage{xifthen}
+\RequirePackage{tabularx}
+\RequirePackage{rotating}
+
 
 %%-- Additional TeX/LaTeX code...
 \renewcommand\baselinestretch{1.2}
@@ -68,7 +74,6 @@
 \def\figurename{Figura}
 
 \spanishdecimal{.}
-
 \linespread{1.25}
 
 
@@ -84,11 +89,11 @@
 \fi
 
 % Add  line numbers
-\AtBeginDocument{
-  \if@draftmode
-  \linenumbers
-  \fi
-}
+%% \AtBeginDocument{
+%%   \if@draftmode
+%%   \linenumbers
+%%   \fi
+%% }
 
 % Redefine '/chapter' to always start on an odd page. Should make no difference in singleside mode.
 \def\chapter{\cleardoublepage	% Starts new page.

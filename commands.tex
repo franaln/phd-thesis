@@ -3,12 +3,13 @@
 
 %- Abreviaciones
 \newcommand{\SM}{Modelo Est\'andar}
+\newcommand{\misid}{mis-identificaci\'on}
 
 %- References
 \newcommand{\tab}{Tabla}
 \newcommand{\fig}{Figura}
 \newcommand{\eq}{eq.}
-%%\newcommand{\sec}{Seccion}
+\newcommand{\Sec}{Secci\'on}
 
 %- Physics
 \let\vaccent=\v % rename builtin command \v{} to \vaccent{}
@@ -33,6 +34,8 @@
 \let\baraccent=\= % rename builtin command \= to \baraccent
 \renewcommand{\=}[1]{\stackrel{#1}{=}} % for putting numbers above =
 
+\newcommand{\unc}[2]{\ensuremath{^{+#1}_{-#2}}}
+
 %- SUSY
 \newcommand{\M}[1]{\ensuremath{M_{#1}}}
 
@@ -40,12 +43,13 @@
 \newcommand{\invfb}{$fb^{-1}$}
 \newcommand{\invpb}{$pb^{-1}$}
 \newcommand{\invnb}{$nb^{-1}$}
-\newcommand{\ilumi}{20.3{~\ifb}}
+\newcommand{\ilumi}{20.3 {\ifb}}
 
 
 %- Backgrounds
 \newcommand{\ttgam}{\ensuremath{\ttbar + \gam}}
-\newcommand{\wgam}{W+\gam}
+\newcommand{\wgam}{\ensuremath{W+\gam}}
+\newcommand{\gjet}{\ensuremath{\gamma+\text{jets}}}
 
 \newcommand{\Zgg}{\ensuremath{Z(\to \nu\bar{\nu})+\gamma\gamma}}
 \newcommand{\Wgg}{\ensuremath{W(\to \ell\nu)+\gamma\gamma}}
@@ -54,19 +58,19 @@
 %\newcommand{\ttbar}{\ensuremath{t \bar{t}}}
 \newcommand{\wlnu}{\ensuremath{W(\to \ell\nu)}}
 \newcommand{\Vg}{W/Z$+\gam$}
-\newcommand{\Vqqg}{V($\to$ qq)$+\gam$}
+\newcommand{\vqqgam}{V($\to$ qq)$+\gam$}
 
 \newcommand{\wlnug}{W($\to \ell\nu$)+\gam}
-\newcommand{\wenug}{W($\to e\nu$)+\gam}
-\newcommand{\wmunug}{W($\to \mu\nu$)+\gam}
-\newcommand{\wtaunug}{W($\to \tau\nu$)+\gam}
+\newcommand{\wenugam}{W($\to e\nu$)+\gam}
+\newcommand{\wmunugam}{W($\to \mu\nu$)+\gam}
+\newcommand{\wtaunugam}{W($\to \tau\nu$)+\gam}
 \newcommand{\zgam}{Z+\gam}
-\newcommand{\znunug}{Z($\to \nu\nu$)+\gam}
+\newcommand{\znunugam}{Z($\to \nu\nu$)+\gam}
 \newcommand{\zllg}{Z($\to \ell\ell$)+\gam}
-\newcommand{\zeeg}{Z($\to ee$)+\gam}
+\newcommand{\zeegam}{Z($\to ee$)+\gam}
 \newcommand{\zee}{Z($\to ee$)}
-\newcommand{\zmumug}{Z($\to \mu\mu$)+\gam}
-\newcommand{\ztautaug}{Z($\to \tau\tau$)+\gam}
+\newcommand{\zmumugam}{Z($\to \mu\mu$)+\gam}
+\newcommand{\ztautaugam}{Z($\to \tau\tau$)+\gam}
 \newcommand{\wjets}{W$+$jets}
 \newcommand{\zjets}{Z$+$jets}
 \newcommand{\wlnujet}{W($\to \ell\nu$)+jets}
@@ -78,7 +82,6 @@
 \newcommand{\zeejet}{Z($\to ee$)+jets}
 \newcommand{\zmumujet}{Z($\to \mu\mu$)+jets}
 \newcommand{\ztautaujet}{Z($\to \tau\tau$)+jets}
-\newcommand{\gjet}{\ensuremath{\gamma+{\rm jets}}}
 \newcommand{\zeenj}[1]{\ensuremath{Z\to ee~{\rm Np#1}}}
 \newcommand{\zmmnj}[1]{\ensuremath{Z\to\mu\mu~{\rm Np#1}}}
 \newcommand{\zttnj}[1]{\ensuremath{Z\to\tau\tau~{\rm Np#1}}}
@@ -110,6 +113,7 @@
 \newcommand{\wizhard}{\texttt{Wizhard}}
 \newcommand{\tauola}{\texttt{Tauola}}
 \newcommand{\acermc}{\texttt{AcerMC}}
+\newcommand{\geant}{\texttt{Geant}}
 
 %-- Signal Regions
 \newcommand{\SRH}{\ensuremath{\rm{SR}_{L}}}
@@ -120,8 +124,10 @@
 \newcommand{\dphim}{\ensuremath{\Delta \phi_{\mathrm{min}}(\gamma,\MET)}}
 \newcommand{\dphijm}{\ensuremath{\Delta \phi_{\mathrm{min}}(\mathrm{jet},\MET)}}
 \newcommand{\dphijg}{\ensuremath{\Delta \phi_{\mathrm{min}}(\mathrm{jet},\gamma)}}
-\newcommand{\HTj}{\ensuremath{H_{\mathrm{T}}^{\mathrm{jets}}}}
+\newcommand{\HT}{\ensuremath{H_{\mathrm{T}}}}
 \newcommand{\rt}{\ensuremath{R_{\mathrm{T}}^{4}}}
+\newcommand{\rtt}{\ensuremath{R_{\mathrm{T}}^{2}}}
+\newcommand{\etiso}{\ensuremath{E_{\rm T}^{\rm iso}}}
 
 %- Stat
 \newcommand{\pvalue}{valor-$p$}
@@ -130,8 +136,9 @@
 \newcommand{\btheta}{\ensuremath{\bm{\theta}}}
 \DeclareMathOperator{\Pois}{Pois}
 \newcommand{\dhat}[1]{\ensuremath{\hat{\hat{#1}}}}
-%\newcommand{\dhat}[1]{\ensuremath{\hat{\vphantom{\rule{1pt}{6pt}}\smash{\hat{#1}}}}}
-
 \newcommand{\clsb}{\ensuremath{\text{CL}_{s+b}}}
 \newcommand{\clb}{\ensuremath{\text{CL}_b}}
 \newcommand{\cls}{\ensuremath{\text{CL}_s}}
+
+
+\newcommand{\trigchain}{\texttt{g120\_loose}}
