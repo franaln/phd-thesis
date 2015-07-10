@@ -33,7 +33,7 @@ Los parámetros del modelo representan , por ejemplo, parámetros de la teoría
 física o alguna propiedad desconocida de la respuesta del detector.
 
 %% \subsection{Distribución de Poisson}
-\itodo{mezclar con lo anterior}
+%%\itodo{mezclar con lo anterior}
 La distribución de Poisson es una distribución de probabilidad discreta que describe, a partir
 de una frecuencia de ocurrencia media, la probabilidad de que ocurra un determinado número de
 eventos durante cierto período de tiempo. Un ejemplo  típico que puede ser descripto por esta
@@ -136,7 +136,7 @@ Para esto conviene separar los parámetros como $\btheta \to (\mu, \btheta)$
 
 En el caso de que la función likelihood depende de muchos parámetros, pero solo estamos
 interesados en uno solo de esos parámetros $\mu$ y su incerteza, conviene definir la
-funci\'on likelihood maximizada \todo{profile?} como,
+funci\'on likelihood maximizada como,
 
 \begin{equation}
   \lambda(\mu) = \frac{L(\mu,\dhat{\btheta})}{L(\hat{\mu},\hat{\btheta})}
@@ -168,9 +168,9 @@ Anteriormente vimos como estimar un parámetro, es decir, como encontrar el
 valor que mejor represente un cierto parámetro de interés, dados los datos
 observados. La estimación de intervalos, en vez de encontrar un solo valor,
 provee dos limites numéricos y un nivel de confianza sobre como el valor
-verdadero del parámetro de interés yace entre esos limites. A continuacion
-se describe la construcción básica de un intervalo, metodo que se debe a
-Neyman \todo{ref}.
+verdadero del parámetro de interés yace entre esos limites. A continuación
+se describe la construcción básica de un intervalo, método que se debe a
+Neyman.
 
 %% Supongamos que conocemos la distribución muestral $g(\hat{\btheta}, \btheta)$.
 %% Esta distribución depende del valor verdadero $\theta$ que no conocemos, pero
@@ -236,8 +236,8 @@ Esta hipótesis es comparada contra una hipótesis alternativa $H_1$ (o varias) 
 
 En el caso de búsqueda de nueva física, la hipótesis que juega el rol de hipótesis nula es en la que
 s\'olo los procesos del {\SM} contribuyen a las mediciones. Esta hipótesis también suele llamarse
-hipótesis de solo-fondo. Y se utiliza una hipótesis alternativa en la cual tambien contribuyen procesos
-de nueva física y se denomina hipótesis de se\~nal+fondo. \todo{agregar lo de medidas auxiliares}
+hipótesis de solo-fondo. Y se utiliza una hipótesis alternativa en la cual también contribuyen procesos
+de nueva física y se denomina hipótesis de se\~nal+fondo.
 
 Una hipótesis pueden ser simple o compuesta. Las hipótesis simples están completamente determinadas,
 no tienen ningún parámetro libre, mientras que las compuestas consisten en una familia de de hipótesis
@@ -430,7 +430,7 @@ estadístico de prueba puede obtenerse como,
 \end{equation}
 
 
-\todo{reescribir}Un caso especial importante el estadístico $t_\mu$ es en el caso de $\mu=0$ en un modelo en el que
+n caso especial importante el estadístico $t_\mu$ es en el caso de $\mu=0$ en un modelo en el que
 asumimos $\mu \geq 0$. Rechazar la hipótesis de $\mu=0$ es lo que llamamos \emph{descubrimiento} de
 una nueva señal. Para este caso importante definimos $q_0=\tilde{t}_0$. como,
 
@@ -459,8 +459,8 @@ prefijado anteriormente, tenemos un descubrimiento. En general en física
 de altas energías suele utilizarse $\epsilon = 2.87 \times 10^{-7}$ que corresponde
 a una significancia equivalente $Z=5\sigma$.
 
-Es importante hacer notar que el hecho de rechazar la hipotesis de solo-fondo en
-un sentido estadistico es solo parte de descrubir un fenomeno nuevo.
+Es importante hacer notar que el hecho de rechazar la hipótesis de solo-fondo en
+un sentido estadístico es solo parte de descubrir un fenómeno nuevo.
 
 
 \section{Limites de Exclusión}
@@ -527,7 +527,7 @@ Para obtener el nivel de confianza estándar de 95\%
   p_{\mu_\text{up}} = 0.05
 \end{equation}
 
-Para calcular el limite superior {\cls} definimos,\todo{explicar porque \cls}
+Para calcular el limite superior {\cls} definimos,\todo{Explicar la motivación del \cls}
 
 \begin{equation}
   \cls = \frac{p_\mu}{1-p_b}
@@ -550,7 +550,7 @@ Para poder calcular los valores $p$ de una hipótesis utilizando las ecuaciones
 \eqref{eq:p0} y \eqref{eq:pmu} necesitamos conocer las distribuciones muestrales del
 estadístico de prueba $f(t)$.
 
-En el limite de un gran muestra de datos (limite asintótico) \cite{AsymAprox}, y utiliando el teorema
+En el limite de un gran muestra de datos (limite asintótico) \cite{AsymAprox}, y utilizando el teorema
 de Wilks\cite{WilksTheo} y Wald\cite{WaldTheo} es posible escribir la distribución
 de $q_0$ completa como,
 
@@ -598,9 +598,9 @@ La distribución de $q_\mu$ en este mismo limite es,
 
 \section{Significancia esperada} %%Sensibilidad de descrubrimiento para un experimento de conteo}
 
-When planning the experiment, we want to quantify how sensitive
-we are to a potential discovery, e.g., by given median significance
-assuming some nonzero strength parameter mu'.
+%% When planning the experiment, we want to quantify how sensitive
+%% we are to a potential discovery, e.g., by given median significance
+%% assuming some nonzero strength parameter mu'.
 %% So for p-value, need f(q0 |0), for sensitivity, will need f(q0 | mu'),
 
 
@@ -656,20 +656,20 @@ Si expandimos el logaritmo en la ecuaciona anterior en $s/b$ tenemos $Z_A = s/\s
 que es la expresion de la {\eq} \eqref{eq:Zsimple} y es valida solo en el limite $s \ll b$.
 
 Si el numero de eventos esperado de fondo $b$ no es conocido, uno debe incluirlo como
-un parametro nuisance en la funcion likelihood. Pero como $b$ puede ajustarse para cualquier
-numero de evenots, es necesario introducir informacion adicional para constrain $b$. En general
-se suele hacer mediante una medida auxiliar, mirando el numero de evnetos observados $m$ en una
-region de control donde se asume que la senal esta ausente, y se puede considerar que $m$ sigue
-una distribucion de Poisson con media $\tau b$, donde $\tau$ es un factor \fix{extrapolacion}.
+un parámetro nuisance en la función likelihood. Pero como $b$ puede ajustarse para cualquier
+numero de eventos, es necesario introducir información adicional para constrain $b$. En general
+se suele hacer mediante una medida auxiliar, mirando el numero de eventos observados $m$ en una
+región de control donde se asume que la señal esta ausente, y se puede considerar que $m$ sigue
+una distribución de Poisson con media $\tau b$, donde $\tau$ es un factor de extrapolación.
 
-La funcion likelihood total es el producto de las dos distribuciones de Poisson correspondientes
-a cada region:
+La función likelihood total es el producto de las dos distribuciones de Poisson correspondientes
+a cada región:
 
 \begin{equation}
   L(\mu, \btheta) = \Pois_\text{SR}(n;s+b) \Pois_\text{CR}(\tau b)
 \end{equation}
 
-Utilizando la aproximacion $Z = \sqrt{q_0}$, valida en el limite de una gran muestra y
+Utilizando la aproximación $Z = \sqrt{q_0}$, valida en el limite de una gran muestra y
 teniendo en cuenta que los valores esperados son $s+b$ y $\tau b$ para obtener la significancia
 mediana, tenemos
 
@@ -678,7 +678,7 @@ mediana, tenemos
   \label{eq:Za1}
 \end{equation}
 
-Es util expresar la {\eq} \eqref{eq:Za1} en terminos de la incerteza que uno quiere
+Es útil expresar la {\eq} \eqref{eq:Za1} en términos de la incerteza que uno quiere
 atribuirle al fondo basados en la medida de control $m$. El estimador para $b$ esta dado
 por $\hat{b} = m/\tau$, y como la varianza de $m$ es igual a su media $\tau b$, la
 varianza de $\hat{b}$ es $V[\hat{b}] = \sigma_b^2 = b/\tau$. Y usando esto para eliminar
