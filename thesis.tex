@@ -3,10 +3,10 @@
 
 % Setting pdf metadata
 \hypersetup{
-  pdftitle = {B\'usqueda de Supersimetr\'ia en eventos con un f\'oton, %
-    jets y energ\'ia faltante con el detector ATLAS},
+  pdftitle = {Búsqueda de Supersimetría en eventos con un fóton, %
+    jets y energía faltante con el detector ATLAS},
   pdfauthor = {Francisco Alonso},
-  pdfkeywords={SUSY} {GGM} {ATLAS} {LHC}
+  pdfkeywords = {SUSY} {GGM} {ATLAS} {LHC}
 }
 
 \tikzset{
@@ -15,11 +15,14 @@
     execute at end picture={\activatequoting}
   }
 }
+
 \input{physics.sty}
 \input{commands.tex}
 \input{tikz/feynman.tex}
 
 \usepackage[]{units}
+\usepackage{cleveref}
+%\crefname{equation}{equation}{equations}
 
 \usetikzlibrary{positioning}
 \usetikzlibrary{arrows}
@@ -27,36 +30,36 @@
 \usetikzlibrary{decorations.markings}
 \usetikzlibrary{calc}
 
-
 \begin{document}
 
 % title
-\input{title.tex}
+\include{title}
 
 \tableofcontents
 
 %  body
-\input{introduccion.tex}
+\include{introduccion}
 
-\part{Motivaci\'on}
-\input{sm.tex}
-\input{susy.tex}
+%% \part{Motivación}
+\include{sm}
+\include{susy}
+\include{susy2}
 
-\part{Experimento}
-\input{detector.tex}
-\input{objetos.tex}
-%%\input{datos_simulaciones.tex}
+%% \part{Experimento}
+\include{detector}
+\include{objetos}
+\include{datos_simulaciones}
 
-\part{An\'alisis de Datos o Búsqueda de Supersimetría}
-\input{estadistica.tex}
-\input{estrategia.tex}
-\input{simulaciones.tex}
-\input{seleccion.tex}
-\input{fondos.tex}
-\input{sistematicos.tex}
-\input{resultados.tex}
+%% \part{Búsqueda de Supersimetría} % Análisis de Datos o
+\include{estadistica}
+\include{estrategia}
+\include{simulaciones}
+\include{seleccion}
+\include{fondos}
+\include{sistematicos}
+\include{resultados}
 
-\input{conclusion.tex}
+\include{conclusion}
 
 % apendix
 
