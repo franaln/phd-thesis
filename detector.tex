@@ -76,7 +76,7 @@ de transición (TRT).
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.85\textwidth]{figures/figura}
+  \includegraphics[width=0.85\textwidth]{figures/atlas}
   \caption{Esquema general del detector de ATLAS}\label{fig:atlas}
 \end{figure}
 
@@ -115,7 +115,7 @@ mientras que el angulo $\theta$ se mide con respecto a este ultimo. Una cantidad
 utilizada en física de altas energías es la llamada rapidez:
 
 \begin{equation}
-  y = \frac{1}{2} \ln \frac{E+p_z}{E-p_z}
+  y = \frac{1}{2} \ln \left( \frac{E+p_z}{E-p_z} \right)
 \end{equation}
 %
 donde E es la energia total de la particula y $p_z$ es la componente longitudinal de su impulso.
@@ -123,7 +123,7 @@ En el limite de altas energias esta cantidad se aproxima (en forma exacta para o
 por la llamada \emph{pseudorapidez}, $\eta$, relacionada con el angulo polar $\theta$ como:
 
 \begin{equation}
-  \eta = - \ln \tan \frac{\theta}{2}
+  \eta = - \ln \tan \left( \frac{\theta}{2} \right)
 \end{equation}
 
 La razon detras de esta transformacion de coordenadas es el hecho que la multiplicidad de particulas
@@ -384,40 +384,40 @@ una toma de datos, para tener en cuenta el descenso de la luminosidad instantane
 tiempo y mantener la tasa de procesamiento aproximadamente constante.
 
 
-\section{Modelo computacional y distribucion de datos}
+\section{Modelo computacional y distribución de datos}
 
-El modelo computacional de ATLAS esta disenado para permitir a todos los miembros
-de la colaboracion un acceso agil, directo y distribuido a la gran cantidad de datos
-colectados por el detector ($\sim \text{PB}/\text{a\~no}$), asi como a las diversas
-simulaciones MC. El modelo se basa en la tecnologia GRID, compartiendo el poder de
+El modelo computacional de ATLAS esta diseñado para permitir a todos los miembros
+de la colaboración un acceso ágil, directo y distribuido a la gran cantidad de datos
+colectados por el detector ($\sim \text{PB}/\text{a\~no}$), así como a las diversas
+simulaciones MC. El modelo se basa en la tecnología GRID, compartiendo el poder de
 procesamiento y la capacidad de almacenamiento disponibles en distintos centros de
 computo asociados alrededor del mundo.
-El software de ATLAS se desarrolla dentro un entorno C++ comun llamado \texttt{ATHENA}
+El software de ATLAS se desarrolla dentro un entorno C++ común llamado \texttt{ATHENA}
 [104–106], basado en el projecto GAUDI [107]. Todo el procesamiento de los datos en
-ATLAS se realiza dentro de este entorno, incluyendo la implementacion y configuracion
-del HLT, la simulacion de la respuesta del detector, la generacion de las muestras MC de
-los distintos procesos fisicos, y la reconstruccion y analisis de los datos.
-Los eventos aceptados por el trigger deben ser procesados para reducir su tamano y
-ser utilizados para los analisis offline. A la salida del EF, los eventos son almacenados
-como Raw Data Objects (RDOs). Luego de aplicar los algoritmos de reconstruccion y
-calibracion, las colecciones de los distintos objetos fisicos obtenidas (fotones, electrones,
+ATLAS se realiza dentro de este entorno, incluyendo la implementación y configuración
+del HLT, la simulación de la respuesta del detector, la generación de las muestras MC de
+los distintos procesos físicos, y la reconstrucción y análisis de los datos.
+Los eventos aceptados por el trigger deben ser procesados para reducir su tamaño y
+ser utilizados para los análisis offline. A la salida del EF, los eventos son almacenados
+como Raw Data Objects (RDOs). Luego de aplicar los algoritmos de reconstrucción y
+calibración, las colecciones de los distintos objetos físicos obtenidas (fotones, electrones,
 etc.) son almacenadas en formato ESD (Event Summary Data) y AOD (Analysis Data
-Object), una version reducida del primero ($\sim 100$ kB/evento). A partir de las ESDs/AODs,
-se ha definido un formato de datos significativamente mas pequeno (10-15 kB/evento)
-conocido como D3PD (Derived Physics Data), sobre el que se realiza el analisis final. Las
-D3PDs son archivos (\emph{ntuples}), accesibles via el entorno de analisis de datos ROOT [108],
-que contienen un conjunto de variables para diferentes objetos fisicos, segun las necesidades
-de cada grupo de analisis dentro de ATLAS. Para el analisis de esta tesis, se utilizaron las
+Object), una versión reducida del primero ($\sim 100$ kB/evento). A partir de las ESDs/AODs,
+se ha definido un formato de datos significativamente mas pequeño (10-15 kB/evento)
+conocido como D3PD (Derived Physics Data), sobre el que se realiza el análisis final. Las
+D3PDs son archivos (\emph{ntuples}), accesibles vía el entorno de análisis de datos ROOT [108],
+que contienen un conjunto de variables para diferentes objetos físicos, según las necesidades
+de cada grupo de análisis dentro de ATLAS. Para el análisis de esta tesis, se utilizaron las
 D3PDs definidas y producidas en forma centralizada por el SM Direct Photon group.
-La misma cadena de reconstruccion y distribucion se aplica a las simulaciones Monte
-Carlo, a fin de conservar un modelo de analisis unico y garantizar la consistencia en la
-comparacion de estas con los datos experimentales.
+La misma cadena de reconstrucción y distribución se aplica a las simulaciones Monte
+Carlo, a fin de conservar un modelo de análisis único y garantizar la consistencia en la
+comparación de estas con los datos experimentales.
 
 
-\section{Datos}
+\section{Datos de colisiones $pp$ a $\sqrt{s} = 8$ \tev}
 
-El presente analisis se basa en el conjunto de events colectados de las colisiones $pp$
-a una energia de centro de masa  $\sqrt{s} = 8\tev$ con el detector ATLAS en 2012.
+El presente análisis se basa en el conjunto de eventos colectados de las colisiones $pp$
+a una energía de centro de masa  $\sqrt{s} = 8\tev$ con el detector ATLAS en 2012.
 
 Estos corresponden a una luminosidad integrada $\int L dt = 20.3 \pm 0.7 \ifb$ \cite{lumi2012}
 %% after the application of beam, detector and data quality requirements \footnote{GRL \texttt{data12\_8TeV.periodAllYear\_DetStatus-v61\-pro14\-02\_DQDefects\-00\-01\-00\_PHYS\_StandardGRL\_All\_Good.xml}}.
@@ -426,11 +426,13 @@ Estos corresponden a una luminosidad integrada $\int L dt = 20.3 \pm 0.7 \ifb$ \
 
 \begin{table}[ht]
   \centering
-  \caption{Integrated luminosity used in this analysis. For each data taking period the run range and the integrated luminosity are given.}
+  \caption{Luminosidad integrada de cada periodo de toma de datos de
+    colisiones $pp$ a una energía de centro de masa de $8 \tev$ utilizada
+    en este análisis.}
   \begin{tabular}{c|c|r}
     \hline
     \hline
-    Period & Run range & Luminosity $[\ipb]$ \\
+    Periodo & \emph{Runs} & Luminosidad $[\ipb]$ \\
     \hline
     \hline
     A & 200804--201556 &  795.91 \\

@@ -3,49 +3,49 @@
 
 \section{Estrategia General}
 
-La contribuci\'on dominante de fondos del Modelo Estandar se espera que sea la produccion de
-{\wgam} y {\ttgam}, seguido de la produccion de fotones con energia faltante instrumental.
+La contribuci\'on dominante de fondos del Modelo Estándar se espera que sea la producción de
+{\wgam} y {\ttgam}, seguido de la producción de fotones con energía faltante instrumental.
 
-Se definen tres regiones de control para determinar la normalizacion del MC de Wgamma (CRLW),
-ttbargamma (CRLT) y fotones (CRM). Cada una de estas regiones de control son dominadas por cada uno
+Se definen tres regiones de control para determinar la normalización del MC de {\wgam} ({\CRW}),
+{\ttgam} ({\CRT}) y fotones ({\CRQ}). Cada una de estas regiones de control son dominadas por cada uno
 de estos fondos.
 
 Los cortes de selecci\'on se mantienen lo mas similares posibles a la correspondiente SR para
 minimizar el efecto de la extrapolaci\'on. Los fondos debidos a la mal identificaci\'on de
-electrones y jets se estiman a partir de metodos data-driven \todo{como traduzco data driven?}.
+electrones y jets se estiman a partir de métodos basados en los propios datos observados,
 descriptos en ...
 
 \section{Electrones identificados como fotones} \label{sec:efakes}
 
-Una contaminacion significantes de eventos provenientes de procesos del SM
-como W/Z + jets y {\tt} es esperado en los casos en que un electron de alto
-{\pt} sea mal identificado como un foton. Este fondo es estimnado pesando
-el numero de eventos con un electron observados en la region CSE por la
-fraccion de misidentificacion de foton a electron.
+Una contaminación significantes de eventos provenientes de procesos del SM
+como W/Z + jets y {\tt} es esperado en los casos en que un electrón de alto
+{\pt} sea mal identificado como un fotón. Este fondo es estimando pesando
+el numero de eventos con un electrón observados en la región CSE por la
+fracción de misidentificacion de fotón a electrón.
 
-Esta muestra de electrones es obtenida como se describe en sec \ref{sec:CRs},
-invirtiendo el rol de fotones y electrones en la seleccion de la region de senal.
-Un electron aislado de alto {\pt}  es requerido, y fotones de senal son vetados.
+Esta muestra de electrones es obtenida como se describe en \cref{sec:CRs},
+invirtiendo el rol de fotones y electrones en la selección de la región de señal.
+Un electrón aislado de alto {\pt}  es requerido, y fotones de señal son vetados.
 
-Para estimar la taza de misidentificacion de electron afoton se utiliza el metodo
+Para estimar la taza de misidentificacion de electrón fotón se utiliza el método
 de tag and probe en una muestra de eventos de datos Zee que pasan el mismo trigger
-de fotones que utiliza el analisis y la misma seleccion base (ver sec \ref{sec:event_baseline}).
-Ademas, se aplica un corte de $\met  < 40 \gev$ para reducir la posible contaminacion de fotones
+de fotones que utiliza el análisis y la misma selección base (ver \cref{sec:event_baseline}).
+Además, se aplica un corte de $\met  < 40 \gev$ para reducir la posible contaminación de fotones
 reales de eventos de {\wgam}.
 
-El electron \emph{tag} se requiere que pase el criterio de identificacion \texttt{tight++}
+El electrón \emph{tag} se requiere que pase el criterio de identificación \texttt{tight++}
 y que tenga $20 \gev < \pt < 125 \gev$.
-El segundo candidato electromagnetico (\emph{probe}) puede ser un electron \texttt{tight++}
-o un foton tight, ambos con $\pt > 125\gev$ y satisficiendo los requerimientos de aislamiento
+El segundo candidato electromagnético (\emph{probe}) puede ser un electrón \texttt{tight++}
+o un fotón tight, ambos con $\pt > 125\gev$ y satisfaciendo los requerimientos de aislamiento
 que se describen en sec \ref{sec:obj_selection}.
 
 Los valores de la masa de los pares de tag y prbe son guardados separadamente para tres casos:
-dos electrones, un electron y un foton convertido, y un electron y foton no convertido.
-En todas esas posibilidades existe una visible presencia del boson Z cerca de la masa del Z de 91 \gev.
-Como el boson Z no puede decar directamente en un electron y un foton, los eventos electron-foton
+dos electrones, un electrón y un fotón convertido, y un electrón y fotón no convertido.
+En todas esas posibilidades existe una visible presencia del bisoña Z cerca de la masa del Z de 91 \gev.
+Como el bisoña Z no puede decaer directamente en un electrón y un fotón, los eventos electrón-fotón
 que aparecen bajo el pico del Z corresponden a electrones mal indetificados. Sin embargo, lo mismo
-aplica a otras particulas que decaen en pares de electrones y pro lo tanto es necesario aplicar alguna
-tecnica para la substraccion del fondo. Esta debera tambin tener en cuenta la contaminacion por el
+aplica a otras partículas que decaen en pares de electrones y pro lo tanto es necesario aplicar alguna
+técnica para la substracción del fondo. Esta deberá también tener en cuenta la contaminación por el
 fondo de random combinatorics.
 
 La taza de misidentificacion puede estimarse entonces como:
@@ -54,46 +54,46 @@ La taza de misidentificacion puede estimarse entonces como:
   f_{e\gam} = \frac{N_{e\gam}}{N_{ee}}
 \end{equation}
 %
-donde $N_{e\gam}$ ($N_{ee}$) es el numero de pares electorn-foton (electron-electron) encotrados
-bajo el pico del Z en la distribucion de la masa invariate, definida en el ragno [81,101] \gev.
-Para obtener estos numeros, la distribucion de la masa invariante para los dos tipos de eventos
-es ajustado con un modelo de senal+fondo para fotones convertidos y no convertidos, de forma
-separada. Y esto se realiza en bines del eta de los probe. La baja estadistica no permite calcular
-con bineado en pt, pero se supone esta estimacion conservativa ya que la taza de misid decrece con el pt
-del electron \cite{Kuhl:1604846}.
+donde $N_{e\gam}$ ($N_{ee}$) es el numero de pares electrón-fotón (electrón-electrón) encontrados
+bajo el pico del Z en la distribución de la masa invariante, definida en el rango [81,101] \gev.
+Para obtener estos números, la distribución de la masa invariante para los dos tipos de eventos
+es ajustado con un modelo de señal+fondo para fotones convertidos y no convertidos, de forma
+separada. Y esto se realiza en bines del eta de los probe. La baja estadística no permite calcular
+con bineado en pt, pero se supone esta estimación conservativa ya que la taza de misid decrece con el pt
+del electrón \cite{Kuhl:1604846}.
 
-Como modelo de senial se utiliza un funcion CB+gaussian, mientras que para el fondo se utiliza un
-polinomio de grado dos. Un ejemplo del ajuste se muestra en {\fig} \ref{fig:invmass_pairs}, para
-la seleccion inclusva.
+Como modelo de señal se utiliza un función CB+gaussian, mientras que para el fondo se utiliza un
+polinomio de grado dos. Un ejemplo del ajuste se muestra en \cref{fig:invmass_pairs}, para
+la selección inclusiva.
 
 \begin{figure}[h]
   \begin{center}
     \includegraphics[width=0.45\textwidth]{figures/Fit_mee_efakes_Data_all}  \hfill
     \includegraphics[width=0.45\textwidth]{figures/Fit_meg_efakes_Data_all}
-    \caption{Distribuciones de la masa invariante de los pares de electron-electron (izquierda) y electron-foton (derecha).
-    Tambien se puede ver el ajuste.}
+    \caption{Distribuciones de la masa invariante de los pares de electrón-electrón (izquierda) y electrón-fotón (derecha).
+    También se puede ver el ajuste.}
     \label{fig:invmass_pairs}
   \end{center}
 \end{figure}
 
-La taza de misidentificacion se muestra en la {\fig} \ref{fig:efake_eta}, como funcion
+La taza de misidentificacion se muestra en la \cref{fig:efake_eta}, como función
 del {\abseta} del objeto probe para ``fotones'' convertidos y no convertidos.
 Este factor crece con {\abseta}, lo cual esta correlacionada con el incremento en el
 material del detector atravesada por los electrones y la larger
 reconstruction rate of single-track converted photons.
 
-Como verificacion, el rate es comparado con la esperada de las simulaciones de eventos {\Zee}
+Como verificación, el rate es comparado con la esperada de las simulaciones de eventos {\Zee}
 generados con {\sherpa} and \powheg.
-Un buen acuerdo fue encontrado para todos los casos dentro de las icnertezas. Estasestimaciones
-pueden verse en la {\tab} \ref{tab:efake_eta}, y {\tab} \ref{tab:efake_uc} para fotones convertidos
+Un buen acuerdo fue encontrado para todos los casos dentro de las incertezas. Estas estimaciones
+pueden verse en la \cref{tab:efake_eta}, y \cref{tab:efake_uc} para fotones convertidos
 y no convertidos de forma separada.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.45\textwidth]{figures/figura}
-  \includegraphics[width=0.45\textwidth]{figures/figura}
-  \caption{Probabilidad de que un electron real sea reconstruido como un foton convertido (izquiera)
-    y un foton no convertido (derecha), como funcion de la pseudorapidez del objeto probe. El valor
+  \includegraphics[width=0.45\textwidth]{figures/fegc_feta}
+  \includegraphics[width=0.45\textwidth]{figures/fegu_feta}
+  \caption{Probabilidad de que un electrón real sea reconstruido como un fotón convertido (izquierda)
+    y un fotón no convertido (derecha), como función de la pseudo-rapidez del objeto probe. El valor
     estimado de datos es comparado con el valor esperado de simulaciones MC de eventos de {\Zee} utilizando
     dos generadores distintos.}
   \label{fig:efake_eta}
@@ -102,9 +102,9 @@ y no convertidos de forma separada.
 
 \begin{table}[!h]
   \centering
-  \caption{Probabilidad de que un electron real sea reconstruido como un foton, como funcion
-    de la pseudorapidez del objeto probe. El valor estimado de datos es comparado con el valor esperado
-    de simulaciones MC de eventos de {\Zee}, tuilizando dos generadores distintos.}
+  \caption{Probabilidad de que un electrón real sea reconstruido como un fotón, como función
+    de la pseudo-rapidez del objeto probe. El valor estimado de datos es comparado con el valor esperado
+    de simulaciones MC de eventos de {\Zee}, utilizando dos generadores distintos.}
   \begin{tabular}{cccc}
     \hline
     \hline
@@ -122,9 +122,9 @@ y no convertidos de forma separada.
 
 \begin{table}[!h]
   \centering
-  \caption{Probabilidad de que un electron real sea reconstruido como un foton convertido o no
+  \caption{Probabilidad de que un electrón real sea reconstruido como un fotón convertido o no
     convertido. El valor estimado de datos es comparado con el valor esperado
-    de simulaciones MC de eventos de {\Zee}, tuilizando dos generadores distintos.}
+    de simulaciones MC de eventos de {\Zee}, utilizando dos generadores distintos.}
   \begin{tabular}{cccc}
     \hline
     \hline
@@ -139,16 +139,16 @@ y no convertidos de forma separada.
   \label{tab:efake_uc}
 \end{table}
 
-Para estimar la incerteza sistematica del metodo utilizado, el factor de misidentificacion fue
-calculado variando el tamano de la ventana de masa del $Z$, y aplicando o no la sustraccion
-del fondo. Como se muestra en la {\tab} \ref{tab:efake_syst}, en el caso de no realizar la
-sustraccion del fondo, es donde se obtiene la mayor variacion y por lo tanto se utiliza ese valor
-como la incerteza sistematica del metodo.
+Para estimar la incerteza sistemática del método utilizado, el factor de misidentificacion fue
+calculado variando el tamaño de la ventana de masa del $Z$, y aplicando o no la sustracción
+del fondo. Como se muestra en la \cref{tab:efake_syst}, en el caso de no realizar la
+sustracción del fondo, es donde se obtiene la mayor variación y por lo tanto se utiliza ese valor
+como la incerteza sistemática del método.
 
 \begin{table}[!h]
   \centering
-  \caption{Probabilidad de que un electron real sea reconstruido como un foton
-    convertido o no-convertido, para varaiciones del metodo original.}
+  \caption{Probabilidad de que un electrón real sea reconstruido como un fotón
+    convertido o no-convertido, para variaciones del método original.}
   \begin{tabular}{cccc}
     \hline
     \hline
@@ -169,7 +169,7 @@ El valor estimado del factor de misidentificacion final es entonces el que se mu
 
 \begin{table}[!h]
   \centering
-  \caption{Valor estiamdo final para el factor de {\misid} electron-foton, como funcion de $\eta$.}
+  \caption{Valor estimado final para el factor de {\misid} electrón-fotón, como función de $\eta$.}
   \begin{tabular}{cc}
     \hline
     \hline
@@ -184,11 +184,11 @@ El valor estimado del factor de misidentificacion final es entonces el que se mu
 \end{table}
 
 %% FINAL ESTIMATION IN SIGNAL REGIONS
-\subsubsection{Final estimation in signal regions} \label{sec:efakes_estimation}
+\subsubsection{Estimación final en las regiones de señal} \label{sec:efakes_estimation}
 
 Como se explico anteriormente, el numero de eventos de etogam esperado en las regiones
-de senal se obtiene pesando el numero de eventos observado en una region  de control CSE,
-por el factor de misid calculado en las distintas regiones de $\eta$ (ver {\tab} \ref{tab:efake_final}).
+de señal se obtiene pesando el numero de eventos observado en una región  de control CSE,
+por el factor de misid calculado en las distintas regiones de $\eta$ (ver \cref{tab:efake_final}).
 %% En la region CSE$_L$, there are 28 events observed, which then correspond to an estimation for this background of $N^\text{SR2}_\text{efakes} = 0.38\, \pm\, 0.07$.
 %% In CSE3, given the harder \MET\ cut, there is no observed event in the electron sample for the data analised.
 
@@ -241,7 +241,7 @@ se describe a continaucion.
 \subsection{Descripcion del metodo}\label{sec:jetfake_method}
 
 Para evitar el grand fondo de jets, para seleccionar los fotones se utiliza un
-critero de seleccion \emph{tight}, como se describe en \ref{sec:pho_obj}.
+critero de seleccion \emph{tight}, como se describe en \cref{sec:pho_obj}.
 Esta seleccion es inclusive para fotones reales con una moderada contaminacion
 de jets. Es por definicion tighter que el trigger de fotones utilizado para
 la coleccion de los datos, por lo que hay una suficiente cantidad de candidatos
@@ -257,7 +257,7 @@ contiene, en general, fotones reales ($N_{\gamma}$) y falsos ($N_{j\to\gamma}$).
 Estas dos contribuciones van a tener disitintas distribuciones de energia de aislamiento,
 que puede ser explotada para estimar ambas contribuciones. Para hacer esto la distribucion
 total de energia de aislamiento es ajustada a una combinacion de modelos de senial y fondo,
-tambien tomado de los datos como se explica en \ref{sec:jfake_sig_template} y \ref{sec:jfake_bkg_template}.
+tambien tomado de los datos como se explica en \cref{sec:jfake_sig_template,sec:jfake_bkg_template}.
 El numero de eventos de fotones fake que pasa la identificacion de fotones y el corte de
 aislamiento puede ser estimado integrando la componente de fondo del ajuste sobre el rango
 de la region de senal ($<5\GeV$). De esta forma la tasa de jets mal identificados como fotones,
@@ -271,14 +271,14 @@ donde $x$ es la variable de energia de aislamiento (\etiso), y $S(x)$ y $B(x)$
 son las distribuciones senal y fondo en el ajuste combinado.
 Esta tasa de fake es estimada en una region de control, y luego utilizada para pesar la muestra
 de fotones en la SR para estimar el numero de eventos provenientes de jets mal identificados Este
-resultado se discute e \ref{sec:jet_fake_results}.
+resultado se discute en \cref{sec:jet_fake_results}.
 
 \subsection{Modelo de Señal} \label{sec:jfake_sig_template}
 
 El modelo de senal se extrajo de eventos de datos {\Zee} usando el hecho que los
 electrones y fotones tienen una senal similar en el calorimetro electromagnetico.
 La muestra de electrones es obtenida de eventos que satisfacen el sigueinte conjutno
-de cortes, despues de haber pasao la pre-seleccion descripta en \ref{sec:event_baseline}:
+de cortes, despues de haber pasao la pre-seleccion descripta en \cref{sec:event_baseline}:
 
 \begin{itemize}\itemsep0.1cm
 \item[-] Trigger: \texttt{EF\_2e12Tvhi\_loose1} $\parallel$ \texttt{EF\_e24vhi\_medium1} $\parallel$ \texttt{EF\_e60\_medium1}.
@@ -300,22 +300,22 @@ Un ajuste lineal de los datos nos permite obtener un factor de correccion que lu
 aplicado para remover esta dependencia residual con el \pt. El valor del factor de
 correcion obtenido en el ajuste en el rango $50<\pt=500 \gev$ es  $0.00262 \pm 0.00008$.
 Hay que notar que este factor es solo aplicado para corregir los datos.
-En la  {\fig} \ref{fig:isolation_wandwo_correction} se muestra una comparacion entre
+En la \cref{fig:isolation_wandwo_correction} se muestra una comparacion entre
 datos y simulaciones del perfil de {\etiso} antes (izquierda) y despues (derecha) de aplicarles
 la correccion. Se puede ver que despues de aplicar la correcion el acuerdo entre datos y MC
 es mucho mejor.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.6\textwidth]{figures/figura}
+  \includegraphics[width=0.6\textwidth]{figures/el_iso_vs_pt_wfit}
   \caption{Distribucion de {\etiso} para electrones vs. {\pt} de eventos {\Zee} en datos y MC.}
   \label{fig:isolation_vs_pt}
 \end{figure}
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.49\textwidth]{figures/figura}
-  \includegraphics[width=0.49\textwidth]{figures/figura}
+  \includegraphics[width=0.49\textwidth]{figures/electron_iso_Zee_raw}
+  \includegraphics[width=0.49\textwidth]{figures/electron_iso_Zee_corr}
   \caption{Comparacion datos/MC de la distribucion de {\etiso} de electrones provenientes de
     eventos {\Zee} (izquierda) y la correspondiente distribucion despues de aplicar la correccion
     por el {\pt} (derecha).}
@@ -338,7 +338,7 @@ seleccionaron requiriendo el siguiente conjunto de cortes, despues de la pre-sel
 \item[-] $70\gev<m_{ee\gamma}<100\gev$
 \end{itemize}
 
-En la {\fig} \ref{fig:photon_electron_iso} se presenta una comparacion entre
+En la \cref{fig:photon_electron_iso} se presenta una comparacion entre
 el modelo de fotones reaeles de decaimientos radiativos del $Z$ y electrones
 de {\Zee}. El grafico a la derecha es obtenido despues de remover la dependencia
 con el {\pt} con el factor de correccion como se describio anteriormente.
@@ -350,8 +350,8 @@ confianza en la extrapolacion de usar electrones para modelar los fotones.
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.49\textwidth]{figures/figura} %ph_el_data_raw.eps}
-    \includegraphics[width=0.49\textwidth]{figures/figura} %ph_el_correction.eps}
+    \includegraphics[width=0.49\textwidth]{figures/ph_el_data_raw}
+    \includegraphics[width=0.49\textwidth]{figures/ph_el_correction}
     \caption{Comparison of isolation distributions  for real photons from radiative
       Z decays and electrons from \Zee\ before (left) and after the \pt\ correction
       is applied (right)}
@@ -361,7 +361,7 @@ confianza en la extrapolacion de usar electrones para modelar los fotones.
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.49\textwidth]{figures/figura}
+    \includegraphics[width=0.49\textwidth]{figures/pt_sig_templates}
     \caption{Espectro del impulso transverso de fotones provenientes de decaimientos
       radiativos del Z, en datos.}
     \label{fig:zllg_pt}
@@ -369,7 +369,7 @@ confianza en la extrapolacion de usar electrones para modelar los fotones.
 \end{figure}
 
 Para estudiar el efecto To study the effect on the electron isolation template obtained from \Zee\ when using different
-event topologies and kinematical regions, we present in {\fig} \ref{fig:_electron_iso_HT},
+event topologies and kinematical regions, we present in \cref{fig:_electron_iso_HT},
 the distributions for the case of different hadronic activity using a cut in \HT\ from simulations
 on the left plot and from data \Zee\ on the right plot. As expected the electron template gets harder
 and broader with \HT.  Unfortunately, the lack of statistic prevents us to apply a harder cut in \HT.
@@ -377,56 +377,61 @@ In any case, this effect will be consider as a possible source of systematic unc
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.49\textwidth]{figures/figura}
-    \includegraphics[width=0.49\textwidth]{figures/figura}
+    \includegraphics[width=0.49\textwidth]{figures/electron_iso_ZeeHMC_corr}
+    \includegraphics[width=0.49\textwidth]{figures/electron_iso_ZeeH_corr}
     \caption{Electron isolation dependency on \HT\ from MC (left) and data (right) \Zee}
     \label{fig:_electron_iso_HT}
   \end{center}
 \end{figure}
 
-\subsection{Background Template} \label{sec:jfake_bkg_template}
+\subsection{Modelo de fondo} \label{sec:jfake_bkg_template}
 
-The background template was derived from the data, in events passing all signal requirements
-but the tight photon ID cuts. The pseudo-photon sample selected this way should present an
-isolation profile similar to that for the signal photons, allowing a low signal contamination
-and high statistics. A dedicated study was done in MC to find the best set of tight ID cuts
-to be reversed, in order to best model the expected isolation distribution for true hadronic fakes in the SR.
-This is shown in {\fig} \ref{fig:jetfake_mc_data}, compared to the pseudo-photon sample in MC and data,
-for two different ID definitions.
-The loose-non-tight photons (LnT) are required to pass the loose ID, but fail at least one of
-the tight cuts afterwards \footnote{For a detailed description of the photon ID variables
-  please refer to \cite{ATLAS-CONF-2012-123}}. Despite of the larger statistics of the sample, it is clear that it
-fails to model the background both in data and in the MC itself. A much better agreement is obtained for the loose'-non-tight (L'nT)
-selection, in which the photons are requested to pass all the tight cuts but (at least) one on the narrow strips
-variables ($F_\text{side}$, $w_{s3}$, $E_\text{ratio}$, $\Delta E$).
-These variables are constructed with just a few central strips around the photon direction, and so are expected to be more
-uncorrelated with the photon isolation, as it excludes the central cells to account for the photon self-energy
-and covers a much wider region in space. This way, the pseudo-photon template mimics the tight photon shape and
-allows the extrapolation to the signal region.
+El modelo de fondo fue derivado de los datos, en eventos
+que pasan todos los criterios de identificacion salvo los
+criterios de identificacion \emph{tight} de fotones. La
+muestra de pseudo-fotones
+
+%% The background template was derived from the data, in events passing all signal requirements
+%% but the tight photon ID cuts. The pseudo-photon sample selected this way should present an
+%% isolation profile similar to that for the signal photons, allowing a low signal contamination
+%% and high statistics. A dedicated study was done in MC to find the best set of tight ID cuts
+%% to be reversed, in order to best model the expected isolation distribution for true hadronic fakes in the SR.
+%% This is shown in {\fig} \ref{fig:jetfake_mc_data}, compared to the pseudo-photon sample in MC and data,
+%% for two different ID definitions.
+%% The loose-non-tight photons (LnT) are required to pass the loose ID, but fail at least one of
+%% the tight cuts afterwards \footnote{For a detailed description of the photon ID variables
+%%   please refer to \cite{ATLAS-CONF-2012-123}}. Despite of the larger statistics of the sample, it is clear that it
+%% fails to model the background both in data and in the MC itself. A much better agreement is obtained for the loose'-non-tight (L'nT)
+%% selection, in which the photons are requested to pass all the tight cuts but (at least) one on the narrow strips
+%% variables ($F_\text{side}$, $w_{s3}$, $E_\text{ratio}$, $\Delta E$).
+%% These variables are constructed with just a few central strips around the photon direction, and so are expected to be more
+%% uncorrelated with the photon isolation, as it excludes the central cells to account for the photon self-energy
+%% and covers a much wider region in space. This way, the pseudo-photon template mimics the tight photon shape and
+%% allows the extrapolation to the signal region.
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.49\textwidth]{figures/figura}
-    \includegraphics[width=0.49\textwidth]{figures/figura}
+    \includegraphics[width=0.49\textwidth]{figures/bkg_mc_pseudo_data_SR_l_ptbin}
+    \includegraphics[width=0.49\textwidth]{figures/bkg_mc_pseudo_data_SR_lp_ptbin}
     \caption{Isolation distribution for truth MC photon fakes from hadronic decays, compared to pseudo-photon
       sample obtained in MC for background, obtained in the (right) nominal and (left) loose signal regions.}
   \label{fig:jetfake_mc_data}
   \end{center}
 \end{figure}
 
-Evenmore, as seen in {\fig} \ref{fig:jetfake_pseudo_data_pt}, the \pt\ spectrum of the L'nT photon candidates
-better reproduce that expected for tight photons. No further \pt-reweighting is needed in this case.
-Similarly, {\fig} \ref{fig:jetfake_pseudo_data_BE} shows the only slight shape difference for pseudo-photons
-in the barrel and endcap regions.
+%% Evenmore, as seen in {\fig} \ref{fig:jetfake_pseudo_data_pt}, the \pt\ spectrum of the L'nT photon candidates
+%% better reproduce that expected for tight photons. No further \pt-reweighting is needed in this case.
+%% Similarly, {\fig} \ref{fig:jetfake_pseudo_data_BE} shows the only slight shape difference for pseudo-photons
+%% in the barrel and endcap regions.
 
-Particularly for fake events, the extrapolation from the region used to derive the faking probability ratio and
-the respective signal region might suffer from different topology and kinematics of the events in each case.
-For this reason, the control region selection to derive the templates is kept close to the SR, as listed in {\tab} \ref{tab:cr_jetfake}.
-An orthogonality requirement is placed on \MET ($50-150\gev$) and some SR cuts are loosened to retain statistics.
-As expected, however, the larger the jet activity around the harder the photon isolation in the event. So the
-\HT\ requirements can not be loosened much. This can be clearly observed in {\fig} \ref{fig:jetfake_pseudo_data_LR_VR},
-for a loose (CRFJL: $>200 \gev$) and tight (CRFJ: $>600 \gev$) \HT\ selection. The latter is therefore used to
-perform the combined fit and to compute the jet fake factor, as discussed in the next section.
+%% Particularly for fake events, the extrapolation from the region used to derive the faking probability ratio and
+%% the respective signal region might suffer from different topology and kinematics of the events in each case.
+%% For this reason, the control region selection to derive the templates is kept close to the SR, as listed in {\tab} \ref{tab:cr_jetfake}.
+%% An orthogonality requirement is placed on \MET ($50-150\gev$) and some SR cuts are loosened to retain statistics.
+%% As expected, however, the larger the jet activity around the harder the photon isolation in the event. So the
+%% \HT\ requirements can not be loosened much. This can be clearly observed in {\fig} \ref{fig:jetfake_pseudo_data_LR_VR},
+%% for a loose (CRFJL: $>200 \gev$) and tight (CRFJ: $>600 \gev$) \HT\ selection. The latter is therefore used to
+%% perform the combined fit and to compute the jet fake factor, as discussed in the next section.
 
 \begin{table}[h!]
   \centering
@@ -462,35 +467,36 @@ perform the combined fit and to compute the jet fake factor, as discussed in the
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.49\textwidth]{figures/figura}
-    \caption{Distribution of photon \pt\ for tight and pseudo-photon candidates, after full CRFJ selection.}
+    \includegraphics[width=0.49\textwidth]{figures/bkg_data_pseudo_tight_data_VR}
+    %% \caption{Distribución del {\pt} del foton para candidadtos
+    %%   \emph{tight and pseudo-photon candidates, after full CRFJ selection.}
   \label{fig:jetfake_pseudo_data_pt}
   \end{center}
 \end{figure}
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.49\textwidth]{figures/figura}
-    \includegraphics[width=0.49\textwidth]{figures/figura}
-    \caption{Isolation templates for loose-non-tight (left) and loose'-non-tight (right) pseudo-photon data,
-      after full CRFJ selection, in barrel and endcap regions.}
+    \includegraphics[width=0.49\textwidth]{figures/bkg_pseudo_data_SREB_l}
+    \includegraphics[width=0.49\textwidth]{figures/bkg_pseudo_data_SREB_lp}
+    %% \caption{Isolation templates for loose-non-tight (left) and loose'-non-tight (right) pseudo-photon data,
+    %%   after full CRFJ selection, in barrel and endcap regions.}
   \label{fig:jetfake_pseudo_data_BE}
   \end{center}
 \end{figure}
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.49\textwidth]{figures/figura}
-    \includegraphics[width=0.49\textwidth]{figures/figura}
-    \caption{Isolation templates for loose-non-tight (left) and loose'-non-tight (right) pseudo-photon data,
-      after signal-like selection with a  loose (CRFJL: $>200 \gev$) and tight (CRFJ: $>600 \gev$) \HT\ cut.}
+    \includegraphics[width=0.49\textwidth]{figures/bkg_pseudo_data_SR_VR_l}
+    \includegraphics[width=0.49\textwidth]{figures/bkg_pseudo_data_SR_VR_lp}
+    %% \caption{Isolation templates for loose-non-tight (left) and loose'-non-tight (right) pseudo-photon data,
+    %%   after signal-like selection with a  loose (CRFJL: $>200 \gev$) and tight (CRFJ: $>600 \gev$) \HT\ cut.}
   \label{fig:jetfake_pseudo_data_LR_VR}
   \end{center}
 \end{figure}
 
 Finally, the background template from loose'-non-tight photons in the CRFJ region is found
 to be well described by a Crystall Ball function. The data distribution and the fitted profile
-is shown in {\fig} \ref{fig:jetfake_sigbkg}. The parametrized template is used in the combined
+is shown in \cref{fig:jetfake_sigbkg}. The parametrized template is used in the combined
 fit to tight photon data to derive the jet fake rate.
 
 %% \begin{figure}[h]
@@ -504,13 +510,13 @@ fit to tight photon data to derive the jet fake rate.
 \subsection{Ajuste combinado y estimacion del fondo} \label{sec:jet_fake_results}
 
 A template fit to both signal and background distributions is then used to model the shape of the photon isolation
-for each contribution, as shown in {\fig} \ref{fig:jetfake_sigbkg}, together with the fitted parameters.
+for each contribution, as shown in \cref{fig:jetfake_sigbkg}, together with the fitted parameters.
 %The corresponding $\chi^2$/dof are 2.4 and 8.8 for signal and background templates with 240 points.
 
 La distribucion de {\etiso} para todos los eventos que pasan los criterios
 de seleccion de la region relajada (CRFJ) es ajustada a una combinacion
 lineal de los modelos de senal y fondo. El ajuste combinado y cada componente
-de la distribucion pueden verse en {\fig} \ref{fig:jetfake_combfit}.
+de la distribucion pueden verse en \cref{fig:jetfake_combfit}.
 Los parametros son inicializados con los valores extraidos de los ajustes
 individuales a la senal y el fondo, y se los permite variar dentro de su
 incerteza
@@ -524,7 +530,7 @@ cualquier potencial mismodelado de los templates.
 
 %The fitted parameters for the signal, background and combined fits are tabulated in \Tab \ref{tab:jetfake_fit_pars}.
 Los parametros estimados del ajuste combinado estan tabulados en la
-{\tab} \ref{tab:jetfake_fit_pars}.
+\cref{tab:jetfake_fit_pars}.
 
 El numero de fotones total (N$_\text{tot}^\text{iso}$) y fake (N$_{j\to\gamma}^\text{iso}$)
 esperados en la region de control es obtenido integrando
@@ -538,7 +544,7 @@ $\etiso<5\gev$, respectivamente:
 \end{itemize}
 
 La fraccion $f_{j\to \gamma}$ es obtenida simplemente como el cociente
-en la {\eq} \eqref{eq:jfake_formula}:
+en la \cref{eq:jfake_formula}:
 
 \begin{itemize}
 \item[] $f_{j\to\gamma} = 0.0857 \pm 0.0002 \stat \pm 0.04 \;\syst$
@@ -546,17 +552,21 @@ en la {\eq} \eqref{eq:jfake_formula}:
 
 \begin{figure}[h]
   \begin{center}
-  \includegraphics[width=0.49\textwidth]{figures/figura}  \hfill
-  \includegraphics[width=0.49\textwidth]{figures/figura}
-  \caption{Fit of signal (left) and background (right) photon isolation templates, in the CRFJ control region (see text).}
+  \includegraphics[width=0.49\textwidth]{figures/iso_fit_sig_wpars}  \hfill
+  \includegraphics[width=0.49\textwidth]{figures/iso_fit_bkg_wpars}
+  \caption{Ajuste a las distribuciones de {\etiso} de senal
+    (izquierda) y fondo (derecha) (right) en la region
+    de control CRFJ.}
   \label{fig:jetfake_sigbkg}
   \end{center}
 \end{figure}
 
 \begin{figure}[h]
   \begin{center}
-  \includegraphics[width=0.49\textwidth]{figures/figura}
-  \caption{Combined fit to the photon isolation distribution, for pseudo-photon data passing the CRFJ control region (see text for details).}
+  \includegraphics[width=0.49\textwidth]{figures/iso_fit_sarange}
+  \caption{Ajuste combinado a la distribucion de {\etiso}
+    para los pseudo-fotones que pasan la selección de la región
+    de control CRFJ (ver texto para detalles).}
   \label{fig:jetfake_combfit}
   \end{center}
 \end{figure}
@@ -590,8 +600,8 @@ The number of jets faking photons can be estimated now using the fraction $f_{j\
   N_\text{fakes} = f_{j\to\gam} \times N_\text{tight}
 \end{equation}
 
-To keep the analysis blinded, we parametrize the number of fakes as function of \met, as shown in {\fig} \ref{fig:jetfake_nfakes_met}, using an exponential
-function $N_\text{fakes} = \exp(A+B \, \met)$. The values of the $A$ and $B$ parameters obtained from the fit are shown in table \ref{tab:exppars}.
+To keep the analysis blinded, we parametrize the number of fakes as function of \met, as shown in \cref{fig:jetfake_nfakes_met}, using an exponential
+function $N_\text{fakes} = \exp(A+B \, \met)$. The values of the $A$ and $B$ parameters obtained from the fit are shown in table \cref{tab:exppars}.
 
 \begin{table}[h!]
   \centering
@@ -619,14 +629,15 @@ of each SR:
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.49\textwidth]{figures/figura}  \hfill
-  \includegraphics[width=0.49\textwidth]{figures/figura}
-  \caption{Parametrization of the number of jet fakes as function of \met. }
+  \includegraphics[width=0.49\textwidth]{figures/nfakes_SR2}  \hfill
+  \includegraphics[width=0.49\textwidth]{figures/nfakes_SR3}
+  \caption{Parametrización del número de jets mal identificados como
+    función de {\met}.}
   \label{fig:jetfake_nfakes_met}
 \end{figure}
 
 El fondo de jet fakes es estimdo similarmente en las regiones de control
-y validacion definidas en la {\tab} \ref{tab:sr2} y \ref{tab:sr3}, pesando
+y validacion definidas en la \cref{tab:sr2,tab:sr3}, pesando
 el numero de eventos observado en cada cosa por el factor $f_{j\to\gamma}$. % factor above as in \Eq \ref{eq:njfakes}.
 
 

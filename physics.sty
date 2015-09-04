@@ -1,3 +1,5 @@
+\usepackage{hepparticles}
+
 \let\sst=\scriptscriptstyle % Needed for some definitions (psi and eta prime, etc.) (EE)
 \chardef\letterchar=11
 \chardef\otherchar=12
@@ -134,131 +136,137 @@
 \def\Hminus{\ensuremath{H^-}}%
 \def\Hpm{\ensuremath{H^{\pm}}}%
 \def\Hmp{\ensuremath{H^{\mp}}}%
-\def\susy#1{\ensuremath{\tilde{#1}}}%
+\def\susy#1{\ensuremath{\widetilde{#1}}}%
 \def\ellell{\ensuremath{\mathrm{\ell^+ \ell^-}}}%
 \def\ggino{\ensuremath{\mathchoice%
-      {\displaystyle\raise.4ex\hbox{$\displaystyle\tilde\chi$}}%
-         {\textstyle\raise.4ex\hbox{$\textstyle\tilde\chi$}}%
-       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\tilde\chi$}}%
- {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\tilde\chi$}}}}
+      {\displaystyle\raise.4ex\hbox{$\displaystyle\widetilde\chi$}}%
+         {\textstyle\raise.4ex\hbox{$\textstyle\widetilde\chi$}}%
+       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\widetilde\chi$}}%
+ {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\widetilde\chi$}}}}
 
 \def\chinop{\ensuremath{\mathchoice%
-      {\displaystyle\raise.4ex\hbox{$\displaystyle\tilde\chi^+$}}%
-         {\textstyle\raise.4ex\hbox{$\textstyle\tilde\chi^+$}}%
-       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\tilde\chi^+$}}%
- {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\tilde\chi^+$}}}}
+      {\displaystyle\raise.4ex\hbox{$\displaystyle\widetilde\chi^+$}}%
+         {\textstyle\raise.4ex\hbox{$\textstyle\widetilde\chi^+$}}%
+       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\widetilde\chi^+$}}%
+ {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\widetilde\chi^+$}}}}
 \def\chinom{\ensuremath{\mathchoice%
-      {\displaystyle\raise.4ex\hbox{$\displaystyle\tilde\chi^-$}}%
-         {\textstyle\raise.4ex\hbox{$\textstyle\tilde\chi^-$}}%
-       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\tilde\chi^-$}}%
- {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\tilde\chi^-$}}}}
+      {\displaystyle\raise.4ex\hbox{$\displaystyle\widetilde\chi^-$}}%
+         {\textstyle\raise.4ex\hbox{$\textstyle\widetilde\chi^-$}}%
+       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\widetilde\chi^-$}}%
+ {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\widetilde\chi^-$}}}}
 \def\chinopm{\ensuremath{\mathchoice%
-      {\displaystyle\raise.4ex\hbox{$\displaystyle\tilde\chi^\pm$}}%
-         {\textstyle\raise.4ex\hbox{$\textstyle\tilde\chi^\pm$}}%
-       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\tilde\chi^\pm$}}%
- {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\tilde\chi^\pm$}}}}
+      {\displaystyle\raise.4ex\hbox{$\displaystyle\widetilde\chi^\pm$}}%
+         {\textstyle\raise.4ex\hbox{$\textstyle\widetilde\chi^\pm$}}%
+       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\widetilde\chi^\pm$}}%
+ {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\widetilde\chi^\pm$}}}}
 \def\chinomp{\ensuremath{\mathchoice%
-      {\displaystyle\raise.4ex\hbox{$\displaystyle\tilde\chi^\mp$}}%
-         {\textstyle\raise.4ex\hbox{$\textstyle\tilde\chi^\mp$}}%
-       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\tilde\chi^\mp$}}%
- {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\tilde\chi^\mp$}}}}
+      {\displaystyle\raise.4ex\hbox{$\displaystyle\widetilde\chi^\mp$}}%
+         {\textstyle\raise.4ex\hbox{$\textstyle\widetilde\chi^\mp$}}%
+       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\widetilde\chi^\mp$}}%
+ {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\widetilde\chi^\mp$}}}}
 
 \def\chinoonep{\ensuremath{\mathchoice%
-      {\displaystyle\raise.4ex\hbox{$\displaystyle\tilde\chi^+_1$}}%
-         {\textstyle\raise.4ex\hbox{$\textstyle\tilde\chi^+_1$}}%
-       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\tilde\chi^+_1$}}%
- {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\tilde\chi^+_1$}}}}
+      {\displaystyle\raise.4ex\hbox{$\displaystyle\widetilde\chi^+_1$}}%
+         {\textstyle\raise.4ex\hbox{$\textstyle\widetilde\chi^+_1$}}%
+       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\widetilde\chi^+_1$}}%
+ {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\widetilde\chi^+_1$}}}}
 \def\chinoonem{\ensuremath{\mathchoice%
-      {\displaystyle\raise.4ex\hbox{$\displaystyle\tilde\chi^-_1$}}%
-         {\textstyle\raise.4ex\hbox{$\textstyle\tilde\chi^-_1$}}%
-       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\tilde\chi^-_1$}}%
- {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\tilde\chi^-_1$}}}}
+      {\displaystyle\raise.4ex\hbox{$\displaystyle\widetilde\chi^-_1$}}%
+         {\textstyle\raise.4ex\hbox{$\textstyle\widetilde\chi^-_1$}}%
+       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\widetilde\chi^-_1$}}%
+ {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\widetilde\chi^-_1$}}}}
 \def\chinoonepm{\ensuremath{\mathchoice%
-      {\displaystyle\raise.4ex\hbox{$\displaystyle\tilde\chi^\pm_1$}}%
-         {\textstyle\raise.4ex\hbox{$\textstyle\tilde\chi^\pm_1$}}%
-       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\tilde\chi^\pm_1$}}%
- {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\tilde\chi^\pm_1$}}}}
+      {\displaystyle\raise.4ex\hbox{$\displaystyle\widetilde\chi^\pm_1$}}%
+         {\textstyle\raise.4ex\hbox{$\textstyle\widetilde\chi^\pm_1$}}%
+       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\widetilde\chi^\pm_1$}}%
+ {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\widetilde\chi^\pm_1$}}}}
 
 \def\chinotwop{\ensuremath{\mathchoice%
-      {\displaystyle\raise.4ex\hbox{$\displaystyle\tilde\chi^+_2$}}%
-         {\textstyle\raise.4ex\hbox{$\textstyle\tilde\chi^+_2$}}%
-       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\tilde\chi^+_2$}}%
- {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\tilde\chi^+_2$}}}}
+      {\displaystyle\raise.4ex\hbox{$\displaystyle\widetilde\chi^+_2$}}%
+         {\textstyle\raise.4ex\hbox{$\textstyle\widetilde\chi^+_2$}}%
+       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\widetilde\chi^+_2$}}%
+ {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\widetilde\chi^+_2$}}}}
 \def\chinotwom{\ensuremath{\mathchoice%
-      {\displaystyle\raise.4ex\hbox{$\displaystyle\tilde\chi^-_2$}}%
-         {\textstyle\raise.4ex\hbox{$\textstyle\tilde\chi^-_2$}}%
-       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\tilde\chi^-_2$}}%
- {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\tilde\chi^-_2$}}}}
+      {\displaystyle\raise.4ex\hbox{$\displaystyle\widetilde\chi^-_2$}}%
+         {\textstyle\raise.4ex\hbox{$\textstyle\widetilde\chi^-_2$}}%
+       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\widetilde\chi^-_2$}}%
+ {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\widetilde\chi^-_2$}}}}
 \def\chinotwopm{\ensuremath{\mathchoice%
-      {\displaystyle\raise.4ex\hbox{$\displaystyle\tilde\chi^\pm_2$}}%
-         {\textstyle\raise.4ex\hbox{$\textstyle\tilde\chi^\pm_2$}}%
-       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\tilde\chi^\pm_2$}}%
- {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\tilde\chi^\pm_2$}}}}
+      {\displaystyle\raise.4ex\hbox{$\displaystyle\widetilde\chi^\pm_2$}}%
+         {\textstyle\raise.4ex\hbox{$\textstyle\widetilde\chi^\pm_2$}}%
+       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\widetilde\chi^\pm_2$}}%
+ {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\widetilde\chi^\pm_2$}}}}
 
 \def\nino{\ensuremath{\mathchoice%
-      {\displaystyle\raise.4ex\hbox{$\displaystyle\tilde\chi^0$}}%
-         {\textstyle\raise.4ex\hbox{$\textstyle\tilde\chi^0$}}%
-       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\tilde\chi^0$}}%
- {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\tilde\chi^0$}}}}
+      {\displaystyle\raise.4ex\hbox{$\displaystyle\widetilde\chi^0$}}%
+         {\textstyle\raise.4ex\hbox{$\textstyle\widetilde\chi^0$}}%
+       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\widetilde\chi^0$}}%
+ {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\widetilde\chi^0$}}}}
 
 \def\ninoone{\ensuremath{\mathchoice%
-      {\displaystyle\raise.4ex\hbox{$\displaystyle\tilde\chi^0_1$}}%
-         {\textstyle\raise.4ex\hbox{$\textstyle\tilde\chi^0_1$}}%
-       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\tilde\chi^0_1$}}%
- {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\tilde\chi^0_1$}}}}
+      {\displaystyle\raise.4ex\hbox{$\displaystyle\widetilde\chi^0_1$}}%
+         {\textstyle\raise.4ex\hbox{$\textstyle\widetilde\chi^0_1$}}%
+       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\widetilde\chi^0_1$}}%
+ {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\widetilde\chi^0_1$}}}}
 \def\ninotwo{\ensuremath{\mathchoice%
-      {\displaystyle\raise.4ex\hbox{$\displaystyle\tilde\chi^0_2$}}%
-         {\textstyle\raise.4ex\hbox{$\textstyle\tilde\chi^0_2$}}%
-       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\tilde\chi^0_2$}}%
- {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\tilde\chi^0_2$}}}}
+      {\displaystyle\raise.4ex\hbox{$\displaystyle\widetilde\chi^0_2$}}%
+         {\textstyle\raise.4ex\hbox{$\textstyle\widetilde\chi^0_2$}}%
+       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\widetilde\chi^0_2$}}%
+ {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\widetilde\chi^0_2$}}}}
 \def\ninothree{\ensuremath{\mathchoice%
-      {\displaystyle\raise.4ex\hbox{$\displaystyle\tilde\chi^0_3$}}%
-         {\textstyle\raise.4ex\hbox{$\textstyle\tilde\chi^0_3$}}%
-       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\tilde\chi^0_3$}}%
- {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\tilde\chi^0_3$}}}}
+      {\displaystyle\raise.4ex\hbox{$\displaystyle\widetilde\chi^0_3$}}%
+         {\textstyle\raise.4ex\hbox{$\textstyle\widetilde\chi^0_3$}}%
+       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\widetilde\chi^0_3$}}%
+ {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\widetilde\chi^0_3$}}}}
 \def\ninofour{\ensuremath{\mathchoice%
-      {\displaystyle\raise.4ex\hbox{$\displaystyle\tilde\chi^0_4$}}%
-         {\textstyle\raise.4ex\hbox{$\textstyle\tilde\chi^0_4$}}%
-       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\tilde\chi^0_4$}}%
- {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\tilde\chi^0_4$}}}}
+      {\displaystyle\raise.4ex\hbox{$\displaystyle\widetilde\chi^0_4$}}%
+         {\textstyle\raise.4ex\hbox{$\textstyle\widetilde\chi^0_4$}}%
+       {\scriptstyle\raise.3ex\hbox{$\scriptstyle\widetilde\chi^0_4$}}%
+ {\scriptscriptstyle\raise.3ex\hbox{$\scriptscriptstyle\widetilde\chi^0_4$}}}}
 
-\def\gravino{\ensuremath{\tilde{G}}}%
+\def\gravino{\ensuremath{\widetilde{G}}}%
 \def\Zprime{\ensuremath{Z^\prime}}
 \def\Zstar{\ensuremath{Z^{*}}}
-\def\squark{\ensuremath{\tilde{q}}}
-\def\squarkL{\ensuremath{\tilde{q}_{\mathrm{L}}}} % Subscript roman not italic (EE)
-\def\squarkR{\ensuremath{\tilde{q}_{\mathrm{R}}}} % Subscript roman not italic (EE)
-\def\gluino{\ensuremath{\tilde{g}}}
-\def\stop{\ensuremath{\tilde{t}}}
-\def\stopone{\ensuremath{\tilde{t}_1}}
-\def\stoptwo{\ensuremath{\tilde{t}_2}}
-\def\stopL{\ensuremath{\tilde{t}_{\mathrm{L}}}} % Subscript roman not italic (EE)
-\def\stopR{\ensuremath{\tilde{t}_{\mathrm{R}}}} % Subscript roman not italic (EE)
-\def\sbottom{\ensuremath{\tilde{b}}}
-\def\sbottomone{\ensuremath{\tilde{b}_1}}
-\def\sbottomtwo{\ensuremath{\tilde{b}_2}}
-\def\sbottomL{\ensuremath{\tilde{b}_{\mathrm{L}}}} % Subscript roman not italic (EE)
-\def\sbottomR{\ensuremath{\tilde{b}_{\mathrm{R}}}} % Subscript roman not italic (EE)
-\def\slepton{\ensuremath{\tilde{\ell}}}
-\def\sleptonL{\ensuremath{\tilde{\ell}_{\mathrm{L}}}} % Subscript roman not italic (EE)
-\def\sleptonR{\ensuremath{\tilde{\ell}_{\mathrm{R}}}} % Subscript roman not italic (EE)
-\def\sel{\ensuremath{\tilde{e}}}
-\def\selL{\ensuremath{\tilde{e}_{\mathrm{L}}}} % Subscript roman not italic (EE)
-\def\selR{\ensuremath{\tilde{e}_{\mathrm{R}}}} % Subscript roman not italic (EE)
-\def\smu{\ensuremath{\tilde{\mu}}}
-\def\smuL{\ensuremath{\tilde{\mu}_{\mathrm{L}}}} % Subscript roman not italic (EE)
-\def\smuR{\ensuremath{\tilde{\mu}_{\mathrm{R}}}} % Subscript roman not italic (EE)
-\def\stau{\ensuremath{\tilde{\tau}}}
-\def\stauL{\ensuremath{\tilde{\tau}_{\mathrm{L}}}} % Subscript roman not italic (EE)
-\def\stauR{\ensuremath{\tilde{\tau}_{\mathrm{R}}}} % Subscript roman not italic (EE)
-\def\stauone{\ensuremath{\tilde{\tau}_1}}
-\def\stautwo{\ensuremath{\tilde{\tau}_2}}
-\def\snu{\ensuremath{\tilde{\nu}}}
+\def\squark{\ensuremath{\widetilde{q}}}
+\def\squarkL{\ensuremath{\widetilde{q}_{\mathrm{L}}}} % Subscript roman not italic (EE)
+\def\squarkR{\ensuremath{\widetilde{q}_{\mathrm{R}}}} % Subscript roman not italic (EE)
+\def\gluino{\ensuremath{\widetilde{g}}}
+\def\stop{\ensuremath{\widetilde{t}}}
+\def\stopone{\ensuremath{\widetilde{t}_1}}
+\def\stoptwo{\ensuremath{\widetilde{t}_2}}
+\def\stopL{\ensuremath{\widetilde{t}_{\mathrm{L}}}} % Subscript roman not italic (EE)
+\def\stopR{\ensuremath{\widetilde{t}_{\mathrm{R}}}} % Subscript roman not italic (EE)
+\def\sbottom{\ensuremath{\widetilde{b}}}
+\def\sbottomone{\ensuremath{\widetilde{b}_1}}
+\def\sbottomtwo{\ensuremath{\widetilde{b}_2}}
+\def\sbottomL{\ensuremath{\widetilde{b}_{\mathrm{L}}}} % Subscript roman not italic (EE)
+\def\sbottomR{\ensuremath{\widetilde{b}_{\mathrm{R}}}} % Subscript roman not italic (EE)
+\def\slepton{\ensuremath{\widetilde{\ell}}}
+\def\sleptonL{\ensuremath{\widetilde{\ell}_{\mathrm{L}}}} % Subscript roman not italic (EE)
+\def\sleptonR{\ensuremath{\widetilde{\ell}_{\mathrm{R}}}} % Subscript roman not italic (EE)
+\def\sel{\ensuremath{\widetilde{e}}}
+\def\selL{\ensuremath{\widetilde{e}_{\mathrm{L}}}} % Subscript roman not italic (EE)
+\def\selR{\ensuremath{\widetilde{e}_{\mathrm{R}}}} % Subscript roman not italic (EE)
+\def\smu{\ensuremath{\widetilde{\mu}}}
+\def\smuL{\ensuremath{\widetilde{\mu}_{\mathrm{L}}}} % Subscript roman not italic (EE)
+\def\smuR{\ensuremath{\widetilde{\mu}_{\mathrm{R}}}} % Subscript roman not italic (EE)
+\def\stau{\ensuremath{\widetilde{\tau}}}
+\def\stauL{\ensuremath{\widetilde{\tau}_{\mathrm{L}}}} % Subscript roman not italic (EE)
+\def\stauR{\ensuremath{\widetilde{\tau}_{\mathrm{R}}}} % Subscript roman not italic (EE)
+\def\stauone{\ensuremath{\widetilde{\tau}_1}}
+\def\stautwo{\ensuremath{\widetilde{\tau}_2}}
+\def\snu{\ensuremath{\widetilde{\nu}}}
 
-\def\bino{\ensuremath{\tilde{B}}}
-\def\winozero{\ensuremath{\tilde{W^0}}}
-\def\winop{\ensuremath{\tilde{W^+}}}
-\def\winom{\ensuremath{\tilde{W^-}}}
+
+%% \newcommand{\bino}{\HepGenSusyParticle{B}{}{}}
+%% \newcommand{\winozero}{\HepSusyParticle{W}{}{0}}
+%% \newcommand{\winop}{\HepSusyParticle{W}{}{+}}
+%% \newcommand{\winom}{\HepSusyParticle{W}{}{-}}
+
+\def\bino{\ensuremath{\widetilde{B}}}
+\def\winozero{\ensuremath{\widetilde{W}^0}}
+\def\winop{\ensuremath{\widetilde{W}^+}}
+\def\winom{\ensuremath{\widetilde{W}^-}}
 
 
 %

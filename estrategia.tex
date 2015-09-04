@@ -3,10 +3,6 @@
 En el capítulo anterior se describieron los conceptos básicos de
 estadística necesarios para poder realizar un análisis de búsqueda
 de nueva física.
-
-
-
-
 En este capítulo se va a describir el el mayor
 desafío del análisis desde el punto de vista estadístico: como
 construir el modelo del análisis.
@@ -17,6 +13,7 @@ construir el modelo del análisis.
 %% construir el modelo}
 
 \section{Regiones de Señal, Control y Validación}
+
 %---------------
 % Signal Region
 %---------------
@@ -56,7 +53,7 @@ mecánica cuántica $P(i\to f) = |\braket{i}{f}|^2/(\braket{i}{i}\braket{f}{f})$
 
 Si llamamos seccion eficaz efectiva $\sigma_\text{eff}$ al producto de la seccion eficaz,
 la eficiencia y la aceptancia, el numero de eventos esperado para un dado proceso ($\nu$)
-va a ser el producto de la luminosidad integrada en el tiempo, L y la seccion eficaz efectiva:
+va a ser el producto de la luminosidad integrada en el tiempo $L$ y la seccion eficaz efectiva:
 
 \begin{equation}
   \nu = L \sigma_\text{eff}
@@ -103,13 +100,14 @@ para predecir los fondos en las SR. Con este motivo se definen regiones de valid
 (VR) que se encuentren entre las CR y las SR en términos de los principales observables
 cinemáticos en los criterios de selección. El diseño de las VR es un compromiso entre
 minimizar la contaminación de la señal, pero a su vez siendo efectivas en la validación
-de la extrapolación entre CR y SR. En la {\fig} \ref{fig:regions_sketch} se puede ver
+de la extrapolación entre CR y SR. En la \cref{fig:regions_sketch} se puede ver
 un esquema de las regiones descriptas anteriormente.
 
 \begin{figure}[h]
   \centering
   \input{tikz/regions_sketch.tex}
-  \caption{Esquema}
+  \caption{Esquema del diseno de las regiones de senal (SR), control (CR) y validacion (VR)
+  en terminos de dos observables.}
   \label{fig:regions_sketch}
 \end{figure}
 
@@ -218,15 +216,6 @@ variar cuando se generan los pseudo-experimentos.
 
 
 %% \section{Fit}
-
-
-
-
-
-
-%---
-%---
-
 
 %% Analyses generally rely on external predictions for the various background and signal components
 %% in the data to aid the interpretation of observations, where the signal component describes the

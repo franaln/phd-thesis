@@ -1,5 +1,141 @@
 \chapter{Simulaciones Monte Carlo}
 
+
+Mirar ``Perspective in SUSY II'' de Kane,
+Capitulo 11
+
+\section{Generadores de eventos}
+
+El eslabon entre la teoria (y fenomenologia) de SUSY u cualquier
+otra teoria de neuva fisica, y las observaciones experimentales
+en los detectores de los colisionadores son los <<generadores
+de eventos>>. Dada una teoria de nueva fisica, que en general
+predice la existencia de nuevas particulas y/o interaccions,
+el generado de eventos permite calcular como esa teoria se
+manifiesta en el experimento.
+
+El primero paso para conectar SUSY con el experimento es comenzar
+con un modelo particular de SUSY, y calcular el espectro de masas
+y acoplamientos de las sparticulas. Existen varios programas que
+permiten calcula el espectro de masas: Isasugra, Suspect, SoftSusy
+y Spheno.
+A partir de este modelo tambien es posible calcular los anchos de
+decaimiento y tazas de decaimiento (BR) de todas las sparticulas y
+los bosones de Higgs tanto $1 \to 2$ cuerpos y $1 \to 3$ cuerpos.
+
+En este trabajo utilizamos el programa {\susyhit}\note{ref} que
+combina {\suspect} junto {\sdecay} y {\hdecay} para calcular
+los BRs y anchos de decaimiento. Algunos de estos modos de
+decaimientos son calculados a NLO en QCD.
+
+Una vez que el espectro de masas y los decaimientos estan calculados
+estos pueden usarse como entrada en los generadores de eventos.
+
+% SLHA
+Para facilitar el intercambio de informacion entre distintos programas
+de SUSY se propuso una seria de convenciones: SUSY Les Houches Accord (SLHA)\cite{SLHA}.
+Este acuerdo permite usar la salida de los codigos que calculan
+el espectro de masa y decaimientos como entrada en los generadores de
+eventos de una forma consistente y sin ambiguedades.
+
+%% %% En general estos modelos pueden
+%% %% ser teorias efectivas
+%% La teoria efectiva queda especificada adoptando la simetria de
+%% gauge, the (super)field content y el Lagrangiano.
+%% {\suspect} runs the 2-loop MSSM RGEs to determine weak scale
+%% SUSY parameters in the mSUGRA, GMSB and AMSB models,
+%% and in the pMSSM (a more general MSSM model). One-loop
+%% sparticle mass corrections are included.
+%% Some two loop corrections to Higgs masses are included.
+
+\hl{agregar xs calculators}
+
+\vsp
+
+Los programas descriptos anteriormente permiten pasar de un modelo
+de SUSY a las predicciones en la produccion de sparticulas y sus
+anchos de decaimientos en estados finales de quarks, leptones, fotones
+y gluones (y LSP en modelos donde se conserva paridad-R). Sin embargo
+los quarks y gluones no pueden medirse directamente en los detectores.
+Los detectores pueden medir trazas de particulas (cuasi)estables
+cargadas y su momento en campos magnetics. Tambien pueden medir
+depositos de enregia en los calorimetros .
+Por lo tanto todavia hay un gap entre estos modelos y las senales
+detectadas en los detectores. Los generadores de eventos permiten unir
+estas dos cosas. Estos pueden producir una simulacion completa de los
+eventos de dispersion esperados. El estado final de cualquier evento
+de dispersion simulado esta compuesto por una lista de electrones,
+muones, fotones y hadrones de vida media alta y su momento asociado
+que puede ser medido en un experimento de colisiones.
+
+Para un dado tipo de colisionador ($e^+e^-, pp, p\bar{p}, ...$) y una
+dada energia de centro de masa, y un modelo, el generador de eventos
+va a generar un conjunto eventos de pares de sparticulas de acuerdo
+a su seccion eficaz. Estas sparticulas van a decaer (posiblemente
+en en una cascada de varios pasos) en un estado final partonico,
+de acuerdo a los BR fijados por el modelo. Este estado final partonico
+es convertido es convertido en uno con particulas que puede ser detectadas
+en el detector. Generando un gran numero de eventos de SUSY, se puede
+simular los posibles estados finales que se esperada que un cierto
+modelo produzca.
+
+Existen varios generadoes que incorporan SUSY: Isajet, Pythia, Herwig, Sherpa, ....
+
+La simulacion de eventos de dispersion en colisionadores hadronicos
+puede descomponerse en varios pasos como se muestra en la figura [].
+
+\begin{itemize}\itemsep0.2cm\parskip0.2cm
+\item el calculo perturbativo del proceso de dispersion dura en el
+  modelo partonico, y la convolucion con las funciones de distribucion
+  partonica (PDFs)
+\item la inclusion de los decaimientos en cascada de las sparticulas
+\item implementacion de las lluvias de particulas pertubativamente
+  para los estados de particulas con color inicial y final, y otras
+  particulas con color que puedan ser producidas como decaimiento
+  de otros objetos mas pesados,
+\item implementacion del modelo de hadronizacion que describe la
+  formacion de mesones y bariones a partir de los quarks y gluones.
+  Tambien las particulas inetables deben decaer a hijas (cuasi)
+  estables que son detectadas en el detector, con tasas y distribuciones
+  que esten de acuerdo con los valores medidos o predichos.
+\item Y finalmente, los remanentes de los haces inicilaes tienen que
+  ser modelados para obtener una descripcion valida de la fisica
+  en las regiones forward del detector.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+\section{Herramientas para el calculo de SUSY}
+
+\subsection{SUSY Spectrum Calculator}
+\subsection{Sparticle Production and decay modes: production cross section, dacay widths and BF}
+\subsection{Generadores de eventos: hard scattering, parton showers, cascade decays, hadronization}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Las muestras de se\~nal de SUSY y de fondo del {\SM} fueron simuladas utilizando generadores MC
 a $\sqrt{s}=8\tev$.
 Todas las muestras fueron passed through either a GEANT4-based full simulation \cite{Geant4,AtlasSim}
@@ -120,12 +256,13 @@ format are used throughout this analysis, with the configuration tag p1328.
 
 \begin{table}[ht]
   \centering
-  \caption{ The total NLO+NLL cross sections for the strong production GGM signal grid. The last column is the total theoretical uncertainty on the predictions. More details are given in
-\Sec \ref{sec:syst_signal}.}
+  \caption{Sección eficaz a  NLO+NLL para la producción fuerte de
+    la grid de señal. La ultima columna es la incerteza teórica.
+    Mas detalles se encuentran en la {\Sec} \ref{sec:syst_signal}.}
   \begin{tabular}{c|c|c}
     \hline
     \hline
-    $M_3$ [\gev] & $\sigma$(NLO+NLL) [pb] & Total Theo. Uncertainty [$\%$]\tabularnewline
+    $M_3$ [\gev] & $\sigma$(NLO+NLL) [pb] & Incerteza Total Teorica [$\%$]\tabularnewline
     \hline
         800  &  0.06905 & 22.5  \\
         850  &  0.04492 & 23.8  \\
@@ -149,7 +286,9 @@ format are used throughout this analysis, with the configuration tag p1328.
 
 \begin{table}[ht]
   \centering
-  \caption{ The total NLO cross sections for the EWK production GGM signal grid. The last column is the total theoretical uncertainty on the predictions. More details are given in \Sec \ref{sec:syst_signal}.}
+  \caption{Sección eficaz total a NLO para la producción EWK
+    de la grid de señal. La ultima columna  es la incerteza
+    teórica. Mas detalles se encuentran en la {\Sec} \ref{sec:syst_signal}.}
   \begin{tabular}{c|c|c}
     \hline
     \hline
@@ -180,7 +319,8 @@ format are used throughout this analysis, with the configuration tag p1328.
   \centering
   %\small
   \footnotesize
-  \caption{Generator-level filter efficiency [\%] for simulated GGM signal points.} %The last column shows the efficiency of the generator level filter applied, to be considered for the final signal normalization.}
+  \caption{Eficiencia del filtro a nivel generador [\%]
+    para los puntos de señal simulados.}
   \begin{tabular}{c|ccccccccccccccccc}
     \hline
     \hline
@@ -371,25 +511,31 @@ format are used throughout this analysis, with the configuration tag p1328.
 \begin{figure}[ht!]
    \centering
    \includegraphics[width=0.7\textwidth]{figures/figura} %%mass_spectrum_GGM.eps}
-   \caption{Mass spectrum for GGM signal grid. Only $M_3$ and $\mu$ are regarded as free parameters, here set to $(M_3, \mu) = (800~\gev, 250~\gev)$. The mass of
-the gravitino is set to $m_{\gravino}=10^{-9}$ \gev.}
+   \caption{Espectro de masas de un punto el grid de senal.
+     Solo $M_3$ y $\mu$ son los parametros libres, en este caso
+     $(M_3, \mu) = (800~\gev, 250~\gev)$. }
    \label{fig:mass_spectra}
 \end{figure}
 
 \begin{figure}[ht!] %  figure placement: here, top, bottom, or page
    \centering
-   \includegraphics[width=0.32\textwidth]{figures/figura}  %%_n1g_full.eps}
-   \includegraphics[width=0.32\textwidth]{figures/figura}  %%_n1qq_full.eps}
-   \includegraphics[width=0.32\textwidth]{figures/figura} \\ %%_n1_full.eps} \\
-   \includegraphics[width=0.32\textwidth]{figures/figura}  %%_n2g_full.eps}
-   \includegraphics[width=0.32\textwidth]{figures/figura}  %%_n2qq_full.eps}
-   \includegraphics[width=0.32\textwidth]{figures/figura} \\ %%_n2_full.eps} \\
-   \includegraphics[width=0.32\textwidth]{figures/figura}  %%_n3g_full.eps}
-   \includegraphics[width=0.32\textwidth]{figures/figura}  %%_n3qq_full.eps}
-   \includegraphics[width=0.32\textwidth]{figures/figura} \\ %%_n3_full.eps} \\
-   \includegraphics[width=0.32\textwidth]{figures/figura} \\ %%_c1qq_full.eps} \\
+   \includegraphics[width=0.32\textwidth]{figures/gl_n1g_full}
+   \includegraphics[width=0.32\textwidth]{figures/gl_n1qq_full}
+   \includegraphics[width=0.32\textwidth]{figures/gl_n1_full} \\
+   \includegraphics[width=0.32\textwidth]{figures/gl_n2g_full}
+   \includegraphics[width=0.32\textwidth]{figures/gl_n2qq_full}
+   \includegraphics[width=0.32\textwidth]{figures/gl_n2_full} \\
+   \includegraphics[width=0.32\textwidth]{figures/gl_n3g_full}
+   \includegraphics[width=0.32\textwidth]{figures/gl_n3qq_full}
+   \includegraphics[width=0.32\textwidth]{figures/gl_n3_full} \\
+   \includegraphics[width=0.32\textwidth]{figures/gl_c1qq_full} \\
 
-   \caption{Total branching ratios for gluino to lightest neutralino (N$_{1}$) production, for all decay chains allowed in the strong production grid. Most right plots are the sum of 2-body (left) and 3-body (middle) gluino decays. For gluino$\rightarrow$chargino (C$_{1}$) decay, only the 3-body decay is possible.}
+   \caption{Tasas de decaimiento para $\gluino \to \ninoone$,
+     para todas las posibles cadenas de decaimiento permitidas en la grid
+     de produccion fuerte. La mayoria de los graficos son la suma
+     de deciamientos de 2 cuerpos (izquierda) y 3 cuerpos (centro).
+     Para el decaimiento $\gluino \to \chinopm$), solo el decaimiento de
+     tres cuerpos es posible.}
    \label{fig:br_gl_n1}
 \end{figure}
 
@@ -422,13 +568,14 @@ the gravitino is set to $m_{\gravino}=10^{-9}$ \gev.}
 
 \begin{figure}[ht!]
   \centering
-  \includegraphics[width=0.49\textwidth]{figures/figura} %SigXsec_total}
-  \includegraphics[width=0.49\textwidth]{figures/figura} %SigXsec_ewkFrac}
-  \caption{Total signal cross section (left) and EWK relative fraction (right).}
+  \includegraphics[width=0.49\textwidth]{figures/SigXsec_total}
+  \includegraphics[width=0.49\textwidth]{figures/SigXsec_ewkFrac}
+  \caption{Sección eficaz total (izquierda) y fracción relativa
+    de producción EWK (derecha).}
   \label{fig:signal_xs_total}
 \end{figure}
 
-\section{Simulacion del fondo}\label{sec:bkg_samples}
+\section{Fondos del {\SM}}\label{sec:bkg_samples}
 
 Existen muchos procesos del {\SM} que pueden aparentar
 una señal de SUSY con fotones, jets y energía faltante.
