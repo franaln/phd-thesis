@@ -67,9 +67,9 @@
 % enumerate down to subsections
 \setcounter{secnumdepth}{2}
 
-\def\chaptername{Cap\'{\i}tulo}
+\def\chaptername{Capítulo}
 \addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
-\def\bibname{Bibliograf\'{\i}a}
+\def\bibname{Bibliografía}
 \addto\captionsspanish{\renewcommand{\bibname}{Bibliografía}}
 \def\figurename{Figura}
 
@@ -81,8 +81,6 @@
 \if@draftmode
 \RequirePackage[centering,marginparwidth=2.5cm]{geometry}
 \RequirePackage[colorinlistoftodos,textsize=footnotesize,textwidth=2.5cm]{todonotes} % draft with TODOs
-\newcommand{\itodo}[1]{\todo[inline]{#1}}
-\newcommand{\fix}[1]{\todo[intext]{#1}}
 \else
 \usepackage[disable]{todonotes} % final without TODOs
 \setlength{\marginparwidth}{2cm}
@@ -156,9 +154,10 @@
       citecolor=black,
       anchorcolor=black
     }
-\RequirePackage[pdftex,paper=a4paper,hmarginratio=1:1,
-  vmarginratio=1:1,scale=0.75,bindingoffset=5mm]{geometry}
-\hypersetup{pdfpagelayout=OneColumn}
+
+    \RequirePackage[pdftex,paper=a4paper,hmarginratio=1:1,
+      vmarginratio=1:1,scale=0.75,bindingoffset=5mm]{geometry}
+    \hypersetup{pdfpagelayout=OneColumn}
 \else
     % For PDF Online version
     \hypersetup{

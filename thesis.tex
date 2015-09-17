@@ -22,10 +22,10 @@
 
 \usepackage[]{units}
 \usepackage{cleveref}
-%\crefname{equation}{equation}{equations}
-\crefname{figure}{figura}{figuras}
-\crefname{table}{tabla}{tablas}
+\crefname{figure}{Figura}{Figuras}
+\crefname{table}{Tabla}{Tablas}
 \crefname{equation}{ecuación}{ecuaciones}
+\crefname{section}{sección}{secciones}
 
 \usetikzlibrary{positioning}
 \usetikzlibrary{arrows}
@@ -36,33 +36,32 @@
 \begin{document}
 
 % title
-\include{title}
+%% \include{title}
 
 \tableofcontents
 
 %  body
-\include{introduccion}
+%% \include{introduccion}
 
-%% \part{Motivación}
+%\part{Motivación teórica}
 \include{sm}
 \include{susy}
 
-%% \part{Experimento}
-\include{detector}
-\include{objetos}
-\include{datos_simulaciones}
+%\part{Experimento}
+%% \include{detector}
+%% \include{objetos}
 
-%% \part{Búsqueda de Supersimetría} % Análisis de Datos o
+%\part{Búsqueda de Supersimetría} % Análisis de Datos o
 \include{estadistica}
-\include{estrategia}
-\include{simulaciones}
-\include{truth} % ??
-\include{seleccion}
-\include{fondos}
-\include{sistematicos}
-\include{resultados}
+%% \include{estrategia}
+%% \include{simulaciones}
+%% \include{truth} % ??
+%% \include{seleccion}
+%% \include{fondos}
+%% \include{sistematicos}
+%% \include{resultados}
 
-\include{conclusion}
+%% \include{conclusion}
 
 % apendix
 

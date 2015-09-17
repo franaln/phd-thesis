@@ -1,48 +1,38 @@
 \chapter{Métodos estadísticos para la búsqueda de nueva física}
 
-En este capítulo se introducen los conceptos básicos necesarios
-para entender el tratamiento estadístico de los datos. Esta enfocado
-en la búsqueda de nueva física en altas energías: descubrimiento y
-establecimiento de limites de exclusión.
+En este capítulo se introducen los conceptos básicos necesarios para entender el
+tratamiento estadístico de los datos. Esta enfocado en la búsqueda de nueva
+física en altas energías: descubrimiento y establecimiento de limites de
+exclusión.
 
 
 \section{Introducción} %Probabilidad y axiomas de Kolmogorov, teorema de Bayes}
 
 
-Dada la naturaleza probabilística de las colisiones en el LHC y el bajo numero
-de eventos esperados en las búsquedas de nueva física, es necesario contar
-con un marco estadístico para interpretar sus resultados, especialmente
-para identificar una señal sobre las posibles fluctuaciones de los fondos
-del {\SM}.
+Dada la naturaleza probabilística de las colisiones en el LHC y el bajo número
+de eventos esperados en las búsquedas de nueva física, es necesario contar con
+un marco estadístico para interpretar sus resultados, especialmente para
+identificar una señal sobre las posibles fluctuaciones de los fondos del SM.
 
-Un observable $x$ es por naturaleza \emph{frecuentista}, es decir, si realizamos el experimento
-muchas veces, vamos a obtener distintos valores para $x$ y este conjunto de valores va a dar lugar
-a una función densidad de probabilidad (pdf) de $x$, que llamamos $f(x)$.
-%% , que tiene como
-%% propiedad que esta normalizada a la unidad.
-
-%% \begin{equation}
-%%   \int f(x) \, dx = 1
-%% \end{equation}
-
-%% En el caso de que sea una cantidad discreta, como el numero $n$ que satisface una cierta
-%% selección, la integral es reemplazada por una suma.
-
-En general, uno tiene una familia de pdfs $f(x;\btheta)$ a la cual llamamos modelo.
-Los parámetros del modelo representan , por ejemplo, parámetros de la teoría
-física o alguna propiedad desconocida de la respuesta del detector.
+Un observable $x$ es por naturaleza \emph{frecuentista}, es decir, si realizamos
+el experimento muchas veces, vamos a obtener distintos valores para $x$ y este
+conjunto de valores va a dar lugar a una función densidad de probabilidad (pdf)
+de $x$, que llamamos $f(x)$. En el caso general, uno tiene una familia de pdfs
+$f(x;\btheta)$ a la cual llamamos modelo. Los parámetros del modelo representan,
+por ejemplo, parámetros de la teoría física o alguna propiedad desconocida de la
+respuesta del detector.
 
 %% \subsection{Distribución de Poisson}
-%%\itodo{mezclar con lo anterior}
-La distribución de Poisson es una distribución de probabilidad discreta que describe, a partir
-de una frecuencia de ocurrencia media, la probabilidad de que ocurra un determinado número de
-eventos durante cierto período de tiempo. Un ejemplo  típico que puede ser descripto por esta
-distribución son el numero de clicks de un contador Geiger en un determinado intervalo de tiempo.
+La distribución de Poisson es una distribución de probabilidad discreta que
+describe, a partir de una frecuencia de ocurrencia media, la probabilidad de que
+ocurra un determinado número de eventos durante cierto período de tiempo. Un
+ejemplo típico que puede ser descripto por esta distribución es el número de
+clicks de un contador Geiger en un determinado intervalo de tiempo.
 
 
-Se la puede pensar como un limite de la distribución binomial cunado el numero de experimentos
-tiende a infinito y la probabilidad a cero, pero el producto es constantes $Np = \nu$. En ese
-caso la función de probabilidad esta dada por:
+Se la puede pensar como un limite de la distribución binomial cuando el número
+de experimentos tiende a infinito y la probabilidad a cero, pero el producto es
+constantes $Np = \nu$. En ese caso la función de probabilidad esta dada por:
 
 \begin{equation}
   \Pois(n;\nu) = \frac{\nu^n}{n!} e^{-\nu} %%\equiv \Pois(n;\nu)
@@ -57,106 +47,110 @@ caso la función de probabilidad esta dada por:
 
 \section{Estimadores}
 
-La estimación de parámetros de las distribuciones observadas es una de las tareas fundamentales
-del análisis de datos en física de altas energías. A este proceso lo llamamos \emph{fitting}.
-Esta tarea consta de dos pasos: la estimación de la mejor aproximación de los valores de los
-parámetros reales y la estimación de las inciertas de esos valores estimados. Los
-dos métodos mas utilizados para la estimación de parámetros son el de \emph{likelihood máximo} y el de
-\emph{mínimos cuadrados}.
+La estimación de parámetros de las distribuciones observadas es una de las
+tareas fundamentales del análisis de datos en física de altas energías. A este
+proceso lo llamamos \emph{fitting}. Esta tarea consta de dos pasos: la
+estimación de la mejor aproximación de los valores de los parámetros reales y la
+estimación de las incertezas de esos valores estimados. Los dos métodos mas
+utilizados para la estimación de parámetros son el de \emph{likelihood máximo} y
+el de \emph{mínimos cuadrados}.
 
-Supongamos que tenemos un conjunto de datos de $N$ observaciones $\bm{x} = (x_1, x_2, \ldots, x_N)$,
-donde las medidas $x_i$ son estadísticamente independientes y cada una esta descripta por una
-función de densidad de probabilidad  $f(x;\btheta)$ que no conocemos, donde $\btheta$ es un
-conjunto de parámetros con valores desconocidos.
+Supongamos que tenemos un conjunto de datos de $N$ observaciones $\bm{x} = (x_1,
+x_2, \ldots, x_N)$, donde las medidas $x_i$ son estadísticamente independientes
+y cada una está descripta por una función de densidad de probabilidad
+$f(x;\btheta)$ que no conocemos, donde $\btheta$ es un conjunto de parámetros
+con valores desconocidos.
 %Uno quiere estimar las distintas
 %caracteristicas de la funcion como su media o varianza, o $f(x;\theta)$...
 
-Un \emph{estimador} es una función de los datos observados $\bm{x}$ que provee valores numéricos,
-el valor estimado $\hat{\btheta}$, para el vector de parámetros $\btheta$.
+Un \emph{estimador} es una función de los datos observados $\bm{x}$ que provee
+valores numéricos, el valor estimado $\hat{\btheta}$, para el vector de
+parámetros $\btheta$.
 
 Algunas propiedades que es importante que cumplan los estimadores son:
 
 \begin{itemize}\itemsep0.2cm\parskip0.2cm
-\item[] {\bf Consistencia}
+\item[] {\bf Consistencia:}  Un estimador se dice consistente (o asintoticamente consistente) si converge
+  al valor verdadero $\btheta$ con el numero de medidas $N$: $\lim_{N \to \infty} \hat{btheta} = \btheta$.
 
-  Un estimador se dice consistente (o asintoticamente consistente) si converge
-  al valor verdadero $\btheta$ con el numero de medidas $N$: $\lim_{N \to \infty} \btheta = \btheta$.
+\item[] {\bf Sesgo:} El sesgo esta definido como la diferencia entre el valor esperado del
+  estimador y el valor verdadero: $E[\hat{\btheta}] - \btheta$ y un estimador es
+  no sesgado cuando el sesgo es cero.
 
-\item[] {\bf Sesgo}
-
-  El sesgo esta definido como la diferencia entre el valor esperado del estimador y el valor
-  verdadero: $E[\hat{\btheta}] - \btheta$ y un estimador es no sesgado cuando el sesgo es cero.
-
-\item[] {\bf Eficiencia}
-
-  Un estimador es eficiente si su varianza $V[\hat{\btheta}]$ es chica.
-
+\item[] {\bf Eficiencia:} Un estimador es eficiente si su varianza $V[\hat{\btheta}]$ es chica.
 \end{itemize}
 
 \subsection{Método del likelihood máximo}
 
-Para $N$ mediciones estadísticamente independientes tenemos una pdf conjunta para los
-valores observados x dada por $f(\bm{x}, \btheta) = \prod_i f(x_i, \btheta)$. La función
-likelihood se define como la pdf dado que observe los datos,
+Para $N$ mediciones estadísticamente independientes tenemos una pdf conjunta
+para los valores observados $x$ dada por $f(\bm{x}, \btheta) = \prod_i f(x_i,
+\btheta)$. La función \emph{likelihood} se define como la pdf dado que observe los
+datos,
 
 \begin{equation}
-  L(\btheta) = f((x_1, x_2, \ldots, x_n); \btheta) = \prod_{i=1}^{N} f(x_i; \btheta)
+  L(\btheta) = f((x_1, x_2, \ldots, x_n); \btheta) = \prod_{i=1}^{N} f(x_i;
+  \btheta)
 \end{equation}
 
-El estimador de máximo likelihood (MLE) de los parámetros {\btheta} son los valores
-$\hat{\btheta}$ para los cuales la función likelihood $L(\bm{x};\btheta)$ tiene su
-máximo global. Una forma intuitiva de pensar es la siguiente: si asumimos que la pdf y
-los parámetros son correctos, esperamos valores altos de la función likelihood que para
-otros parámetros que no sean los verdaderos.
+El estimador de máximo likelihood (MLE) de los parámetros {\btheta} son los
+valores $\hat{\btheta}$ para los cuales la función likelihood
+$L(\bm{x};\btheta)$ tiene su máximo global. Una forma intuitiva de pensar es la
+siguiente: si asumimos que la pdf y los parámetros son correctos, esperamos
+valores altos de la función likelihood que para otros parámetros que no sean los
+verdaderos.
 
-Los valores estimados $\hat{\btheta}$ de los parámetros se obtienen buscando el máximo
-global de la función likelihood, En la practica, es conveniente trabajar con el logaritmo
-de la función likelihood (log-likelihood), y buscar el mínimo del negativo de esta función:
+Los valores estimados $\hat{\btheta}$ de los parámetros se obtienen buscando el
+máximo global de la función likelihood, En la practica, es conveniente trabajar
+con el logaritmo de la función likelihood (log-likelihood), y buscar el mínimo
+del negativo de esta función:
 
 \begin{equation}
   - \ln L(\btheta) = \sum_{i=1}^{N} \ln f(x_i; \btheta)
 \end{equation}
 
 \begin{equation}
-  - \pd{\ln L(\hat{\btheta})}{\theta_j} = 0 \qquad \text{para} \qquad j = 1,\ldots,m.
+  - \pd{\ln L(\hat{\btheta})}{\theta_j} = 0 \qquad \text{para} \qquad j =
+  1,\ldots,m.
 \end{equation}
 
-En el limite asintótico, cuando el numero de mediciones $N$ tiende a infinito, el MLE
-es consistente, es decir, para cada parámetro $\theta$ el valor estimado $\hat{\theta}$
-converge al valor verdadero $\theta$. En este limite también el MLE es no sesgado y tiene
-su menor varianza. Esto significa que ningún otro estimador puede ser mas eficiente. Para
-un numero finito de eventos $N$, sin embargo, el MLE tiene un sesgo proporcional a $1/N$.
+En el limite asintótico, cuando el número de mediciones $N$ tiende a infinito,
+el MLE es consistente, es decir, para cada parámetro $\theta$ el valor estimado
+$\hat{\theta}$ converge al valor verdadero $\theta$. En este límite también el
+MLE es no sesgado y tiene su menor varianza. Esto significa que ningún otro
+estimador puede ser mas eficiente. Para un número finito de eventos $N$, sin
+embargo, el MLE tiene un sesgo proporcional a $1/N$.
 
+Generalmente, cuando se modela un fenómeno aleatorio de interés, el modelo
+elegido para ajustar a las observaciones de dicho fenómeno suele tener varios
+parámetros, de los cuales solo algunos pueden ser de interés. De manera formal
+se los denomina parámetros de interés y parámetros \emph{nuisance},
+respectivamente. Para esto conviene separar los parámetros como $\btheta \to
+(\mu, \btheta)$
 
-Generalmente, cuando se modela un fenómeno aleatorio de interés, el modelo elegido
-para ajustar a las observaciones de dicho fenómeno suele tener varios parámetros,
-de los cuales solo algunos pueden llegar a ser de interés. De manera formal se los
-denomina parámetros de interés y parámetros \emph{nuisance}, respectivamente.
-Para esto conviene separar los parámetros como $\btheta \to (\mu, \btheta)$
-
-En el caso de que la función likelihood depende de muchos parámetros, pero solo estamos
-interesados en uno solo de esos parámetros $\mu$ y su incerteza, conviene definir la
-funci\'on likelihood maximizada como,
+En el caso de que la función likelihood depende de muchos parámetros, pero sólo
+estamos interesados en uno de esos parámetros $\mu$ y su incerteza,
+conviene definir la funci\'on likelihood maximizada como,
 
 \begin{equation}
   \lambda(\mu) = \frac{L(\mu,\dhat{\btheta})}{L(\hat{\mu},\hat{\btheta})}
 \end{equation}
 %
-donde en el numerador, los parámetros {\btheta} son ajustados a su MLE ($\dhat{\btheta}$),
-para un dado valor del parámetro $\mu$. En el denominador, los valores de $\hat{\btheta}$
-y $\hat{\mu}$ son los valores estimados MLE.
+donde en el numerador, los parámetros {\btheta} son ajustados a su MLE
+($\dhat{\btheta}$), para un dado valor del parámetro $\mu$. En el denominador,
+los valores de $\hat{\btheta}$ y $\hat{\mu}$ son los valores estimados MLE.
 
-En el limite de N grande, donde el la función likelihood se aproxima a una distribución
-gaussiana, el cociente de likelihoods sigue una distribución $\chi^2$ con $m$ grados de
-libertad (teorema de Wilk).
+En el limite de $N$ grande, donde la función likelihood se aproxima a una
+distribución gaussiana, el cociente de likelihoods sigue una distribución
+$\chi^2$ con $m$ grados de libertad (teorema de Wilk).
 
 
 \subsubsection{Máximo likelihood extendido}
 
-Cuando se repite un experimento con las mismas condiciones muchas veces, el numero
-de eventos $n$ de un proceso va a fluctuar de acuerdo a una distribución de Poisson
-alrededor del valor esperado $\nu$. Este termino de Poisson puede incorporarse entonces
-a la función likelihood, obteniendo lo que llamamos \emph{likelihood extendido}:
+Cuando se repite un experimento con las mismas condiciones muchas veces, el
+número de eventos $n$ de un proceso va a fluctuar de acuerdo a una distribución
+de Poisson alrededor del valor esperado $\nu$. Este término de Poisson puede
+incorporarse entonces a la función likelihood, obteniendo lo que llamamos
+\emph{likelihood extendido}:
 
 \begin{equation}
   L(\nu,\btheta) = \Pois(n;\nu) \prod_{i=1}^{N} f(x_i; \btheta)
@@ -164,13 +158,12 @@ a la función likelihood, obteniendo lo que llamamos \emph{likelihood extendido}
 
 \section{Estimación de intervalos}
 
-Anteriormente vimos como estimar un parámetro, es decir, como encontrar el
-valor que mejor represente un cierto parámetro de interés, dados los datos
-observados. La estimación de intervalos, en vez de encontrar un solo valor,
-provee dos limites numéricos y un nivel de confianza sobre como el valor
-verdadero del parámetro de interés yace entre esos limites. A continuación
-se describe la construcción básica de un intervalo, método que se debe a
-Neyman.
+Anteriormente vimos como estimar un parámetro, es decir, como encontrar el valor
+que mejor represente un cierto parámetro de interés, dados los datos observados.
+La estimación de intervalos, en vez de encontrar un solo valor, provee dos
+limites numéricos y un nivel de confianza sobre como el valor verdadero del
+parámetro de interés yace entre esos limites. A continuación se describe la
+construcción básica de un intervalo, método que se debe a Neyman.
 
 %% Supongamos que conocemos la distribución muestral $g(\hat{\btheta}, \btheta)$.
 %% Esta distribución depende del valor verdadero $\theta$ que no conocemos, pero
@@ -220,53 +213,59 @@ Neyman.
 %%   \beta &= \int^{\hat{\theta}_\text{obs}}_{-\infty} g(\hat{\theta};b) \, d\hat{\theta}
 %% \end{align}
 
-Otra forma equivalente de encontrar el intervalo de confianza para $\theta$ es definir un test para el
-valor hipotético de $\theta$ y realizar este test por cada $\theta$, y obtener el {\pvalue}
-$p_\theta$ tal que si $p_\theta < \gamma$ rechazamos $\theta$. El intervalo de confianza
-consiste entonces en los valores de $\theta$ que no fueron rechazados en el test de tamaño $\gamma$,
-con un nivel de confianza $1-\gamma$. Este método es equivalente al método de construcción
-de Neyman.
+Otra forma equivalente de encontrar el intervalo de confianza para $\theta$ es
+definir un test para el valor hipotético de $\theta$ y realizar este test por
+cada $\theta$, y obtener el {\pvalue} $p_\theta$ tal que si $p_\theta < \gamma$
+rechazamos $\theta$. El intervalo de confianza consiste entonces en los valores
+de $\theta$ que no fueron rechazados en el test de tamaño $\gamma$, con un nivel
+de confianza $1-\gamma$. Este método es equivalente al método de construcción de
+Neyman.
 
 
-\section{Contrastaci\'on de hipótesis} %%Test Estadístico o modelo estadistico de los datos}
+\section{Contrastación de hipótesis} %%Test Estadístico o modelo estadistico de los datos}
 
-La hipótesis nula, $H_0$, es la hipótesis sujeta a la prueba y usualmente corresponde
-a la hipótesis que consideramos verdadera.
-Esta hipótesis es comparada contra una hipótesis alternativa $H_1$ (o varias) distintas a $H_0$.
+La hipótesis nula, $H_0$, es la hipótesis sujeta a la prueba y usualmente
+corresponde a la hipótesis que consideramos verdadera. Esta hipótesis es
+comparada contra una hipótesis alternativa $H_1$ (o varias) distintas a $H_0$.
 
-En el caso de búsqueda de nueva física, la hipótesis que juega el rol de hipótesis nula es en la que
-s\'olo los procesos del {\SM} contribuyen a las mediciones. Esta hipótesis también suele llamarse
-hipótesis de solo-fondo. Y se utiliza una hipótesis alternativa en la cual también contribuyen procesos
-de nueva física y se denomina hipótesis de se\~nal+fondo.
+En el caso de búsqueda de nueva física, la hipótesis que juega el rol de
+hipótesis nula es en la que sólo los procesos del SM contribuyen a las
+mediciones. Esta hipótesis también suele llamarse hipótesis de solo-fondo. Y se
+utiliza una hipótesis alternativa en la cual también contribuyen procesos de
+nueva física y se denomina hipótesis de se\~nal+fondo.
 
-Una hipótesis pueden ser simple o compuesta. Las hipótesis simples están completamente determinadas,
-no tienen ningún parámetro libre, mientras que las compuestas consisten en una familia de de hipótesis
-simples.
+Una hipótesis pueden ser simple o compuesta. Las hipótesis simples están
+completamente determinadas, no tienen ningún parámetro libre, mientras que las
+compuestas consisten en una familia de de hipótesis simples.
 
-Cada hipótesis queda determinada por la pdf que describe a los observables $f(\bm{x}|H)$.
+Cada hipótesis queda determinada por la pdf que describe a los observables
+$f(\bm{x}|H)$.
 
-Una vez definidas las hipótesis, uno quiere saber si los datos medidos son compatibles con la hipótesis
-nula o si la hipótesis nula puede ser rechazada basados en estas mediciones. Con este objetivo se define
-un \emph{estadístico de prueba} $t(\bm{x})$ que es función de los datos observados y en general puede tener
-cualquier dimensión, pero consideremos solo estadísticos escalares $t(\bm{x}) \to \mathbb{R}$.
+Una vez definidas las hipótesis, uno quiere saber si los datos medidos son
+compatibles con la hipótesis nula o si la hipótesis nula puede ser rechazada
+basados en estas mediciones. Con este objetivo se define un \emph{estadístico de
+  prueba} $t(\bm{x})$ que es función de los datos observados y en general puede
+tener cualquier dimensión, pero consideremos solo estadísticos escalares
+$t(\bm{x}) \to \mathbb{R}$.
 
-El estadístico de prueba  $t(\bm{x})$ contiene toda la información de discriminación entre $H_0$ y $H_1$
-en un s\'olo número. %% El lema de Neyman-Pearson prueba que el cociente de likelihoods es el
-%% discriminador mas poderoso \todo{buscar referencia}. El cociente de likelihoods se define como
+El estadístico de prueba $t(\bm{x})$ contiene toda la información de
+discriminación entre $H_0$ y $H_1$ en un s\'olo número. El lema de
+Neyman-Pearson prueba que el cociente de likelihoods es el
+discriminador mas poderoso \todo{buscar referencia}. %%El cociente de likelihoods se define como
 
-Cada estadístico de prueba tendrá su pdf $g(t|H)$ y la decisión sobre la hipótesis estará basada
-en el valor del estadístico observado $t_\text{obs}$ y la definición de una \emph{región critica} $R$.
+Cada estadístico de prueba tendrá su pdf $g(t|H)$ y la decisión sobre la
+hipótesis estará basada en el valor del estadístico observado $t_\text{obs}$ y
+la definición de una \emph{región critica} $R$.
 
-La región critica queda definida por un valor de corte $t_c$ y para el caso de que la hipótesis
-alternativa tiende a tener valores de $t$ mayores que bajo $H_0$, la región critica corresponde a
-$t \geq t_c$ (ver figura).
+La región critica queda definida por un valor de corte $t_c$ y para el caso de
+que la hipótesis alternativa tiende a tener valores de $t$ mayores que bajo
+$H_0$, la región critica corresponde a $t \geq t_c$ (ver figura).
 
-Si el valor observado esta dentro de la región critica, la hipótesis $H_0$ es rechazada y si esta
-fuera (región de aceptancia) no se la puede rechazar.
+Si el valor observado esta dentro de la región critica, la hipótesis $H_0$ es
+rechazada y si esta fuera (región de aceptancia) no se la puede rechazar.
 
 \begin{figure}[h]
-  \centering
-  \input{tikz/stat_test.tex}
+  \centering \input{tikz/stat_test.tex}
 \end{figure}
 
 %% Asumiendo que $H_0$ es verdadera, se puede definir una región critica $R$ tal que la probabilidad
@@ -290,27 +289,27 @@ fuera (región de aceptancia) no se la puede rechazar.
 La probabilidad de rechazar $H_0$ siendo esta verdadera es,
 
 \begin{equation}
-  \alpha =  \int_{R} g(t|H_0)\, dt
+  \alpha = \int_{R} g(t|H_0)\, dt
 \end{equation}
 %
 y determina el tama\~no del test $\alpha$ o el nivel de significancia del test a
-$(100 - \alpha) \%$. El error de rechazar $H_0$ cuando es verdadera es llamado error de tipo I.
-Por otro lado el error de aceptar $H_0$ cuando es falsa se llama error de tipo II, y su
-probabilidad de ocurrencia ($\beta$), depende de la hipótesis alternativa $H_1$.
-El poder del test se define como la probabilidad de rechazar la hipótesis cuando
-es falsa:
+$(100 - \alpha) \%$. El error de rechazar $H_0$ cuando es verdadera es llamado
+error de tipo I. Por otro lado el error de aceptar $H_0$ cuando es falsa se
+llama error de tipo II, y su probabilidad de ocurrencia ($\beta$), depende de la
+hipótesis alternativa $H_1$. El poder del test se define como la probabilidad de
+rechazar la hipótesis cuando es falsa:
 
 \begin{equation}
 1-\beta = \int_R g(t|H_1)\, dt
 \end{equation}
 
-En principio cualquier función de los datos puede ser utilizada como estadístico de prueba. Un buen
-estadístico sera aquel para el cual sus distribuciones para la hipótesis nula y alternativa estén
-claramente separadas.
+En principio cualquier función de los datos puede ser utilizada como estadístico
+de prueba. Un buen estadístico sera aquel para el cual sus distribuciones para
+la hipótesis nula y alternativa estén claramente separadas.
 
-Lo que uno quiere es para un dado tama\~no del test, tener el mayor poder posible.
-Para el caso de hipótesis simples, el teorema de Neyman-Pearson afirma que el test
-con mayor poder dado un tama\~no $\alpha$ esta dado por:
+Lo que uno quiere es para un dado tama\~no del test, tener el mayor poder
+posible. Para el caso de hipótesis simples, el teorema de Neyman-Pearson afirma
+que el test con mayor poder dado un tama\~no $\alpha$ esta dado por:
 
 %% Para el caso de dos hipótesis simples (sin parámetros), el test estadístico con mayor
 %% poder esta dado por el \emph{likelihood ratio} $T_\text{NP} = \vec{f}(\mathcal{D}|H_1)/\vec{f}(\mathcal{D}|H_0)$.
@@ -324,31 +323,32 @@ con mayor poder dado un tama\~no $\alpha$ esta dado por:
   t(\bm{x}) = \frac{f(\bm{x}|H_1)}{f(\bm{x}|H_0)}
 \end{equation}
 
+Para el caso de un conjunto de datos muy grandes ($N$ grande), la distribución
+de las medias de los observables $\bm{x}$ van a seguir una distribución normal
+incluso si las cantidades medidas $\bm{x}$ no siguen una distribución normal.
+Esto es consecuencia del \emph{teorema central del limite}. En este caso, la pdf
+del estadístico de prueba $t$ puede ser fácilmente determinada. En el caso
+general, sin embargo, hay que utilizar métodos numéricos y simulaciones Monte
+Carlo para determinarla. En ese caso, el conjunto de observables $\bm{x}$ es
+generado usando la pdf $f(\bm{x}|H)$ y se calcula el valor del estadístico de
+prueba $t(\bm{x})$ para cada conjunto. Estos pasos se repiten para acumular
+estadística en la distribución de $g(t|H)$.
 
-Para el caso de un conjunto de datos muy grandes ($N$ grande), la distribución de las medias
-de los observables $\bm{x}$ van a seguir una distribución normal incluso si las cantidades
-medidas $\bm{x}$ no siguen una distribución normal. Esto es consecuencia del \emph{teorema
-  central del limite}. En este caso, la pdf del estadístico de prueba $t$ puede ser
-fácilmente determinada. En el caso general, sin embargo, hay que utilizar métodos numéricos y
-simulaciones Monte Carlo para determinarla. En ese caso, el conjunto de observables $\bm{x}$ es
-generado usando la pdf $f(\bm{x}|H)$ y se calcula el valor del estadístico de prueba $t(\bm{x})$
-para cada conjunto. Estos pasos se repiten para acumular estadística en la distribución de
-$g(t|H)$.
-
-
-El nivel de acuerdo entre los datos observados y una dada hipótesis es cuantificado calculando
-el \emph{\pvalue}, es decir, la probabilidad, bajo la suposición de que $H$ es cierta,
-de observar datos de igual o menor compatibilidad con la predicción de $H$,
-respecto a los datos observados.
+El nivel de acuerdo entre los datos observados y una dada hipótesis es
+cuantificado calculando el \emph{\pvalue}, es decir, la probabilidad, bajo la
+suposición de que $H$ es cierta, de observar datos de igual o menor
+compatibilidad con la predicción de $H$, respecto a los datos observados.
 
 \begin{equation}
   p_H = P(t>t_\text{obs}|H) = \int_{t_\text{obs}}^{\infty} g(t|H) \, dt
 \end{equation}
 %
-donde $t_\text{obs}$ es el valor del estadístico de prueba obtenido con los datos observados.
+donde $t_\text{obs}$ es el valor del estadístico de prueba obtenido con los
+datos observados.
 
 De esta forma, un {\pvalue} grande denota que la evidencia en contra de $H_0$ es
-débil y un {\pvalue} chico denota que los datos contienen mucha evidencia en contra de $H_0$.
+débil y un {\pvalue} chico denota que los datos contienen mucha evidencia en
+contra de $H_0$.
 %% En este sentido de p-valores, se puede no hablar de pruebas de hip´otesis, sino de
 %% pruebas de significancia, donde la cuantificaci´on del concepto abstracto de significancia
 %% es el p-valor
@@ -356,14 +356,14 @@ débil y un {\pvalue} chico denota que los datos contienen mucha evidencia en co
 Se dice que la hipótesis es excluida si el {\pvalue} esta por debajo de un valor
 especifico dado por el tama\~no del test $\alpha$, donde $\alpha \in [0,1]$.
 
-En física de partículas es usual convertir el {\pvalue} en la signifícancia equivalente, $Z$,
-definida como,
+En física de partículas es usual convertir el {\pvalue} en la signifícancia
+equivalente, $Z$, definida como,
 \begin{equation}
   Z = \Phi^{-1}(1-p)
 \end{equation}
 %
-donde $\Phi^{-1}$ es el cuantil (la función inversa de la distribución acumulativa) de la distribución
-gaussiana.
+donde $\Phi^{-1}$ es el cuantil (la función inversa de la distribución
+acumulativa) de la distribución gaussiana.
 
 
 %% Los modelos de probabilidad pueden construirse para describir simultáneamente varios
@@ -377,15 +377,11 @@ gaussiana.
 %% \end{equation}
 
 
-
-
-
-
 \section{Descubrimiento}
 
-En general el parámetro de interés es la intensidad de la señal, $\mu$ definida como
-$\sigma/\sigma_\text{nominal}$. En el caso de que $\mu = 0$,
-tenemos la hipótesis de solo fondo, y cuando vale $\mu = 1$, la hipótesis de señal + fondo.
+En general el parámetro de interés es la intensidad de la señal, $\mu$ definida
+como $\sigma/\sigma_\text{nominal}$. En el caso de que $\mu = 0$, tenemos la
+hipótesis de solo fondo, y cuando vale $\mu = 1$, la hipótesis de señal + fondo.
 
 %% Si $\hat{\mu}$ y $\hat{\btheta}$ son los valores que maximizan $L(\mu,\btheta)$ o minimizan
 %% $- \ln L(\mu, \btheta)$ y $\bdtheta$ es el valor que maximiza $L$ para un valor fijo de $\mu$
@@ -397,57 +393,59 @@ tenemos la hipótesis de solo fondo, y cuando vale $\mu = 1$, la hipótesis de s
 %% %
 %% y es independiente de los parámetros \btheta.
 
-Para la búsqueda de una nueva señal solo queremos considerar que los datos
-no tengan un buen acuerdo con la hipótesis de solo-fondo solo cuando $\hat{\mu}$
+Para la búsqueda de una nueva señal solo queremos considerar que los datos no
+tengan un buen acuerdo con la hipótesis de solo-fondo solo cuando $\hat{\mu}$
 sea mayor a cero. En el caso de experimentos como las oscilaciones de neutrinos
-por ejemplo la hipótesis de señal puede predecir un numero mayor o menor de eventos
-con respecto a la hipótesis de no oscilaciones.
+por ejemplo la hipótesis de señal puede predecir un numero mayor o menor de
+eventos con respecto a la hipótesis de no oscilaciones.
 
-Aunque es cierto que un valor de $\hat{\mu}$ mucho menor a cero representa evidencia
-contra el modelo de solo-fondo, pero este tipo de discrepancia no muestra que los datos
-contenga eventos de señal.
+Aunque es cierto que un valor de $\hat{\mu}$ mucho menor a cero representa
+evidencia contra el modelo de solo-fondo, pero este tipo de discrepancia no
+muestra que los datos contenga eventos de señal.
 
 Por lo tanto para esta caso de $\mu \geq 0$ conviene definir,
 
 \begin{equation}
   \tilde{\lambda}(\mu) =
   \begin{cases}
-    \frac{L(\mu, \hat{\hat{\bm{\theta}}})}{L(\hat{\mu}, \hat{\bm{\theta}})} & \hat{\mu} \geq 0 \\
-    \frac{L(\mu, \hat{\hat{\bm{\theta}}})}{L(0, \hat{\bm{\theta}}(0))} & \hat{\mu} < 0
+    \frac{L(\mu, \hat{\hat{\bm{\theta}}})}{L(\hat{\mu}, \hat{\bm{\theta}})} &
+    \hat{\mu} \geq 0 \\ \frac{L(\mu, \hat{\hat{\bm{\theta}}})}{L(0,
+      \hat{\bm{\theta}}(0))} & \hat{\mu} < 0
   \end{cases}
 \end{equation}
 
-Acá $\dhat{\btheta}(0)$ y $\dhat{\btheta}(\mu)$ se refieren a los estimadores ML de {\btheta} dados
-los parámetros de intensidad de señal parámetro de 0 o $\mu$ respectivamente. El correspondiente
-estadístico de prueba puede obtenerse como,
+Acá $\dhat{\btheta}(0)$ y $\dhat{\btheta}(\mu)$ se refieren a los estimadores ML
+de {\btheta} dados los parámetros de intensidad de señal parámetro de 0 o $\mu$
+respectivamente. El correspondiente estadístico de prueba puede obtenerse como,
 
 \begin{equation}
   \tilde{t}_\mu = -2 \ln \tilde{\lambda}(\mu) =
   \begin{cases}
-    -2 \ln \frac{L(\mu, \hat{\hat{\bm{\theta}}})}{L(0, \hat{\bm{\theta}}(0))} & \hat{\mu} < 0 \\
-    -2 \ln \frac{L(\mu, \hat{\hat{\bm{\theta}}})}{L(\hat{\mu}, \hat{\bm{\theta}})} & \hat{\mu} \geq 0
+    -2 \ln \frac{L(\mu, \hat{\hat{\bm{\theta}}})}{L(0, \hat{\bm{\theta}}(0))} &
+    -\hat{\mu} < 0 \\ 2 \ln \frac{L(\mu, \hat{\hat{\bm{\theta}}})}{L(\hat{\mu},
+    -\hat{\bm{\theta}})} & \hat{\mu} \geq 0
   \end{cases}
 \end{equation}
 
-
-n caso especial importante el estadístico $t_\mu$ es en el caso de $\mu=0$ en un modelo en el que
-asumimos $\mu \geq 0$. Rechazar la hipótesis de $\mu=0$ es lo que llamamos \emph{descubrimiento} de
-una nueva señal. Para este caso importante definimos $q_0=\tilde{t}_0$. como,
+Un caso especial importante el estadístico $t_\mu$ es en el caso de $\mu=0$ en un
+modelo en el que asumimos $\mu \geq 0$. Rechazar la hipótesis de $\mu=0$ es lo
+que llamamos \emph{descubrimiento} de una nueva señal. Para este caso importante
+definimos $q_0=\tilde{t}_0$. como,
 
 \begin{equation}
   \tilde{q}_0 =
   \begin{cases}
-    -2 \ln \tilde{\lambda}(0) & \hat{\mu} > 0 \\
-    0 & \hat{\mu} \leq 0
+    -2 \ln \tilde{\lambda}(0) & \hat{\mu} > 0 \\ 0 & \hat{\mu} \leq 0
   \end{cases}
 \end{equation}
 
-Si los datos fluctúan de tal manera que uno tenga menos eventos que los predichos por
-el fondo, entonces $\hat{\mu} = 0$ y tenemos $q_0=0$. A medida que el numero de eventos
-crezca por encima del numero de fondo esperado (mayor $\hat{\mu}$) tenemos mayores valores
-de $q_0$ que corresponde a un incremento en el nivel de incompatibilidad con la hipótesis
-de solo-fondo. Para cuantificar el nivel de desacuerdo entre datos y la hipótesis de
-$\mu=0$ usando el valor observado de $q_0$ podemos calcular el valor-$p$ como,
+Si los datos fluctúan de tal manera que uno tenga menos eventos que los
+predichos por el fondo, entonces $\hat{\mu} = 0$ y tenemos $q_0=0$. A medida que
+el numero de eventos crezca por encima del numero de fondo esperado (mayor
+$\hat{\mu}$) tenemos mayores valores de $q_0$ que corresponde a un incremento en
+el nivel de incompatibilidad con la hipótesis de solo-fondo. Para cuantificar el
+nivel de desacuerdo entre datos y la hipótesis de $\mu=0$ usando el valor
+observado de $q_0$ podemos calcular el valor-$p$ como,
 
 \begin{equation}
   p_0 = \int_{q_{0}^\text{obs}}^{\infty} f(q_0|0) \, dq_0
@@ -455,8 +453,8 @@ $\mu=0$ usando el valor observado de $q_0$ podemos calcular el valor-$p$ como,
 \end{equation}
 
 En el caso de que $p_0 \leq \epsilon$ donde $\epsilon$ es un tamaño del test
-prefijado anteriormente, tenemos un descubrimiento. En general en física
-de altas energías suele utilizarse $\epsilon = 2.87 \times 10^{-7}$ que corresponde
+prefijado anteriormente, tenemos un descubrimiento. En general en física de
+altas energías suele utilizarse $\epsilon = 2.87 \times 10^{-7}$ que corresponde
 a una significancia equivalente $Z=5\sigma$.
 
 Es importante hacer notar que el hecho de rechazar la hipótesis de solo-fondo en
@@ -465,58 +463,67 @@ un sentido estadístico es solo parte de descubrir un fenómeno nuevo.
 
 \section{Limites de Exclusión}
 
-Si $p_0> \epsilon$, no podemos rechaza $H_0$. Esto no significa que todos los valores de
-$\mu$ bajo $H_1$ estén excluidos. Ahora tenemos que testear $H_1[\mu_0]: \mu = \mu_0$ contra
-$H_0[\mu_0]: \mu < \mu_0$. Para esto definimos $\tilde{q}_\mu$,
+Si $p_0> \epsilon$, no podemos rechaza $H_0$. Esto no significa que todos los
+valores de $\mu$ bajo $H_1$ estén excluidos. Ahora tenemos que testear
+$H_1[\mu_0]: \mu = \mu_0$ contra $H_0[\mu_0]: \mu < \mu_0$. Para esto definimos
+$\tilde{q}_\mu$,
 
 \begin{equation}
   \tilde{q}_\mu =
   \begin{cases}
-    -2 \ln \tilde{\lambda}(\mu) & \hat{\mu} \leq \mu \\
-    0 & \hat{\mu} > \mu
+    -2 \ln \tilde{\lambda}(\mu) & \hat{\mu} \leq \mu \\ 0 & \hat{\mu} > \mu
   \end{cases} \label{eq:qmu}
 \end{equation}
 
-Conviene notar que para establecer un limite superior una fluctuación hacia arriba
-de los datos no representa una mayor incompatibilidad de la hipótesis $\mu$.
+Conviene notar que para establecer un limite superior una fluctuación hacia
+arriba de los datos no representa una mayor incompatibilidad de la hipótesis
+$\mu$.
 
-La razón para poner $q_\mu = 0$ para $\hat{\mu} > \mu$ es que cuando seteamos un limite
-superior, el hecho de que $\hat{\mu} > \mu$ representa menos compatibilidad con $'mu$ que
-los datos obtenidos, y por lo tanto no se considera parte de la región de rechazo del test.
+La razón para poner $q_\mu = 0$ para $\hat{\mu} > \mu$ es que cuando seteamos un
+limite superior, el hecho de que $\hat{\mu} > \mu$ representa menos
+compatibilidad con $'mu$ que los datos obtenidos, y por lo tanto no se considera
+parte de la región de rechazo del test.
 
-Acá hay que notar, que $q_0$ no es simplemente un caso especial de la {\eq} \eqref{eq:qmu},
-sino que tiene una definición diferente. Es decir, $q_0$ es cero si los datos fluctúan
-hacia abajo ($\hat{\mu}<0$), pero $q_\mu$ es cero si los datos fluctúan hacia arriba ($\hat{\mu}>\mu$).
+Acá hay que notar, que $q_0$ no es simplemente un caso especial de la {\eq}
+\eqref{eq:qmu}, sino que tiene una definición diferente. Es decir, $q_0$ es cero
+si los datos fluctúan hacia abajo ($\hat{\mu}<0$), pero $q_\mu$ es cero si los
+datos fluctúan hacia arriba ($\hat{\mu}>\mu$).
 
-Para los datos observados tenemos $\tilde{q}_\mu^\text{obs}$. Para generar la distribución de $\tilde{q}_\mu$
-se pueden generar pseudo-experimentos con MC $\to$ $f(\tilde{q}_\mu|\mu, \btheta)$.
+Para los datos observados tenemos $\tilde{q}_\mu^\text{obs}$. Para generar la
+distribución de $\tilde{q}_\mu$ se pueden generar pseudo-experimentos con MC
+$\to$ $f(\tilde{q}_\mu|\mu, \btheta)$.
 
-El valor-$p$ para una observación bajo una hipótesis $(\mu,\btheta)$ es la probabilidad de obtener
-un resultado igual o mas extremo que los obtenidos dada H.
+El valor-$p$ para una observación bajo una hipótesis $(\mu,\btheta)$ es la
+probabilidad de obtener un resultado igual o mas extremo que los obtenidos dada
+H.
 
 \begin{equation}
-  p_{(\mu,\btheta)} = \int_{\tilde{q}_\mu^\text{obs}}^{\infty} f(\tilde{q}_\mu|\mu,\btheta) \, d\tilde{q}_\mu
+  p_{(\mu,\btheta)} = \int_{\tilde{q}_\mu^\text{obs}}^{\infty}
+  f(\tilde{q}_\mu|\mu,\btheta) \, d\tilde{q}_\mu
 \end{equation}
 
 
-Solo nos interesa $\mu$ pero $p$ depende también de $\btheta$. Lo que queremos entonces es
-que el valor-$p$ sea chico para todo valor de $\btheta$.
+Solo nos interesa $\mu$ pero $p$ depende también de $\btheta$. Lo que queremos
+entonces es que el valor-$p$ sea chico para todo valor de $\btheta$.
 
 \begin{equation}
   p_\mu^\text{sup} = \sup_\theta p_{(\mu,\btheta)}
 \end{equation}
 
-La mayor razón para usar PLR con $t(\bm{x})$ es que en el limite de muchos eventos
-la distribución del PLR $\lambda(\mu=\mu_\text{true})$ es independiente de los
-valores de los parámetros nuisance $p_\mu^\text{sup} = p_{(\mu,\btheta)} \forall \theta$.
-Esto es una consecuencia del teorema de Wilk.
+La mayor razón para usar PLR con $t(\bm{x})$ es que en el limite de muchos
+eventos la distribución del PLR $\lambda(\mu=\mu_\text{true})$ es independiente
+de los valores de los parámetros nuisance $p_\mu^\text{sup} = p_{(\mu,\btheta)}
+\forall \theta$. Esto es una consecuencia del teorema de Wilk.
 
 
-Elegir $\btheta^\text{sup} = \dhat{\btheta}(\mu)$, es decir, el valor para el cual $p_{(\mu,\btheta)} = p_\mu^\text{sup}$
-es un buen valor estimado de $\btheta^\text{sup}$.
+Elegir $\btheta^\text{sup} = \dhat{\btheta}(\mu)$, es decir, el valor para el
+cual $p_{(\mu,\btheta)} = p_\mu^\text{sup}$ es un buen valor estimado de
+$\btheta^\text{sup}$.
 
 \begin{equation}
-  p_\mu = \int_{\tilde{q}_\mu^\text{obs}}^{\infty} f(\tilde{q}_\mu|\mu,\dhat{\btheta}(\mu, \text{obs})) \, d\tilde{q}_\mu \equiv \clsb
+  p_\mu = \int_{\tilde{q}_\mu^\text{obs}}^{\infty}
+  f(\tilde{q}_\mu|\mu,\dhat{\btheta}(\mu, \text{obs})) \, d\tilde{q}_\mu \equiv
+  \clsb
   \label{eq:pmu}
 \end{equation}
 
@@ -527,7 +534,8 @@ Para obtener el nivel de confianza estándar de 95\%
   p_{\mu_\text{up}} = 0.05
 \end{equation}
 
-Para calcular el limite superior {\cls} definimos,\todo{Explicar la motivación del \cls}
+Para calcular el limite superior {\cls} definimos,\todo{Explicar la motivación
+  del \cls}
 
 \begin{equation}
   \cls = \frac{p_\mu}{1-p_b}
@@ -536,37 +544,42 @@ Para calcular el limite superior {\cls} definimos,\todo{Explicar la motivación 
 donde $p_b$ es el valoro del mismo test bajo la hipótesis de solo-fondo,
 
 \begin{equation}
-  p_b = 1 - \int_{\tilde{q}_\mu^\text{obs}}^{\infty} f(\tilde{q}_\mu|0,\dhat{\btheta}(\mu=0)) \, d\tilde{q}_\mu \equiv \clb
+  p_b = 1 - \int_{\tilde{q}_\mu^\text{obs}}^{\infty}
+  f(\tilde{q}_\mu|0,\dhat{\btheta}(\mu=0)) \, d\tilde{q}_\mu \equiv \clb
 \end{equation}
 
 
-El limite superior {\cls} en $\mu$, $\mu_\text{up}$ se obtiene resolviendo $p_{\mu_\text{up}} = 0.05$.
-Se rechazan los valores de $\mu$ si $\mu  < \mu_\text{up}$ con un nivel de confianza de 95\%.
+El limite superior {\cls} en $\mu$, $\mu_\text{up}$ se obtiene resolviendo
+$p_{\mu_\text{up}} = 0.05$. Se rechazan los valores de $\mu$ si $\mu <
+\mu_\text{up}$ con un nivel de confianza de 95\%.
 
 
 \section{Aproximación asintótica}
 
 Para poder calcular los valores $p$ de una hipótesis utilizando las ecuaciones
-\eqref{eq:p0} y \eqref{eq:pmu} necesitamos conocer las distribuciones muestrales del
-estadístico de prueba $f(t)$.
+\eqref{eq:p0} y \eqref{eq:pmu} necesitamos conocer las distribuciones muestrales
+del estadístico de prueba $f(t)$.
 
-En el limite de un gran muestra de datos (limite asintótico) \cite{AsymAprox}, y utilizando el teorema
-de Wilks\cite{WilksTheo} y Wald\cite{WaldTheo} es posible escribir la distribución
-de $q_0$ completa como,
+En el limite de un gran muestra de datos (limite asintótico) \cite{AsymAprox}, y
+utilizando el teorema de Wilks\cite{WilksTheo} y Wald\cite{WaldTheo} es posible
+escribir la distribución de $q_0$ completa como,
 
 \begin{equation}
-  f(q_0|\mu') = \left( 1 - \Phi\left(\frac{\mu'}{\sigma}\right)\right) \delta(q_0) +
-  \frac{1}{2}\frac{1}{\sqrt{2\pi}}\frac{1}{\sqrt{q_0}} \exp \left[ -\frac{1}{2} \left( \sqrt{q_0} - \frac{\mu'}{\sigma} \right)\right]
+  f(q_0|\mu') = \left( 1 - \Phi\left(\frac{\mu'}{\sigma}\right)\right)
+  \delta(q_0) + \frac{1}{2}\frac{1}{\sqrt{2\pi}}\frac{1}{\sqrt{q_0}} \exp \left[
+    -\frac{1}{2} \left( \sqrt{q_0} - \frac{\mu'}{\sigma} \right)\right]
 \end{equation}
 
 Para el caso especial de $\mu' = 0$ la distribución se reduce a:
 
 \begin{equation}
-  f(q_0|0) = \frac{1}{2} \delta(q_0) + \frac{1}{2}\frac{1}{\sqrt{2\pi}}\frac{1}{\sqrt{q_0}} e^{-q_0/2}
+  f(q_0|0) = \frac{1}{2} \delta(q_0) +
+  \frac{1}{2}\frac{1}{\sqrt{2\pi}}\frac{1}{\sqrt{q_0}} e^{-q_0/2}
 \end{equation}
 
-En el limite de la gran muestra, $f(q_0|0)$ es independiente de los parámetros nuisance,
-aunque $f(q_0|\mu')$ depende de los parámetros nuisance a través de $\sigma$.
+En el limite de la gran muestra, $f(q_0|0)$ es independiente de los parámetros
+nuisance, aunque $f(q_0|\mu')$ depende de los parámetros nuisance a través de
+$\sigma$.
 
 De la pdf, la distribución acumulada de $q_0$ es,
 
@@ -592,7 +605,8 @@ La distribución de $q_\mu$ en este mismo limite es,
 
 \begin{equation}
   f(q_\mu|\mu') = \Phi\left(\frac{\mu'-\mu}{\sigma}\right) \delta(q_\mu) +
-  \frac{1}{2}\frac{1}{\sqrt{2\pi}}\frac{1}{\sqrt{q_0}} \exp \left[ -\frac{1}{2} \left( \sqrt{q_\mu} - \frac{\mu'-\mu}{\sigma} \right)^2\right]
+  \frac{1}{2}\frac{1}{\sqrt{2\pi}}\frac{1}{\sqrt{q_0}} \exp \left[ -\frac{1}{2}
+    \left( \sqrt{q_\mu} - \frac{\mu'-\mu}{\sigma} \right)^2\right]
 \end{equation}
 
 
@@ -603,20 +617,21 @@ La distribución de $q_\mu$ en este mismo limite es,
 %% assuming some nonzero strength parameter mu'.
 %% So for p-value, need f(q0 |0), for sensitivity, will need f(q0 | mu'),
 
-
 En física de partículas la cantidad $s/\sqrt{b}$ ha sido siempre utilizado como
 una medida de la significancia esperada de descubrimiento. La explicación detrás
 de esta formula es que una cantidad $n$ que sigue la distribución de Poisson con
-una media grande $s+b$ puede ser aproximada por una variable $x$ distribuidas según
-una gaussiana con media $s+b$ y desviación estándar $\sqrt{s+b}$. En este caso
-el valor-$p$ de la hipótesis de solo-fondo dada una observación $x$ esta dado por,
+una media grande $s+b$ puede ser aproximada por una variable $x$ distribuidas
+según una gaussiana con media $s+b$ y desviación estándar $\sqrt{s+b}$. En este
+caso el valor-$p$ de la hipótesis de solo-fondo dada una observación $x$ esta
+dado por,
 
 \begin{equation}
-  p = 1 - \Phi \left( \frac{x-\mu}{\sigma} \right) = 1 - \Phi \left( \frac{x-b}{b} \right)
+  p = 1 - \Phi \left( \frac{x-\mu}{\sigma} \right) = 1 - \Phi \left(
+  \frac{x-b}{b} \right)
 \end{equation}
 %
-donde $\mu=b$ y $\sigma = \sqrt{b}$ se refieren a la media y la desviacion estandar de x
-asumiendo que $s=0$. Traduciendo este valor-$p$ a significancia,
+donde $\mu=b$ y $\sigma = \sqrt{b}$ se refieren a la media y la desviación
+estándar de x asumiendo que $s=0$. Traduciendo este valor-$p$ a significancia,
 
 \begin{equation}
   Z = \frac{x-b}{b}
@@ -629,63 +644,74 @@ La significancia esperada es entonces (ya que la media es $s+b$)
   \label{eq:Zsimple}
 \end{equation}
 
-Si el numero esperado de eventos de fondo $b$ es conocido con una incerteza despreciable,
-entonces la funcion likelihood es,
+Si el numero esperado de eventos de fondo $b$ es conocido con una incerteza
+despreciable, entonces la función likelihood es,
 
 \begin{equation}
   L(s) = \frac{(s+b)^n}{n!} e^{-(s+b)}
 \end{equation}
 
-Utilizando la aproximacion asintotica descripta anteriormente, la significancia de descubrimiento
-puede ser aproximada por $Z=\sqrt{q_0}$, lo que para este problema daria,
+Utilizando la aproximación asintótica descripta anteriormente, la significancia
+de descubrimiento puede ser aproximada por $Z=\sqrt{q_0}$, lo que para este
+problema daría,
 
 \begin{equation}
   Z = \sqrt{2\left( n \ln \frac{n}{b} +b -n \right)}
   \label{eq:Z}
 \end{equation}
 %
-para $n>b$ y $Z=0$ sino. Tambien puede aproximarse la significancia esperada reemplazando los datos
-por el conjunto de datos de Asimov. Substituyendo $s+b$ por $n$ en la {\eq} \eqref{eq:Z}, la aproximaxion de
-Asimov para la significancia esperada $Z_A$ es,
+para $n>b$ y $Z=0$ sino. También puede aproximarse la significancia esperada
+reemplazando los datos por el conjunto de datos de Asimov. Substituyendo $s+b$
+por $n$ en la {\eq} \eqref{eq:Z}, la aproximaxion de Asimov para la
+significancia esperada $Z_A$ es,
 
 \begin{equation}
   Z_A = \sqrt{2\left( (s+b) \ln \left( 1 + \frac{s}{b}\right) - s \right)}
 \end{equation}
 
-Si expandimos el logaritmo en la ecuaciona anterior en $s/b$ tenemos $Z_A = s/\sqrt{b} + \mathcal{O}(s/b)$
-que es la expresion de la {\eq} \eqref{eq:Zsimple} y es valida solo en el limite $s \ll b$.
+Si expandimos el logaritmo en la ecuación anterior en $s/b$ tenemos $Z_A =
+s/\sqrt{b} + \mathcal{O}(s/b)$ que es la expresión de la {\eq}
+\eqref{eq:Zsimple} y es valida solo en el limite $s \ll b$.
 
-Si el numero de eventos esperado de fondo $b$ no es conocido, uno debe incluirlo como
-un parámetro nuisance en la función likelihood. Pero como $b$ puede ajustarse para cualquier
-numero de eventos, es necesario introducir información adicional para constrain $b$. En general
-se suele hacer mediante una medida auxiliar, mirando el numero de eventos observados $m$ en una
-región de control donde se asume que la señal esta ausente, y se puede considerar que $m$ sigue
-una distribución de Poisson con media $\tau b$, donde $\tau$ es un factor de extrapolación.
+Si el numero de eventos esperado de fondo $b$ no es conocido, uno debe incluirlo
+como un parámetro nuisance en la función likelihood. Pero como $b$ puede
+ajustarse para cualquier numero de eventos, es necesario introducir información
+adicional para constrain $b$. En general se suele hacer mediante una medida
+auxiliar, mirando el numero de eventos observados $m$ en una región de control
+donde se asume que la señal esta ausente, y se puede considerar que $m$ sigue
+una distribución de Poisson con media $\tau b$, donde $\tau$ es un factor de
+extrapolación.
 
-La función likelihood total es el producto de las dos distribuciones de Poisson correspondientes
-a cada región:
+La función likelihood total es el producto de las dos distribuciones de Poisson
+correspondientes a cada región:
 
 \begin{equation}
   L(\mu, \btheta) = \Pois_\text{SR}(n;s+b) \Pois_\text{CR}(\tau b)
 \end{equation}
 
-Utilizando la aproximación $Z = \sqrt{q_0}$, valida en el limite de una gran muestra y
-teniendo en cuenta que los valores esperados son $s+b$ y $\tau b$ para obtener la significancia
-mediana, tenemos
+Utilizando la aproximación $Z = \sqrt{q_0}$, valida en el limite de una gran
+muestra y teniendo en cuenta que los valores esperados son $s+b$ y $\tau b$ para
+obtener la significancia mediana, tenemos
 
 \begin{equation}
-  Z_A = \left[ 2 \left( (s+b) \ln \left[ \frac{s+(1+\tau)b}{(1+\tau)(s+b)} \right] + \tau b  \ln \left[ 1 + \frac{s}{(1+\tau)b} \right] \right) \right]^{1/2}
+  Z_A = \left[ 2 \left( (s+b) \ln \left[ \frac{s+(1+\tau)b}{(1+\tau)(s+b)}
+      \right] + \tau b \ln \left[ 1 + \frac{s}{(1+\tau)b} \right] \right)
+    \right]^{1/2}
   \label{eq:Za1}
 \end{equation}
 
-Es útil expresar la {\eq} \eqref{eq:Za1} en términos de la incerteza que uno quiere
-atribuirle al fondo basados en la medida de control $m$. El estimador para $b$ esta dado
-por $\hat{b} = m/\tau$, y como la varianza de $m$ es igual a su media $\tau b$, la
-varianza de $\hat{b}$ es $V[\hat{b}] = \sigma_b^2 = b/\tau$. Y usando esto para eliminar
-$\tau$ de la {\eq} \eqref{eq:Za1} obtenemos:
+Es útil expresar la {\eq} \eqref{eq:Za1} en términos de la incerteza que uno
+quiere atribuirle al fondo basados en la medida de control $m$. El estimador
+para $b$ esta dado por $\hat{b} = m/\tau$, y como la varianza de $m$ es igual a
+su media $\tau b$, la varianza de $\hat{b}$ es $V[\hat{b}] = \sigma_b^2 =
+b/\tau$. Y usando esto para eliminar $\tau$ de la {\eq} \eqref{eq:Za1}
+obtenemos:
 
 \begin{equation}
-  Z_A = \left[ 2 \left( (s+b) \ln \left[ \frac{(s+b)(b+\sigma_b^2)}{b^2+(s+b)\sigma_b^2} \right] - \frac{b^2}{\sigma_b^2} \ln \left[ 1 + \frac{\sigma_b^2 s}{b(b+\sigma_b^2)} \right] \right) \right]^{1/2}
+  Z_A = \left[ 2 \left( (s+b) \ln \left[
+      \frac{(s+b)(b+\sigma_b^2)}{b^2+(s+b)\sigma_b^2} \right] -
+    \frac{b^2}{\sigma_b^2} \ln \left[ 1 + \frac{\sigma_b^2 s}{b(b+\sigma_b^2)}
+      \right] \right) \right]^{1/2}
   \label{eq:Za}
 \end{equation}
 
