@@ -1,5 +1,11 @@
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{calc}
 \usetikzlibrary{decorations}
 \usetikzlibrary{decorations.pathmorphing}
+
 
 \makeatletter
 
@@ -58,13 +64,13 @@
   photon/.style={decorate, decoration={snake}, draw=black},
   higgs/.style={draw, dashed},
   fermion/.style={draw=black, postaction={decorate},decoration={markings}},
-  gluon/.style={decorate, draw=black, decoration={coilgluon,amplitude=4pt, segment length=5pt}},
-  gluino/.style={decorate, decoration={coil,amplitude=4pt, segment length=5pt}, preaction={draw}},
+  gluon/.style ={decorate, decoration={coilgluon,amplitude=4pt, segment length=5pt}},
+  gluino/.style={decorate, decoration={coilgluon,amplitude=4pt, segment length=5pt}, preaction={draw}},
   vertex/.style={draw,shape=circle,fill=black,minimum size=0pt,inner sep=0pt},
 }
 
-\semiloop[fermion][<draw options>]{<first node>}{<second node>}{<angle>}[<label>][<below, default: above>];
-\NewDocumentCommand\semiloop{O{black}mmmO{}O{above}}
-{%
-  \draw[#1] let \p1 = ($(#3)-(#2)$) in (#3) arc (#4:({#4+180}):({0.5*veclen(\x1,\y1)})node[midway, #6] {#5};)
-}
+%% \semiloop[fermion][<draw options>]{<first node>}{<second node>}{<angle>}[<label>][<below, default: above>];
+%% \NewDocumentCommand\semiloop{O{black}mmmO{}O{above}}
+%% {%
+%%   \draw[#1] let \p1 = ($(#3)-(#2)$) in (#3) arc (#4:({#4+180}):({0.5*veclen(\x1,\y1)})node[midway, #6] {#5};)
+%% }
