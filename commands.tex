@@ -136,7 +136,6 @@
 \newcommand{\CRWL}{\ensuremath{\mathrm{CR}_{H}^{W\gamma}}}
 
 
-
 %- Variables
 \newcommand{\dphigammet}{\ensuremath{\Delta \phi(\gamma,\MET)}}
 \newcommand{\dphim}{\ensuremath{\Delta \phi_{\mathrm{min}}(\gamma,\MET)}}
@@ -148,16 +147,21 @@
 
 %- Stat
 \newcommand{\pvalue}{valor-$p$}
-\newcommand{\qmu}{\ensuremath{q_\mu}}
-\newcommand{\pdf}{p.d.f.}
 \newcommand{\btheta}{\ensuremath{\bm{\theta}}}
 \DeclareMathOperator{\Pois}{Pois}
-\newcommand{\dhat}[1]{\ensuremath{\hat{\hat{#1}}}}
+%\newcommand{\dhat}[1]{\ensuremath{\hat{\hat{#1}}}}
+\newcommand{\cl}{\ensuremath{\text{CL}}}
 \newcommand{\clsb}{\ensuremath{\text{CL}_{s+b}}}
 \newcommand{\clb}{\ensuremath{\text{CL}_b}}
 \newcommand{\cls}{\ensuremath{\text{CL}_s}}
 
+\newlength{\dhatheight}
+\newcommand{\doublehat}[1]{%
+  \settoheight{\dhatheight}{\ensuremath{\hat{#1}}}%
+  \addtolength{\dhatheight}{-0.35ex}%
+  \hat{\vphantom{\rule{1pt}{\dhatheight}}%
+    \smash{\hat{#1}}}}
 
+%- Otros
 \newcommand{\trigchain}{\texttt{g120\_loose}}
-
 \newcommand{\vsp}{\vspace{1cm}}
