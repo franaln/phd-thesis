@@ -44,6 +44,7 @@
 \RequirePackage{xifthen}
 \RequirePackage{tabularx}
 \RequirePackage{rotating}
+\RequirePackage{accents}
 
 
 %%-- Additional TeX/LaTeX code...
