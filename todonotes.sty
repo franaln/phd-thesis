@@ -162,8 +162,10 @@
 \tikzstyle{notestyle} = [notestyleraw]
 \tikzstyle{notestyleleft} = [notestyle]
 \tikzstyle{connectstyle} = [thick, draw=\@todonotes@currentlinecolor]
-\tikzstyle{inlinenotestyle} = [notestyle, draw=yellow!50, fill=yellow!50, text width=\textwidth, anchor=text]
-\tikzstyle{intextnotestyle} = [rectangle, fill=yellow!50, anchor=text]
+%% \tikzstyle{inlinenotestyle} = [notestyle, draw=yellow!50, fill=yellow!50, text width=\textwidth, anchor=text]
+%% \tikzstyle{intextnotestyle} = [rectangle, fill=yellow!50, anchor=text]
+\tikzstyle{inlinenotestyle} = [notestyle, draw=red!50, fill=red!50, text width=\textwidth, anchor=text]
+\tikzstyle{intextnotestyle} = [rectangle, fill=red!50, anchor=text]
 \newcommand{\@todo}[2][]{%
 \renewcommand{\@todonotes@text}{#2}%
 \renewcommand{\@todonotes@caption}{#2}%

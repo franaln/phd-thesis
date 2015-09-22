@@ -49,10 +49,10 @@ normal de media $\nu$ y ancho $\sqrt{\nu}$.
 
 La estimación de parámetros de las distribuciones observadas es una de las
 tareas fundamentales del análisis de datos, y puede considerarse como la
-medición de un parámetro (que tiene un valor fijo pero desconocido)
-basado en un número limitado de observaciones experimentales. Dado el
-experimento, la estimación puntual consiste en determinar un valor único lo mas
-cerca posible al valor verdadero.%% , y la estimación de un intervalo es determinar
+medición de un parámetro (que tiene un valor fijo pero desconocido) basado en un
+número limitado de observaciones experimentales. Dado el experimento, la
+estimación puntual consiste en determinar un valor único lo mas cerca posible al
+valor verdadero.%% , y la estimación de un intervalo es determinar
 %% un rango de valores que contengan al valor verdadero del parámetro.
 
 Supongamos un conjunto de $N$ observaciones $\bm{x} = (x_1, x_2, \ldots, x_N)$,
@@ -71,15 +71,16 @@ parámetros $\btheta$.
 Algunas propiedades que es importante que cumplan los estimadores son:
 
 \begin{itemize}\itemsep0.2cm\parskip0.2cm
-\item[] {\bf Consistencia:} Un estimador se dice consistente (o asintóticamente
+\item {\bf Consistencia:} Un estimador se dice consistente (o asintóticamente
   consistente) si converge al valor verdadero $\btheta_{0}$ con el número de
   medidas $N$: $\lim_{N \to \infty} \hat{\btheta} = \btheta_0$.
 
-\item[] {\bf Sesgo:} El sesgo esta definido como la diferencia entre el valor
+\item {\bf Sesgo:} El sesgo esta definido como la diferencia entre el valor
   esperado del estimador y el valor verdadero: $E[\hat{\btheta}] - \btheta_0$ y
   un estimador es no sesgado cuando el sesgo es cero.
 
-\item[] {\bf Eficiencia:} Un estimador es eficiente si su varianza $V[\hat{\btheta}]$ es chica.
+\item {\bf Eficiencia:} Un estimador es eficiente si su varianza
+  $V[\hat{\btheta}]$ es chica.
 \end{itemize}
 
 Los dos métodos mas utilizados para la estimación de parámetros son el de
@@ -100,15 +101,15 @@ datos observados,
 
 El estimador de máximo likelihood (MLE) de los parámetros {\btheta} son los
 valores $\hat{\btheta}$ para los cuales la función likelihood $L(\btheta)$ tiene
-su máximo global. %% Una forma intuitiva de ver esto es la siguiente: si asumimos
+su máximo global. %% Una forma intuitiva de ver esto es la siguiente: si
+asumimos
 %% que la pdf y los parámetros son correctos, esperamos valores altos de la función
 %% likelihood comparado con otros parámetros que no sean los verdaderos.
 
 %% Los valores estimados $\hat{\btheta}$ de los parámetros se obtienen buscando el
 %% máximo global de la función likelihood.
-En la practica, es conveniente trabajar
-con el logaritmo de la función likelihood (log-likelihood), y buscar el mínimo
-del negativo de esta función:
+En la practica, es conveniente trabajar con el logaritmo de la función
+likelihood (log-likelihood), y buscar el mínimo del negativo de esta función:
 
 \begin{equation}
   - \ln L(\btheta) = \sum_{i=1}^{N} \ln f(x_i; \btheta)
@@ -128,15 +129,15 @@ embargo, el MLE tiene un sesgo proporcional a $1/N$.
 
 Generalmente, cuando se modela un fenómeno aleatorio de interés, el modelo
 elegido para ajustar a las observaciones de dicho fenómeno suele tener varios
-parámetros, de los cuales solo algunos pueden ser de interés. De manera formal a
+parámetros, de los cuales sólo algunos pueden ser de interés. De manera formal a
 estos parámetros se los denomina parámetros de interés y al resto, parámetros
 \emph{nuisance}, y conviene separarlos explícitamente $\btheta \to (\mu,
 \btheta)$. En general, las incertezas sistemáticas son incluidas en el modelo
 utilizando parámetros nuisance. Estos parámetros no se considera conocidos a
 priori, sino que se ajustan a los datos.
 
-En este escenario, donde tenemos un sólo parametro de interés
-$\mu$, y el resto de parametros nuisance $\btheta$, es conveniente
+En este escenario, donde tenemos un sólo parámetro de interés
+$\mu$, y el resto de parámetros nuisance $\btheta$, es conveniente
 definir el \hl{profile likelihood ratio} (PLR),
 
 \begin{equation}
@@ -155,7 +156,7 @@ nuisance que han sido ``eliminados'' vía el \emph{profiling}.
 La presencia de los parámetros nuisance que son ajustados a los datos ensanchan
 la función likelihood como función de $\mu$, respecto a la distribución si sus
 valores estuvieran fijos. De cierta forma reflejan una perdida de información
-sobre $\mu$ debido a estos parametros desconocidos, que suelen ser
+sobre $\mu$ debido a estos parámetros desconocidos, que suelen ser
 las incertezas sistemáticas.
 
 %% Segun el Teorema de Wilk, en el límite de $N$ grande, donde la función
@@ -164,7 +165,7 @@ las incertezas sistemáticas.
 %%   Teorema de Wilk?}
 
 
-\subsubsection{Máximo likelihood extendido}
+\subsubsection{Likelihood máximo extendido}
 
 Cuando se repite un experimento con las mismas condiciones muchas veces, el
 número de eventos $n$ de un proceso va a fluctuar de acuerdo a una distribución
@@ -183,7 +184,7 @@ incorporarse entonces a la función likelihood, obteniendo lo que llamamos
 %% parámetro, es decir, como encontrar el valor que mejor represente un cierto
 %% parámetro de interés, dados los datos observados.
 
-La estimación de intervalos, a diferencia de la estimacion puntual,
+La estimación de intervalos, a diferencia de la estimación puntual,
 consiste en proveer un intervalo de valores, y un nivel de
 confianza sobre como el valor verdadero del parámetro de interés yace entre esos
 límites. La idea es encontrar un rango $\mu_a \leq \mu \leq \mu_b$, tal
@@ -192,7 +193,7 @@ intervalo es llamado \emph{intervalo de confianza} con un nivel de confianza
 $\alpha$.
 
 La construcción de estos intervalos se puede realizar utilizando el método que
-se debe a Neyman \note{Agregar referencia}, o utilizando un método alternativo.
+se debe a \note{Agregar referencia}Neyman, o utilizando un método alternativo.
 %%Supongamos que conocemos la distribución muestral
 %% $g(\hat{\btheta}, \btheta)$. Esta distribución depende del valor verdadero
 %% $\theta$ que no conocemos, pero a pesar de eso, podemos conocer la distribución
@@ -264,8 +265,8 @@ considerar la hipótesis de que el valor verdadero del parámetro es $\mu$ y
 realizar un test de hipótesis (ver \cref{sec:testhypo}) para cada valor de
 $\mu$, y se obtiene el {\pvalue} $p_\mu$ tal que si  $p_\mu \leq \alpha$
 se rechaza $\mu$. El intervalo de confianza consiste entonces en los valores
-de $\mu$ que no fueron rechazados con el test de tamano $\alpha$, con un
-nivel de confianza $1-\alpha$. Es decir que los limites del intervalo de
+de $\mu$ que no fueron rechazados con el test de tamaño $\alpha$, con un
+nivel de confianza $1-\alpha$. Es decir que los límites del intervalo de
 confianza se encuentran resolviendo $p_\mu = \alpha$ para todo $\mu$.
 
 
@@ -286,7 +287,7 @@ comparada contra una (o varias) hipótesis alternativa $H_1$ distinta a $H_0$.
 En el caso de búsqueda de nueva física, la hipótesis que juega el rol de
 hipótesis nula es la hipótesis de que sólo los procesos del SM contribuyen a las
 mediciones. Esta hipótesis también suele llamarse hipótesis de
-\emph{sólo-fondo}. Y la hipótesis alternativa es la hipótesis en la cual, ademas
+\emph{sólo-fondo}. Y la hipótesis alternativa es la hipótesis en la cual, además
 de los procesos del SM, también contribuyen procesos de nueva física y se
 denomina hipótesis de \emph{se\~nal+fondo}.
 
@@ -345,14 +346,14 @@ dentro esta es rechazada.
 %% Lo que se quiere encontrar es un test estadístico que maximiza el poder del test para un valor
 %% fijo de tamaño del test $\alpha$.
 
-La probabilidad de rechazar $H_0$ siendo esta verdadera es denominado tamano del test y
+La probabilidad de rechazar $H_0$ siendo esta verdadera es denominado tamaño del test y
 es,
 
 \begin{equation}
   \alpha = \int_{R} g(t|H_0)\, dt
 \end{equation}
 
-lo cual tambien determina el nivel de significancia como
+lo cual también determina el nivel de significancia como
 $(100 - \alpha) \%$. Este error de rechazar $H_0$ cuando es verdadera es llamado
 error de tipo I. Por otro lado el error de aceptar $H_0$ cuando es falsa se
 llama error de tipo II, y su probabilidad de ocurrencia, $\beta$, depende de la
@@ -454,10 +455,10 @@ la hipótesis de señal+fondo a $\mu = 1$.
 Aunque es cierto que un valor de $\hat{\mu}$ mucho menor a cero representa
 evidencia contra el modelo de sólo-fondo, este tipo de discrepancia no muestran
 que los datos contengan eventos de señal. Es por este motivo que sólo se
-considera que los datos no tienen un buen acuerdo con la hipótesis de solo-fondo cuando $\hat{\mu}$ es mayor a cero.
-En otros experimentos, como los de  oscilaciones de neutrinos por ejemplo, la
-hipótesis de señal puede predecir un número mayor o menor de eventos con
-respecto a la hipótesis de no oscilaciones.
+considera que los datos no tienen un buen acuerdo con la hipótesis de sólo-fondo
+cuando $\hat{\mu}$ es mayor a cero. En otros experimentos, como los de
+oscilaciones de neutrinos por ejemplo, la hipótesis de señal puede predecir un
+número mayor o menor de eventos con respecto a la hipótesis de no oscilaciones.
 
 Entonces para este  caso de $\mu \geq 0$ conviene definir,
 
@@ -510,7 +511,7 @@ altas energías suele utilizarse $\epsilon = 2.87 \times 10^{-7}$, el cual
 corresponde a una significancia equivalente $Z=5\sigma$.
 
 Es importante notar que el hecho de rechazar la hipótesis de sólo-fondo en un
-sentido estadístico es solo parte de descubrir un fenómeno nuevo.
+sentido estadístico es sólo parte de descubrir un fenómeno nuevo.
 Para confirmar la presencia de este nuevo fenómeno es necesario estudiar
 el acuerdo de este para describir los datos observados.
 
@@ -569,10 +570,9 @@ es aceptada o rechazada.
 \end{equation}
 
 La mayor razón para usar PLR como test estadístico es que en el límite de muchos
-eventos la distribución del PLR $\lambda(\mu=\mu_\text{true})$ es independiente
+eventos la distribución del PLR $\lambda(\mu=\mu_\text{0})$ es independiente
 de los valores de los parámetros nuisance $p_\mu^\text{sup} = p_{(\mu,\btheta)}
 \forall \theta$. Esto es una consecuencia del Teorema de Wilk.
-
 Elegir $\btheta^\text{sup} = \doublehat{\btheta}(\mu)$, es decir, el valor para el
 cual $p_{(\mu,\btheta)} = p_\mu^\text{sup}$ es un buen valor estimado de
 $\btheta^\text{sup}$.
@@ -581,27 +581,30 @@ Para cuantificar la consistencia de los datos observados con la hipótesis de
 intensidad de se\~nal $\mu$ se calcula el {\pvalue}
 
 \begin{equation}
-  p_\mu = \int_{\tilde{q}_\mu^\text{obs}}^{\infty} f(\tilde{q}_\mu|\mu,\doublehat{\btheta}(\mu, \text{obs})) \, d\tilde{q}_\mu \equiv \clsb
+  p_\mu = \int_{\tilde{q}_{\mu,\text{obs}}}^{\infty} f(\tilde{q}_\mu|\mu,\doublehat{\btheta}(\mu, \text{obs})) \, d\tilde{q}_\mu \equiv \clsb
   \label{eq:pmu}
 \end{equation}
 %
-donde valores chicos de {\clsb} indican baja compatibilidad con la hipótesis
+donde valores chicos de $p_\mu$ indican baja compatibilidad con la hipótesis
 de señal+fondo.
 
-El intervalo de confianza \hl{unilateral} (limite superior) con un nivel de
-confianza de 95\%, se resuelve la siguiente ecuación:
+El intervalo de confianza o límite superior con un nivel de
+confianza del 95\% se obtiene resolviendo la siguiente ecuación:
 
 \begin{equation}
-  p_{\mu_\text{U}} = 0.05
+  p_{\mu_\text{up}} = 0.05
 \end{equation}
 
-En la aproximación clásica frecuentista, se dice que la
-señal esta excluida a 95\% CL, si ${\clsb} \leq 0.05$. Sin embargo, esta
-definición tiene un problema. Si tomamos $\mu=0$, uno espera que por construcción
-que {\clsb} sea menor o igual que 0.05 con una probabilidad de 5\%. Esto es que
-5\% de las búsquedas terminan excluyendo con cero señal.
+Pero el límite superior calculada de esta forma tiene un problema. De acuerdo
+ a este se dice que una señal esta excluida a 95\% CL, si ${\clsb} \leq 0.05$.
+Si se considera el caso de $\mu=0$, se espera que por construcción
+el {\clsb} sea menor o igual que 0.05 con una probabilidad de 5\%. Esto significa que
+en el 5\% de los análisis estarían excluyendo modelos con cero señal.
+Otro problema del {\clsb} es que para dos experimentos con el mismo
+número chico de eventos de señal esperado pero con un numero de eventos de fondo distinto, el
+experimento con mayor fondo va a imponer mejores límites.
 
-Con motivo de solucionar este inconveniente se introduce el método de {\cls}.
+Con motivo de solucionar estos inconvenientes se introduce el método de {\cls}.
 %% Se define el {\clb},
 
 %% Los intervalos de confianza frecuentistas cubren e
@@ -613,24 +616,22 @@ Con motivo de solucionar este inconveniente se introduce el método de {\cls}.
   \cls = \frac{p_\mu}{1-p_b}  \equiv \frac{\clsb}{\clb}
 \end{equation}
 %
-donde $p_b$ es el valoro del mismo test bajo la hipótesis de solo-fondo,
+donde $p_b$ es el valoro del mismo test bajo la hipótesis de sólo-fondo,
 
 \begin{equation}
   1 - p_b = \int_{\tilde{q}_\mu^\text{obs}}^{\infty}
   f(\tilde{q}_\mu|0,\doublehat{\btheta}(\mu=0)) \, d\tilde{q}_\mu \equiv \clb
 \end{equation}
 
-
 El límite superior {\cls} en $\mu$, $\mu_\text{up}$ se obtiene resolviendo
 $p_{\mu_\text{up}} = 0.05$. Se rechazan los valores de $\mu$ si $\mu <
 \mu_\text{up}$ con un nivel de confianza de 95\%.
 
-Para una observación cercana al numero de eventos esperado de solo-fondo ($\clb
-\sim 0.05$) el {\cls} da un valor del orden de dos veces al {\clsb}. Entonces,
-el método {\cls} evita no solo el problema descripto anteriormente, sino también
-la propiedad indeseable del {\clsb} que para dos experimentos con el mismo
-número (chico) de eventos de señal esperado pero distintos fondos, el
-experimento con mayor fondo va a imponer mejores límites.
+Para una observación cercana al numero de eventos esperado de sólo-fondo ($\clb
+\sim 0.05$) el {\cls} da un valor del orden de dos veces el obtenido utilizando
+el {\clsb}.
+%% Entonces, el método {\cls} evita no sólo el problema descripto anteriormente, sino también
+%% la propiedad indeseable del {\clsb} que para dos
 
 
 \section{Aproximación asintótica del PLR}\label{sec:aprox}
@@ -669,7 +670,7 @@ Para el caso especial de $\mu' = 0$ la distribución se reduce a:
   \frac{1}{2}\frac{1}{\sqrt{2\pi}}\frac{1}{\sqrt{q_0}} e^{-q_0/2}
 \end{equation}
 
-En este limite, $f(q_0|0)$ es independiente de los parámetros
+En este límite, $f(q_0|0)$ es independiente de los parámetros
 nuisance, aunque $f(q_0|\mu')$ depende de los parámetros nuisance a través de
 $\sigma$.
 
@@ -692,8 +693,8 @@ y la significancia de descubrimiento $Z$ es simplemente,
   Z_0 = \Phi^{-1} (1-p_0) = \sqrt{q_0}
 \end{equation}
 
-Para el caso de establecer un limite superior se necesita la pdf de $q_\mu$. En el
-limite asintótico y utilizando la misma aproximación que en el caso anterior puede
+Para el caso de establecer un límite superior se necesita la pdf de $q_\mu$. En el
+límite asintótico y utilizando la misma aproximación que en el caso anterior puede
 mostrarse que la distribución de $q_\mu$ es,
 
 \begin{equation}
@@ -712,14 +713,16 @@ y el correspóndete {\pvalue} y significancia están dados por
   Z_\mu = \Phi^{-1}(1-p_\mu) = \sqrt{q_\mu}
 \end{equation}
 
-Estas aproximaciones permiten conocer las distribuciones muestrales
-y calcular {\pvalues}s y significancias en el caso de un gran numero de datos,
-de una forma simple y computacionalmente menos costosa. De lo contrario
-el procedimiento seria generar un gran número de pseudo-experimentos utilizando
-métodos Monte Carlo para generar la distribución muestras.
-Comparando los resultados obtenidos mediante la aproximación asintótica y
-el método de pseudo-experimentos se ve que la aproximación es valida
-para un numero no tan grande de eventos ($N > 10$)\cite{AsymAprox}.
+Estas aproximaciones permiten conocer las distribuciones muestrales y calcular
+{\pvalue}s y significancias en el caso de un gran número de datos, de una forma
+simple y computacionalmente menos costosa que si se tuvieran que generar un gran
+número de pseudo-experimentos utilizando métodos Monte Carlo. A pesar de que las
+aproximaciones son formalmente validas en ese limite, las comparaciones con
+Monte Carlo, muestran que el uso de las mismas son razonablemente precisas para
+muestras de datos mucho mas chicas, permitiendo su uso en la mayoría de los
+análisis. Para muestras de datos muy pequeñas, o en casos donde la precisión es
+importante, siempre pueden validarse estas aproximaciones utilizando la
+generación Monte Carlo.
 
 
 \section{Significancia esperada} %%Sensibilidad de descrubrimiento para un experimento de conteo}
@@ -734,7 +737,7 @@ una medida de la significancia esperada de descubrimiento. La explicación detr�
 de esta formula es que una cantidad $n$ que sigue una distribución de Poisson
 con una media grande $s+b$ puede ser aproximada por una variable $x$
 distribuidas según una gaussiana con media $s+b$ y desviación estándar
-$\sqrt{s+b}$. En este caso el valor-$p$ de la hipótesis de solo-fondo dada una
+$\sqrt{s+b}$. En este caso el valor-$p$ de la hipótesis de sólo-fondo dada una
 observación $x$ esta dado por,
 
 \begin{equation}
@@ -750,7 +753,7 @@ estándar de $x$ asumiendo que $s=0$. Traduciendo este {\pvalue} a significancia
 \end{equation}
 
 La significancia esperada, a diferencia de la observada, se calcula desde la mediana
-de la hipótesis alternativa. Entonces como la mediana de la hipótesis de señal+fondoe,
+de la hipótesis alternativa. Entonces como la mediana de la hipótesis de señal+fondo,
 en este caso igual a la media, es $s+b$,
 
 \begin{equation}
@@ -790,7 +793,7 @@ puede ser aproximada por $Z=\sqrt{q_0}$, lo que da como resultado,
 
 Si expandimos el logaritmo en la ecuación anterior en $s/b$ tenemos $Z_A =
 s/\sqrt{b} + \mathcal{O}(s/b)$ que es la expresión de la {\eq}
-\eqref{eq:Zsimple} y es valida solo en el límite $s \ll b$.
+\eqref{eq:Zsimple} y es valida sólo en el límite $s \ll b$.
 
 Si el número de eventos esperado de fondo $b$ no es conocido, uno debe incluirlo
 como un parámetro nuisance en la función likelihood. Pero como $b$ puede
@@ -805,7 +808,7 @@ La función likelihood total es el producto de las dos distribuciones de Poisson
 correspondientes a cada región:
 
 \begin{equation}
-  L(\mu, \btheta) = \Pois (n;s+b) \Pois(\tau b)
+  L(\mu, \btheta) = \Pois (n;s+b) \Pois(m;\tau b)
 \end{equation}
 
 Utilizando la aproximación $Z = \sqrt{q_0}$, valida en el límite de una gran
@@ -833,6 +836,17 @@ obtenemos:
       \right] \right) \right]^{1/2}
   \label{eq:Za}
 \end{equation}
+%
+y expandiendo en potencias de $s/b$ y $\sigma_b^2/b$ obtenemos,
+
+\begin{equation}
+  Z_A = \frac{s}{\sqrt{b+\sigma_b^2}} \left( 1 + \mathcal{O}(s/b) + \mathcal{O}(\sigma_b^2/b) \right)
+\end{equation}
+%
+que es la ecuación conocida y es valida cuando $s\ll b$ y $\sigma_b^2 \ll b$.
+
+
+
 
 %% \subsection{Psuedo-experimentos}
 

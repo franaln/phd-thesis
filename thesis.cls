@@ -65,7 +65,7 @@
 % enter only chapters and sections in TOC---subsecs as a try
 \setcounter{tocdepth}{1}
 
-% enumerate down to subsections
+% enume\rate down to subsections
 \setcounter{secnumdepth}{2}
 
 \def\chaptername{Capítulo}

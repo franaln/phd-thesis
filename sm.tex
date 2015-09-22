@@ -15,34 +15,41 @@ los modelos que intentan explicar la física mas allá del SM.
 
 \section{Las partículas fundamentales y sus interacciones}
 
-De acuerdo al SM toda la materia esta compuesta por un n\'umero peque\~no de
-part\'iculas fundamentales de spin $1/2$, conocidas como fermiones, que se
+De acuerdo al SM toda la materia esta compuesta por un número peque\~no de
+partículas fundamentales de espín $1/2$, conocidas como fermiones, que se
 dividen en dos tipos: quarks y leptones (ver \cref{tab:fermions}). Hasta el
 momento, ningún experimento ha podido encontrar evidencia de que estos fermiones
-tengan una subestructura interna.
+tengan una subestructura interna. Los quarks y leptones además están divididos
+en tres generaciones o familias, ordenadas según su masa. Como las partículas
+de las generaciones mas altas tiene un mayor masa y son inestables decaen
+en partículas de generaciones mas bajas. Es por este motivo que la materia
+ordinaria esta formada por partículas de la primer generación.
 
 \begin{table}[!ht]
   \centering
-  \begin{tabular}{c|ccc|ccc|ccc}
-    %%\hline
-    & \multicolumn{3}{c}{Particula} & \multicolumn{3}{|c|}{Masa} & \multicolumn{3}{|c|}{Carga Electrica} \\
+  \begin{tabular}{cccccccc}
+    \hline
+    & \multicolumn{3}{c}{Partícula} & \multicolumn{3}{c}{Masa} & Carga Eléctrica \\
 
     \hline
     \multirow{2}{*}{Leptones}
-    & e & $\mu$ &  $\tau$ & 0.511 \mev & 105.7 \mev & 1768 \mev & -1 & -1 & -1 \\
-    & $\nu_e$ & $\nu_\mu$ & $\nu_\tau$ & $<2.2 \eV$ & $< 0.17 \mev$ & $<15.5 \mev$ & 0 & 0 & 0 \\
+    & e & $\mu$ &  $\tau$ & 511 \kev & 105.7 \mev & 1768 \mev & -1  \\
+    & $\nu_e$ & $\nu_\mu$ & $\nu_\tau$ & $<2.2 \eV$ & $< 0.17 \mev$ & $<15.5 \mev$ & 0 \\
     \hline
     \multirow{2}{*}{Quarks}
-    & $u$ & $c$ & $t$ & 2.4 \mev & 1.27 \gev & 171.2 \gev & 2/3  & 2/3 & 2/3 \\
-    & $d$ & $s$ & $b$ & 4.8 \mev & 104 \mev & 4.2 \gev & -1/3 & -1/3 & -1/3 \\
+    & $u$ & $c$ & $t$ & 2.4 \mev & 1.27 \gev & 171.2 \gev & 2/3 \\
+    & $d$ & $s$ & $b$ & 4.8 \mev & 104 \mev & 4.2 \gev & -1/3 \\
     %\hline
   \end{tabular}
-  \caption{Partículas fundamentales...}\label{tab:fermions}.
+  \caption{Partículas fundamentales de materia del SM. Las tres columnas internas representan las
+    tres generaciones, ordenadas segun su masa. En la segunda y tercer columna se encuentra
+    la masa y la carga electrica, respectivamente. \hl{Mejorar tabla}}
+  \label{tab:fermions}.
 \end{table}
 
 La distintas interacciones entre fermiones son descriptas en términos del
 intercambio de partículas entre estos. Estas partículas de intercambio son
-denominadas \emph{bosones}, y a diferencia de los fermiones tienen spin entero.
+denominadas \emph{bosones}, y a diferencia de los fermiones tienen espín entero.
 Los bosones mediadores se muestran en la \cref{tab:bosons}.
 
 Existen cuatro tipos de interacciones fundamentales. La interacción fuerte es la
@@ -54,10 +61,10 @@ interacciones están mediadas por el intercambio de fotones no masivos. La
 interacci\'on débil es la responsable de los procesos de decaimiento $\beta$, y
 sus mediadores son los bosones $Z^0$ y $W^\pm$, con masas del orden de 100 veces
 la masa del protón. Por ultimo existe una interacción que actúa entre todo tipo
-de partículas, la interacción gravitatoria. Actualmente no existe ninguna teoria
-cuantica completa que explique esta interaccion fundamental, aunque hay muchas
-teorias propuestas que postulan la existencia de una particula de spin 2 que
-media la gravedad, denominada \emph{graviton}. En la escala de los experimentos
+de partículas, la interacción gravitatoria. Actualmente no existe ninguna teoría
+cuántica completa que explique esta interacción fundamental, aunque hay muchas
+teorías propuestas que postulan la existencia de una partícula de espín 2 que
+media la gravedad, denominada \emph{gravitón}. En la escala de los experimentos
 de partículas es la interacción mas débil de todas las interacciones
 fundamentales, aunque es la dominante en la escala del universo.
 
@@ -70,13 +77,26 @@ interacción fuerte. Esta es la distinción fundamental entre quarks y leptones.
 
 \begin{table}[!ht]
   \centering
-  \begin{tabular}{ccc}
-    \hline Débil & Electromagnética & Fuerte \\
-    \hline quarks y leptones & quarks y leptones & quarks \\
-    \hline $W^+$, $W^-$ y $Z^0$ & $\gamma$ & gluones \\
+  \begin{tabular}{cccccccc}
+    \hline
+    Fuerza & Partícula & Masa \\
+    \hline
+    Débil    &   $W^\pm$ y $Z^0$ & 80.398 y 91.1876  \\ %%$\mu$ &  $\tau$ & 511 \kev & 105.7 \mev & 1768 \mev & -1  \\
+    \hline
+    Electromagnética & $\gamma$ & 0 \\
+    \hline
+    Fuerte & $g$ & 0\\
     \hline
   \end{tabular}
-  \caption{Interacciones y los bosones de gauge mediadores de las mismas.}
+
+  %% \begin{tabular}{ccc}
+  %%   \hline Débil &  & Fuerte \\
+  %%   \hline quarks y leptones &  & quarks \\
+  %%   \hline  & $\gamma$ & gluones \\
+  %%   \hline
+  %% \end{tabular}
+
+  \caption{Interacciones y los bosones de gauge mediadores de las mismas.\hl{Mejorar tabla}}
   \label{tab:bosons}
 \end{table}
 
@@ -84,7 +104,7 @@ interacción fuerte. Esta es la distinción fundamental entre quarks y leptones.
 \section{El \SM}
 
 Formalmente, el {\SM} es una teoría cuántica de campos renormalizable que provee
-una descripción de los campos que describen las particulas fundamentales, y las
+una descripción de los campos que describen las partículas fundamentales, y las
 interacciones fuerte, débil y electromagnética.
 Estas interacciones surgen del requerimiento de que la teoría sea invariante
 bajo transformaciones de gauge locales del grupo de simetría:
@@ -112,7 +132,7 @@ decir, la electrodinámica cuántica (QED) mas las interacciones débiles.
 %% formularon un principio general de invarianza de gauge}
 
 Y la adición del grupo $\text{SU}(3)_C$ incluye la cromodinámica cuántica, que
-es la teoria de campos de gauge que describe las interacciones fuertes de los
+es la teoría de campos de gauge que describe las interacciones fuertes de los
 quarks y gluones que poseen carga de color.
 
 La masa de las partículas en el SM puede ser introducida mediante el llamado
@@ -126,14 +146,14 @@ espontánea de la simetría electrodébil.
 %
 que resulta en la generación de los bosones de gauge masivos $W^\pm$ y $Z$. Como
 consecuencia de esto, además, un nuevo campo escalar debe ser agregado al
-Lagrangiano, dando lugar a la aparición de un nuevo bosón masivo, $H$, de spin
+Lagrangiano, dando lugar a la aparición de un nuevo bosón masivo, $H$, de espín
 0, al que se lo llamó \emph{bosón de Higgs}.
 
 Weinberg y Salam fueron los primeros en aplicar el mecanismo de Higgs al
-rompimiento de la simetría electro-débil
+rompimiento de la simetría electrodébil
 \cite{PhysRevLett.19.1264,PhysRev.127.965} y mostraron como este mecanismo podía
-ser incorporado a la teoría electro-débil de Glashow \cite{Glashow1961579}, dando
-inicios a lo que hoy conocemos como {\SM} de la física de partículas.
+ser incorporado a la teoría electrodébil de Glashow \cite{Glashow1961579}, dando
+inicios a lo que hoy conocemos como SM de la física de partículas.
 
 La relación entre las masas de los bosones $W^\pm$ y $Z$ predicha por el SM esta
 dada por $m_W/m_Z = \cos \theta_W$, donde $\theta_W$ es el ángulo de
@@ -161,11 +181,11 @@ de la masa del Higgs es $125.09 \pm 0.21 \text{(stat.)} \pm 0.11 \text{(sist.)}
 \begin{figure}[!htbp]
   \centering \includegraphics[width=0.8\textwidth]{figures/higgs_atlas_cms_mass}
   \caption{Resumen de las mediciones de la masa del bosón de Higgs de los
-    distintos análisis de ATLAS y CMS y el análisis combinado. Se indican las
-    incertezas sistemáticas (bandas de color magenta) y estadística (bandas de
+    distintos análisis de ATLAS y CMS, y del análisis combinado. Se indican las
+    incertezas sistemáticas (bandas de color magenta), estadísticas (bandas de
     color amarillo), y total (bandas negras). La linea roja vertical y la
-    correspondiente sobra gris indican el valor central y la incerteza total de
-    la medida combinada, respectivamente \cite{HiggsMass_ATLAS_CMS}.}
+    correspondiente sombra gris indican el valor central y la incerteza total de
+    la medida combinada, respectivamente\cite{HiggsMass_ATLAS_CMS}.}
   \label{fig:higgs_cms_atlas}
 \end{figure}
 
@@ -202,24 +222,24 @@ débil y electromagnética podían ser unificadas, motivando aún mas esta idea.
 %% gravitatoria ni siquiera forma parte del SM.
 
 Está claro que el SM es una teoría efectiva a bajas energías, muy precisa  hasta
-escalas de energía del orden de los 100 {\gev}. Sin embargo, los fisicos teóricos creen
+escalas de energía del orden de los 100 {\gev}. Sin embargo, los físicos teóricos creen
 que el éxito del SM no va a durar a energías mayores. Esta creencia surge de los
 intentos de incorporar el SM en una teoría mas fundamental. Incluso ante la
-ausencia de la gran unificación de las fuerzas electro-débil y fuerte a una
+ausencia de la gran unificación de las fuerzas electrodébil y fuerte a una
 escala muy alta de energía, el SM tiene que ser modificado para incorporar los
 efectos de la gravedad a la escala de Planck.
 
 El SM tiene 25 (ó 26) parámetros libres. Están las masas de los doce fermiones;
 las tres constantes de acoplamiento $g$, $g'$ y $g_s$; los dos parámetros que
 describen el potencial de Higgs $v$ y $m_H$; y los ocho ángulos de mezcla. Y
-además el Lagrangiano de QCD puede contener una fase, $\theta_{CP}$ que
+además el Lagrangiano de QCD puede contener una fase, $\theta_{\text{CP}}$ que
 experimentalmente se conoce que es $\sim 0$. Esta gran cantidad de parámetros
 libres se eligen para ajustarse los datos observados, y no provienen de
 principios teóricos más fundamentales, lo cual es otro síntoma de debilidad.
 
 En este contexto también resulta un misterio porqué el cociente $m_W/m_P \sim
 10^{-17}$ es tan chico. A esto se lo conoce como problema de \emph{jerarquía}.
-Además, en el SM, la escala de las interacciones electro-débiles se derivan de un
+Además, en el SM, la escala de las interacciones electrodébiles se derivan de un
 campo escalar elemental que adquiere un valor de expectación de vacío de $v = 2
 m_W /g = 246 \gev$. Sin embargo, si uno acopla una teoría de partículas
 escalares a nueva física a alguna escala arbitraria $\Lambda$, las correcciones
@@ -227,8 +247,8 @@ radiativas al cuadrado de la masa escalar son del orden de $\Lambda^2$, debido a
 las divergencias cuadráticas en la auto-energía, lo cual indica la sensibilidad
 cuadrática a la mayor escala de energía de la teoría. Por esto, la masa
 ``natural'' de cualquier partícula escalar es $\Lambda$. Y para tener una teoría
-electro-débil exitosa, la masa del Higgs debe ser del orden de la escala
-electro-débil. Este hecho que la masa del bosón de Higgs no puede ser igual a su
+electrodébil exitosa, la masa del Higgs debe ser del orden de la escala
+electrodébil. Este hecho que la masa del bosón de Higgs no puede ser igual a su
 valor natural de $M_P$ es llamado del problema de \emph{naturalidad}.
 
 Desde el punto de vista experimental, también existen algunos resultados que no
@@ -276,7 +296,7 @@ mencionados. Estas se conocen como teorías de física mas allá del SM y entre
 ellas se encuentra la Supersimetría, modelos con dimensiones extra, teoría de
 cuerdas, teorías technicolor, etc. El siguiente capitulo se explicara brevemente
 en que consiste una de las teorías de física mas allá del SM mas motivadas desde
-el punto de vista teórico y experimental, que es la Supersimetría
+el punto de vista teórico y experimental, que es la Supersimetría.
 
 %% Grand unified theories
 %% The standard model has three gauge symmetries; the colour SU(3), the weak
