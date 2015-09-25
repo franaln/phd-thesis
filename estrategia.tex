@@ -1,11 +1,9 @@
 \chapter{Estrategia de análisis}
 
-En el capítulo anterior se describieron los conceptos básicos de
-estadística necesarios para poder realizar un análisis de búsqueda
-de nueva física.
-En este capítulo se va a describir el el mayor
-desafío del análisis desde el punto de vista estadístico: como
-construir el modelo del análisis.
+En el capítulo anterior se describieron los conceptos básicos de estadística
+necesarios para poder realizar un análisis de búsqueda de nueva física. En este
+capítulo se describe el mayor desafío del análisis desde el punto de vista
+estadístico: la construcción del modelo del análisis.
 
 %% \hll{Ahora que hemos establecido una forma general para el modelo y trasladamos
 %% las preguntas básicas de mediciones, descrubrimeinto y exclusión en el lenguaje
@@ -17,203 +15,255 @@ construir el modelo del análisis.
 %---------------
 % Signal Region
 %---------------
-Un análisis de física que quiera estudiar un determinado fenómeno nuevo involucra
-la definición de una región en el espacio de fase, obtenida aplicando una selección
-a un conjunto de observables cinemáticos, donde el modelo de señal predice un exceso
-significativo de eventos sobre el nivel de fondo predicho en la misma región. A esta
-región enriquecida por señal se la llama región de señal (SR).
+Un análisis de física que quiera estudiar un determinado fenómeno nuevo
+involucra la definición de una región en el espacio de fase, obtenida aplicando
+una selección a un conjunto de observables cinemáticos, donde el modelo de señal
+predice un exceso significativo de eventos sobre el nivel de fondo predicho en
+la misma región. A esta región enriquecida en señal se la llama región de señal
+(SR).
 
 %-----------
 % Fondos/CR
 %-----------
-Una de las tareas mas importantes del análisis entonces sera estimar los procesos
-de fondos que contaminan la región de señal. Para esto existen dos técnicas principales:
-simulaciones Monte Carlo, y basandose en los datos observados.
+Una de las tareas fundamentales del análisis es entonces, estimar las
+contribuciones de los procesos del SM (lo que llamamos fondos) que contaminan la región de
+señal.
+Para esto existen dos técnicas principales: utilizar simulaciones Monte Carlo, y
+utilizar metodos que se basan en los propios datos observados.
 
-La primera de las técnicas consiste en generar una gran cantidad de eventos utilizando técnicas
-de Monte Carlo del proceso físico considerado. En general este proceso se realiza en varias etapas.
-Con un generador de eventos se realiza la simulación de la interacción fuerte (por ej.
-{\madgraph}). Luego con el mismo u otro generador se realiza la lluvia de partones y el
-proceso de hadronizacion (por ej. {\pythia}). Y finalmente se simula la interacción de las
-partículas generadas con el detector ({\geant}). A cada proceso que se simula de esta forma
-lo llamaremos muestra en referencia a la muestra correspondiente generada con Monte Carlo.
+%% La primera de las técnicas consiste en generar una gran cantidad de eventos
+%% utilizando técnicas de Monte Carlo del proceso físico considerado. En general
+%% este proceso se realiza en varias etapas. Con un generador de eventos se realiza
+%% la simulación de la interacción fuerte (por ej. {\madgraph}). Luego con el mismo
+%% u otro generador se realiza la lluvia de partones y el proceso de hornecino
+%% (por ej. {\pythia}). Y finalmente se simula la interacción de las partículas
+%% generadas con el detector ({\geant}). A cada proceso que se simula de esta forma
+%% lo llamaremos muestra en referencia a la muestra correspondiente generada con
+%% Monte Carlo.
 
-Para cada proceso físico tenemos que el numero de eventos esperado por unidad de tiempo (tasa)
-estará dado por:
+%% Para cada proceso físico tenemos que el numero de eventos esperado por unidad de
+%% tiempo (tasa) estará dado por:
 
-\begin{equation}
-  \text{tasa} = (\text{flujo}) \times (\text{sección eficaz}) \times (\text{eficiencia}) \times (\text{aceptancia})
-\end{equation}
-%
-donde la sección eficaz esta predicha por la teoría, el flujo es controlado por
-el acelerador, y la eficiencia y la aceptancia son propiedades del detector y los
-criterios de la selección de eventos. Esta relación no es mas que la reformulacion
-invariante de la probabilidad de dispersión predicha por primeros principios de la
-mecánica cuántica $P(i\to f) = |\braket{i}{f}|^2/(\braket{i}{i}\braket{f}{f})$.
+%% \begin{equation}
+%%   \text{tasa} = (\text{flujo}) \times (\text{sección eficaz}) \times
+%%   (\text{eficiencia}) \times (\text{aceptancia})
+%% \end{equation}
+%% %
+%% donde la sección eficaz esta predicha por la teoría, el flujo es controlado por
+%% el acelerador, y la eficiencia y la aceptancia son propiedades del detector y
+%% los criterios de la selección de eventos. Esta relación no es mas que la
+%% refórmalo invariante de la probabilidad de dispersión predicha por primeros
+%% principios de la mecánica cuántica $P(i\to f) =
+%% |\braket{i}{f}|^2/(\braket{i}{i}\braket{f}{f})$.
 
-Si llamamos seccion eficaz efectiva $\sigma_\text{eff}$ al producto de la seccion eficaz,
-la eficiencia y la aceptancia, el numero de eventos esperado para un dado proceso ($\nu$)
-va a ser el producto de la luminosidad integrada en el tiempo $L$ y la seccion eficaz efectiva:
+%% Si llamamos seccion eficaz efectiva $\sigma_\text{eff}$ al producto de la
+%% sección eficaz, la eficiencia y la aceptancia, el numero de eventos esperado
+%% para un dado proceso ($\nu$) va a ser el producto de la luminosidad integrada en
+%% el tiempo $L$ y la sección eficaz efectiva:
 
-\begin{equation}
-  \nu = L \sigma_\text{eff}
-\end{equation}
+%% \begin{equation}
+%%   \nu = L \sigma_\text{eff}
+%% \end{equation}
 
-Sin tener en cuenta los efectos del detector, la distribucion de un observable $x$ sera
+%% Sin tener en cuenta los efectos del detector, la distribución de un observable
+%% $x$ sera
 
-\begin{equation}
- f(x) = \frac{1}{\sigma_\text{eff}} \frac{d\sigma_\text{eff}}{dx}
-\end{equation}
+%% \begin{equation}
+%%  f(x) = \frac{1}{\sigma_\text{eff}} \frac{d\sigma_\text{eff}}{dx}
+%% \end{equation}
 
-Como ya hemos simulado el pasaje de las particulas por el detector podemos estimar
-la distribucion subyacente $f(x)$ creando un histograma del observable $x$ con la muestra
-simulada.
+%% Como ya hemos simulado el pasaje de las partículas por el detector podemos
+%% estimar la distribución subyacente $f(x)$ creando un histograma del observable
+%% $x$ con la muestra simulada.
 
-La validez de la simulaciones MC esta fundamentalmente relacionada a como la teoría
-subyacente modela las observaciones experimentales. Las debilidades que puedan tener
-la estimación de fondo a partir de las simulaciones derivan de las debilidades
-de las simulaciones propiamente dichas. Por este motivo, en el caso de que haya
-deficiencias en el modelado por parte de las simulaciones, existe una motivación
-para utilizar métodos que puedan dar una estimación de los fondos a partir de los
-datos observados. Existen distintas formas de poder estimar un fondo a partir
-de los datos observados. En el Capítulo \ref{cap:fondos} se describirán las utilizadas
-en este análisis.
+La validez de la simulaciones MC esta fundamentalmente relacionada a como la
+teoría subyacente modela las observaciones experimentales. Las debilidades que
+puedan tener la estimación de fondo a partir de las simulaciones derivan de las
+debilidades de las simulaciones propiamente dichas. Por este motivo, en el caso
+de que haya deficiencias en el modelado por parte de las simulaciones, existe
+una motivación para utilizar métodos que puedan dar una estimación de los fondos
+a partir de los datos observados. Existen distintas formas de poder estimar un
+fondo a partir de los datos observados. En el Capítulo \ref{cap:fondos} se
+describirán las utilizadas en este análisis.
 
-Y existe una tercera forma para estimar los fondos, que consiste en utilizar la estimacion
-proveniente de las simulaciones MC, pero corregirla con los datos. Para
-esto se puede definir una o más regiones de control (CR) en las cuales el fondo dominante
-pueda ser controlado comparadolo con los datos observados en esa misma región. Las CR
-son diseñadas especialmente para tener una alta pureza en uno de los procesos de fondo
-y deben estar libres de contaminación de señal.
+Y existe una tercera forma para estimar los fondos, que consiste en utilizar la
+estimación proveniente de las simulaciones MC, pero corregirla con los datos.
+Para esto se puede definir una o más regiones de control (CR) en las cuales el
+fondo dominante pueda ser controlado comparadolo con los datos observados en esa
+misma región. Las CR son diseñadas especialmente para tener una alta pureza en
+uno de los procesos de fondo y deben estar libres de contaminación de señal.
 
-A través del ajuste a los datos, el número de eventos observado en una CR es usado para
-\emph{normalizar} el número de eventos estimado de fondo en todas las regiones, especialmente
-en la SR. Es decir, las predicciones iniciales de las simulaciones MC son escaleadas al
-nivel observado en la correspondiente CR, usando un factor de normalización calculado en
-el ajuste. Este factor es utilizado entonces en la extrapolacion a las demas regiones.
+A través del ajuste a los datos, el número de eventos observado en una CR es
+usado para \emph{normalizar} el número de eventos estimado de fondo en todas las
+regiones, especialmente en la SR. Es decir, las predicciones iniciales de las
+simulaciones MC son escaleadas al nivel observado en la correspondiente CR,
+usando un factor de normalización calculado en el ajuste. Este factor es
+utilizado entonces en la extrapolación a las demás regiones.
 
 %--------------------
 % Validation regions
 %--------------------
 Otro componente importante del análisis es la validación del modelo utilizado
-para predecir los fondos en las SR. Con este motivo se definen regiones de validación
-(VR) que se encuentren entre las CR y las SR en términos de los principales observables
-cinemáticos en los criterios de selección. El diseño de las VR es un compromiso entre
-minimizar la contaminación de la señal, pero a su vez siendo efectivas en la validación
-de la extrapolación entre CR y SR. En la \cref{fig:regions_sketch} se puede ver
-un esquema de las regiones descriptas anteriormente.
+para predecir los fondos en las SR. Con este motivo se definen regiones de
+validación (VR) que se encuentren entre las CR y las SR en términos de los
+principales observables cinemáticos en los criterios de selección. El diseño de
+las VR es un compromiso entre minimizar la contaminación de la señal, pero a su
+vez siendo efectivas en la validación de la extrapolación entre CR y SR. En la
+\cref{fig:regions_sketch} se puede ver un esquema de las regiones descriptas
+anteriormente.
 
 \begin{figure}[h]
-  \centering
-  \input{tikz/regions_sketch.tex}
-  \caption{Esquema del diseno de las regiones de senal (SR), control (CR) y validacion (VR)
-  en terminos de dos observables.}
+  \centering \input{tikz/regions_sketch.tex}
+  \caption{Esquema del diseño de las regiones de señal (SR), control (CR) y
+    validación (VR) en términos de dos observables arbitrarios.}
   \label{fig:regions_sketch}
 \end{figure}
 
-Es importante que las CR, VR y SR sean estadísticamente independientes para poder combinar
-la pdf que modela cada región en una pdf conjunta. Esto es fundamental ya que al ajustar
-los parámetros de la función likelihood se deberá hacer en un ajuste simultáneo. Esto es
-importante para poder compartir los parámetros de los fondos y las incertezas sistemáticas
-entre las distintas regiones de forma consistente.
+Es importante que las CR, VR y SR sean estadísticamente independientes para
+poder combinar la pdf que modela cada región en una pdf conjunta. Esto es
+fundamental ya que al ajustar los parámetros de la función likelihood se deberá
+hacer en un ajuste simultáneo. Esto es importante para poder compartir los
+parámetros de los fondos y las incertezas sistemáticas entre las distintas
+regiones de forma consistente.
 
 %------------------------
 % Extrapolacion CR -> SR
 %------------------------
 \section{Extrapolación y factores de transferencia}
 
-Una de las suposiciones que se hizo en la sección anterior fue que las variables cinemáticas
-que se usan para diferencias CR(s) y SR(s) están bien modeladas después de haber ajustado
-la pdf total a los datos en las CR(s).
-Una vez que los procesos de fondo dominantes son normalizados en las CR(s), las
-correspondientes modificaciones en la pdf pueden ser extrapoladas a las VRs, las cuales
-son utilizadas para verificar la validez de esta suposición inicial.
-Una vez que se demuestra el acuerdo entre las predicciones del fondo normalizadas y los datos observados
-en las VRs, las predicciones del fondo son extrapoladas a las SR(s), y comparadas con los
-datos observados allí. Este proceso es llamado \emph{unblinding} y es útil para validar
-la validez de las extrapolaciones y es utilizado ampliamente en fisica para tener confianza
-en los metodos usados y evitar utilizar predicciones prematuraas y evitar un posible sesgo
-en el resultado final.
+Una de las suposiciones que se hizo en la sección anterior fue que las variables
+cinemáticas que se usan para diferencias CR(s) y SR(s) están bien modeladas
+después de haber ajustado la pdf total a los datos en las CR(s). Una vez que los
+procesos de fondo dominantes son normalizados en las CR(s), las correspondientes
+modificaciones en la pdf pueden ser extrapoladas a las VRs, las cuales son
+utilizadas para verificar la validez de esta suposición inicial. Una vez que se
+demuestra el acuerdo entre las predicciones del fondo normalizadas y los datos
+observados en las VRs, las predicciones del fondo son extrapoladas a las SR(s),
+y comparadas con los datos observados allí. Este proceso es llamado
+\emph{unblinding} y es útil para validar la validez de las extrapolaciones y es
+utilizado ampliamente en física para tener confianza en los métodos usados y
+evitar utilizar predicciones prematuras y evitar un posible sesgo en el
+resultado final.
 
-En el procedimiento explicado anteriormente se utiliza de forma implicita los denominados
-\emph{factores de transferencia}. Las predicciones de los fondo normalizadas en el ajuste son:
+En el procedimiento explicado anteriormente se utiliza de forma implícita los
+denominados \emph{factores de transferencia}. Las predicciones de los fondo
+normalizadas en el ajuste son:
 
 \begin{align}
-  N_p^{\text{est}}(\text{CR}) &= \mu_p \times \text{MC}_p (\text{CR}) \\
-  N_p^{\text{est}}(\text{SR}) &= \mu_p \times \text{MC}_p (\text{SR})
+  N_p^{\text{est}}(\text{CR}) &= \mu_p \times \text{MC}_p (\text{CR})
+  \\ N_p^{\text{est}}(\text{SR}) &= \mu_p \times \text{MC}_p (\text{SR})
 \end{align}
 %
-donde $N_p^{\text{est}}(\text{CR})$ y $N_p^{\text{est}}(\text{SR})$ es el número de eventos
-estimado para cada proceso de fondo $p$ y $\text{MC}_p^{\text{est}}(\text{CR})$ y $\text{MC}_p^{\text{est}}(\text{SR})$
-es el número de eventos obtenido de las simulaciones MC. El factor $\mu_p$
-es el factor de normalización obtenido en el ajuste a datos.
+donde $N_p^{\text{est}}(\text{CR})$ y $N_p^{\text{est}}(\text{SR})$ es el número
+de eventos estimado para cada proceso de fondo $p$ y
+$\text{MC}_p^{\text{est}}(\text{CR})$ y $\text{MC}_p^{\text{est}}(\text{SR})$ es
+el número de eventos obtenido de las simulaciones MC. El factor $\mu_p$ es el
+factor de normalización obtenido en el ajuste a datos.
 
 %% En el ajuste, los valores estimados de fondo son tipicamente driven por la estadistica de las
 %% CRs.
 
-Definiendo $N_p^\text{fit}(\text{SR})$ como el valor ajustado en la CR,
-podemos ecribir de forma equivalente:
+Definiendo $N_p^\text{fit}(\text{SR})$ como el valor ajustado en la CR, podemos
+escribir de forma equivalente:
 
 \begin{align}
-  N_p^\text{est}(\text{SR}) &= \mu_p \times \text{MC}_p (\text{SR}) \nonumber \\
-  &\equiv N_p^\text{fit}(\text{CR}) \times \left[ \frac{\text{MC}_p(\text{SR})}{\text{MC}_p(\text{CR})} \right]
+  N_p^\text{est}(\text{SR}) &= \mu_p \times \text{MC}_p (\text{SR}) \nonumber
+  \\ &\equiv N_p^\text{fit}(\text{CR}) \times \left[
+    \frac{\text{MC}_p(\text{SR})}{\text{MC}_p(\text{CR})} \right]
 \end{align}
 
-El cociente que aparece dentro de los corchete es llamado \emph{factor de transferencia} (TF).
-Un aspecto importante de los TF es que que las incertezas sistemáticas de los
-valores estimados de fondo pueden ser parcialmente cancelados en la extrapolación.
-La incerteza total en el numero de eventos de fondo en la SR es por lo tanto
-una combinación de las incertezas estadísticas en las CRs y la incerteza sistemática
-residual de la extrapolación. Por esta razón las CR suelen definirse con una selección
-un poco más relajada, para incrementar la estadística, sin aumentar significativamente
-la incerteza en los TF, para reducir las incertezas en la SR.
+El cociente que aparece dentro de los corchete es llamado \emph{factor de
+  transferencia} (TF). Un aspecto importante de los TF es que que las incertezas
+sistemáticas de los valores estimados de fondo pueden ser parcialmente
+cancelados en la extrapolación. La incerteza total en el numero de eventos de
+fondo en la SR es por lo tanto una combinación de las incertezas estadísticas en
+las CRs y la incerteza sistemática residual de la extrapolación. Por esta razón
+las CR suelen definirse con una selección un poco más relajada, para incrementar
+la estadística, sin aumentar significativamente la incerteza en los TF, para
+reducir las incertezas en la SR.
 
 \section{Modelo}
 
-La función likelihood conjunta contiene el parámetro de interés (la intensidad de la señal),
-los factores de normalización para los procesos de fondo, y los llamados parámetros nuisance que modelan
-el impacto de las incertezas sistemáticas. Cada incerteza sistemática $i$ se describe con
-un parámetro nuisance $\theta_i$ que interpola entre el valor nominal y las variaciones
-de las incertezas sistemáticas. Es decir para las variaciones de las incertezas sistemáticas
-$\pm \sigma$ tenemos $\theta_i = \pm 1$ y $\theta_i = 0$ para el valor nominal.
+La función likelihood conjunta contiene el parámetro de interés (la intensidad
+de la señal), los factores de normalización para los procesos de fondo, y los
+llamados parámetros nuisance que modelan el impacto de las incertezas
+sistemáticas. Cada incerteza sistemática $i$ se describe con un parámetro
+nuisance $\theta_i$ que interpola entre el valor nominal y las variaciones de
+las incertezas sistemáticas. Es decir para las variaciones de las incertezas
+sistemáticas $\pm \sigma$ tenemos $\theta_i = \pm 1$ y $\theta_i = 0$ para el
+valor nominal.
 
-La función likelihood general $L$ es el producto de los términos de Poisson del número
-de eventos en la SR y las CR, y una distribución adicional que implementa las
-condiciones en las incertezas sistemáticas. Puede escribirse como:
+La función likelihood general $L$ es el producto de los términos de Poisson del
+número de eventos en la SR y las CR, y una distribución adicional que implementa
+las condiciones en las incertezas sistemáticas. Puede escribirse como:
 
 \begin{align}
-  L(\bm{n}, \bm{\theta}^0| \mu_\text{sig}, \bm{\mu}_p, \btheta) &= \mathcal{P}_\text{SR} \, \times \, \mathcal{P}_\text{CR} \, \times \, \mathcal{C}_\text{syst} \nonumber \\
-  &= \Pois(n_i|\lambda_i(\mu_\text{sig}, \bm{\mu}_p, \btheta)) \, \times \, \prod_{i \in \text{CR}} \Pois(n_i|\lambda_i(\mu_\text{sig}, \bm{\mu}_p, \btheta)) \times C_\text{syst} (\btheta^0, \btheta)
+  L(\bm{n}, \bm{\theta}^0| \mu_\text{sig}, \bm{\mu}_p, \btheta) &=
+  \mathcal{P}_\text{SR} \, \times \, \mathcal{P}_\text{CR} \, \times \,
+  \mathcal{C}_\text{syst} \nonumber \\
+  &= \Pois(n|\lambda(\mu_\text{sig}, \bm{\mu}_p, \btheta)) \, \times \, \prod_{i \in \text{CR}}
+  \Pois(n_i|\lambda_i(\mu_\text{sig}, \bm{\mu}_p, \btheta)) \times C_\text{syst} (\btheta^0, \btheta)
 \end{align}
 %
 Los primeros dos factores ($\mathcal{P}_\text{SR}$ y $\mathcal{P}_\text{CR}$)
-reflejan las distribuciones de Poisson de $n_i$, el número de
-eventos observado en cada región. El valor esperado de la distribución de Poisson
-$\lambda_i$ son funciones que dependen de las predicciones de señal y los distintos fondos $p$, los
-parámetros nuisance que parametrizan las incertezas sistemáticas $\btheta$, los factores
-de normalización para los procesos de fondo $\bm{\mu}_p$ y también la intensidad de la
-señal $\mu_\text{sig}$. Para $\mu_\text{sig} = 0$ tenemos la función likelihood para
-la hipótesis de solo-fondo y con $\mu_\text{sig} = 1$ el valor esperado de señal para el
-valor nominal de modelo bajo consideración.
+reflejan las distribuciones de Poisson de $n_i$, el número de eventos observado
+en cada región. El valor esperado de la distribución de Poisson $\lambda_i$ son
+funciones que dependen de las predicciones de señal y los distintos fondos $p$,
+los parámetros nuisance que parametrizan las incertezas sistemáticas $\btheta$,
+los factores de normalización para los procesos de fondo $\bm{\mu}_p$ y también
+la intensidad de la señal $\mu_\text{sig}$. Para $\mu_\text{sig} = 0$ tenemos la
+función likelihood para la hipótesis de solo-fondo y con $\mu_\text{sig} = 1$ el
+valor esperado de señal para el valor nominal de modelo bajo consideración.
 
-Las incertezas sistemáticas son incluidas usando la pdf $C_\text{syst}(\btheta^0, \btheta)$,
-donde $\btheta^0$ son los valores centrales de las medidas auxiliares alrededor de los
-cuales $\btheta$ puede variarse al maximizar el likelihood. %\itodo{The
-  %impact of changes in nuisance parameters on the expectation
-  %values are described completely by the functions predicting
-  %the amount of signal and background, λ S and λ i .}
-Para parámetros nuisance independientes $C_\text{syst}$ es simplemente el producto
-de las pdf correspondientes a las mediciones auxiliares que describen cada una de las
-incertezas sistemáticas, típicamente una distribución gaussiana $G$ con ancho unidad,
+Las incertezas sistemáticas son incluidas usando la pdf
+$C_\text{syst}(\btheta^0, \btheta)$, donde $\btheta^0$ son los valores centrales
+de las medidas auxiliares alrededor de los cuales $\btheta$ puede variarse al
+maximizar el likelihood.
+El impacto
+The impact of changes in nuisance parameters on the expectation values are
+described completely by the functions predicting the amount of signal and background,
+lambdaS and lambdai . Para parámetros nuisance
+
+
+independientes $C_\text{syst}$ es simplemente el producto de las pdf
+correspondientes a las mediciones auxiliares que describen cada una de las
+incertezas sistemáticas, típicamente una distribución gaussiana $G$ con ancho
+unidad,
 
 \begin{equation}
-  C_\text{syst} (\btheta^0, \btheta) = \prod_{j \in \text{S}} G(\theta_j^0 - \theta_j)
+  C_\text{syst} (\btheta^0, \btheta) = \prod_{j \in \text{S}} G(\theta_j^0 -
+  \theta_j)
 \end{equation}
 %
-donde S es el conjunto completo de las incertezas sistemáticas consideradas.
-Las medidas auxiliares $\theta^0_j$ son típicamente fijadas a cero, pero pueden
+donde S es el conjunto completo de las incertezas sistemáticas consideradas. Las
+medidas auxiliares $\theta^0_j$ son típicamente fijadas a cero, pero pueden
 variar cuando se generan los pseudo-experimentos.
 
+
+\section{Ajustes}
+
+
+\subsection{Bkg only fit}
+
+El proposito  es estimar el fondo total en las SR y VR, sin hacer ninguna suposiscion del
+modelo de senal. Solo se utilizan las muestras de fondo en el modelo. Las CR se asumen que eztan libres
+de contaminacion de senal.  El ajuste solo se realiza en las CR y los procesos de fondo
+dominantes se normalizan al numero de eventos observados en esas regiones.
+Se utilizan la ec sin el termino de la SR.
+
+Se comparten todos los parametros del ajuste, por lo tanto se usan para predecir
+el numero de eventos de fondo en SR y VR.
+
+Estas predicciones de fondo son independientes del numero de eventos observado en la SR (y VR)
+ya que solo las CR se usan en el ajuste. Esto permite una comparasion no sesgada entre las
+predicciones y el numero de evnetos observado en esas regiones.
+
+
+
+
+
+
+----------------------------------
 
 %% \section{Fit}
 
@@ -263,7 +313,7 @@ variar cuando se generan los pseudo-experimentos.
 %% resaltar es que podemos usar mediciones auxiliares ($n_\text{CR}$) para describir la
 %% incerteza en el parámetro nuisance $\nu_B$ estadísticamente. Creamos un modelo
 %% estadístico que puede tratarse con un formalismo frecuentista. Se dice que las medidas
-%% auxiliares \fix{constrain} los parámetros nuisance.
+%% auxiliares \hl{constrain} los parámetros nuisance.
 
 %% Total probability model:
 
