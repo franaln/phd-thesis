@@ -1,0 +1,12 @@
+\begin{tikzpicture}[node distance=1.5cm, auto,]
+
+    \node[rec] (susy) {\sc Modelo SUSY};
+    \node[rec, right=of susy] (masses) {\sc Espectro de Masas};
+    \node[rec, right=of masses] (decays) {\small \sc Decaimientos};
+    \node[rec, right=of decays] (gen) {\sc Generador de Eventos};
+
+    \draw[arr] (1.7,0) -- (2.7,0);
+    \draw[arr] (6.2,0) -- (7.2,0);
+    \draw[arr] (10.8,0) -- (11.7,0);
+
+\end{tikzpicture}
