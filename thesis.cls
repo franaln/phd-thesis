@@ -80,7 +80,7 @@
 
 %-- Draft mode
 \if@draftmode
-\RequirePackage[a4paper,centering,marginparwidth=2.5cm]{geometry}
+%%\RequirePackage[a4paper,centering,marginparwidth=2.5cm]{geometry}
 \RequirePackage[colorinlistoftodos,textsize=footnotesize,textwidth=2.5cm]{todonotes} % draft with TODOs
 \else
 \usepackage[disable]{todonotes} % final without TODOs
@@ -179,14 +179,14 @@
       pdfpagelayout=OneColumn
     }
 
-    \RequirePackage[pdftex,paper=a4paper,hmarginratio=1:1,
+    \RequirePackage[pdftex,paper=a4paper,hmarginratio=1:1,headheight=16pt,
       vmarginratio=1:1,scale=0.75,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
 \fi
 
-%% \RequirePackage{etoolbox}
-%% \makeatletter
-%% \patchcmd{\@addmarginpar}{\ifodd\c@page}{\ifodd\c@page\@tempcnta\m@ne}{}{}
-%% \makeatother
-%% \reversemarginpar
+\RequirePackage{etoolbox}
+\makeatletter
+\patchcmd{\@addmarginpar}{\ifodd\c@page}{\ifodd\c@page\@tempcnta\m@ne}{}{}
+\makeatother
+\reversemarginpar
 
 \endinput
