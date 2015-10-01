@@ -21,6 +21,15 @@ teoría se manifiesta en el experimento.
 El procedimiento, una vez que se selecciona un modelo particular de SUSY,
 requiere de varios pasos que se encuentran esquematizados en la
 \cref{fig:mc_sketch}.
+En primer lugar es necesario calcular el espectro de masas de las partículas
+supersimétricas, y sus acoplamientos. A partir de esto se calculan los anchos y
+tazas de decaimiento de todas estas partículas. Y por último se utiliza el
+generador, que toma como entrada las masas y decaimientos calculados previamente,
+y genera los eventos de SUSY. Para los distintos pasos se utilizan
+distintas herramientas por lo que es fundamental contar con un forma de poder
+intercambiar información entre ellas de una forma estandarizada. Con este motivo
+se creo un tipo de archivo llamado SLHA (SUSY Les Houches Accord)\cite{SLHA} que
+puede funcionar como input/output de estas herramientas.
 
 \begin{figure}[h]
   \centering
@@ -30,15 +39,6 @@ requiere de varios pasos que se encuentran esquematizados en la
 \end{figure}
 
 
-En primer lugar es necesario calcular el espectro de masas de las partículas
-supersimétricas, y sus acoplamientos. A partir de esto se calculan los anchos y
-tazas de decaimiento de todas estas partículas. Y por último se utiliza el
-generador, que toma como entrada las masas y decaimientos calculados previamente,
-y es capaz de generar los eventos de SUSY. Para los distintos pasos se utilizan
-distintas herramientas por lo que es fundamental contar con un forma de poder
-intercambiar información entre ellas de una forma estandarizada. Con este motivo
-se creo un tipo de archivo llamado SLHA (SUSY Les Houches Accord)\cite{SLHA} que
-puede funcionar como input/output de estas herramientas.
 
 %% Para interfacear dos o mas calculos, el procedimiento general requiere que
 %% el usuario prepare los parametros del modelo ,
@@ -60,7 +60,7 @@ puede funcionar como input/output de estas herramientas.
 %% genera los eventos a partir de la informacion de este archivo.
 
 
-\subsection{Espectro de masas}
+\subsection{Espectro de masas y decaimientos}
 
 Los modelos de SUSY en lo que nos focalizamos suelen ser la teoria efectica a
 bajas energias que resultan de una teoria mas general, como teoria de
@@ -77,29 +77,26 @@ Lagrangiano son frecuentemente especificados a energias mucho mas altas
 
 Una vez que los parametros del Lagrangiano son conocidos a la escala
 electrodebil, pueden identificarse las masas fisicas de las particulas,
-diagonalizando las matrices de masa correspondientes, y luego, para tener la precision
-suficiente,  aplicar las correciones a ordenes mayores (en general a 1 loop).
+diagonalizando las matrices de masa correspondientes, y luego, para tener la
+precision suficiente, aplicar las correciones a ordenes mayores (en general a 1
+loop).
 
-%% Existen varios programas que permiten realizar estos calculos del espectro de
-%% masas: \texttt{Isasugra}, \suspect, \texttt{SoftSusy} y \texttt{Spheno}.
+A partir del modelo también es posible calcular los anchos y tazas de decaimiento de todas las
+partículas supersimetricas
 
+Existen varios programas que permiten realizar estos calculos del espectro de
+masas: \texttt{Isasugra}, \suspect, \texttt{SoftSusy} y \texttt{Spheno}...
 
-\subsection{Decaimientos}
-
-\note{Agregar}
-%% A partir del modelo también es posible calcular los anchos y
-%% tazas de decaimiento de todas las spartículas y los bosones de Higgs tanto $1
-%% \to 2$ cuerpos y $1 \to 3$ cuerpos.
-
-%% En este trabajo utilizamos el programa {\susyhit}\note{ref} que combina
-%% {\suspect} junto {\sdecay} y {\hdecay} para calcular los BRs y anchos de
-%% decaimiento. Algunos de estos modos de decaimientos son calculados a NLO en QCD.
+En este trabajo utilizamos el programa {\susyhit}\note{ref} que combina
+{\suspect} junto {\sdecay} y {\hdecay} para calcular los BRs y anchos de
+decaimiento. Algunos de estos modos de decaimientos son calculados a NLO en QCD.
 
 
-{\suspect}\note{referencia} corre las RGE a dos loops en el MSSM para determinar
-los parametros de SUSY a la escala electrodebil en modelos de mSUGRA, GMSB, AMSB
-y pMSSM. Y aplica luego las correscciones a 1 loop, y algunas correcciones a 2 loops
-para las masas de los Higgs.
+
+%% {\suspect}\note{referencia} corre las RGE a dos loops en el MSSM para determinar
+%% los parametros de SUSY a la escala electrodebil en modelos de mSUGRA, GMSB, AMSB
+%% y pMSSM. Y aplica luego las correscciones a 1 loop, y algunas correcciones a 2 loops
+%% para las masas de los Higgs.
 
 
 
@@ -292,9 +289,6 @@ descomponerse en varios pasos descriptos a continuacion (y esquematizados en la
 
 %% \end{enumerate}
 
-
-
-
 %% \subsubsection{Interacccion dura}
 
 %% La interaccion dura y la convolucion con las PDFs es el calculo central
@@ -302,16 +296,6 @@ descomponerse en varios pasos descriptos a continuacion (y esquematizados en la
 %% al orden mas bajo en teoria de perturbaciones, por lo que la interaccion
 %% dura es un proceso de dispersion $2\to 2$ o $1\to 1$.
 
-%% \subsubsection{Lluvia de partones}
-
-
-%% \subsubsection{Decaimientos en cascada}
-
-
-%% \subsubsection{Hadronizacion}
-
-
-%% \subsubsection{Remanentes}
 
 %% Finalmente, en un colisionador de hadrones, los remanentes del nucleon
 %% que no participaron en la interaccion dura deben ser tenidos en cuenta.
@@ -321,31 +305,103 @@ descomponerse en varios pasos descriptos a continuacion (y esquematizados en la
 %% remanentes deben ser hadronizados.
 
 
+\subsection{Sección eficaz}
+
+En el caso de procesos de producción de pares de gluino o quarks, de los cuales
+existe el calculo a NLL, la sección eficaz se toma a NLO en la constante de acoplamiento
+fuerte, incluyendo el \emph{resummation} de la emisión de gluones soft con precisión NLL,
+realizada utilizando {\nllfast}.
+
+En el caso de la producción de otro tipo de procesos, como la producción electrodébil, se utiliza
+las secciones eficaces calculadas a NLO usando {\prospino}.
+
+\todo{decoupling limit?}
+
+
+\newcommand{\pdfcteqpm}{\ensuremath{\Delta\mathrm{PDF}^{\pm}(\mathrm{CTEQ})}}
+\newcommand{\scacteqpm}{\ensuremath{\Delta\mathrm{SCA}^{\pm}(\mathrm{CTEQ})}}
+
+\newcommand{\pdfmstwpm}{\ensuremath{\Delta\mathrm{PDF}^{\pm}(\mathrm{MSTW})}}
+\newcommand{\scamstwpm}{\ensuremath{\Delta\mathrm{SCA}^{\pm}(\mathrm{MSTW})}}
+
+\newcommand{\alphap}{\ensuremath{\alpha_s_+}}
+\newcommand{\alpham}{\ensuremath{\alpha_s^-}}
+\newcommand{\alphapm}{\ensuremath{\alpha_s^{\pm}}}
+
+
+Las incertezas debidas a la elección de la escala de renormalizacion y
+factorizacion como también de la PDF, son obtenidas utilizando {\nllfast} o
+calculadas con {\prospino}. En orden de combinar todas estas predicciones y
+obtener un incerteza total, se siguen lo mas posible las recomendaciones
+PDF4LHC[]. Para esto se define la envolvente de las predicciones a la sección eficaz
+usando el intervalo a 68\% CL del conjunto de PDFs CTEQ (incluyendo la incerteza en $\alpha_s$ y MSTW,
+junto con las variaciones de las escalas. La sección eficaz nominal se obtiene usando el punto medio
+de la envolvente y la incerteza como la mitad del ancho de la misma. Matemáticamente
+si {\pdfcteqpm} y {\scacteqpm} son las variaciones en $\pm 1\sigma$ de las PDF CTEQ.
+Y {\pdfmstwpm} y {\scamstwpm} son las variaciones en $\pm 1\sigma$ en la PDF MSTW.
+Y {\alphapm} son las correspondientes incertezas de la constante de acoplamiento fuerte.
+
+
+\begin{align}
+  \Delta\mathrm{CTEQ}^{\pm} &= \sqrt{(\pdfcteqpm)^2 + (\scacteqpm)^2 + (\alphapm)^2} \\
+  \Delta\mathrm{MSTW}^{\pm} &= \sqrt{(\pdfmstwpm)^2 + (\scamstwpm)^2}
+\end{align}
+
+Los correspondientes extremos por arriba y abajo de la envolvente pueden calcularse a partir de estos:
+
+\begin{align}
+  U &= \max(\Delta\mathrm{CTEQ}^\mathrm{nom} + \Delta\mathrm{CTEQ}^{+},\quad \Delta\mathrm{MSTW}^\mathrm{nom} + \Delta\mathrm{MSTW}^{+}) \\
+  L &= \min(\Delta\mathrm{CTEQ}^\mathrm{nom} - \Delta\mathrm{CTEQ}^{-},\quad \Delta\mathrm{MSTW}^\mathrm{nom} - \Delta\mathrm{MSTW}^{-})
+\end{align}
+%
+y la seccion eficaz final ($\sigma$) y su incerteza simétrica ($\delta\sigma$) se obtiene como:
+
+\begin{equation}
+  \sigma = (U+L)/2,\quad \Delta\sigma = (U-L)/2
+\end{equation}
+
+
+
+
+\section{Simulación en ATLAS}
 
 
 
 
 
 
+La salida de la simulacion se utiliza como entrada para la digitalizacion.
+En esta etapa se agrega el ruido del detector al evento y se simula
+el primer niveldel trigger.
+
+Por ultimo se corren los algoritmos del HTL y la reconstruccion.
+La reconstruccion es identica es la misma para los datos y para
+la simulacion.
+
+
+
+*Funciones de distribucion partonicas
+Las funciones de distribucion partonica (PDFs) se utilizan
+para describir la subestrucura del proton y son usadas por
+todos los generadores de eventos.
+ATLAS utiliza la libreria LHAPDF[61] que contiene
+un repositorio con una gran cantidad de PDFs. Por defecto, y
+a menos que se indique lo contrario las PDFs CTEQ son las utilizadas
+en ATLAS.
+
+
+* Simulacion Rapida
+Casi 80\% del tiempo de simulacion se debe a la simulacion
+de particulas atravesando el calorimetro, y cerca del 75\%
+es simulando las particulas electromagneticas. En la simulacion rapida
+ATLFAST, se remueven estas particulas electromagneticas de baja energia
+y se las reemplaza con lluvias electromagnetcias pre-simuladas.
+De esta forma se reduce el consumo de CPU notablemente, sin problemas
+desde el punto de vista fisico.
 
 
 
 
-
-
-\subsection{Seccion eficaz}
-
-\todo{Agregar}
-
-
-
-
-
-
-
-
-
-\section{Simulacion en ATLAS}
 
 Las muestras de se\~nal de SUSY y de fondo del SM fueron simuladas utilizando generadores MC
 a $\sqrt{s}=8\tev$.
@@ -361,6 +417,8 @@ Los detalles de las simulaciones estar resumidos en \cref{sec:sig_samples,sec:bk
 La mayoria de los fondos MC fueron utilizados para comparaciones y cross checks.
 La estimacion de los fondos en las regiones de senal se estime, cuando fue posible de los
 datos observados.
+
+
 
 
 
@@ -1311,3 +1369,54 @@ ambos bosones fueron considerados.
   \end{tabular}
   \label{tab:bkg_diboson_samples}
  \end{table}
+
+
+
+Referencias
+
+%% MC Event Generators
+@inproceedings{Seymour:2013ega,
+  author         = ``Seymour, Michael H. and Marx, Marilyn'',
+  title          = ``{Monte Carlo Event Generators}'',
+  booktitle      = ``{Proceedings, 69th Scottish Universities Summer School in
+    Physics : LHC Phenomenology (SUSSP69)}'',
+  url            = ``http://inspirehep.net/record/1229804/files/arXiv:1304.6677.pdf'',
+  year           = ``2013'',
+  pages          = ``287-319'',
+  doi            = ``10.1007/978-3-319-05362-2_8'',
+  eprint         = ``1304.6677'',
+  archivePrefix  = ``arXiv'',
+  primaryClass   = ``hep-ph'',
+  reportNumber   = ``MCNET-13-05'',
+  SLACcitation   = ``%%CITATION = ARXIV:1304.6677;%%''
+}
+
+%% ATLAS Simulation
+@article{
+  year={2010},
+  issn={1434-6044},
+  journal={The European Physical Journal C},
+  volume={70},
+  number={3},
+  doi={10.1140/epjc/s10052-010-1429-9},
+  title={The ATLAS Simulation Infrastructure},
+  url={http://dx.doi.org/10.1140/epjc/s10052-010-1429-9},
+  publisher={Springer-Verlag},
+  author={ATLAS Collaboration},
+  pages={823-874},
+  }
+
+%% XS
+@article{Kramer:2012bx,
+  author         = ``Kramer, Michael and Kulesza, Anna and van der Leeuw,
+  Robin and Mangano, Michelangelo and Padhi, Sanjay and
+  Plehn, Tilman and Portell, Xavier'',
+  title          = ``{Supersymmetry production cross sections in $pp$
+    collisions at $\sqrt{s}=7$ TeV}'',
+  year           = ``2012'',
+  eprint         = ``1206.2892'',
+  archivePrefix  = ``arXiv'',
+  primaryClass   = ``hep-ph'',
+  reportNumber   = ``CERN-PH-TH-2012-163'',
+  SLACcitation   = ``%%CITATION = ARXIV:1206.2892;%%''
+  }

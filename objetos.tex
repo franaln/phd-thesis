@@ -8,8 +8,8 @@
 %% The use of these objects in the different signal and control regions is described in \Sec \ref{sec:signal_regions}
 %% and \ref{sec:CRs}, respectively.
 
-En esta secci\'on se describe la reconstrucci\'on y calibraci\'on de los
-principales objectos usados en este an\'alisis:
+En esta sección se describe la reconstrucción y calibración de los
+principales objectos utilizados en el presente an\'alisis:
 fotones, jets, muones, electrones y \met.
 
 %% ), siguiendo el procedimeinto
@@ -21,31 +21,32 @@ fotones, jets, muones, electrones y \met.
 \section{Fotones}
 \label{sec:obj_photons}
 
-Los fotones son reconstruidos de los clusters en el calorimetro electromagnetico
-medidos en torres de $3\times5$ cledas en $\eta\times\phi$ de la segunda capa del
-calorimetro.
-Los fotones son clasificados como \emph{no-convertidos} si no tienen trazas de un vertice
-de conversion asociadas al cluster, y como \emph{convertidos} sino.
-Un vertice de conversion es formado cuando dos trazas que pasan el TRT high-threshold requirement
-forman un vertice consistente como que vienen de una particula no masiva.
-Para aumentar la eficiencia de reconstruccion de fotones convertidos, los candidatos a conversion
-donde solo una de las dos trazas es reconstruida (y no tiene ningun hit en la capa mas interior
-del detector de pixeles) tambien son retendidas
+Los fotones son reconstruidos de los clusters en el calorímetro electromagnético
+medidos en torres de $3\times5$ celdas en el plano $\eta\times\phi$ de la
+segunda capa del calorímetro. Los fotones son clasificados como
+\emph{no-convertidos} si no tienen trazas de un vértice de conversión asociadas
+al cluster, y sino como \emph{convertidos}. Un vértice de conversión es formado
+cuando dos trazas que pasan el TRT high-threshold requirement forman un vértice
+consistente como que vienen de una partícula no masiva. Para aumentar la
+eficiencia de reconstrucción de fotones convertidos, los candidatos a conversión
+donde solo una de las dos trazas es reconstruida (y no tiene ningún hit en la
+capa mas interior del detector de pixeles) también son retendidas
 
-Los fotones pre-seleccionados son entonces lo que tengas un {\pt} mayor a
-20 {\gev} con $|\eta| < 2.37$, removiendo la region del crack $1.37 < |\eta| < 1.52$,
-donde $\eta$ se mide en el cluster de la segunda capa del calorimetro.
+Los fotones pre-seleccionados son entonces lo que tienen un {\pt} mayor a 20
+{\gev} con $|\eta| < 2.37$, removiendo los que se encuentran en la región del
+crack $1.37 < |\eta| < 1.52$, donde $\eta$ se mide en el cluster de la segunda
+capa del calorímetro.
 
-Cuando se calcula el {\pt} del foton, la energia es tomada siempre del cluster
-del calorimetro, apropiadamente calibrada \cite{Banfi:1259219}.
+Cuando se calcula el {\pt} del fotón, la energía es tomada siempre del cluster
+del calorímetro, apropiadamente calibrada \cite{Banfi:1259219}.
 Para fotones no-convertidos, el $\eta$ es calculado usando las dos primeras
-capas del calorimetro electromagnetico. Para fotones convertidos, donde la traza
-o las trazas que provienen del vertice de la conversion contiene mas de tres
-silicon hits, la direccion $\eta$ se determina extrapolando del cluster del
-calorimetro al vertice de la conversion.
+capas del calorímetro electromagnético. Para fotones convertidos, donde la traza
+o las trazas que provienen del vértice de la conversión contiene mas de tres
+silicon hits, la dirección $\eta$ se determina extrapolando del cluster del
+calorímetro al vértice de la conversión.
 Para fotones convertidos que tienen trazas solo en el TRT, $\eta$ es calculada
-del \hl{calorimeter pointing}, como en el caso de los no-convertidos. Ademas
-la escala de energia del fotone es corregida para datos y smeareada para MC,
+del \hl{calorimeter pointing}, como en el caso de los no-convertidos. Además
+la escala de energía del fotón es corregida para datos y smeareada para MC,
 siguiendo \cite{EGScaleTwiki}.
 
 Algunos cortes de limpieza son aplicados a los candidatos a fotones para
@@ -162,7 +163,7 @@ se aplican a todos los candidatos a electrones  para identificar fakes
 debidos a problemas instrumentales.
 La energía de los electrones es reconstruida de clusters en el calorímetro
 electromagnético sin tener en cuenta su masa. Mientras que la información
-del detector de trazas es usada para reconstruir su dirección. \fix{La escala
+del detector de trazas es usada para reconstruir su dirección. \note{La escala
 de energía en datos es corregida para igualar la observada en datos} \cite{EGScaleTwiki}.
 %% \hl{An extra spread is introduced on the MC electron energy in order to reproduce the
 %%   resolution measured on data for benchmark channels.}

@@ -111,7 +111,7 @@
             {} % formatting commands applied to both label and title
             {\centering\resizebox{!}{0.4cm}{\thechapter}} %{\vspace{-2cm} \hfill \large [\sc Cap\'itulo \thechapter]}
             {1cm} % separation between number and chapter title
-            {\fontsize{26pt}{26pt}\selectfont\centering\bfseries\sc} % code preceding title. Last cmd can take arg, which is title
+            {\fontsize{22pt}{22pt}\selectfont\centering\bfseries\sc} % code preceding title. Last cmd can take arg, which is title
             []  % everything inside [] comes after the title
 
 \titleformat{\part}
