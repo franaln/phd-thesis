@@ -28,6 +28,7 @@
 %%-- Load additional packages and commands.
 \RequirePackage[final]{microtype}
 \RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
 \RequirePackage{lineno}
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
@@ -45,7 +46,7 @@
 \RequirePackage{tabularx}
 \RequirePackage{rotating}
 \RequirePackage{accents}
-
+\RequirePackage{enumitem}
 
 %%-- Additional TeX/LaTeX code...
 \renewcommand\baselinestretch{1.2}
@@ -59,7 +60,7 @@
 %%\setlength{\extrarowheight}{2pt}
 \setlength{\arrayrulewidth}{0.4pt}
 \setlength{\doublerulesep}{0pt}
-\setlength{\tabcolsep}{6pt}
+\setlength{\tabcolsep}{15pt}
 \renewcommand{\arraystretch}{1.05}
 
 % enter only chapters and sections in TOC---subsecs as a try
@@ -110,7 +111,7 @@
             {} % formatting commands applied to both label and title
             {\centering\resizebox{!}{0.4cm}{\thechapter}} %{\vspace{-2cm} \hfill \large [\sc Cap\'itulo \thechapter]}
             {1cm} % separation between number and chapter title
-            {\fontsize{6cm}{1em}\selectfont \sc\centering} % code preceding title. Last cmd can take arg, which is title
+            {\fontsize{26pt}{26pt}\selectfont\centering\bfseries\sc} % code preceding title. Last cmd can take arg, which is title
             []  % everything inside [] comes after the title
 
 \titleformat{\part}
@@ -130,6 +131,8 @@
 \fancyhead{}
 \fancyhead[RO,LE]{{\bf \fbox{DRAFT $\cdot$ \today}}}
 \renewcommand{\headrulewidth}{0pt}
+\fancyfoot{}
+\fancyfoot[RO,LE]{\thepage}
 \else
 \fancyhead{}
 \fancyhead[RO,LE]{\chaptername}
@@ -179,7 +182,7 @@
       pdfpagelayout=OneColumn
     }
 
-    \RequirePackage[pdftex,paper=a4paper,hmarginratio=1:1,headheight=16pt,
+    \RequirePackage[pdftex,paper=a4paper,hmarginratio=1:1,
       vmarginratio=1:1,scale=0.75,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
 \fi
 

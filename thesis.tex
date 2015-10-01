@@ -31,6 +31,16 @@
 \newcommand{\creflastconjunction}{ y }
 \newcommand{\crefrangeconjunction}{-}
 
+\usepackage[labelfont=bf]{caption}
+
+\setlength{\textfloatsep}{20.0pt plus 2.0pt minus 4.0pt}
+\setlength{\intextsep}{30.0pt plus 2.0pt minus 2.0pt}
+
+
+\addto\captionsspanish{%
+  \renewcommand{\contentsname}{\sc Índice General}%
+}
+
 \begin{document}
 
 % title
@@ -53,7 +63,6 @@
 \include{estadistica}
 \include{estrategia}
 \include{simulaciones}
-\include{truth} % ??
 \include{seleccion}
 \include{fondos}
 \include{sistematicos}
