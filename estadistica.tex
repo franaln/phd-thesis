@@ -138,7 +138,7 @@ priori, sino que se ajustan a los datos.
 
 En este escenario, donde tenemos un sólo parámetro de interés
 $\mu$, y el resto de parámetros nuisance $\btheta$, es conveniente
-definir el \hl{profile likelihood ratio} (PLR),
+definir el \emph{profile likelihood ratio} (PLR),
 
 \begin{equation}
   \lambda(\mu) = \frac{L(\mu,\doublehat{\btheta})}{L(\hat{\mu},\hat{\btheta})}
@@ -464,10 +464,10 @@ Entonces para este  caso de $\mu \geq 0$ conviene definir,
 
 \begin{equation}
   \tilde{\lambda}(\mu) =
-  \begin{cases}
-    \frac{L(\mu, \doublehat{\btheta})}{L(\hat{\mu}, \hat{\btheta})} & \hat{\mu} \geq 0 \\
-    \frac{L(\mu, \doublehat{\btheta})}{L(0, \hat{\btheta}(0))} & \hat{\mu} < 0
-  \end{cases}
+    \begin{cases}
+      \frac{L(\mu, \doublehatfix{\btheta})}{L(\hat{\mu}, \hat{\btheta})} & \hat{\mu} \geq 0 \\
+      \frac{L(\mu, \doublehatfix{\btheta})}{L(0, \hat{\btheta}(0))} & \hat{\mu} < 0
+    \end{cases}
 \end{equation}
 
 Acá $\doublehat{\btheta}(0)$ y $\doublehat{\btheta}(\mu)$ se refieren a los MLE

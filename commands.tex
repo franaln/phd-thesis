@@ -95,27 +95,27 @@
 
 
 %-- Generators
-\newcommand{\pythia}{\texttt{PYTHIA}}
-\newcommand{\herwigpp}{\texttt{Herwig++}}
-\newcommand{\madgraph}{\texttt{MadGraph}}
-%\newcommand{\suspect}{\texttt{SUSPECT}}
-\newcommand{\suspect}{\texttt{SuSpect}}
-\newcommand{\sdecay}{\texttt{SDECAY}}
-\newcommand{\hdecay}{\texttt{HDECAY}}
-\newcommand{\prospino}{\texttt{PROSPINO}}
-\newcommand{\nllfast}{\texttt{NLL-fast}}
-\newcommand{\pythiasix}{\texttt{Pythia6}}
-\newcommand{\pythiaeight}{\texttt{Pythia8}}
-\newcommand{\powheg}{\texttt{Powheg}}
-\newcommand{\sherpa}{\texttt{Sherpa}}
-\newcommand{\herwig}{\texttt{Herwig}}
-\newcommand{\alpgen}{\texttt{Alpgen}}
-\newcommand{\jimmy}{\texttt{Jimmy}}
-\newcommand{\photos}{\texttt{Photos}}
-\newcommand{\wizhard}{\texttt{Wizhard}}
-\newcommand{\tauola}{\texttt{Tauola}}
-\newcommand{\acermc}{\texttt{AcerMC}}
-\newcommand{\geant}{\texttt{Geant}}
+\newcommand{\pythia}{\textsc{Pythia}}
+\newcommand{\herwigpp}{\textsc{Herwig++}}
+\newcommand{\madgraph}{\textsc{MadGraph}}
+%\newcommand{\suspect}{\textsc{SUSPECT}}
+\newcommand{\suspect}{\textsc{Suspect}}
+\newcommand{\sdecay}{\textsc{Sdecay}}
+\newcommand{\hdecay}{\sc{Hdecay}}
+\newcommand{\prospino}{\textsc{Prospino}}
+\newcommand{\nllfast}{\textsc{NLL-fast}}
+\newcommand{\pythiasix}{\textsc{Pythia6}}
+\newcommand{\pythiaeight}{\textsc{Pythia8}}
+\newcommand{\powheg}{\textsc{Powheg}}
+\newcommand{\sherpa}{\textsc{Sherpa}}
+\newcommand{\herwig}{\textsc{Herwig}}
+\newcommand{\alpgen}{\textsc{Alpgen}}
+\newcommand{\jimmy}{\textsc{Jimmy}}
+\newcommand{\photos}{\textsc{Photos}}
+\newcommand{\wizhard}{\textsc{Wizhard}}
+\newcommand{\tauola}{\textsc{Tauola}}
+\newcommand{\acermc}{\textsc{AcerMC}}
+\newcommand{\geant}{\textsc{Geant}}
 \newcommand{\susyhit}{SUSYHIT}
 
 %-- Regions
@@ -161,6 +161,14 @@
   \addtolength{\dhatheight}{-0.35ex}%
   \hat{\vphantom{\rule{1pt}{\dhatheight}}%
     \smash{\hat{#1}}}}
+
+\newlength{\dhatheightfix}
+\newcommand{\doublehatfix}[1]{%
+  \settoheight{\dhatheightfix}{\ensuremath{\hat{#1}}}%
+  \addtolength{\dhatheightfix}{-0.9ex}%
+  \hat{\vphantom{\rule{1pt}{\dhatheightfix}}%
+    \smash{\hat{#1}}}}
+
 
 %- Otros
 \newcommand{\trigchain}{\texttt{g120\_loose}}
