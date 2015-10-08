@@ -146,10 +146,9 @@
 \newcommand{\etiso}{\ensuremath{E_{\rm T}^{\rm iso}}}
 
 %- Stat
+\DeclareMathOperator{\Pois}{Pois}
 \newcommand{\pvalue}{valor-$p$}
 \newcommand{\btheta}{\ensuremath{\bm{\theta}}}
-\DeclareMathOperator{\Pois}{Pois}
-%\newcommand{\dhat}[1]{\ensuremath{\hat{\hat{#1}}}}
 \newcommand{\cl}{\ensuremath{\text{CL}}}
 \newcommand{\clsb}{\ensuremath{\text{CL}_{s+b}}}
 \newcommand{\clb}{\ensuremath{\text{CL}_b}}
@@ -158,14 +157,14 @@
 \newlength{\dhatheight}
 \newcommand{\doublehat}[1]{%
   \settoheight{\dhatheight}{\ensuremath{\hat{#1}}}%
-  \addtolength{\dhatheight}{-0.35ex}%
+  \addtolength{\dhatheight}{-0.3ex}%
   \hat{\vphantom{\rule{1pt}{\dhatheight}}%
     \smash{\hat{#1}}}}
 
 \newlength{\dhatheightfix}
 \newcommand{\doublehatfix}[1]{%
   \settoheight{\dhatheightfix}{\ensuremath{\hat{#1}}}%
-  \addtolength{\dhatheightfix}{-0.9ex}%
+  \addtolength{\dhatheightfix}{-0.85ex}%
   \hat{\vphantom{\rule{1pt}{\dhatheightfix}}%
     \smash{\hat{#1}}}}
 
