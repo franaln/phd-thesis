@@ -32,6 +32,7 @@
 \RequirePackage{lineno}
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
+\RequirePackage{amssymb}
 \RequirePackage{bm}
 \RequirePackage{tikz}
 \RequirePackage{booktabs}
@@ -58,13 +59,13 @@
 
 % minor changes to tables
 %%\setlength{\extrarowheight}{2pt}
-\setlength{\arrayrulewidth}{0.4pt}
-\setlength{\doublerulesep}{0pt}
-\setlength{\tabcolsep}{15pt}
-\renewcommand{\arraystretch}{1.05}
+%% \setlength{\arrayrulewidth}{0.4pt}
+%% \setlength{\doublerulesep}{0pt}
+%% \setlength{\tabcolsep}{15pt}
+%% \renewcommand{\arraystretch}{1.05}
 
 % enter only chapters and sections in TOC---subsecs as a try
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{0}
 
 % enume\rate down to subsections
 \setcounter{secnumdepth}{2}
@@ -111,7 +112,7 @@
             {} % formatting commands applied to both label and title
             {\centering\resizebox{!}{0.4cm}{\thechapter}} %{\vspace{-2cm} \hfill \large [\sc Cap\'itulo \thechapter]}
             {1cm} % separation between number and chapter title
-            {\fontsize{22pt}{22pt}\selectfont\centering\bfseries\sc} % code preceding title. Last cmd can take arg, which is title
+            {\fontsize{24pt}{22pt}\selectfont\centering\bfseries\sc} % code preceding title. Last cmd can take arg, which is title
             []  % everything inside [] comes after the title
 
 \titleformat{\part}

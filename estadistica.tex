@@ -275,18 +275,6 @@ donde $c_\alpha$ es una constante que se ajusta para que el tama\~no sea $\alpha
 Este estadistico de prueba es esencialmente el cociente de los likelihoods
 para las dos hipotesis.
 
-%% Para el caso de un conjunto de datos muy grandes ($N$ grande), la distribución
-%% de las medias de los observables $\bm{x}$ va a seguir una distribución normal
-%% incluso si las cantidades medidas $\bm{x}$ no siguen una distribución normal.
-%% Esto es consecuencia del \emph{Teorema Central del Límite}. En este caso, la pdf
-%% del estadístico de prueba $t$ puede ser fácilmente determinada (ver \cref{sec:aprox}).
-%% En el caso
-%% general, sin embargo, es necesario utilizar simulaciones Monte Carlo para
-%% generar lo que se denomina \emph{pseudo-experimento}. El procedimiento
-%% consiste en generar el conjunto de observables $\bm{x}$ utilizando la pdf
-%% $f(\bm{x}|H)$ y calculando el valor del estadístico de prueba $t(\bm{x})$ para
-%% cada conjunto. Este proceso se repite hasta acumular suficiente estadística
-%% en la distribución de $g(t|H)$.
 
 El nivel de acuerdo entre los datos observados y una hipótesis $H$ es
 cuantificado calculando el \emph{\pvalue}, es decir, la probabilidad, bajo la
@@ -378,9 +366,9 @@ con muchos parámetros libres. Sin embargo, hay una generalización natural basa
 en el PLR. De la \cref{eq:lambdamu} se puede ver que $0 \leq \lambda \leq 1$, con
 $\lambda$ cercano a 1 implica un buen acuerdo entre datos y el valor hipotetico de $\mu$.
 De forma equivalente conviene utilizar como estadistico de prueba $t_\mu = -2 \ln \lambda(\mu)$.
-En el limite asintotico ($N\to\infty$) el teorema de Wilk[] muestra
-que $-2 \ln \lambda(\mu)$ sigue una distribucion $\chi^2$ con un grado de libertad
-\note{chequear}. Esta propiedad sera util para aproximar la pdf del estaditico
+En el limite asintotico ($N\to\infty$) el teorema de Wilk\cite{WilkTheo} muestra
+que $-2 \ln \lambda(\mu)$ sigue una distribucion $\chi^2$ con un grado de libertad.
+Esta propiedad sera util para aproximar la pdf del estaditico
 de prueba (ver \cref{sec:aprox}).
 
 
@@ -452,16 +440,16 @@ el acuerdo de este para describir los datos observados.
 
 Por el contrario, si $p_0> \epsilon$ no se puede rechazar $H_0$. Esto no
 significa que todos los valores de $\mu$ bajo $H_1$ estén excluidos.
-\hl{En particular, hay valores de $\mu$ a los que el analisis no es sensible
-y valores que los datos observados no permite excluir.}
-Lo que hay
-que hay que poner a prueba ahora es $H_1[\mu_0]: \mu = \mu_0$ contra $H_0[\mu_0]: \mu < \mu_0$.
-Con motivo de realizar esta prueba se define $\tilde{q}_\mu$,
+En particular, hay valores de $\mu$ a los que el analisis no es sensible
+y valores que los datos observados no permite excluir.
+
+Para establecer limites superiores en el parametro $\mu$ se considera
+$q_\mu$,
 
 \begin{equation}
-  \tilde{q}_\mu =
+  q_\mu =
   \begin{cases}
-    -2 \ln \tilde{\lambda}(\mu) & \hat{\mu} \leq \mu \\
+    -2 \ln \lambda(\mu) & \hat{\mu} \leq \mu \\
     0 & \hat{\mu} > \mu
   \end{cases} \label{eq:qmu}
 \end{equation}
@@ -485,38 +473,42 @@ datos fluctúan hacia arriba ($\hat{\mu}>\mu$).
 %% distribución de $\tilde{q}_\mu$ se pueden generar pseudo-experimentos con Monte
 %% Carlo $\to$ $f(\tilde{q}_\mu|\mu, \btheta)$.
 
-El {\pvalue} para una observación bajo una hipótesis $(\mu,\btheta)$ es la
-probabilidad de obtener un resultado igual o mas extremo que los obtenidos dado
-H.
+%% El {\pvalue} para una observación bajo una hipótesis $\mu$ es la
+%% probabilidad de obtener un resultado igual o mas extremo que los obtenidos dado
+%% H.
 
-\begin{equation}
-  p_{(\mu,\btheta)} = \int_{\tilde{q}_{\mu,\text{obs}}}^{\infty}
-  f(\tilde{q}_\mu|\mu,\btheta) \, d\tilde{q}_\mu
-\end{equation}
+%% \begin{equation}
+%%   p_{(\mu,\btheta)} = \int_{q_{\mu,\text{obs}}}^{\infty}
+%%   f(q_\mu|\mu,\btheta) \, dq_\mu
+%% \end{equation}
+%% \begin{equation}
+%%   p_{\mu} = \int_{q_{\mu,\text{obs}}}^{\infty}
+%%   f(q_\mu|\mu) \, dq_\mu
+%% \end{equation}
 
-Este {\pvalue} presenta como dificultad que no solo depende del parámetro de interés,
-sino también de $\btheta$. La hipótesis no puede ser rechazada a menos que
-el {\pvalue} sea suficientemente chico para todos los valores de $\btheta$. De forma
-equivalente se utiliza el supremo del {\pvalue} para decidir si la hipótesis de $\mu = \mu_0$
-es aceptada o rechazada.
+%% Este {\pvalue} presenta como dificultad que no solo depende del parámetro de interés,
+%% sino también de $\btheta$. La hipótesis no puede ser rechazada a menos que
+%% el {\pvalue} sea suficientemente chico para todos los valores de $\btheta$. De forma
+%% equivalente se utiliza el supremo del {\pvalue} para decidir si la hipótesis de $\mu = \mu_0$
+%% es aceptada o rechazada.
 
-\begin{equation}
-  p_\mu^\text{sup} = \sup_\theta p_{(\mu,\btheta)}
-\end{equation}
+%% \begin{equation}
+%%   p_\mu^\text{sup} = \sup_\theta p_{(\mu,\btheta)}
+%% \end{equation}
 
-La mayor razón para usar PLR como estadístico de prueba es que en el límite de muchos
-eventos la distribución del PLR $\lambda(\mu=\mu_\text{0})$ es independiente
-de los valores de los parámetros nuisance $p_\mu^\text{sup} = p_{(\mu,\btheta)}
-\, \forall \theta$. Esto es una consecuencia del Teorema de Wilk.
-Elegir $\btheta^\text{sup} = \doublehat{\btheta}(\mu)$, es decir, el valor para el
-cual $p_{(\mu,\btheta)} = p_\mu^\text{sup}$ es un buen valor estimado de
-$\btheta^\text{sup}$.
+%% La mayor razón para usar PLR como estadístico de prueba es que en el límite de muchos
+%% eventos la distribución del PLR $\lambda(\mu=\mu_\text{0})$ es independiente
+%% de los valores de los parámetros nuisance $p_\mu^\text{sup} = p_{(\mu,\btheta)}
+%% \, \forall \theta$. Esto es una consecuencia del Teorema de Wilk.
+%% Elegir $\btheta^\text{sup} = \doublehat{\btheta}(\mu)$, es decir, el valor para el
+%% cual $p_{(\mu,\btheta)} = p_\mu^\text{sup}$ es un buen valor estimado de
+%% $\btheta^\text{sup}$.
 
 Para cuantificar la consistencia de los datos observados con la hipótesis de
 intensidad de se\~nal $\mu$ se calcula el {\pvalue}
 
 \begin{equation}
-  p_\mu = \int_{\tilde{q}_{\mu,\text{obs}}}^{\infty} f(\tilde{q}_\mu|\mu,\doublehat{\btheta}(\mu, \text{obs})) \, d\tilde{q}_\mu \equiv \clsb
+  p_\mu = \int_{q_{\mu,\text{obs}}}^{\infty} f(q_\mu|\mu) \, dq_\mu \equiv \clsb
   \label{eq:pmu}
 \end{equation}
 %
@@ -539,7 +531,7 @@ problema del {\clsb} es que para dos experimentos con el mismo número chico de
 eventos de señal esperado pero con un numero de eventos de fondo distinto, el
 experimento con mayor fondo va a imponer mejores límites.
 
-Con motivo de solucionar estos inconvenientes se introduce el método de {\cls}.
+Con motivo de solucionar estos inconvenientes se introduce el método de {\cls}\cite{ReadCLs}.
 %% Se define el {\clb},
 
 %% Los intervalos de confianza frecuentistas cubren e
@@ -554,8 +546,8 @@ Con motivo de solucionar estos inconvenientes se introduce el método de {\cls}.
 donde $p_b$ es el valor del mismo test bajo la hipótesis de sólo-fondo,
 
 \begin{equation}
-  1 - p_b = \int_{\tilde{q}_\mu^\text{obs}}^{\infty}
-  f(\tilde{q}_\mu|0,\doublehat{\btheta}(\mu=0)) \, d\tilde{q}_\mu \equiv \clb
+  1 - p_b = \int_{q_\mu^\text{obs}}^{\infty}
+  f({q}_\mu|0) \, dq_\mu \equiv \clb
 \end{equation}
 
 El límite superior {\cls} en $\mu$, $\mu_\text{up}$ se obtiene resolviendo
@@ -569,97 +561,102 @@ el {\clsb}.
 %% la propiedad indeseable del {\clsb} que para dos
 
 
-\section{Aproximación asintótica del PLR}\label{sec:aprox}
+% -----------------------
+% Aproximacion asintotica
+% -----------------------
+\section{Aproximación asintótica}\label{sec:aprox}
 
 Para poder calcular el {\pvalue} de una hipótesis utilizando las ecuaciones
 \eqref{eq:p0} y \eqref{eq:pmu} se necesita conocer las distribuciones muestrales
-del estadístico de prueba, $f(t)$.
+del estadístico de prueba, $f(q_\mu)$.
 
-%% Para un test de un unico parametro $\mu$ que representa la intensidad de senal, que
-%% puede ser cero (descubrimiento) o no nulo (para limite superior), y usando el resultado
-%% de Wald\cire{WaldTheo} vale,
 
-%% \begin{equation}
-%%   -2 \log \lambda(\mu) = \frac{(\mu - \hat{\mu})^2}{\sigma^2} + \mathcal{O}(1/\sqrt{N})
-%% \end{equation}
-%% %
-%% donde $\hat{\mu}$ sigue una distribucion normal con media $\mu'$ y desviacion estandar $\sigma$,
-%% y $N$ representa el tamano de los datos.
+Como se dijo anteriormente, el teorema de Wilk establece que para el limite de
+$N\to\infty$, el estadistico de prueba $t_\mu = -2\ln \lambda$ sigue una
+distribucion $\chi^2$ con un grado de libertad, cuando la hipotesis nula es verdadera.
 
-%% %% y si los datos
-%% %% estan distribuidos de acuerdo a un parametro $\mu'$. La funcion deseada $f
-En el límite asintótico, es decir, de una gran muestra de datos ($N\to\infty$)\cite{AsymAprox}, y
-utilizando el teorema de Wilks\cite{WilksTheo} y Wald\cite{WaldTheo} es posible
-escribir la distribución de $q_0$ completa como,
+El teorema de Wald\cite{WaldTheo} generaliza este teorema para el caso de la hipotesis no nula.
+En este caso el estadisitico $-2\ln\lambda$ sigue una distribucion $\chi^2$ no central.
+
+
+La distribucion $f(q_\mu|\mu')$ puede encontrarse utiliznaod los resultados de Wald[],
+que mostro que para el caso de un solo parametro de interes vale:
 
 \begin{equation}
-  f(q_0|\mu') = \left( 1 - \Phi\left(\frac{\mu'}{\sigma}\right)\right)
-  \delta(q_0) + \frac{1}{2}\frac{1}{\sqrt{2\pi}}\frac{1}{\sqrt{q_0}} \exp \left[
-    -\frac{1}{2} \left( \sqrt{q_0} - \frac{\mu'}{\sigma} \right)\right]
-\end{equation}
-
-Para el caso especial de $\mu' = 0$ la distribución se reduce a:
-
-\begin{equation}
-  f(q_0|0) = \frac{1}{2} \delta(q_0) +
-  \frac{1}{2}\frac{1}{\sqrt{2\pi}}\frac{1}{\sqrt{q_0}} e^{-q_0/2}
-\end{equation}
-
-En este límite, $f(q_0|0)$ es independiente de los parámetros
-nuisance, aunque $f(q_0|\mu')$ depende de los parámetros nuisance a través de
-$\sigma$.
-
-De la pdf, la distribución acumulada de $q_0$ es,
-
-\begin{equation}
-  F(q_0|\mu') = \Phi \left( \sqrt{q_0} - \frac{\mu'}{\sigma} \right)
-\end{equation}
-
-Para el caso especial $\mu' = 0$ es $F(q_0|0) = \Phi(\sqrt{q_0})$ y el valor-$p$
-de la hipótesis $\mu=0$ es
-
-\begin{equation}
-  p_0 = 1 - F(q_0|0)
-\end{equation}
-
-y la significancia de descubrimiento $Z$ es simplemente,
-
-\begin{equation}
-  Z_0 = \Phi^{-1} (1-p_0) = \sqrt{q_0}
-\end{equation}
-
-Para el caso de establecer un límite superior se necesita la pdf de $q_\mu$. En el
-límite asintótico y utilizando la misma aproximación que en el caso anterior puede
-mostrarse que la distribución de $q_\mu$ es,
-
-\begin{equation}
-  f(q_\mu|\mu') = \Phi\left(\frac{\mu'-\mu}{\sigma}\right) \delta(q_\mu) +
-  \frac{1}{2}\frac{1}{\sqrt{2\pi}}\frac{1}{\sqrt{q_0}} \exp \left[ -\frac{1}{2}
-    \left( \sqrt{q_\mu} - \frac{\mu'-\mu}{\sigma} \right)^2\right]
+  -2 \ln \lambda(\mu) = \frac{(\mu - \hat{\mu})^2}{\sigma^2} + \mathcal{O}(1/\sqrt{N})
 \end{equation}
 %
-y el correspóndete {\pvalue} y significancia están dados por
+donde $\hat{\mu}$ sigue una distribucion normal con media $\mu'$ y desviacion estandar $\sigma$.
+Si $\hat{\mu}$ se encuentra distribuido normalmente y se desprecian los terminos $\mathcal{O}(1/\sqrt{N})$,
+se puede mostrar que en el regimen asintotico, el estadistico $t_\mu$ sigue una distribucion $chi^2$ no central
+con un grado de libertad.
+
+Entonces, en el límite asintótico, el estadistico $t_\mu$ puede aproximarse por
 
 \begin{equation}
-  p_\mu = 1 - \Phi(\sqrt{q_\mu})
+  q_\mu =
+  \begin{cases}
+    \frac{(\mu-\hat{\mu})^2}{\sigma^2} & \hat{\mu} \leq \mu \\
+    0 & \hat{\mu} > \mu
+  \end{cases}
 \end{equation}
+%
+y el {\pvalue} de la hipotesis $H_\mu$ es,
+
+\begin{equation}
+  p_\mu = \int_{q_{\mu,\text{obs}}}^{\infty} f(q_\mu|\mu) \, dq_\mu = 1 - \Phi(\sqrt{q_\mu})
+\end{equation}
+%
+y su correspondiente significancia equivalente,
 
 \begin{equation}
   Z_\mu = \Phi^{-1}(1-p_\mu) = \sqrt{q_\mu}
 \end{equation}
 
+Siguiendo los mismos argumentos, el estadistico $q_0$ puede aproximarse con,
+
+\begin{equation}
+  q_0 =
+  \begin{cases}
+    \frac{(\hat{\mu})^2}{\sigma^2} & \hat{\mu} \geq 0 \\
+    0 & \hat{\mu} < 0
+  \end{cases}
+\end{equation}
+
+El {\pvalue} para $H_0$ entonces es,
+
+\begin{equation}
+  p_0 = \int_{q_{0,\text{obs}}}^{\infty} f(q_0|0) \, dq_0 = 1 - \Phi(\sqrt{q_0})
+\end{equation}
+%
+y la correspondiente significancia,
+
+\begin{equation}
+  Z_0 = \Phi^{-1} (1-p_0) = \sqrt{q_0}
+\end{equation}
+
 Estas aproximaciones permiten conocer las distribuciones muestrales y calcular
 {\pvalue}s y significancias en el caso de un gran número de datos, de una forma
-simple y computacionalmente menos costosa que si se tuvieran que generar un gran
-número de pseudo-experimentos utilizando métodos Monte Carlo. A pesar de que las
-aproximaciones son formalmente validas en ese límite, las comparaciones con
-Monte Carlo, muestran que el uso de las mismas son razonablemente precisas para
-muestras de datos mucho \hl{mas chicas}, permitiendo su uso en la mayoría de los
-análisis. Para muestras de datos muy pequeñas, o en casos donde la precisión es
+simple y computacionalmente poco costosa.
+A pesar de que estrictamente es valido para $N\to\infty$, esta aproximacion es suficientemente
+precisa para un numero de eventos de fondo $\smallrel\gtrsim \mathcal{O}(10)$.
+
+Para muestras de datos muy pequeñas, o en casos donde la precisión es
 importante, siempre pueden validarse estas aproximaciones utilizando la
 generación Monte Carlo.
 
+Para esto es necesario utilizar simulaciones Monte Carlo para
+generar lo que se denomina \emph{pseudo-experimentos}. El procedimiento
+consiste en generar el conjunto de observables $\bm{x}$ utilizando la pdf
+$f(\bm{x}|H)$ y calcular el valor del estadístico de prueba $t(\bm{x})$ para
+cada conjunto. Este proceso se repite hasta acumular suficiente estadística
+en la distribución muestral del estadistico $g(t|H)$.
 
+
+
+% ----------------------
+% Significancia esperada
+% ----------------------
 \section{Significancia esperada}
 
 En física de partículas la cantidad $s/\sqrt{b}$ ha sido siempre utilizada como
@@ -775,6 +772,7 @@ y, expandiendo en potencias de $s/b$ y $\sigma_b^2/b$, obtenemos,
 %
 que es la ecuación conocida, válida cuando $s\ll b$ y $\sigma_b^2 \ll b$.
 
+\cite{medSigNote}
 
 
 
