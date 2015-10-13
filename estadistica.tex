@@ -5,14 +5,14 @@ tratamiento estadístico de los datos. Esta enfocado en la búsqueda de nueva
 física en altas energías, su descubrimiento y/o el establecimiento de límites de
 exclusión.
 
-
-\section{Funciones de distribución de probabilidad}
-
 Dada la naturaleza probabilística de las colisiones en el LHC y el bajo número
 de eventos esperados en las búsquedas de nueva física, es necesario contar con
 un poderoso marco estadístico para interpretar los resultados, especialmente
 para identificar una nueva señal sobre las posibles fluctuaciones de los fondos
 del SM.
+
+
+\section{Funciones de distribución de probabilidad}
 
 Un observable $x$ es por naturaleza \emph{frecuentista}, es decir, si realizamos
 el experimento muchas veces, vamos a obtener distintos valores para $x$ y este
@@ -23,10 +23,11 @@ modelo representan, por ejemplo, parámetros de la teoría física, alguna
 propiedad desconocida de la respuesta del detector, o incertezas sistemáticas
 del análisis.
 
-A continuación se describen algunas distribuciones importantes que son necesarias
-para ...
+A continuación se describen algunas funciones de probabilidad importantes que
+serán utilizadas a lo largo de este Capítulo.
 
-\subsubsection{Distribucion Gaussiana}
+\subsubsection{Distribución Gaussiana}
+
 La pdf Gaussiana (o normal) de una variable continua $x$ ($-\infty < x < \infty$)
 se define como:
 
@@ -36,17 +37,16 @@ se define como:
 
 Los nombres de los parámetros están claramente motivados por los valores del valor
 esperado y la varianza de $x$, ya que $E[x] = \mu$ y $V[x] = \sigma^2$. Un caso especial
-de la pdf Gaussiana es cuando $\mu=0$ y $\sigma=1$, la cual es denominada Gaussiana Estándar.
+es cuando $\mu=0$ y $\sigma=1$, la cual se denomina Gaussiana Estándar.
 %% $\phi(x) = \frac{1}{\sqrt{2\pi}} \exp(-x^2/2)$.
-
-La importancia de la distribución Gaussiana proviene del Teorema Central del Limite.
+La importancia de la distribución normal proviene del Teorema Central del Limite.
 El teorema dice que la suma de $n$ variables continuas independientes $x_i$ con media $\mu_i$
 y varianza $\sigma_i^2$ esta distribuida de acuerdo a una Gaussiana con media $\mu = \sum_{i=1}^n \mu_i$
 y varianza $\sigma^2 = \sum_{i=1}^n \sigma_i^2$ en el limite de $n\to\infty$. Esto es así (bajo
 ciertas condiciones generales) sin importar las pdfs individuales de $x_i$.
 
 
-\subsubsection{Distribucion $\chi^2$}
+\subsubsection{Distribución $\chi^2$}
 
 La distribución $\chi^2$ de una variable continua $z$ ($0 \leq z \leq \infty$) se
 define como:
@@ -55,14 +55,13 @@ define como:
   f(z;n) = \frac{1}{2^{n/2}\Gamma(n/2)} z^{n/2-1} e^{-z/2}, \quad n=1,2,\ldots
 \end{equation}
 %
-donde $n$ es llamado el numero de grados de libertad.
-
+donde $n$ es llamado el número de grados de libertad.
 Dadas $N$ variables $x_i$ gaussianas con media $\mu_i$ y $\sigma_i^2$, la
 variable $z = \sum_{i=1}^{N} \frac{(x_i-\mu_i)^2}{\sigma_i^2}$ esta distribuida
 de acuerdo a una distribución $\chi^2$ con $N$ grados de libertad.
 
 
-\subsubsection{Distribucion de Poisson}
+\subsubsection{Distribución de Poisson}
 
 La distribución de Poisson es una distribución de probabilidad discreta que
 describe, a partir de una frecuencia de ocurrencia media, la probabilidad de que
@@ -181,9 +180,9 @@ usualmente corresponde a la hipótesis que consideramos verdadera. Esta hipótes
 es comparada contra una hipótesis alternativa $H_1$, o varias, distintas a $H_0$.
 
 En el caso de búsqueda de nueva física, la hipótesis que juega el rol de
-hipótesis nula es la hipótesis de que sólo los procesos del SM contribuyen a los
+hipótesis nula es la hipótesis de que solo los procesos del SM contribuyen a los
 datos observados. Esta hipótesis también suele llamarse hipótesis de
-\emph{sólo-fondo}. Y la hipótesis alternativa es la hipótesis en la cual, además
+\emph{solo-fondo}. Y la hipótesis alternativa es la hipótesis en la cual, además
 de los procesos del SM, también contribuyen procesos de nueva física y se
 denomina hipótesis de \emph{se\~nal+fondo}.
 
@@ -197,7 +196,7 @@ compatibles con la hipótesis nula o si la hipótesis nula puede ser rechazada e
 base a estos datos. Con este objetivo se define un \emph{estadístico de prueba}
 $t(\bm{x})$ que es función de los datos observados. En el caso de considerar un
 estadístico de prueba escalar, $t(\bm{x}) \to \mathbb{R}$, éste contendrá toda la
-información de discriminación entre $H_0$ y $H_1$ en un sólo número.
+información de discriminación entre $H_0$ y $H_1$ en un solo número.
 
 Cada estadístico de prueba tendrá su pdf asociada $g(t|H)$ y la decisión sobre
 la hipótesis estará basada en el valor del estadístico observado $t_\text{obs}$
@@ -325,12 +324,12 @@ a la mediana de la hipotesis $H_1$.
 
 Generalmente, cuando se modela un fenómeno aleatorio de interés, el modelo
 elegido para ajustar a las observaciones de dicho fenómeno suele tener varios
-parámetros, de los cuales sólo algunos pueden ser de interés. De manera formal a
+parámetros, de los cuales solo algunos pueden ser de interés. De manera formal a
 estos parámetros se los denomina parámetros de interés y al resto, parámetros
 \emph{nuisance}, y conviene separarlos explícitamente $\btheta \to (\mu, \btheta)$.
 
 Para la búsqueda de nueva física es común definir como parámetro de interés a la
-intensidad de la señal de forma tal que la hipótesis de sólo-fondo corresponde a
+intensidad de la señal de forma tal que la hipótesis de solo-fondo corresponde a
 $\mu = 0$ , y la hipótesis de señal+fondo a $\mu = 1$.
 BY, en general, las incertezas sistemáticas son incluidas en el modelo
 utilizando parámetros nuisance.
@@ -395,9 +394,9 @@ Un caso de especial importancia del estadístico $t_\mu$ es cuando $\mu=0$.
 Rechazar la hipótesis de $\mu=0$ es lo
 que llamamos \emph{descubrimiento} de una nueva señal.
 Aunque es cierto que un valor de $\hat{\mu}$ mucho menor a cero representa
-evidencia contra el modelo de sólo-fondo, este tipo de discrepancia no muestran
+evidencia contra el modelo de solo-fondo, este tipo de discrepancia no muestran
 que los datos contengan eventos de señal. Es por este motivo que sólo se
-considera que los datos no tienen un buen acuerdo con la hipótesis de sólo-fondo
+considera que los datos no tienen un buen acuerdo con la hipótesis de solo-fondo
 cuando $\hat{\mu}$ es mayor a cero.
 %% En otros experimentos, como los de
 %% oscilaciones de neutrinos por ejemplo, la hipótesis de señal puede predecir un
@@ -416,7 +415,7 @@ Si los datos fluctúan de tal manera que haya menos eventos que los predichos po
 el fondo, entonces $\hat{\mu} = 0$ y $q_0=0$. A medida que el número de
 eventos crece por encima del número de eventos de fondo esperado (mayor
 $\hat{\mu}$) el valor de $q_0$ es mayor, lo que corresponde a un incremento en
-el nivel de incompatibilidad con la hipótesis de sólo-fondo. Para cuantificar el
+el nivel de incompatibilidad con la hipótesis de solo-fondo. Para cuantificar el
 nivel de desacuerdo entre datos y la hipótesis de $\mu=0$ usando el valor
 observado de $q_0$ se calcula el {\pvalue} como,
 
@@ -430,8 +429,8 @@ fijado anteriormente, se dice que hay un descubrimiento. En general en física d
 altas energías suele utilizarse $\epsilon = 2.87 \times 10^{-7}$, el cual
 corresponde a una significancia equivalente $Z=5\sigma$.
 
-Es importante notar que el hecho de rechazar la hipótesis de sólo-fondo en un
-sentido estadístico es sólo parte de descubrir un fenómeno nuevo.
+Es importante notar que el hecho de rechazar la hipótesis de solo-fondo en un
+sentido estadístico es solo parte de descubrir un fenómeno nuevo.
 Para confirmar la presencia de este nuevo fenómeno es necesario estudiar
 el acuerdo de este para describir los datos observados.
 
@@ -543,7 +542,7 @@ Con motivo de solucionar estos inconvenientes se introduce el método de {\cls}\
   \cls = \frac{p_\mu}{1-p_b}  \equiv \frac{\clsb}{\clb}
 \end{equation}
 %
-donde $p_b$ es el valor del mismo test bajo la hipótesis de sólo-fondo,
+donde $p_b$ es el valor del mismo test bajo la hipótesis de solo-fondo,
 
 \begin{equation}
   1 - p_b = \int_{q_\mu^\text{obs}}^{\infty}
