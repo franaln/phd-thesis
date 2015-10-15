@@ -48,6 +48,7 @@
 \RequirePackage{rotating}
 \RequirePackage{accents}
 \RequirePackage{enumitem}
+\RequirePackage{subfig}
 
 %%-- Additional TeX/LaTeX code...
 \renewcommand\baselinestretch{1.2}
@@ -65,7 +66,7 @@
 %% \renewcommand{\arraystretch}{1.05}
 
 % enter only chapters and sections in TOC---subsecs as a try
-\setcounter{tocdepth}{0}
+\setcounter{tocdepth}{1}
 
 % enume\rate down to subsections
 \setcounter{secnumdepth}{2}

@@ -26,12 +26,14 @@
 \crefname{table}{Tabla}{Tablas}
 \crefname{equation}{ecuación}{ecuaciones}
 \crefname{section}{sección}{secciones}
+\crefname{chapter}{capítulo}{capitulos}
 \newcommand{\crefpairconjunction}{ y }
 \newcommand{\crefmiddleconjunction}{, }
 \newcommand{\creflastconjunction}{ y }
 \newcommand{\crefrangeconjunction}{-}
 
 \usepackage[labelfont=bf]{caption}
+\usepackage{tabularx}
 
 \setlength{\textfloatsep}{20.0pt plus 2.0pt minus 4.0pt}
 \setlength{\intextsep}{30.0pt plus 2.0pt minus 2.0pt}
@@ -46,20 +48,20 @@
 % title
 %% \include{title}
 
-\tableofcontents
+%%\tableofcontents
 
 %  body
 %% \include{introduccion}
 
-%\part{Motivación teórica}
+%% \part{Motivación teórica}
 \include{sm}
 \include{susy}
 
-%\part{Experimento}
+%% \part{Experimento}
 \include{detector}
 \include{objetos}
 
-%\part{Búsqueda de Supersimetría} % Análisis de Datos o
+%% \part{Búsqueda de Supersimetría} % Análisis de Datos o
 \include{estadistica}
 \include{estrategia}
 \include{simulaciones}
