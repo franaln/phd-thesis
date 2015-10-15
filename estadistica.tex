@@ -11,6 +11,12 @@ un poderoso marco estadístico para interpretar los resultados, especialmente
 para identificar una nueva señal sobre las posibles fluctuaciones de los fondos
 del SM.
 
+Este Capítulo utiliza como referencia los libros \cite{Cowan,James}. Muchos
+de los métodos estadísticos mas avanzados fueron desarrollados especialemente para el LHC,
+y se encuentran descriptos en los artículos \cite{AsymAprox,ReadCLs,medsigNote,Cranmer:2015nia}.
+Ademas se utilizaron los manuales y artículos que describen las herramientas estadísticas utilizadas
+\cite{Cranmer:1456844,HistFitter}.
+
 
 \section{Funciones de distribución de probabilidad}
 
@@ -140,6 +146,7 @@ incorporarse entonces a la función likelihood, obteniendo lo que se llama
 
 \begin{equation}
   L(\nu,\btheta) = \Pois(n;\nu) \prod_{i=1}^{N} f(x_i; \btheta)
+  \label{eq:likelihood_ext}
 \end{equation}
 
 
@@ -659,12 +666,12 @@ en la distribución muestral del estadistico $g(t|H)$.
 \section{Significancia esperada}
 
 En física de partículas la cantidad $s/\sqrt{b}$ ha sido siempre utilizada como
-una medida de la significancia esperada de descubrimiento. La explicación detrás
-de esta formula es que una cantidad $n$ que sigue una distribución de Poisson
-con una media grande $s+b$ puede ser aproximada por una variable $x$
-distribuida según una gaussiana con media $s+b$ y desviación estándar
-$\sqrt{s+b}$. En este caso el valor-$p$ de la hipótesis de sólo-fondo dada una
-observación $x$ esta dado por,
+una medida de la significancia esperada de descubrimiento\cite{medSigNote}. La
+explicación detrás de esta formula es que una cantidad $n$ que sigue una
+distribución de Poisson con una media grande $s+b$ puede ser aproximada por una
+variable $x$ distribuida según una gaussiana con media $s+b$ y desviación
+estándar $\sqrt{s+b}$. En este caso el valor-$p$ de la hipótesis de sólo-fondo
+dada una observación $x$ esta dado por,
 
 \begin{equation}
   p = 1 - \Phi \left( \frac{x-\mu}{\sigma} \right) = 1 - \Phi \left(
@@ -718,8 +725,8 @@ puede ser aproximada por $Z=\sqrt{q_0}$, lo que da como resultado,
 \end{equation}
 
 Si expandimos el logaritmo en la ecuación anterior en $s/b$ tenemos $Z_A =
-s/\sqrt{b} + \mathcal{O}(s/b)$ que es la expresión de la {\eq}
-\eqref{eq:Zsimple} y es válida sólo en el límite $s \ll b$.
+s/\sqrt{b} + \mathcal{O}(s/b)$ que es la expresión de la \cref{eq:Zsimple}
+y es válida sólo en el límite $s \ll b$.
 
 Si el número de eventos esperado de fondo $b$ no es conocido, uno debe incluirlo
 como un parámetro nuisance en la función likelihood. Pero como $b$ puede
@@ -770,65 +777,3 @@ y, expandiendo en potencias de $s/b$ y $\sigma_b^2/b$, obtenemos,
 \end{equation}
 %
 que es la ecuación conocida, válida cuando $s\ll b$ y $\sigma_b^2 \ll b$.
-
-\cite{medSigNote}
-
-
-
-%% \subsection{Psuedo-experimentos}
-
-%% The role of intervals in Search Procedures
-
-%% Exclusion A signal hypothesis can be excluded if the compatibility with the s C b
-%% hypothesis is ‘small’. Several limit-setting methods exist and are a source of in-
-%% tense discussions among physicists, to say the least (see also Section 4.6). Although
-%% it might seem natural to define a signal as excluded at 95% confidence level if
-%% CL sCb < 5%, there are some undesirable consequences associated with this choice.
-%% Near the sensitivity limit, where the test statistic distribution for the b-only and sCb
-%% hypotheses are not well separated (either because the signal is small or the analysis
-%% is not powerful enough to separate signal and background), a downward fluctua-
-%% tion in the data with respect to the b-only expectation will result in the exclusion
-%% of a signal while the analysis has no real sensitivity. One of the common solutions
-
-%% experiments invoke to address this issue is to correct for a downward fluctuation
-%% by using the so-called CL s method [6], where a signal is called ‘excluded’ at 95%
-%% confidence level if CL s < 0.05, where CL s
-
-
-%% Para ilustrar el uso del likelihood ratio, consideremos un experimento en el cual por cada evento,
-%% se miden los valores de ciertas variables cinematicas, entonces los datos pueden ser representados
-%% por uno o mas histogramas.
-
-%% Supongamos el histograma $\vec{n} = (n_1, n_2, \ldots, n_n)$. El valor esperado para $n_i$ puede
-%% escribirse $E[n_i] = \mu s_i + b_i$, donde el valor medio de entradas del bin $i$ de se\~nal y fondo
-%% son:
-
-%% El parametro $\mu$ determina la intensidad de la nueva se\~nal, donde $\mu=0$ corresponde a la
-%% hipotesis de solo-fondo, y $\mu=1$ es la hipotesis de se\~nal.
-%% Las funciones $f_s$ y $f_b$ son las \pdf\ de la variable x para los eventos de se\~nal y fondo, y
-%% $\theta_s$ y $\theta_b$ representan parametros que caracterizan la forma de las pdfs. Las
-%% cantidades $s_\text{tot}$ y $b_\text{tot}$ son el valor medio total de se\~nal y fondo, y las
-%% integrales en \ref{} y \ref{} representan la probabilidad de que un evento sea encontrado en el
-%% bin $i$. En lo que sigue $\bm{\theta} = (\bm{\theta}_s, \bm{\theta}_b, b_\text{tot})$
-
-%% Además del histograma $\bm{n}$, se utilizan otras medidas adicionales que ayuden a restringir
-%% los parametros nuisance. Por ejemplo, se pueden elegir regiones de control donde uno espera
-%% mayormente fondo, y construit un histograma $\bm{m}$. Los valores esperados de $m_i$ pueden
-%% escribirse como $E[m_i] = u_i(\bm{\theta})$, donde los $u_i$ son cantidades calculadas a partir
-%% de $\bm{\theta}$.
-
-%% \itodo{
-%%   It is often said that the language of science is mathematics. It could well be said that the language of experimental science is statistics.
-%%   It is through statistical concepts that we quatify
-%%   the correspondence between theoretical predicticions and experimental observations. While the statistical
-%%   analysis of the dta is often treated as a final subsidiary step to an experimental physcis
-%%   result, a more direct approach would be quite the opposite. In fact, thinking through the
-%%   requirements for a robust statistical statement is an excellent way to organize an analysis
-%%   strategy.
-%%   }
-
-
-%% Referencias
-
-%% AsymAprox, Cowan discovery sensitive, HistFitter paper, Kramer Practical.., Wilds theo., Walds theo.
-%% HistFactory manual, presentation of cls technique, libro de cowan y libro de james.
