@@ -1,26 +1,117 @@
-\chapter{Estrategia de análisis}
+\chapter{Estrategia general del análisis}
 
 En el capítulo anterior se describieron los conceptos básicos de estadística
 necesarios para poder realizar un análisis de búsqueda de nueva física. En este
-capítulo se describe el mayor desafío del análisis desde el punto de vista
-estadístico: la construcción del modelo. %% del análisis.
+capítulo, haciendo uso de estos conceptos, se describe la estrategia general del
+análisis y la construcción del modelo estadístico.
 
-%% \hll{Ahora que hemos establecido una forma general para el modelo y trasladamos
-%% las preguntas básicas de mediciones, descrubrimeinto y exclusión en el lenguaje
-%% estadístico, estamos listos para encarar el desafío estadístico fundamental:
-%% construir el modelo}
+El objetivo general del análisis es la búsqueda de eventos con fotón aislado muy
+energético, jets y gran cantidad de energía faltante. Para esto se realizo un
+experimento de conteo, es decir, observando el número de eventos observado en
+una cierta región del espacio de observables. Un experimento de conteo puede
+pensarse en el contexto del likelihood extendido, \cref{eq:likelihood_ext}, con
+$f(x) = 1$, el cual se reduce solo al termino de Poisson. En el caso de que el
+número de eventos observado sea compatible con el número de eventos esperado
+debido a procesos del SM, pueden establecerse limites en la sección eficaz
+de nueva física. Y en particular en esta Tesis, se consideró un modelo
+de supersimetría que puede dar lugar a este tipo de estados finales, en el cual
+se establecieron limites de exclusión.
 
+%% Para poder determinar compatibilidad entre los eventos observados con los
+%% predichos es necesario
+Para poder realizar cualquier descubrimiento de nueva física es fundamental entender
+y tener bajo control los fondos del SM.
+Existen muchos procesos del SM que pueden aparentar una estado final con un fotón,
+jets y energía faltante. Estos pueden dividirse en varias categorías. Por un lado, los
+procesos que dan lugar a eventos con un fotón y energía faltante real, es decir, los
+que llamamos fondos irreducibles son:
+
+\begin{itemize}
+\item $Z(\to\nu\nu)+\gamma$
+\item $W(\to\tau\nu)+\gamma$ %(con decaimiento hadronico del $\tau$)
+\item $W(\to e\nu)+\gamma$ %(cuando el $e$ no es reconstruido)
+\item $W(\to\mu\nu)+\gamma$ %(cuando el $\mu$ no es reconstruido)
+\item $t\bar{t}+\gamma$ %(cuando el $e/\mu$ (si se produce) no es reconstruido)
+\end{itemize}
+%
+También es posible, que aunque el proceso no tenga fotones en el estado final, un
+electrón o un jet sean identificados como un fotón, dando lugar a un estado final
+idéntico al buscado. En esta categoría están:
+
+\begin{itemize}
+\item $W(\to l\nu)$ + jets
+\item $Z(\to \nu\nu)$ + jets
+\item $t\bar{t}$
+\item dibosons ($WW$, $ZZ$, $WZ$)
+\end{itemize}
+
+Y por último, también podemos tener procesos que a pesar de no generar energía
+faltante real, poseen lo que se denomina energía faltante instrumental,
+proveniente generalmente de la incorrecta reconstrucción de la energía de los
+jets. De esta manera, pueden dar lugar a eventos con el estado final de interés,
+los procesos QCD de $\gamma+$jets y multijet (este ultimo con alguno de los jets
+identificado como fotón) y también $Z(\to ll)+$jets, donde un leptón o un jet es
+identificado como un fotón.
+
+
+%% \begin{itemize}
+%% \item {\MET} real (EWK)
+%%   \begin{itemize}
+%%   \item $\gamma$ real
+%%     \begin{itemize}
+%%     \item $Z(\to\nu\nu)+\gamma$
+%%     \item $W(\to\tau\nu)+\gamma$, con decaimiento hadronico del $\tau$
+%%     \item $W(\to e\nu)+\gamma$, donde el $e$ no es reconstruido
+%%     \item $W(\to\mu\nu)+\gamma$ y $W(\to\tau\nu)+\gamma$, el $\mu/\tau$ no es reconstruido
+%%     \item $t\bar{t}+\gamma$, donde el $e/\mu$ (si se produce) no es reconstruido
+%%     \end{itemize}
+
+%%   \item Electron/Jet mal identificado como un fotón
+%%     \begin{itemize}
+%%     \item $W(\to l\nu)$+jets
+%%     \item $Z(\to \nu\nu)+$jets
+%%     \item $t\bar{t}$
+%%     \item dibosons
+%%     \end{itemize}
+%%   \end{itemize}
+
+%% \item {\MET} instrumental
+%%   \begin{itemize}
+%%   \item $\gamma$ real
+%%     \begin{itemize}
+%%     \item  ($\gamma+$jets)
+%%     \end{itemize}
+%%   \item Electron/jet mal-identificado como $\gamma$
+%%     \begin{itemize}\itemsep0.2cm\parskip0.2cm
+%%     \item multijet
+%%     \item $Z(\to ll)+$jets)
+%%     \end{itemize}
+%%   \end{itemize}
+
+%% \end{itemize}
+
+%% En el \cref{cap:simulaciones} se describen como estos procesos del SM son
+%% simulados utilizando generadores Monte Carlo. Aunque en general, para el LHC,
+%% las predicciones de las simulaciones Monte Carlo no son lo suficientemente
+%% precisas, ya que nunca fueron testeadas a energías tan altas. Por este motivo
+%% resulta necesario desarrollar técnicas de estimación de los fondos utilizando los
+%% propios datos observados. Estos métodos se describen en el \cref{cap:fondos}.
+
+
+
+%---------------
+% Regiones
+%---------------
 \section{Regiones de Señal, Control y Validación}
 
 %---------------
 % Signal Region
 %---------------
-Un análisis de física que quiera estudiar un determinado fenómeno nuevo
-involucra la definición de una región en el espacio de fase, obtenida aplicando
-una selección a un conjunto de observables cinemáticos, donde el modelo de señal
+Un análisis en el que se quiera estudiar un determinado fenómeno de nueva fisica
+requiere la definición de una región en el espacio de observables, donde el modelo de señal
 predice un exceso significativo de eventos sobre el nivel de fondo predicho en
 la misma región. A esta región enriquecida en señal se la llama región de señal
-(SR).\note{Este parrafo esta raro}
+(SR).
 
 %-----------
 % Fondos/CR
@@ -83,13 +174,14 @@ debilidades de las simulaciones propiamente dichas. Por este motivo, en el caso
 de que haya deficiencias en el modelado por parte de las simulaciones, existe
 una motivación para utilizar métodos que puedan dar una estimación de los fondos
 a partir de los datos observados. Existen distintas formas de poder estimar un
-fondo a partir de los datos observados, de las cuales en el \cref{cap:fondos} se
+fondo a partir de los datos observados. En el \cref{cap:fondos} se
 describirán las utilizadas en este análisis.
 
-También existe una tercera forma para estimar los fondos, que consiste en
+En el caso de que no se puedan estimar utilizando los datos, existe una tercera
+forma para estimar los fondos, que consiste en
 utilizar la estimación proveniente de las simulaciones MC, pero corregirla
-utilizando los datos. Para esto se define una o más regiones de control (CR) en
-las cuales el fondo dominante pueda ser controlado comparadolo con los datos
+utilizando los datos. Para esto se define una region de control (CR) en
+la cual el fondo dominante pueda ser controlado comparadolo con los datos
 observados en esa misma región. Las CR son diseñadas especialmente para tener
 una alta pureza en uno de los procesos de fondo y deben estar libres de
 contaminación de señal.
@@ -105,11 +197,11 @@ utilizado entonces en la extrapolación a las demás regiones.
 % Validation regions
 %--------------------
 Otro componente importante del análisis es la validación del modelo utilizado
-para predecir los fondos en las SR. Con este motivo se definen regiones de
+para predecir los fondos en las SR. Con este objetivo se definen regiones de
 validación (VR) que se encuentren entre las CR y las SR en términos de los
 principales observables cinemáticos en los criterios de selección. El diseño de
-las VR comprende un compromiso entre minimizar la contaminación de la señal, pero a su
-vez siendo efectivas en la validación de la extrapolación entre CR y SR. En la
+las VR comprende un compromiso entre minimizar la contaminación de la señal, y a su
+vez ser efectivas en la validación de la extrapolación entre CR y SR. En la
 \cref{fig:regions_sketch} se puede ver un esquema de las regiones descriptas
 anteriormente.
 
@@ -168,9 +260,8 @@ Definiendo $N_p^\text{fit}(\text{SR})$ como el valor ajustado en la CR, podemos
 escribir de forma equivalente:
 
 \begin{align}
-  N_p^\text{est}(\text{SR}) &= \mu_p \times \text{MC}_p (\text{SR}) \nonumber
-  \\ &\equiv N_p^\text{fit}(\text{CR}) \times \left[
-    \frac{\text{MC}_p(\text{SR})}{\text{MC}_p(\text{CR})} \right]
+  N_p^\text{est}(\text{SR}) &= \mu_p \times \text{MC}_p (\text{SR}) \nonumber \\
+  &\equiv N_p^\text{fit}(\text{CR}) \times \left[ \frac{\text{MC}_p(\text{SR})}{\text{MC}_p(\text{CR})} \right]
 \end{align}
 
 El cociente que aparece dentro de los corchete es llamado \emph{factor de
@@ -184,12 +275,15 @@ la estadística, sin aumentar significativamente la incerteza en los TF, y así
 reducir las incertezas en la SR.
 
 
+%--------
+% Modelo
+%--------
 \section{Modelo}
 
-\note{Algo asi?}
-El modelo, que es simplemente una familia de pdfs despcripta por un numero finioto
-de parametros, describe la prediccion nominal (junsto con sus variaciones sistematicas
-asociadas) de las multiples senales y procesos de fondo en las multiples regiones.
+%% \note{Algo asi?}
+%% El modelo, que es simplemente una familia de pdfs despcripta por un numero finioto
+%% de parametros, describe la prediccion nominal (junsto con sus variaciones sistematicas
+%% asociadas) de las multiples senales y procesos de fondo en las multiples regiones.
 
 La pdf conjunta contiene el parámetro de interés (la intensidad
 de la señal), los factores de normalización para los procesos de fondo, y los
@@ -206,7 +300,7 @@ número de eventos en la SR y las CR, y una distribución adicional que implemen
 las restricciones en las incertezas sistemáticas. Puede escribirse como:
 
 \begin{align}
-  L(\bm{n}, \bm{\theta}^0| \mu_\text{sig}, \bm{\mu}_p, \btheta) &= \mathcal{P}_\text{SR} \, \times \, \mathcal{P}_\text{CR} \, \times \,
+  L(\mu_\text{sig}, \bm{\mu}_p, \btheta) &= \mathcal{P}_\text{SR} \, \times \, \mathcal{P}_\text{CR} \, \times \,
   \mathcal{C}_\text{syst} \nonumber \\
   &= \Pois(n|\lambda(\mu_\text{sig}, \bm{\mu}_p, \btheta)) \, \times \, \prod_{i \in \text{CR}}
   \Pois(n_i|\lambda_i(\mu_\text{sig}, \bm{\mu}_p, \btheta)) \times C_\text{syst} (\btheta^0, \btheta)
@@ -225,14 +319,9 @@ valor esperado de señal. %% para el valor nominal de modelo bajo consideración
 Las incertezas sistemáticas son incluidas usando la pdf
 $C_\text{syst}(\btheta^0, \btheta)$, donde $\btheta^0$ son los valores centrales
 de las medidas auxiliares alrededor de los cuales $\btheta$ puede variarse al
-maximizar el likelihood.
-El impacto
-
-The impact of changes in nuisance parameters on the expectation values are
-described completely by the functions predicting the amount of signal and background,
-lambdaS and lambdai . Para parámetros nuisance
-
-
+maximizar el likelihood. El impacto de los cambios en los parámetros nuisance,
+en los valores esperados están completamente descriptos por las funciones que
+predicen la cantidad de señal y fondo, $\lambda_i$. Para parámetros nuisance
 independientes $C_\text{syst}$ es simplemente el producto de las pdf
 correspondientes a las mediciones auxiliares que describen cada una de las
 incertezas sistemáticas, típicamente una distribución gaussiana $G$ con ancho
@@ -243,35 +332,29 @@ unidad,
   \theta_j)
 \end{equation}
 %
-donde S es el conjunto completo de las incertezas sistemáticas consideradas. Las
+donde $S$ es el conjunto completo de las incertezas sistemáticas consideradas. Las
 medidas auxiliares $\theta^0_j$ son típicamente fijadas a cero, pero pueden
 variar cuando se generan los pseudo-experimentos.
 
 
-\section{Ajustes}
+%% \section{Ajustes}
 
+%% \subsection{Ajuste solo-fondo}
 
-\subsection{Bkg only fit}
+%% El proposito es estimar el fondo total en las SR y VR, sin hacer ninguna
+%% suposiscion del modelo de senal. Solo se utilizan las muestras de fondo en el
+%% modelo. Las CR se suponene  libres de contaminacion de senal y el ajuste
+%% solo se realiza en las CR y los procesos de fondo dominantes se normalizan al
+%% numero de eventos observados en esas regiones. Se utilizan la ec {\XXX} sin el termino
+%% de la SR.
 
-El proposito  es estimar el fondo total en las SR y VR, sin hacer ninguna suposiscion del
-modelo de senal. Solo se utilizan las muestras de fondo en el modelo. Las CR se asumen que eztan libres
-de contaminacion de senal.  El ajuste solo se realiza en las CR y los procesos de fondo
-dominantes se normalizan al numero de eventos observados en esas regiones.
-Se utilizan la ec sin el termino de la SR.
+%% Se comparten todos los parametros del ajuste, por lo tanto se usan para predecir
+%% el numero de eventos de fondo en SR y VR.
 
-Se comparten todos los parametros del ajuste, por lo tanto se usan para predecir
-el numero de eventos de fondo en SR y VR.
-
-Estas predicciones de fondo son independientes del numero de eventos observado en la SR (y VR)
-ya que solo las CR se usan en el ajuste. Esto permite una comparasion no sesgada entre las
-predicciones y el numero de evnetos observado en esas regiones.
-
-
-
-
-
-
-----------------------------------
+%% Estas predicciones de fondo son independientes del numero de eventos observado
+%% en la SR (y VR) ya que solo las CR se usan en el ajuste. Esto permite una
+%% comparasion no sesgada entre las predicciones y el numero de evnetos observado
+%% en esas regiones.
 
 %% \section{Fit}
 
@@ -286,66 +369,3 @@ predicciones y el numero de evnetos observado en esas regiones.
 %% from a “grid” of potential signal scenarios, with each point on that grid corresponding to a unique
 %% point in the multi-dimensional parameter space. If no excess is observed in the data, exclusion
 %% limits may be set within this grid, excluding a subset of the tested parameter values.
-
-%% \itodo{Podemos pensar a un experimento de conteo en el contexto de la eq 1 con
-%%   $f(x) = 1$, reduciendoce solo al termino de Poisson}
-
-
-%% \section{Medidas auxiliares}
-
-%% Las medidas auxiliares o regiones de control puede ser utilizadas para reducir
-%% el efecto de las incertezas sistemáticas. Las SR o CR no son fundamentalmente
-%% distintas, en este lenguaje son dos canales distintos.
-
-%% {\bf Common example: simple counting experiment with a background}
-
-%% Desde el punto de vista frecuentista, el fondo desconocido en la región de se\~nal es un
-%% parámetro nuisance, que llamamos $\nu_B$.
-
-%% Si el numero de eventos de se\~nal es $\nu_S$ y el numero de eventos en la región de se\~nal
-%% $n_\text{SR}$, podemos escribir el modelo $\Pois (n_\text{SR}|\nu_S+\nu_B)$.
-
-%% Como $\nu_B$ es un parámetro libre, no podemos hacer ninguna inferencia acerca de $\nu_S$.
-%% En general uno tiene una estimacion del fondo, que puede venir de una muestra de control
-%% con $n_\text{CR}$ eventos.
-%% Si la región de control no tiene contaminación de se\~nal y esta poblado con el mismo proceso
-%% de fondo que la region de se\~nal, podemos escribir $\Pois(n_\text{CR}|\tau \nu_B)$, donde $n_\text{CR}$
-%% es el numero de eventos en la región de control y $\tau$ es el factor utilizado para extrapolar
-%% el fondo de la región de control a la región de se\~nal\todo{o al reves?}.
-
-%% El modelo de probabilidad total puede escribirse
-%% $\vec{f}_\text{sim}(n_\text{SR}, n_\text{CR}|\nu_S,\nu_B) = \Pois (n_\text{SR}|\nu_S+\nu_B) \cdot \Pois (n_\text{CR}|\tau\nu_B)$.
-
-%% Basados solo en la CR, se puede estimar $\nu_B = n_\text{CR}/\tau$.  Intuitivamente
-%% esta estimacion viene con una ``incerteza'' de $\sqrt{n_\text{CR}}/\tau$. El punto a
-%% resaltar es que podemos usar mediciones auxiliares ($n_\text{CR}$) para describir la
-%% incerteza en el parámetro nuisance $\nu_B$ estadísticamente. Creamos un modelo
-%% estadístico que puede tratarse con un formalismo frecuentista. Se dice que las medidas
-%% auxiliares \hl{constrain} los parámetros nuisance.
-
-%% Total probability model:
-
-%% \begin{equation}
-%%   \vec{f}_\text{tot} (\mathcal{D}_\text{sim},\mathcal{G}|\alpha) = \prod_{c \in \text{canales}} \left[ \Pois(n_c|\nu_c{(\alpha)}) \prod_{e=1}^{n_c} f_c (x_{c,e}|\alpha) \right] \cdot \prod_{p \in S} f_p (a_p|\alpha_p)
-%% \end{equation}
-
-%% \subsection{Tratamiento de las incertezas sistematicas} \label{sec:fit_syst}
-
-%% Treatment of the Systematic Uncertainties in the likelihood is described below. Gaussian PDFs are used
-%% to model the systematic uncertainties, each having nominal values $\mu^{0}$ around which $\mu$ can be varied when
-%% maximizing the likelihood. Theoretical and uncertainties on the background are taken into account as
-%% well as detector uncertainties on the signal. Correlations between nuisance parameters can be treated
-%% properly as 1) overall scale factors fully correlated across the different regions and the different components
-%% (like luminosity), 2) scale factors fully correlated across the different regions but independent per component
-%% (like theory uncertainties), and 3) fully uncorrelated variables (like Monte-Carlo statistical
-%% errors) with one parameter per region. %The numbers of the uncertainties used as the fit inputs can be found in \Tab \ref{}.
-
-
-
-%% \section{Herramientas para el análisis estadístico}
-
-%% Para el analisis estadistico se utilizo el software \texttt{HistFitter} \cite{histfitter}
-%% desarrollado dentro del grupo de SUSY en ATLAS, que es una interfaz para herramientas
-%% como \texttt{RooFit}, \texttt{RooStats}\cite{Moneta:2010pm} y \texttt{HistFactory}
-%% \cite{Cranmer:1456844} y ademas posee una serie de scripts que facilitan el analisis cuando este
-%% es muy complejo.
