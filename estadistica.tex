@@ -306,8 +306,8 @@ especifico dado por el tama\~no del test $\alpha$, donde $\alpha \in [0,1]$.
 En física de partículas es usual convertir el {\pvalue} en la signifícancia
 equivalente, $Z$, definida de forma tal que una variable distribuida normalmente
 tenga una probabilidad igual a ese {\pvalue} de ser encontrada a mas de $Z$
-desviaciones estándar a la derecha de su media\footnote{Explicar que existen dos
-  formas de definir. one-sided...}. Esto es:
+desviaciones estándar a la derecha de su media\footnote{\hl{Explicar que existen dos
+  formas de definir. one-sided...}}. Esto es:
 
 \begin{equation}
   Z = \Phi^{-1}(1-p)
@@ -576,28 +576,25 @@ Para poder calcular el {\pvalue} de una hipótesis utilizando las ecuaciones
 \eqref{eq:p0} y \eqref{eq:pmu} se necesita conocer las distribuciones muestrales
 del estadístico de prueba, $f(q_\mu)$.
 
-
 Como se dijo anteriormente, el teorema de Wilk establece que para el limite de
-$N\to\infty$, el estadistico de prueba $t_\mu = -2\ln \lambda$ sigue una
-distribucion $\chi^2$ con un grado de libertad, cuando la hipotesis nula es verdadera.
+$N\to\infty$, el estadístico de prueba $t_\mu = -2\ln \lambda$ sigue una
+distribución $\chi^2$ con un grado de libertad, cuando la hipótesis nula es verdadera.
 
-El teorema de Wald\cite{WaldTheo} generaliza este teorema para el caso de la hipotesis no nula.
-En este caso el estadisitico $-2\ln\lambda$ sigue una distribucion $\chi^2$ no central.
-
-
-La distribucion $f(q_\mu|\mu')$ puede encontrarse utiliznaod los resultados de Wald[],
-que mostro que para el caso de un solo parametro de interes vale:
+El teorema de Wald\cite{WaldTheo} generaliza este teorema para el caso de la hipótesis no nula.
+En este caso el estadístico $-2\ln\lambda$ sigue una distribución $\chi^2$ no central.
+A partir de este resultado puede mostrarse que para el caso de un solo parámetro de interés vale:
 
 \begin{equation}
   -2 \ln \lambda(\mu) = \frac{(\mu - \hat{\mu})^2}{\sigma^2} + \mathcal{O}(1/\sqrt{N})
 \end{equation}
 %
-donde $\hat{\mu}$ sigue una distribucion normal con media $\mu'$ y desviacion estandar $\sigma$.
-Si $\hat{\mu}$ se encuentra distribuido normalmente y se desprecian los terminos $\mathcal{O}(1/\sqrt{N})$,
-se puede mostrar que en el regimen asintotico, el estadistico $t_\mu$ sigue una distribucion $chi^2$ no central
-con un grado de libertad.
+donde $\hat{\mu}$ sigue una distribución normal con media $\mu'$ y desviación
+estándar $\sigma$. Si $\hat{\mu}$ se encuentra distribuido normalmente y se
+desprecian los términos $\mathcal{O}(1/\sqrt{N})$, se puede mostrar que en el
+régimen asintótico, el estadístico $q_\mu$ sigue una distribución $\chi^2$ no
+central con un grado de libertad.
 
-Entonces, en el límite asintótico, el estadistico $t_\mu$ puede aproximarse por
+Entonces, en el límite asintótico, el estadistico $q_\mu$ puede aproximarse por
 
 \begin{equation}
   q_\mu =
@@ -642,21 +639,21 @@ y la correspondiente significancia,
 \end{equation}
 
 Estas aproximaciones permiten conocer las distribuciones muestrales y calcular
-{\pvalue}s y significancias en el caso de un gran número de datos, de una forma
-simple y computacionalmente poco costosa.
-A pesar de que estrictamente es valido para $N\to\infty$, esta aproximacion es suficientemente
-precisa para un numero de eventos de fondo $\smallrel\gtrsim \mathcal{O}(10)$.
+valores-$p$ y significancias en el caso de un gran número de datos, de una forma
+simple y computacionalmente poco costosa. A pesar de que estrictamente es valido
+para $N\to\infty$, esta aproximación es suficientemente precisa para un numero
+de eventos de fondo $\smallrel\gtrsim \mathcal{O}(10)$.
 
 Para muestras de datos muy pequeñas, o en casos donde la precisión es
 importante, siempre pueden validarse estas aproximaciones utilizando la
 generación Monte Carlo.
 
-Para esto es necesario utilizar simulaciones Monte Carlo para
-generar lo que se denomina \emph{pseudo-experimentos}. El procedimiento
-consiste en generar el conjunto de observables $\bm{x}$ utilizando la pdf
-$f(\bm{x}|H)$ y calcular el valor del estadístico de prueba $t(\bm{x})$ para
-cada conjunto. Este proceso se repite hasta acumular suficiente estadística
-en la distribución muestral del estadistico $g(t|H)$.
+Para esto es necesario utilizar simulaciones Monte Carlo para generar lo que se
+denomina \emph{pseudo-experimentos}. El procedimiento consiste en generar el
+conjunto de observables $\bm{x}$ utilizando la pdf $f(\bm{x}|H)$ y calcular el
+valor del estadístico de prueba $t(\bm{x})$ para cada conjunto. Este proceso se
+repite hasta acumular suficiente estadística en la distribución muestral del
+estadístico $g(t|H)$.
 
 
 

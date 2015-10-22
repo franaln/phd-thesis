@@ -1,44 +1,57 @@
-\chapter{Simulaciones Monte Carlo}
+\chapter{Simulaciones Monte Carlo}\label{cap:simulaciones}
+
+En este capítulo se describe como fueron simulados los procesos del modelo de
+SUSY (\cref{sec:sig_samples}) y los procesos del SM (\cref{sec:bkg_samples}) que
+dan lugar al estado final de interés. Todas las muestras fueron simuladas
+utilizando generadores Monte Carlo a $\sqrt{s}=8\tev$. A continuación se simuló
+el pasaje por el detector ATLAS para luego ser reconstruidas con los mismos
+algoritmos que los datos observados.
+
+%% La mayoría de los fondos MC fueron utilizados para comparaciones y cross checks.
+%% La estimación de los fondos  en las regiones de señal se estimó cuando fue posible de los
+%% propios datos observados.
+
+%% Todas las muestras fueron pasadas a través de la simulación completa basada en Geant4\cite{Geant4,AtlasSim} o rápida
+%% ATLFAST-II\cite{Richter-Was:683751} del detector ATLAS, y reconstruidas con los mismos algoritmos
+%% que se utilizaron para los datos.
+
+%% un repesado evento a eventos es aplicado a todas las muestras MC para modelar las condiciones
+%% realistas de las muestra de datos bajo estudio, matcheando la distribución del numero de interaccionas
+%% por cruze de bunchs (pile-up) de las muestras simuladas a la observada en datos.
 
 
-\newcommand{\mccaption}{La sección eficaz a LO para cada modo de decaimiento,
-  los factores $k$ (para la normalización NLO) y las eficiencias del filtro
-  están detalladas, así como también la luminosidad integrada correspondiente
-  a la estadística total de cada muestra.}
 
-%% \note{Mirar ``Perspective in SUSY II'' de Kane,
-%% Capitulo 11}
+\section{Simulación de la se\~nal}\label{sec:sig_samples}
 
-\section{Generación de eventos de SUSY}
+\subsection{Generación de eventos}
 
 La conexión entre la teoría/fenomenología de SUSY (o cualquier otra teoría de
 nueva física), y las observaciones experimentales en el detector de un
 colisionador se realiza por medio de un \emph{generador de eventos}. Dada una
 teoría de nueva física, que en general predice la existencia de nuevas
 partículas y/o interacciones, el generador de eventos permite calcular cómo esa
-teoría se manifiesta en el experimento.
+teoría se manifiesta en el experimento\cite{Baer:2009tk}.
 
 El procedimiento, una vez que se selecciona un modelo particular de SUSY,
 requiere de varios pasos que se encuentran esquematizados en la
-\cref{fig:mc_sketch}.
-En primer lugar es necesario calcular el espectro de masas de las partículas
-supersimétricas, y sus acoplamientos. A partir de esto se calculan los anchos y
-tazas de decaimiento de todas estas partículas. Y por último se utiliza el
-generador, que toma como entrada las masas y decaimientos calculados previamente,
-y genera los eventos de SUSY. Para los distintos pasos se utilizan
-distintas herramientas por lo que es fundamental contar con un forma de poder
-intercambiar información entre ellas de una forma estandarizada. Con este motivo
-se creo un tipo de archivo llamado SLHA (SUSY Les Houches Accord)\cite{SLHA} que
-puede funcionar como input/output de estas herramientas.
+\cref{fig:mc_sketch}. En primer lugar es necesario calcular el espectro de masas
+de las partículas supersimétricas, y sus acoplamientos. A partir de esto se
+calculan los anchos y tazas de decaimiento de todas estas partículas. Y por
+último se utiliza el generador, que toma como entrada las masas y decaimientos
+calculados previamente, y genera los eventos de SUSY. Para las distintas etapas
+suelen utilizarse herramientas diferentes, por lo que es fundamental contar con
+un forma estandarizada de intercambio de información entre ellas. Con este
+objetivo se creo un tipo de archivo llamado SLHA (SUSY Les Houches
+Accord)\cite{SLHA} que permite organizar toda la información de un cierto modelo
+de supersimetría (parámetros, masas, decaimientos) en un solo lugar y de forma
+que sea fácil de compartir entre los físicos y también los distintos software.
 
 \begin{figure}[h]
   \centering
   \scalebox{0.8}{\input{tikz/mc_sketch.tex}}
-  \caption{Etapas para la generacion de eventos de un modelo de SUSY.}
+  \caption{Etapas de la generación de eventos de un modelo de SUSY.}
   \label{fig:mc_sketch}
 \end{figure}
-
-
 
 %% Para interfacear dos o mas calculos, el procedimiento general requiere que
 %% el usuario prepare los parametros del modelo ,
@@ -60,47 +73,39 @@ puede funcionar como input/output de estas herramientas.
 %% genera los eventos a partir de la informacion de este archivo.
 
 
-\subsection{Espectro de masas y decaimientos}
+\subsubsection{Espectro de masas y decaimientos}
 
-Los modelos de SUSY en lo que nos focalizamos suelen ser la teoria efectica a
-bajas energias que resultan de una teoria mas general, como teoria de
+Los modelos de SUSY que se estudian en un colisionador suelen ser la teoría
+efectiva a bajas energías que resultan de una teoría mas general, como teoría de
 supercuerdas, o que involucre un mecanismo particular para el rompimiento de
-SUSY. Para especificar una teoria efectiva es necesario definir: (1) la simetria
+SUSY. Para especificar una teoría efectiva es necesario definir: (1) la simetría
 de gauge, (2) los campos que la componen y, (3) el Lagrangiano. Los efectos del
-rompimiento de SUSY estan codificados en los terminos de rompimiento soft del
-Lagrangiano. Tambien se debe especificar la escala de energia a la cual la
-teoria efectiva y el lagrangiano son validos. Y como los experimentos testean
-fisica a la escala debil $Q\sim 1 \tev$, mientras que los parametros del
-Lagrangiano son frecuentemente especificados a energias mucho mas altas
-($M_\text{GUT}$ o $M_P$), debe usarse el grupo de ecuaciones de renormalizacion
-(RGE) para conectars las dos escalas del modelo.
-
-Una vez que los parametros del Lagrangiano son conocidos a la escala
-electrodebil, pueden identificarse las masas fisicas de las particulas,
+rompimiento de SUSY están codificados en los términos de rompimiento soft del
+Lagrangiano. También se debe especificar la escala de energía a la cual la
+teoría efectiva y el lagrangiano son válidos. Y como los experimentos testean
+física a la escala débil $Q\sim 1 \tev$, mientras que los parámetros del
+Lagrangiano son frecuentemente especificados a energías mucho mas altas
+($M_\text{GUT}$ o $M_P$), debe usarse el grupo de ecuaciones de renormalización
+(RGE) para conectar las dos escalas del modelo.
+Una vez que los parámetros del Lagrangiano son conocidos a la escala
+electrodébil, pueden identificarse las masas físicas de las partículas,
 diagonalizando las matrices de masa correspondientes, y luego, para tener la
-precision suficiente, aplicar las correciones a ordenes mayores (en general a 1
-loop).
+precisión suficiente, aplicar las correcciones a ordenes mayores (en general a 1
+loop). A partir del modelo también es posible calcular los anchos y tazas de
+decaimiento de todas las partículas supersimétricas.
 
-A partir del modelo también es posible calcular los anchos y tazas de decaimiento de todas las
-partículas supersimetricas
-
-Existen varios programas que permiten realizar estos calculos del espectro de
-masas: \texttt{Isasugra}, \suspect, \texttt{SoftSusy} y \texttt{Spheno}...
-
-En este trabajo utilizamos el programa {\susyhit}\note{ref} que combina
-{\suspect} junto {\sdecay} y {\hdecay} para calcular los BRs y anchos de
-decaimiento. Algunos de estos modos de decaimientos son calculados a NLO en QCD.
-
-
+Existe una gran variedad de programas que permiten realizar estos cálculos.
+En este trabajo utilizamos el programa
+{\susyhit}\cite{Djouadi:2006bz} que combina {\suspect}\cite{Djouadi2007426}
+para calcular el espectro de masas, junto
+con {\sdecay}\cite{Muhlleitner:2004mka} y {\hdecay}\cite{Djouadi:1997yw}
+para calcular los BRs y anchos de decaimiento. Algunos de estos modos de
+decaimientos son calculados a NLO en QCD.
 
 %% {\suspect}\note{referencia} corre las RGE a dos loops en el MSSM para determinar
 %% los parametros de SUSY a la escala electrodebil en modelos de mSUGRA, GMSB, AMSB
 %% y pMSSM. Y aplica luego las correscciones a 1 loop, y algunas correcciones a 2 loops
 %% para las masas de los Higgs.
-
-
-
-\vsp
 
 Una vez que el espectro de masas y los decaimientos están calculados estos
 pueden usarse como entrada en los generadores de eventos.
@@ -123,18 +128,18 @@ pueden usarse como entrada en los generadores de eventos.
 %% Some two loop corrections to Higgs masses are included.
 
 
-\subsection{Generador de eventos}
+\subsubsection{Generador de eventos}
 
 Los programas descriptos anteriormente permiten pasar de un modelo de SUSY a las
-predicciones en la producción de spartículas y sus anchos de decaimientos en
+predicciones en la producción de partículas y sus anchos de decaimientos en
 estados finales de quarks, leptones, fotones y gluones (y LSP en modelos donde
 se conserva paridad-R). Sin embargo los quarks y gluones no pueden medirse
 directamente en los detectores. Los detectores pueden medir trazas de partículas
 (cuasi)estables cargadas y su momento en campos magnéticos, como también los
 depósitos de energía en los calorímetros. Por lo tanto todavía falta un paso
 entre estos modelos y las señales detectadas en los detectores, del cual se
-encarga el generador de eventos. A partir de la colision hadronica inicial,
-estos programas modelan la produccion de las particulas en el estado final a ser
+encarga el generador de eventos. A partir de la colisión hadronica inicial,
+estos programas modelan la producción de las partículas en el estado final a ser
 medidas en el detector.
 
 Para un dado tipo de colisionador y una dada energía de centro de masa, y un
@@ -143,37 +148,43 @@ spartículas de acuerdo a su sección eficaz. Estas partículas van a decaer
 (posiblemente en en una cascada de varios pasos) en un estado final partónico,
 de acuerdo a los BR fijados por el modelo. Este estado final partónico es
 convertido en uno con partículas que puede ser detectadas en el detector.
-Generando un gran numero de eventos de SUSY, se puede simular los posibles
+Generando un gran número de eventos de SUSY, se puede simular los posibles
 estados finales que se esperada que un cierto modelo produzca.
 
 %%Existen varios generadores que incorporan SUSY: \texttt{Isajet}, {\pythia}, {\herwig}, {\sherpa}.
 
-La simulación de eventos de dispersión en colisionadores hadronicos puede
-descomponerse en varios pasos descriptos a continuacion (y esquematizados en la
+La simulación de eventos de dispersión en colisionadores hadrónicos puede
+descomponerse en varios pasos descriptos a continuación (y esquematizados en la
 \cref{fig:mc_event_generator}):
 
 \begin{itemize}
 
 \item Interacción dura (HS):
 
-  En este proceso, las particulas (en este caso protones) interactuan para
-  producir las particulas fundamentales salientes primarias. Esta intraccion
+  En este proceso, las partículas (en este caso protones) interactúan para
+  producir las partículas primarias salientes. Esta interacción
   involucra los partones de los hadrones intervinientes en el proceso. El
-  calculo se realiza, en general, a primer orden (LO) en teoria de perturbaciones,
-  aunque algunos programas pueden incluir algunos procesos a NLO.
-  Esta etapa tambien involucra la convolucion con las funciones de distribucion
-  partonica (PDFs),
+  calculo se realiza, en general, a primer orden (LO) en teoría de
+  perturbaciones, aunque algunos programas pueden incluir algunos procesos a
+  NLO. Esta etapa también involucra la convolución con las funciones de
+  distribución partónico (PDFs),
 
-  %% El calculo perturbativo del proceso de interacción dura en el modelo
-  %% partónico, y la convolución con las funciones de distribución partónica
-  %% (PDFs),
+\item Lluvias partónicas:
+
+  Implementación de las lluvias partónicas para las partículas producidas en la
+  colisión (lluvia de estado final o FSR), para los partones iniciales
+  involucrados en la colisión (lluvia de estado inicial o ISR), y también para
+  otras partículas de color que puedan ser producidas como decaimiento de
+  partículas mas pesadas.
+
+  %% implementación de las lluvias de partones para los estados de partículas
+  %% con color inicial y final, y para otras partículas con color que puedan ser
+  %% producidas como decaimiento de otros objetos mas pesados,
 
 \item Decaimientos:
 
-  Las particulas suerpsimetricas producidas en la interaccion dura decaen (en general
-  en forma de cascada) a otras particulas.
-
-  %% la inclusión de los decaimientos en cascada de las sparticulas
+  Las partículas supersimétricas producidas en la interacción dura decaen (en
+  general en forma de cascada) a otras partículas.
 
   %% Las particulas fundamentales masivas, como el quark top,
   %%   los bosones de gauge electrodebiles, los bosones de Higgs y particulas de nueva fisica, decaen
@@ -182,24 +193,13 @@ descomponerse en varios pasos descriptos a continuacion (y esquematizados en la
   %%   fuertementen en el decaimiento, estas marticulas pueden tambien iniciar lluvias partonicas
   %%   antes y despues de su decaimiento.
 
-\item Lluvias partonicas:
-
-  Se implementa las lluvias partonicas, para las particulas producidas
-  en la colision (lluvia de estado final o FSR), para los partones iniciales
-  involucrados en la colision (lluvia de estado inicial o ISR), y tambien para otras
-  particulas de color que puedan ser producidas como decaimiento de particulas mas pesadas.
-
-  %% implementación de las lluvias de partones para los estados de partículas
-  %% con color inicial y final, y para otras partículas con color que puedan ser
-  %% producidas como decaimiento de otros objetos mas pesados,
-
 \item Hadronización:
 
-  En esta etapa se implementa el modelo de hadronización que describe la formación de
-  mesones y bariones a partir de los quarks y gluones. También las partículas
-  inestables deben decaer a partículas (cuasi) estables que son detectadas en el
-  detector, con tasas y distribuciones que estén de acuerdo con los valores
-  medidos o predichos.
+  En esta etapa se implementa el modelo de hadronización que describe la
+  formación de mesones y bariones a partir de los quarks y gluones. También las
+  partículas inestables deben decaer a partículas (cuasi) estables que son
+  detectadas en el detector, con tasas y distribuciones que estén de acuerdo con
+  los valores medidos o predichos.
 
 \item Remanentes:
 
@@ -213,22 +213,20 @@ descomponerse en varios pasos descriptos a continuacion (y esquematizados en la
   \centering
   \includegraphics[width=0.6\textwidth]{figures/mc_event_generator}
   \caption{Distintas etapas implementadas en los generadores de eventos Monte Carlo.
-    (1) Interaccion dura (HS), (2) Lluvias de estado inicial y final (ISR, FSR),
+    (1) Interacción dura (HS), (2) Lluvias de estado inicial y final (ISR, FSR),
     (3) Decaimientos en cascada, (4) Hadronización, (5) Remanentes.}
   \label{fig:mc_event_generator}
 \end{figure}
 
-
-
+%% \begin{figure}
+%%   \centering
+%%   \scalebox{0.8}{\input{tikz/mc_event_generator.tex}}
+%% \end{figure}
 
 %% \note{del manual de Herwig}
 %% Los procesos involucrados pueden dividirse en un numero de etapas
 %% correspondientes al aumento de las escalas de  tiempo y distancia
 %% involucradas:
-
-%% \begin{enumerate}
-
-
 
 %% \item Lluvias de partones de estado inicial y final:
 %%     Las particulas de color en el evento son perturvativamente evolucionadas desde
@@ -287,35 +285,226 @@ descomponerse en varios pasos descriptos a continuacion (y esquematizados en la
 %%     produced perturbatively but decays hadronically, can be treated consistently.
 
 
-%% \end{enumerate}
+\subsubsection{Simulación del detector ATLAS}
 
-%% \subsubsection{Interacccion dura}
+Para poder estudiar la respuesta del detector para un gran número de procesos
+físicos y escenarios, se ha implementado una simulación detallada que lleva los
+eventos de la generación a un formato que es idéntico a la salida del detector
+verdadero\cite{AtlasSim}. La simulación esta integrada al software de ATLAS (\textsc{Athena}),
+y utiliza la herramienta para simulación {\geant}4\cite{Geant4}.
 
-%% La interaccion dura y la convolucion con las PDFs es el calculo central
-%% de los generadores de eventos. Los calculos se realizan generalmente
-%% al orden mas bajo en teoria de perturbaciones, por lo que la interaccion
-%% dura es un proceso de dispersion $2\to 2$ o $1\to 1$.
+El simulación esta dividida en tres etapas: (1) generación del evento y los
+decaimientos inmediatos, (2) simulación del detector, y (3) digitalización de
+los depósitos de energía en las regiones sensibles del detector en los voltajes
+y corrientes que se encuentran a la salida del detector. Luego, la salida de
+estos procesos de simulación puede sirve como entrada a los algoritmos de
+trigger y reconstrucción de ATLAS, que son idénticos a los que se utilizan en
+los datos reales.
+
+Existe también una simulación rápida del detector que es utilizada en los casos
+donde no es necesaria un simulación tan minuciosa de las lluvias
+electromagnéticas en los calorímetros. Casi 80\% del tiempo de simulación se
+debe a la simulación de partículas atravesando el calorímetro, y cerca del 75\%
+es simulando las partículas electromagnéticas. En la simulación rápida
+\textsc{Atlfast}\cite{Richter-Was:683751}, se remueven estas partículas
+electromagnéticas de baja energía y se las reemplaza con lluvias
+electromagnéticas pre-simuladas. De esta forma se reduce el consumo de CPU
+notablemente, sin problemas desde el punto de vista físico.
 
 
-%% Finalmente, en un colisionador de hadrones, los remanentes del nucleon
-%% que no participaron en la interaccion dura deben ser tenidos en cuenta.
-%% Los efectos de los remanentes del haz producen un flujo de energia adicional,
-%% especialemente en las regiones fast forward del detector. Existen distintas
-%% formas de describir estos procesos no perturbativos. Adicionalmente, estos
-%% remanentes deben ser hadronizados.
+\subsubsection{Funciones de distribución partónicas}
+
+Las funciones de distribución partónico (PDFs) se utilizan para describir la
+subestructura del protón y son usadas por todos los generadores de eventos.
+ATLAS utiliza la librería LHAPDF\cite{Bourilkov:2006cj} que contiene un
+repositorio con una gran
+cantidad de PDFs. Por defecto, y a menos que se indique lo contrario las PDFs
+CTEQ son las utilizadas en ATLAS.
+
+%-------
+% Senal
+%-------
+\subsection{Se\~nal}
+
+Como los modelos de SUSY tienen muchos parámetros libres que no se conocen, las búsquedas de supersimetría en
+ATLAS están impulsadas por la fenomenología de los estados finales. El presente
+análisis esta motivado por los estados finales con fotones energéticos,
+provenientes del decaimiento de un neutralino NLSP en el contexto de modelos
+GGM.
+
+En los modelos GGM el decaimiento de los estados supersimétricos producidos
+durante las colisiones van a proceder por medio de decaimientos en cascada hasta
+el neutralino NLSP que decaerá a un gravitino y una partícula del SM,
+dependiendo de la naturaleza de la NSLP, con una alta probabilidad de que el
+decaimiento sea $\gam\,\gravino$. Distintas posibilidades para la naturaleza de la
+NLSP fueron consideradas, las cuales dan lugar y motivan estados finales
+distintos y complementarios entre si, para cubrir las distintas regiones
+del espacio de fase de los modelos GGM.
+Dentro de ATLAS, distintos analisis exploraron cuatro estados finales diferentes: dos fotones, un fotón y un
+leptón, un fotón y {\bjets}, y un fotón y jets, todos con energía faltante,
+correspondiente al gravitino LSP.
+
+En particular en esta Tesis se describe el análisis con un estado final que
+consiste en un único fotón, jets y energía faltante.
+La selección de eventos descripta en el \cref{cap:seleccion} fue diseñada para
+maximizar la sensibilidad a pequeñas señales con esta topología general.
+Cualquier imposición de cortes muy dependientes del modelo fueron evitadas,
+tratando de mantener el análisis lo mas independiente del modelo como fuera
+posible. Sin embargo, una interpretación en el marco de un modelo especifico es
+inevitable. Con tal motivo se simuló un conjunto de puntos de señal con un
+distintos valores de los parámetros para cubrir la región del espacio de
+parámetros donde pueda haber dicha señal.
+
+%% Se simularon puntos de senal para la produccion de gluinosLos resultados se interpretaron
+%% son interpretados en el contexto de GGM que
+%% incluyen la produccion de supercompaneras de particulas del SM que se acoplan
+%% fuertemente comot ambien de que poseen solo carga electrodebil.
+
+Se utilizó un espectro simplificado, en el cual, básicamente, el espacio de parámetros
+consistió en la escala de producción (por simplicidad, la masa del gluino)
+y la masa de la NLSP. Todos los demás estados fueron desacoplados ya que no juegan
+un rol importante en la producción o en el estado final de interés. Esta aproximación
+es similar a los denominados \emph{modelos simplificados}  utilizados en otras búsquedas.
+
+La masa del gluino es la única libre de las partícula de color, para poder determinar un
+limite conservativo en la masa del mismo. Todos los parámetros de masa soft de los
+squarks se fijan 2.5 \tev.
+
+Para maximizar la probabilidad de tener un único fotón en el estado final,
+es necesario que $\mathrm{BR}(\ninoone \to \gam\,\gravino) \sim 50\%$.
+Esto es asi cuando el neutralino mas liviano es una mezcla bino-higgsino.
+Para lograr la BR deseada, para las diferentes masas del {\ninoone}, se variaron los
+parámetros de masa de bino ($M_1$ y higgsinos ($\mu$),
+de tal forma que los BR del {\ninoone} sean aproximadamente constantes:
+
+\begin{align}
+  &\mathrm{BR}(\ninoone \to \gam\, \gravino) \approx 50\% \\
+  &\mathrm{BR}(\ninoone \to Z\, \gravino) \approx 49\% \\
+  &\mathrm{BR}(\ninoone \to h\, \gravino) \approx 1\%
+\end{align}
+
+Estos números varían en no más del 1\% en la grid, salvo para neutralinos livianos
+($<200\gev$) donde la producción de Higgs es altamente suprimida y
+$\mathrm{BR}(\ninoone \to \gam \gravino)$ empieza a caer llegando al 40\%.
+Además, el valor de $\mu$ debe ser positivo en orden de desfavorecer el BR a higgs,
+que llevara a un estado final ya cubierto por otro análisis de ATLAS.
+
+Los demás parámetros del modelo se dejan en $M_2=2.5\tev$,
+$\tan\beta=1.5$ y $c\tau_{\mathrm{NLSP}} < 0.1$ mm. El ultimo asegura
+que el neutralino decaiga rápidamente dentro del detector y se logra haciendo al
+gravitino lo suficientemente liviano ($m_{\tilde{G}}=10^{-9} \gev$). Todos los
+términos tri-lineares son fijados a cero y las masas de los sleptones a $3.5 \tev$.
+El bosón de Higgs $m_{A} = 2 \tev$ y $m_{h} = 126 \gev$. El ultimo
+sigue del valor medido de la masa del Higgs observado. En modelos GGM de SUSY
+existen distintos
+mecanismos\cite{Craig:2011yk,Auzzi:2011eu,Csaki:2012fh,Larsen:2012rq,Craig:2012hc}
+para generar una masa del bosón de Higgs tan alta como este valor observado, sin
+cambiar la fenomenología de los modelos considerados. No se vio un efecto
+significativo en el espectro de masa variando el valor de la masa de Higgs en
+un rango de $\pm 10 \gev$.\note{Hacer comentario de $\tan\beta$}
+
+Entonces, se simuló una grid de puntos de señal en el plano ($m_{\gluino}$, $m_{\ninoone}$),
+variando los parámetros $M_3$ y $\mu$. Y $M_1$ se ajusto, dependiendo del $\mu$ de forma
+de obtener las BR descriptas anteriormente. La grid cubre el espacio
+$150\gev < m_{\ninoone} < 1250 \gev$ y $800\gev < m_{\gluino} < 1300 \gev$, con $m_{\ninoone} <
+m_{\gluino}$. La granularidad de la simulación se puede ver en la \cref{fig:gridpoints}.
+
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.5\textwidth]{figures/run1_grid}
+  \caption{Update}
+  \label{fig:gridpoints}
+\end{figure}
+
+%% \M{1} and $\mu$ determine the lightest neutralino mass, and are related in such a way that the branching ratios of the \ninoone\ are approximately constant,
+%% resulting in ${\rm BR}(\ninoone \to \gam + \gravino) \approx 50\%$, ${\rm BR}(\ninoone \to Z + \gravino) \approx 49\%$ and ${\rm BR}(\ninoone \to h + \gravino) \approx 1\%$,
+%% numbers which vary by $\pm 1\%$ throughout most of the grid ({\fig} \ref{fig:br_n1_x_grav}). For light neutralinos ($<200\gev$) the Higgs production is highly
+%% suppressed and ${\rm BR}(\ninoone \to \gam + \gravino)$ starts falling up to 40\%. The value of $\mu$ must also be positive in order to disfavor the branching ratio
+%% to the Higgs boson, which would lead to a signature already covered by a dedicated analysis in ATLAS \cite{Aad:2012jva}. Similarly, the branching ratio for
+%% ($\ninoone \to \gam + \gravino$) is such that maximizes the single photon final state. At larger values the diphoton topology starts to be favoured, which has been
+%% extensively searched for in the past \cite{Aad2012519,Aad:2011kz}. This leaves $M_3$ and $\mu$ as the only two free parameters of the model, spanning the space
+%% within $150\gev < m_{\ninoone} < 1250 \gev$ and $800\gev < m_{\gluino} < 1300 \gev$, with $m_{\ninoone} < m_{\gluino}$. The granularity of the simulation in each
+%% dimension is shown in {\tab}\ \ref{tab:signal_pars}, with the resulting value for the gluino and neutralino masses.
+
+El espectro completo de masas y los correspondientes decaimientos fueron
+calculados a partir de estos parámetros utilizando {\suspect}
+(v2.41)\cite{Djouadi2007426}, {\sdecay} (v1.3b)\cite{Muhlleitner:2004mka} y
+{\hdecay} (v3.4)\cite{Djouadi:1997yw}, que forman parte del paquete {\susyhit}
+(v1.3)\cite{Djouadi:2006bz}.
+
+
+Algunos ejemplos del espectro de masas puede verse en la
+\cref{fig:mass_spectra}, para algunos puntos de la grid.
+
+\begin{figure}[ht!]
+   \centering
+   \includegraphics[width=0.45\textwidth]{figures/masses_GGM_M3_mu_800_150}
+   %%\includegraphics[width=0.45\textwidth]{figures/masses_GGM_M3_mu_1000_750}
+   \includegraphics[width=0.45\textwidth]{figures/masses_GGM_M3_mu_1450_1050}
+
+   \caption{Espectro de masas ...}
+     %% Solo $M_3$ y $\mu$ son los parámetros libres, en este caso
+     %% $(M_3, \mu) = (800~\gev, 250~\gev)$. }
+   \label{fig:mass_spectra}
+\end{figure}
+
+
+
+%%The total decay branching ratios for \gluino-initiated \ninoone\ production are
+%% shown in {\fig} \ref{fig:br_gl_n1}, for 2-body\footnote{only effectively, the gluino decays through a virtual
+%% quark-squark loop in this case.} and 3-body gluino decays.
+
+Las BR de los neutralinos puede verse en las
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.3\textwidth]{figures/br_n1_X}
+  \includegraphics[width=0.3\textwidth]{figures/br_n2_X}
+  \includegraphics[width=0.3\textwidth]{figures/br_n3_X}
+\end{figure}
+
+
+%% -rw-rw-r-- 1 fran fran  17K ago 31 20:38 br_c1_X.pdf
+%% -rw-rw-r-- 1 fran fran  21K ago 31 20:38 br_gl_2b_vs_3b.pdf
+%% -rw-rw-r-- 1 fran fran  21K ago 31 20:38 br_gl_X_2body.pdf
+%% -rw-rw-r-- 1 fran fran  20K ago 31 20:38 br_gl_X_3body.pdf
+%% -rw-rw-r-- 1 fran fran  22K ago 31 20:38 br_gl_X.pdf
+%% -rw-rw-r-- 1 fran fran  18K ago 31 20:38 br_n1_X.pdf
+%% -rw-rw-r-- 1 fran fran  18K ago 31 20:38 br_n2_X.pdf
+%% -rw-rw-r-- 1 fran fran  19K ago 31 20:38 br_n3_X.pdf
+
+
+
+Se generaron 5000 eventos para cada uno de los 124 puntos de senal, utilizando {\herwigpp} v2.5.2\cite{Bahr:2008pv}
+y el conjunto de PDFs CTEQ6L1\cite{Nadolsky:2008zw}. Se aplicó un filtro a nivel generador, que requeria
+la presencia de un foton con un {\pt} de al menos 100 \gev, para obtener mas estadistica, especialmente
+en los puntos donde el neutralino tiene menor masa. La eficiencia del filtro para todas las muestras
+simuladas puede verse en la \cref{tab:signal_filter_eff}.
+El pasaje de la senal por el detector ATLAS, fue simulado con la simulacion rapida \textsc{ATLFAST-II}\cite{Richter-Was:683751}.
+%% Derived datasets in the {\sc NTUP\_SUSY}
+%% format are used throughout this analysis, with the configuration tag p1328.
+%% Todas las muestras de señal fueron simuladas con la simulación rápida y perimétrica del detector ATLFAST-II \cite{Richter-Was:683751}.
 
 
 \subsection{Sección eficaz}
 
+%% La seccion eficaz de produccion y sus incertezas fue calculada usando el paquete SUSYSignalUncertainties \cite{SUSYsigunc}.
+%% La seccione eficaz para los procesos que in volucran la produccion de pares de gluinos fueron calculadas a NLO
+%% en la constante de acoplamiento fuerte, agregando la \hl{resummation of soft gluon emission at NLO+NLL}\cite{Beenakker:1996ch,Kulesza:2008jb,Kulesza:2009kq,Beenakker:2009ha,Beenakker:2011fu}.
+%% La seccion eficas de produccion electrodebil de $\tilde{\chi}\tilde{\chi}$ fue calculada
+%% a NLO en la constante de acoplamiento fuerte utilizando {\prospino} \cite{Beenakker:1999xh}.
+%% Las secciones eficacez y sus incertezas estan detalladas en la \cref{tab:signal_xs_strong,tab:signal_xs_ewk}
+%% y se muestran en las figuras...
+
 En el caso de procesos de producción de pares de gluino o quarks, de los cuales
 existe el calculo a NLL, la sección eficaz se toma a NLO en la constante de acoplamiento
-fuerte, incluyendo el \emph{resummation} de la emisión de gluones soft con precisión NLL,
-realizada utilizando {\nllfast}.
+fuerte, y se incluye la suma de la emisión de gluones soft con precisión NLL,
+realizada utilizando {\nllfast}\cite{Kramer:2012bx,Beenakker:1996ch,Kulesza:2008jb,Kulesza:2009kq,Beenakker:2009ha,Beenakker:2011fu}
+.
 
 En el caso de la producción de otro tipo de procesos, como la producción electrodébil, se utiliza
 las secciones eficaces calculadas a NLO usando {\prospino}.
-
-\todo{decoupling limit?}
 
 
 \newcommand{\pdfcteqpm}{\ensuremath{\Delta\mathrm{PDF}^{\pm}(\mathrm{CTEQ})}}
@@ -328,19 +517,17 @@ las secciones eficaces calculadas a NLO usando {\prospino}.
 \newcommand{\alpham}{\ensuremath{\alpha_s^-}}
 \newcommand{\alphapm}{\ensuremath{\alpha_s^{\pm}}}
 
-
 Las incertezas debidas a la elección de la escala de renormalizacion y
 factorizacion como también de la PDF, son obtenidas utilizando {\nllfast} o
 calculadas con {\prospino}. En orden de combinar todas estas predicciones y
 obtener un incerteza total, se siguen lo mas posible las recomendaciones
-PDF4LHC[]. Para esto se define la envolvente de las predicciones a la sección eficaz
+PDF4LHC\cite{Botje:2011sn}. Para esto se define la envolvente de las predicciones a la sección eficaz
 usando el intervalo a 68\% CL del conjunto de PDFs CTEQ (incluyendo la incerteza en $\alpha_s$ y MSTW,
 junto con las variaciones de las escalas. La sección eficaz nominal se obtiene usando el punto medio
 de la envolvente y la incerteza como la mitad del ancho de la misma. Matemáticamente
 si {\pdfcteqpm} y {\scacteqpm} son las variaciones en $\pm 1\sigma$ de las PDF CTEQ.
 Y {\pdfmstwpm} y {\scamstwpm} son las variaciones en $\pm 1\sigma$ en la PDF MSTW.
 Y {\alphapm} son las correspondientes incertezas de la constante de acoplamiento fuerte.
-
 
 \begin{align}
   \Delta\mathrm{CTEQ}^{\pm} &= \sqrt{(\pdfcteqpm)^2 + (\scacteqpm)^2 + (\alphapm)^2} \\
@@ -359,176 +546,6 @@ y la seccion eficaz final ($\sigma$) y su incerteza simétrica ($\delta\sigma$) 
 \begin{equation}
   \sigma = (U+L)/2,\quad \Delta\sigma = (U-L)/2
 \end{equation}
-
-
-
-
-\section{Simulación en ATLAS}
-
-
-
-
-
-
-La salida de la simulacion se utiliza como entrada para la digitalizacion.
-En esta etapa se agrega el ruido del detector al evento y se simula
-el primer niveldel trigger.
-
-Por ultimo se corren los algoritmos del HTL y la reconstruccion.
-La reconstruccion es identica es la misma para los datos y para
-la simulacion.
-
-
-
-*Funciones de distribucion partonicas
-Las funciones de distribucion partonica (PDFs) se utilizan
-para describir la subestrucura del proton y son usadas por
-todos los generadores de eventos.
-ATLAS utiliza la libreria LHAPDF[61] que contiene
-un repositorio con una gran cantidad de PDFs. Por defecto, y
-a menos que se indique lo contrario las PDFs CTEQ son las utilizadas
-en ATLAS.
-
-
-* Simulacion Rapida
-Casi 80\% del tiempo de simulacion se debe a la simulacion
-de particulas atravesando el calorimetro, y cerca del 75\%
-es simulando las particulas electromagneticas. En la simulacion rapida
-ATLFAST, se remueven estas particulas electromagneticas de baja energia
-y se las reemplaza con lluvias electromagnetcias pre-simuladas.
-De esta forma se reduce el consumo de CPU notablemente, sin problemas
-desde el punto de vista fisico.
-
-
-
-
-
-Las muestras de se\~nal de SUSY y de fondo del SM fueron simuladas utilizando generadores MC
-a $\sqrt{s}=8\tev$.
-Todas las muestras fueron pasadas a traves de la simulacion completa basada en Geant4\cite{Geant4,AtlasSim} o rapida
-ATLFAST-II\cite{Richter-Was:683751} del detector ATLAS, y reconstruidas con los mismos algoritmos
-que se utilizaron para los datos.
-
-Un repesado evneto a eventos es aplicado a todas las muestras MC para modelar las condiciones
-realistas de las muestra de datos bajo estudio, matcheando la distribucion del numero de interaccions
-por cruze de bunchs (pile-up) de las muestras simuladas a la observada en datos.
-
-Los detalles de las simulaciones estar resumidos en \cref{sec:sig_samples,sec:bkg_samples}.
-La mayoria de los fondos MC fueron utilizados para comparaciones y cross checks.
-La estimacion de los fondos en las regiones de senal se estime, cuando fue posible de los
-datos observados.
-
-
-
-
-
-\section{Simulacion de la se\~nal de SUSY}
-\label{sec:sig_samples}
-
-%% The present analysis is motivated by the bino-higgsino admixture neutralino decay signatures predicted by General Gauge Mediation (GGM) models,
-%% namely a final-state signature that consists of a photon, jets, and high \MET. The event selection described in {\Sec} \ref{sec:event_selection},
-%% has been designed to maximize the sensitivity to a small signal with this general topology. Any imposition of model-tailored selection cuts has been
-%% avoided, trying to keep the analysis as model independent as possible. However, an interpretation in the framework of a specific model is unavoidable.
-%% A grid of GGM signal points is simulated with a specific set of benchmark parameter values that covers the region in which signal can be established.
-%% The sensitivity of the analysis is evaluated using this grid of points.
-El presnete analisis esta motivado por los estados finales del decaimiento de un
-neutralino mezcla bino-higgsino en el contexto de modelos GGM, que consiste en
-un foton, jets y energia faltanta. La seleccion de eventos descripta en {\XXX}
-fue disenada para maximizar la sensibilidad a pequenas senales con esta
-topologia general. Cualquier imposicion de cortes muy dependientes del modelo
-fueron evitas, tratando de mantener el analisis lo mas independiente del modelo
-como fuera posible. Sin embargo, una interpretacion en el marco de un modelo
-especifico es inevitable. Con tal motivo se simulo un conjunto de puntos de
-sneal con un conjutno especifico de parametros para cubrir la region del espacio
-de parametros donde pueda haber dicha senal.
-
-
-%% In this particular region of the GGM model space, the lightest neutralino is a mixture of bino and higgsino. The neutral wino is much heavier so it
-%% does not contribute. Due to the Weinberg mixing angle in the Standard Model, the bino component of the lightest neutralino couples to both the photon and the Z.
-%% The gluino is regarded as the only relevant coloured sparticle in order to set a conservative limit on the gluino mass. All squark soft masses are set to 2.5 TeV.
-%% The other model parameters are set to M$_2$=2.5 \tev, $\tan\beta$=1.5 and $c\tau_{\mathrm{NLSP}} < 0.1$ mm. The latter assures the neutralino is decaying promptly
-%% and is achieved by making the gravitino sufficiently light ($m_{\tilde{G}}=10^{-9}$ \gev). All trilinear coupling terms are set to zero and masses of sleptons
-%% are set to 2.5 \tev. The Higgs boson is in the decoupling regime with $m_{A}$ = 2 \tev~ and $m_{h}$ = 126 \gev. The last follows the recently measured value
-%% for the SM Higgs boson at the LHC \cite{ATLAS-CONF-2013-014,CMS-PAS-HIG-14-009}. In gauge mediated SUSY scenarios several mechanisms exist \cite{Craig:2011yk,Auzzi:2011eu,Csaki:2012fh,Larsen:2012rq,Craig:2012hc}
-%% to generate a Higgs boson mass as high as this observed value, without changing the phenomenology of the models here considered. No significant effect on the mass spectrum
-%% has been indeed observed when varying this value within a $\pm 10~$ \gev\ range.
-En esta region particulas del espacio de parametros del modelo GGM, el
-neutralino mas liviano es una mezcla de bino y higgsino. El wino neutro es mucho
-mas pesado por lo tanto no contribuye. Debido al angulo de mezcla de Weinberg en
-el SM, la componente bino del neutralino mas liviano se acopla al foton y al Z.
-El gluino se deja como la unica sparticula de color para poder determinar un
-limite conservativo en la masa de este. Todos los parametros de masa soft de los
-squarks se pone en 2.5 TeV. Los demas parametros del modelo se dejan en $M_2=2.5\tev$,
-$\tan\beta=1.5$ y $c\tau_{\mathrm{NLSP}} < 0.1$ mm. El ultimo asegura
-que el neutralino decaiga rapidamente dentro del detector y se logra haciendo al
-gravitino lo suficientemenete livano ($m_{\tilde{G}}=10^{-9} \gev$). Todos los
-terminos trilineares son seteados a cero y las masas de los sleptones a $3.5 \tev$.
-El boson de Higgs $m_{A} = 2 \tev$ y $m_{h} = 126 \gev$. El ultimo
-sigue del valor medido de la masa del Higgs observado. En modelos GGM de USY
-existen distintos
-mecanismos\cite{Craig:2011yk,Auzzi:2011eu,Csaki:2012fh,Larsen:2012rq,Craig:2012hc}
-para generar una masa del boson de Higgs tan alta como este valor observado, sin
-cambiar la fenomenologia de los modelos considerados. No se vio un efecto
-significativo en el espectro de masa varianbdo el valor de la masa de Higgs en
-un rango de $\pm 10 \gev$.
-
-%% \M{1} and $\mu$ determine the lightest neutralino mass, and are related in such a way that the branching ratios of the \ninoone\ are approximately constant,
-%% resulting in ${\rm BR}(\ninoone \to \gam + \gravino) \approx 50\%$, ${\rm BR}(\ninoone \to Z + \gravino) \approx 49\%$ and ${\rm BR}(\ninoone \to h + \gravino) \approx 1\%$,
-%% numbers which vary by $\pm 1\%$ throughout most of the grid ({\fig} \ref{fig:br_n1_x_grav}). For light neutralinos ($<200\gev$) the Higgs production is highly
-%% suppressed and ${\rm BR}(\ninoone \to \gam + \gravino)$ starts falling up to 40\%. The value of $\mu$ must also be positive in order to disfavor the branching ratio
-%% to the Higgs boson, which would lead to a signature already covered by a dedicated analysis in ATLAS \cite{Aad:2012jva}. Similarly, the branching ratio for
-%% ($\ninoone \to \gam + \gravino$) is such that maximizes the single photon final state. At larger values the diphoton topology starts to be favoured, which has been
-%% extensively searched for in the past \cite{Aad2012519,Aad:2011kz}. This leaves $M_3$ and $\mu$ as the only two free parameters of the model, spanning the space
-%% within $150\gev < m_{\ninoone} < 1250 \gev$ and $800\gev < m_{\gluino} < 1300 \gev$, with $m_{\ninoone} < m_{\gluino}$. The granularity of the simulation in each
-%% dimension is shown in {\tab}\ \ref{tab:signal_pars}, with the resulting value for the gluino and neutralino masses.
-$M_1$ y $\mu$ determinan la masa del neutralino mas liviano, y estan relacionados de tal forma que los BR del {\ninoone} sea aproximandamente constante,
-de forma que:
-
-\begin{align}
-  \mathrm{BR}(\ninoone \to \gam \gravino) &\approx 50\% \\
-  \mathrm{BR}(\ninoone \to Z + \gravino) &\approx 49\% \\
-  \mathrm{BR}(\ninoone \to h + \gravino) &\approx 1\%
-\end{align}
-%
-numeros que vairan de no mas del 1\% en la grid. Para neutralinos livanos ($<200\gev$) la produccion de Higgs es
-altamente suprimida y $\mathrm{BR}(\ninoone \to \gam \gravino)$ empieza a caer llegando al 40\%. El valor de $\mu$
-tamien debe ser positivo en orden de desfavorecer el BR a higgs, que llevara a un estado final ya cubierto por otro analisis
-de ATLAS. De forma similar, el BR a ($\ninoone \to \gam + \gravino$ es tal que maximiza el estado final con un solo foton. A valores
-grandes, el estado final con dos fotones empieza a estar favorecido, el cual ha sido extensamente estudiado en el pasado \cite{Aad2012519,Aad:2011kz}.
-Esto deja a $M_3$ y $\mu$ como los unicos parametros libres del modelo, cubriendo el espacio
-$150\gev < m_{\ninoone} < 1250 \gev$ and $800\gev < m_{\gluino} < 1300 \gev$, con $m_{\ninoone} < m_{\gluino}$. La granularidad
-de la simulacion en cada dimension se muestra en ...
-
-
-El espectro completo de masas y los correspondientes decaimientos fueron calculados a partir
-de estos parametros utilizando {\suspect} \texttt{(v2.41)}\cite{Djouadi2007426}, {\sdecay} \texttt{(v1.3b)} \cite{Muhlleitner:2004mka}
-y {\hdecay} \texttt{(v3.4)} \cite{Djouadi:1997yw}, que forman parte del paquete {\susyhit} \texttt{(v1.3)} \cite{Djouadi:2006bz}.
-%% An example of the mass spectrum in the configuration is shown in {\fig} \ref{fig:mass_spectra}, for one of
-%% the signal grid points. The total decay branching ratios for \gluino-initiated \ninoone\ production are
-%% shown in {\fig} \ref{fig:br_gl_n1}, for 2-body\footnote{only effectively, the gluino decays through a virtual
-%% quark-squark loop in this case.} and 3-body gluino decays.
-%% Simulated events were generated with HERWIG++ v2.5.2 \cite{Bahr:2008pv} for the 124 signal points in the
-%% grid (5K per each), using the CTEQ6L1 \cite{Nadolsky:2008zw} parton density distributions. A generator level
-%% filter requiring a photon with $p_{T}>100~$ \gev\ was applied to get higher statistics, specially at low neutralino
-%% mass. The filter efficiency for all simulated points are shown in {\tab} \ref{tab:signal_filter_eff}.
-
-La seccion eficaz de produccion y sus incertezas fue calculada usando el paquete SUSYSignalUncertainties \cite{SUSYsigunc}.
-La seccione eficaz para los procesos que in volucran la produccion de pares de gluinos fueron calculadas a NLO
-en la constante de acoplamiento fuerte, agregando la \hl{resummation of soft gluon emission at NLO+NLL}\cite{Beenakker:1996ch,Kulesza:2008jb,Kulesza:2009kq,Beenakker:2009ha,Beenakker:2011fu}.
-La seccion eficas de produccion electrodebil de $\tilde{\chi}\tilde{\chi}$ fue calculada
-a NLO en la constante de acoplamiento fuerte utilizando {\prospino} \cite{Beenakker:1999xh}.
-Las secciones eficacez y sus incertezas estan detalladas en la \cref{tab:signal_xs_strong,tab:signal_xs_ewk}
-y se muestran en las figuras...
-
-The total uncertainty is taken from an envelope of cross section predictions using different PDF
-sets and factorisation and renormalisation scales, as described in \cite{Kramer:2012bx}.
-More details of the uncertainties treatment are given in {\Sec} \ref{sec:syst_signal}. %The dependence of the cross section with $M_3$ is also shown in Fig. \ref{fig:signal_xs}.
-
-
-%% All signal samples have been simulated with the faster, parametrized detector simulation ATLFAST-II \cite{Richter-Was:683751}. Derived datasets in the {\sc NTUP\_SUSY}
-%% format are used throughout this analysis, with the configuration tag p1328.
-Todas las muestras de senal fueron simuladas con la simulacion rapida y parametrica del detector ATLFAST-II \cite{Richter-Was:683751}.
-
 
 %% \begin{figure}[ht!]
 %%    \centering
@@ -550,10 +567,10 @@ Todas las muestras de senal fueron simuladas con la simulacion rapida y parametr
 %%     \hline
 %%     $M_3$ [\gev]& $m_{\gluino}$ [\gev]& &  & $\mu$ [\gev]& $M_1$ [\gev]& $m_{\ninoone}$ [\gev] \\
 %%     \hline
-%%     800 & 885.5   & & & 150  &  300  & 147.0  \tabularnewline
-%%     850 & 931.7   & & & 175  &  270  & 168.3  \tabularnewline
-%%     900 & 977.6   & & & 200  &  267  & 190.3  \tabularnewline
-%%     950 & 1023.1  & & & 250  &  288  & 235.8  \tabularnewline
+%%     800  & 885.5   & & & 150  &  300  & 147.0  \tabularnewline
+%%     850  & 931.7   & & & 175  &  270  & 168.3  \tabularnewline
+%%     900  & 977.6   & & & 200  &  267  & 190.3  \tabularnewline
+%%     950  & 1023.1  & & & 250  &  288  & 235.8  \tabularnewline
 %%     1000 & 1068.3 & & & 350  &  365  & 332.4  \tabularnewline
 %%     1050 & 1113.3 & & & 450  &  456  & 433.2  \tabularnewline
 %%     1100 & 1157.9 & & & 550  &  551  & 535.6  \tabularnewline
@@ -578,108 +595,103 @@ Todas las muestras de senal fueron simuladas con la simulacion rapida y parametr
 %%   \label{tab:signal_pars}
 %% \end{table}
 
-%% \begin{table}[ht]
-%%   \centering
-%%   \caption{Sección eficaz a  NLO+NLL para la producción fuerte de
-%%     la grid de señal. La ultima columna es la incerteza teórica.
-%%     Mas detalles se encuentran en la {\Sec} \ref{sec:syst_signal}.}
-%%   \begin{tabular}{c|c|c}
-%%     \hline
-%%     \hline
-%%     $M_3$ [\gev] & $\sigma$(NLO+NLL) [pb] & Incerteza Total Teorica [$\%$]\tabularnewline
-%%     \hline
-%%         800  &  0.06905 & 22.5  \\
-%%         850  &  0.04492 & 23.8  \\
-%%         900  &  0.02973 & 25.2  \\
-%%         950  &  0.01983 & 26.5  \\
-%%         1000 &  0.01341 & 27.7  \\
-%%         1050 &  0.00910 & 29.0  \\
-%%         1100 &  0.00628 & 30.4  \\
-%%         1150 &  0.00432 & 32.0  \\
-%%         1200 &  0.00301 & 33.7  \\
-%%         1250 &  0.00210 & 35.2  \\
-%%         1300 &  0.00148 & 36.7  \\
-%%         1350 &  0.00105 & 38.2  \\
-%%         1400 &  0.00074 & 39.8  \\
-%%         1450 &  0.00053 & 41.5  \\
-%%     \hline
-%%     \hline
-%%   \end{tabular}
-%%   \label{tab:signal_xs_strong}
-%% \end{table}
+\begin{table}[ht]
+  \centering
+  \caption{Sección eficaz a NLO+NLL para la producción de gluinos para los distintos
+    puntos de la grid de señal. La ultima columna es la incerteza teórica.}
+  \begin{tabular}{cccc}
+    \hline
+    $M_3$ [\gev] & $m_{\gluino}$ [\gev] & $\sigma$(NLO+NLL) [fb] & Incerteza Total [$\%$]\tabularnewline
+    \hline
+    800  &  885.5  & 69.05 & 22.5  \\
+    850  &  931.7  & 44.92 & 23.8  \\
+    900  &  977.6  & 29.73 & 25.2  \\
+    950  &  1023.1 & 19.83 & 26.5  \\
+    1000 &  1068.3 & 13.41 & 27.7  \\
+    1050 &  1113.3 & 9.10 & 29.0  \\
+    1100 &  1157.9 & 6.28 & 30.4  \\
+    1150 &  1202.3 & 4.32 & 32.0  \\
+    1200 &  1246.4 & 3.01 & 33.7  \\
+    1250 &  1290.3 & 2.10 & 35.2  \\
+    1300 &  1333.9 & 1.48 & 36.7  \\
+    1350 &  1377.3 & 1.05 & 38.2  \\
+    1400 &  1420.5 & 0.74 & 39.8  \\
+    1450 &  1463.4 & 0.53 & 41.5  \\
+    \hline
+  \end{tabular}
+  \label{tab:signal_xs_strong}
+\end{table}
 
-%% \begin{table}[ht]
-%%   \centering
-%%   \caption{Sección eficaz total a NLO para la producción EWK
-%%     de la grid de señal. La ultima columna  es la incerteza
-%%     teórica. Mas detalles se encuentran en la {\Sec} \ref{sec:syst_signal}.}
-%%   \begin{tabular}{c|c|c}
-%%     \hline
-%%     \hline
-%%     $\mu$ [\gev] & $\sigma$(NLO) [pb] & Total Theo. Uncertainty [$\%$]\tabularnewline
-%%     \hline
-%%     150  & 2.68 & 6.3  \\
-%%     175  & 1.42 & 6.7  \\
-%%     200  & 0.84 & 6.9   \\
-%%     250  & 0.28 & 6.4     \\
-%%     350  & 0.050 & 7.0    \\
-%%     450  & 0.013 & 7.6    \\
-%%     550  & 4.1e-03 & 8.0  \\
-%%     650  & 1.4e-03 & 8.5   \\
-%%     750  & 5.3e-04 & 8.9  \\
-%%     850  & 2.1e-04 & 9.3  \\
-%%     950  & 8.57e-05 & 10.3  \\
-%%     1050  & 3.56e-05 & 11.0  \\
-%%     1150  & 1.55e-05 & 13.3   \\
-%%     1250  & 6.67e-06 & 16.9   \\
-%%     \hline
-%%     \hline
-%%   \end{tabular}
-%%   \label{tab:signal_xs_ewk}
-%% \end{table}
+\begin{table}[ht]
+  \centering
+  \caption{Sección eficaz total a NLO para la producción electrodébil de neutralinos y charginos
+    para los distintos puntos de la grid de señal. La última columna  es la incerteza
+    teórica. Mas detalles se encuentran en la \cref{sec:syst_signal}.}
+  \begin{tabular}{cccc}
+    \hline
+    $\mu$ [\gev] & $m_{\ninoone}$ [\gev] & $\sigma$(NLO) [fb] & Incerteza total [$\%$]\tabularnewline
+    \hline
+    150   & & 2680 & 6.3  \\
+    175   & & 1420 & 6.7  \\
+    200   & & 840 & 6.9   \\
+    250   & & 280 & 6.4     \\
+    350   & & 50 & 7.0    \\
+    450   & & 13 & 7.6    \\
+    550   & & 4.1 & 8.0  \\
+    650   & & 1.4 & 8.5   \\
+    750   & & 0.53 & 8.9  \\
+    850   & & 0.21 & 9.3  \\
+    950   & & 0.0857 & 10.3  \\
+    1050  & & 0.0356 & 11.0  \\
+    1150  & & 0.0155 & 13.3   \\
+    1250  & & 0.00667 & 16.9   \\
+    \hline
+  \end{tabular}
+  \label{tab:signal_xs_ewk}
+\end{table}
 
 
-%% \begin{table}[ht]
-%%   \centering
-%%   %\small
-%%   \footnotesize
-%%   \caption{Eficiencia del filtro a nivel generador [\%]
-%%     para los puntos de señal simulados.}
-%%   \begin{tabular}{c|ccccccccccccccccc}
-%%     \hline
-%%     \hline
-%% %       &    \multicolumn{11}{c}{Filter efficiency [\%]} \\
-%% %	\hline
-%%      &   \multicolumn{14}{c}{ $M_3$ [\gev] } \\
-%%     $\mu$ [\gev] &  800 & 850 & 900 & 950 & 1000 & 1050 & 1100 &1150 & 1200  & 1250 & 1300 & 1350 & 1400 & 1450 \\
-%%     \hline
-%%     150  &   39.54 &   39.8 &  41.9    &   42.6   &   43.0   &   44.2   &   45.5    &   46.3    &    47.1  &   48.3  &   49.1 &      &      &       \\
-%%     175  &   44.55 &   44.6 &  46.5    &   47.5   &   47.8   &   48.9   &   50.3    &   51.4    &    51.5  &   52.4  &   53.3 &      &      &       \\
-%%     200  &   47.66 &   48.4 &  50.1    &   50.6   &   52.0   &   52.8   &   53.8    &   55.0    &    55.0  &   56.2  &   56.0 &      &      &       \\
-%%     250  &   55.09 &   56.0 &  56.1    &   57.1   &   56.7   &   58.0   &   58.9    &   59.5    &    60.5  &   60.7  &   61.2 & 62.1 & 62.2 &  63.9 \\
-%%     350  &   65.82 &   66.1 &  64.6    &   65.8   &   66.4   &   66.7   &   66.5    &   67.7    &    67.4  &   67.6  &   67.8 & 68.0 & 69.2 &  68.4 \\
-%%     450  &   71.29 &   71.4 &  71.4    &   71.8   &   72.1   &   72.5   &   72.0    &   72.6    &    72.1  &   72.5  &   73.4 & 72.9 & 72.2 &  73.4 \\
-%%     550  &   73.08 &   72.5 &  73.3    &   73.7   &   74.6   &   74.3   &   75.0    &   74.8    &    74.2  &   74.7  &   75.6 & 75.7 & 74.9 &  75.3 \\
-%%     650  &   69.78 &   72.0 &  73.2    &   74.1   &   75.6   &   76.2   &   75.9    &   75.8    &    77.0  &   77.0  &   76.2 & 76.7 & 77.1 &  76.6 \\
-%%     750  &   47.69 &   60.2 &  66.9    &   70.4   &   73.4   &   74.0   &   75.9    &   76.5    &    77.1  &   77.3  &   76.3 & 77.9 & 77.2 &  77.0 \\
-%%     838  &    9.0  &        &          &          &          &          &           &           &          &         &        &      &      &       \\
-%%     883  &         &   9.1  &          &          &          &          &           &           &          &         &        &      &      &       \\
-%%     850  &         &        &  34.2    &   50.7   &   60.1   &   66.4   &   70.4    &   73.5    &    73.6  &   75.4  &   76.6 & 77.1 & 78.2 &  76.8 \\
-%%     928  &         &        &   9.4    &          &          &          &           &           &          &         &        &      &      &       \\
-%%     950  &         &        &          &          &   25.4   &   41.4   &   54.0    &   62.2    &    66.8  &   70.9  &   75.2 & 75.9 & 78.1 &  77.2 \\
-%%     973  &         &        &          &   10.0   &          &          &           &           &          &         &        &      &      &       \\
-%%     1017 &         &        &          &          &   10.3   &          &           &           &          &         &        &      &      &       \\
-%%     1050 &         &        &          &          &          &          &   19.2    &   31.6    &    45.2  &   56.8  &   62.7 & 68.9 & 73.1 &  75.6 \\
-%%     1062 &         &        &          &          &          &   11.1   &           &           &          &         &        &      &      &       \\
-%%     1106 &         &        &          &          &          &          &   11.7    &           &          &         &        &      &      &       \\
-%%     1149 &         &        &          &          &          &          &           &   12.6    &          &         &        &      &      &       \\
-%%     1150 &         &        &          &          &          &          &           &           &    16.1  &   24.9  &   36.9 & 49.0 &      &       \\
-%%     1250 &         &        &          &          &          &          &           &           &          &         &   16.1 &      &      &       \\
-%%     \hline
-%%          \hline
-%%   \end{tabular}
-%%   \label{tab:signal_filter_eff}
-%% \end{table}
+\begin{table}[ht]
+  \centering
+  %\small
+  \footnotesize
+  \caption{Eficiencia del filtro a nivel generador [\%]
+    para los puntos de señal simulados.}
+  \begin{tabular}{c|ccccccccccccccccc}
+    \hline
+    \hline
+%       &    \multicolumn{11}{c}{Filter efficiency [\%]} \\
+%	\hline
+     &   \multicolumn{14}{c}{ $M_3$ [\gev] } \\
+    $\mu$ [\gev] &  800 & 850 & 900 & 950 & 1000 & 1050 & 1100 &1150 & 1200  & 1250 & 1300 & 1350 & 1400 & 1450 \\
+    \hline
+    150  &   39.54 &   39.8 &  41.9    &   42.6   &   43.0   &   44.2   &   45.5    &   46.3    &    47.1  &   48.3  &   49.1 &      &      &       \\
+    175  &   44.55 &   44.6 &  46.5    &   47.5   &   47.8   &   48.9   &   50.3    &   51.4    &    51.5  &   52.4  &   53.3 &      &      &       \\
+    200  &   47.66 &   48.4 &  50.1    &   50.6   &   52.0   &   52.8   &   53.8    &   55.0    &    55.0  &   56.2  &   56.0 &      &      &       \\
+    250  &   55.09 &   56.0 &  56.1    &   57.1   &   56.7   &   58.0   &   58.9    &   59.5    &    60.5  &   60.7  &   61.2 & 62.1 & 62.2 &  63.9 \\
+    350  &   65.82 &   66.1 &  64.6    &   65.8   &   66.4   &   66.7   &   66.5    &   67.7    &    67.4  &   67.6  &   67.8 & 68.0 & 69.2 &  68.4 \\
+    450  &   71.29 &   71.4 &  71.4    &   71.8   &   72.1   &   72.5   &   72.0    &   72.6    &    72.1  &   72.5  &   73.4 & 72.9 & 72.2 &  73.4 \\
+    550  &   73.08 &   72.5 &  73.3    &   73.7   &   74.6   &   74.3   &   75.0    &   74.8    &    74.2  &   74.7  &   75.6 & 75.7 & 74.9 &  75.3 \\
+    650  &   69.78 &   72.0 &  73.2    &   74.1   &   75.6   &   76.2   &   75.9    &   75.8    &    77.0  &   77.0  &   76.2 & 76.7 & 77.1 &  76.6 \\
+    750  &   47.69 &   60.2 &  66.9    &   70.4   &   73.4   &   74.0   &   75.9    &   76.5    &    77.1  &   77.3  &   76.3 & 77.9 & 77.2 &  77.0 \\
+    838  &    9.0  &        &          &          &          &          &           &           &          &         &        &      &      &       \\
+    883  &         &   9.1  &          &          &          &          &           &           &          &         &        &      &      &       \\
+    850  &         &        &  34.2    &   50.7   &   60.1   &   66.4   &   70.4    &   73.5    &    73.6  &   75.4  &   76.6 & 77.1 & 78.2 &  76.8 \\
+    928  &         &        &   9.4    &          &          &          &           &           &          &         &        &      &      &       \\
+    950  &         &        &          &          &   25.4   &   41.4   &   54.0    &   62.2    &    66.8  &   70.9  &   75.2 & 75.9 & 78.1 &  77.2 \\
+    973  &         &        &          &   10.0   &          &          &           &           &          &         &        &      &      &       \\
+    1017 &         &        &          &          &   10.3   &          &           &           &          &         &        &      &      &       \\
+    1050 &         &        &          &          &          &          &   19.2    &   31.6    &    45.2  &   56.8  &   62.7 & 68.9 & 73.1 &  75.6 \\
+    1062 &         &        &          &          &          &   11.1   &           &           &          &         &        &      &      &       \\
+    1106 &         &        &          &          &          &          &   11.7    &           &          &         &        &      &      &       \\
+    1149 &         &        &          &          &          &          &           &   12.6    &          &         &        &      &      &       \\
+    1150 &         &        &          &          &          &          &           &           &    16.1  &   24.9  &   36.9 & 49.0 &      &       \\
+    1250 &         &        &          &          &          &          &           &           &          &         &   16.1 &      &      &       \\
+    \hline
+         \hline
+  \end{tabular}
+  \label{tab:signal_filter_eff}
+\end{table}
 
 
 %% %\begin{table}[ht]
@@ -832,14 +844,6 @@ Todas las muestras de senal fueron simuladas con la simulacion rapida y parametr
 %% %  \label{tab:signal_xs}
 %% %\end{table}
 
-%% \begin{figure}[ht!]
-%%    \centering
-%%    \includegraphics[width=0.7\textwidth]{figures/figura} %%mass_spectrum_GGM.eps}
-%%    \caption{Espectro de masas de un punto el grid de senal.
-%%      Solo $M_3$ y $\mu$ son los parametros libres, en este caso
-%%      $(M_3, \mu) = (800~\gev, 250~\gev)$. }
-%%    \label{fig:mass_spectra}
-%% \end{figure}
 
 %% \begin{figure}[ht!] %  figure placement: here, top, bottom, or page
 %%    \centering
@@ -865,364 +869,275 @@ Todas las muestras de senal fueron simuladas con la simulacion rapida y parametr
 
 %% \clearpage
 
-%% %\begin{figure}[ht!]
-%% %  \centering
-%% %  \includegraphics[width=0.5\textwidth]{figures/GGM_xs_vs_M3}
-%% %  \caption{Signal cross section as function of M3, calculated at NLO+NLL.}% See text for more details. }
-%% %  \includegraphics[width=0.5\textwidth, angle=90]{figures/GGM_xs_vs_mgl}
-%% %  \caption{Signal cross section as function of $m_{\gluino}$, calculated at NLO+NLL. \tosolve{UPDATE}}% See text for more details. }
-%% %  \caption{Signal cross section for as function of $m_{\gluino}$, calculated at NLO+NLL. \tosolve{UPDATE}}% See text for more details. }
-%% %  \label{fig:signal_xs_vs_M3}
-%% %\end{figure}
-
-%% %% \begin{figure}[htbp]
-%% %% \centering
-%% %% \subfloat[NLO+NLL cross section $pp \to \gluino\gluino$]{
-%% %%   \includegraphics[width=0.49\textwidth]{figures/figura} %SigXsec_strong}
-%% %%   \label{fig:signal_xs_strong}
-%% %% }
-%% %% \subfloat[NLO cross section $pp\to\susy{\chi}\susy{\chi}$]{
-%% %%   \includegraphics[width= 0.49\textwidth]{figures/figura} %SigXsec_ewk}
-%% %%   \label{fig:signal_xs_ewk}
-%% %% }
-%% %% \caption{Signal cross sections for the strong (\ref{fig:signal_xs_strong})
-%% %%   and EWK (\ref{fig:signal_xs_ewk}) production grids.}
-%% %% \label{fig:signal_xs}
-%% %% \end{figure}
-
 %% \begin{figure}[ht!]
 %%   \centering
-%%   \includegraphics[width=0.49\textwidth]{figures/SigXsec_total}
-%%   \includegraphics[width=0.49\textwidth]{figures/SigXsec_ewkFrac}
-%%   \caption{Sección eficaz total (izquierda) y fracción relativa
-%%     de producción EWK (derecha).}
-%%   \label{fig:signal_xs_total}
+%%   \includegraphics[width=0.5\textwidth]{figures/GGM_xs_vs_M3}
+%%   \caption{Seccion eficaz de produccion de pares de gluinos como funcion de la masa del gluino, calculada a NLO+NLL con {\nllfast}\hl{fix}.}
+%%   \label{fig:signal_xs_vs_M3}
 %% \end{figure}
 
+\begin{figure}[htbp]
+  \centering
+  \subfloat[]{%NLO+NLL cross section $pp \to \gluino\gluino$]{
+    \includegraphics[width=0.49\textwidth]{figures/SigXsec_strong}
+    \label{fig:signal_xs_strong}
+  }
+  \subfloat[]{%NLO cross section $pp\to\susy{\chi}\susy{\chi}$]{
+    \includegraphics[width= 0.49\textwidth]{figures/SigXsec_ewk}
+    \label{fig:signal_xs_ewk}
+ }
+  \caption{Sección eficaz de producción de pares de gluinos (a)
+    y pares de neutralinos/charginos (b).}
+  \label{fig:signal_xs}
+\end{figure}
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=0.49\textwidth]{figures/SigXsec_total}
+  \includegraphics[width=0.49\textwidth]{figures/SigXsec_ewkFrac}
+  \caption{Sección eficaz total (izquierda) y fracción relativa
+    de producción electrodébil (derecha).}
+  \label{fig:signal_xs_total}
+\end{figure}
+
+
+%--------
+% Fondos
+%--------
 \section{Simulación de los fondos del SM}
 \label{sec:bkg_samples}
 
-%% Existen muchos procesos del {\SM} que pueden aparentar
-%% una señal de SUSY con fotones, jets y energía faltante.
-%% Estos pueden dividirse en varias categorías:
+\newcommand{\mccaption}{La sección eficaz a LO para cada modo de decaimiento,
+  los factores $k$ (para la normalización NLO) y las eficiencias del filtro
+  están detalladas, así como también la luminosidad integrada correspondiente
+  a la estadística total de cada muestra.}
 
-%% \begin{itemize}
-%% \item {\MET} real (EWK)
-%%   \begin{itemize}
-%%   \item $\gamma$ real
-%%     \begin{itemize}
-%%     \item $Z(\to\nu\nu)+\gamma$
-%%     \item $W(\to\tau\nu)+\gamma$, hadronic $\tau$-decay
-%%     \item $W(\to e\nu)+\gamma$, the e is not reconstructed
-%%     \item $W(\to\mu\nu)+\gamma$ and $W(\to\tau\nu)+\gamma$, the $\mu / \tau$ is not reconstructed
-%%     \item $t\bar{t}+\gamma$,  the e$/ \mu$ (when produced) is not reconstructed
-%%     \end{itemize}
+Las muestras simuladas con MC utilizadas en este análisis se describen
+a continuación. Como se discutirá en la \cref{sec:background_estimation},
+la contaminación de fotones mal identificados provenientes de jets y electrones
+es estimado con métodos basados en datos. Sin embargo, las muestras MC también
+han sido consideradas en estos casos para los estudios de optimización y la
+evaluación de las incertezas sistemáticas.
 
-%%   \item Electron$/$Jet faking photon
-%%     \begin{itemize}
-%%     \item $W(\to l\nu)$+jets
-%%     \item $Z(\to \nu\nu)+$jets
-%%     \item $t\bar{t}$
-%%     \item dibosons
-%%     \end{itemize}
-%%   \end{itemize}
+\subsection{$W/Z + \gamma$}
 
-%% \item {\MET} instrumental
-%%   \begin{itemize}
-%%   \item $\gamma$ real ($\gamma+$jets)
-%%   \item $\gamma$ falso (multijet, $Z(\to ll)+$jets)
-%%   \end{itemize}
-%% \end{itemize}
-
-%% Las muestras simuladas con MC utilizadas en este analisis se describen
-%% a continuacion. Como se discutira en la {\Sec} \ref{sec:background_estimation},
-%% la contaminacion de fotones mal dentificados provenientes de jets y electrones
-%% es estimado con metodos basados en datos. Sin embargo, las muestras MC tambien
-%% han sido consideradas en estos casos para los estudios de optimizacion y la
-%% evaluacion de las incertezas sistematicas.
-
-%% \subsection{W/Z$+\gamma$}
-
-%% Se espera que la produccion de {\wgam} y {\zgam} sea un fondo importante
-%% para esta busqueda. Ambas muestras fueron generadas usando el generador
-%% de eventos {\sherpa} v1.4.1 \cite{SherpaGen}, con hasta 3 partones en el
-%% ME+PS y usando las funciones de densidad partonica CT10.
-%% La combinacion de los elementos de matriz con las lluvias partonicas
-%% es realizada de acuerdo a un procedimiento mejorado CKKW \cite{Catani:2001cc,Krauss:2002up}.
-%% Un filtro a nivel generados es aplicado requiriendo al menos un foton
-%% con $\pt > 80(70) \gev$ en el estado final de las muestras de {\wgam} (\zgam).
-%% %option1
-%% %Only leptonic decays of the Z were considered, including its invisible decay Z$\to\nu\nu$. Additional samples of \wgamma events with some variation of the simulation settings were used to compute systematic uncertainties on the expected yields for this background. All \Vgamma samples are listed in {\tab} \ref{tab:bkg_wzgamma_samples}.
-%% %option2
-%% Todos los decaimientos leptonicos del boson $Z$ fueron considerados,
-%% incluyendo el decaimiento invisible $Z\to\nu\nu$.
-%% Tambien se tuvo en cuenta un muestra de $V(\to qq)+\gamma  (V=W,Z/\gamma*)$
-%% debido a que cierta energia faltante real puede  ser producida en el caso
-%% de heavy flavour decays.
-%% %Their contribution had been found negligible in all regions here considered. \tosolve{CHECK!}
-%% %
-
-%% \begin{table}[ht!]
-%%   \centering
-%%   \caption{Muestras de W/Z$+\gamma$ utilizadas en este analisis.
-%%     La seccion eficas a LO se especifica para cada modo de decaimiento,
-%%     al igual que los factores $k$, y las eficiencias del filtro.
-%%     La luminosidad integrada correspondiente a la estadistica total
-%%     de cada muestra esta tambien presente.}
-%%   %\includegraphics[width=1\textwidth]{figures/tabla}
-%%   \begin{tabular}{ l | c | c | c | c }
-%%     \hline
-%%     \hline
-%%     Proceso (ID) & $\sigma~[pb]$ & $k$ & Eficiencia & $L [fb^{-1}]$ \\
-%%     \hline
-%%     {\wenugam} {\sherpa} (126741) &  0.7193  &  1.0  &  1.0  &  695.16 \\
-%%     {\wmunugam} {\sherpa}  (126744) &  0.7178  &  1.0  &  1.0  &  696.56 \\
-%%     {\wtaunugam} {\sherpa}  (158727) &  0.7199  &  1.0  &  1.0  &  694.57 \\
-%%     {\zeegam} {\sherpa}  (158728) &  0.1861  &  1.0  &  1.0  &  1069.53 \\
-%%     {\zmumugam} {\sherpa}  (158729) &  0.1858  &  1.0  &  1.0  &  1076.71 \\
-%%     {\ztautaugam} {\sherpa}  (158730) &  0.1858  &  1.0  &  1.0  &  1076.19 \\
-%%     {\znunugam} {\sherpa}  (126022) &  0.7625  &  1.0  &  1.0  &  655.74 \\
-%%   %%   % in case we use this in the end 'option2'
-%%     {\vqqgam} {\sherpa}  (164438) &  6.756  &  1.0  &  1.0  &  89.0 \\
-%%   %%   \hline
-%%   %%   \hline
-%%   %%   \multicolumn{5}{l}{Systematics variations} \\
-%%   %%   \hline
-%%   %%    \wenugam (fact. 0.25x) \sherpa (204733) &  0.7193  &  1.0  &  1.0  &  278.05 \\
-%%   %%    \wenugam (fact. 4x) \sherpa (204734) &  0.7193  &  1.0  &  1.0  &  278.05 \\
-%%   %%    \wenugam (renorm. 0.25x) \sherpa (204735) &  0.7193  &  1.0  &  1.0  &  278.05 \\
-%%   %%    \wenugam (renorm. 4x) \sherpa (204736) &  0.7193  &  1.0  &  1.0  &  278.05 \\
-%%   %%    \wenugam (ckkw 15) \sherpa (204731) &  0.7193  &  1.0  &  1.0  &  278.05 \\
-%%   %%    \wenugam (ckkw 30) \sherpa (204732) &  0.7193  &  1.0  &  1.0  &  278.05 \\
-%%   %%    \wmunugam (fact. 0.25x) \sherpa (204739) &  0.7193  &  1.0  &  1.0  &  278.63 \\
-%%   %%    \wmunugam (fact. 4x) \sherpa (204740) &  0.7193  &  1.0  &  1.0  &  278.63 \\
-%%   %%    \wmunugam (renorm. 0.25x) \sherpa (204741) &  0.7193  &  1.0  &  1.0  &  278.63 \\
-%%   %%    \wmunugam (renorm. 4x) \sherpa (204742) &  0.7193  &  1.0  &  1.0  &  278.63 \\
-%%   %%    \wmunugam (ckkw 15) \sherpa (204737) &  0.7193  &  1.0  &  1.0  &  278.63 \\
-%%   %%    \wmunugam (ckkw 30) \sherpa (204738) &  0.7193  &  1.0  &  1.0  &  278.63 \\
-%%   %%    \wtaunugam (fact. 0.25x) \sherpa (204745) &  0.7193  &  1.0  &  1.0  &  277.81 \\
-%%   %%    \wtaunugam (fact. 4x) \sherpa (204746) &  0.7193  &  1.0  &  1.0  &  277.81 \\
-%%   %%    \wtaunugam (renorm. 0.25x) \sherpa (204747) &  0.7193  &  1.0  &  1.0  &  277.81 \\
-%%   %%    \wtaunugam (renorm. 4x) \sherpa (204748) &  0.7193  &  1.0  &  1.0  &  277.81 \\
-%%   %%    \wtaunugam (ckkw 15) \sherpa (204743) &  0.7193  &  1.0  &  1.0  &  277.81 \\
-%%   %%    \wtaunugam (ckkw 30) \sherpa (204744) &  0.7193  &  1.0  &  1.0  &  277.81 \\
-%%     \hline
-%%     \hline
-%%   \end{tabular}
-%%   \label{tab:bkg_wzgamma_samples}
-%% \end{table}
-
-%% \subsubsection{W/Z+jets} \label{mc_wzjets}
-
-%% Se espera que la produccion de W$^{\pm}$ y bosones $Z$ en asociacion con jets
-%% contribuya a esta busqueda, con los fotones provenientes de electrones y jets
-%% mal identificados. Especialemente para los segundos, esta contaminacion no esta
-%% bien descripta por el MC. Por esta razon se utilizan metodos basados en datos
-%% para estimar su contirbucion en las diferentes regiones de senal y control, como
-%% se describe en el Capítulo \ref{cap:fondos}. De igual maner varias muestras de MC
-%% fueron consideradas para validar los metodos.
-
-%% Como se describe en el Capítulo \ref{cap:seleccion} la seleccion de senal involucra
-%% muchos jets en el estado final, es importante modelar los estados final multipartonicos
-%% de forma adecuada. Con esto en mente, el generador de events {alpgen} (version 2.14)
-%% fue utilizado, incluyendo los efectos EWK y QCD a LO para los procesos de interaccion
-%% fuerte multipartonicos. La produccion de jets fue generada for up to five-parton
-%% matrix elements. Este generados fue interfaceado con {\herwig} version 6.5.2
-%% para la simulacion de las lluvias y los procesos de fragmentacion y con {\jimmy}
-%% para la simulacion de los eventos subyacentes. Las funciones de densidad partonica
-%% utilizadas fueron las CTEQ6L1. La normalizacion a la luminosidad integrada acumulada
-%% fue hecha escalenado la seccion eficas mostrada en la {\tab} \ref{tab:bkg_wzjets_samples}
-%% usando calculos QCD a NNLO de el programa FEWZ \cite{Anastasiou:2003ds}.
-%% En cada caso los mismos factores de normalizacion fueron aplicados a los elementos
-%% de matriz de {\alpgen}.
-%% %%applied for all \alpgen matrix element parton multiplicities.
-%% Finalmente, se realiza la remocion de eventos para evitar el conteo doble de eventos
-%% que ya fueron tenidos en cuenta por las muestras de Z$\gamma$ y W$\gamma$.
-%% Para esto, los eventos de $W(Z)+\text{jets}$ con fotones con $\pt > 80(70)\gev$
-%% y $\Delta{\rm R}(e/\mu/\tau/$light-quarks$, \gamma) > 0.1$ fueron removidos
-%% de las muestras.
+Se espera que la producción de {\wgam} y {\zgam} sea un fondo importante
+para esta búsqueda. Ambas muestras fueron generadas usando el generador
+de eventos {\sherpa} v1.4.1\cite{SherpaGen}, con hasta 3 partones en el
+ME+PS y usando las funciones de densidad partonica CT10.
+La combinación de los elementos de matriz con las lluvias partonicas
+es realizada de acuerdo a un procedimiento mejorado CKKW\cite{Catani:2001cc,Krauss:2002up}.
+Un filtro a nivel generados es aplicado requiriendo al menos un fotón
+con $\pt > 80(70) \gev$ en el estado final de las muestras de {\wgam} (\zgam).
+Todos los decaimientos leptonicos del bosón $Z$ fueron considerados,
+incluyendo el decaimiento invisible $Z\to\nu\nu$.
+También se tuvo en cuenta un muestra de $V(\to qq)+\gamma  (V=W,Z/\gamma*)$
+debido a que cierta energía faltante real puede  ser producida en el caso
+de heavy flavour decays.
 
 \begin{table}[ht!]
   \centering
-  \caption{Muestras de $W/Z+\text{jets}$ utilizadas en este analisis. {\mccaption}.}
-  \begin{tabular}{lcccc}
+  \caption{Muestras de W/Z$+\gamma$.
+    La sección eficaz a LO se especifica para cada modo de decaimiento,
+    al igual que los factores $k$, y las eficiencias del filtro.
+    La luminosidad integrada correspondiente a la estadística total
+    de cada muestra esta también presente.}
+  \begin{tabular}{lccccc}
     \hline
+    Proceso & Generador & $\sigma~[pb]$ & $k$ & Eficiencia & $L [fb^{-1}]$ \\
     \hline
-    Proceso & $\sigma [pb]$ & factor-$k$ & Eficiencia & $L [fb^{-1}]$ \\
+    {\wenugam}    & {\sherpa} &  0.7193  &  1.0  &  1.0  &  695.16 \\
+    {\wmunugam}   & {\sherpa} &  0.7178  &  1.0  &  1.0  &  696.56 \\
+    {\wtaunugam}  & {\sherpa} &  0.7199  &  1.0  &  1.0  &  694.57 \\
+    {\zeegam}     & {\sherpa} &  0.1861  &  1.0  &  1.0  &  1069.53 \\
+    {\zmumugam}   & {\sherpa} &  0.1858  &  1.0  &  1.0  &  1076.71 \\
+    {\ztautaugam} & {\sherpa} &  0.1858  &  1.0  &  1.0  &  1076.19 \\
+    {\znunugam}   & {\sherpa} &  0.7625  &  1.0  &  1.0  &  655.74 \\
+    {\vqqgam} & {\sherpa}  &  6.756  &  1.0  &  1.0  &  89.0 \\
+    %%   \hline
+    %%   \multicolumn{5}{l}{Systematics variations} \\
+    %%   \hline
+    %%    \wenugam (fact. 0.25x) \sherpa (204733) &  0.7193  &  1.0  &  1.0  &  278.05 \\
+    %%    \wenugam (fact. 4x) \sherpa (204734) &  0.7193  &  1.0  &  1.0  &  278.05 \\
+    %%    \wenugam (renorm. 0.25x) \sherpa (204735) &  0.7193  &  1.0  &  1.0  &  278.05 \\
+    %%    \wenugam (renorm. 4x) \sherpa (204736) &  0.7193  &  1.0  &  1.0  &  278.05 \\
+    %%    \wenugam (ckkw 15) \sherpa (204731) &  0.7193  &  1.0  &  1.0  &  278.05 \\
+    %%    \wenugam (ckkw 30) \sherpa (204732) &  0.7193  &  1.0  &  1.0  &  278.05 \\
+    %%    \wmunugam (fact. 0.25x) \sherpa (204739) &  0.7193  &  1.0  &  1.0  &  278.63 \\
+    %%    \wmunugam (fact. 4x) \sherpa (204740) &  0.7193  &  1.0  &  1.0  &  278.63 \\
+    %%    \wmunugam (renorm. 0.25x) \sherpa (204741) &  0.7193  &  1.0  &  1.0  &  278.63 \\
+    %%    \wmunugam (renorm. 4x) \sherpa (204742) &  0.7193  &  1.0  &  1.0  &  278.63 \\
+    %%    \wmunugam (ckkw 15) \sherpa (204737) &  0.7193  &  1.0  &  1.0  &  278.63 \\
+    %%    \wmunugam (ckkw 30) \sherpa (204738) &  0.7193  &  1.0  &  1.0  &  278.63 \\
+    %%    \wtaunugam (fact. 0.25x) \sherpa (204745) &  0.7193  &  1.0  &  1.0  &  277.81 \\
+    %%    \wtaunugam (fact. 4x) \sherpa (204746) &  0.7193  &  1.0  &  1.0  &  277.81 \\
+    %%    \wtaunugam (renorm. 0.25x) \sherpa (204747) &  0.7193  &  1.0  &  1.0  &  277.81 \\
+    %%    \wtaunugam (renorm. 4x) \sherpa (204748) &  0.7193  &  1.0  &  1.0  &  277.81 \\
+    %%    \wtaunugam (ckkw 15) \sherpa (204743) &  0.7193  &  1.0  &  1.0  &  277.81 \\
+    %%    \wtaunugam (ckkw 30) \sherpa (204744) &  0.7193  &  1.0  &  1.0  &  277.81 \\
     \hline
-    \zeenj{0}  \alpgen+\jimmy  & 711.77 & 1.23 & 1 & 7.548 \\
-    \zeenj{1}  \alpgen+\jimmy  & 155.17 & 1.23 & 1 & 6.994 \\
-    \zeenj{2}  \alpgen+\jimmy  & 48.745 & 1.23 & 1 & 6.746 \\
-    \zeenj{3}  \alpgen+\jimmy  & 14.225 & 1.23 & 1 & 6.286 \\
-    \zeenj{4}  \alpgen+\jimmy  & 3.7595 & 1.23 & 1 & 6.487 \\
-    \zeenj{5}  \alpgen+\jimmy  & 1.0945 & 1.23 & 1 & 7.428 \\
-    \zmmnj{0}  \alpgen+\jimmy  & 712.11 & 1.23 & 1 & 7.557 \\
-    \zmmnj{1}  \alpgen+\jimmy  & 154.77 & 1.23 & 1 & 7.011 \\
-    \zmmnj{2}  \alpgen+\jimmy  & 48.912 & 1.23 & 1 & 6.731 \\
-    \zmmnj{3}  \alpgen+\jimmy  & 14.226 & 1.23 & 1 & 6.286 \\
-    \zmmnj{4}  \alpgen+\jimmy  & 3.7838 & 1.23 & 1 & 6.445 \\
-    \zmmnj{5}  \alpgen+\jimmy  & 1.1148 & 1.23 & 1 & 7.292 \\
-    \zttnj{0} \alpgen+\jimmy  & 711.81 & 1.23 & 1 &  7.560 \\
-    \zttnj{1} \alpgen+\jimmy  & 155.13 & 1.23 & 1 &  6.996 \\
-    \zttnj{2} \alpgen+\jimmy  & 48.804 & 1.23 & 1 &  6.746 \\
-    \zttnj{3} \alpgen+\jimmy  & 14.160 & 1.23 & 1 &  6.315 \\
-    \zttnj{4} \alpgen+\jimmy  & 3.7744 & 1.23 & 1 &  6.462 \\
-    \zttnj{5} \alpgen+\jimmy  & 1.1163 & 1.23 & 1 &  7.283 \\
+  \end{tabular}
+  \label{tab:bkg_wzgamma_samples}
+\end{table}
+
+\subsection{$W/Z$ + jets}
+\label{mc_wzjets}
+
+Se espera que la producción de W$^{\pm}$ y bosones $Z$ en asociación con jets
+contribuya a esta búsqueda, con los fotones provenientes de electrones y jets
+mal identificados. Especialmente para los segundos, esta contaminación no esta
+bien descripta por el MC. Por esta razón se utilizan métodos basados en datos
+para estimar su contribución en las diferentes regiones de señal y control, como
+se describe en el \cref{cap:fondos}. De igual manera varias muestras de MC
+fueron consideradas para validar los métodos.
+
+Como se describe en el \cref{cap:seleccion} la selección de señal involucra
+muchos jets en el estado final, es importante modelar los estados final multipartonicos
+de forma adecuada. Con esto en mente, el generador de eventos {\alpgen} (v 2.14)
+fue utilizado, incluyendo los efectos EWK y QCD a LO para los procesos de interacción
+fuerte multipartonicos. La producción de jets fue generada for up to five-parton
+matrix elements. Este generados fue interfaceado con {\herwig} v6.5.2
+para la simulación de las lluvias y los procesos de fragmentación y con {\jimmy}
+para la simulación de los eventos subyacentes. Las funciones de densidad partónico
+utilizadas fueron las CTEQ6L1. La normalización a la luminosidad integrada acumulada
+fue hecha escalenado la sección eficaz mostrada en la \cref{tab:bkg_wzjets_samples}
+usando cálculos QCD a NNLO de el programa FEWZ\cite{Anastasiou:2003ds}.
+En cada caso los mismos factores de normalización fueron aplicados a los elementos
+de matriz de {\alpgen}.
+
+Finalmente, se realiza la remoción de eventos para evitar el conteo doble de eventos
+que ya fueron tenidos en cuenta por las muestras de Z$\gamma$ y W$\gamma$.
+Para esto, los eventos de $W(Z)+\text{jets}$ con fotones con $\pt > 80(70)\gev$
+y $\Delta{\rm R}(e/\mu/\tau/$light-quarks$, \gamma) > 0.1$ fueron removidos
+de las muestras.
+
+\begin{table}[ht!]
+  \centering
+  \caption{Muestras de $W/Z+\text{jets}$. \mccaption.}
+  \begin{tabular}{lccccc}
     \hline
-    \wenunj{0}  \alpgen+\jimmy  &8037.10   & 1.186 & 1 & 0.362 \\
-    \wenunj{1}  \alpgen+\jimmy  &1579.20   & 1.186 & 1 & 1.334 \\
-    \wenunj{2}  \alpgen+\jimmy  &477.20     & 1.186 & 1 & 6.661 \\
-    \wenunj{3}  \alpgen+\jimmy  &133.93     & 1.186 & 1 & 6.358 \\
-    \wenunj{4}  \alpgen+\jimmy  &35.62       & 1.186 & 1 &  5.917\\
-    \wenunj{5}  \alpgen+\jimmy  &10.55       & 1.186 & 1 &  5.592\\
-    \wmnunj{0}  \alpgen+\jimmy  &8040.00 & 1.186 & 1 &  0.363\\
-    \wmnunj{1}  \alpgen+\jimmy  &1580.30 & 1.186 & 1 &  1.333\\
-    \wmnunj{2}  \alpgen+\jimmy  &477.50   & 1.186 & 1 &  6.656\\
-    \wmnunj{3}  \alpgen+\jimmy  &133.94   & 1.186 & 1 &  6.357\\
-    \wmnunj{4}  \alpgen+\jimmy  &35.64      & 1.186 & 1 &  6.033\\
-    \wmnunj{5}  \alpgen+\jimmy  &10.57      & 1.186 & 1 &  1.595\\
-    \wtnunj{0} \alpgen+\jimmy     &8035.80  & 1.186 & 1 & 0.353 \\
-    \wtnunj{1} \alpgen+\jimmy     &1579.80  & 1.186 & 1 & 1.307 \\
-    \wtnunj{2} \alpgen+\jimmy     &477.55    & 1.186 & 1 &  6.567\\
-    \wtnunj{3} \alpgen+\jimmy     &133.79    & 1.186 & 1 &  6.365\\
-    \wtnunj{4} \alpgen+\jimmy     &35.58      & 1.186 & 1 &  5.921\\
-    \wtnunj{5} \alpgen+\jimmy     &10.54      & 1.186 & 1 &  5.199\\
+    Proceso & Generador & $\sigma [pb]$ & factor-$k$ & Eficiencia & $L [fb^{-1}]$ \\
     \hline
+    \zeenj{0} &  \alpgen+\jimmy  & 711.77 & 1.23 & 1 & 7.548 \\
+    \zeenj{1} &  \alpgen+\jimmy  & 155.17 & 1.23 & 1 & 6.994 \\
+    \zeenj{2} &  \alpgen+\jimmy  & 48.745 & 1.23 & 1 & 6.746 \\
+    \zeenj{3} &  \alpgen+\jimmy  & 14.225 & 1.23 & 1 & 6.286 \\
+    \zeenj{4} &  \alpgen+\jimmy  & 3.7595 & 1.23 & 1 & 6.487 \\
+    \zeenj{5} &  \alpgen+\jimmy  & 1.0945 & 1.23 & 1 & 7.428 \\
+    \zmmnj{0} &  \alpgen+\jimmy  & 712.11 & 1.23 & 1 & 7.557 \\
+    \zmmnj{1} &  \alpgen+\jimmy  & 154.77 & 1.23 & 1 & 7.011 \\
+    \zmmnj{2} &  \alpgen+\jimmy  & 48.912 & 1.23 & 1 & 6.731 \\
+    \zmmnj{3} &  \alpgen+\jimmy  & 14.226 & 1.23 & 1 & 6.286 \\
+    \zmmnj{4} &  \alpgen+\jimmy  & 3.7838 & 1.23 & 1 & 6.445 \\
+    \zmmnj{5} &  \alpgen+\jimmy  & 1.1148 & 1.23 & 1 & 7.292 \\
+    \zttnj{0} & \alpgen+\jimmy  & 711.81 & 1.23 & 1 &  7.560 \\
+    \zttnj{1} & \alpgen+\jimmy  & 155.13 & 1.23 & 1 &  6.996 \\
+    \zttnj{2} & \alpgen+\jimmy  & 48.804 & 1.23 & 1 &  6.746 \\
+    \zttnj{3} & \alpgen+\jimmy  & 14.160 & 1.23 & 1 &  6.315 \\
+    \zttnj{4} & \alpgen+\jimmy  & 3.7744 & 1.23 & 1 &  6.462 \\
+    \zttnj{5} & \alpgen+\jimmy  & 1.1163 & 1.23 & 1 &  7.283 \\
+    \hline
+    \wenunj{0} & \alpgen+\jimmy  & 8037.10  & 1.186 & 1 & 0.362 \\
+    \wenunj{1} & \alpgen+\jimmy  & 1579.20  & 1.186 & 1 & 1.334 \\
+    \wenunj{2} & \alpgen+\jimmy  & 477.20   & 1.186 & 1 & 6.661 \\
+    \wenunj{3} & \alpgen+\jimmy  & 133.93   & 1.186 & 1 & 6.358 \\
+    \wenunj{4} & \alpgen+\jimmy  & 35.62    & 1.186 & 1 & 5.917 \\
+    \wenunj{5} & \alpgen+\jimmy  & 10.55    & 1.186 & 1 & 5.592 \\
+    \wmnunj{0} & \alpgen+\jimmy  & 8040.00  & 1.186 & 1 & 0.363 \\
+    \wmnunj{1} & \alpgen+\jimmy  & 1580.30  & 1.186 & 1 & 1.333 \\
+    \wmnunj{2} & \alpgen+\jimmy  & 477.50   & 1.186 & 1 & 6.656 \\
+    \wmnunj{3} & \alpgen+\jimmy  & 133.94   & 1.186 & 1 & 6.357 \\
+    \wmnunj{4} & \alpgen+\jimmy  & 35.64    & 1.186 & 1 & 6.033 \\
+    \wmnunj{5} & \alpgen+\jimmy  & 10.57    & 1.186 & 1 & 1.595 \\
+    \wtnunj{0} & \alpgen+\jimmy  & 8035.80  & 1.186 & 1 & 0.353 \\
+    \wtnunj{1} & \alpgen+\jimmy  & 1579.80  & 1.186 & 1 & 1.307 \\
+    \wtnunj{2} & \alpgen+\jimmy  & 477.55   & 1.186 & 1 & 6.567 \\
+    \wtnunj{3} & \alpgen+\jimmy  & 133.79   & 1.186 & 1 & 6.365 \\
+    \wtnunj{4} & \alpgen+\jimmy  & 35.58    & 1.186 & 1 & 5.921 \\
+    \wtnunj{5} & \alpgen+\jimmy  & 10.54    & 1.186 & 1 & 5.199 \\
     \hline
   \end{tabular}
   \label{tab:bkg_wzjets_samples}
 \end{table}
 
 
-\subsubsection{Top pair ($+\gam$) production}\label{sec:mcttbargam}
+\subsection{Pares de tops ($+\gam$)}
+\label{sec:mcttbargam}
 
-Otro fondo importante para este analisis es el {\ttgam}. Esta muestra MC fue generada
-utilizando {\madgraph}\cite{Alwall:2007st} y la PDF CTEQ6L1.
-{\pythiasix}\cite{pythia} fue usado para la simulacion de las lluvias partonicas, fragmentación y
-eventos subyacentes. La radiacion de fotones fue agregadas utilizando
-{\photos}\cite{photos}, y los decaimientos de los leptones tau con
-{\tauola} \cite{tauola}.
-Se requirio que los fotones a nivel generador tengan un
-$\pt > 80 \gev$.
-Para evitar efectos cinematicos introducidos por el filtro, el corte en el {\pt}
-del foton en la muestra reconstruida se aumento a 95 {\gev}.
-Se utilizo un factor-$k$ de $1.9 \pm 0.4$\cite{Melnikov:2011ta, tth}. %This was calculated by
-%% %the theorists with the particular generator-level cuts used to                                                                                                                     %generate this MC sample.
+Otro fondo importante para este análisis es el {\ttgam}. Esta muestra fue
+generada utilizando {\madgraph}\cite{Alwall:2007st} y la PDF CTEQ6L1.
+{\pythiasix}\cite{pythia} fue usado para la simulación de las lluvias
+partonicas, fragmentación y eventos subyacentes. La radiación de fotones fue
+agregadas utilizando {\photos}\cite{photos}, y los decaimientos de los leptones
+tau con {\tauola}\cite{tauola}. Se requirió que los fotones a nivel generador
+tengan un $\pt > 80 \gev$. Para evitar efectos cinemáticos introducidos por el
+filtro, el corte en el {\pt} del fotón en la muestra reconstruida se aumento a
+95 {\gev}. Se utilizo un factor-$k$ de $1.9 \pm 0.4$\cite{Melnikov:2011ta, tth}.
 
-Los detalles de la simulacion se encuentran en la \cref{tab:bkg_ttbar_samples}.
-Se utilizaron ademas algunas muestras a nivela general como variaciones para calculas
-las incertezas sistematicas como se explica en la \cref{sec:syst_ttbargamma}.
+Los detalles de la simulación se encuentran en la \cref{tab:bkg_ttbar_samples}.
+Se utilizaron además algunas muestras a nivel generador como variaciones para calcular
+las incertezas sistemáticas como se explica en la \cref{sec:syst_ttbargamma}.
 
-
-%% % NOT ANYMORE , but explained later why
-%% %As described in {\sec} \ref{}, the normalization of this sample was extracted together with that for %W$+\gamma$ events by fitting
-%% %simultaneously the two MC to data in specifically designed control regions.
-
-%% %More information can be found in
-%% %Ref.~\cite{ttbargammaSupport}.
-
-La produccion de {\ttbar}, donde los electrones o los jets
-son mal identificados como fotones es una fuente de fondo que
-vale la pena considerar.
-Aunque ambas contaminacions fueron estimadas a partir de los datos, eventos simulados fueron
-utilizados en la etapa de optimizacion y para chequeos de los metodos DD. La
-muestra MC fue generada utilizando {\powheg}\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd}
-con la lluvia partonica y fragmentacion hecha por {\pythia}.
-Para el UE se utilizo Perugia 2011C \footnote{see some details at \url{https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/P2011C}.}
-con el conjunto de PDFs CTEQ6L1 LO.
-La radiacion de fotones adicional fue agregada con {\photos} \cite{photos}.
-Overlap removal is performed to prevent double-counting the phase-space
-covered by the {\ttgam} MC sample. Events with truth prompt photons with
-$\pt > 95 \gev$ and $\Delta{\rm R}(e/\mu/\tau/g/$light-quarks$, \gamma) > 0.1$ are removed from the \ttbar\ sample.
-
+La producción de {\ttbar}, donde los electrones o los jets son mal identificados
+como fotones es una fuente de fondo que vale la pena considerar. Aunque ambas
+contaminaciones fueron estimadas a partir de los datos, eventos simulados fueron
+utilizados en la etapa de optimización y para chequeos de los métodos. La
+muestra MC fue generada utilizando
+{\powheg}\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd} con la lluvia
+partonica y fragmentación hecha por {\pythia}. Para el UE se utilizo Perugia
+2011C con el
+conjunto de PDFs CTEQ6L1 LO. La radiación de fotones adicional fue agregada con
+{\photos}\cite{photos}. Overlap removal is performed to prevent double-counting
+the phase-space covered by the {\ttgam} MC sample. Events with truth prompt
+photons with $\pt > 95 \gev$ and $\Delta{\rm R}(e/\mu/\tau/g/$light-quarks$,
+\gamma) > 0.1$ are removed from the \ttbar\ sample.
 
 \begin{table}[ht!]
   \centering
-  \caption{{\ttgam} samples used for the analysis. {\mccaption}}
-
-  \begin{tabular}{lcccc}
+  \caption{Muestras de {\ttgam}. {\mccaption}}
+  \begin{tabular}{lccccc}
     \hline
+    Proceso & Generador & $\sigma [pb]$ & factor-$k$ & Eficiencia & $L [fb^{-1}]$ \\
     \hline
-    Proceso & $\sigma [pb]$ & factor-$k$ & Eficiencia & $L [fb^{-1}]$ \\
-    \hline
-    \hline
-    \ttbar\ \powheg+\pythia & 253.00 & 1 & 0.543 & 580 \\
+    {\ttbar} & \powheg+\pythia & 253.00 & 1 & 0.543 & 580 \\
     \hline
     %    \ttbargam noAllHad \madgraph (164439) & 0.092363 & 1.9 & 1 & 1139.7 \\
-    {\ttgam} noAllHad \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
-    {\ttgam} AllHad \madgraph  & 0.068599 & 1.9 & 1 & 1534.5 \\
+    {\ttgam} noAllHad & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
+    {\ttgam} AllHad & \madgraph  & 0.068599 & 1.9 & 1 & 1534.5 \\
     \hline
-    \hline
-    \multicolumn{5}{l}{Variaciones sistematicas} \\
-    \hline
-    {\ttgam} noAllHad (scaleUP) \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
-    {\ttgam} noAllHad (scaleDN) \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
-    {\ttgam} noAllHad (alpsUP)  \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
-    {\ttgam} noAllHad (alpsDN)  \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
-    {\ttgam} noAllHad (moreFSR) \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
-    {\ttgam} noAllHad (lessFSR) \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
-    \hline
-    \hline
+    %% \multicolumn{5}{l}{Variaciones sistematicas} \\
+    %% \hline
+    %% {\ttgam} noAllHad (scaleUP) & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
+    %% {\ttgam} noAllHad (scaleDN) & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
+    %% {\ttgam} noAllHad (alpsUP)  & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
+    %% {\ttgam} noAllHad (alpsDN)  & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
+    %% {\ttgam} noAllHad (moreFSR) & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
+    %% {\ttgam} noAllHad (lessFSR) & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
+    %% \hline
   \end{tabular}
   \label{tab:bkg_ttbar_samples}
 \end{table}
 
-\subsubsection{Single top (+ $\gamma$)}
+\subsection{Top (+ $\gamma$)}
 
-Single top con un foton asociado fue generado utilizando
-Whizard 2.1.1 \cite{whizard, whizard2}, con 4-flavor/5-flavor
-matching provided using Hoppet~\cite{hoppet}.\footnote{Thanks to
-  abian Bach for providing an early version of the matching, which
-  will be standard in Whizard 2.2.0.}
-El foton extra photon could be in
-%% either the single top production or the subsequent decays. Production
-%% and decay, however, was treated separately, so interference effects
-%% are ignored. {\pythia} \cite{pythia} was used for parton showering and
-%% fragmentation. Additional photon radiation was added with
-%% {\photos} \cite{photos}, and tau leptons were decayed with
-%% {\tauola} \cite{tauola}.
+La producción de un quark top con un fotón asociado fue generado utilizando
+\textsc{Whizard} 2.1.1 \cite{whizard, whizard2}, con 4-flavor/5-flavor matching provided
+using Hoppet~\cite{hoppet}.
 
-%% %We used sample IDs 202621 and 202622 for \tchangamma production, and
-%% %sample IDs 202623--202631 for \tWgamma production.
+El fotón extra puede estar tanto en la producción del top o en los decaimientos
+sucesivos. Sin embargo, la producción y el decaimiento son tratados de forma
+separada, por lo que los efectos de interferencia pueden ser ignorados. Para las
+lluvias partonicas y la fragmentación fue utilizado {\pythia}\cite{pythia} Y la
+radiación de fotones fue agregada con {\photos}\cite{photos}, y los
+decaimientos de los leptones tau con {\tauola}\cite{tauola}.
 
-\begin{table}[ht!]
-  \centering
-  \caption{Single top and \tgam\ samples used for the analysis. La seccion eficas a
-    NNLO, eficiencia del filtro, y luminosidad integrada correspondiente a la estadística total de cada muestra
-    se detallan.}
-  \begin{tabular}{lccc}
-    \hline
-    Proceso & $\sigma [pb]$ & Eficiencia & $L [fb^{-1}]$ \\
-    \hline
-    t-channel \acermc   & 28.4 & 1 & 271 \\
-    Wt        \powheg   & 22.4 & 1 & 892 \\
-    s-channel \powheg   & 1.82 & 1 & 3299 \\
-    \hline
-    \tgam (t-channel) \wizhard+\pythia   & 0.187298 & 0.121980 & 4810 \\
-    \tgam (t-channel) \wizhard+\pythia   & 0.313866 & 0.012927 & 4930 \\
-    \hline
-    \twgam (dilep.) \wizhard+\pythia          & 0.01292  & 0.16437 & 4710 \\
-    \twgam (dilep. tDec) \wizhard+\pythia     & 0.01454  & 0.02875 & 12000 \\
-    \twgam (dilep. WDec) \wizhard+\pythia     & 0.01041  & 0.07549 & 6370 \\
-    \twgam (tlepWhad) \wizhard+\pythia        & 0.02583  & 0.16244 & 4770 \\
-    \twgam (tlepWhad tDec) \wizhard+\pythia   & 0.02908  & 0.02761 & 6230 \\
-    \twgam (tlepWhad WDec) \wizhard+\pythia   & 0.01159  & 0.06471 & 6660 \\
-    \twgam (thadWlep) \wizhard+\pythia )      & 0.02582  & 0.16178 & 4790 \\
-    \twgam (thadWlep tDec) \wizhard+\pythia   & 0.02013  & 0.04198 & 5920 \\
-    \twgam (thadWlep WDec) \wizhard+\pythia   & 0.02079  & 0.07574 & 3180 \\
-    \hline
-    \hline
-  \end{tabular}
-  \label{tab:bkg_st_samples}
-\end{table}
-
-%% The single top process is a small background for this analysis, mostly
-%% important for the control and validation regions. $Wt$ production (ID 110140) was generated using the \powheg, including full next-to-leading order QCD
-%% corrections. Parton showering and fragmentation were simulated by
-%% \pythia with the P2011C tune. The CT10 next-to-leading-order parton
-%% set is used for the matrix element, the parton shower and the
-%% underlying event. The samples were scaled to the cross section
-%% calculated in \cite{Kidonakis:2010ux}. For $t$-channel
+La de producción de tops resulta en un fondo poco importante para este análisis,
+aunque de mayor importancia para las regiones control y validación. La producción $Wt$
+fue generado utilizando {\powheg}, incluyendo correcciones a NLO en QCD. La lluvia
+partónica y la fragmentación fue simulada utilizando {\pythia} con el tune
+P2011. Se utilizó el conjunto de PDFs CT10. Las muestras fueron normalizadas con
+la sección eficaz calculada en \cite{Kidonakis:2010ux}.
+%%Para la produccion en el canal $t$, las muestras MC
 %% production, the MC samples with sample ID 110101 were used, with the
 %% $W$ boson decaying leptonically. These were generated with
 %% \acermc \cite{acer}, with parton showering and fragmentation performed
@@ -1230,141 +1145,168 @@ El foton extra photon could be in
 %% scaled to the cross section calculated by \cite{Kidonakis:2011wy}.
 %% Single top produced by $s$-channel was not used because it was found
 %% to be negligible.
-
-%% Overlap between the single top and single top $\gamma$ samples has been removed.
-
-\subsubsection{Direct $\gamma+$jets and QCD multijet}
-
-%% %The QCD background is one of the main source of background in this analysis, particularly prompt photon events. The QCD contamination is in all cases a result of pathological events (jet faking a photon, badly reconstructed jet or photon making high \MET) for which the simulation is not reliable.
-%% %For this reason this background is computed with a data driven approach, as explained in {\sec} \ref{sec:jetsmearing}. Several MC simulations are used anyways for consistency checks and to assess systematic uncertainties.
-
-%% The QCD contamination is in all cases a result of pathological events
-%% (jet faking a photon, badly reconstructed jet or photon making high \MET).
-%% However, it is not expected to be a dominant source of background in the
-%% phase space explored in this analysis. The contribution from events with
-%% jets faking a photon is estimated with the data driven described in
-%% {\Sec} \ref{sec:jetfakes}. The QCD multijet samples listed in {\tab}
-%% \ref{tab:bkg_qcd_samples} were used for optimisation and preliminar
-%% sensitivity studies. Prompt photon production was simulated with
-%% with {\sherpa} v1.4.1 \cite{SherpaGen}, with up to four partons in the ME+PS
-%% and using the CT10 set of parton density functions. The inclusive spectrum
-%% is sliced in ranges of photon \pt\ to optimise the event generation.
-%% Alternative samples were used to asses systematics uncertainties and
-%% cross checks, generated with {\pythiaeight} (using CTEQ6L1) and {\alpgen}
-%% v2.14 (with same config as V$+$jets events described in {\Sec} \ref{mc_wzjets}).
-%% Further details are given in {\tab} \ref{tab:bkg_qcd_samples}.
+%%Se removieron los  Overlap between the single top and single top $\gamma$ samples has been removed.
 
 \begin{table}[ht!]
   \centering
-  \caption{Muestras de QCD {\gjet} y multijet utilizadas en este analisis.
-    La seccion eficas a LO para cada modo de decaimiento,
-    y las eficiencias del filtro son reportadas,
-    asi como tabine la luminosidad integrada correspondiente a la estadistica
+  \caption{Muestras de quark top y {\tgam}. La sección eficaz a
+    NNLO, eficiencia del filtro, y luminosidad integrada correspondiente a la estadística total de cada muestra
+    están detalladas.}
+  \begin{tabular}{lcccc}
+    \hline
+    Proceso & Generador & $\sigma [pb]$ & Eficiencia & $L [fb^{-1}]$ \\
+    \hline
+    t-channel & \acermc   & 28.4 & 1 & 271 \\
+    Wt        & \powheg   & 22.4 & 1 & 892 \\
+    s-channel & \powheg   & 1.82 & 1 & 3299 \\
+    \hline
+    \tgam (t-channel) & \wizhard+\pythia   & 0.187298 & 0.121980 & 4810 \\
+    \tgam (t-channel) & \wizhard+\pythia   & 0.313866 & 0.012927 & 4930 \\
+    \hline
+    \twgam (dilep.) & \wizhard+\pythia          & 0.01292  & 0.16437 & 4710 \\
+    \twgam (dilep. tDec) & \wizhard+\pythia     & 0.01454  & 0.02875 & 12000 \\
+    \twgam (dilep. WDec) & \wizhard+\pythia     & 0.01041  & 0.07549 & 6370 \\
+    \twgam (tlepWhad) & \wizhard+\pythia        & 0.02583  & 0.16244 & 4770 \\
+    \twgam (tlepWhad tDec) & \wizhard+\pythia   & 0.02908  & 0.02761 & 6230 \\
+    \twgam (tlepWhad WDec) & \wizhard+\pythia   & 0.01159  & 0.06471 & 6660 \\
+    \twgam (thadWlep) & \wizhard+\pythia      & 0.02582  & 0.16178 & 4790 \\
+    \twgam (thadWlep tDec) & \wizhard+\pythia   & 0.02013  & 0.04198 & 5920 \\
+    \twgam (thadWlep WDec) & \wizhard+\pythia   & 0.02079  & 0.07574 & 3180 \\
+    \hline
+  \end{tabular}
+  \label{tab:bkg_st_samples}
+\end{table}
+
+
+\subsection{{\gjet} y multijet}
+
+La contaminación QCD es en todos los casos el resultado de eventos patológicos
+(jets mal-identificados como fotones, y jets o fotones mal reconstruidos dejando
+una alta cantidad de energía faltante). Sin embargo, no se espera que sea un
+fondo dominante en el espacio de fase explorado en este análisis. La
+contribución de eventos con jets mal identificados como fotones se estima a
+partir de los datos en la \cref{sec:jetfakes}.
+
+Las muestras de QCD multijets listadas en \cref{tab:bkg_qcd_samples} fueron
+utilizadas para el proceso de optimización y estudios de sensibilidad
+preliminares. La producción de fotones prompt fue simulada con {\sherpa}
+v1.4.1\cite{SherpaGen}, con hasta cuatro partones en la ME+PS y usando el
+conjunto de PDFs CT10. El espectro inclusivo se dividió en secciones del {\pt}
+del fotón para optimizar la generación de eventos.
+
+Muestras alternativas fueron utilizadas para la estimación de las incertezas
+sistemáticas, generadas con {\pythiaeight} (usando CTEQ6L1) y {\alpgen} v2.14
+(con la misma configuración que los eventos de $W/Z +$ jets descriptos en
+\cref{mc_wzjets}). Los detalles pueden verse en la \cref{tab:bkg_qcd_samples}.
+
+\begin{table}[ht!]
+  \centering
+  \caption{Muestras de QCD {\gjet} y multijet utilizadas en este análisis.
+    La sección eficaz a LO para cada modo de decaimiento,
+    y las eficiencias del filtro están detalladas,
+    así como tabine la luminosidad integrada correspondiente a la estadística
     total de cada muestra.}
 
-  %% \includegraphics[width=1\textwidth]{figures/tabla}
-
-   \begin{tabular}{lccc}
+   \begin{tabular}{lcccc}
     \hline
+    Proceso & Generador & $\sigma [pb]$ & Eficiencia & $L [fb^{-1}]$ \\
     \hline
-    Proceso & $\sigma [pb]$ & Eficiencia & $L [fb^{-1}]$ \\
+    {\gjet} ($\pt>70\gev$)   & {\sherpa} &    2153.0  &  1.0  &  1.160 \\
+    {\gjet} ($\pt>140\gev$)  & {\sherpa} &    137.85  &  1.0  &  10.881 \\
+    {\gjet} ($\pt>280\gev$)  & {\sherpa} &     5.963  &  1.0  &  167.657 \\
+    {\gjet} ($\pt>500\gev$)  & {\sherpa} &     0.276  &  1.0  &  3617.291 \\
+    {\gjet} ($\pt>800\gev$)  & {\sherpa} &    0.0133  &  1.0  &  7492.807 \\
+    {\gjet} ($\pt>1000\gev$) & {\sherpa} &   0.00238  &  1.0  &  41980.269 \\
     \hline
-    {\gjet} ($\pt>70\gev$)   &   2153.0  &  1.0  &  1.160 \\
-    {\gjet} ($\pt>140\gev$)  &   137.85  &  1.0  &  10.881 \\
-    {\gjet} ($\pt>280\gev$)  &    5.963  &  1.0  &  167.657 \\
-    {\gjet} ($\pt>500\gev$)  &    0.276  &  1.0  &  3617.291 \\
-    {\gjet} ($\pt>800\gev$)  &   0.0133  &  1.0  &  7492.807 \\
-    {\gjet} ($\pt>1000\gev$) &  0.00238  &  1.0  &  41980.269 \\
-    \hline
-    {\gjet} ($\pt>70\gev$)   &  3425000  &  $5.7 \times 10^{-4}$  &  1535.4  \\
-    {\gjet} ($\pt>140\gev$)  &   122170  &  $9.7 \times 10^{-4}$  &  8449.2 \\
-    {\gjet} ($\pt>280\gev$)  &   3348.7  &  $1.45 \times 10^{-3}$ &  206559.7 \\
-    {\gjet} ($\pt>500\gev$)  &   115.63  &  $1.8 \times 10^{-3}$  &  4789097.0\\
+    {\gjet} ($\pt>70\gev$)   & {\pythiaeight} &   3425000  &  $0.00057$  &  1535.4  \\
+    {\gjet} ($\pt>140\gev$)  & {\pythiaeight} &    122170  &  $0.00097$  &  8449.2 \\
+    {\gjet} ($\pt>280\gev$)  & {\pythiaeight} &    3348.7  &  $0.00145$ &  206559.7 \\
+    {\gjet} ($\pt>500\gev$)  & {\pythiaeight} &    115.63  &  $0.0018$  &  4789097.0\\
     \hline
 
-    \gjetnj{1} ($\pt>70\gev$)   &  577.480  &  1.0  &  0.147 \\
-    \gjetnj{1} ($\pt>140\gev$)  &  26.198   &  1.0  &  3.626 \\
-    \gjetnj{1} ($\pt>280\gev$)  &  0.83119  &  1.0  &  30.077 \\
-    \gjetnj{1} ($\pt>500\gev$)  &  0.02914  &  1.0  &  343.159 \\
+    \gjetnj{1} ($\pt>70\gev$)   & {\alpgen}+{\jimmy} &   577.480  &  1.0  &  0.147 \\
+    \gjetnj{1} ($\pt>140\gev$)  & {\alpgen}+{\jimmy} &   26.198   &  1.0  &  3.626 \\
+    \gjetnj{1} ($\pt>280\gev$)  & {\alpgen}+{\jimmy} &   0.83119  &  1.0  &  30.077 \\
+    \gjetnj{1} ($\pt>500\gev$)  & {\alpgen}+{\jimmy} &   0.02914  &  1.0  &  343.159 \\
 
     % \gjetnj{2} ($\ptgam>35\gev$) \alpgen+\jimmy  ( 156846 ) &  4515.0  &  1.0  &  0.00886 \\
-    \gjetnj{2} ($\pt>70\gev$)    &  571.870  &  1.0  &  0.175 \\
-    \gjetnj{2} ($\pt>140\gev$)   &  38.67100  &  1.0  &  3.879 \\
-    \gjetnj{2} ($\pt>280\gev$)   &  1.6811  &  1.0  &  29.741 \\
-    \gjetnj{2} ($\pt>500\gev$)   &  0.075517  &  1.0  &  264.841 \\
+    \gjetnj{2} ($\pt>70\gev$)    & {\alpgen}+{\jimmy} &   571.870  &  1.0  &  0.175 \\
+    \gjetnj{2} ($\pt>140\gev$)   & {\alpgen}+{\jimmy} &   38.67100  &  1.0  &  3.879 \\
+    \gjetnj{2} ($\pt>280\gev$)   & {\alpgen}+{\jimmy} &   1.6811  &  1.0  &  29.741 \\
+    \gjetnj{2} ($\pt>500\gev$)   & {\alpgen}+{\jimmy} &   0.075517  &  1.0  &  264.841 \\
 
     % \gjetnj{3} ($\ptgam>35\gev$) \alpgen+\jimmy  ( 156851 ) &  1717.0  &  1.0  &  0.00874 \\
-    \gjetnj{3} ($\pt>70\gev$)  &  306.10  &  1.0  &  0.049\\
-    \gjetnj{3} ($\pt>140\gev$) &  28.57  &  1.0  &  5.250 \\
-    \gjetnj{3} ($\pt>280\gev$) &  1.538  &  1.0  &  32.503 \\
-    \gjetnj{3} ($\pt>500\gev$) &  0.07707  &  1.0  &  77.822 \\
+    \gjetnj{3} ($\pt>70\gev$)  & {\alpgen}+{\jimmy} &   306.10  &  1.0  &  0.049\\
+    \gjetnj{3} ($\pt>140\gev$) & {\alpgen}+{\jimmy} &   28.57  &  1.0  &  5.250 \\
+    \gjetnj{3} ($\pt>280\gev$) & {\alpgen}+{\jimmy} &   1.538  &  1.0  &  32.503 \\
+    \gjetnj{3} ($\pt>500\gev$) & {\alpgen}+{\jimmy} &   0.07707  &  1.0  &  77.822 \\
 
     % \gjetnj{4} ($\ptgam>35\gev$) \alpgen+\jimmy  ( 156856 ) &  513.940002  &  1.0  &  0.00778 \\
-    \gjetnj{4} ($\pt>70\gev$)    &  115.850  &  1.0  &  0.216 \\
-    \gjetnj{4} ($\pt>140\gev$)   &  14.216  &  1.0  &  11.951 \\
-    \gjetnj{4} ($\pt>280\gev$)   &  0.9185  &  1.0  &  48.992 \\
-    \gjetnj{4} ($\pt>500\gev$)   &  0.0512  &  1.0  &  156.354 \\
+    \gjetnj{4} ($\pt>70\gev$)    & {\alpgen}+{\jimmy} &   115.850  &  1.0  &  0.216 \\
+    \gjetnj{4} ($\pt>140\gev$)   & {\alpgen}+{\jimmy} &   14.216  &  1.0  &  11.951 \\
+    \gjetnj{4} ($\pt>280\gev$)   & {\alpgen}+{\jimmy} &   0.9185  &  1.0  &  48.992 \\
+    \gjetnj{4} ($\pt>500\gev$)   & {\alpgen}+{\jimmy} &   0.0512  &  1.0  &  156.354 \\
 
     % \gjetnj{5} ($\ptgam>35\gev$) \alpgen+\jimmy  ( 156861 ) &  163.800003  &  1.0  &  0.0458 \\
-    \gjetnj{5} ($\pt>70\gev$)    &  7.00  &  1.0  &  18.569 \\
-    \gjetnj{5} ($\pt>140\gev$)   &  0.542  &  1.0  &  92.304 \\
-    \gjetnj{5} ($\pt>280\gev$)   &  0.0333  &  1.0  &  450.911 \\
-    \gjetnj{5} ($\pt>500\gev$)   &  44.334  &  1.0  &  0.970 \\
+    \gjetnj{5} ($\pt>70\gev$)    & {\alpgen}+{\jimmy} &   7.00  &  1.0  &  18.569 \\
+    \gjetnj{5} ($\pt>140\gev$)   & {\alpgen}+{\jimmy} &   0.542  &  1.0  &  92.304 \\
+    \gjetnj{5} ($\pt>280\gev$)   & {\alpgen}+{\jimmy} &   0.0333  &  1.0  &  450.911 \\
+    \gjetnj{5} ($\pt>500\gev$)   & {\alpgen}+{\jimmy} &   44.334  &  1.0  &  0.970 \\
+
     \hline
-    \hline
-    JZ1W ($20 \gev < \pt^{\mathrm{jet}} < 80 \gev$)      &  $7.285 \times 10^{10}$ &  0.000129 & 0.00016 \\
-    JZ2W ($80 \gev < \pt^{\mathrm{jet}} < 200 \gev$)     &  $2.634 \times 10^{7}$ &  0.003894 & 0.0142 \\
-    JZ3W ($200 \gev < \pt^{\mathrm{jet}} < 500 \gev$)    &  $5.442 \times 10^{5}$ &  0.001219 & 2.26 \\
-    JZ4W ($500 \gev < \pt^{\mathrm{jet}} < 1000 \gev$)   &  $6.445 \times 10^{3}$ &  0.000708 & 328 \\
-    JZ5W ($1000 \gev < \pt^{\mathrm{jet}} < 1500 \gev$)  &  39.74 &  0.002152 & 17400 \\
-    JZ6W ($1500 \gev < \pt^{\mathrm{jet}} < 2000 \gev$)  &  0.4161 &  0.004684 & $7.68 \times 10^{5}$ \\
-    JZ7W ($\pt^{\mathrm{jet}} > 2000 \gev$)              &  0.04064 &  0.0146 & $2.52\times 10^{6}$ \\
+    JZ1W ($\pt^{\mathrm{jet}} \in [20, 80] \gev$)     & {\pythia} &   $7.285 \cdot 10^{10}$ &  0.000129 & 0.00016 \\
+    JZ2W ($\pt^{\mathrm{jet}} \in [80, 200] \gev$)    & {\pythia} &   $2.634 \cdot 10^{7}$ &  0.003894 & 0.0142 \\
+    JZ3W ($\pt^{\mathrm{jet}} \in [200,500] \gev$)    & {\pythia} &   $5.442 \cdot 10^{5}$ &  0.001219 & 2.26 \\
+    JZ4W ($\pt^{\mathrm{jet}} \in [500,1000] \gev$)   & {\pythia} &   $0.006445$ &  0.000708 & 328 \\
+    JZ5W ($\pt^{\mathrm{jet}} \in [1000,1500] \gev$)  & {\pythia} &   39.74 &  0.002152 & 17400 \\
+    JZ6W ($\pt^{\mathrm{jet}} \in [1500,2000] \gev$)  & {\pythia} &   0.4161 &  0.004684 & $7.68 \cdot 10^{5}$ \\
+    JZ7W ($\pt^{\mathrm{jet}} > 2000 \gev$)           & {\pythia} &   0.04064 &  0.0146 & $2.52\cdot 10^{6}$ \\
     \hline
   \end{tabular}
   \label{tab:bkg_qcd_samples}
 \end{table}
 
-\subsubsection{Dibosons}
+\subsection{Diboson}
 
 Los procesos de diboson (WW, WZ, y ZZ) fueron generados utilizando
-{\sherpa} y usando la PDF CT10, con la seccion eficaz provista por
-MCFM \cite{Campbell:2011bn}. Solo los decaimientos leptonicos para
+{\sherpa} y usando la PDF CT10, con la sección eficaz provista por
+MCFM\cite{Campbell:2011bn}. Solo los decaimientos leptonicos para
 ambos bosones fueron considerados.
 
 \begin{table}[ht!]
   \centering
-  \caption{Muestras de Diboson utilizadas en este análisis.
+  \caption{Muestras de Diboson.
     La sección eficaz a LO para cada modo de decaimiento, los factores $k$
     (para la normalización NLO) y las eficiencias del filtro están detalladas,
     así como también la luminosidad integrada correspondiente a la estadística
     total de cada muestra.}
 
-  \begin{tabular}{lcccc}
+  \begin{tabular}{lccccc}
     \hline
-    Proceso & $\sigma [pb]$ & factor $k$ & Eficiencia & $L [fb^{-1}]$ \\
+    Proceso & Generador & $\sigma [pb]$ & factor $k$ & Eficiencia & $L [fb^{-1}]$ \\
     \hline
     %% $WW(2l2\nu)$ \sherpa (126892)  & 5.50 & 1.07 & 1 & 458.9 \\
     %% $WZ(3l)$ \sherpa (126893) & 9.75 & 1.06 & 1 & 261.1 \\
     %% $ZZ(4\ell)$ \sherpa (126894)  & 8.74 & 1.11 & 1  &  185.6 \\
     %% $ZZ(2\ell2\nu)$ \sherpa (126895)  & 0.50 & 1.14 & 1 &  1590.8 \\
-    $WW (\ell\ell\nu\nu)$        & 5.296  & 1.06 & 1 & 1400 \\
-    $ZZ (\ell\ell\nu\nu)$        & 0.494  & 1.05 & 1 & 1700 \\
-    $WZ (\ell\ell\ell\nu)$       & 9.745  & 1.05 & 1 & 260 \\
-    $WZ (\ell\nu\nu\nu)$         & 1.406  & 1.05 & 1 & 270 \\
-    $ZW (eeqq)$                  & 1.465  & 1.05 & 1 & 110 \\
-    $ZZ (eeqq)$                  & 0.247  & 1    & 1 & 120 \\
-    $ZW (\mu\mu qq)$             & 1.463  & 1.05 & 1 & 110 \\
-    $ZZ (\mu\mu qq)$             & 0.248  & 1    & 1 & 120 \\
-    $ZW (\tau\tau qq)$           & 1.452  & 1.05 & 1 & 120 \\
-    $ZZ (\tau\tau qq)$           & 0.242  & 1    & 1 & 120 \\
-    $ZW (\nu\nu qq)$             & 2.697  & 1.05 & 1 & 64 \\
-    $ZZ (\nu\nu qq)$             & 1.744  & 1    & 1 & 69 \\
-    $WW (e\nu qq)$               & 7.285  & 1.06 & 1 & 100 \\
-    $WZ (e\nu qq)$               & 1.904  & 1.05 & 1 & 110 \\
-    $WW (\mu\nu qq)$             & 7.297  & 1.06 & 1 & 100 \\
-    $WZ (\mu\nu qq)$             & 1.906  & 1.05 & 1 & 100 \\
-    $WW (\tau\nu qq)$            & 7.274  & 1.06 & 1 & 100 \\
-    $WZ (\tau\nu qq)$            & 1.915  & 1.05 & 1 & 100 \\
+    $WW (\ell\ell\nu\nu)$     & {\sherpa}  & 5.296  & 1.06 & 1 & 1400 \\
+    $ZZ (\ell\ell\nu\nu)$     & {\sherpa}  & 0.494  & 1.05 & 1 & 1700 \\
+    $WZ (\ell\ell\ell\nu)$    & {\sherpa}  & 9.745  & 1.05 & 1 & 260 \\
+    $WZ (\ell\nu\nu\nu)$      & {\sherpa}  & 1.406  & 1.05 & 1 & 270 \\
+    $ZW (eeqq)$               & {\sherpa}  & 1.465  & 1.05 & 1 & 110 \\
+    $ZZ (eeqq)$               & {\sherpa}  & 0.247  & 1    & 1 & 120 \\
+    $ZW (\mu\mu qq)$          & {\sherpa}  & 1.463  & 1.05 & 1 & 110 \\
+    $ZZ (\mu\mu qq)$          & {\sherpa}  & 0.248  & 1    & 1 & 120 \\
+    $ZW (\tau\tau qq)$        & {\sherpa}  & 1.452  & 1.05 & 1 & 120 \\
+    $ZZ (\tau\tau qq)$        & {\sherpa}  & 0.242  & 1    & 1 & 120 \\
+    $ZW (\nu\nu qq)$          & {\sherpa}  & 2.697  & 1.05 & 1 & 64 \\
+    $ZZ (\nu\nu qq)$          & {\sherpa}  & 1.744  & 1    & 1 & 69 \\
+    $WW (e\nu qq)$            & {\sherpa}  & 7.285  & 1.06 & 1 & 100 \\
+    $WZ (e\nu qq)$            & {\sherpa}  & 1.904  & 1.05 & 1 & 110 \\
+    $WW (\mu\nu qq)$          & {\sherpa}  & 7.297  & 1.06 & 1 & 100 \\
+    $WZ (\mu\nu qq)$          & {\sherpa}  & 1.906  & 1.05 & 1 & 100 \\
+    $WW (\tau\nu qq)$         & {\sherpa}  & 7.274  & 1.06 & 1 & 100 \\
+    $WZ (\tau\nu qq)$         & {\sherpa}  & 1.915  & 1.05 & 1 & 100 \\
     \hline
   \end{tabular}
   \label{tab:bkg_diboson_samples}
@@ -1372,51 +1314,26 @@ ambos bosones fueron considerados.
 
 
 
-Referencias
+%% Referencias
+%% \section{Referencias}
 
-%% MC Event Generators
-@inproceedings{Seymour:2013ega,
-  author         = ``Seymour, Michael H. and Marx, Marilyn'',
-  title          = ``{Monte Carlo Event Generators}'',
-  booktitle      = ``{Proceedings, 69th Scottish Universities Summer School in
-    Physics : LHC Phenomenology (SUSSP69)}'',
-  url            = ``http://inspirehep.net/record/1229804/files/arXiv:1304.6677.pdf'',
-  year           = ``2013'',
-  pages          = ``287-319'',
-  doi            = ``10.1007/978-3-319-05362-2_8'',
-  eprint         = ``1304.6677'',
-  archivePrefix  = ``arXiv'',
-  primaryClass   = ``hep-ph'',
-  reportNumber   = ``MCNET-13-05'',
-  SLACcitation   = ``%%CITATION = ARXIV:1304.6677;%%''
-}
+%% \begin{itemize}\itemsep0.2cm\parskip0.2cm
+%% \item
+%% \end{itemize}
 
-%% ATLAS Simulation
-@article{
-  year={2010},
-  issn={1434-6044},
-  journal={The European Physical Journal C},
-  volume={70},
-  number={3},
-  doi={10.1140/epjc/s10052-010-1429-9},
-  title={The ATLAS Simulation Infrastructure},
-  url={http://dx.doi.org/10.1140/epjc/s10052-010-1429-9},
-  publisher={Springer-Verlag},
-  author={ATLAS Collaboration},
-  pages={823-874},
-  }
-
-%% XS
-@article{Kramer:2012bx,
-  author         = ``Kramer, Michael and Kulesza, Anna and van der Leeuw,
-  Robin and Mangano, Michelangelo and Padhi, Sanjay and
-  Plehn, Tilman and Portell, Xavier'',
-  title          = ``{Supersymmetry production cross sections in $pp$
-    collisions at $\sqrt{s}=7$ TeV}'',
-  year           = ``2012'',
-  eprint         = ``1206.2892'',
-  archivePrefix  = ``arXiv'',
-  primaryClass   = ``hep-ph'',
-  reportNumber   = ``CERN-PH-TH-2012-163'',
-  SLACcitation   = ``%%CITATION = ARXIV:1206.2892;%%''
-  }
+%% %% %% MC Event Generators
+%% %% @inproceedings{Seymour:2013ega,
+%% %%   author         = ``Seymour, Michael H. and Marx, Marilyn'',
+%% %%   title          = ``{Monte Carlo Event Generators}'',
+%% %%   booktitle      = ``{Proceedings, 69th Scottish Universities Summer School in
+%% %%     Physics : LHC Phenomenology (SUSSP69)}'',
+%% %%   url            = ``http://inspirehep.net/record/1229804/files/arXiv:1304.6677.pdf'',
+%% %%   year           = ``2013'',
+%% %%   pages          = ``287-319'',
+%% %%   doi            = ``10.1007/978-3-319-05362-2_8'',
+%% %%   eprint         = ``1304.6677'',
+%% %%   archivePrefix  = ``arXiv'',
+%% %%   primaryClass   = ``hep-ph'',
+%% %%   reportNumber   = ``MCNET-13-05'',
+%% %%   SLACcitation   = ``%%CITATION = ARXIV:1304.6677;%%''
+%% %% }
