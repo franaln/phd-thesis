@@ -1,0 +1,63 @@
+%\input{/home/fran/work/phd-thesis/tikz/common.tex}
+
+\begin{tikzpicture}
+
+	\tikzset{
+    		line/.style={line width=0.9},
+    		dline/.style={dashed,line width=0.9},
+  	}
+
+	\definecolor{blue1}{HTML}{3F66BD}
+	\definecolor{blue2}{HTML}{2C4784}
+
+	\coordinate[vertex] (O) at (0,0);
+
+	\coordinate[vertex] (C1) at (2.1, 2);
+	\coordinate[vertex] (C2) at (2.1,-2);
+
+	\coordinate[vertex] (N1_a) at (4.2, 2);
+	\coordinate[vertex] (N2_a) at (4.2,-2);
+
+	\coordinate[vertex] (N1_b) at (6.3, 2);
+	\coordinate[vertex] (N2_b) at (6.3,-2);
+
+	\coordinate[vertex] (G1) at (7, 2.75);
+	\coordinate[vertex] (X1) at (7, 1.25);
+
+	\coordinate[vertex] (G2) at (7,-2.75);
+	\coordinate[vertex] (X2) at (7,-1.25);
+
+	\draw[line,gluon] (-2.1,-2) -- (O);
+	\draw[line,gluon] (-2.1, 2) -- (O);
+
+	\draw[line] (O) -- (C1);
+	\draw[line] (O) -- (C2);
+	\draw[line,gluino] (O) -- (C1);
+	\draw[line,gluino] (O) -- (C2);
+
+	\draw[line] (4.0, 2) -- (N1_b) node[above, pos=.6] {NLSP};
+	\draw[line] (4.0,-2) -- (N2_b) node[below, pos=.6] {NLSP};
+
+	\draw[dline] (N1_b) -- (G1) node[right] {$\widetilde{G}$};
+	\draw[line] (N1_b) -- (X1) node[right] {X};
+
+	\draw[dline] (N2_b) -- (G2) node[right] {$\widetilde{G}$};
+	\draw[line] (N2_b) -- (X2) node[right] {X};
+
+    	\draw[black, line width=1, fill=gray] (O) circle (0.75cm); 
+
+  	\draw[dline,fill=white] (C1) -- (N1_a) node[black,above,pos=.5] {cascada};
+  	\draw[dline,fill=white] (C2) -- (N2_a) node[black,below,pos=.5] {cascada};
+
+	\draw[dline] (C1) -- (2.7, 3.2);
+	\draw[dline] (C2) -- (2.7,-3.2);
+	\draw[dline] (N1_a) -- (4.9, 3.2);
+	\draw[dline] (N2_a) -- (4.9,-3.2);
+
+
+	\draw[black, line width=1,fill=gray] (C1) circle (0.20cm);
+	\draw[black, line width=1,fill=gray] (C2) circle (0.20cm);
+	\draw[black, line width=1,fill=gray] (N1_a) circle (0.20cm);
+	\draw[black, line width=1,fill=gray] (N2_a) circle (0.20cm);
+
+\end{tikzpicture}
