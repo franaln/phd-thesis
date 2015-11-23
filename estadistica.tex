@@ -197,10 +197,10 @@ datos observados. Esta hipótesis también suele llamarse hipótesis de
 de los procesos del SM, también contribuyen procesos de nueva física y se
 denomina hipótesis de \emph{se\~nal+fondo}.
 
-Una hipótesis se dice \emph{simple} cuando está completamente determinada, mientras que si
-tiene uno o más parámetros libres, se dice \emph{compuesta}. Cada
-hipótesis queda determinada por la pdf que describe a los observables bajo esa
-hipótesis $f(\bm{x}|H)$.
+Una hipótesis se dice \emph{simple} cuando está completamente determinada,
+mientras que si tiene uno o más parámetros libres, se dice \emph{compuesta}.
+Cada hipótesis queda determinada por la pdf que describe a los observables bajo
+esa hipótesis $f(\bm{x}|H)$.
 
 Una vez definidas las hipótesis, se quiere saber si los datos medidos son
 compatibles con la hipótesis nula o si la hipótesis nula puede ser rechazada en
@@ -269,7 +269,7 @@ para la hipótesis nula y alternativa estén claramente separadas. Para esto se
 busca el estadístico de prueba que tenga el mayor poder posible $(1-\beta)$, para un dado
 tama\~no $\alpha$.
 
-Para el caso de hipótesis simples, el teorema de Neyman-Pearson[] afirma que el
+Para el caso de hipótesis simples, el teorema de Neyman-Pearson\cite{Neyman289} afirma que el
 estadístico de prueba con mayor poder para un tama\~no esta dado por:
 
 %% Para el caso de dos hipótesis simples (sin parámetros), el test estadístico con mayor
@@ -280,10 +280,10 @@ estadístico de prueba con mayor poder para un tama\~no esta dado por:
   t(\bm{x}) = \frac{f(\bm{x}|H_1)}{f(\bm{x}|H_0)}
 \end{equation}
 %
-y la mejor region critica consiste en los $\bm{x}$ que satisface $t(\bm{x}) > c_\alpha$
+y la mejor región critica consiste en los $\bm{x}$ que satisface $t(\bm{x}) > c_\alpha$
 donde $c_\alpha$ es una constante que se ajusta para que el tama\~no sea $\alpha$.
-Este estadistico de prueba es esencialmente el cociente de los likelihoods
-para las dos hipotesis.
+Este estadístico de prueba es esencialmente el cociente de los likelihoods
+para las dos hipótesis.
 
 
 El nivel de acuerdo entre los datos observados y una hipótesis $H$ es
@@ -307,24 +307,23 @@ contra de $H_0$.
 Se dice que la hipótesis es excluida si el {\pvalue} se encuentra por debajo de un valor
 especifico dado por el tama\~no del test $\alpha$, donde $\alpha \in [0,1]$.
 
-En física de partículas es usual convertir el {\pvalue} en la signifícancia
+En física de partículas es usual convertir el {\pvalue} en la significancia
 equivalente, $Z$, definida de forma tal que una variable distribuida normalmente
 tenga una probabilidad igual a ese {\pvalue} de ser encontrada a mas de $Z$
-desviaciones estándar a la derecha de su media\footnote{\hl{Explicar que existen dos
-  formas de definir. one-sided...}}. Esto es:
+desviaciones estándar a la derecha de su media. Esto es:
 
 \begin{equation}
   Z = \Phi^{-1}(1-p)
 \end{equation}
 %
 donde $\Phi^{-1}$ es el cuantil (la función inversa de la distribución
-acumulativa) de la distribución gaussiana.
+acumulada) de la distribución gaussiana.
 
-Tambien es util definir, para poder cuantificar la sensibilidad de un experimento,
-la significancia esperada que se obtendria dados los datos observados bajo la
-supocision de ciertas hipotesis.
-Para esto se calcula la significancia de la hipotesis $H_0$, respecto
-a la mediana de la hipotesis $H_1$.
+También es útil definir, para poder cuantificar la sensibilidad de un experimento,
+la significancia esperada que se obtendría dados los datos observados bajo la
+suposición de ciertas hipótesis.
+Para esto se calcula la significancia de la hipótesis $H_0$, respecto
+a la mediana de la hipótesis $H_1$.
 
 
 \section{Descubrimiento}
@@ -342,7 +341,7 @@ estos parámetros se los denomina parámetros de interés y al resto, parámetro
 Para la búsqueda de nueva física es común definir como parámetro de interés a la
 intensidad de la señal de forma tal que la hipótesis de solo-fondo corresponde a
 $\mu = 0$ , y la hipótesis de señal+fondo a $\mu = 1$.
-BY, en general, las incertezas sistemáticas son incluidas en el modelo
+En general, las incertezas sistemáticas son incluidas en el modelo
 utilizando parámetros nuisance.
 
 En este escenario, donde tenemos un sólo parámetro de interés
@@ -368,17 +367,17 @@ valores estuvieran fijos. De cierta forma reflejan una pérdida de información
 sobre $\mu$ debido a estos parámetros desconocidos, que suelen ser
 las incertezas sistemáticas.
 
-En la seccion anterior se mostro que el mejor test estadistico para hipotesis
-simples esta dado por el cociente de los likelihoods de las dos hipotesis, de acuerdo
+En la sección anterior se mostró que el mejor estadístico de prueba para hipótesis
+simples esta dado por el cociente de los likelihoods de las dos hipótesis, de acuerdo
 al teorema de Neyman-Pearson.
 Desafortunadamente no hay un equivalente al lema de Neyman-Pearson para modelos
 con muchos parámetros libres. Sin embargo, hay una generalización natural basada
 en el PLR. De la \cref{eq:lambdamu} se puede ver que $0 \leq \lambda \leq 1$, con
-$\lambda$ cercano a 1 implica un buen acuerdo entre datos y el valor hipotetico de $\mu$.
+$\lambda$ cercano a 1 implica un buen acuerdo entre datos y el valor hipotético de $\mu$.
 De forma equivalente conviene utilizar como estadistico de prueba $t_\mu = -2 \ln \lambda(\mu)$.
 En el limite asintotico ($N\to\infty$) el teorema de Wilk\cite{WilkTheo} muestra
 que $-2 \ln \lambda(\mu)$ sigue una distribucion $\chi^2$ con un grado de libertad.
-Esta propiedad sera util para aproximar la pdf del estaditico
+Esta propiedad sera útil para aproximar la pdf del estadístico
 de prueba (ver \cref{sec:aprox}).
 
 
@@ -431,11 +430,11 @@ nivel de desacuerdo entre datos y la hipótesis de $\mu=0$ usando el valor
 observado de $q_0$ se calcula el {\pvalue} como,
 
 \begin{equation}
-  p_0 = \int_{q_{0,\text{obs}}}^{\infty} f(q_0|\mu=0) \, dq_0
+  p_0 = \int_{q_{0}^{\text{obs}}}^{\infty} f(q_0|\mu=0) \, dq_0
   \label{eq:p0}
 \end{equation}
 
-En el caso de que $p_0 \leq \epsilon$ donde $\epsilon$ es un tamaño del test
+En el caso que $p_0 \leq \epsilon$ donde $\epsilon$ es un tamaño del test
 fijado anteriormente, se dice que hay un descubrimiento. En general en física de
 altas energías suele utilizarse $\epsilon = 2.87 \times 10^{-7}$, el cual
 corresponde a una significancia equivalente $Z=5\sigma$.
@@ -450,10 +449,10 @@ el acuerdo de este para describir los datos observados.
 
 Por el contrario, si $p_0> \epsilon$ no se puede rechazar $H_0$. Esto no
 significa que todos los valores de $\mu$ bajo $H_1$ estén excluidos.
-En particular, hay valores de $\mu$ a los que el analisis no es sensible
+En particular, hay valores de $\mu$ a los que el análisis no es sensible
 y valores que los datos observados no permite excluir.
 
-Para establecer limites superiores en el parametro $\mu$ se considera
+Para establecer limites superiores en el parámetro $\mu$ se considera
 $q_\mu$,
 
 \begin{equation}
@@ -472,7 +471,7 @@ establece un límite superior, el hecho de que $\hat{\mu} > \mu$ representa meno
 compatibilidad con $\mu$ que los datos obtenidos, y por lo tanto no se considera
 parte de la región de rechazo de la constrastación.
 
-También es importante notar, que $q_0$ (utilizado como estadístico de prueba para
+También es importante notar que $q_0$ (utilizado como estadístico de prueba para
 descubrimiento) no es simplemente un caso especial de la
 \cref{eq:qmu}, sino que tiene una definición diferente. Es decir, $q_0$ es cero
 si los datos fluctúan hacia abajo ($\hat{\mu}<0$), pero $q_\mu$ es cero si los
@@ -518,14 +517,14 @@ Para cuantificar la consistencia de los datos observados con la hipótesis de
 intensidad de se\~nal $\mu$ se calcula el {\pvalue}
 
 \begin{equation}
-  p_\mu = \int_{q_{\mu,\text{obs}}}^{\infty} f(q_\mu|\mu) \, dq_\mu \equiv \clsb
+  p_\mu = \int_{q_{\mu}^{\text{obs}}}^{\infty} f(q_\mu|\mu) \, dq_\mu \equiv \clsb
   \label{eq:pmu}
 \end{equation}
 %
 donde valores chicos de $p_\mu$ indican baja compatibilidad con la hipótesis
 de señal+fondo.
 
-El intervalo de confianza o límite superior con un nivel de
+El límite superior con un nivel de
 confianza del 95\% se obtiene resolviendo la siguiente ecuación:
 
 \begin{equation}
@@ -533,9 +532,9 @@ confianza del 95\% se obtiene resolviendo la siguiente ecuación:
 \end{equation}
 
 Sin embargo el límite superior calculado de esta forma tiene un problema: de
-acuerdo a este se dice que una señal está excluida a 95\% CL, si ${\clsb} \leq
-0.05$. Si se considera el caso de $\mu=0$, se espera que por construcción el
-{\clsb} sea menor o igual que 0.05 con una probabilidad de 5\%. Esto significa
+acuerdo a este, se dice que una señal está excluida a 95\% CL, si ${\clsb} \leq
+0.05$. \hl{Si se considera el caso de $\mu=0$, se espera que por construcción el
+{\clsb} sea menor o igual que 0.05 con una probabilidad de 5\%}. Esto significa
 que el 5\% de los análisis estarían excluyendo modelos con cero señal. Otro
 problema del {\clsb} es que para dos experimentos con el mismo número chico de
 eventos de señal esperado pero con un numero de eventos de fondo distinto, el
@@ -565,8 +564,8 @@ $p_{\mu_\text{up}} = 0.05$. Se rechazan los valores de $\mu$ si $\mu <
 \mu_\text{up}$ con un nivel de confianza de 95\%.
 
 Para una observación cercana al número de eventos esperado de sólo-fondo ($\clb
-\sim 0.05$) el {\cls} da un valor del orden de dos veces el obtenido utilizando
-el {\clsb}.
+\sim 0.05$) el {\cls} \hl{da un valor del orden de dos veces el obtenido utilizando
+el {\clsb}}.
 %% Entonces, el método {\cls} evita no sólo el problema descripto anteriormente, sino también
 %% la propiedad indeseable del {\clsb} que para dos
 
@@ -577,7 +576,7 @@ el {\clsb}.
 \section{Aproximación asintótica}\label{sec:aprox}
 
 Para poder calcular el {\pvalue} de una hipótesis utilizando las ecuaciones
-\eqref{eq:p0} y \eqref{eq:pmu} se necesita conocer las distribuciones muestrales
+\eqref{eq:p0} y \eqref{eq:pmu} es necesario conocer las distribuciones muestrales
 del estadístico de prueba, $f(q_\mu)$.
 
 Como se dijo anteriormente, el teorema de Wilk establece que para el limite de
@@ -585,14 +584,14 @@ $N\to\infty$, el estadístico de prueba $t_\mu = -2\ln \lambda$ sigue una
 distribución $\chi^2$ con un grado de libertad, cuando la hipótesis nula es verdadera.
 
 El teorema de Wald\cite{WaldTheo} generaliza este teorema para el caso de la hipótesis no nula.
-En este caso el estadístico $-2\ln\lambda$ sigue una distribución $\chi^2$ no central.
+En este caso el estadístico $-2\ln\lambda$ sigue una distribución $\chi^2$ \hl{no central}.
 A partir de este resultado puede mostrarse que para el caso de un solo parámetro de interés vale:
 
 \begin{equation}
   -2 \ln \lambda(\mu) = \frac{(\mu - \hat{\mu})^2}{\sigma^2} + \mathcal{O}(1/\sqrt{N})
 \end{equation}
 %
-donde $\hat{\mu}$ sigue una distribución normal con media $\mu'$ y desviación
+donde $\hat{\mu}$ sigue una distribución normal con media \hl{$\mu'$} y desviación
 estándar $\sigma$. Si $\hat{\mu}$ se encuentra distribuido normalmente y se
 desprecian los términos $\mathcal{O}(1/\sqrt{N})$, se puede mostrar que en el
 régimen asintótico, el estadístico $q_\mu$ sigue una distribución $\chi^2$ no
@@ -645,13 +644,12 @@ y la correspondiente significancia,
 Estas aproximaciones permiten conocer las distribuciones muestrales y calcular
 valores-$p$ y significancias en el caso de un gran número de datos, de una forma
 simple y computacionalmente poco costosa. A pesar de que estrictamente es valido
-para $N\to\infty$, esta aproximación es suficientemente precisa para un numero
+para $N\to\infty$, esta aproximación es suficientemente precisa para un número
 de eventos de fondo $\smallrel\gtrsim \mathcal{O}(10)$.
 
 Para muestras de datos muy pequeñas, o en casos donde la precisión es
 importante, siempre pueden validarse estas aproximaciones utilizando la
 generación Monte Carlo.
-
 Para esto es necesario utilizar simulaciones Monte Carlo para generar lo que se
 denomina \emph{pseudo-experimentos}. El procedimiento consiste en generar el
 conjunto de observables $\bm{x}$ utilizando la pdf $f(\bm{x}|H)$ y calcular el
@@ -667,7 +665,7 @@ estadístico $g(t|H)$.
 \section{Significancia esperada}
 
 En física de partículas la cantidad $s/\sqrt{b}$ ha sido siempre utilizada como
-una medida de la significancia esperada de descubrimiento\cite{medSigNote}. La
+una medida de la significancia esperada de descubrimiento\cite{medsigNote}. La
 explicación detrás de esta formula es que una cantidad $n$ que sigue una
 distribución de Poisson con una media grande $s+b$ puede ser aproximada por una
 variable $x$ distribuida según una gaussiana con media $s+b$ y desviación
@@ -700,7 +698,7 @@ que es la ecuación conocida. %% Y para generalizar esta ecuación para el caso 
 
 %% utilizando la aproximación
 %% asintotica de la seccion anterior,
-De forma general, para el caso un número de eventos de fondo $b$ conocido con
+De forma general, para el caso de un número de eventos de fondo $b$ conocido con
 una incerteza despreciable, se puede escribir la función likelihood como,
 
 \begin{equation}
@@ -742,7 +740,7 @@ La función likelihood total es el producto de las dos distribuciones de Poisson
 correspondientes a cada región:
 
 \begin{equation}
-  L(\mu, \btheta) = \Pois (n;s+b) \Pois(m;\tau b)
+  L(s, \btheta) = \Pois (n;s+b) \Pois(m;\tau b)
 \end{equation}
 
 Utilizando la aproximación $Z = \sqrt{q_0}$, valida en el límite de una muestra

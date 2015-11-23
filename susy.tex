@@ -282,16 +282,17 @@ $W^0$ y $B^0$ se mezclan para dar $Z^0$ y $\gamma$. La correspondiente mezcla de
 En la \cref{tab:sparticles} se puede ver las distintas partículas que
 conforman el MSSM.
 
+
 \begin{table}[ht!]
   \centering
-  \begin{tabular}{ccc}
+  \begin{tabular}{x{4cm} x{4cm} x{4cm}}
     \hline
     {\bf Supermultiplete} & {\bf Bosón} & {\bf Fermión} \\ %& SU(3), SU(2), U(1) \\
     \hline
     gluon, gluino & $g$ & \gluino \\ %& 8, 1, 0 \\
     \hline
-    W, wino & $W^\pm$, $W^0$,  & $\winopm, \winozero$ \\ %& 1, 3, 0 \\
-    \hline
+    W, wino & $W^\pm$, $W^0$  & $\winopm, \winozero$ \\ %& 1, 3, 0 \\
+
     B, bino &   $B$ & \bino \\ %& 1, 1, 0 \\
     \hline
     slepton, lepton & $(\snu, \susy{e})_L$ & $(\nu, e)_L$ \\%& 1, 2, -1/2 \\
@@ -369,7 +370,8 @@ En un tratamiento fenomenológico completo todos los parámetros del MSSM deber�
 dejarse libres y determinarse a partir de los datos observados. Y una vez que los
 parámetros sea medidos, se puede intentar extraer información de la física
 subyacente que esta asociada con escalas de energía mayores a la de los
-experimentos.\note{Agregar límites a los parametros?}
+experimentos.
+%%\note{Agregar límites a los parametros?}
 
 %% Ya que la conjetura principal de SUSY esta motivada por el
 %% intento de embed la física de bajas energías en un modelo mas fundamental, es
@@ -393,7 +395,7 @@ como,
   P_R = (-1)^{3(B-L)+ 2s}
 \end{equation}
 %
-donde $B$ y $L$ son respectivamente el numero barionico y leptonico, y $S$ es el
+donde $B$ y $L$ son respectivamente el número bariónico y leptónico, y $s$ es el
 espín de la partícula. Las partículas supersimetrícas tienen paridad-R $P_R = -1$, mientras
 que las partículas del SM tienen $P_R = +1$.
 
@@ -405,14 +407,14 @@ fenomenológicas de extrema importancia:
 \begin{itemize}
 \item En experimentos de colisionadores, las partículas supersimétricas pueden
   sólo ser producidas en número par, en general de a dos.
-\item Cada partícula supersimétrica que no sea la LSP debe decaer eventualmente
-  en un estado que contenga un número impar de LSP (en general una).
 \item La partícula supersimétrica mas liviana, llamada LSP, es estable y no tiene
-  ninguna particula con $P_R = -1$ a la cual decaer. Si
+  ninguna partícula con $P_R = -1$ a la cual decaer. Si
   la LSP es eléctricamente neutra, interactúa solo de forma débil con la materia
   ordinaria, y por lo tanto resulta en un candidato muy atractivo para la
   materia oscura no bariónica que es requerida por la cosmología. Desde el punto de
-  vista del experimento será visible sólo a traves de la energia faltante en el detector.
+  vista del experimento será visible sólo a través de la energía faltante en el detector.
+\item Cada partícula supersimétrica que no sea la LSP debe decaer eventualmente
+  en un estado que contenga un número impar de LSP (en general una).
 \end{itemize}
 
 
@@ -420,17 +422,22 @@ fenomenológicas de extrema importancia:
 \subsection{El espectro de masas del MSSM}
 
 Una característica importante del MSSM es que las nuevas partículas, que están
-listadas en la \cref{tab:sparticles} no son necesariamente auto-estados de masa
-de la teoría. Esto es porque después del rompimiento de la simetría
-electrodébil y de SUSY, puede haber mezcla entre los gauginos y higgsinos, y
+listadas en la \cref{tab:sparticles}, no son necesariamente auto-estados de masa
+de la teoría. Esto es porque después del rompimiento de la simetría electrodébil
+y de la supersimetria, puede haber mezcla entre los gauginos y higgsinos, y
 entre los squarks y sleptones y los Higgs escalares que tienen la misma carga
 eléctrica. La única excepción es el gluino.
 
 En el MSSM, la descripción del rompimiento de la simetría electrodébil es un
 poco más complicada que en el SM debido al hecho de que hay dos dobletes
 complejos de Higgs $H_u$ y $H_d$ en vez de sólo uno.
+Examinar los distintos auto-valores de masa de la teoría, no es un análisis
+trivial, ya que cualquier conjunto de partículas con los mismos números
+cuánticos puede mezclarse. En las siguientes secciones se analiza los distintos
+sectores del modelo. %% Para esto se deben diagonalizar las matrices de masa y así
+%% obtener los auto-estados y los auto-valores de masa del modelo.
 
-\note{Explicar mínimamente el rompimiento}
+%% \note{Explicar mínimamente el rompimiento}
 
 %% En el MSSM los higgsinos neutros y los gauginos se mezclan para
 %% formar los cuatro neutralinos:
@@ -450,11 +457,6 @@ complejos de Higgs $H_u$ y $H_d$ en vez de sólo uno.
 %% any set of particles of a given spin, B, L and SU(3)C × U(1)EM quantum numbers
 %% can mix.
 
-Examinar los distintos auto-valores de masa de la teoría, no es un análisis
-trivial, ya que cualquier conjunto de partículas con los mismos números
-cuánticos puede mezclarse. En las siguientes secciones se analiza los distintos
-sectores del modelo. Para esto uno debe diagonalizar las matrices de masa y así
-obtener los auto-estados y los auto-valores de masa.
 
 
 \subsubsection{Sector de Higgs}
@@ -532,7 +534,7 @@ obtener los auto-estados de masa:
 \end{equation}
 
 En general se suele utilizar la siguiente notación para llamar a los
-neutralinos: $\tilde{\chi}^0_{i}$ ($i=1,2,3,4$) y $\tilde{\chi}^{\pm}_{i}$
+neutralinos: $\tilde{\chi}^0_{i}$ ($i=1,2,3,4$) y a los charginos: $\tilde{\chi}^{\pm}_{i}$
 ($i=1,2$) donde estos son ordenados de forma ascendente según su masa.
 %% El neutralino mas liviano
 %% {\ninoone}, suele ser la LSP, salvo que exista un {\gravino} más liviano
@@ -567,7 +569,7 @@ masa del gluino $M_3$ esta relacionado con los parámetros de masa de bino y win
   M_3 : M_2 : M_1 \quad \sim \quad 6 : 2 : 1
 \end{equation}
 %
-valida cerca de la escala del \tev (suponiendo que tienen un valor de masa común
+valida cerca de la escala del {\tev} (suponiendo que tienen un valor de masa común
 en la escala GUT). Por este motivo es razonable considerar que el gluino es
 considerablemente mas pesado que los neutralinos y charginos.
 
@@ -612,7 +614,7 @@ electrodébiles {\bino}, $\tilde W^0$ o $\susy{W}^{\pm}$ , heredan los
 acoplamientos de intensidad electrodébil a los pares de fermiones escalares. Si
 los sleptones o squarks son lo suficientemente livianos, un neutralino o
 chargino va a decaer a un par leptón+slepton o quark+squark. También pueden
-decaer en un neutralino o chargino mas liviano y un Higgs escalar o un bosón
+decaer en un neutralino o chargino más liviano y un Higgs escalar o un bosón
 de gauge electrodébil. Los posibles decaimientos son
 
 \begin{align*}
@@ -657,7 +659,7 @@ virtuales.
 \subsubsection{Squarks}
 
 Los squarks puede tener decaimiento a dos cuerpos en un squark-gluino si es
-cinematicamente permitido, porque tiene acoplamiento de intensidad QCD. Por otro
+cinematicamente permitido, porque tiene acoplamiento QCD. Por otro
 lado, los squarks pueden decaer en un quark y un neutralino/chargino.
 
 \begin{equation}
@@ -688,13 +690,13 @@ por la naturaleza.
 
 Pero una de las principales motivaciones para introducir esta nueva simetría fue
 que las divergencias cuadráticas en el cuadrado de las masas escalares podían
-anularse a todo orden en teoría de perturbaciones, y esto esta garantizado solo
+anularse a todo orden en teoría de perturbaciones, y eso está garantizado solo
 si esta simetría no esta rota. Para que SUSY todavía pueda proveer la solución
 al problema de jerarquía incluso en presencia del rompimiento de esta, las
 relaciones entre los acoplamientos adimensionales que están en la teoría antes
 del rompimiento deben mantenerse. Para que esto suceda, el rompimiento de la
-supersimetría debe ser \emph{soft}. El Lagrangiano efectivo del MSSM tiene que
-poder ser escrito como:
+supersimetría debe ser \emph{soft}, es decir, el Lagrangiano efectivo del MSSM
+tiene que poder ser escrito como:
 
 \begin{equation}
   \mathcal{L} = \mathcal{L}_\text{SUSY} + \mathcal{L}_\text{soft}
@@ -731,7 +733,7 @@ En el MSSM, el rompimiento de SUSY es introducido explícitamente. El rompimient
 de una simetría global siempre implica un modo no masivo de Nambu-Goldstone con
 los mismos números cuánticos que el generador de la simetría rota. En el caso de
 la supersimetría global, el generador es la carga fermionica $Q_\alpha$, por lo
-tanto la partícula de Nambu-Goldstone tiene que se un fermión de Weyl no masivo
+tanto la partícula de Nambu-Goldstone tiene que ser un fermión de Weyl no masivo
 neutro, llamado \emph{goldstino}. Es claro ahora que el rompimiento espontáneo
 de la supersimetría requiere la extensión del MSSM. El rompimiento espontáneo de
 SUSY tiene que ocurrir en un \emph{sector oculto} de partículas que no tienen
@@ -744,12 +746,13 @@ sector oculto al visible, resultando en los términos soft del MSSM (ver
 \begin{figure}[!htbp]
   \centering
   \input{tikz/susy_breaking.tex}
-  \caption{}\label{fig:susy_breaking}
+  \caption{Esquema de la supuesta estructura del rompimiento de supersimetría.}\label{fig:susy_breaking}
 \end{figure}
 
 Existen muchas propuestas de como estas interacciones mediadores pueden ser. Una
 de ellas (e históricamente la más popular) es que estas interacciones son
-gravitacionales.\note{Explicar brevemente mSUGRA}
+gravitacionales (mSUGRA).
+
 %% Más precisamente
 %% estas asociados con la nueva física, incluyendo a la gravedad, que
 %% aparece cerca de la escala de Planck. En este escenario
@@ -803,7 +806,7 @@ final que incluye al gravitino.
 
 En los modelos de rompimiento de la supersimetría mediado por campos de gauge ó
 GMSB, las interacciones ordinarias de gauge son las responsables de la aparición
-del rompimiento de la supersimetría soft en el MSSM.
+del rompimiento soft de la supersimetría en el MSSM.
 
 %% La idea básica es introducir
 %% nuevos supermultipletes quirales, llamados mensajeros, que se acoplen ...
@@ -814,17 +817,16 @@ para transmitir el rompimiento de SUSY al MSSM. A pesar de su simpleza, existe
 un gran número de modelos de GMSB. Para poder hacer un análisis fenomenológico
 dentro del marco de GMSB de una forma no tan dependiente del modelo, pero con un
 correcta base teórica, en \cite{GGM} se propone un marco lo más general posible
-para describir los efectos de un sector oculto arbitrario,
-definiendo al mecanismo de mediación por campos de gauge:
-\emph{en el límite en que las constantes de acoplamiento del MSSM $\alpha_i \to
-  0$, la teoría se desacopla en el MSSM y un sector oculto separado que rompe
-  SUSY.}
+para describir los efectos de un sector oculto arbitrario, definiendo al
+mecanismo de mediación por campos de gauge como: \emph{el límite en que las
+  constantes de acoplamiento del MSSM $\alpha_i \to 0$, la teoría se desacopla
+  en el MSSM y un sector oculto separado que rompe SUSY.}
 
 A este marco general se lo conoce como \emph{General Gauge Mediation} ó GGM. El
 conjunto de parámetros independientes de GGM esta compuesto por las tres masas
 complejas de gauginos $M_1$, $M_2$ y $M_3$, y tres parámetros reales que
 controlan las masas de los 5 sfermiones $m^2_{Q,U,D,L,E}$. Además los términos
-$A$ siempre son pequeños.
+trilineares $A$ siempre son pequeños.
 
 Estos modelos ofrecen una rica variedad de estados finales en colisionadores
 \cite{0911.4130}. La característica mas destacable de estos modelos es el
@@ -835,19 +837,20 @@ mediación por campos de gauge domine por sobre la mediación por gravedad.
 
 Uno de los aspectos teóricos interesantes de SUSY es que si esta simetría es
 realizada como una simetría local, incorpora de forma necesaria y automática la
-gravedad. Esta conexión no tiene ninguna consecuencia en la mayor parte de la
-fenomenología en colisionadores, porque las interacciones gravitatorias no son
-relevantes. Sin embargo, esto no necesariamente cierto si el gravitino es muy
-liviano.
+gravedad.
+%% Esta conexión no tiene ninguna consecuencia en la mayor parte de la
+%% fenomenología en colisionadores, porque las interacciones gravitatorias no son
+%% relevantes. Sin embargo, esto no necesariamente cierto si el gravitino es muy
+%% liviano.
 %% El gravitino obtiene su masa absorbiendo el goldstino de espín 1/2 asociado al
 %% rompimiento espontáneo de la supersimetría. En el límite de altas energías, las
 %% interacciones de las componentes de helicidad $\pm 1/2$ del gravitino son las
 %% mismas que las del goldstino.
-Estas interacciones son proporcionales a $1/m_{\gravino}$ en el límite
-$m_{\gravino} \to 0$ y son potencialmente importantes incluso para procesos a
-energías ordinarias. Sin embargo, la intensidad de las interacciones del
-gravitino no puede ser arbitrariamente grande. La masa del gravitino esta
-relacionada con la escala del rompimiento de SUSY por,
+%% Estas interacciones son proporcionales a $1/m_{\gravino}$ en el límite
+%% $m_{\gravino} \to 0$ y son potencialmente importantes incluso para procesos a
+%% energías ordinarias. Sin embargo, la intensidad de las interacciones del
+%% gravitino no puede ser arbitrariamente grande.
+La masa del gravitino esta relacionada con la escala del rompimiento de SUSY por,
 
 \begin{equation}
   m_{\gravino} = \frac{\Lambda^2_{\text{SUSY}}}{\sqrt{3}M_P}
@@ -856,17 +859,17 @@ relacionada con la escala del rompimiento de SUSY por,
 La escala $\Lambda_{\text{SUSY}}$ tiene que ser al menos la masa de las
 partículas supersimétricas mas pesadas. Si consideramos que
 $\Lambda_{\text{SUSY}} > 1 \tev$ entonces $m_{\gravino} > 10^{-4} \eV$.
-
-Por otro lado, los límites cosmológicos \cite{PhysRevLett.48.223,Moroi:1993mb}
+Y por otro lado, los límites cosmológicos \cite{PhysRevLett.48.223,Moroi:1993mb}
 bajo ciertas condiciones, ponen un límite superior $m_{\gravino} < 10^4 \eV$.%% , al menos en ausencia
 %% de \hl{late inflation}.
 
 El hecho de que la LSP sea siempre el gravitino, determina que la partícula mas
 liviana del MSSM es entonces la NLSP, y siempre decae a un gravitino y su
 compañero del SM. Como este decaimiento esta altamente suprimido por la escala
-de rompimiento de SUSY, el decaimiento de la NLSP puede ser puntual o
-desplazado, aunque en lo que sigue sólo nos concentraremos en decaimiento
-puntuales. Esta supresión de la taza de decaimiento también significa que todas las
+de rompimiento de SUSY, la NLSP puede decaer de forma inmediata (\emph{promtp}) o luego de haber
+atravesado una cierta distancia en el detector. En lo que sigue sólo nos concentraremos
+en decaimientos \emph{prompt}.
+Esta supresión de la taza de decaimiento también significa que todas las
 spartículas pesadas decaen pasando por la NLSP antes de decaer en un gravitino.
 Es por este motivo que la naturaleza de la NLSP es el aspecto mas importante del
 espectro de GMSB para los estados finales en colisionadores.
@@ -883,9 +886,12 @@ colisionador van a estar determinadas por la naturaleza de la NLSP.
 
 \begin{figure}[!htbp]
   \centering
-  \includegraphics[width=0.5\textwidth]{figures/ggm_event}
-  %%   \input{tikz/susy_ggm_event.tex}
-  \caption{}
+  %%\includegraphics[width=0.5\textwidth]{figures/ggm_event}
+  \input{tikz/susy_ggm_event.tex}
+  \caption{Esquema de la topología típica de un evento GGM en un colisionador de hadrones.
+    En la interaccion fuerte se produce un par de gluinos que luego decaen en forma de cascada,
+    hasta llegar a la NLSP, que decae en un gravitino {\gravino} y su companero del SM, $X$. Los
+    gravitinos escapan el detector dejando un gran cantidad de energia faltante.}
   \label{fig:ggm_event}
 \end{figure}
 
@@ -926,11 +932,11 @@ colisionador van a estar determinadas por la naturaleza de la NLSP.
 Como se ha mencionado, la segunda partícula supersimétrica mas liviana (NLSP) juega un rol fundamental
 en la fenomenología de los modelos GGM. Suponiendo que se conserva la paridad-R,
 todas las partículas supersimétricas van a decaer rápidamente en una cascada
-hasta la NLSP, y esta va a decaer en un gravitino. Por este motivo, la
+hasta la NLSP, y esta va a decaer en un gravitino y una partícula del SM. Por este motivo, la
 naturaleza de la NLSP determina los diferentes estados finales en los
-colisionadores asi como tambien algunas propiedades cosmológicas. En principio
+colisionadores así como también algunas propiedades cosmológicas. En principio
 la NLSP puede ser cualquier particula del MSSM dependiendo de la elección de los
-parámetros. Para la mayor parte del espacio de parametros será el neutralino ó
+parámetros del modelo. Para la mayor parte del espacio de parametros será el neutralino ó
 el stau, y para algunas regiones muy restrictivas, el
 sneutrino\cite{arxiv:9801271}.
 Las partículas, que aunque no son NLSP, tienen un decaimiento dominante en su
@@ -1001,13 +1007,13 @@ directamente a $W^{\pm}$ y un gravitino. En otras palabras, el wino neutro y el
 wino cargado se vuelve co-NLSPs, y los estados finales van a contener $W$'s,
 $Z$'s y fotones.
 
-Como en cada evento de SUSY tenemos un par de neutralinos, los estados
+Como en cada evento de SUSY hay un par de neutralinos, los estados
 finales involucrarán una combinación de pares de $\gam + \gravino$, $Z +
 \gravino$ y $h + \gravino$. Adicionalmente, si hay una diferencia chica entre la masa
 del neutralino y del chargino mas liviano, puede haber cadenas de decaimiento
 que terminen en $W^\pm + \gravino$.
 
-El escenario mas estudiado y mas buscado es cuando la NLSP es un neutralino
+El escenario mas estudiado y más buscado es cuando la NLSP es un neutralino
 puramente bino. En este caso el estado final consiste en $\gam\gam + \met$.
 Sin embargo en el caso mas general de neutralino NLSP, aparecen muchas otros
 canales menos explorados que involucran leptones, $Z$, $W$, jets y higgses de
@@ -1017,16 +1023,25 @@ alto {\pt} y energía faltante.
 %% neutros es generalmente mayor, de modo que solo el neutralino mas
 %% livinao decae directamente en gravitino.
 
-\note{Adelantar que en esta tesis...}
+En el caso en el cual el neutralino es una mezcla mayoritaria de bino y higgsino, el
+estado final dependerá del parámetro de masa del higgsino $\mu$. Si
+$\mu <0$, el estado final de la cascada va a tener una gran contribución
+de $\ninoone \to h\gravino$ donde el Higgs decaerá mayormente a $h\to b \bar{b}$,
+dejando un estado final con un fotón, b-jets y {\met}. En el escenario donde
+$\mu>0$ el decaimiento dominante estará compartido entre $\ninoone \to \gam\gravino$
+y $\ninoone\to Z \gravino$, y el decaimiento a Higgs estara suprimido,
+dando como estado final un fotón, múltiples jets (incluyendo
+los dos del decaimiento de $Z$) y {\met}.
 
-%% Para el caso en el cual el neutralino es una mezcla de bino y higgsino, el
-%% estado final dependera del parametro de masa del higgsino $\mu$. Si
-%% $\mu <0$, el estado final de la cascada va a tener una gran contribucion
-%% de $\ninoone \to h\gravino$ donde el Higgs decaera mayormente a $h\to b \bar{b}$,
-%% dejando un estado final con un foton, b-jets y {\met}. En el escenario donde
-%% $\mu>0$ al final de la cascada estara compartida entre $\ninoone \to \gam\gravino$
-%% y $\ninoone\to Z \gravino$ dando como estado final un foton, multiples jets (incluyendo
-%% los dos del decaimiento de $Z$) y {\met}.
+Esta Tesis se centrará en este ultimo caso. En el \cref{cap:simulaciones}
+se describirá en detalle el modelo de se\~nal que motiva el estado final
+de el presente análisis.
+
+
+%% Esta Tesis se centrara en un neutralino NLSP que es una mezcla mayoritaria
+%% de bino y higgsino, donde la probabilidad de decaimiento en fotones y $Z$
+%% es similar y esta suprimido el decaimiento a Higgs, dejando como estado
+%% final un único fotón, jets, y energía faltante.
 
 
 \section{Producción de partículas supersimétricas}
@@ -1035,10 +1050,9 @@ En la \cref{fig:xs_lhc_8tev} se puede ver la sección eficaz para la producción
 de squarks y gluinos en el LHC comparada para los distintos canales de
 producción. La producción por interacción fuerte es mucho mayor a la de
 spartículas que interactúan débilmente, y por esta razón la mayoría de las
-búsquedas se basan en la producción de gluinos y squarks, los que decaen en
-forma de cascada hasta el neutralino NLSP, y éste al gravitino.
+búsquedas se basan en la producción de gluinos y squarks.
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.8\textwidth]{figures/susy_lhc_xs_8tev}
   \caption{Sección eficaz de producción de partículas supersimétricas, como
@@ -1047,16 +1061,17 @@ forma de cascada hasta el neutralino NLSP, y éste al gravitino.
   \label{fig:xs_lhc_8tev}
 \end{figure}
 
-En los colisionadores hadrónicos, las partículas supersimétricas pueden son
-producidas de a pares a partir de colisiones de partones de interacciones
+
+En los colisionadores hadrónicos, las partículas supersimétricas pueden ser
+producidas de a pares a partir de colisiones de interacción
 electrodébil (ver \cref{fig:ewkprod}):
 
 \begin{align}
   &q\bar{q} \quad \to \quad \chinop \chinom, \nino \nino \label{eq:qq_ewk} \\
   &q\bar{q} \quad \to \quad \susy{\ell}^{+}_{i}\susy{\ell}^{-}_{j}, \susy{\nu}_{\ell}\susy{\nu}^{*}_{\ell} \label{eq:qq_ewk2}
 \end{align}
-
-y a partir de interacciones fuertes (ver \cref{fig:strongprod1, fig:strongprod2}):
+%
+y a partir de interacciones fuertes (ver \cref{fig:strongprod1,fig:strongprod2}):
 
 \begin{align}
   gg \quad &\to \quad \gluino\gluino, \susy{q_i}\susy{q_j}^{*}, \label{eq:gg} \\
@@ -1073,21 +1088,21 @@ importantes en la mayoría de los modelos. Los procesos en
 correspondiente squark o gluino en el canal $t$, y \cref{eq:gg} y
 \cref{eq:qqbar} también tienen contribuciones de gluones en el canal $s$.
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
   \centering \includegraphics[width=0.9\textwidth]{figures/figure_101}
   \caption{Diagramas de Feynman para la producción electrodébil de spartículas
     en colisionadores de hadrones vía aniquilación quark-antiquark.}
   \label{fig:ewkprod}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
   \centering \includegraphics[width=0.9\textwidth]{figures/figure_102}
   \caption{Diagramas de Feynman para la producción de gluinos y squarks en
     colisionadores de hadrones vía fusión gluón-gluón y gluón squark.}
   \label{fig:strongprod1}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
   \centering \includegraphics[width=0.9\textwidth]{figures/figure_103}
   \caption{Diagramas de Feynman para la producción de gluinos y squarks en
     colisionadores de hadrones vía aniquilación quark-antiquark y dispersión
