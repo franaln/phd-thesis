@@ -385,9 +385,19 @@ de tal forma que los BR del {\ninoone} sean aproximadamente constantes:
 
 Estos números varían en no más del 1\% en la grid, salvo para neutralinos livianos
 ($<200\gev$) donde la producción de Higgs es altamente suprimida y
-$\mathrm{BR}(\ninoone \to \gam \gravino)$ empieza a caer llegando al 40\%.
+$\mathrm{BR}(\ninoone \to \gam \gravino)$ empieza a caer llegando al 40\% (ver figura \cref{fig:n1_brs}).
 Además, el valor de $\mu$ debe ser positivo en orden de desfavorecer el BR a higgs,
 que llevara a un estado final ya cubierto por otro análisis de ATLAS.
+
+\begin{figure}[!ht]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/br_n1_X}
+  %%\includegraphics[width=0.3\textwidth]{figures/br_n2_X}
+  %%\includegraphics[width=0.3\textwidth]{figures/br_n3_X}
+  \label{fig:n1_brs}
+\end{figure}
+
+
 
 Los demás parámetros del modelo se dejan en $M_2=2.5\tev$,
 $\tan\beta=1.5$ y $c\tau_{\mathrm{NLSP}} < 0.1$ mm. El ultimo asegura
@@ -413,7 +423,7 @@ m_{\gluino}$. La granularidad de la simulación se puede ver en la \cref{fig:gri
 \begin{figure}[!ht]
   \centering
   \includegraphics[width=0.5\textwidth]{figures/run1_grid}
-  \caption{Update}
+  \caption{Update plot!}
   \label{fig:gridpoints}
 \end{figure}
 
@@ -431,10 +441,7 @@ El espectro completo de masas y los correspondientes decaimientos fueron
 calculados a partir de estos parámetros utilizando {\suspect}
 (v2.41)\cite{Djouadi2007426}, {\sdecay} (v1.3b)\cite{Muhlleitner:2004mka} y
 {\hdecay} (v3.4)\cite{Djouadi:1997yw}, que forman parte del paquete {\susyhit}
-(v1.3)\cite{Djouadi:2006bz}.
-
-
-Algunos ejemplos del espectro de masas puede verse en la
+(v1.3)\cite{Djouadi:2006bz}. Algunos ejemplos del espectro de masas puede verse en la
 \cref{fig:mass_spectra}, para algunos puntos de la grid.
 
 \begin{figure}[ht!]
@@ -455,24 +462,6 @@ Algunos ejemplos del espectro de masas puede verse en la
 %% shown in {\fig} \ref{fig:br_gl_n1}, for 2-body\footnote{only effectively, the gluino decays through a virtual
 %% quark-squark loop in this case.} and 3-body gluino decays.
 
-Las BR de los neutralinos puede verse en las
-
-\begin{figure}[!ht]
-  \centering
-  \includegraphics[width=0.3\textwidth]{figures/br_n1_X}
-  \includegraphics[width=0.3\textwidth]{figures/br_n2_X}
-  \includegraphics[width=0.3\textwidth]{figures/br_n3_X}
-\end{figure}
-
-
-%% -rw-rw-r-- 1 fran fran  17K ago 31 20:38 br_c1_X.pdf
-%% -rw-rw-r-- 1 fran fran  21K ago 31 20:38 br_gl_2b_vs_3b.pdf
-%% -rw-rw-r-- 1 fran fran  21K ago 31 20:38 br_gl_X_2body.pdf
-%% -rw-rw-r-- 1 fran fran  20K ago 31 20:38 br_gl_X_3body.pdf
-%% -rw-rw-r-- 1 fran fran  22K ago 31 20:38 br_gl_X.pdf
-%% -rw-rw-r-- 1 fran fran  18K ago 31 20:38 br_n1_X.pdf
-%% -rw-rw-r-- 1 fran fran  18K ago 31 20:38 br_n2_X.pdf
-%% -rw-rw-r-- 1 fran fran  19K ago 31 20:38 br_n3_X.pdf
 
 
 
@@ -541,7 +530,7 @@ Los correspondientes extremos por arriba y abajo de la envolvente pueden calcula
   L &= \min(\Delta\mathrm{CTEQ}^\mathrm{nom} - \Delta\mathrm{CTEQ}^{-},\quad \Delta\mathrm{MSTW}^\mathrm{nom} - \Delta\mathrm{MSTW}^{-})
 \end{align}
 %
-y la seccion eficaz final ($\sigma$) y su incerteza simétrica ($\delta\sigma$) se obtiene como:
+y la sección eficaz final ($\sigma$) y su incerteza simétrica ($\Delta\sigma$) se obtiene como:
 
 \begin{equation}
   \sigma = (U+L)/2,\quad \Delta\sigma = (U-L)/2
@@ -559,41 +548,39 @@ y la seccion eficaz final ($\sigma$) y su incerteza simétrica ($\delta\sigma$) 
 %%    \label{fig:br_n1_x_grav}
 %% \end{figure}
 
-%% \begin{table}[ht!]
-%%   \centering
-%%   \caption{ Model parameters of the GGM signal grid. $M_3$ and $\mu$ are regarded as the free parameters of the model. }
-%%   \begin{tabular}{ccc || cccc}
-%%     \hline
-%%     \hline
-%%     $M_3$ [\gev]& $m_{\gluino}$ [\gev]& &  & $\mu$ [\gev]& $M_1$ [\gev]& $m_{\ninoone}$ [\gev] \\
-%%     \hline
-%%     800  & 885.5   & & & 150  &  300  & 147.0  \tabularnewline
-%%     850  & 931.7   & & & 175  &  270  & 168.3  \tabularnewline
-%%     900  & 977.6   & & & 200  &  267  & 190.3  \tabularnewline
-%%     950  & 1023.1  & & & 250  &  288  & 235.8  \tabularnewline
-%%     1000 & 1068.3 & & & 350  &  365  & 332.4  \tabularnewline
-%%     1050 & 1113.3 & & & 450  &  456  & 433.2  \tabularnewline
-%%     1100 & 1157.9 & & & 550  &  551  & 535.6  \tabularnewline
-%%     1150 & 1202.3 & & & 650  &  647  & 638.3  \tabularnewline
-%%     1200 & 1246.4 & & & 750  &  745  & 742.0  \tabularnewline
-%%     1250 & 1290.3 & & & 838  &  837  & 836.4  \tabularnewline
-%%     1300 & 1333.9 & & & 850  &  845  & 846.7  \tabularnewline
-%%     1350 & 1377.3 & & & 883  &  882  & 883.7  \tabularnewline
-%%     1400 & 1420.5 & & & 928  &  926  & 930.2  \tabularnewline
-%%     1450 & 1463.4 & & & 950  &  942  & 949.6  \tabularnewline
-%%              &        & & & 973  &  970  & 976.6  \tabularnewline
-%%              &        & & & 1017 &  1015 & 1023.4 \tabularnewline
-%%              &        & & & 1050 &  1040 & 1053.0 \tabularnewline
-%%              &        & & & 1062 &  1058 & 1068.9 \tabularnewline
-%%              &        & & & 1106 &  1102 & 1114.8 \tabularnewline
-%%              &        & & & 1149 &  1145 & 1160.0 \tabularnewline
-%%              &        & & & 1150 &  1140 & 1157.5 \tabularnewline
-%%              &        & & & 1250 &  1238 & 1260.6 \tabularnewline
-%%     \hline
-%%     \hline
-%%   \end{tabular}
-%%   \label{tab:signal_pars}
-%% \end{table}
+\begin{table}[ht!]
+  \centering
+  \caption{Relacion entre los parametros libres del modelo $M_3$ y $\mu$ con las masas $m_{\gluino}$ y $m_{\ninoone}$.}
+  \begin{tabular}{ccc || cccc}
+    \hline
+    $M_3$ [\gev]& $m_{\gluino}$ [\gev]& &  & $\mu$ [\gev]& $M_1$ [\gev]& $m_{\ninoone}$ [\gev] \\
+    \hline
+    800  & 885.5   & & & 150  &  300  & 147.0  \\
+    850  & 931.7   & & & 175  &  270  & 168.3  \\
+    900  & 977.6   & & & 200  &  267  & 190.3  \\
+    950  & 1023.1  & & & 250  &  288  & 235.8  \\
+    1000 & 1068.3 & & & 350  &  365  & 332.4  \\
+    1050 & 1113.3 & & & 450  &  456  & 433.2  \\
+    1100 & 1157.9 & & & 550  &  551  & 535.6  \\
+    1150 & 1202.3 & & & 650  &  647  & 638.3  \\
+    1200 & 1246.4 & & & 750  &  745  & 742.0  \\
+    1250 & 1290.3 & & & 838  &  837  & 836.4  \\
+    1300 & 1333.9 & & & 850  &  845  & 846.7  \\
+    1350 & 1377.3 & & & 883  &  882  & 883.7  \\
+    1400 & 1420.5 & & & 928  &  926  & 930.2  \\
+    1450 & 1463.4 & & & 950  &  942  & 949.6  \\
+    &        & & & 973  &  970  & 976.6  \\
+    &        & & & 1017 &  1015 & 1023.4 \\
+    &        & & & 1050 &  1040 & 1053.0 \\
+    &        & & & 1062 &  1058 & 1068.9 \\
+    &        & & & 1106 &  1102 & 1114.8 \\
+    &        & & & 1149 &  1145 & 1160.0 \\
+    &        & & & 1150 &  1140 & 1157.5 \\
+    &        & & & 1250 &  1238 & 1260.6 \\
+    \hline
+  \end{tabular}
+  \label{tab:signal_pars}
+\end{table}
 
 \begin{table}[ht]
   \centering
@@ -1018,43 +1005,43 @@ de las muestras.
     \hline
     Proceso & Generador & $\sigma [pb]$ & factor-$k$ & Eficiencia & $L [fb^{-1}]$ \\
     \hline
-    \zeenj{0} &  \alpgen+\jimmy  & 711.77 & 1.23 & 1 & 7.548 \\
-    \zeenj{1} &  \alpgen+\jimmy  & 155.17 & 1.23 & 1 & 6.994 \\
-    \zeenj{2} &  \alpgen+\jimmy  & 48.745 & 1.23 & 1 & 6.746 \\
-    \zeenj{3} &  \alpgen+\jimmy  & 14.225 & 1.23 & 1 & 6.286 \\
-    \zeenj{4} &  \alpgen+\jimmy  & 3.7595 & 1.23 & 1 & 6.487 \\
-    \zeenj{5} &  \alpgen+\jimmy  & 1.0945 & 1.23 & 1 & 7.428 \\
-    \zmmnj{0} &  \alpgen+\jimmy  & 712.11 & 1.23 & 1 & 7.557 \\
-    \zmmnj{1} &  \alpgen+\jimmy  & 154.77 & 1.23 & 1 & 7.011 \\
-    \zmmnj{2} &  \alpgen+\jimmy  & 48.912 & 1.23 & 1 & 6.731 \\
-    \zmmnj{3} &  \alpgen+\jimmy  & 14.226 & 1.23 & 1 & 6.286 \\
-    \zmmnj{4} &  \alpgen+\jimmy  & 3.7838 & 1.23 & 1 & 6.445 \\
-    \zmmnj{5} &  \alpgen+\jimmy  & 1.1148 & 1.23 & 1 & 7.292 \\
-    \zttnj{0} & \alpgen+\jimmy  & 711.81 & 1.23 & 1 &  7.560 \\
-    \zttnj{1} & \alpgen+\jimmy  & 155.13 & 1.23 & 1 &  6.996 \\
-    \zttnj{2} & \alpgen+\jimmy  & 48.804 & 1.23 & 1 &  6.746 \\
-    \zttnj{3} & \alpgen+\jimmy  & 14.160 & 1.23 & 1 &  6.315 \\
-    \zttnj{4} & \alpgen+\jimmy  & 3.7744 & 1.23 & 1 &  6.462 \\
-    \zttnj{5} & \alpgen+\jimmy  & 1.1163 & 1.23 & 1 &  7.283 \\
+    \zeenj{0} &  \alpgen+\jimmy  & 711.77 & 1.23 & 1.00 & 7.548 \\
+    \zeenj{1} &  \alpgen+\jimmy  & 155.17 & 1.23 & 1.00 & 6.994 \\
+    \zeenj{2} &  \alpgen+\jimmy  & 48.745 & 1.23 & 1.00 & 6.746 \\
+    \zeenj{3} &  \alpgen+\jimmy  & 14.225 & 1.23 & 1.00 & 6.286 \\
+    \zeenj{4} &  \alpgen+\jimmy  & 3.7595 & 1.23 & 1.00 & 6.487 \\
+    \zeenj{5} &  \alpgen+\jimmy  & 1.0945 & 1.23 & 1.00 & 7.428 \\
+    \zmmnj{0} &  \alpgen+\jimmy  & 712.11 & 1.23 & 1.00 & 7.557 \\
+    \zmmnj{1} &  \alpgen+\jimmy  & 154.77 & 1.23 & 1.00 & 7.011 \\
+    \zmmnj{2} &  \alpgen+\jimmy  & 48.912 & 1.23 & 1.00 & 6.731 \\
+    \zmmnj{3} &  \alpgen+\jimmy  & 14.226 & 1.23 & 1.00 & 6.286 \\
+    \zmmnj{4} &  \alpgen+\jimmy  & 3.7838 & 1.23 & 1.00 & 6.445 \\
+    \zmmnj{5} &  \alpgen+\jimmy  & 1.1148 & 1.23 & 1.00 & 7.292 \\
+    \zttnj{0} & \alpgen+\jimmy  & 711.81 & 1.23 & 1.00 &  7.560 \\
+    \zttnj{1} & \alpgen+\jimmy  & 155.13 & 1.23 & 1.00 &  6.996 \\
+    \zttnj{2} & \alpgen+\jimmy  & 48.804 & 1.23 & 1.00 &  6.746 \\
+    \zttnj{3} & \alpgen+\jimmy  & 14.160 & 1.23 & 1.00 &  6.315 \\
+    \zttnj{4} & \alpgen+\jimmy  & 3.7744 & 1.23 & 1.00 &  6.462 \\
+    \zttnj{5} & \alpgen+\jimmy  & 1.1163 & 1.23 & 1.00 &  7.283 \\
     \hline
-    \wenunj{0} & \alpgen+\jimmy  & 8037.10  & 1.186 & 1 & 0.362 \\
-    \wenunj{1} & \alpgen+\jimmy  & 1579.20  & 1.186 & 1 & 1.334 \\
-    \wenunj{2} & \alpgen+\jimmy  & 477.20   & 1.186 & 1 & 6.661 \\
-    \wenunj{3} & \alpgen+\jimmy  & 133.93   & 1.186 & 1 & 6.358 \\
-    \wenunj{4} & \alpgen+\jimmy  & 35.62    & 1.186 & 1 & 5.917 \\
-    \wenunj{5} & \alpgen+\jimmy  & 10.55    & 1.186 & 1 & 5.592 \\
-    \wmnunj{0} & \alpgen+\jimmy  & 8040.00  & 1.186 & 1 & 0.363 \\
-    \wmnunj{1} & \alpgen+\jimmy  & 1580.30  & 1.186 & 1 & 1.333 \\
-    \wmnunj{2} & \alpgen+\jimmy  & 477.50   & 1.186 & 1 & 6.656 \\
-    \wmnunj{3} & \alpgen+\jimmy  & 133.94   & 1.186 & 1 & 6.357 \\
-    \wmnunj{4} & \alpgen+\jimmy  & 35.64    & 1.186 & 1 & 6.033 \\
-    \wmnunj{5} & \alpgen+\jimmy  & 10.57    & 1.186 & 1 & 1.595 \\
-    \wtnunj{0} & \alpgen+\jimmy  & 8035.80  & 1.186 & 1 & 0.353 \\
-    \wtnunj{1} & \alpgen+\jimmy  & 1579.80  & 1.186 & 1 & 1.307 \\
-    \wtnunj{2} & \alpgen+\jimmy  & 477.55   & 1.186 & 1 & 6.567 \\
-    \wtnunj{3} & \alpgen+\jimmy  & 133.79   & 1.186 & 1 & 6.365 \\
-    \wtnunj{4} & \alpgen+\jimmy  & 35.58    & 1.186 & 1 & 5.921 \\
-    \wtnunj{5} & \alpgen+\jimmy  & 10.54    & 1.186 & 1 & 5.199 \\
+    \wenunj{0} & \alpgen+\jimmy  & 8037.10  & 1.186 & 1.00 & 0.362 \\
+    \wenunj{1} & \alpgen+\jimmy  & 1579.20  & 1.186 & 1.00 & 1.334 \\
+    \wenunj{2} & \alpgen+\jimmy  & 477.20   & 1.186 & 1.00 & 6.661 \\
+    \wenunj{3} & \alpgen+\jimmy  & 133.93   & 1.186 & 1.00 & 6.358 \\
+    \wenunj{4} & \alpgen+\jimmy  & 35.62    & 1.186 & 1.00 & 5.917 \\
+    \wenunj{5} & \alpgen+\jimmy  & 10.55    & 1.186 & 1.00 & 5.592 \\
+    \wmnunj{0} & \alpgen+\jimmy  & 8040.00  & 1.186 & 1.00 & 0.363 \\
+    \wmnunj{1} & \alpgen+\jimmy  & 1580.30  & 1.186 & 1.00 & 1.333 \\
+    \wmnunj{2} & \alpgen+\jimmy  & 477.50   & 1.186 & 1.00 & 6.656 \\
+    \wmnunj{3} & \alpgen+\jimmy  & 133.94   & 1.186 & 1.00 & 6.357 \\
+    \wmnunj{4} & \alpgen+\jimmy  & 35.64    & 1.186 & 1.00 & 6.033 \\
+    \wmnunj{5} & \alpgen+\jimmy  & 10.57    & 1.186 & 1.00 & 1.595 \\
+    \wtnunj{0} & \alpgen+\jimmy  & 8035.80  & 1.186 & 1.00 & 0.353 \\
+    \wtnunj{1} & \alpgen+\jimmy  & 1579.80  & 1.186 & 1.00 & 1.307 \\
+    \wtnunj{2} & \alpgen+\jimmy  & 477.55   & 1.186 & 1.00 & 6.567 \\
+    \wtnunj{3} & \alpgen+\jimmy  & 133.79   & 1.186 & 1.00 & 6.365 \\
+    \wtnunj{4} & \alpgen+\jimmy  & 35.58    & 1.186 & 1.00 & 5.921 \\
+    \wtnunj{5} & \alpgen+\jimmy  & 10.54    & 1.186 & 1.00 & 5.199 \\
     \hline
   \end{tabular}
   \label{tab:bkg_wzjets_samples}
@@ -1099,11 +1086,11 @@ photons with $\pt > 95 \gev$ and $\Delta{\rm R}(e/\mu/\tau/g/$light-quarks$,
     \hline
     Proceso & Generador & $\sigma [pb]$ & factor-$k$ & Eficiencia & $L [fb^{-1}]$ \\
     \hline
-    {\ttbar} & \powheg+\pythia & 253.00 & 1 & 0.543 & 580 \\
+    {\ttbar} & \powheg+\pythia & 253.00 & 1.00 & 0.543 & 580 \\
     \hline
     %    \ttbargam noAllHad \madgraph (164439) & 0.092363 & 1.9 & 1 & 1139.7 \\
-    {\ttgam} noAllHad & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
-    {\ttgam} AllHad & \madgraph  & 0.068599 & 1.9 & 1 & 1534.5 \\
+    {\ttgam} noAllHad & \madgraph & 0.09873 & 1.90 & 1.00 & 1066.2 \\
+    {\ttgam} AllHad & \madgraph  & 0.068599 & 1.90 & 1.00 & 1534.5 \\
     \hline
     %% \multicolumn{5}{l}{Variaciones sistematicas} \\
     %% \hline
@@ -1156,22 +1143,22 @@ la sección eficaz calculada en \cite{Kidonakis:2010ux}.
     \hline
     Proceso & Generador & $\sigma [pb]$ & Eficiencia & $L [fb^{-1}]$ \\
     \hline
-    t-channel & \acermc   & 28.4 & 1 & 271 \\
-    Wt        & \powheg   & 22.4 & 1 & 892 \\
-    s-channel & \powheg   & 1.82 & 1 & 3299 \\
+    t-channel & \acermc   & 28.4 & 1.00 & 271 \\
+    Wt        & \powheg   & 22.4 & 1.00 & 892 \\
+    s-channel & \powheg   & 1.82 & 1.00 & 3299 \\
     \hline
-    \tgam (t-channel) & \wizhard+\pythia   & 0.187298 & 0.121980 & 4810 \\
-    \tgam (t-channel) & \wizhard+\pythia   & 0.313866 & 0.012927 & 4930 \\
+    {\tgam} (t-channel) & \wizhard+\pythia   & 0.187298 & 0.121980 & 4810 \\
+    {\tgam} (t-channel) & \wizhard+\pythia   & 0.313866 & 0.012927 & 4930 \\
     \hline
-    \twgam (dilep.) & \wizhard+\pythia          & 0.01292  & 0.16437 & 4710 \\
-    \twgam (dilep. tDec) & \wizhard+\pythia     & 0.01454  & 0.02875 & 12000 \\
-    \twgam (dilep. WDec) & \wizhard+\pythia     & 0.01041  & 0.07549 & 6370 \\
-    \twgam (tlepWhad) & \wizhard+\pythia        & 0.02583  & 0.16244 & 4770 \\
-    \twgam (tlepWhad tDec) & \wizhard+\pythia   & 0.02908  & 0.02761 & 6230 \\
-    \twgam (tlepWhad WDec) & \wizhard+\pythia   & 0.01159  & 0.06471 & 6660 \\
-    \twgam (thadWlep) & \wizhard+\pythia      & 0.02582  & 0.16178 & 4790 \\
-    \twgam (thadWlep tDec) & \wizhard+\pythia   & 0.02013  & 0.04198 & 5920 \\
-    \twgam (thadWlep WDec) & \wizhard+\pythia   & 0.02079  & 0.07574 & 3180 \\
+    {\twgam} (dilep.) & \wizhard+\pythia          & 0.01292  & 0.16437 & 4710 \\
+    {\twgam} (dilep. tDec) & \wizhard+\pythia     & 0.01454  & 0.02875 & 12000 \\
+    {\twgam} (dilep. WDec) & \wizhard+\pythia     & 0.01041  & 0.07549 & 6370 \\
+    {\twgam} (tlepWhad) & \wizhard+\pythia        & 0.02583  & 0.16244 & 4770 \\
+    {\twgam} (tlepWhad tDec) & \wizhard+\pythia   & 0.02908  & 0.02761 & 6230 \\
+    {\twgam} (tlepWhad WDec) & \wizhard+\pythia   & 0.01159  & 0.06471 & 6660 \\
+    {\twgam} (thadWlep) & \wizhard+\pythia      & 0.02582  & 0.16178 & 4790 \\
+    {\twgam} (thadWlep tDec) & \wizhard+\pythia   & 0.02013  & 0.04198 & 5920 \\
+    {\twgam} (thadWlep WDec) & \wizhard+\pythia   & 0.02079  & 0.07574 & 3180 \\
     \hline
   \end{tabular}
   \label{tab:bkg_st_samples}
@@ -1289,24 +1276,24 @@ ambos bosones fueron considerados.
     %% $WZ(3l)$ \sherpa (126893) & 9.75 & 1.06 & 1 & 261.1 \\
     %% $ZZ(4\ell)$ \sherpa (126894)  & 8.74 & 1.11 & 1  &  185.6 \\
     %% $ZZ(2\ell2\nu)$ \sherpa (126895)  & 0.50 & 1.14 & 1 &  1590.8 \\
-    $WW (\ell\ell\nu\nu)$     & {\sherpa}  & 5.296  & 1.06 & 1 & 1400 \\
-    $ZZ (\ell\ell\nu\nu)$     & {\sherpa}  & 0.494  & 1.05 & 1 & 1700 \\
-    $WZ (\ell\ell\ell\nu)$    & {\sherpa}  & 9.745  & 1.05 & 1 & 260 \\
-    $WZ (\ell\nu\nu\nu)$      & {\sherpa}  & 1.406  & 1.05 & 1 & 270 \\
-    $ZW (eeqq)$               & {\sherpa}  & 1.465  & 1.05 & 1 & 110 \\
-    $ZZ (eeqq)$               & {\sherpa}  & 0.247  & 1    & 1 & 120 \\
-    $ZW (\mu\mu qq)$          & {\sherpa}  & 1.463  & 1.05 & 1 & 110 \\
-    $ZZ (\mu\mu qq)$          & {\sherpa}  & 0.248  & 1    & 1 & 120 \\
-    $ZW (\tau\tau qq)$        & {\sherpa}  & 1.452  & 1.05 & 1 & 120 \\
-    $ZZ (\tau\tau qq)$        & {\sherpa}  & 0.242  & 1    & 1 & 120 \\
-    $ZW (\nu\nu qq)$          & {\sherpa}  & 2.697  & 1.05 & 1 & 64 \\
-    $ZZ (\nu\nu qq)$          & {\sherpa}  & 1.744  & 1    & 1 & 69 \\
-    $WW (e\nu qq)$            & {\sherpa}  & 7.285  & 1.06 & 1 & 100 \\
-    $WZ (e\nu qq)$            & {\sherpa}  & 1.904  & 1.05 & 1 & 110 \\
-    $WW (\mu\nu qq)$          & {\sherpa}  & 7.297  & 1.06 & 1 & 100 \\
-    $WZ (\mu\nu qq)$          & {\sherpa}  & 1.906  & 1.05 & 1 & 100 \\
-    $WW (\tau\nu qq)$         & {\sherpa}  & 7.274  & 1.06 & 1 & 100 \\
-    $WZ (\tau\nu qq)$         & {\sherpa}  & 1.915  & 1.05 & 1 & 100 \\
+    $WW (\to \ell\ell\nu\nu)$     & {\sherpa}  & 5.296  & 1.06 & 1.00 & 1400 \\
+    $ZZ (\to \ell\ell\nu\nu)$     & {\sherpa}  & 0.494  & 1.05 & 1.00 & 1700 \\
+    $WZ (\to \ell\ell\ell\nu)$    & {\sherpa}  & 9.745  & 1.05 & 1.00 & 260 \\
+    $WZ (\to \ell\nu\nu\nu)$      & {\sherpa}  & 1.406  & 1.05 & 1.00 & 270 \\
+    $ZW (\to eeqq)$               & {\sherpa}  & 1.465  & 1.05 & 1.00 & 110 \\
+    $ZZ (\to eeqq)$               & {\sherpa}  & 0.247  & 1.00 & 1.00 & 120 \\
+    $ZW (\to \mu\mu qq)$          & {\sherpa}  & 1.463  & 1.05 & 1.00 & 110 \\
+    $ZZ (\to \mu\mu qq)$          & {\sherpa}  & 0.248  & 1.00 & 1.00 & 120 \\
+    $ZW (\to \tau\tau qq)$        & {\sherpa}  & 1.452  & 1.05 & 1.00 & 120 \\
+    $ZZ (\to \tau\tau qq)$        & {\sherpa}  & 0.242  & 1.00 & 1.00 & 120 \\
+    $ZW (\to \nu\nu qq)$          & {\sherpa}  & 2.697  & 1.05 & 1.00 & 64 \\
+    $ZZ (\to \nu\nu qq)$          & {\sherpa}  & 1.744  & 1.00 & 1.00 & 69 \\
+    $WW (\to e\nu qq)$            & {\sherpa}  & 7.285  & 1.06 & 1.00 & 100 \\
+    $WZ (\to e\nu qq)$            & {\sherpa}  & 1.904  & 1.05 & 1.00 & 110 \\
+    $WW (\to \mu\nu qq)$          & {\sherpa}  & 7.297  & 1.06 & 1.00 & 100 \\
+    $WZ (\to \mu\nu qq)$          & {\sherpa}  & 1.906  & 1.05 & 1.00 & 100 \\
+    $WW (\to \tau\nu qq)$         & {\sherpa}  & 7.274  & 1.06 & 1.00 & 100 \\
+    $WZ (\to \tau\nu qq)$         & {\sherpa}  & 1.915  & 1.05 & 1.00 & 100 \\
     \hline
   \end{tabular}
   \label{tab:bkg_diboson_samples}

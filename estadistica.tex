@@ -6,15 +6,16 @@ física en altas energías, su descubrimiento y/o el establecimiento de límites
 exclusión.
 
 Dada la naturaleza probabilística de las colisiones en el LHC y el bajo número
-de eventos esperados en las búsquedas de nueva física, es necesario contar con
-un poderoso marco estadístico para interpretar los resultados, especialmente
+de eventos esperado en las búsquedas de nueva física, es necesario contar con
+una poderosa estructura estadística para interpretar los resultados, especialmente
 para identificar una nueva señal sobre las posibles fluctuaciones de los fondos
 del SM.
 
-Este Capítulo utiliza como referencia los libros \cite{Cowan,James}. Muchos
-de los métodos estadísticos mas avanzados fueron desarrollados especialemente para el LHC,
-y se encuentran descriptos en los artículos \cite{AsymAprox,ReadCLs,medsigNote,Cranmer:2015nia}.
-Ademas se utilizaron los manuales y artículos que describen las herramientas estadísticas utilizadas
+Este Capítulo utiliza como referencia los libros \cite{Cowan,James}. Muchos de
+los métodos estadísticos mas avanzados fueron desarrollados especialmente para
+el LHC, y se encuentran descriptos en los artículos
+\cite{AsymAprox,ReadCLs,medsigNote,Cranmer:2015nia}. Ademas se utilizaron los
+manuales y artículos que describen las herramientas estadísticas utilizadas
 \cite{Cranmer:1456844,HistFitter}.
 
 
@@ -22,7 +23,7 @@ Ademas se utilizaron los manuales y artículos que describen las herramientas es
 
 Un observable $x$ es por naturaleza \emph{frecuentista}, es decir, si realizamos
 el experimento muchas veces, vamos a obtener distintos valores para $x$ y este
-conjunto de valores va a dar lugar a una función densidad de probabilidad (pdf)
+conjunto de valores dará lugar a una función densidad de probabilidad (pdf)
 de $x$, que llamamos $f(x)$. En el caso más general, se cuenta con una familia
 de pdfs $f(x;\btheta)$ a la cual se denomina \emph{modelo}. Los parámetros del
 modelo representan, por ejemplo, parámetros de la teoría física, alguna
@@ -41,14 +42,16 @@ se define como:
   f(x;\mu,\sigma) = \frac{1}{\sqrt{2\pi \sigma^2}} \exp \left( \frac{-(x-\mu)^2}{2\sigma^2} \right)
 \end{equation}
 
-Los nombres de los parámetros están claramente motivados por los valores del valor
-esperado y la varianza de $x$, ya que $E[x] = \mu$ y $V[x] = \sigma^2$. Un caso especial
-es cuando $\mu=0$ y $\sigma=1$, la cual se denomina Gaussiana Estándar.
+Los nombres de los parámetros están claramente motivados por los valores del
+valor esperado y la varianza de $x$, ya que $E[x] = \mu$ y $V[x] = \sigma^2$. Un
+caso especial es cuando $\mu=0$ y $\sigma=1$, la cual se denomina Gaussiana
+Estándar.
 %% $\phi(x) = \frac{1}{\sqrt{2\pi}} \exp(-x^2/2)$.
-La importancia de la distribución normal proviene del Teorema Central del Limite.
-El teorema dice que la suma de $n$ variables continuas independientes $x_i$ con media $\mu_i$
-y varianza $\sigma_i^2$ esta distribuida de acuerdo a una Gaussiana con media $\mu = \sum_{i=1}^n \mu_i$
-y varianza $\sigma^2 = \sum_{i=1}^n \sigma_i^2$ en el limite de $n\to\infty$. Esto es así (bajo
+La importancia de la distribución normal proviene del Teorema Central del
+Limite. El teorema dice que la suma de $n$ variables continuas independientes
+$x_i$ con media $\mu_i$ y varianza $\sigma_i^2$ esta distribuida de acuerdo a
+una Gaussiana con media $\mu = \sum_{i=1}^n \mu_i$ y varianza $\sigma^2 =
+\sum_{i=1}^n \sigma_i^2$ en el limite de $n\to\infty$. Esto se satisface (bajo
 ciertas condiciones generales) sin importar las pdfs individuales de $x_i$.
 
 
@@ -94,14 +97,14 @@ La estimación de parámetros de las distribuciones observadas es una de las
 tareas fundamentales del análisis de datos, y puede considerarse como la
 medición de un parámetro (que tiene un valor fijo pero desconocido) basado en un
 número limitado de observaciones experimentales. Dado el experimento, la
-estimación puntual consiste en determinar un valor único lo mas cerca posible al
+estimación puntual consiste en determinar un valor único lo mas próximo posible al
 valor verdadero.
 
 Supongamos un conjunto de $N$ observaciones $\bm{x} = (x_1, x_2, \ldots, x_N)$,
 donde las medidas $x_i$ son estadísticamente independientes y cada una está
 descripta por una función de densidad de probabilidad $f(x;\btheta)$ que no
 conocemos, donde $\btheta$ es un conjunto de parámetros con valores
-desconocidos, que tienen un valor verdadero $\btheta_0$.
+desconocidos, que tienen valor verdadero $\btheta_0$.
 
 Un \emph{estimador} es una función de los datos observados $\bm{x}$ que provee
 valores numéricos, los valores estimados $\hat{\btheta}$, para el vector de
@@ -119,11 +122,11 @@ Algunas propiedades que es importante que cumplan los estimadores son:
   un estimador es no sesgado cuando el sesgo es cero.
 
 \item {\bf Eficiencia:} Un estimador es eficiente si su varianza
-  $V[\hat{\btheta}]$ es chica.
+  $V[\hat{\btheta}]$ es lo mas pequena posible.
 \end{itemize}
 
 Los dos métodos mas utilizados para la estimación de parámetros son el de
-\emph{likelihood máximo} y el de \emph{mínimos cuadrados}.
+\emph{likelihood máximo} y el de \emph{cuadrados mínimos}.
 
 
 \section{Método del likelihood máximo}\label{sec:MLE}
@@ -137,18 +140,6 @@ se define como la pdf conjunta evaluada en los datos observados,
   L(\btheta) = f((x_1, x_2, \ldots, x_n); \btheta) = \prod_{i=1}^{N} f(x_i;
   \btheta)
 \end{equation}
-
-Cuando se repite un experimento con las mismas condiciones muchas veces, el
-número de eventos $n$ de un proceso fluctúa de acuerdo a una distribución
-de Poisson alrededor del valor esperado $\nu$. Este término de Poisson puede
-incorporarse entonces a la función likelihood, obteniendo lo que se llama
-\emph{likelihood extendido}:
-
-\begin{equation}
-  L(\nu,\btheta) = \Pois(n;\nu) \prod_{i=1}^{N} f(x_i; \btheta)
-  \label{eq:likelihood_ext}
-\end{equation}
-
 
 El estimador de máximo likelihood (MLE) de los parámetros {\btheta} son los
 valores $\hat{\btheta}$ para los cuales la función likelihood $L(\btheta)$ tiene
@@ -172,29 +163,42 @@ estimador puede ser más eficiente. Para un número finito de eventos $N$, sin
 embargo, el MLE tiene un sesgo proporcional a $1/N$.
 
 
+Cuando se repite un experimento con las mismas condiciones muchas veces, el
+número de eventos $n$ de un proceso fluctúa de acuerdo a una distribución
+de Poisson alrededor del valor esperado $\nu$. Este término de Poisson puede
+incorporarse entonces a la función likelihood, obteniendo lo que se llama
+\emph{likelihood extendido}:
+
+\begin{equation}
+  L(\nu,\btheta) = \Pois(n;\nu) \prod_{i=1}^{N} f(x_i; \btheta)
+  \label{eq:likelihood_ext}
+\end{equation}
+
+
 \section{Contrastación de hipótesis}
 \label{sec:testhypo}
 
-En las secciones anteriores se describió cómo pueden utilizarse los datos observados
-para estimar parámetros. En esta sección se describirá cómo estos datos
-experimentales también pueden ser usados para contrastar hipótesis, es decir,
-para verificar o rechazar una teoría o hipótesis, o también para elegir entre
-hipótesis alternativas. Cuando la hipótesis a contrastar involucra el valor de
-un parámetro, estos dos temas están relacionados.
+En las secciones anteriores se describió cómo pueden utilizarse los datos
+observados para estimar parámetros. En esta sección se describirá cómo estos
+datos experimentales también pueden ser usados para contrastar hipótesis, es
+decir, para rechazar una teoría o hipótesis, o también para elegir
+entre hipótesis alternativas. %% Cuando la hipótesis a contrastar involucra el
+valor de
+%% un parámetro, estos dos temas están relacionados.
 
-En general, se llama hipótesis nula ($H_0$) a la hipótesis sujeta a la prueba y
+En general, se llama hipótesis nula ($H_0$) a la hipótesis sujeta a prueba y
 usualmente corresponde a la hipótesis que consideramos verdadera. Esta hipótesis
 es comparada contra una hipótesis alternativa $H_1$, o varias, distintas a $H_0$.
 
 En el caso de búsqueda de nueva física, la hipótesis que juega el rol de
 hipótesis nula es la hipótesis de que solo los procesos del SM contribuyen a los
 datos observados. Esta hipótesis también suele llamarse hipótesis de
-\emph{solo-fondo}. Y la hipótesis alternativa es la hipótesis en la cual, además
+\emph{solo-fondo}. La hipótesis alternativa es la hipótesis en la cual, además
 de los procesos del SM, también contribuyen procesos de nueva física y se
 denomina hipótesis de \emph{se\~nal+fondo}.
 
-Una hipótesis se dice \emph{simple} cuando está completamente determinada. En
-cambio, cuando tiene uno o más parámetros libres, se dice \emph{compuesta}. Cada
+Una hipótesis se dice \emph{simple} cuando está completamente determinada, mientras que si
+tiene uno o más parámetros libres, se dice \emph{compuesta}. Cada
 hipótesis queda determinada por la pdf que describe a los observables bajo esa
 hipótesis $f(\bm{x}|H)$.
 
@@ -249,7 +253,7 @@ La probabilidad de rechazar $H_0$ siendo ésta verdadera es denominado tamaño d
   \alpha = \int_{R} g(t|H_0)\, dt
 \end{equation}
 %
-lo cual también determina el nivel de significancia como
+lo cual también, determina el nivel de significancia como
 $(100 - \alpha) \%$. Este error, de rechazar $H_0$ cuando la hipotesis es verdadera, es llamado
 error de tipo I. Por otro lado el error de aceptar $H_0$ cuando es falsa se
 llama error de tipo II, y su probabilidad de ocurrencia, $\beta$, depende de la
@@ -259,7 +263,7 @@ hipótesis alternativa $H_1$ y del poder del test que se define como $(1-\beta)$
 1-\beta = \int_R g(t|H_1)\, dt
 \end{equation}
 
-En principio cualquier función de los datos puede ser utilizada como estadístico
+En principio, cualquier función de los datos puede ser utilizada como estadístico
 de prueba, pero un buen estadístico será aquel para el cual sus distribuciones
 para la hipótesis nula y alternativa estén claramente separadas. Para esto se
 busca el estadístico de prueba que tenga el mayor poder posible $(1-\beta)$, para un dado

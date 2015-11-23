@@ -1,91 +1,125 @@
-\chapter{Reconstrucción de objetos físicos} %\section{Selección de objetos}
+\chapter{Reconstrucción e identificación de objetos físicos} %\section{Selección de objetos}
 \label{sec:obj_selection}
 
-%% In this section a description of the reconstruction and calibration is given for
-%% the main physics objects this analysis has to deal with (photons, \MET, jets, muons and electrons),
-%% following the standard ATLAS procedure \footnote{Objects are defined following the latest SUSY group
-%% recommendations which are implemented in the SUSY working group package SUSYTools-00-03-23-02.}.
-%% The use of these objects in the different signal and control regions is described in \Sec \ref{sec:signal_regions}
-%% and \ref{sec:CRs}, respectively.
-
 En esta sección se describe la reconstrucción y calibración de los
-principales objectos utilizados en el presente an\'alisis:
+principales objectos utilizados en el presente análisis:
 fotones, jets, muones, electrones y \met.
 
-%% ), siguiendo el procedimeinto
-%% estandar de ATLAS \footnote{Objects are defined following the latest SUSY
-%%   group recommendations which are implemented in the SUSY working group
-%%   package SUSYTools-00-03-23-02.}.
 
-
-\section{Fotones}
+\section{Fotones y electrones}
 \label{sec:obj_photons}
 
-Los fotones son reconstruidos de los clusters en el calorímetro electromagnético
-medidos en torres de $3\times5$ celdas en el plano $\eta\times\phi$ de la
-segunda capa del calorímetro. Los fotones son clasificados como
-\emph{no-convertidos} si no tienen trazas de un vértice de conversión asociadas
-al cluster, y sino como \emph{convertidos}. Un vértice de conversión es formado
-cuando dos trazas que pasan el TRT high-threshold requirement forman un vértice
-consistente como que vienen de una partícula no masiva. Para aumentar la
-eficiencia de reconstrucción de fotones convertidos, los candidatos a conversión
-donde solo una de las dos trazas es reconstruida (y no tiene ningún hit en la
-capa mas interior del detector de pixeles) también son retendidas
+La reconstrucción de fotones y electrones en ATLAS se basa en las deposiciones
+locales de energía halladas en el calorímetro electromagnético. La distinción
+entre unos y otros se realiza mediante la información de las trazas
+reconstruidas en el detector interno. A fin de reducir la gran contaminación de
+falsos candidatos en la muestra reconstruida debido, principalmente, al
+decaimiento de mesones livianos, como por ejemplo $\pi^0 \to \gam\gam$, se
+aplica una serie de criterios de identificación, basados en las características
+de las lluvias electromagnéticas esperadas en cada caso.
 
-Los fotones pre-seleccionados son entonces lo que tienen un {\pt} mayor a 20
-{\gev} con $|\eta| < 2.37$, removiendo los que se encuentran en la región del
-crack $1.37 < |\eta| < 1.52$, donde $\eta$ se mide en el cluster de la segunda
-capa del calorímetro.
+La lógica de reconstrucción de fotones y electrones se basa en un
+algoritmo de clusterización que busca deposiciones locales de energía en el
+calorímetro electromagnetico dentro de una ventana rectangular en el plano $(\eta, \phi)$
+de tamaño fijo. La posición de la ventana se ajusta buscando que la energía
+transversa de todas las celdas contenidas sea un máximo local, con un mínimo
+de 2.5 \gev. El tamaño óptimo de la ventana depende del tipo de partícula a
+reconstruir y de la región del calorímetro.
+Las lluvias electromagneticas iniciadas por electrones son en general mas anchas
+que las de fotones, debido a su mayor probabilidad de interaccion con el material
+previo al calorimetro electromagnetico y a la radiacion de fotones de bremsstrahlung.
+
+La energia total y la posicion de estos clusters es luego calibrada, separadamente para
+electrones y fotones, a fin de tner en cuenta diversos efectos como la perdida de energia
+en el material inactivo del calorimetro o la deposicion lateral y longitudinal fuera del cluster.
+
+Aquellos clusters electromagnetics asociados en el espacio $(\eta,\phi)$ con una traza
+reconstuida con $\pt > 0.5 \gev$ son calsificados como electrones. La definicion para fotones es
+un poco mas compluja ya que estos pueden convertir en un par $e^+e^-$ en el volumen anterior
+al calorimetro. Los fotones convertidos estan caracterizados por la presencia de al menos
+una traza asociada proveniente de un vertice reconstruido en el ID. La probabilidad
+de conversion varia entre un 40\% y un 80\%, aunque solo aquellas que ocurren
+antes del TRT son eficientemente reconstruidas.
+
+
+
+%% Los fotones son reconstruidos de los clusters en el calorímetro electromagnético
+%% medidos en torres de $3\times5$ celdas en el plano $\eta\times\phi$ de la
+%% segunda capa del calorímetro.
+Los fotones son clasificados como \emph{no-convertidos} si no tienen trazas de
+un vértice de conversión asociadas al cluster, y como \emph{convertidos} en el
+caso contrario. Un vértice de conversión es formado cuando dos trazas que pasan
+un cierto umbral en el TRT, forman un vértice consistente como provenientes de
+una partícula no masiva.
+Para aumentar la eficiencia de reconstrucción de fotones convertidos, los
+candidatos a conversión donde solo una de las dos trazas es reconstruida (y no
+tiene ningún hit en la capa más interior del detector de pixeles) también son
+retenidas.
+
 
 Cuando se calcula el {\pt} del fotón, la energía es tomada siempre del cluster
-del calorímetro, apropiadamente calibrada \cite{Banfi:1259219}.
-Para fotones no-convertidos, el $\eta$ es calculado usando las dos primeras
-capas del calorímetro electromagnético. Para fotones convertidos, donde la traza
-o las trazas que provienen del vértice de la conversión contiene mas de tres
-silicon hits, la dirección $\eta$ se determina extrapolando del cluster del
-calorímetro al vértice de la conversión.
-Para fotones convertidos que tienen trazas solo en el TRT, $\eta$ es calculada
-del \hl{calorimeter pointing}, como en el caso de los no-convertidos. Además
-la escala de energía del fotón es corregida para datos y smeareada para MC,
-siguiendo \cite{EGScaleTwiki}.
+del calorímetro, apropiadamente calibrada\cite{Banfi:1259219}. Para fotones
+no-convertidos, el $\eta$ es calculado usando las dos primeras capas del
+calorímetro electromagnético. Para fotones convertidos, donde la traza o las
+trazas que provienen del vértice de la conversión contiene mas de tres hits en
+el detector de silicio, la dirección $\eta$ se determina extrapolando del
+cluster del calorímetro al vértice de la conversión. Para fotones convertidos
+que tienen trazas solo en el TRT, $\eta$ es calculada del calorimetro, % calorimeter pointing
+como en el caso de los no-convertidos. Además la escala de energía
+del fotón es corregida para datos y smeareada para las muestras de MC.
+%, siguiendo \cite{EGScaleTwiki}.
+
 
 Algunos cortes de limpieza son aplicados a los candidatos a fotones para
 identificar clusters con mala calidad o falsos que vienen de problemas
-instrumentales \footnote{\url{https://twiki.cern.ch/twiki/bin/view/AtlasProtected/LArCleaningAndObjectQuality\#Photon_Cleaning}}.
-Tambien se aplica una limpieza de evntos basada en fotones. Un mal foton
+instrumentales.
+%% \footnote{\url{https://twiki.cern.ch/twiki/bin/view/AtlasProtected/LArCleaningAndObjectQuality\#Photon_Cleaning}}.
+También se aplica una limpieza de eventos basada en fotones. Un mal fotón
 es definido como aquel que tiene un tiempo de cluster $|t|>(10+2/|E_\text{clus}|) \text{ns}$,
-donde $E_\text{clus}$ es la correccion de energia al tiempo del cluster,
+donde $E_\text{clus}$ es la corrección de energía al tiempo del cluster,
 o si el valor:
 \begin{equation}
   \frac{\sum_\text{cluster} E_\text{cell}(Q>4000)}{\sum_\text{cluster} E_\text{cell} } > 0.8\%
 \end{equation}
 %
 y las variables $R_\phi > 1.0$ o $R_\eta > 0.98$, definidas
-en \cite{PhotonCleaning}. El factor Q mide la diferencia entre la forma
+en \cite{PhotonCleaning}. El factor $Q$ mide la diferencia entre la forma
 del pulso medido y la forma esperada que es usada para reconstruir
-la energia de la celda.
+la energía de la celda.
 
-Otros cortes de identificacion son ademas impuestos para separar los
-candidatos a foton de la contaminacion que proviene de {\pizero} o
-algun otro hadron neutro decayendo en dos fotones. La identificacion
-de fotones se basa en el perfil de la energia depositada en la primer
-y segunda capa del calorimetro electromagnetico \cite{ATL-PHYS-PUB-2011-007}.
-Los criterios de seleccion en las variables que describen la forma de
-la lluvia son independientes de la energia transversa del candidato a
-foton, pero varian segun la pseudorapidez reconstruida del foton, para
-tener en cuenta las variaciones en la cantidad de material y la geometria
-del calorimetro. Estos estan optimizados independientemente para fotones
-convertido sy no-convertidos para tener en cuneta las diferencias en las
-lluvias en cada caso. Este analisis hace uso de fotones que pasa los
-criterios de seleccion \emph{loose} y \emph{tight}, como se definen aca
+\subsection{Identificacion}
+
+La identificacion de fotones se realiza mediante una serie de cortes
+rectangulares en un conjunto de variables que describen la forma
+y la estructura de las lluvias electromagneticas sefun se propagan en
+el detector. Estas variables incluyen informacion de los calorimetros y,
+para el caso de fotones convertidos, del detector de trazas.
+
+A partir de esta informacion se definen dos conjuntos de cortes: \emph{loose} y
+\emph{tight}.D
+
+
+Otros cortes de identificación son además impuestos para separar los
+candidatos a fotón de la contaminación que proviene de {\pizero} o
+algún otro hadrón neutro decayendo en dos fotones. La identificación
+de fotones se basa en el perfil de la energía depositada en la primer
+y segunda capa del calorímetro electromagnético\cite{ATL-PHYS-PUB-2011-007}.
+Los criterios de selección en las variables que describen la forma de
+la lluvia son independientes de la energía transversa del candidato a
+fotón, pero varían según la pseudo-rapidez reconstruida del fotón, para
+tener en cuenta las variaciones en la cantidad de material y la geometría
+del calorímetro. Estos están optimizados independientemente para fotones
+convertido y no-convertidos para tener en cuneta las diferencias en las
+lluvias en cada caso. Este análisis hace uso de fotones que pasa los
+criterios de selección \emph{loose} y \emph{tight}, como se definen acá
 \cite{ATL-PHYS-PUB-2011-007}.
 
-En areas donde un modulo de la b-layer esta muerto, los electrones son
-comunmente reconstruido como fotones convertidos. Esta ambiguedad
-es resulta teneinedo en cuenta el mapa de los pixeles muertos como
-funcion del tiempo que dura la recolleccion de datos. Las conversiones
+En áreas donde un modulo de la b-layer esta muerto, los electrones son
+comúnmente reconstruido como fotones convertidos. Esta ambigüedad
+es resulta teneinedo en cuenta el mapa de los píxeles muertos como
+función del tiempo que dura la recolección de datos. Las conversiones
 con una sola traza falsas (y algunas de dos trazas) son de esta forma
-reducidas, con solo un minima reduccion de la eficiencia.
+reducidas, con solo un mínima reducción de la eficiencia.
 
 Para la seleccion final, se aplica ademas un corte en la energia
 transversa de aislamiento {\etiso}. La anergia de aislamiento
@@ -104,6 +138,13 @@ a \cite{Hance:1379530}, mejorando la performance de la variable de aislamiento
 para alto pileup \cite{Laplace:1444890}. La resultante energia de aislamiento
 depues de aplicarle las correciones tiene que ser menor que 5 {\gev} para
 pasar la seleccion final.
+
+
+Los fotones pre-seleccionados son entonces lo que tienen un {\pt} mayor a 20
+{\gev} con $|\eta| < 2.37$, removiendo los que se encuentran en la región del
+crack $1.37 < |\eta| < 1.52$, donde $\eta$ se mide en el cluster de la segunda
+capa del calorímetro.
+
 
 \subsection{Correciones para fotones}
 
@@ -146,25 +187,31 @@ por el grupo \emph{Egamma} como parte del paquete
 
 \subsubsection{Correccion al aislamiento}
 
-A difference between the photon energy leakage into the isolation cone is
-observed between data and Monte Carlo for photons. Therefore, the
-corrections applied as described in \cite{Hance:1379530} are slightly
-different for data and MC. Evenmore, a remanent dependency of the isolation
-energy with the photon \pt\ is observed in data, for what an extra correction factor
-has been derived as explained in \cref{sec:opt_ph_iso}.
+Se observa una diferencia entre la energia filtrada del foton en el cono
+de aislamiento para datos y MC. Por lo tanto, las correcciones aplicadas que
+se describen en \cite{Hance:1379530} son levemente distintas para datos y MC.
+Incluso, se observa que existe una dependencia remanente en la energia de aislamiento con el {\pt}
+del foton en datos, para lo cual se aplica un factor de correccion extra
+que se describe en \cref{sec:opt_ph_iso}.
+
+
+
+
+
 
 \section{Electrones}
 \label{sec:elec_obj}
 
 Los electrones son reconstruidos de forma similar a los fotones, con
-requerimientos adicionales en el detector de trazas \cite{Aad:2011mk}.
+requerimientos adicionales en el detector de trazas\cite{Aad:2011mk}.
 Similares criterios de calidad a los descriptos en la sección anterior
-se aplican a todos los candidatos a electrones  para identificar fakes
-debidos a problemas instrumentales.
+se aplican a todos los candidatos a electrones para identificar candidatos
+falsos debido a problemas instrumentales.
+
 La energía de los electrones es reconstruida de clusters en el calorímetro
 electromagnético sin tener en cuenta su masa. Mientras que la información
-del detector de trazas es usada para reconstruir su dirección. \note{La escala
-de energía en datos es corregida para igualar la observada en datos} \cite{EGScaleTwiki}.
+del detector de trazas es usada para reconstruir su dirección. La escala
+de energía en datos es corregida para igualar la observada en datos. \cite{EGScaleTwiki}.
 %% \hl{An extra spread is introduced on the MC electron energy in order to reproduce the
 %%   resolution measured on data for benchmark channels.}
 A los electrones preseleccionados se les pide que $\pt>10\gev$ y $|\eta|<2.47$.
@@ -438,34 +485,6 @@ calibrados mas el termino soft.
 %\end{eqnarray}
 %where the $x$ and $y$ indicate the projections of the \ETM and jet-energy vectors onto the $x$ and $y$ axes.
 
-\section{Eliminación de objetos superpuestos} %% y veto de eventos\note{?}}
-\label{sec:overlap_romoval_event_veto}
-
-De acuerdo a las definiciones de objetos anteriores, un objeto puede estar en mas de una
-categoría, contándose dos veces. Por este motivo se realiza un procedimiento para remover
-este solapamiento, aplicándose sobre los objetos preseleccionados antes que los criterios
-de aislamiento sean impuestos. El orden del overlap removal es el siguiente:
-
-\begin{itemize}\itemsep0.1cm
-\item Si los clusters de un fotón o electrón se encuentran dentro de $\Delta R < 0.01$,
-  el objeto es considerado como un electrón, removiéndose el fotón correspondiente. Esta
-  elección reduce la taza de electrones mal reconstruidos como fotones.
-\item Los jets que estén cerca ($\Delta R<0.2$) de un electrón o fotón preseleccionado
-  se remueve.
-\item Fotones y electrones preseleccionados son removidos si su distancia al jet mas
-  cercano es de $\Delta R < 0.4$.
-\item Muones preseleccionados son removidos si su distancia al jet mas cercano es $\Delta R < 0.4$.
-\end{itemize}
-
-Para poder estar seguro que {\met} esta bien medida, los eventos que satisfacen
-alguna de las condiciones siguientes son descartados.
-\begin{itemize}\itemsep0.1cm
-\item Si el evento (después del overlap removal) contiene jets y al menos uno de ellos
-  falla los cortes de limpieza de jets que se definen en \cref{sec:jet_obj}.
-\item El evento tiene al menos un muon con  $|z_{0}| >   \unit[1]{mm}$ ó
-  $|d_0| > \unit[0.2]{mm}$, donde estos valores son calculados con respecto al vértice
-  primario.
-\end{itemize}
 
 
 %% \itodo{Add MET reconstruction, jets, btagging}

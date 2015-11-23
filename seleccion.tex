@@ -1,46 +1,125 @@
-\chapter{Selección de eventos}
+\chapter{Selección de eventos}\label{cap:seleccion}
 
 \section{Trigger}\label{sec:trigger}
 
-Como se menciono en la sec los datos fueron colectados utilizando un trigger
-de un fotón (\trigchain), que selecciona eventos con al menos un fotón loose con
-momento transverso mayor a 120 \gev.
-La eficiencia de este trigger fue calculada y es de $100^{+0}_{-1.41}$(stat)${}^{+0}_{-0.7}$(syst) \%,
+Los datos fueron colectados utilizando un trigger de un fotón (\trigchain),
+que selecciona eventos con al menos un fotón loose con momento transverso mayor
+a 120 \gev.
+La eficiencia de este trigger fue calculada y es de $100^{+0}_{-1.41}\stat{}^{+0}_{-0.7}\syst \%$,
 con respecto a candidatos a fotones aislados con $\pt>125 \gev$.
 %%Los detalles del calculo de la The details of this calculation are discussed in \cref{sec:trigger_eff}.
 
 La eficiencia del trigger fue calculada utilizando un método bootstrap siguiendo las prescripciones
-xsdescriptas en \cref{Damazio:1609629} y se puede ver el resultado como función del {\pt} y $\eta$ del
+descriptas en \cref{Damazio:1609629} y se puede ver el resultado como función del {\pt} y $\eta$ del
 fotón en la \cref{fig:trigger_perf}.
 
 \begin{figure}[h!]
   \centering
   \includegraphics[width=0.49\textwidth]{figures/EffPtg120_loose}
   \includegraphics[width=0.49\textwidth]{figures/EffPtg120_loose}
-  \caption{Eficiencia del trigger para {\trigchain} como función del {\pt} del fotón (izquierda)
-    y $\eta$ (derecha).}\label{fig:trigger_perf}
+  \caption{Eficiencia del trigger {\trigchain} como función del {\pt} del fotón (izquierda)
+    y $\eta$ (derecha).}
+  \label{fig:trigger_perf}
 \end{figure}
+
+A pesar de la falta de estadistica, es claro que la eficiencia alcanza el plateau
+antes del corte en {\pt} impuesto en el analisis. La incerteza total tiene en cuenta
+la limitada estadistica de la muestra de datos y tambien la incerteza en la correcion
+debido a la pureza de los fotones. La performance del trigger se mantuvo estable durante
+todo el periodo de la toma de datos considerado.
 
 
 \section{Preselección}\label{sec:base_seleccion}
 
 Antes de aplicar los cortes cinemáticos, se realiza la siguiente
-preselección y limpieza tanto para la regiones de señal como las de control.
+preselección y limpieza.
+
+\subsection{Criterios de calidad}
+
+Producto de la complejidad de un experimento de la magnitud de ATLAS y de las
+demandantes condiciones de funcionamiento del LHC, se pueden observar
+ocasionalmente ciertas ineficiencias en los diversos sub-detectores y/o en la
+cadena de procesamiento de los datos colectados.
+Para asegurar la calidad de los datos a ser considerados en los analisis fisicos de ATLAS, un conjunto de criterios de calidad[]
+son definidos por los grupos responsables de cada sub0detector y del analisis offline.
+El mecanismo de seleccion se basa en el concepto de bloques de luminosidad (LB).
+Cada toma de datos (Run) en ATLAS se divide en estos pequenos intervalos de aproximadamente 2
+minutos, dentro de los cuales la luminosidad instantanea es esencialmente constante.
+A partir de las DQflags se construyen listas, llamadas GRL, de las Runs y los rangos
+de LB dentro de ellas que son apropiadas para cada tipo de analisis. Se producen
+de forma centralizada para brindar listas oficiales comunes para los distintos grupos
+dentro de ATLAS, distribuidas en un formato \textsc{XML} para ser codificadas durante
+el analisis final.
+
+En esta Tesis se ha utilizado la GRL definida por el grupo egamma donde ademas de aplicar requerimientos
+generales sobre la operacion del experimento y la estabilidad del haz en el acelerador, se seleccionan
+aquellos eventos donde el detector de trazas y ambos calorimetros se encontraban funcionando en su plena capacidad.
+
+
+
+
 
 \begin{itemize}\itemsep0.1cm
-\item[-] Data quality (GRL) and single photon trigger, as described in \cref{sec:trigger}.
-%	The events must be accepted by the GoodRunList (only for data) and single photon trigger selection as described in \cref{sec:datasamples}
-\item[-] Primary vertex:
-The vertex candidates for the $pp$ interactions in each event are reconstructed from the ID tracks. The
-primary vertex, corresponding to the hard scattering interaction, is the vertex candidate with the largest
-sum of $p_{T}^{2}$ for the associated tracks. Events with at least five charged tracks associated to the primary
-vertex are selected.
-\item[-] Data quality: for data samples only, cleaning from noise bursts in the calorimeters and possible incomplete events due to the TTC reset procedure is applied. Events must
+
+\item Calidad de datos:
+
+  Para datos, los eventos deben ser aceptados como de buena calidad, es decir, que
+  los subdetectores de ATLAS...
+
+
+
+  for data samples only, cleaning from noise bursts in the calorimeters and possible incomplete events due to the TTC reset procedure is applied. Events must
 have %%|larError==0|, \verb|tileError==0|, and \verb|(coreFlags&0x4000)==0|.
+
+\item Trigger:
+  Y ademas haber pasado el trigger que se describio
+  en la \cref{sec:trigger}.
+
+\item Vertice primario:
+
+  Los candidatos a vertices de la interaccion $pp$ son reconstruidos en cada eventos utilizando
+  las trazas en el detector interno. El vertice primario, correspondiente a la interaccion dura
+  de dispersion, es el candidato con la mayor suma de $p_{T}^{2}$ para las trazas asociadas.
+  Solo son aceptados los eventos donde el vertice primario tenga al menos cinco trazas cargadas.\note{Por que?}
+
+
 \end{itemize}
+
+
 
 La selección de los objetos se realiza según lo descripto en \cref{sec:obj_selection}.
 El overlap removal y el event veto aplicado se detalla en la \cref{sec:overlap_romoval_event_veto}.
+
+
+\section{Eliminación de objetos superpuestos} %% y veto de eventos\note{?}}
+\label{sec:overlap_romoval_event_veto}
+
+De acuerdo a las definiciones de objetos anteriores, un objeto puede estar en mas de una
+categoría, contándose dos veces. Por este motivo se realiza un procedimiento para remover
+este solapamiento, aplicándose sobre los objetos preseleccionados antes que los criterios
+de aislamiento sean impuestos. El orden del overlap removal es el siguiente:
+
+\begin{itemize}\itemsep0.1cm
+\item Si los clusters de un fotón o electrón se encuentran dentro de $\Delta R < 0.01$,
+  el objeto es considerado como un electrón, removiéndose el fotón correspondiente. Esta
+  elección reduce la taza de electrones mal reconstruidos como fotones.
+\item Los jets que estén cerca ($\Delta R<0.2$) de un electrón o fotón preseleccionado
+  se remueve.
+\item Fotones y electrones preseleccionados son removidos si su distancia al jet mas
+  cercano es de $\Delta R < 0.4$.
+\item Muones preseleccionados son removidos si su distancia al jet mas cercano es $\Delta R < 0.4$.
+\end{itemize}
+
+Para poder estar seguro que {\met} esta bien medida, los eventos que satisfacen
+alguna de las condiciones siguientes son descartados.
+\begin{itemize}\itemsep0.1cm
+\item Si el evento (después del overlap removal) contiene jets y al menos uno de ellos
+  falla los cortes de limpieza de jets que se definen en \cref{sec:jet_obj}.
+\item El evento tiene al menos un muon con  $|z_{0}| >   \unit[1]{mm}$ ó
+  $|d_0| > \unit[0.2]{mm}$, donde estos valores son calculados con respecto al vértice
+  primario.
+\end{itemize}
+
 
 \section{Optimización de las regiones de se\~nal}
 
