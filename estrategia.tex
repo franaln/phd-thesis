@@ -14,14 +14,14 @@ $f(x) = 1$, el cual se reduce solo al termino de Poisson. En el caso de que el
 número de eventos observado sea compatible con el número de eventos esperado
 debido a procesos del SM, pueden establecerse limites en la sección eficaz
 de nueva física. Y en particular en esta Tesis, se consideró un modelo
-de supersimetría que puede dar lugar a este tipo de estados finales, en el cual
-se establecieron limites de exclusión.
+de supersimetría que puede dar lugar a este tipo de estados finales.%% , en el cual
+%% se establecieron limites de exclusión.
 
 %% Para poder determinar compatibilidad entre los eventos observados con los
 %% predichos es necesario
 Para poder realizar cualquier descubrimiento de nueva física es fundamental entender
 y tener bajo control los fondos del SM.
-Existen muchos procesos del SM que pueden aparentar una estado final con un fotón,
+Existen muchos procesos del SM que pueden dar lugar a una estado final con un fotón,
 jets y energía faltante. Estos pueden dividirse en varias categorías. Por un lado, los
 procesos que dan lugar a eventos con un fotón y energía faltante real, es decir, los
 que llamamos fondos irreducibles son:
@@ -34,7 +34,7 @@ que llamamos fondos irreducibles son:
 \item $t\bar{t}+\gamma$ %(cuando el $e/\mu$ (si se produce) no es reconstruido)
 \end{itemize}
 %
-También es posible, que aunque el proceso no tenga fotones en el estado final, un
+También es posible que, aunque el proceso no tenga fotones en el estado final, un
 electrón o un jet sean identificados como un fotón, dando lugar a un estado final
 idéntico al buscado. En esta categoría están:
 
@@ -168,20 +168,23 @@ o utilizar metodos basados en los propios datos observados.
 %% $x$ con la muestra simulada.
 
 La validez de la simulaciones MC esta fundamentalmente relacionada a como la
-teoría subyacente modela las observaciones experimentales. Las debilidades que
-puedan tener la estimación del fondo a partir de las simulaciones derivan de las
-debilidades de las simulaciones propiamente dichas. Por este motivo, en el caso
-de que haya deficiencias en el modelado por parte de las simulaciones, existe
+teoría subyacente modela las observaciones experimentales. Las debilidades de
+la estimación del fondo a partir de las simulaciones derivan de las
+debilidades de los modelos propiamente dichos.
+Por este motivo, en el caso
+de que haya deficiencias en el modelado por parte de las simulaciones,
+En este caso, existe
 una motivación para utilizar métodos que puedan dar una estimación de los fondos
-a partir de los datos observados. Existen distintas formas de poder estimar un
+a partir de los datos experimentales. Existen distintas formas para estimar un
 fondo a partir de los datos observados. En el \cref{cap:fondos} se
 describirán las utilizadas en este análisis.
 
-En el caso de que no se puedan estimar utilizando los datos, existe una tercera
-forma para estimar los fondos, que consiste en
+%% En el caso de que no se puedan estimar utilizando los datos, existe una tercera
+%% forma
+En algunos casos se utiliza un tercer método para estimar los fondos, que consiste en
 utilizar la estimación proveniente de las simulaciones MC, pero corregirla
-utilizando los datos. Para esto se define una region de control (CR) en
-la cual el fondo dominante pueda ser controlado comparadolo con los datos
+utilizando los datos. Para esto se define una región de control (CR) en
+la cual el fondo dominante pueda ser controlado comparándolo con los datos
 observados en esa misma región. Las CR son diseñadas especialmente para tener
 una alta pureza en uno de los procesos de fondo y deben estar libres de
 contaminación de señal.
@@ -196,7 +199,7 @@ utilizado entonces en la extrapolación a las demás regiones.
 %--------------------
 % Validation regions
 %--------------------
-Otro componente importante del análisis es la validación del modelo utilizado
+Otro componente importante del análisis es la validación del método utilizado
 para predecir los fondos en las SR. Con este objetivo se definen regiones de
 validación (VR) que se encuentren entre las CR y las SR en términos de los
 principales observables cinemáticos en los criterios de selección. El diseño de
@@ -215,7 +218,7 @@ anteriormente.
 Es importante que las CR, VR y SR sean estadísticamente independientes para
 poder combinar la pdf que modela cada región en una pdf conjunta. Esto es
 fundamental ya que al ajustar los parámetros de la función likelihood se deberá
-hacer en un ajuste simultáneo, lo cual es importante para poder compartir los
+hacer un ajuste simultáneo, lo cual es importante para poder compartir los
 parámetros de los fondos y las incertezas sistemáticas entre las distintas
 regiones de forma consistente.
 
@@ -290,12 +293,13 @@ de la señal), los factores de normalización para los procesos de fondo, y los
 llamados parámetros nuisance que modelan el impacto de las incertezas
 sistemáticas. Cada incerteza sistemática $i$ se describe con un parámetro
 nuisance $\theta_i$ que interpola entre el valor nominal y las variaciones de
-las incertezas sistemáticas. Es decir para las variaciones de las incertezas
-sistemáticas $\pm \sigma$ tenemos $\theta_i = \pm 1$ y $\theta_i = 0$ para el
-valor nominal.
+las incertezas sistemáticas.
+%% Es decir para las variaciones de las incertezas
+%% sistemáticas $\pm \sigma$ tenemos $\theta_i = \pm 1$ y $\theta_i = 0$ para el
+%% valor nominal.
 
-La función likelihood general para un experimento de conteo como el que se utilizara
-en el presente analisis es el producto de los términos de Poisson del
+La función likelihood general para un experimento de conteo como el que se utiliza
+en el análisis de esta Tesis es el producto de los términos de Poisson del
 número de eventos en la SR y las CR, y una distribución adicional que implementa
 las restricciones en las incertezas sistemáticas. Puede escribirse como:
 
