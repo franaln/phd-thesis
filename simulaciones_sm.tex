@@ -1,0 +1,439 @@
+%--------
+% Fondos
+%--------
+\section{Simulación de los fondos del SM}
+\label{sec:bkg_samples}
+
+\newcommand{\mccaption}{Se detallan la sección eficaz a LO para cada modo de decaimiento,
+  los factores $k$ (para la normalización NLO) y las eficiencias del filtro
+  , así como también la luminosidad integrada correspondiente
+  a la estadística total de cada muestra.}
+
+Las muestras simuladas con MC utilizadas en este análisis se describen
+a continuación. Como se discutirá en la \cref{sec:background_estimation},
+la contaminación de fotones mal identificados provenientes de jets y electrones
+es estimado con métodos basados en datos. Sin embargo, las muestras MC también
+han sido consideradas en estos casos para los estudios de optimización y la
+evaluación de las incertezas sistemáticas.
+
+\subsection{$W/Z + \gamma$}
+
+Se espera que la producción de {\wgam} y {\zgam} sea un fondo importante
+para esta búsqueda. Ambas muestras fueron generadas usando el generador
+de eventos {\sherpa} v1.4.1\cite{SherpaGen}, con hasta 3 partones en el
+ME+PS y usando las funciones de densidad partonica CT10.
+La combinación de los elementos de matriz con las lluvias partonicas
+es realizada de acuerdo a un procedimiento mejorado CKKW\cite{Catani:2001cc,Krauss:2002up}.
+Un filtro a nivel generados es aplicado requiriendo al menos un fotón
+con $\pt > 80(70) \gev$ en el estado final de las muestras de {\wgam} (\zgam).
+Todos los decaimientos leptonicos del bosón $Z$ fueron considerados,
+incluyendo el decaimiento invisible $Z\to\nu\nu$.
+También se tuvo en cuenta un muestra de $V(\to qq)+\gamma  (V=W,Z/\gamma*)$
+debido a que cierta energía faltante real puede  ser producida en el caso
+de heavy flavour decays.
+
+\begin{table}[ht!]
+  \centering
+  \caption{Muestras de W/Z$+\gamma$.
+    La sección eficaz a LO se especifica para cada modo de decaimiento,
+    al igual que los factores $k$, y las eficiencias del filtro.
+    La luminosidad integrada correspondiente a la estadística total
+    de cada muestra esta también presente.}
+  \begin{tabular}{lccccc}
+    \hline
+    Proceso & Generador & $\sigma~[pb]$ & $k$ & Eficiencia & $L [fb^{-1}]$ \\
+    \hline
+    {\wenugam}    & {\sherpa} &  0.7193  &  1.0  &  1.0  &  695.16 \\
+    {\wmunugam}   & {\sherpa} &  0.7178  &  1.0  &  1.0  &  696.56 \\
+    {\wtaunugam}  & {\sherpa} &  0.7199  &  1.0  &  1.0  &  694.57 \\
+    {\zeegam}     & {\sherpa} &  0.1861  &  1.0  &  1.0  &  1069.53 \\
+    {\zmumugam}   & {\sherpa} &  0.1858  &  1.0  &  1.0  &  1076.71 \\
+    {\ztautaugam} & {\sherpa} &  0.1858  &  1.0  &  1.0  &  1076.19 \\
+    {\znunugam}   & {\sherpa} &  0.7625  &  1.0  &  1.0  &  655.74 \\
+    {\vqqgam} & {\sherpa}  &  6.756  &  1.0  &  1.0  &  89.0 \\
+    %%   \hline
+    %%   \multicolumn{5}{l}{Systematics variations} \\
+    %%   \hline
+    %%    \wenugam (fact. 0.25x) \sherpa (204733) &  0.7193  &  1.0  &  1.0  &  278.05 \\
+    %%    \wenugam (fact. 4x) \sherpa (204734) &  0.7193  &  1.0  &  1.0  &  278.05 \\
+    %%    \wenugam (renorm. 0.25x) \sherpa (204735) &  0.7193  &  1.0  &  1.0  &  278.05 \\
+    %%    \wenugam (renorm. 4x) \sherpa (204736) &  0.7193  &  1.0  &  1.0  &  278.05 \\
+    %%    \wenugam (ckkw 15) \sherpa (204731) &  0.7193  &  1.0  &  1.0  &  278.05 \\
+    %%    \wenugam (ckkw 30) \sherpa (204732) &  0.7193  &  1.0  &  1.0  &  278.05 \\
+    %%    \wmunugam (fact. 0.25x) \sherpa (204739) &  0.7193  &  1.0  &  1.0  &  278.63 \\
+    %%    \wmunugam (fact. 4x) \sherpa (204740) &  0.7193  &  1.0  &  1.0  &  278.63 \\
+    %%    \wmunugam (renorm. 0.25x) \sherpa (204741) &  0.7193  &  1.0  &  1.0  &  278.63 \\
+    %%    \wmunugam (renorm. 4x) \sherpa (204742) &  0.7193  &  1.0  &  1.0  &  278.63 \\
+    %%    \wmunugam (ckkw 15) \sherpa (204737) &  0.7193  &  1.0  &  1.0  &  278.63 \\
+    %%    \wmunugam (ckkw 30) \sherpa (204738) &  0.7193  &  1.0  &  1.0  &  278.63 \\
+    %%    \wtaunugam (fact. 0.25x) \sherpa (204745) &  0.7193  &  1.0  &  1.0  &  277.81 \\
+    %%    \wtaunugam (fact. 4x) \sherpa (204746) &  0.7193  &  1.0  &  1.0  &  277.81 \\
+    %%    \wtaunugam (renorm. 0.25x) \sherpa (204747) &  0.7193  &  1.0  &  1.0  &  277.81 \\
+    %%    \wtaunugam (renorm. 4x) \sherpa (204748) &  0.7193  &  1.0  &  1.0  &  277.81 \\
+    %%    \wtaunugam (ckkw 15) \sherpa (204743) &  0.7193  &  1.0  &  1.0  &  277.81 \\
+    %%    \wtaunugam (ckkw 30) \sherpa (204744) &  0.7193  &  1.0  &  1.0  &  277.81 \\
+    \hline
+  \end{tabular}
+  \label{tab:bkg_wzgamma_samples}
+\end{table}
+
+\subsection{$W/Z$ + jets}
+\label{mc_wzjets}
+
+Se espera que la producción de W$^{\pm}$ y bosones $Z$ en asociación con jets
+contribuya a esta búsqueda, con los fotones provenientes de electrones y jets
+mal identificados. Especialmente para los segundos, esta contaminación no esta
+bien descripta por el MC. Por esta razón se utilizan métodos basados en datos
+para estimar su contribución en las diferentes regiones de señal y control, como
+se describe en el \cref{cap:fondos}. De igual manera varias muestras de MC
+fueron consideradas para validar los métodos.
+
+Como se describe en el \cref{cap:seleccion} la selección de señal involucra
+muchos jets en el estado final, es importante modelar los estados final multipartonicos
+de forma adecuada. Con esto en mente, el generador de eventos {\alpgen} (v 2.14)
+fue utilizado, incluyendo los efectos EWK y QCD a LO para los procesos de interacción
+fuerte multipartonicos. La producción de jets fue generada for up to five-parton
+matrix elements. Este generados fue interfaceado con {\herwig} v6.5.2
+para la simulación de las lluvias y los procesos de fragmentación y con {\jimmy}
+para la simulación de los eventos subyacentes. Las funciones de densidad partónico
+utilizadas fueron las CTEQ6L1. La normalización a la luminosidad integrada acumulada
+fue hecha escalenado la sección eficaz mostrada en la \cref{tab:bkg_wzjets_samples}
+usando cálculos QCD a NNLO de el programa FEWZ\cite{Anastasiou:2003ds}.
+En cada caso los mismos factores de normalización fueron aplicados a los elementos
+de matriz de {\alpgen}.
+
+Finalmente, se realiza la remoción de eventos para evitar el conteo doble de eventos
+que ya fueron tenidos en cuenta por las muestras de Z$\gamma$ y W$\gamma$.
+Para esto, los eventos de $W(Z)+\text{jets}$ con fotones con $\pt > 80(70)\gev$
+y $\Delta{\rm R}(e/\mu/\tau/$light-quarks$, \gamma) > 0.1$ fueron removidos
+de las muestras.
+
+\begin{table}[ht!]
+  \centering
+  \caption{Muestras de $W/Z+\text{jets}$. \mccaption.}
+  \begin{tabular}{lccccc}
+    \hline
+    Proceso & Generador & $\sigma [pb]$ & factor-$k$ & Eficiencia & $L [fb^{-1}]$ \\
+    \hline
+    \zeenj{0} &  \alpgen+\jimmy  & 711.77 & 1.23 & 1.00 & 7.548 \\
+    \zeenj{1} &  \alpgen+\jimmy  & 155.17 & 1.23 & 1.00 & 6.994 \\
+    \zeenj{2} &  \alpgen+\jimmy  & 48.745 & 1.23 & 1.00 & 6.746 \\
+    \zeenj{3} &  \alpgen+\jimmy  & 14.225 & 1.23 & 1.00 & 6.286 \\
+    \zeenj{4} &  \alpgen+\jimmy  & 3.7595 & 1.23 & 1.00 & 6.487 \\
+    \zeenj{5} &  \alpgen+\jimmy  & 1.0945 & 1.23 & 1.00 & 7.428 \\
+    \zmmnj{0} &  \alpgen+\jimmy  & 712.11 & 1.23 & 1.00 & 7.557 \\
+    \zmmnj{1} &  \alpgen+\jimmy  & 154.77 & 1.23 & 1.00 & 7.011 \\
+    \zmmnj{2} &  \alpgen+\jimmy  & 48.912 & 1.23 & 1.00 & 6.731 \\
+    \zmmnj{3} &  \alpgen+\jimmy  & 14.226 & 1.23 & 1.00 & 6.286 \\
+    \zmmnj{4} &  \alpgen+\jimmy  & 3.7838 & 1.23 & 1.00 & 6.445 \\
+    \zmmnj{5} &  \alpgen+\jimmy  & 1.1148 & 1.23 & 1.00 & 7.292 \\
+    \zttnj{0} & \alpgen+\jimmy  & 711.81 & 1.23 & 1.00 &  7.560 \\
+    \zttnj{1} & \alpgen+\jimmy  & 155.13 & 1.23 & 1.00 &  6.996 \\
+    \zttnj{2} & \alpgen+\jimmy  & 48.804 & 1.23 & 1.00 &  6.746 \\
+    \zttnj{3} & \alpgen+\jimmy  & 14.160 & 1.23 & 1.00 &  6.315 \\
+    \zttnj{4} & \alpgen+\jimmy  & 3.7744 & 1.23 & 1.00 &  6.462 \\
+    \zttnj{5} & \alpgen+\jimmy  & 1.1163 & 1.23 & 1.00 &  7.283 \\
+    \hline
+    \wenunj{0} & \alpgen+\jimmy  & 8037.10  & 1.186 & 1.00 & 0.362 \\
+    \wenunj{1} & \alpgen+\jimmy  & 1579.20  & 1.186 & 1.00 & 1.334 \\
+    \wenunj{2} & \alpgen+\jimmy  & 477.20   & 1.186 & 1.00 & 6.661 \\
+    \wenunj{3} & \alpgen+\jimmy  & 133.93   & 1.186 & 1.00 & 6.358 \\
+    \wenunj{4} & \alpgen+\jimmy  & 35.62    & 1.186 & 1.00 & 5.917 \\
+    \wenunj{5} & \alpgen+\jimmy  & 10.55    & 1.186 & 1.00 & 5.592 \\
+    \wmnunj{0} & \alpgen+\jimmy  & 8040.00  & 1.186 & 1.00 & 0.363 \\
+    \wmnunj{1} & \alpgen+\jimmy  & 1580.30  & 1.186 & 1.00 & 1.333 \\
+    \wmnunj{2} & \alpgen+\jimmy  & 477.50   & 1.186 & 1.00 & 6.656 \\
+    \wmnunj{3} & \alpgen+\jimmy  & 133.94   & 1.186 & 1.00 & 6.357 \\
+    \wmnunj{4} & \alpgen+\jimmy  & 35.64    & 1.186 & 1.00 & 6.033 \\
+    \wmnunj{5} & \alpgen+\jimmy  & 10.57    & 1.186 & 1.00 & 1.595 \\
+    \wtnunj{0} & \alpgen+\jimmy  & 8035.80  & 1.186 & 1.00 & 0.353 \\
+    \wtnunj{1} & \alpgen+\jimmy  & 1579.80  & 1.186 & 1.00 & 1.307 \\
+    \wtnunj{2} & \alpgen+\jimmy  & 477.55   & 1.186 & 1.00 & 6.567 \\
+    \wtnunj{3} & \alpgen+\jimmy  & 133.79   & 1.186 & 1.00 & 6.365 \\
+    \wtnunj{4} & \alpgen+\jimmy  & 35.58    & 1.186 & 1.00 & 5.921 \\
+    \wtnunj{5} & \alpgen+\jimmy  & 10.54    & 1.186 & 1.00 & 5.199 \\
+    \hline
+  \end{tabular}
+  \label{tab:bkg_wzjets_samples}
+\end{table}
+
+
+\subsection{Pares de tops ($+\gam$)}
+\label{sec:mcttbargam}
+
+Otro fondo importante para este análisis es el {\ttgam}. Esta muestra fue
+generada utilizando {\madgraph}\cite{Alwall:2007st} y la PDF CTEQ6L1.
+{\pythiasix}\cite{pythia} fue usado para la simulación de las lluvias
+partonicas, fragmentación y eventos subyacentes. La radiación de fotones fue
+agregadas utilizando {\photos}\cite{photos}, y los decaimientos de los leptones
+tau con {\tauola}\cite{tauola}. Se requirió que los fotones a nivel generador
+tengan un $\pt > 80 \gev$. Para evitar efectos cinemáticos introducidos por el
+filtro, el corte en el {\pt} del fotón en la muestra reconstruida se aumento a
+95 {\gev}. Se utilizo un factor-$k$\note{definir} de $1.9 \pm 0.4$\cite{Melnikov:2011ta, tth}.
+Los detalles de la simulación se encuentran en la \cref{tab:bkg_ttbar_samples}.
+Se utilizaron además algunas muestras a nivel generador como variaciones para calcular
+las incertezas sistemáticas como se explica en la \cref{sec:syst_ttbargamma}.
+
+La producción de {\ttbar}, donde los electrones o los jets son mal identificados
+como fotones es una fuente de fondo que debe ser considerado. Aunque ambas
+contaminaciones fueron estimadas a partir de los datos, se utilizaron eventos simulados
+en la etapa de optimización y para realizar chequeos de los métodos utilizados.
+La
+muestra MC fue generada utilizando
+{\powheg}\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd} con la lluvia
+partonica y fragmentación hecha por {\pythia}. Para el UE se utilizo Perugia
+2011C con el
+conjunto de PDFs CTEQ6L1 LO. La radiación de fotones adicional fue agregada con
+{\photos}\cite{photos}. Overlap removal is performed to prevent double-counting
+the phase-space covered by the {\ttgam} MC sample. Events with truth prompt
+photons with $\pt > 95 \gev$ and $\Delta{\rm R}(e/\mu/\tau/g/$light-quarks$,
+\gamma) > 0.1$ are removed from the \ttbar\ sample\note{Revisar!}.
+
+\begin{table}[ht!]
+  \centering
+  \caption{Muestras de {\ttgam}. {\mccaption}}
+  \begin{tabular}{lccccc}
+    \hline
+    Proceso & Generador & $\sigma [pb]$ & factor-$k$ & Eficiencia & $L [fb^{-1}]$ \\
+    \hline
+    {\ttbar} & \powheg+\pythia & 253.00 & 1.00 & 0.543 & 580 \\
+    \hline
+    %    \ttbargam noAllHad \madgraph (164439) & 0.092363 & 1.9 & 1 & 1139.7 \\
+    {\ttgam} noAllHad & \madgraph & 0.09873 & 1.90 & 1.00 & 1066.2 \\
+    {\ttgam} AllHad & \madgraph  & 0.068599 & 1.90 & 1.00 & 1534.5 \\
+    \hline
+    %% \multicolumn{5}{l}{Variaciones sistematicas} \\
+    %% \hline
+    %% {\ttgam} noAllHad (scaleUP) & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
+    %% {\ttgam} noAllHad (scaleDN) & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
+    %% {\ttgam} noAllHad (alpsUP)  & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
+    %% {\ttgam} noAllHad (alpsDN)  & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
+    %% {\ttgam} noAllHad (moreFSR) & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
+    %% {\ttgam} noAllHad (lessFSR) & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
+    %% \hline
+  \end{tabular}
+  \label{tab:bkg_ttbar_samples}
+\end{table}
+
+\subsection{Top (+ $\gamma$)}
+
+La producción de un quark top con un fotón asociado fue generado utilizando
+\textsc{Whizard} 2.1.1 \cite{whizard, whizard2}.
+%% , con 4-flavor/5-flavor matching provided
+%% using Hoppet~\cite{hoppet}.
+
+El fotón extra puede estar tanto en la producción del top o en los decaimientos
+sucesivos. Sin embargo, la producción y el decaimiento son tratados de forma
+separada, por lo que los efectos de interferencia pueden ser ignorados. Para las
+lluvias partónicas y la fragmentación fue utilizado {\pythia}\cite{pythia}. La
+radiación de fotones fue agregada con {\photos}\cite{photos}, y los
+decaimientos de los leptones tau con {\tauola}\cite{tauola}.
+
+La producción de tops resulta en un fondo poco importante para este análisis,
+aunque de mayor importancia para las regiones de control y validación. La producción $Wt$
+fue generada utilizando {\powheg}, incluyendo correcciones a NLO en QCD. La lluvia
+partónica y la fragmentación fue simulada utilizando {\pythia} (con P2011).
+Se utilizó el conjunto de PDFs CT10. Las muestras fueron normalizadas con
+la sección eficaz calculada en \cite{Kidonakis:2010ux}.
+
+%%Para la produccion en el canal $t$, las muestras MC
+%% production, the MC samples with sample ID 110101 were used, with the
+%% $W$ boson decaying leptonically. These were generated with
+%% \acermc \cite{acer}, with parton showering and fragmentation performed
+%% by {\pythia} with the P2011C tune and CTEQ6L1 PDF set.  The samples were
+%% scaled to the cross section calculated by \cite{Kidonakis:2011wy}.
+%% Single top produced by $s$-channel was not used because it was found
+%% to be negligible.
+%%Se removieron los  Overlap between the single top and single top $\gamma$ samples has been removed.
+
+\begin{table}[ht!]
+  \centering
+  \caption{Muestras de quark top y {\tgam}. La sección eficaz a
+    NNLO, eficiencia del filtro, y luminosidad integrada correspondiente a la estadística total de cada muestra
+    están detalladas en la tabla.}
+  \begin{tabular}{lcccc}
+    \hline
+    Proceso & Generador & $\sigma [pb]$ & Eficiencia & $L [fb^{-1}]$ \\
+    \hline
+    t-channel & \acermc   & 28.4 & 1.00 & 271 \\
+    Wt        & \powheg   & 22.4 & 1.00 & 892 \\
+    s-channel & \powheg   & 1.82 & 1.00 & 3299 \\
+    \hline
+    {\tgam} (t-channel) & \wizhard+\pythia   & 0.187298 & 0.121980 & 4810 \\
+    {\tgam} (t-channel) & \wizhard+\pythia   & 0.313866 & 0.012927 & 4930 \\
+    \hline
+    {\twgam} (dilep.) & \wizhard+\pythia          & 0.01292  & 0.16437 & 4710 \\
+    {\twgam} (dilep. tDec) & \wizhard+\pythia     & 0.01454  & 0.02875 & 12000 \\
+    {\twgam} (dilep. WDec) & \wizhard+\pythia     & 0.01041  & 0.07549 & 6370 \\
+    {\twgam} (tlepWhad) & \wizhard+\pythia        & 0.02583  & 0.16244 & 4770 \\
+    {\twgam} (tlepWhad tDec) & \wizhard+\pythia   & 0.02908  & 0.02761 & 6230 \\
+    {\twgam} (tlepWhad WDec) & \wizhard+\pythia   & 0.01159  & 0.06471 & 6660 \\
+    {\twgam} (thadWlep) & \wizhard+\pythia      & 0.02582  & 0.16178 & 4790 \\
+    {\twgam} (thadWlep tDec) & \wizhard+\pythia   & 0.02013  & 0.04198 & 5920 \\
+    {\twgam} (thadWlep WDec) & \wizhard+\pythia   & 0.02079  & 0.07574 & 3180 \\
+    \hline
+  \end{tabular}
+  \label{tab:bkg_st_samples}
+\end{table}
+
+
+\subsection{{\gjet} y multijet}
+
+La contaminación debido a la produccion QCD de fotones directos y multijets,
+es en todos los casos el resultado de eventos patológicos
+(jets mal-identificados como fotones, y jets o fotones mal reconstruidos dejando
+una alta cantidad de energía faltante). Sin embargo, no se espera que sea un
+fondo dominante en el espacio de fase explorado en este análisis. La
+contribución de eventos con jets mal identificados como fotones se estima a
+partir de los datos en la \cref{sec:jetfakes}.
+
+Las muestras de multijets listadas en la \cref{tab:bkg_qcd_samples} fueron
+utilizadas para el proceso de optimización y estudios de sensibilidad
+preliminares. La producción de fotones directos fue simulada con {\sherpa}
+v1.4.1\cite{SherpaGen}, con hasta cuatro partones en la ME+PS y usando el
+conjunto de PDFs CT10. El espectro inclusivo se dividió en diversas muestras con
+diferentes umbrales de {\pt} del fotón para optimizar la generación de eventos.
+
+Muestras alternativas fueron utilizadas para la estimación de las incertezas
+sistemáticas, generadas con {\pythiaeight} (usando CTEQ6L1) y {\alpgen} v2.14
+(con la misma configuración que los eventos de $W/Z +$ jets descriptos en
+\cref{mc_wzjets}). Los detalles pueden verse en la \cref{tab:bkg_qcd_samples}.
+
+\begin{table}[ht!]
+  \centering
+  \caption{Muestras de QCD {\gjet} y multijet utilizadas en este análisis.
+    La sección eficaz a LO para cada modo de decaimiento,
+    y las eficiencias del filtro están detalladas,
+    así como tabine la luminosidad integrada correspondiente a la estadística
+    total de cada muestra.}
+
+   \begin{tabular}{lcccc}
+    \hline
+    Proceso & Generador & $\sigma [pb]$ & Eficiencia & $L [fb^{-1}]$ \\
+    \hline
+    {\gjet} ($\pt>70\gev$)   & {\sherpa} &    2153.0  &  1.0  &  1.160 \\
+    {\gjet} ($\pt>140\gev$)  & {\sherpa} &    137.85  &  1.0  &  10.881 \\
+    {\gjet} ($\pt>280\gev$)  & {\sherpa} &     5.963  &  1.0  &  167.657 \\
+    {\gjet} ($\pt>500\gev$)  & {\sherpa} &     0.276  &  1.0  &  3617.291 \\
+    {\gjet} ($\pt>800\gev$)  & {\sherpa} &    0.0133  &  1.0  &  7492.807 \\
+    {\gjet} ($\pt>1000\gev$) & {\sherpa} &   0.00238  &  1.0  &  41980.269 \\
+    \hline
+    {\gjet} ($\pt>70\gev$)   & {\pythiaeight} &   3425000  &  $0.00057$  &  1535.4  \\
+    {\gjet} ($\pt>140\gev$)  & {\pythiaeight} &    122170  &  $0.00097$  &  8449.2 \\
+    {\gjet} ($\pt>280\gev$)  & {\pythiaeight} &    3348.7  &  $0.00145$ &  206559.7 \\
+    {\gjet} ($\pt>500\gev$)  & {\pythiaeight} &    115.63  &  $0.0018$  &  4789097.0\\
+    \hline
+
+    \gjetnj{1} ($\pt>70\gev$)   & {\alpgen}+{\jimmy} &   577.480  &  1.0  &  0.147 \\
+    \gjetnj{1} ($\pt>140\gev$)  & {\alpgen}+{\jimmy} &   26.198   &  1.0  &  3.626 \\
+    \gjetnj{1} ($\pt>280\gev$)  & {\alpgen}+{\jimmy} &   0.83119  &  1.0  &  30.077 \\
+    \gjetnj{1} ($\pt>500\gev$)  & {\alpgen}+{\jimmy} &   0.02914  &  1.0  &  343.159 \\
+
+    % \gjetnj{2} ($\ptgam>35\gev$) \alpgen+\jimmy  ( 156846 ) &  4515.0  &  1.0  &  0.00886 \\
+    \gjetnj{2} ($\pt>70\gev$)    & {\alpgen}+{\jimmy} &   571.870  &  1.0  &  0.175 \\
+    \gjetnj{2} ($\pt>140\gev$)   & {\alpgen}+{\jimmy} &   38.67100  &  1.0  &  3.879 \\
+    \gjetnj{2} ($\pt>280\gev$)   & {\alpgen}+{\jimmy} &   1.6811  &  1.0  &  29.741 \\
+    \gjetnj{2} ($\pt>500\gev$)   & {\alpgen}+{\jimmy} &   0.075517  &  1.0  &  264.841 \\
+
+    % \gjetnj{3} ($\ptgam>35\gev$) \alpgen+\jimmy  ( 156851 ) &  1717.0  &  1.0  &  0.00874 \\
+    \gjetnj{3} ($\pt>70\gev$)  & {\alpgen}+{\jimmy} &   306.10  &  1.0  &  0.049\\
+    \gjetnj{3} ($\pt>140\gev$) & {\alpgen}+{\jimmy} &   28.57  &  1.0  &  5.250 \\
+    \gjetnj{3} ($\pt>280\gev$) & {\alpgen}+{\jimmy} &   1.538  &  1.0  &  32.503 \\
+    \gjetnj{3} ($\pt>500\gev$) & {\alpgen}+{\jimmy} &   0.07707  &  1.0  &  77.822 \\
+
+    % \gjetnj{4} ($\ptgam>35\gev$) \alpgen+\jimmy  ( 156856 ) &  513.940002  &  1.0  &  0.00778 \\
+    \gjetnj{4} ($\pt>70\gev$)    & {\alpgen}+{\jimmy} &   115.850  &  1.0  &  0.216 \\
+    \gjetnj{4} ($\pt>140\gev$)   & {\alpgen}+{\jimmy} &   14.216  &  1.0  &  11.951 \\
+    \gjetnj{4} ($\pt>280\gev$)   & {\alpgen}+{\jimmy} &   0.9185  &  1.0  &  48.992 \\
+    \gjetnj{4} ($\pt>500\gev$)   & {\alpgen}+{\jimmy} &   0.0512  &  1.0  &  156.354 \\
+
+    % \gjetnj{5} ($\ptgam>35\gev$) \alpgen+\jimmy  ( 156861 ) &  163.800003  &  1.0  &  0.0458 \\
+    \gjetnj{5} ($\pt>70\gev$)    & {\alpgen}+{\jimmy} &   7.00  &  1.0  &  18.569 \\
+    \gjetnj{5} ($\pt>140\gev$)   & {\alpgen}+{\jimmy} &   0.542  &  1.0  &  92.304 \\
+    \gjetnj{5} ($\pt>280\gev$)   & {\alpgen}+{\jimmy} &   0.0333  &  1.0  &  450.911 \\
+    \gjetnj{5} ($\pt>500\gev$)   & {\alpgen}+{\jimmy} &   44.334  &  1.0  &  0.970 \\
+
+    \hline
+    JZ1W ($\pt^{\mathrm{jet}} \in [20, 80] \gev$)     & {\pythia} &   $7.285 \cdot 10^{10}$ &  0.000129 & 0.00016 \\
+    JZ2W ($\pt^{\mathrm{jet}} \in [80, 200] \gev$)    & {\pythia} &   $2.634 \cdot 10^{7}$ &  0.003894 & 0.0142 \\
+    JZ3W ($\pt^{\mathrm{jet}} \in [200,500] \gev$)    & {\pythia} &   $5.442 \cdot 10^{5}$ &  0.001219 & 2.26 \\
+    JZ4W ($\pt^{\mathrm{jet}} \in [500,1000] \gev$)   & {\pythia} &   $0.006445$ &  0.000708 & 328 \\
+    JZ5W ($\pt^{\mathrm{jet}} \in [1000,1500] \gev$)  & {\pythia} &   39.74 &  0.002152 & 17400 \\
+    JZ6W ($\pt^{\mathrm{jet}} \in [1500,2000] \gev$)  & {\pythia} &   0.4161 &  0.004684 & $7.68 \cdot 10^{5}$ \\
+    JZ7W ($\pt^{\mathrm{jet}} > 2000 \gev$)           & {\pythia} &   0.04064 &  0.0146 & $2.52\cdot 10^{6}$ \\
+    \hline
+  \end{tabular}
+  \label{tab:bkg_qcd_samples}
+\end{table}
+
+\subsection{Diboson}
+
+Los procesos de diboson (WW, WZ, y ZZ) fueron generados utilizando
+{\sherpa} y usando la PDF CT10, con la sección eficaz provista por
+MCFM\cite{Campbell:2011bn}. Solo los decaimientos leptonicos para
+ambos bosones fueron considerados.
+
+\begin{table}[ht!]
+  \centering
+  \caption{Muestras de Diboson.
+    La sección eficaz a LO para cada modo de decaimiento, los factores $k$
+    (para la normalización NLO) y las eficiencias del filtro están detalladas,
+    así como también la luminosidad integrada correspondiente a la estadística
+    total de cada muestra.}
+
+  \begin{tabular}{lccccc}
+    \hline
+    Proceso & Generador & $\sigma [pb]$ & factor $k$ & Eficiencia & $L [fb^{-1}]$ \\
+    \hline
+    %% $WW(2l2\nu)$ \sherpa (126892)  & 5.50 & 1.07 & 1 & 458.9 \\
+    %% $WZ(3l)$ \sherpa (126893) & 9.75 & 1.06 & 1 & 261.1 \\
+    %% $ZZ(4\ell)$ \sherpa (126894)  & 8.74 & 1.11 & 1  &  185.6 \\
+    %% $ZZ(2\ell2\nu)$ \sherpa (126895)  & 0.50 & 1.14 & 1 &  1590.8 \\
+    $WW (\to \ell\ell\nu\nu)$     & {\sherpa}  & 5.296  & 1.06 & 1.00 & 1400 \\
+    $ZZ (\to \ell\ell\nu\nu)$     & {\sherpa}  & 0.494  & 1.05 & 1.00 & 1700 \\
+    $WZ (\to \ell\ell\ell\nu)$    & {\sherpa}  & 9.745  & 1.05 & 1.00 & 260 \\
+    $WZ (\to \ell\nu\nu\nu)$      & {\sherpa}  & 1.406  & 1.05 & 1.00 & 270 \\
+    $ZW (\to eeqq)$               & {\sherpa}  & 1.465  & 1.05 & 1.00 & 110 \\
+    $ZZ (\to eeqq)$               & {\sherpa}  & 0.247  & 1.00 & 1.00 & 120 \\
+    $ZW (\to \mu\mu qq)$          & {\sherpa}  & 1.463  & 1.05 & 1.00 & 110 \\
+    $ZZ (\to \mu\mu qq)$          & {\sherpa}  & 0.248  & 1.00 & 1.00 & 120 \\
+    $ZW (\to \tau\tau qq)$        & {\sherpa}  & 1.452  & 1.05 & 1.00 & 120 \\
+    $ZZ (\to \tau\tau qq)$        & {\sherpa}  & 0.242  & 1.00 & 1.00 & 120 \\
+    $ZW (\to \nu\nu qq)$          & {\sherpa}  & 2.697  & 1.05 & 1.00 & 64 \\
+    $ZZ (\to \nu\nu qq)$          & {\sherpa}  & 1.744  & 1.00 & 1.00 & 69 \\
+    $WW (\to e\nu qq)$            & {\sherpa}  & 7.285  & 1.06 & 1.00 & 100 \\
+    $WZ (\to e\nu qq)$            & {\sherpa}  & 1.904  & 1.05 & 1.00 & 110 \\
+    $WW (\to \mu\nu qq)$          & {\sherpa}  & 7.297  & 1.06 & 1.00 & 100 \\
+    $WZ (\to \mu\nu qq)$          & {\sherpa}  & 1.906  & 1.05 & 1.00 & 100 \\
+    $WW (\to \tau\nu qq)$         & {\sherpa}  & 7.274  & 1.06 & 1.00 & 100 \\
+    $WZ (\to \tau\nu qq)$         & {\sherpa}  & 1.915  & 1.05 & 1.00 & 100 \\
+    \hline
+  \end{tabular}
+  \label{tab:bkg_diboson_samples}
+ \end{table}
+
+
+
+%% Referencias
+%% \section{Referencias}
+
+%% \begin{itemize}\itemsep0.2cm\parskip0.2cm
+%% \item
+%% \end{itemize}
+
+%% %% %% MC Event Generators
+%% %% @inproceedings{Seymour:2013ega,
+%% %%   author         = ``Seymour, Michael H. and Marx, Marilyn'',
+%% %%   title          = ``{Monte Carlo Event Generators}'',
+%% %%   booktitle      = ``{Proceedings, 69th Scottish Universities Summer School in
+%% %%     Physics : LHC Phenomenology (SUSSP69)}'',
+%% %%   url            = ``http://inspirehep.net/record/1229804/files/arXiv:1304.6677.pdf'',
+%% %%   year           = ``2013'',
+%% %%   pages          = ``287-319'',
+%% %%   doi            = ``10.1007/978-3-319-05362-2_8'',
+%% %%   eprint         = ``1304.6677'',
+%% %%   archivePrefix  = ``arXiv'',
+%% %%   primaryClass   = ``hep-ph'',
+%% %%   reportNumber   = ``MCNET-13-05'',
+%% %%   SLACcitation   = ``%%CITATION = ARXIV:1304.6677;%%''
+%% %% }

@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+
+  \colorlet{green}{green!50!black!50}
+  \colorlet{red}{red!70!black!50}
+  \colorlet{blue}{blue!70!black!80}
+
+  \draw[gray!40,fill] (0, 1.6) -- (3, 3) -- (0,3) -- cycle;
+
+  \draw[->] (0,0) -- (3,0) node[below] {\small $m_{\tilde{g}}$};
+  \draw[->] (0,0) -- (0,3) node[left] {\small $m_{\tilde{\chi}_1^0}$};
+
+  %\draw[red,line width=2] (1.5,1.8) circle (15pt);
+  \draw[dashed] (0,0.8) -- (3, 2.2);
+
+  \node[blue] at (1.7,0.6) {\huge SR$_{\mathrm{L}}$};
+  \node[blue] at (1.5,1.9) [rotate=28] {\large SR$_{\mathrm{H}}$};
+
+\end{tikzpicture}
