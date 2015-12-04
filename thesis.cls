@@ -27,9 +27,9 @@
 
 %%-- Load additional packages and commands.
 \RequirePackage[final]{microtype}
-\RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
-\RequirePackage{lineno}
+\RequirePackage[utf8]{inputenc}
+%\RequirePackage{lmodern}
 \RequirePackage{amsmath}
 \RequirePackage{amsfonts}
 \RequirePackage{amssymb}
@@ -49,6 +49,7 @@
 \RequirePackage{accents}
 \RequirePackage{enumitem}
 \RequirePackage{subfig}
+\RequirePackage{lineno}
 
 %%-- Additional TeX/LaTeX code...
 \renewcommand\baselinestretch{1.2}
@@ -63,7 +64,7 @@
 %% \setlength{\arrayrulewidth}{0.4pt}
 %% \setlength{\doublerulesep}{0pt}
 %% \setlength{\tabcolsep}{15pt}
-%% \renewcommand{\arraystretch}{1.05}
+\renewcommand{\arraystretch}{1.25}
 
 % enter only chapters and sections in TOC---subsecs as a try
 \setcounter{tocdepth}{1}
@@ -90,7 +91,7 @@
 \setlength{\marginparwidth}{2cm}
 \fi
 
-% Add  line numbers
+%% %%Add  line numbers
 %% \AtBeginDocument{
 %%   \if@draftmode
 %%   \linenumbers

@@ -38,7 +38,6 @@
 \newcommand{\Wgg}{\ensuremath{W(\to \ell\nu)+\gamma\gamma}}
 \newcommand{\lgg}{\ensuremath{\ell \gamma\gamma}}
 \newcommand{\QCDg}{\ensuremath{\mathrm{QCD}}}
-%\newcommand{\ttbar}{\ensuremath{t \bar{t}}}
 \newcommand{\wlnu}{\ensuremath{W(\to \ell\nu)}}
 \newcommand{\Vg}{W/Z$+\gam$}
 \newcommand{\vqqgam}{V($\to$ qq)$+\gam$}
@@ -101,8 +100,8 @@
 \newcommand{\susyhit}{\textsc{Susyhit}}
 
 %-- Regions
-\newcommand{\SRH}{\ensuremath{\mathrm{SR}_\mathrm{L}}}
-\newcommand{\SRL}{\ensuremath{\mathrm{SR}_\mathrm{H}}}
+\newcommand{\SRL}{\ensuremath{\mathrm{SR}_\mathrm{L}}}
+\newcommand{\SRH}{\ensuremath{\mathrm{SR}_\mathrm{H}}}
 
 \newcommand{\CRQ}{\ensuremath{\mathrm{CR}^{Q}}} %%\gamma j}}}
 \newcommand{\CRQH}{\ensuremath{\mathrm{CR}_{L}^{Q}}}
@@ -154,3 +153,18 @@
 %- Otros
 \newcommand{\trigchain}{\texttt{g120\_loose}}
 \newcommand{\vsp}{\vspace{1cm}}
+
+
+\newcommand{\missingfig}[1]{%
+  \begin{tikzpicture}
+    \draw[line width=2] (-3cm,-3cm) rectangle (3cm,3cm)
+    node[font=\bf, centered, text width=5cm] at (0,0) {#1};
+  \end{tikzpicture}%
+}
+
+\newcommand{\mgmn}{$(m_{\gluino}, m_{\ninoone})$}
+\newcommand{\ptgam}{\ensuremath{\pt^\gam}}
+
+%- Fondos
+\newcommand{\feg}{\ensuremath{f_{e\to\gam}}}
+\newcommand{\fjg}{\ensuremath{f_{j\to\gam}}}
