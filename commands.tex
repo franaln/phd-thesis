@@ -3,9 +3,9 @@
 
 %- Abreviaciones
 \newcommand{\SM}{Modelo Estándar}
-\newcommand{\misid}{mis-identificación}
-\newcommand{\bjet}{b-jet}
-\newcommand{\bjets}{b-jets}
+%% \newcommand{\misid}{mis-identificación}
+\newcommand{\bjet}{$b$-jet}
+\newcommand{\bjets}{$b$-jets}
 
 %- Physics
 \let\vaccent=\v % rename builtin command \v{} to \vaccent{}
@@ -27,11 +27,13 @@
 %- LUMI
 \newcommand{\ilumi}{20.3 {\ifb}}
 
-
 %- Backgrounds
-\newcommand{\ttgam}{\ensuremath{\ttbar + \gam}}
-\newcommand{\wgam}{\ensuremath{W+\gam}}
-\newcommand{\zgam}{\ensuremath{Z+\gam}}
+\newcommand{\ttgam}{\ensuremath{\ttbar\gam}}
+\newcommand{\vgam}{\ensuremath{V\gam}}
+\newcommand{\wgam}{\ensuremath{W\gam}}
+\newcommand{\zgam}{\ensuremath{Z\gam}}
+\newcommand{\znngam}{Z($\to \nu\nu$)+\gam}
+\newcommand{\zllgam}{Z($\to ll$)+\gam}
 \newcommand{\gjet}{\ensuremath{\gamma+\text{jets}}}
 
 \newcommand{\Zgg}{\ensuremath{Z(\to \nu\bar{\nu})+\gamma\gamma}}
@@ -46,8 +48,6 @@
 \newcommand{\wenugam}{W($\to e\nu$)+\gam}
 \newcommand{\wmunugam}{W($\to \mu\nu$)+\gam}
 \newcommand{\wtaunugam}{W($\to \tau\nu$)+\gam}
-\newcommand{\znunugam}{Z($\to \nu\nu$)+\gam}
-\newcommand{\zllg}{Z($\to \ell\ell$)+\gam}
 \newcommand{\zeegam}{Z($\to ee$)+\gam}
 \newcommand{\zee}{Z($\to ee$)}
 \newcommand{\zmumugam}{Z($\to \mu\mu$)+\gam}
@@ -103,37 +103,36 @@
 \newcommand{\SRL}{\ensuremath{\mathrm{SR}_\mathrm{L}}}
 \newcommand{\SRH}{\ensuremath{\mathrm{SR}_\mathrm{H}}}
 
-\newcommand{\CRQ}{\ensuremath{\mathrm{CR}^{Q}}} %%\gamma j}}}
-\newcommand{\CRQH}{\ensuremath{\mathrm{CR}_{L}^{Q}}}
-\newcommand{\CRQL}{\ensuremath{\mathrm{CR}_{H}^{Q}}}
+\newcommand{\CRQ}{\ensuremath{\mathrm{CRQ}}} %%\gamma j}}}
+\newcommand{\CRQL}{\ensuremath{\mathrm{CRQ}_\mathrm{L}}}
+\newcommand{\CRQH}{\ensuremath{\mathrm{CRQ}_\mathrm{H}}}
 
-\newcommand{\CRT}{\ensuremath{\mathrm{CR}^{T}}}
-\newcommand{\CRTH}{\ensuremath{\mathrm{CR}_{L}^{t\gamma}}}
-\newcommand{\CRTL}{\ensuremath{\mathrm{CR}_{H}^{t\gamma}}}
+\newcommand{\CRT}{\ensuremath{\mathrm{CRT}}}
+\newcommand{\CRTL}{\ensuremath{\mathrm{CRT}_\mathrm{L}}}
+\newcommand{\CRTH}{\ensuremath{\mathrm{CRT}_\mathrm{H}}}
 
-%\newcommand{\CRW}{\ensuremath{\mathrm{CR}^{W}}}
 \newcommand{\CRW}{\ensuremath{\mathrm{CRW}}}
-\newcommand{\CRWH}{\ensuremath{\mathrm{CR}_{L}^{W\gamma}}}
-\newcommand{\CRWL}{\ensuremath{\mathrm{CR}_{H}^{W\gamma}}}
+\newcommand{\CRWL}{\ensuremath{\mathrm{CRW}_\mathrm{L}}}
+\newcommand{\CRWH}{\ensuremath{\mathrm{CRW}_\mathrm{H}}}
 
 
 %- Variables
-\newcommand{\dphigammet}{\ensuremath{\Delta \phi(\gamma,\MET)}}
-\newcommand{\dphim}{\ensuremath{\Delta \phi_{\mathrm{min}}(\gamma,\MET)}}
-\newcommand{\dphijm}{\ensuremath{\Delta \phi_{\mathrm{min}}(\mathrm{jet},\MET)}}
-\newcommand{\dphijg}{\ensuremath{\Delta \phi_{\mathrm{min}}(\mathrm{jet},\gamma)}}
+%% \newcommand{\dphigammet}{\ensuremath{\Delta \phi(\gamma,\MET)}}
+%% \newcommand{\dphim}{\ensuremath{\Delta \phi_{\mathrm{min}}(\gamma,\MET)}}
+\newcommand{\dphijm}{\ensuremath{\Delta \phi (\mathrm{jet},\MET)}}
+\newcommand{\dphijg}{\ensuremath{\Delta \phi (\mathrm{jet},\gamma)}}
 \newcommand{\rt}{\ensuremath{R_{\mathrm{T}}^{4}}}
 \newcommand{\rtt}{\ensuremath{R_{\mathrm{T}}^{2}}}
-\newcommand{\etiso}{\ensuremath{E_{\rm T}^{\rm iso}}}
+\newcommand{\etiso}{\ensuremath{\et^\mathrm{iso}}}
 
 %- Stat
 \DeclareMathOperator{\Pois}{Pois}
 \newcommand{\pvalue}{valor-$p$}
 \newcommand{\btheta}{\ensuremath{\bm{\theta}}}
-\newcommand{\cl}{\ensuremath{\text{CL}}}
-\newcommand{\clsb}{\ensuremath{\text{CL}_{s+b}}}
-\newcommand{\clb}{\ensuremath{\text{CL}_b}}
-\newcommand{\cls}{\ensuremath{\text{CL}_s}}
+\newcommand{\cl}{\ensuremath{\mathrm{CL}}}
+\newcommand{\clsb}{\ensuremath{\mathrm{CL}_{s+b}}}
+\newcommand{\clb}{\ensuremath{\mathrm{CL}_b}}
+\newcommand{\cls}{\ensuremath{\mathrm{CL}_s}}
 
 \newlength{\dhatheight}
 \newcommand{\doublehat}[1]{%
@@ -162,9 +161,18 @@
   \end{tikzpicture}%
 }
 
+\newcommand{\etaphi}{$(\eta, \phi)$}
 \newcommand{\mgmn}{$(m_{\gluino}, m_{\ninoone})$}
 \newcommand{\ptgam}{\ensuremath{\pt^\gam}}
 
 %- Fondos
 \newcommand{\feg}{\ensuremath{f_{e\to\gam}}}
 \newcommand{\fjg}{\ensuremath{f_{j\to\gam}}}
+
+
+\newcommand{\cteq}{\textsc{cteq}}
+\newcommand{\mstw}{\textsc{mstw}}
+
+\newcommand{\njets}{\ensuremath{N_\mathrm{jets}}}
+\newcommand{\nleptons}{\ensuremath{N_\mathrm{leptones}}}
+\newcommand{\nbjets}{\ensuremath{N_{b\mathrm{-jets}}}}

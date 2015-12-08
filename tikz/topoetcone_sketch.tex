@@ -1,8 +1,5 @@
 \begin{tikzpicture}
 
-  \colorlet{red}{red!70}
-  \colorlet{blue}{blue!60}
-
   %% middle
   \draw[blue,fill] (-1.2, -0.4) rectangle (1.2,0.4);
   \draw[blue,fill] (-0.8, -0.8) rectangle (0.8,0.0);
@@ -31,7 +28,6 @@
   \draw[blue,fill] (2.0, -2.4) rectangle (2.4,-3.6);
   \draw[blue,fill] (2.4, -2.4) rectangle (2.8,-3.2);
 
-
   % grid/cone
   \draw[step=0.4,black!30,thin] (-4.8,-4.8) grid (4.8,4.8);
 
@@ -45,5 +41,13 @@
 
   \draw[->, line width=1] (-4.4,-4.4) -- (-3.6,-4.4) node[right] {\large $\eta$};
   \draw[->, line width=1] (-4.4,-4.4) -- (-4.4,-3.6) node[above] {\large $\phi$};
+
+ % \draw[dashed, line width=1] (0,0) -- (0,4);
+%  \draw[fill] (0,0) circle(0.08);
+%  \draw[fill] (0,4) circle(0.08);
+ % \node at (0.5,2.5) (R) {\large $R$};
+  %\node at (0,2) (mid) {};
+
+  %% \draw[->] (mid) edge[bend right] (R);
 
 \end{tikzpicture}
