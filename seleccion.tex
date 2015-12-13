@@ -2,18 +2,19 @@
 
 
 Como se describe en {\XXX} las regiones de señal son un componente clave del
-análisis.
-En este capitulo se describe la selección de eventos que definen las regiones de
-señal, que fueron optimizadas en base a la signifícanos esperada de
-descubrimiento utilizando las muestras MC de señal y fondos del SM.
+análisis dado que son aquellas en las que se espera la presencia de eventos de
+nueva fisica. En este capitulo se describe la selección de eventos que definen
+las regiones de señal del analisis de esta Tesis. Esta seleccion fue optimizada
+en base a la significancia esperada de descubrimiento utilizando las muestras MC
+de señal y fondos del SM.
 
 
 
-\section{Criterios de calidad}
+\section{Criterios de calidad sobre los datos}
 
 %% % GRL: data12_8TeV.periodAllYear_DetStatus-v61-pro14-02_DQDefects-00-01-00_PHYS_StandardGRL_All_Good.xml
 
-En esta análisis se ha utilizado una
+Para este análisis se ha utilizado una
 GRL\footnote{\texttt{data12\_8TeV.periodAllYear\_DetStatus-v61-pro14-02\_DQDefects-00-01-00\_PHYS\_StandardGRL\_All\_Good.xml}}
 que, además de aplicar requerimientos generales sobre la operación del
 experimento y la estabilidad del haz en el acelerador, contiene aquellos eventos
@@ -25,7 +26,7 @@ en energía faltante instrumental. %% debido a alguno de estos problemas.
 
 
 
-\section{Trigger}\label{sec:trigger}
+\section{Trigger\note{Explicar mejor}}\label{sec:trigger}
 
 Los datos fueron colectados utilizando un trigger de un fotón (\trigchain), que
 selecciona eventos con al menos un fotón loose con momento transverso mayor a
@@ -58,7 +59,7 @@ considerado.
 
 \section{Preselección}\label{sec:base_seleccion}
 
-\subsection{Vertice Primario}
+\subsection{Vértice Primario}
 
 Como se describe en \XXX\ los candidatos a vértices de la interacción $pp$ son
 reconstruidos en cada eventos utilizando las trazas en el detector interno. El
@@ -74,12 +75,12 @@ cargadas. \note{Por que?}
 %% Antes de aplicar los cortes cinemáticos, se realiza la siguiente
 %% preselección y limpieza.
 
-Primero se realiza una preselección de los objetos que se consideran en cada
-eventos como se detalla a continuación y en la \cref{tab:base_sel}. Se
+En primero lugar se realiza una preselección de los objetos que se consideran en cada
+eventos como se detalla a continuación y en la \cref{tab:base_sel}: se
 consideran fotones a todos aquellos candidatos a fotón que pasen el criterio de
 identificación \emph{tight}, que tengan $\pt>75\gev$ y $|\eta|<2.37$. Se
-consideran electrones que pasan el criterio de identificación \emph{medium}, y
-que tengan un $\pt>10\gev$ y $|\eta|<2.47$, y muones que pasan un criterio de
+consideran electronesa los candidatos que pasan el criterio de identificación \emph{medium}, y
+que tengan un $\pt>10\gev$ y $|\eta|<2.47$, y muones a aquellos que pasan un criterio de
 identificación \emph{loose} con $\pt>6 \gev$ y $|\eta|<2.5$. Para el caso de
 jets, se consideran los que tienen $\pt>20\gev$ y $|\eta|<2.8$.
 
@@ -87,14 +88,14 @@ jets, se consideran los que tienen $\pt>20\gev$ y $|\eta|<2.8$.
 \begin{table}[ht!]
   \centering
 
-  \caption{Preselección de objetos. Criterio de identificación (ID), y cortes de
+  \caption{Preselección de objetos. Criterio de identificación (ID) y cortes de
     aceptancia (\pt, $\eta$) considerados para cada tipo de partícula. Además
-    del limite superior en $|\eta|$, no se consideran en ningún caso los objetos
+    del límite superior en $|\eta|$, no se consideran en ningún caso los objetos
     que se encuentren en la zona entre la zona central y las tapas del detector, es
     decir, con $1.37 < |\eta| < 1.52$.}
   \label{tab:base_sel}
 
-  \begin{tabular}{p{0.2\textwidth}x{0.2\textwidth}x{0.2\textwidth}x{0.2\textwidth}}
+  \begin{tabularx}{\textwidth}{LCCC}
     \hline
     & ID & $\pt$ & $|\eta|$ \\
     \hline
@@ -103,7 +104,7 @@ jets, se consideran los que tienen $\pt>20\gev$ y $|\eta|<2.8$.
     Muones     & \emph{loose}  & $> 6  \gev$ & $<2.5$  \\
     Jets       & -             & $> 20 \gev$ & $<2.8$  \\
     \hline
-  \end{tabular}
+  \end{tabularx}
 
 \end{table}
 
@@ -142,12 +143,12 @@ detalla a continuación en ese orden:
 
 \subsection{Limpieza de eventos}
 
-Para asegurar el correcto calculo de la energia faltante, y eliminar
-los eventos con energia faltante instrumental, los eventos que satisfacen
+Para asegurar el correcto calculo de la energía faltante, y eliminar
+los eventos con energía faltante instrumental, los eventos que satisfacen
 alguna de las condiciones siguientes son descartados.
 
 \begin{itemize}\itemsep0.1cm
-\item Si el evento (después de de la preseleccion de objetos y la eliminacion de los objetos superpuestos) contiene al menos
+\item Si el evento (después de de la preselección de objetos y la eliminación de los objetos superpuestos) contiene al menos
   un jet que falla los cortes de limpieza de jets que se definen en
   \cref{sec:jet_obj}.
 
@@ -164,17 +165,16 @@ en \cref{sec:met_obj}.
 
 \section{Optimización de las regiones de señal}
 
-Después de la preselección descripta en las secciones anteriores, es necesario
-definir las regiones de señal, es decir, las regiones enriquecidas en eventos
-de señal en las cual se realizara el experimento de conteo.
- Definir una región de señal implica la definición de una selección (un conjunto
- de cortes) en ciertos observables.
-
+%% Después de la preselección descripta en las secciones anteriores, es necesario
+%% definir las regiones de señal, es decir, las regiones enriquecidas en eventos
+%% de señal en las cual se realizara el experimento de conteo.
+%% Definir una región de señal implica la definición de una selección (un conjunto
+%% de cortes) en ciertos observables.
 
 Como primer paso se seleccionan eventos que contengan el estado final buscado:
-un fotón, y energía faltante. Y a partir de eso se buscan observables que
-permitan separar la señal del fondo y se optimizan los cortes en estos observables.
-%Adicionalmente, se imponen algunos cortes para ``limpiar'' el evento de posibles
+un fotón, al menos un jet y energía faltante. Y a partir de esa selección
+inicial, se eligen observables que permitan separar la señal del fondo y se
+optimizan los cortes en estos observables.
 
 
 %% la selección final que se aplicara a los
@@ -183,7 +183,7 @@ permitan separar la señal del fondo y se optimizan los cortes en estos observab
 %% haciendo uso de las muestras simuladas con MC tanto para señal como para los
 %% procesos del SM.
 
-Del estudio realizado en la sección {\XXX}, resulta evidente las diferencias
+Del estudio realizado en la sección {\XXX}, resultan evidentes las diferencias
 cinemáticas y topológicas de los eventos en las distintas regiones del
 espacio de parámetros {\mgmn} del modelo de SUSY.
 Es por esta razón que resulta conveniente tener mas de una región de señal,
@@ -195,22 +195,21 @@ cada una destinada a una zona particular de la grid de señal.
 %% topológicas.
 
 Por tal motivo, se dividió el análisis en dos regiones de señal, a las que se
-llamó {\SRL} y {\SRH}.
-La primera región de señal, \SRL, dirigida a la zona de gluinos de alta masa que
-decaen en cascada hasta neutralinos NLSP de baja y moderada masa. Los eventos de
-señal en esta región se caracterizan por un gran multiplicad de jets y actividad
-hadronica, debido a que involucra cadenas de decaimiento largas de gluinos
-pesados a través de producción de charginos. Cuanto mas baja la masa del
-{\ninoone}, más baja sera la energía del fotón y menor es la cantidad de
-energía faltante.
-La segunda región de señal, \SRH, tiene como motivación los escenarios donde la
-masa del gluino y del neutralino mas liviano están cerca una de la otra. La
-cadena de decaimiento es por lo tanto mucho mas corta en este caso, con una
-menor multiplicidad de jets, y debido al neutralino pesado, fotones de alto
-{\pt} y gran cantidad de energía faltante en el estado final.
+llamó {\SRL} y {\SRH}. La primera región de señal, \SRL, donde la busqueda se focaliza en a la zona en la que
+los gluinos decaen en cascada hasta neutralinos NLSP de baja y
+moderada masa. Los eventos de señal en esta región se caracterizan por una gran
+multiplicidad de jets y actividad hadrónica, debido a que involucra cadenas de
+decaimiento largas de gluinos pesados a través de producción de charginos\note{Explicar de donde salen los jets}.
+Cuanto mas baja la masa del {\ninoone}, más baja sera la energía del fotón y
+menor es la cantidad de energía faltante. La segunda región de señal, \SRH,
+tiene como motivación los escenarios donde la masa del gluino y del neutralino
+mas liviano están cerca una de la otra. La cadena de decaimiento es por lo tanto
+mucho mas corta en este caso, con una menor multiplicidad de jets y, debido al
+neutralino pesado, fotones de alto {\pt} y gran cantidad de energía faltante en
+el estado final.
 
-En la \cref{fig:srs_motivation} puede ver esquemáticamente a que región del espacio
-del parámetros de la señal \mgmn esta destinada cada SR.
+En la \cref{fig:srs_motivation} puede verse esquemáticamente a que región del espacio
+de parámetros de la señal {\mgmn} esta destinada cada SR.
 
 \begin{figure}[!htbp]
   \centering
@@ -227,24 +226,24 @@ Para la optimización de las SR, se utilizaron varios puntos de señal en cada r
 representativos de la topología y el espacio de fase en cada caso.
 
 \begin{itemize}\itemsep0.2cm\parskip0.2cm
-\item {\SRL}: (1150, 175) y (1150, 450)
+\item {\SRL}: (1150, 200) y (1150, 450)
 \item {\SRH}: (1150, 850) y (1150, 1050)
 \end{itemize}
 
 
-Se utilizaron los fondos MC, y se considero una incerteza en la estimación del
+Como fondo se utilizaron las muestras MC, y se consideró una incerteza en la estimación del
 fondo de 25\%. Todas las muestras MC fueron normalizadas a una luminosidad total
-integrada de $20.3 \ifb$. La significancia esperada se calculo utilizando la
+integrada de $20.3 \ifb$. La significancia esperada se calculó utilizando la
 \cref{eq:Za}, y para evitar una selección muy restringida, se requiere al menos
 un evento de fondo en cada SR. Además de evaluar la significancia esperada para
 distintos cortes también se tuvo en cuenta que la eficiencia de señal no sea
 menor a 20\%.
 
-Los cortes fueron optimizados en el orden de poder discriminatorio, uno a la
+-- Los cortes fueron optimizados en el orden de poder discriminatorio, uno a la
 vez, y aplicados en el orden descripto a continuación, monitoreando la
-significancia para distintos cortes en las variables discriminatorias.
+significancia para distintos cortes en las variables discriminatorias.\note{chequear esto}
 
-Como ya se ha mencionado el estado final buscado en este análisis consiste en un
+-- Como ya se ha mencionado el estado final buscado en este análisis consiste en un
 único fotón, jets y energía faltante. Por lo que la definición de las SR
 comienza optimizando los cortes en las variables cinemáticas del fotón, los jets
 y el corte en energía faltante.
@@ -254,8 +253,6 @@ y el corte en energía faltante.
 %% The significance for different cut combinations was also monitored to take the best configuration.
 %% A minimal pre-selection cut in $\met>150\gev$ was placed in the SR, which is highly efficient for the signal and very effective
 %% removing large part of the SM backgrounds, particularly the QCD multijet production. The final selection requirements are summarised in sec \ref{sec:signal_regions}.
-
-
 
 %% \begin{figure}[h!]
 %%   \centering
@@ -270,16 +267,17 @@ y el corte en energía faltante.
 \subsection{Fotón}\label{sec:opt_ph_iso}
 
 El primer paso para definir la SR consistió en seleccionar eventos con un único
-fotón de los previamente seleccionados con {\pt} mayor a 125 \gev. Este valor se
-eligió para que esté por encima de la meseta de la eficiencia del trigger. En la
-\cref{fig:photon_pt} se muestra las distribuciones del {\pt} del fotón para los
-eventos de fondo del {\SM} como también para algunos puntos de señal.
+fotón de los previamente seleccionados con {\pt} mayor a 125 \gev. Este valor
+fue elegido para que esté por encima de la meseta de la eficiencia del trigger,
+en la cual es máxima.
+%% En la \cref{fig:photon_pt} se muestra las distribuciones del {\pt} del fotón
+%% para los eventos de fondo del {\SM} como también para algunos puntos de señal.
 
-Los eventos con un segundo fotón con $\pt > 75 \gev$ fueron vetados. El corte en {\pt}
- de $75\gev$ fue elegido para que las SR sean ortogonales a las SR del análisis de ATLAS
-que busca dos fotones\cite{ATLAS-CONF-2014-001}
-y la posible combinación estadística con el mismo. Este otro análisis fue diseñado
-para buscar SUSY en escenarios GGM, pero particularmente en el caso de que el
+Los eventos con un segundo fotón con $\pt > 75 \gev$ fueron vetados. El corte en
+{\pt} de $75\gev$ fue elegido para que las SR sean ortogonales a las SR del
+análisis de ATLAS que busca dos fotones\cite{ATLAS-CONF-2014-001} y la posible
+combinación estadística entre ambos. Este otro análisis fue diseñado para
+buscar SUSY en escenarios GGM, pero particularmente en el caso de que el
 neutralino NLSP sea mayoritariamente bino, y el decaimiento a fotones sea
 dominante.
 
@@ -295,14 +293,14 @@ dominante.
 %% \end{figure}
 
 Como se menciona en la \cref{sec:pho_obj}, para seleccionar los fotones se
-aplica un corte en la energía transversa de aislamiento. Se estudiaron distintos
-criterios de aislamiento, en los que varia el tamaño del cono ($R$) en el cual se
+aplica un corte en la energía transversa de aislamiento (\etiso). Se estudiaron distintos
+criterios de aislamiento, en los que varía el tamaño del cono ($R$) en el cual se
 calcula esta energía.
 
 %% La optimización de este criterio de aislamiento  fue realizada mirando el desempe\~no
 %% de los distintos tamaños de cono.
 
-En la \cref{fig:photon_iso} se muestra las distribuciones de la energía de
+En la \cref{fig:photon_iso} se muestran las distribuciones de la energía de
 aislamiento para varios valores de $R$ para las muestras de señal en las dos SR.
 La SR con mayor diferencia de masa entre gluino y neutralino parece tener
 distribuciones mas anchas, un efecto que desaparece para tamaños de cono mas
@@ -310,12 +308,12 @@ chicos. Como se ve en la \cref{fig:photon_iso_sig} (arriba), la mayor eficiencia
 de selección se obtiene también para el menor tamaño de cono, $R = 0.2$. Para un
 corte de $5 \GeV$, obtenemos una eficiencia alta (85-90\%) a lo largo de toda la
 grid. Luego de aplicar una preselección en {\met}, los fotones no aislados
-provenientes de fondos procesos QCD son muy suprimidos, reduciendo el impacto
+provenientes de fondos dominados por procesos QCD son muy suprimidos, reduciendo el impacto
 del corte de aislamiento en la significancia.
 
 Incluso luego de que la corrección es aplicada para remover la filtración de
-energía del fotón dentro de su propio cono de aislamiento, una dependencia reman
-te con el {\pt} del fotón es observada para todos los tamaños de cono
+energía del fotón dentro de su propio cono de aislamiento, una dependencia remante
+con el {\pt} del fotón es observada para todos los tamaños de cono
 considerados, como se muestra en \cref{fig:photon_iso} (abajo). El tratamiento
 de este efecto es discutido en la \cref{sec:jfake_sig_template,sec:expsyst}.
 
@@ -331,9 +329,10 @@ de este efecto es discutido en la \cref{sec:jfake_sig_template,sec:expsyst}.
   \includegraphics[width=0.32\textwidth]{figures/iso_30_pt}
   \includegraphics[width=0.32\textwidth]{figures/iso_40_pt}
 
-  \caption{Distribución de {\etiso} (arriba) y su promedio como función del
+  \caption{Distribución de {\etiso} (arriba) y su valor medio como función del
     {\pt} del fotón (abajo) para distintos tamaños de conos: $R=0.2$, $R=0.3$ y$R=0.4$.
-    Una preselección de $\pt>120\gev$ y $\met>150\gev$ fue aplicada.}
+    Una preselección de $\pt>125\gev$ y $\met>150\gev$ fue aplicada, para suprimir
+    gran parte del fondo de fotones directos.}
   \label{fig:photon_iso}
 \end{figure}
 
@@ -348,8 +347,8 @@ de este efecto es discutido en la \cref{sec:jfake_sig_template,sec:expsyst}.
   \includegraphics[width=0.3\textwidth]{figures/iso_30_eff}
   \includegraphics[width=0.3\textwidth]{figures/iso_40_eff}
 
-  \caption{Significancia (arriba) y eficiencia (abajo) vs. el corte en la energía de
-    aislamiento, después del corte en {\pt} y {\met}.}
+  \caption{Significancia esperada (arriba) y eficiencia (abajo) como función del
+    corte en la energía de aislamiento, después del corte en {\pt} y {\met}.}
   \label{fig:photon_iso_sig}
 \end{figure}
 
@@ -360,7 +359,7 @@ de este efecto es discutido en la \cref{sec:jfake_sig_template,sec:expsyst}.
 Además del veto a los eventos con un segundo fotón, también se remueven
 los eventos que contienen leptones ($e$ o $\mu$) con el objetivo de que las
 SR no tengan un solapamiento con las SR del análisis que busca un fotón, un
-leptón y energía faltante\note{cite?}. La disminución en la eficiencia
+leptón y energía faltante\note{cite?} que busca... . La perdida en la eficiencia
 debido a este veto es de XXX \%.
 
 
@@ -368,7 +367,9 @@ debido a este veto es de XXX \%.
 \subsection{Energía faltante}
 
 La principal característica de los eventos de SUSY donde se conserva
-la paridad-R, es la presencia de una gran cantidad de energía faltante.
+la paridad-R, es la presencia de una gran cantidad de energía faltante,debido
+a las LSP estables que escapan la detección, en este caso debido a los dos gravitinos
+en el estado final.
 Un corte en esta variable reduce enormemente la contaminación de procesos
 QCD y también de otros procesos del {\SM}.
 La \cref{fig:opt_met} muestra la distribución de {\met} en eventos con
@@ -385,7 +386,7 @@ es posible aplicar un corte más alto ($>300\gev$).
   \includegraphics[width=0.49\textwidth]{met_et_base1}
   \includegraphics[width=0.49\textwidth]{met_et_base2}
   \caption{Energía faltante transversa para una luminosidad integrada de {\ilumi}
-    luego de que se aplique el corte en el {\pt} del fotón y en la energía de aislamiento
+    luego de que se aplica el corte en el {\pt} del fotón y en la energía de aislamiento
     para los puntos de señal de {\SRL} (izquierda) y {\SRH} (derecha). }
   \label{fig:opt_met}
 \end{figure}
@@ -394,11 +395,12 @@ es posible aplicar un corte más alto ($>300\gev$).
 
 \subsection{Multiplicidad y {\pt} de los jets} \label{sec:opt_njet}
 
-En la \cref{fig:jets_npv} se muestra, el valor medio del numero de jets
-seleccionados como funcion del numero de vertices en el evento, para
-distintos cortes en el {\pt} de los jets. A medida que aumenta el corte
-en {\pt} el numero de jets se hace mas estable con el pile-up, y por lo
-tanto en este analisis se consideran los jets con $\pt>40\gev$
+En la \cref{fig:jets_npv} se muestra el valor medio del número de jets
+seleccionados como función del número de vertices en el evento, para distintos
+cortes en el {\pt} de los jets. Notar que el número de vertices en un evento
+esta relacionado con el \emph{pile-up}. A medida que aumenta el corte en {\pt}
+el número de jets se hace mas estable con el \emph{pile-up}, y por lo tanto en
+este análisis se consideran los jets con $\pt>40\gev$
 
 %% El corte en {\pt} fue elegido para asegurar una selección robusta contra el pile-up.
 
@@ -406,8 +408,8 @@ tanto en este analisis se consideran los jets con $\pt>40\gev$
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.5\textwidth]{data_jets_npv}
-  \caption{Valor medio del numero de jets vs. el número de vértices primarios
-    observados en datos para distintas selecciones de $\pt^{jet}$.}
+  \caption{Valor medio del número de jets vs. el número de vértices primarios
+    observados en datos para distintas selecciones de $\pt^{\mathrm{jet}}$.}
     \label{fig:jets_npv}
 \end{figure}
 
@@ -418,24 +420,23 @@ tanto en este analisis se consideran los jets con $\pt>40\gev$
 %% primarios. Luego, en la selección final, cortes mas alto en el {\pt} de los jets
 %% son utilizados como se describe en \cref{sec:opt_njet}.
 
-La \cref{fig:opt_jet_n} muestra la multiplicidad de jets ($N_{\mathrm{jet}}$) para
-$\pt^{\mathrm{jet}} > 40$ \gev, después de los cortes optimizados en el fotón y la {\met}
-descriptos anteriormente.
-Mientras que la señal tiene típicamente un gran número
-de jets, la mayoría de los fondos W/Z+jets, diboson y QCD se acumulan en la zona
-de pocos jets. Al menos dos (cuatro) jets son requeridos para los eventos que
-pasa la selección de {\SRL} ({\SRH}).
-Una mayor multiplicidad es efectivamente
-esperada para {\SRL} debido a que su objetivo es la región de gluinos pesados
-donde el decaimiento dominante es el de producción de cárganos por un
-decaimiento de tres cuerpos.
+La \cref{fig:opt_jet_n} muestra la multiplicidad de jets ($N_{\mathrm{jet}}$)
+para $\pt^{\mathrm{jet}} > 40$ \gev, después de los cortes optimizados en el
+fotón y la {\met} descriptos anteriormente. Mientras que la señal tiene
+típicamente un gran número de jets, la mayoría de los fondos W/Z+jets, diboson y
+QCD se acumulan en la zona de pocos jets. Al menos dos (cuatro) jets son
+requeridos para los eventos que pasan la selección de {\SRL} ({\SRH}). Una mayor
+multiplicidad es efectivamente esperada para {\SRL} debido a que su objetivo es
+la región de gluinos pesados donde el decaimiento dominante es el de producción
+de charginos por un decaimiento de tres cuerpos.
 
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.49\textwidth]{jet_n_base1}
   \includegraphics[width=0.49\textwidth]{jet_n_base2}
-  \caption{Número de jets en la {\SRL} (izquierda) y {\SRH} (derecha) con $\pt > 40 \gev$,
-    después de la seleccion en el {\pt} del fotón y $\met > 150\gev$, para una luminosidad integrada de {\ilumi}.}
+  \caption{Número de jets en la {\SRL} (izquierda) y {\SRH} (derecha) con $\pt >
+    40 \gev$, después de la seleccion en el {\pt} del fotón y $\met > 150\gev$,
+    para una luminosidad integrada de {\ilumi}.}
   \label{fig:opt_jet_n}
 \end{figure}
 
@@ -452,8 +453,9 @@ decaimiento de tres cuerpos.
 %% después de los cortes descriptos anteriormente. %Adicionalmenteafter the
 %% photon \pt, \etmiss\ and $N_{jet}$ requirements described above for each signal region.
 
-En la {\SRL} es posible obtener una disccriminacion requiriendo ademas que los dos jets
-mas energeticos tengan $\pt>100 \gev$.
+En la {\SRL} es posible obtener una discriminacion requiriendo además que los dos jets
+más energéticos tengan $\pt>100 \gev$.
+
 %% En la {\SRH} donde la masa del gluino y la NLSP
 %% es menor, een
 %% Additional signal-background discrimination can be achieved by requiring a hard leading
@@ -489,16 +491,16 @@ mas energeticos tengan $\pt>100 \gev$.
 
 
 
-\subsection{Ángulo entre jets y \met}
+\subsection{Separación angular entre jets y \met}
 \label{sec:dphi_obj}
 
-En los eventos de señal, la energía faltante es producida por los dos
-gravitinos. Se espera por lo tanto que la dirección del {\met} sea aleatoria,
+Como se mencionó, en los eventos de señal, la energía faltante es producida por los dos
+gravitinos. Se espera por lo tanto que la dirección de {\met} sea aleatoria,
 sin estar correlacionada con ninguno de los demás objetos del evento. Por otro
-lado, si la {\met} es originada de efectos instrumentales o de neutrinos
-energéticos en $b$-jets o $c$-jets, la dirección del {\met} estará
-correlacionada con uno de los jets mal medidos. La
-\cref{fig:jet_jet-MET-phi_3SR} muestra el mínimo $\Delta\phi$ entre la dirección
+lado, si la {\met} es originada a partir de efectos instrumentales o de neutrinos
+energéticos en $b$-jets o $c$-jets, la dirección de {\met} estará
+correlacionada con uno de los jets mal reconstruidos. La
+\cref{fig:opt_dphi_jetmet} muestra el mínimo $\Delta\phi$ entre la dirección
 de {\met} y la de los dos jets mas energéticos.
 
 %% \begin{equation} \label{eq:dphi}
@@ -513,14 +515,16 @@ de {\met} y la de los dos jets mas energéticos.
 
 \begin{figure}[!htbp]
   \centering
+
   \includegraphics[width=0.49\textwidth]{figures/dphi_jetmet_srl}
   \includegraphics[width=0.49\textwidth]{figures/dphi_jetmet_srh}
-  \caption{$\Delta \phi \text{(jet, \MET)}$ para {\SRL} (izquierda) y {\SRH} (derecha)}
-  \label{fig:jet-MET-phi_3SR}
+
+  \caption{$\Delta \phi \mathrm{(jet, \met)}$ para {\SRL} (izquierda) y {\SRH} (derecha)}
+  \label{fig:opt_dphi_jetmet}
 \end{figure}
 
 
-\subsection{Ángulo entre jet y fotón}
+\subsection{Separación angular entre jets y fotón}
 
 Para regiones del espacio de parámetros del modelo de señal
 donde los gluinos y los neutralinos tienen alta masa ({\SRH})
@@ -536,19 +540,23 @@ producido en la dirección opuesta al jet mas energético.
 %% \end{equation}
 
 %
-%% which distribution is shown in {\fig} \ref{fig:jet-photon-phi_SR3},
+
+La distribucion para la {\SRH} se puede ver en \cref{fig:opt_dphi_gamjet}.
 %% for {\SRH} benchmark signal samples after all previous selection.
 %% The cut value chosen for this high gluino-neutralino mass region is $\dphijg<2$.
 
  % shows the jet-photon $\phi$ separation for signal and backround in SR3, after applying the photon \pt\ ,  \etmiss,  jet  \pt\  and multiplicity as well as  $\Delta \phi \text{(jet, MET)}$ cuts.  The cut value chosen for jet-photon separation in this high mass signal region  is  $\Delta \phi \text{(jet}, \gamma) >2$.
-%%   \begin{figure*}[th!]
-%%  \centering
-%%    \includegraphics[width=0.49\textwidth]{figures/figura}
-%%    \caption{\dphijg\ for {\SRH}, after applying the photon \pt, \met, jet multiplicity, jet \pt\ and \dphijm\ cuts
-%%      (See text for details), for an integrated luminosity of 20.3 \ifb.  For illustration,
-%%    distributions for three signal points are also shown.}
-%% \label{fig:jet-photon-phi_SR3}
-%% \end{figure*}
+
+\begin{figure}[!htbp]
+  \centering
+
+  \includegraphics[width=0.49\textwidth]{figures/figura}
+
+  \caption{Distribucion de {\dphijg} para {\SRH}, despues de aplicar la seleccion completa excepto el corte en {\dphijg},
+    para una luminosidad integrada de 20.3 \ifb.}
+  \label{fig:opt_dphi_gamjet}
+\end{figure}
+
 
 
 \subsection{Energia Total Transversa (\HT)}
@@ -561,11 +569,12 @@ escalar de la energía transversa de todos los objetos observados en el estado
 final es mucho mayor para eventos de señal que para los eventos de fondo.
 Después del veto a los eventos con leptones, {\HT} se define como:
 
-\begin{equation} \label{eq:htaddition}
+\begin{equation}
   \HT \equiv \pt^{\gamma} + \sum_{\mathrm{jets}} \pt^\mathrm{jet}
+  \label{eq:ht_def}
 \end{equation}
 
-La \cref{fig:opt_ht} muestra las distribuciones de {\HT}.
+La \cref{fig:opt_ht} muestra las distribuciones de {\HT} para las dos regiones de señal.
 Para {\SRL}, se espera incluso que {\HT} sea mayor, debido a la
 diferencia de masa entre el gluino y el neutralino NLSP. Sin embargo
 se encontró una variable mas efectiva para la separación entre señal y
@@ -573,29 +582,31 @@ fondo que se describe a continuación y por lo tanto no se aplica un corte
 en esta variable.
 
 %photon \pt,  \etmiss, jet multiplicity, two leading jets  \pt,   jet-\etmiss\  and jet-photon $\phi$ separation cuts.
-%A large \HT\ requirement ($>800 \gev$) helps reducing the remaining SM background in SR3. Given the high mass neutralino, the main contribution to \HT\ is coming from the hard photon in the event.
-%particularly,  SR3 as significantly larger hadronic activity is observed in the signal samples.  NO
-%Cuts are then applied, requiring \HT  larger than 800 \gev\  for both SRs.
+
+En {\SRH} un corte en este observable $\HT>800\gev$ ayuda a reducir el restante
+fondo. Dada la masa alta del neutralino, la mayor contribución de {\HT} proviene
+del fotón muy energético producido en el evento.
+
 
 \begin{figure}[!htbp]
   \centering
-  \includegraphics[width=0.49\textwidth]{ht_srl} %ht_SR2}
-  \includegraphics[width=0.49\textwidth]{ht_srh} %ht_SR3}
-  \caption{Distribución de la energia total transversa (\HT) para {\SRL} (izquierda)
-    y {\SRH} (derecha).}
-    %.distributions for SR2 (left) and SR3 (right).}
-    %% after photon \pt, \etmiss, jet multiplicity, jet \pt\ and angular cuts
-    %% (see text for details), for an integrated luminosity of 20.3 \ifb.  For illustration,
-    %% distributions for three signal points in each signal regions are also shown.}
+
+  \includegraphics[width=0.49\textwidth]{ht_srl}
+  \includegraphics[width=0.49\textwidth]{ht_srh}
+
+  \caption{Distribución de la energía total transversa (\HT) para {\SRL} (izquierda)
+    y {\SRH} (derecha) para una luminosidad total integrada de 20.3 \ifb. Todos los cortes de la selección
+  de la SR son aplicados exceptuando el corte en {\HT}.}
   \label{fig:opt_ht}
 \end{figure}
+
 
 
 \subsection{Variables de forma adicionales}\label{sec:shape_vars}
 
 Adicionalmente, muchas variables de forma fueron exploradas para poder obtener
-una discriminación adicional entre señal y fondo. En especial se estudio el
-observable $R_T^n$ definida como
+una discriminación adicional entre señal y fondo. En especial se estudió el
+observable $R_T^n$ definido como
 
 \begin{equation}\label{eq:rt_formula}
   R_{T}^{n} = \frac{\sum_{i=1}^{n}p_\mathrm{T}^{j_i}}{\sum p_\mathrm{T}^{j}},
@@ -605,12 +616,19 @@ es decir, el cociente entre la suma escalar de los {\pt} de $n$ jets y la suma
 escalar del {\pt} de todos los jets en el evento, donde $n$ es el mínimo número
 de jets requerido.
 
-%% It is evident that the distribution pattern of this variable, as pointed
-%% out in \cite{PhysRevD.84.055010}, depends on the multiplicity and hardness of the jets. As shown in previous sections, the SUSY signals here considered are characterized by hard multijet events in a wide region of parameter space. Evenmore, the sub-leading jets are comparatively harder than those in SM background events. In the case when
+Es evidente que la distribución de esta variable (como se explica en
+\cite{PhysRevD.84.055010}), depende de la multiplicidad y el momento transverso
+de los jets. En el caso que $n \sim N_\mathrm{jet}$ el denominador y el
+numerador son casi idénticos y el cociente es $\sim 1$, y es exactamente 1
+cuando son iguales.
+Para los procesos de señal en los que $n$ es mucho menor al número de jets en el
+evento, la distribución sera menor a 1.
 
-%% $n_{j}^{min} \sim n_{j}$, which is predominant in the latter,
-%% then the numerator and denominator in {\eq} \eqref{eq:rt_formula}
-%% are almost identical and hence the ratio is close to unity. For signal processes, with $n_{j}^{min} \ll n_{j}$ and comparatively harder jets, the ratio is mostly distributed way below 1.
+%% depends on the multiplicity and hardness of the jets. As shown in previous
+%% sections, the SUSY signals here considered are characterized by hard multijet
+%% events in a wide region of parameter space. Evenmore, the sub-leading jets are
+%% comparatively harder than those in SM background events.
+
 
 \begin{figure}[!htbp]
   \centering
@@ -624,12 +642,12 @@ de jets requerido.
 
 La \cref{fig:opt_rt} (izquierda) muestra la distribución de {\rtt} para {\SRH},
 después de la selección final excepto el corte en {\rtt}. Mientras que la
-\cref{fig:opt_rt} muestra la distribución de {\rt} para {\SRL}. El bajo numero
+\cref{fig:opt_rt} muestra la distribución de {\rt} para {\SRL}. El bajo número
 de jets para {\SRH}, hace que la distribución de {\rtt} para los eventos de
 señal sea similar a la del fondo QCD, y por lo tanto el observable no es útil
-para rechazas fondo manteniendo una aceptancia razonable. Para el caso de {\SRL}
+para rechazar fondo manteniendo una aceptancia razonable. Para el caso de {\SRL}
 un corte $\rt < 0.85$ permite reducir en una fracción considerable el fondo con
-una perdida muy chica en la eficiencia de señal.
+una pérdida muy chica en la eficiencia de señal.
 
 
 
@@ -638,17 +656,21 @@ una perdida muy chica en la eficiencia de señal.
 Como resultado del proceso de optimización descripto en la sección anterior,
 se definen las dos regiones de señal:
 
-\begin{itemize}\itemsep0.2cm
-\item[{\bf {\SRL}}] dirigida a detectar eventos en los que gluinos de alta masa
-  son producidos, y decaen a neutralinos de baja/media masa. Estos eventos estan
-  caracterizados por objetos de alta energia? y una gran multiplicidad de jets
-  energeticos.
-\item[{\bf {\SRH}}] dirigida a detectar eventos en los que los gluinos
-  producidos decaen en neutralinos con una masa similar. These events are
-  characterized by high energy scales.
-\end{itemize}
+\begin{description}\itemsep0.2cm
 
-Cada región de señal queda definida por los cortes de selección detallados en la \cref{tab:final_sel_sr}.
+\item[{\bf {\SRL}}] motivada por los eventos en los que gluinos
+  decaen a neutralinos de baja/media masa. Estos eventos están
+  caracterizados por una gran multiplicidad de jets energéticos, mientras que la energía
+  del fotón y la energía faltante dependerá de la masa del neutralino, pero en general
+  sera relativamente baja.
+
+
+\item[{\bf {\SRH}}] motivada por los eventos en los que los gluinos
+  producidos decaen en neutralinos con una masa similar a estos. Estos eventos están caracterizados
+  por un fotón de alto {\pt} y gran cantidad de {\met}, con una menor multiplicidad de jets.
+\end{description}
+
+Cada región de señal queda definida entonces por los cortes de selección detallados en la \cref{tab:final_sel_sr}.
 
 \begin{table}[!htbp]
 
@@ -656,14 +678,15 @@ Cada región de señal queda definida por los cortes de selección detallados en
   \caption{Conjunto de cortes en los observables que definen las dos regiones de señal, {\SRL} y {\SRH}.}
   \label{tab:final_sel_sr}
 
-    \begin{tabular}{x{0.25\textwidth}x{0.25\textwidth}x{0.25\textwidth}}
+  %\begin{tabular}{x{0.25\textwidth}x{0.25\textwidth}x{0.25\textwidth}}
+    \begin{tabularx}{\textwidth}{CCC}
     \hline
     & {\bf \SRL} & {\bf \SRH} \\
     \hline
-    \# fotones & $=1$ & $=1$ \\
+    {\nphotons} & $=1$ & $=1$ \\
     \ptgam & $>125 \gev$ & $>300 \gev$ \\
-    \# leptones & \multicolumn{2}{c}{$=0$} \\
-    \# jets & $\geq 4$ & $\geq 2$ \\
+    {\nleptons} & $=0$ & $=0$ \\
+    {\njets} & $\geq 4$ & $\geq 2$ \\
     $\pt^{j1}$ & $>100 \gev$ & - \\
     $\pt^{j2}$ & $>100 \gev$ & - \\
     $\Delta\phi(\mathrm{jet}, \met)$ & $>0.4$ & $>0.4$ \\
@@ -672,57 +695,62 @@ Cada región de señal queda definida por los cortes de selección detallados en
     $H_T$ & - & $>800 \gev$ \\
     $\Delta\phi(\gam,\mathrm{jet})$ & - & $<2.0$ \\
     \hline
-  \end{tabular}
+  \end{tabularx}
 
 \end{table}
 
 
+El número esperado de eventos de fondos del {\SM} estimado a partir de de las
+muestras simuladas después de la selección final se muestra en la
+\cref{tab:mc_events_sr1}. ,\ref{tab:mc_events_sr2}, para {\SRL} y {\SRH},
+respectivamente. También se presenta el número de eventos esperado de señal y la
+significancia esperada para los dos puntos de referencia en cada SR.
+Adicionalmente en la \cref{tab:mc_events_sr_phtype} se puede ver el número de
+eventos de fondo esperado separando fotones reales de los eventos donde un jet o
+un electrón es identificado erróneamente como un fotón.
+%% El primer tipo de eventos es claramente
+%% dominante en este análisis, en presencia de energía faltante tanto real como
+%% instrumental.
+Se puede ver que la contaminación dominante proviene de {\vgam} ($V=W \text{ o }
+Z$) y {\ttgam}. La contaminación de {\vgam} en {\SRL} es de 0.13, de los cuales
+0.10 corresponden a {\wgam} y 0.03 a {\znngam}. Para {\SRH} el numero de eventos
+de {\vgam} es de 0.66, de los cuales 0.44 de {\wgam} y 0.22 de {\znngam}. En la
+{\SRL} también existe una contaminación de eventos de procesos {\ttbar} en los
+que un electron es identificados como fotones.
 
-
-El número de eventos esperado de fondos el {\SM} de las muestras simuladas
-después de la selección completa se muestran en la \cref{tab:mc_events_sr1}.
-,\ref{tab:mc_events_sr2}, para {\SRL} y {\SRH}, respectivamente.
-También se presenta el numero de eventos esperado y la significancia para tres puntos
-de señal relevantes en cada región de señal.
-
-Se puede ver que la contaminación dominante viene de {\wgam} y {\ttgam}. Adicionalmente
-en la \cref{tab:mc_events_sr_phtype} se puede ver el numero de eventos de fondo
-esperado separando fotones reales de los eventos donde un jet o un electrón es confundido
-con un fotón. El primero tipo de eventos es claramente dominante en este análisis, en
-presencia de energía faltante tanto real como instrumental.
-
-La significancia esperada en la grid de señal completa se puede ver en la \cref{fig:opt_exp_significance},
-incluyendo el mejor valor de ambas regiones. Es importante notar que estos
-resultados son preliminares y obtenidos de simulaciones Monte Carlo. Los resultados
-finales son derivados utilizando los métodos de estimación de fondos descriptos en
-el \cref{cap:fondos}. %%, y luego del procedimiento descripto en nd after the fitting procedure detailed in \cref{sec:fitresults}.
+La significancia esperada en la grid de señal completa se puede ver en la
+\cref{fig:opt_exp_significance}, incluyendo el mejor valor de ambas regiones. Es
+importante notar que estos resultados son preliminares y obtenidos de
+simulaciones Monte Carlo. Los resultados finales son derivados utilizando los
+métodos de estimación de fondos descriptos en el \cref{cap:fondos}, y luego
+del ajuste combinado, y son descriptos en \cref{sec:fitresults}.
 
 \begin{table}[!htbp]
   \centering
   \caption{Número de eventos esperado para los fondos del {\SM}
     y algunos puntos de señal después de cada corte de la región
     de señal {\SRL}, para una luminosidad integrada de {\ilumi}. Para los
-    puntos de senal, tambien se muestra en la ultima fila, la
+    puntos de señal, también se muestra en la última fila, la
     significancia esperada ($Z$).}
   \label{tab:exp_bkg_srl}
 
   \resizebox{\textwidth}{!}{
-    \begin{tabular}{ccccccccccc}
+    \begin{tabular}{rrrrrrrrrr}
       \hline
-      {\bf \SRL}   & (1050,175) & (1150,175) & (1150,650) &  W/Z + $\gam$ & Diboson & W/Z + jets & QCD & \ttbar & \ttbar\gam & Fondo total \\
+      \multicolumn{1}{c}{\textbf{\SRL}}   & \multicolumn{1}{c}{(1150, 200)} & \multicolumn{1}{c}{(1150,450)} &  \multicolumn{1}{c}{V\gam} & \multicolumn{1}{c}{Diboson} & \multicolumn{1}{c}{V + jets} & \multicolumn{1}{c}{\gjet, multijet} & \multicolumn{1}{c}{\ttbar} & \multicolumn{1}{c}{\ttgam} & \multicolumn{1}{c}{Fondo total} \\
       \hline
-      Un fotón                    & 3696.00 & 3671.03 & 50.52 & 29378.86 & 297.09 & 12694.40 & 3392496.25 & 344.62 & 1820.71 & $3437031.93\pm8506.93$ \\
-      \ptgam                       & 3199.64 & 3177.24 & 49.51 & 25195.24 & 230.19 & 10093.10 & 2826296.25 & 251.46 & 1585.17 & $2863651.40\pm7748.67$ \\
-      Veto leptones                     & 2903.73 & 2890.27 & 34.74 & 22215.54 & 166.08 & 7808.01 & 2824994.75 & 204.99 & 1084.30 & $2856473.68\pm7725.42$ \\
-      N jets                           & 106.54 & 93.15 & 24.99 & 1976.64 & 15.38 & 172.66 & 82028.19 & 66.49 & 518.61 & $84777.97\pm3059.93$ \\
-      $\pt^{j1}$                        & 84.70 & 71.29 & 24.85 & 1749.41 & 14.29 & 142.19 & 69374.30 & 57.86 & 427.33 & $71765.38\pm3019.91$ \\
-      $\pt^{j2}$                        & 53.55 & 40.39 & 23.38 & 1066.33 & 8.71 & 95.60 & 37144.05 & 34.06 & 240.60 & $38589.36\pm708.87$ \\
-      $\Delta\phi(\mathrm{jet}, \met)$  & 44.78 & 33.88 & 20.07 & 828.96 & 7.83 & 68.13 & 28194.02 & 27.88 & 184.41 & $29311.22\pm613.45$ \\
-      \met                             & 14.10 & 9.44 & 15.96 & 7.00 & 0.93 & 0.00 & 2.52 & 1.83 & 4.36 & $16.64\pm3.51$ \\
-      $R_T^4$                          & 8.16 & 4.59 & 10.45 & 0.13 & 0.00 & 0.00 & 0.00 & 0.16 & 0.52 & $0.81\pm0.24$ \\
+      $=1$ fotón        &  22.87 & 33.75 & 8396.04 & 230.19 & 10093.10 & 3103339.25 & 251.46 & 847.09 & $3123157.13\pm2013.86$ \\
+      0 leptones        &  13.66 & 20.88 & 5433.21 & 166.08 &  7808.01 & 3101910.25 & 204.99 & 442.29 &  $3115964.83\pm1971.53$ \\
+      \met              &   7.74 & 14.96 &  457.80 &  11.07 &   188.39 &      94.27 &   6.50 &  22.21 &        $780.24\pm55.42$ \\
+      $N_\mathrm{jets}$ &   7.72 & 14.88 &   13.83 &   1.17 &     0.00 &       8.17 &   2.52 &   8.08 &         $33.76\pm12.09$ \\
+      $\pt^{j_1}$       &   7.72 & 14.86 &   12.97 &   1.17 &     0.00 &       8.17 &   2.44 &   7.44 &         $32.19\pm11.83$ \\
+      $\pt^{j_2}$       &   7.68 & 14.71 &    9.00 &   1.14 &     0.00 &       7.94 &   1.97 &   5.63 &         $25.69\pm10.66$ \\
+      $\dphijm$         &   6.73 & 12.98 &    7.00 &   0.93 &     0.00 &       2.77 &   1.83 &   3.84 &         $16.37\pm8.58$ \\
+      $R_T^4$           &   5.27 & 10.09 &    0.13 &   0.00 &     0.00 &       0.00 &   0.16 &   0.46 &          $0.75\pm1.46$ \\
       \hline
-      Z & 4.83 & 3.18 & 5.73 &  &  &  &  &  &  &  \\
+      Z                 &   3.81 &  6.14 &  &  &  &  &  &  &  \\
       \hline
+
     \end{tabular}
   }
 \end{table}
@@ -733,28 +761,28 @@ el \cref{cap:fondos}. %%, y luego del procedimiento descripto en nd after the fi
   \caption{Número de eventos esperado para los fondos del {\SM}
     y algunos puntos de señal después de cada corte de la región
     de señal {\SRH}, para una luminosidad integrada de {\ilumi}. Para los
-    puntos de senal, tambien se muestra en la ultima fila, la
+    puntos de señal, también se muestra en la última fila, la
     significancia esperada ($Z$).}
   \label{tab:exp_bkg_srh}
 
   \resizebox{\textwidth}{!}{
-    \begin{tabular}{ccccccccccc}
+    \begin{tabular}{lrrrrrrrrr}
 
       \hline
-          {\bf \SRH} & (1050,750) & (1050,950) & (1250,1150) & W/Z + \gam & Diboson & W/Z + jets & QCD & \ttbar & \ttbar\gam & Fondo total \\
+      \multicolumn{1}{c}{\textbf{\SRH}}  & \multicolumn{1}{c}{(1150, 850)} & \multicolumn{1}{c}{(1150,1050)} &  \multicolumn{1}{c}{V\gam} & \multicolumn{1}{c}{Diboson} & \multicolumn{1}{c}{V + jets} & \multicolumn{1}{c}{\gjet,multijet} & \multicolumn{1}{c}{\ttbar} & \multicolumn{1}{c}{\ttgam} & \multicolumn{1}{c}{Fondo total} \\
+      \hline
+        $=1$ fotón         & 26.87 & 11.68 & 352.27 & 6.86 & 153.18 & 79255.07 & 0.73 & 49.23 & $79817.34\pm323.16$ \\
+        0 leptones         & 22.92 & 11.20 & 215.86 & 4.40 & 102.50 & 79161.53 & 0.53 & 23.77 & $79508.59\pm313.87$ \\
+        \met               & 16.92 &  9.17 &  46.50 & 0.60 &  10.02 &     4.09 & 0.04 &  0.97 &    $62.23\pm13.97$ \\
+        $N_\mathrm{jets}$  & 16.92 &  8.80 &   8.57 & 0.46 &   0.00 &     3.06 & 0.04 &  0.87 &    $13.00\pm6.49$ \\
+        \dphijm            & 14.74 &  7.82 &   6.01 & 0.23 &   0.00 &     1.14 & 0.04 &  0.51 &     $7.94\pm4.92$ \\
+        \dphijg            &  9.20 &  5.18 &   3.21 & 0.22 &   0.00 &     0.00 & 0.00 &  0.30 &     $3.73\pm2.82$ \\
+        \HT                &  8.67 &  4.79 &   0.66 & 0.00 &   0.00 &     0.00 & 0.00 &  0.10 &     $0.76\pm1.14$ \\
         \hline
-        Un fotón       & 86.56 & 46.21 & 4.13 & 29378.86 & 297.09 & 12694.40 & 3392496.25 & 344.62 & 1820.71 & $3437031.93\pm8506.93$ \\
-        \ptgam         & 51.92 & 36.14 & 3.60 &  1152.74 &   6.86 &   153.18 &   57617.59 &   0.73 &   98.96 &    $59030.06\pm291.10$ \\
-        Veto leptones  & 41.75 & 34.57 & 3.47 &  1015.11 &   4.40 &   102.50 &   57549.59 &   0.53 &   65.30 &    $58737.44\pm286.56$ \\
-        N jets         & 40.86 & 33.20 & 3.28 &   794.99 &   3.36 &    48.81 &   35845.33 &   0.53 &   63.65 &    $36756.67\pm222.97$ \\
-        \dphijm        & 34.39 & 29.07 & 2.93 &   637.04 &   2.85 &    38.15 &   29026.38 &   0.45 &   45.45 &    $29750.33\pm198.00$ \\
-        \met           & 24.28 & 23.17 & 2.46 &     6.01 &   0.23 &     0.00 &       0.83 &   0.04 &    0.59 &          $7.70\pm1.09$ \\
-        $H_T$          & 22.20 & 21.26 & 2.34 &     2.52 &   0.01 &     0.00 &       0.83 &   0.04 &    0.24 &          $3.64\pm0.68$ \\
-        \dphijg        & 14.04 & 13.77 & 1.56 &     0.66 &   0.00 &     0.00 &       0.00 &   0.00 &    0.13 &          $0.78\pm0.19$ \\
+        Significancia      &  5.50 &  3.54 &        &  &  &  &  &  &  \\
         \hline
-        Significance   & 7.05 & 6.96 & 1.37 &  &  &  &  &  &  &  \\
-        \hline
-      \end{tabular}
+
+    \end{tabular}
   }
 
 \end{table}
@@ -763,52 +791,59 @@ el \cref{cap:fondos}. %%, y luego del procedimiento descripto en nd after the fi
 %%PER PHOTON TYPE
 \begin{sidewaystable}[ph!]
   \centering
-  \caption{Número de eventos esperado para los fondos del {\SM}
-    después de cada corte de la selección de la región de señal
-    para una luminosidad integrada de {\ilumi}. Las columnas
-    dentro de cada fondo corresponden a fotones reales,
-    fotones provenientes de jets y fotones provenientes de electrones,
-    respectivamente.}
+  \caption{Número de eventos esperado para los fondos del {\SM} después de cada
+    corte de la selección de la región de señal para una luminosidad integrada
+    de {\ilumi}, separados en tres columnas que corresponden al caso que el
+    fotón es real, o proviene de un jet o un electrón, respectivamente.}
   \label{tab:mc_events_sr_phtype}
 
   \resizebox{\textwidth}{!}{
-    \begin{tabular}{rrrr|rrr|rrr|rrr|rrr|rrr|rrr}
-      \hline \hline
-             {\bf SR2}  & \multicolumn{3}{|c|}{W/Z + \gam} & \multicolumn{3}{|c|}{Diboson} & \multicolumn{3}{|c|}{W/Z + jets} & \multicolumn{3}{|c|}{QCD} & \multicolumn{3}{|c|}{\ttbar} & \multicolumn{3}{|c|}{\ttbar\gam} & \multicolumn{3}{|c}{Total bkg} \\
-             & \multicolumn{1}{|c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{|c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{|c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{|c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{|c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{|c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{|c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c}{$e$} \\
-             \hline
-             \multicolumn{1}{c|}{Single Photon} & $26129.52$ & $3244.97$ & $4.95$ & $141.72$ & $60.44$ & $94.90$ & $4641.52$ & $3865.33$ & $4058.90$ & $2632820.50$ & $754107.69$ & $0.08$ & $122.01$ & $57.51$ & $164.46$ & $1287.15$ & $532.95$ & $0.56$ & $2665142.41\pm6922.77$ & $761868.90\pm3872.74$ & $4323.84\pm163.11$ \\
-             \multicolumn{1}{c|}{Photon \pt}    & $22355.84$ & $2836.87$ & $2.84$ & $109.05$ & $47.27$ & $73.85$ & $3770.90$ & $3101.01$ & $3095.56$ & $2195430.25$ & $624380.69$ & $0.08$ &  $88.12$ & $38.47$ & $124.41$ & $1116.70$ & $468.12$ & $0.29$ & $2222870.86\pm6233.56$ & $630872.44\pm3452.89$ & $3297.03\pm140.91$ \\
-             \multicolumn{1}{c|}{Leptons veto}  & $19379.52$ & $2833.60$ & $2.76$ &  $77.22$ & $34.15$ & $54.69$ & $2997.29$ & $1918.81$ & $2769.29$ & $2194406.50$ & $624106.50$ & $0.08$ &  $74.68$ & $25.06$ & $104.94$ &  $768.22$ & $315.82$ & $0.22$ & $2217703.43\pm6220.18$ & $629233.95\pm3430.10$ & $2931.98\pm136.77$ \\
-             \multicolumn{1}{c|}{N jets}        &  $1621.72$ &  $354.80$ & $0.12$ &   $6.82$ &  $5.04$ &  $3.52$ &   $84.74$ &   $38.09$ &   $49.84$ &   $55224.04$ &  $23963.72$ & $0.00$ &  $24.05$ &  $8.73$ &  $33.63$ &  $366.01$ & $152.49$ & $0.09$ & $57327.37\pm897.81$ & $24522.87\pm602.64$ & $87.20\pm15.52$ \\
-             \multicolumn{1}{c|}{$\pt(j_1)$}    &  $1436.19$ &  $313.10$ & $0.12$ &   $6.55$ &  $4.64$ &  $3.09$ &   $61.91$ &   $34.40$ &   $45.89$ &   $46916.22$ &  $19623.34$ & $0.00$ &  $21.13$ &  $7.25$ &  $29.44$ &  $305.38$ & $121.86$ & $0.09$ & $48747.38\pm808.73$ & $20104.59\pm528.86$ & $78.63\pm14.79$ \\
-             \multicolumn{1}{c|}{$\pt(j_2)$}    &   $874.68$ &  $191.59$ & $0.06$ &   $4.02$ &  $2.86$ &  $1.83$ &   $37.52$ &   $28.91$ &   $29.16$ &   $26512.08$ &  $10602.34$ & $0.00$ &  $12.54$ &  $4.19$ &  $17.33$ &  $176.60$ & $63.91$ & $0.08$ & $27617.45\pm592.41$ & $10893.80\pm380.87$ & $48.48\pm11.96$ \\
-             \multicolumn{1}{c|}{\dphijm}       &   $680.66$ &  $148.23$ & $0.06$ &   $3.57$ &  $2.64$ &  $1.61$ &   $31.65$ &   $19.37$ &   $17.11$ &   $20238.18$ &   $7956.02$ & $0.00$ &  $10.08$ &  $3.44$ &  $14.35$ &  $135.01$ & $49.32$ & $0.08$ & $21099.16\pm515.51$ & $8179.01\pm326.20$ & $33.22\pm9.20$ \\
-             \multicolumn{1}{c|}{\met}          &     $7.00$ &    $0.00$ & $0.00$ &   $0.65$ &  $0.17$ &  $0.10$ &    $0.00$ &    $0.00$ &    $0.00$ &       $2.43$ &      $0.09$ & $0.00$ &   $0.58$ &  $0.54$ &   $0.70$ &    $3.52$ & $0.84$ & $0.00$ & $14.19\pm3.32$ & $1.65\pm0.46$ & $0.80\pm0.24$ \\
-             \multicolumn{1}{c|}{$R_T^4$}       &     $0.13$ &    $0.00$ & $0.00$ &   $0.00$ &  $0.00$ &  $0.00$ &    $0.00$ &    $0.00$ &    $0.00$ &       $0.00$ &      $0.00$ & $0.00$ &   $0.04$ &  $0.00$ &   $0.12$ &    $0.39$ & $0.13$ & $0.00$ & $0.56\pm0.19$ & $0.13\pm0.05$ & $0.12\pm0.07$ \\
-             \\
-             \\
-             \hline \hline
-             {\bf SR3}  & \multicolumn{3}{|c|}{W/Z + \gam} & \multicolumn{3}{|c|}{Diboson} & \multicolumn{3}{|c|}{W/Z + jets} & \multicolumn{3}{|c|}{QCD} & \multicolumn{3}{|c|}{\ttbar} & \multicolumn{3}{|c|}{\ttbar\gam} & \multicolumn{3}{|c}{Total bkg} \\
-             & \multicolumn{1}{|c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{|c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{|c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{|c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{|c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{|c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{|c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c}{$e$} \\
-            \hline
-            \multicolumn{1}{c|}{Single Photon} & $26129.52$ & $3244.97$ & $4.95$ & $141.72$ & $60.44$ & $94.90$ & $4641.52$ & $3865.33$ & $4058.90$ & $2632820.50$ & $754107.69$ & $0.08$ & $122.01$ & $57.51$ & $164.46$ & $1287.15$ & $532.95$ & $0.56$ & $2665142.41\pm6922.77$ & $761868.90\pm3872.74$ & $4323.84\pm163.11$ \\
-            \multicolumn{1}{c|}{Photon \pt}    & $1012.15$ & $140.52$ & $0.07$ & $3.31$ & $2.22$ & $1.32$ & $84.53$ & $34.98$ & $33.68$ & $45115.09$ & $12454.92$ & $0.00$ & $0.20$ & $0.11$ & $0.41$ & $72.60$ & $26.35$ & $0.01$ & $46287.89\pm256.05$ & $12659.10\pm133.23$ & $35.49\pm10.67$ \\
-            \multicolumn{1}{c|}{Leptons veto}  & $875.00$ & $140.04$ & $0.07$ & $2.59$ & $1.21$ & $0.61$ & $67.11$ & $11.28$ & $24.10$ & $45062.91$ & $12439.22$ & $0.00$ & $0.17$ & $0.04$ & $0.31$ & $47.88$ & $17.42$ & $0.01$ & $46055.67\pm253.94$ & $12609.21\pm128.09$ & $25.10\pm8.88$ \\
-            \multicolumn{1}{c|}{N jets}        & $666.78$ & $128.18$ & $0.04$ & $2.01$ & $0.84$ & $0.51$ & $28.09$ & $7.53$ & $13.19$ & $27263.23$ & $8434.83$ & $0.00$ & $0.17$ & $0.04$ & $0.31$ & $46.62$ & $17.03$ & $0.01$ & $28006.91\pm194.75$ & $8588.45\pm104.80$ & $14.05\pm6.75$ \\
-            \multicolumn{1}{c|}{\dphijm}       & $533.09$ & $103.91$ & $0.04$ & $1.51$ & $0.84$ & $0.49$ & $17.43$ & $7.53$ & $13.19$ & $22097.03$ & $6931.89$ & $0.00$ & $0.17$ & $0.00$ & $0.28$ & $33.37$ & $12.07$ & $0.01$ & $22682.61\pm171.23$ & $7056.24\pm95.13$ & $14.00\pm6.74$ \\
-            \multicolumn{1}{c|}{\met}          & $6.01$ & $0.00$ & $0.00$ & $0.22$ & $0.01$ & $0.00$ & $0.00$ & $0.00$ & $0.00$ & $0.71$ & $0.12$ & $0.00$ & $0.00$ & $0.00$ & $0.04$ & $0.48$ & $0.11$ & $0.00$ & $7.42\pm1.02$ & $0.24\pm0.15$ & $0.04\pm0.04$ \\
-            \multicolumn{1}{c|}{$H_T$}         & $2.52$ & $0.00$ & $0.00$ & $0.00$ & $0.01$ & $0.00$ & $0.00$ & $0.00$ & $0.00$ & $0.71$ & $0.12$ & $0.00$ & $0.00$ & $0.00$ & $0.04$ & $0.19$ & $0.05$ & $0.00$ & $3.42\pm0.61$ & $0.18\pm0.13$ & $0.04\pm0.04$ \\
-            \multicolumn{1}{c|}{\dphijg}      & $0.66$ & $0.00$ & $0.00$ & $0.00$ & $0.00$ & $0.00$ & $0.00$ & $0.00$ & $0.00$ & $0.00$ & $0.00$ & $0.00$ & $0.00$ & $0.00$ & $0.00$ & $0.11$ & $0.02$ & $0.00$ & $0.76\pm0.18$ & $0.02\pm0.02$ & $0.00\pm0.00$ \\
-            \end{tabular}
-    }
+    \begin{tabular}{r|rrr|rrr|rrr|rrr|rrr|rrr|rrr}
+      \hline
+          \multicolumn{1}{c|}{\multirow{2}{*}{\bf \SRL}}  & \multicolumn{3}{c|}{V\gam} & \multicolumn{3}{c|}{Diboson} & \multicolumn{3}{c|}{V + jets} & \multicolumn{3}{c|}{\gjet, multijet} & \multicolumn{3}{c|}{\ttbar} & \multicolumn{3}{c|}{\ttbar\gam} & \multicolumn{3}{c}{Fondo Total} \\
+       \cline{2-22}
+       & \multicolumn{1}{c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c}{$e$} \\
+       \hline
+       $=1$ fotón        & $8390.72$ & $2.45$ & $2.84$ & $109.05$ &  $47.27$ &  $73.85$ & $3770.90$ & $3101.01$ & $3095.56$ & $2410633.75$ & $685584.56$ & $0.09$ & $88.12$ & $38.47$ & $124.41$ & $607.67$ & $239.22$ & $0.21$ & $2423600.21$ & $689012.99$ & $3296.95$ \\
+       0 leptones        & $5428.41$ & $2.04$ & $2.76$ &  $77.22$ &  $34.15$ &  $54.69$ & $2997.29$ & $1918.81$ & $2769.29$ & $2409509.75$ & $685283.50$ & $0.09$ & $74.68$ & $25.06$ & $104.94$ & $321.15$ & $121.01$ & $0.15$ & $2418408.49$ & $687384.58$ & $2931.91$ \\
+       \met              &  $457.62$ & $0.09$ & $0.09$ &   $5.48$ &   $3.58$ &   $2.01$ &   $72.38$ &   $56.30$ &   $59.72$ &      $82.47$ &     $11.80$ & $0.00$ &  $1.85$ &  $1.88$ &   $2.72$ &  $17.14$ &   $5.07$ & $0.00$ &     $636.94$ &     $78.73$ &   $64.54$ \\
+       $N_\mathrm{jets}$ &   $13.83$ & $0.00$ & $0.00$ &   $0.89$ &   $0.17$ &   $0.10$ &    $0.00$ &    $0.00$ &    $0.00$ &       $4.53$ &      $3.65$ & $0.00$ &  $0.74$ &  $0.87$ &   $0.87$ &   $6.15$ &   $1.92$ & $0.00$ &      $26.14$ &      $6.61$ &    $0.97$ \\
+       $\pt^{j_1}$       &   $12.97$ & $0.00$ & $0.00$ &   $0.89$ &   $0.17$ &   $0.10$ &    $0.00$ &    $0.00$ &    $0.00$ &       $4.53$ &      $3.65$ & $0.00$ &  $0.74$ &  $0.79$ &   $0.87$ &   $5.72$ &   $1.72$ & $0.00$ &      $24.85$ &      $6.33$ &    $0.97$ \\
+       $\pt^{j_2}$       &    $9.00$ & $0.00$ & $0.00$ &   $0.87$ &   $0.17$ &   $0.10$ &    $0.00$ &    $0.00$ &    $0.00$ &       $4.34$ &      $3.60$ & $0.00$ &  $0.69$ &  $0.55$ &   $0.74$ &   $4.52$ &   $1.12$ & $0.00$ &      $19.42$ &      $5.44$ &    $0.84$ \\
+       $\dphijm$         &    $7.00$ & $0.00$ & $0.00$ &   $0.65$ &   $0.17$ &   $0.10$ &    $0.00$ &    $0.00$ &    $0.00$ &       $2.67$ &      $0.10$ & $0.00$ &  $0.58$ &  $0.54$ &   $0.70$ &   $3.14$ &   $0.71$ & $0.00$ &      $14.05$ &      $1.52$ &    $0.80$ \\
+       $\rt$             &    $0.13$ & $0.00$ & $0.00$ &   $0.00$ &   $0.00$ &   $0.00$ &    $0.00$ &    $0.00$ &    $0.00$ &       $0.00$ &      $0.00$ & $0.00$ &  $0.04$ &  $0.00$ &   $0.12$ &   $0.34$ &   $0.12$ & $0.00$ &       $0.51$ &      $0.12$ &    $0.12$ \\
+       \hline
+
+       \multicolumn{22}{c}{} \\
+       \multicolumn{22}{c}{} \\
+
+
+
+       \hline
+           \multicolumn{1}{c|}{\multirow{2}{*}{\bf \SRH}}  & \multicolumn{3}{c|}{V\gam} & \multicolumn{3}{c|}{Diboson} & \multicolumn{3}{c|}{V + jets} & \multicolumn{3}{c|}{\gjet, multijet} & \multicolumn{3}{c|}{\ttbar} & \multicolumn{3}{c|}{\ttbar\gam} & \multicolumn{3}{c}{Fondo Total} \\
+           \cline{2-22}
+           & \multicolumn{1}{c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c|}{$e$} & \multicolumn{1}{c}{$\gamma$} & \multicolumn{1}{c}{$j$} & \multicolumn{1}{c}{$e$} \\
+           \hline
+       $=1$ fotón        & $352.12$ & $0.08$ & $0.07$ & $3.31$ & $2.22$ & $1.32$ & $84.53$ & $34.98$ & $33.68$ & $62057.42$ & $17132.19$ & $0.00$ & $0.20$ & $0.11$ & $0.41$ & $36.27$ & $12.95$ & $0.00$ & $62533.87$ & $17182.53$ & $35.48$ \\
+       0 leptones        & $215.72$ & $0.08$ & $0.07$ & $2.59$ & $1.21$ & $0.61$ & $67.11$ & $11.28$ & $24.10$ & $61985.65$ & $17110.60$ & $0.00$ & $0.17$ & $0.04$ & $0.31$ & $17.41$ &  $6.35$ & $0.00$ & $62288.66$ & $17129.56$ & $25.09$ \\
+       \met              &  $46.50$ & $0.00$ & $0.00$ & $0.57$ & $0.02$ & $0.01$ & $10.02$ &  $0.00$ &  $0.00$ &     $3.11$ &     $0.98$ & $0.00$ & $0.00$ & $0.00$ & $0.04$ &  $0.77$ &  $0.20$ & $0.00$ &   $60.978$ &     $1.20$ &  $0.05$ \\
+       $N_\mathrm{jets}$ &   $8.57$ & $0.00$ & $0.00$ & $0.45$ & $0.01$ & $0.00$ &  $0.00$ &  $0.00$ &  $0.00$ &     $2.40$ &     $0.66$ & $0.00$ & $0.00$ & $0.00$ & $0.04$ &  $0.69$ &  $0.18$ & $0.00$ &    $12.11$ &     $0.85$ &  $0.04$ \\
+       $\pt^{j_1}$       &   $8.57$ & $0.00$ & $0.00$ & $0.45$ & $0.01$ & $0.00$ &  $0.00$ &  $0.00$ &  $0.00$ &     $2.40$ &     $0.66$ & $0.00$ & $0.00$ & $0.00$ & $0.04$ &  $0.69$ &  $0.18$ & $0.00$ &    $12.11$ &     $0.85$ &  $0.04$ \\
+       $\pt^{j_2}$       &   $8.57$ & $0.00$ & $0.00$ & $0.45$ & $0.01$ & $0.00$ &  $0.00$ &  $0.00$ &  $0.00$ &     $2.40$ &     $0.66$ & $0.00$ & $0.00$ & $0.00$ & $0.04$ &  $0.69$ &  $0.18$ & $0.00$ &    $12.11$ &     $0.85$ &  $0.04$ \\
+       $\dphijm$         &   $6.01$ & $0.00$ & $0.00$ & $0.22$ & $0.01$ & $0.00$ &  $0.00$ &  $0.00$ &  $0.00$ &     $0.98$ &     $0.16$ & $0.00$ & $0.00$ & $0.00$ & $0.04$ &  $0.41$ &  $0.11$ & $0.00$ &     $7.62$ &     $0.28$ &  $0.04$ \\
+       $\dphijg$         &   $3.21$ & $0.00$ & $0.00$ & $0.22$ & $0.00$ & $0.00$ &  $0.00$ &  $0.00$ &  $0.00$ &     $0.00$ &     $0.00$ & $0.00$ & $0.00$ & $0.00$ & $0.00$ &  $0.25$ &  $0.04$ & $0.00$ &     $3.69$ &     $0.04$ &  $0.00$ \\
+       $\HT$             &   $0.66$ & $0.00$ & $0.00$ & $0.00$ & $0.00$ & $0.00$ &  $0.00$ &  $0.00$ &  $0.00$ &     $0.00$ &     $0.00$ & $0.00$ & $0.00$ & $0.00$ & $0.00$ &  $0.08$ &  $0.02$ & $0.00$ &     $0.74$ &     $0.02$ &  $0.00$ \\
+       \hline
+    \end{tabular}
+  }
 \end{sidewaystable}
 
 
-\section{Significancia esperada}
 
+En la \cref{fig:opt_discovery_exp} se encuentran graficados en el plano {\mgmn}
+los contornos de la significancia esperada de descubrimiento de
+$3\sigma$ y $5\sigma$ para las dos SR.
 
-\hl{Contornos de descubrimiento esperados}
 
 \begin{figure}[!htbp]
   \centering
@@ -826,102 +861,133 @@ el \cref{cap:fondos}. %%, y luego del procedimiento descripto en nd after the fi
 
 \section{Aceptancia y eficiencia}
 
-\hl{Definir aceptancia y eficiencia}
+La aceptancia se define como:
+
+\begin{equation}
+  A = \frac{N_\mathrm{fiducial}}{N_\mathrm{total}}
+\end{equation}
+%
+donde $N_\mathrm{fiducial}$ es el número de eventos que pasan los cortes
+fiduciales que están basados en los objetos a nivel generador incluyendo los
+cortes de {\pt} y $\eta$ del análisis. Además se remueven los objetos
+superpuestos en el espacio {\etaphi} como se describe en
+\cref{sec:overlap_romoval_event_veto}. Y $N_\mathrm{total}$ es el número total
+de eventos.
+
+La eficiencia se define como:
+
+\begin{equation}
+  \epsilon = \frac{N_\mathrm{fiducial,reco}}{N_\mathrm{fiducial}}
+\end{equation}
+%
+donde $N_\mathrm{fiducial,reco}$ es el número de eventos que pasan los cortes
+nominales del análisis aplicados a las variables a nivel detector. La
+eficiencia se diferencia de la aceptancia ya que incluye los efectos que provienen de
+las ineficiencias de reconstrucción, los cortes de identificación de
+partículas, y los efectos de resolución e ineficiencias del trigger.
 
 La aceptancia por la eficiencia ($A\times\epsilon$) fue calculada para las dos
 regiones a partir de las muestras MC, para asegurar que el proceso de
-optimizacion no dejo regiones sin tener en cuenta en el espacio de parametros, o
-que no haya caidas bruscas en la eficiencia de seleccion. En la
+optimización no dejó regiones sin tener en cuenta en el espacio de parámetros, o
+que no haya caídas bruscas en la eficiencia de selección. En la
 \cref{fig:atimeseff}, se puede ver que hay una buena cobertura de toda la grid
-de senal. Los valores de $A\times\epsilon$ estan detallados en la
-\cref{tab:atimeseff}.
+de señal.
+%% Los valores de $A\times\epsilon$ están detallados en la
+%% \cref{tab:atimeseff_srl,tab:atimeseff_srh}.
 
 \begin{figure}[!htbp]
   \centering
   \includegraphics[width=0.4\textwidth]{figures/acceptance_srl}
   \hspace{1cm}%
   \includegraphics[width=0.4\textwidth]{figures/acceptance_srh}
-  \caption{Producto de la aceptancia y la eficiencia de seleccion para cada punto de senal
-    en el plano {\mgmn} para la {\SRL} (izquierda) y {\SRH} (derecha).\hl{Update}}
+  \caption{Producto de la aceptancia y la eficiencia de selección para cada punto de señal
+    en el plano {\mgmn} para la {\SRL} (izquierda) y {\SRH} (derecha).\hl{Update plots}}
   \label{fig:atimeseff}
 \end{figure}
+
+
+
+
+
+
+
 
 
 %% This section provides the acceptance$\times$efficiency values for the GGM signal samples
 %% across the parameter space explored in this analysis, for regions SR2 (\Tab\ \ref{tab:ggm_acc_SR2}) and SR3 (\Tab\ \ref{tab:ggm_acc_SR3}).
 %% The expected number of events after each selection is shown in \Tab\ \ref{tab:ggm_expevts_SR2} and \ref{tab:ggm_expevts_SR3}.
 
-\begin{table}[ht!]
-  \centering
+%% \begin{table}[ht!]
+%%   \centering
 
-  \caption{Aceptancia $\times$ eficiencia para cada punto de señal para la {\SRL} \hl{Updatear sin EWK}}
-  \label{tab:ggm_acc_SR2}
+%%   \caption{Aceptancia $\times$ eficiencia para cada punto de señal para la {\SRL} \hl{Updatear sin EWK}}
+%%   \label{tab:atimeseff_srl}
 
-  \resizebox{0.9\textwidth}{!}{
-  \begin{tabular}{c|ccccccccccccccccc}
-    \hline \hline
-     &   \multicolumn{14}{c}{ $M_3$ [\gev] } \\
-    $\mu [\gev]$ & 800 & 850 & 900 & 950 & 1000 & 1050 & 1100 & 1150 & 1200 & 1250 & 1300 & 1350 & 1400 & 1450 \\
-    \hline
-    150 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 &  &  &  \\
-    175 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 &  &  &  \\
-    200 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 &  &  &  \\
-    250 & 0.01 & 0.01 & 0.01 & 0.01 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
-    350 & 0.04 & 0.03 & 0.03 & 0.02 & 0.02 & 0.01 & 0.01 & 0.01 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
-    450 & 0.07 & 0.06 & 0.06 & 0.06 & 0.04 & 0.04 & 0.03 & 0.02 & 0.02 & 0.01 & 0.01 & 0.01 & 0.01 & 0.00 \\
-    550 & 0.07 & 0.07 & 0.08 & 0.08 & 0.08 & 0.07 & 0.06 & 0.05 & 0.04 & 0.03 & 0.03 & 0.02 & 0.01 & 0.01 \\
-    650 & 0.05 & 0.06 & 0.07 & 0.09 & 0.09 & 0.09 & 0.08 & 0.08 & 0.07 & 0.07 & 0.06 & 0.05 & 0.04 & 0.03 \\
-    750 & 0.02 & 0.03 & 0.04 & 0.06 & 0.07 & 0.08 & 0.09 & 0.10 & 0.09 & 0.09 & 0.08 & 0.08 & 0.07 & 0.06 \\
-    838 & 0.01 &  &  &  &  &  &  &  &  &  &  &  &  &  \\
-    850 &  &  & 0.02 & 0.03 & 0.05 & 0.05 & 0.07 & 0.08 & 0.08 & 0.10 & 0.10 & 0.09 & 0.09 & 0.08 \\
-    928 &  &  & 0.01 &  &  &  &  &  &  &  &  &  &  &  \\
-    950 &  &  &  &  & 0.02 & 0.02 & 0.03 & 0.05 & 0.07 & 0.07 & 0.08 & 0.09 & 0.09 & 0.09 \\
-    973 &  &  &  & 0.01 &  &  &  &  &  &  &  &  &  &  \\
-    1017 &  &  &  &  & 0.01 &  &  &  &  &  &  &  &  &  \\
-    1050 &  &  &  &  &  &  & 0.02 & 0.02 & 0.03 & 0.04 & 0.06 & 0.06 & 0.07 & 0.09 \\
-    1062 &  &  &  &  &  & 0.01 &  &  &  &  &  &  &  &  \\
-    1106 &  &  &  &  &  &  & 0.01 &  &  &  &  &  &  &  \\
-    1149 &  &  &  &  &  &  &  & 0.01 &  &  &  &  &  &  \\
-    1150 &  &  &  &  &  &  &  &  & 0.02 & 0.02 & 0.03 & 0.03 &  &  \\
-    1250 &  &  &  &  &  &  &  &  &  &  & 0.01 &  &  &  \\
-    \hline \hline
-  \end{tabular}
-  }
-\end{table}
+%%   \resizebox{0.9\textwidth}{!}{
+%%   \begin{tabular}{c|ccccccccccccccccc}
+%%     \hline \hline
+%%      &   \multicolumn{14}{c}{ $M_3$ [\gev] } \\
+%%     $\mu [\gev]$ & 800 & 850 & 900 & 950 & 1000 & 1050 & 1100 & 1150 & 1200 & 1250 & 1300 & 1350 & 1400 & 1450 \\
+%%     \hline
+%%     150 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 &  &  &  \\
+%%     175 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 &  &  &  \\
+%%     200 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 &  &  &  \\
+%%     250 & 0.01 & 0.01 & 0.01 & 0.01 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+%%     350 & 0.04 & 0.03 & 0.03 & 0.02 & 0.02 & 0.01 & 0.01 & 0.01 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+%%     450 & 0.07 & 0.06 & 0.06 & 0.06 & 0.04 & 0.04 & 0.03 & 0.02 & 0.02 & 0.01 & 0.01 & 0.01 & 0.01 & 0.00 \\
+%%     550 & 0.07 & 0.07 & 0.08 & 0.08 & 0.08 & 0.07 & 0.06 & 0.05 & 0.04 & 0.03 & 0.03 & 0.02 & 0.01 & 0.01 \\
+%%     650 & 0.05 & 0.06 & 0.07 & 0.09 & 0.09 & 0.09 & 0.08 & 0.08 & 0.07 & 0.07 & 0.06 & 0.05 & 0.04 & 0.03 \\
+%%     750 & 0.02 & 0.03 & 0.04 & 0.06 & 0.07 & 0.08 & 0.09 & 0.10 & 0.09 & 0.09 & 0.08 & 0.08 & 0.07 & 0.06 \\
+%%     838 & 0.01 &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+%%     850 &  &  & 0.02 & 0.03 & 0.05 & 0.05 & 0.07 & 0.08 & 0.08 & 0.10 & 0.10 & 0.09 & 0.09 & 0.08 \\
+%%     928 &  &  & 0.01 &  &  &  &  &  &  &  &  &  &  &  \\
+%%     950 &  &  &  &  & 0.02 & 0.02 & 0.03 & 0.05 & 0.07 & 0.07 & 0.08 & 0.09 & 0.09 & 0.09 \\
+%%     973 &  &  &  & 0.01 &  &  &  &  &  &  &  &  &  &  \\
+%%     1017 &  &  &  &  & 0.01 &  &  &  &  &  &  &  &  &  \\
+%%     1050 &  &  &  &  &  &  & 0.02 & 0.02 & 0.03 & 0.04 & 0.06 & 0.06 & 0.07 & 0.09 \\
+%%     1062 &  &  &  &  &  & 0.01 &  &  &  &  &  &  &  &  \\
+%%     1106 &  &  &  &  &  &  & 0.01 &  &  &  &  &  &  &  \\
+%%     1149 &  &  &  &  &  &  &  & 0.01 &  &  &  &  &  &  \\
+%%     1150 &  &  &  &  &  &  &  &  & 0.02 & 0.02 & 0.03 & 0.03 &  &  \\
+%%     1250 &  &  &  &  &  &  &  &  &  &  & 0.01 &  &  &  \\
+%%     \hline \hline
+%%   \end{tabular}
+%%   }
+%% \end{table}
 
-\begin{table}[ht!]
-  \centering
-  \caption{Aceptancia $\times$ eficiencia para cada punto de señal para la {\SRH} \hl{Updatear sin EWK}.}
-  \label{tab:ggm_acc_SR3}
+%% \begin{table}[ht!]
+%%   \centering
+%%   \caption{Aceptancia $\times$ eficiencia para cada punto de señal para la {\SRH} \hl{Updatear sin EWK}.}
+%%   \label{tab:atimeseff_srh}
 
-  \resizebox{0.9\textwidth}{!}{
-  \begin{tabular}{c|ccccccccccccccccc}
-    \hline \hline
-     &   \multicolumn{14}{c}{ $M_3$ [\gev] } \\
-    $\mu [\gev]$ & 800 & 850 & 900 & 950 & 1000 & 1050 & 1100 & 1150 & 1200 & 1250 & 1300 & 1350 & 1400 & 1450 \\
-    \hline
-    150 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 &  &  &  \\
-    175 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 &  &  &  \\
-    200 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 &  &  &  \\
-    250 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
-    350 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
-    450 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
-    550 & 0.03 & 0.02 & 0.02 & 0.02 & 0.02 & 0.02 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 \\
-    650 & 0.06 & 0.07 & 0.06 & 0.05 & 0.05 & 0.04 & 0.04 & 0.03 & 0.03 & 0.02 & 0.02 & 0.02 & 0.02 & 0.02 \\
-    750 & 0.11 & 0.11 & 0.11 & 0.10 & 0.09 & 0.08 & 0.08 & 0.07 & 0.06 & 0.05 & 0.05 & 0.04 & 0.04 & 0.04 \\
-    838 & 0.04 &  &  &  &  &  &  &  &  &  &  &  &  &  \\
-    850 &  &  & 0.17 & 0.16 & 0.16 & 0.15 & 0.14 & 0.12 & 0.10 & 0.10 & 0.08 & 0.07 & 0.07 & 0.06 \\
-    928 &  &  & 0.03 &  &  &  &  &  &  &  &  &  &  &  \\
-    950 &  &  &  &  & 0.22 & 0.21 & 0.20 & 0.18 & 0.18 & 0.14 & 0.13 & 0.11 & 0.10 & 0.09 \\
-    973 &  &  &  & 0.03 &  &  &  &  &  &  &  &  &  &  \\
-    1017 &  &  &  &  & 0.02 &  &  &  &  &  &  &  &  &  \\
-    1050 &  &  &  &  &  &  & 0.23 & 0.25 & 0.24 & 0.23 & 0.20 & 0.18 & 0.14 & 0.14 \\
-    1062 &  &  &  &  &  & 0.02 &  &  &  &  &  &  &  &  \\
-    1106 &  &  &  &  &  &  & 0.02 &  &  &  &  &  &  &  \\
-    1149 &  &  &  &  &  &  &  & 0.01 &  &  &  &  &  &  \\
-    1150 &  &  &  &  &  &  &  &  & 0.23 & 0.27 & 0.27 & 0.20 &  &  \\
-    1250 &  &  &  &  &  &  &  &  &  &  & 0.18 &  &  &  \\
-    \hline \hline
-  \end{tabular}
-  }
-\end{table}
+%%   \resizebox{0.9\textwidth}{!}{
+%%   \begin{tabular}{c|ccccccccccccccccc}
+%%     \hline \hline
+%%      &   \multicolumn{14}{c}{ $M_3$ [\gev] } \\
+%%     $\mu [\gev]$ & 800 & 850 & 900 & 950 & 1000 & 1050 & 1100 & 1150 & 1200 & 1250 & 1300 & 1350 & 1400 & 1450 \\
+%%     \hline
+%%     150 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 &  &  &  \\
+%%     175 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 &  &  &  \\
+%%     200 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 &  &  &  \\
+%%     250 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+%%     350 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+%%     450 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 & 0.00 \\
+%%     550 & 0.03 & 0.02 & 0.02 & 0.02 & 0.02 & 0.02 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 & 0.01 \\
+%%     650 & 0.06 & 0.07 & 0.06 & 0.05 & 0.05 & 0.04 & 0.04 & 0.03 & 0.03 & 0.02 & 0.02 & 0.02 & 0.02 & 0.02 \\
+%%     750 & 0.11 & 0.11 & 0.11 & 0.10 & 0.09 & 0.08 & 0.08 & 0.07 & 0.06 & 0.05 & 0.05 & 0.04 & 0.04 & 0.04 \\
+%%     838 & 0.04 &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+%%     850 &  &  & 0.17 & 0.16 & 0.16 & 0.15 & 0.14 & 0.12 & 0.10 & 0.10 & 0.08 & 0.07 & 0.07 & 0.06 \\
+%%     928 &  &  & 0.03 &  &  &  &  &  &  &  &  &  &  &  \\
+%%     950 &  &  &  &  & 0.22 & 0.21 & 0.20 & 0.18 & 0.18 & 0.14 & 0.13 & 0.11 & 0.10 & 0.09 \\
+%%     973 &  &  &  & 0.03 &  &  &  &  &  &  &  &  &  &  \\
+%%     1017 &  &  &  &  & 0.02 &  &  &  &  &  &  &  &  &  \\
+%%     1050 &  &  &  &  &  &  & 0.23 & 0.25 & 0.24 & 0.23 & 0.20 & 0.18 & 0.14 & 0.14 \\
+%%     1062 &  &  &  &  &  & 0.02 &  &  &  &  &  &  &  &  \\
+%%     1106 &  &  &  &  &  &  & 0.02 &  &  &  &  &  &  &  \\
+%%     1149 &  &  &  &  &  &  &  & 0.01 &  &  &  &  &  &  \\
+%%     1150 &  &  &  &  &  &  &  &  & 0.23 & 0.27 & 0.27 & 0.20 &  &  \\
+%%     1250 &  &  &  &  &  &  &  &  &  &  & 0.18 &  &  &  \\
+%%     \hline \hline
+%%   \end{tabular}
+%%   }
+%% \end{table}

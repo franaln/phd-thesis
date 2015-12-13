@@ -119,8 +119,8 @@ Para distinguir entre candidatos a ser fotones reales de fotones de fondo, es
 necesario contar con un algoritmo de identificación con una alta eficiencia y un alto rechazo
 de fondo, para candidatos con {\et} desde los 10 {\gev} hasta la escala del
 {\tev}. La identificación de fotones se basa en un conjunto de cortes
-rectangulares en una serie de variables discriminatorias (listadas en la
-\cref{tab:phel_id}) que caracterizan el desarrollo lateral y longitudinal de la
+rectangulares en una serie de variables discriminatorias que (se detallan a continuación)
+que caracterizan el desarrollo lateral y longitudinal de la
 lluvia en el calorímetro electromagnético y la fracción de la lluvia filtrada en
 el calorímetro hadrónico. Los fotones reales producen generalmente depósitos de
 energía mas angostos en el calorímetro electromagnético y tienen una menor
@@ -131,12 +131,126 @@ decaimientos aislados $\pi^0 \to \gam\gam$, están caracterizados por dos máxim
 locales de energía separados, en las \emph{strips} de la primer capa del calorímetro,
 debido a la presencia de los dos fotones cercanos.
 
-A partir de esta información se definen dos conjuntos de cortes: \emph{loose} y
+
+A continuación se detallan las variables discriminatorias utilizadas en la identificación de fotones. La primera
+ variable utiliza la energía medida en el calorímetro hadronico:
+
+\begin{itemize}\itemsep0.2cm\parskip0.2cm
+
+\item Filtración hadrónica: es la energía transversa depositada en el
+  calorímetro hadrónico, normalizada a la energía transversa del cluster
+  electromagnético
+
+  \begin{equation}
+    R_{\mathrm{had}_{(1)}} = \frac{\et^{\mathrm{had}}}{\et}
+  \end{equation}
+
+En la región de transición barrel-endcap del HCAL ($0.8\leq |\eta| \leq 1.37$) se utiliza
+el deposito de energía en todo el calorímetro hadronico para minimizar los efectos de la
+degradación de resolución ($R_{\mathrm{had}}$). En el resto del detector, se mide solo la
+energía hadronica depositada en la primera capa del HCAL ($R_{\mathrm{had}_{(1)}}$).
+  \end{itemize}
+
+Las siguientes variables utilizan la información de la segunda capa del calorímetro electromagnético:
+
+\begin{itemize}\itemsep0.2cm\parskip0.2cm
+\item Perfil lateral de energía en $\eta$
+
+  \begin{equation}
+    R_\eta = \frac{E^{s2}_{3\times 7}}{E^{s2}_{7\times 7}}
+  \end{equation}
+%
+  donde $E^{s2}_{i\times j}$ es la suma de las celdas en la segunda capa del calorímetro
+  electromagnético contenidas en una ventana $i \times j$ (en unidades de celda $\eta \times \phi$).
+
+\item Perfil lateral de energía en $\phi$
+
+  \begin{equation}
+    R_\phi = \frac{E^{s2}_{3\times 3}}{E^{s2}_{3\times 7}}
+  \end{equation}
+
+  definida en modo similar a $R_\eta$.
+  $R_\phi$, sin embargo, se comporta muy distinto para fotones convertidos y
+  fotones no convertidos. Por acción del campo magnético, los electrones y positrones
+  generados en la conversión curvan su trayectoria en direcciones opuestas en $\phi$,
+  dando lluvias electromagnéticas mas anchas que los fotones no convertidos en esta dirección
+  como se esquematiza en la fig.
+
+
+  \item RMS del perfil lateral de energía en $\eta$
+
+  \begin{equation}
+    w_{\eta_2} = \sqrt{ \frac{\sum E_i \eta_i^2}{\sum E_i} - \left( \frac{\sum E_i \eta_i}{\sum E_i} \right) }
+  \end{equation}
+  %
+  mide el ancho lateral de las lluvias electromagnéticas, donde $E_i$ es la energía de la i-esima celda del
+  calorímetro electromagnético contenida en una ventana $3 \times 5$ celdas en $\eta \times \phi$.
+\end{itemize}
+
+Las siguientes son las variables que utilizan la información de la primera capa
+del calorímetro electromagnético, la cual esta compuesta por celdas en forma de
+bandas (strips) que permiten una muy buena separación entre fotones aislados y
+fotones provenientes del decaimimietno del $\pi^0$. La fig muestra el perfil de
+una lluvia electromagnética típica de cada tipo en eventos de datos reales donde
+se puede apreciar la estructura del perfil de energía en la primera capa del
+ECAL en el caso de un decamiento $\pi^0 \toi \gam\gam$.
+
+\begin{itemize}\itemsep0.2cm\parskip0.2cm
+\item Perfil lateral de enrgia en $\eta$
+
+  \begin{equation}
+    F_\mathrm{side} = \frac{E(\pm 3) - E(\pm 1)}{E(\pm 1)}
+  \end{equation}
+  %
+  mide la contencion lateral de la cascada electromagnetica a lo largo de eta.
+  $E(\pm n)$ es la energia en las $\pm n$ celdas alrededor de aquella con la deposicion maxima.
+
+\item RMS del perfil lateral de energia en $\eta$ (3 strips)
+
+  \begin{equation}
+    w_{s,3} = \sqrt{ \frac{\sum E_i (i - i_\mathrm{max})^2}{\sum E_i} }
+  \end{equation}
+  %
+  mide el ancho de la lluvia electromagnetica a lo largo de eta en la primera capa
+  del calorimetro electromagnetico usando solo la banda con mayor deposicion de energia ($E_{i_\mathrm{max}}$)
+  y sus vecina inmediatas.
+
+\item RMS del perfil lateral de energia en eta (total)
+
+  $w_{s,\mathrm{tot}}$ esta definida de la misma forma que $w_{s,3}$, pero utiliza todas las bandas de la
+  primera capa del calorimetro electromagnetica en una ventana $\Delta\eta \times \Delta\phi = 0.0625 \times 0.2$,
+  que corresponde aproximadamente a $20 \times 2$ bandas en $\eta \times \phi$.
+
+\item Diferencia al segundo maximo
+
+  \begin{equation}
+    \Delta E = (E^{s1}_{2^{\mathrm{do}} max} - E_\mathrm{min}^{s1} )
+  \end{equation}
+  %
+  es la diferencia entre la energia de la banda con la segunda energia mas grande ($E^{s1}_{2^{\mathrm{do}} max}$)
+  , y lla minima energia ($E_\mathrm{min}^{s1}$) entre la anterior y la celda con la maxima deposicion. En caso
+  de no haber segundo maximo se fija $\Delta E = 0$.
+
+\item Asimetria de los dos maximos locales en $\eta$
+
+  \begin{equation}
+    E_\mathrm{ratio} = \frac{ E^{s1}_{1^{\mathrm{st}} max} - E^{s1}_{2^{\mathrm{nd}} max} }{ E^{s1}_{1^{\mathrm{st}} max} + E^{s1}_{2^{\mathrm{nd}} max} }
+  \end{equation}
+  %
+  mide la diferencia relativa entre las energias de las dos celdas con maxima deposicion. En caso de no haber segundo maximo
+  se fija $E_\mathrm{ratio} = 1$.
+
+\end{itemize}
+
+
+
+
+A partir de estas variables discriminatorias se definen dos conjuntos de cortes: \emph{loose} y
 \emph{tight}.
 La selección \emph{loose} se basa solo en las formas de la lluvia
 en la segunda capa del calorímetro EM y en la energía depositada en el
 calorímetro hadrónico, y es utilizada especialmente por el trigger. La selección
-\emph{tight} agrega además información de la capa de strips del calorímetro, que
+\emph{tight} agrega además información de la capa de \emph{strips} del calorímetro, que
 provee un buen rechazo de fondo, %jets hadronicos en los cuales el mesón neutro lleva la mayor parte de la energía del jet
 además de ajustar los cortes en las
 demás variables. Las variables utilizadas en cada conjunto pueden verse detalladas
@@ -238,115 +352,6 @@ transversa $\et>40 \gev$ y un alto rechazo de fondo\cite{PhotonPerf}.
   \end{tabular}
 
 \end{table}
-
-
-%% Filtracion hadronica:
-
-%% Es la energia transversa depositada en el calorimetro hadronico, normalizada a la enrgia transversa del cluster electromagentico
-
-%% \begin{equation}
-%%   R_{\mathrm{had}_{(1)} = \frac{\et^{\mathrm{had}}}{\et}
-%% \end{equation}
-
-%% En la region de transicion barrel-endcap del HCAL ($0.8\leq |\eta| \leq 1.37$) se utiliza
-%% el deposito de energia en todo el calorimetro hadronico para minimizar los efectos de la
-%% degradacion de resolucion ($R_{\mathrm{had}}$). En el resto del detector, se mide solo la
-%% energia hadronica depositada en la primera capa del HCAL ($R_{\mathrm{had}_{(1)}$).
-
-
-%%   Variables que utilizan la segunda capa del calorimetro electromagnetico
-
-
-%%   Perfil lateral de energia en $\eta$
-
-%%   \begin{equation}
-%%     R_\eta = \frac{E^{s2}_{3\times 7}}{E^{s2}_{7\times 7}}
-%%   \end{equation}
-
-%%   donde $E^{s2}_{i\times j}$ es la suma de las celdas en la segunda capa del calorimetro
-%%   electromagnetico contenidas en una ventana $i \times j$ (en unidades de celda $\eta \times \phi$).
-
-
-%%   Perfil lateral de energia en $\phi$
-
-%%   \begin{equation}
-%%     R_\phi = \frac{E^{s2}_{3\times 3}}{E^{s2}_{3\times 7}}
-%%   \end{equation}
-
-%%   definida en modo similar a $R_\eta$.
-%%   $R_\phi$, sin embargo, se comporta muy distinto para fotones convertidos y
-%%   fotones no convertidos. Por accion del campo magnetico, los electrones y positrones
-%%   generados en la conversion curvan su trayectoria en direcciones opuestas en $\phi$,
-%%   dando lluvias electromagneticas mas anchas que los fotones no convertidos en esta direccion
-%%   como se esquematiza en la fig.
-
-
-%%   RMS del perfil lateral de energia en $\eta$
-
-%%   \begin{equation}
-%%     w_{\eta_2} = \sqrt{ \frac{\sum E_i \eta_i^2}{\sum E_i} - \left( \frac{\sum E_i \eta_i}{\sum E_i} \right) }
-%%   \end{equation}
-%%   %
-%%   mide el ancho lateral de las lluvias electromagneticas, donde $E_i$ es la energia de la i-esima celda del
-%%   calorimetro electromagnetica contenida en una ventana $3 \times 5$ celdas en $\eta \times \phi$.
-
-
-%%   Variables que utilizan la primera capa del calorimetro electromagnetico
-
-%%   La primera capa del calorimetor electromagnetico esta compuesta por celdas en forma de bandas (strips) que
-%%   permiten una muy buena separacion entre fotones aislados y fotones provenientes del decaimimietno del $\pi^0$.
-%%   La fig muestra el perfil de una lluvia electromagnetica tipica de cada tipo en eventos de datos reales donde se puede
-%%   apreciar la estructura del perfil de energia en la primera capa del ECAL en el caso de un decamiento $\pi^0 \toi \gam\gam$.
-
-%%   Las variables basadas en la energia depositada en la primera capa del calorimetro electromagnetico son las siguientes:
-
-
-%%   Perfil lateral de enrgia en $\eta$
-
-%%   \begin{equation}
-%%     F_\mathrm{side} = \frac{E(\pm 3) - E(\pm 1)}{E(\pm 1)}
-%%   \end{equation}
-%%   %
-%%   mide la contencion lateral de la cascada electromagnetica a lo largo de eta.
-%%   $E(\pm n)$ es la energia en las $\pm n$ celdas alrededor de aquella con la deposicion maxima.
-
-%%   .
-%%   RMS del perfil lateral de energia en $\eta$ (3 strips)
-
-%%   \begin{equation}
-%%     w_{s,3} = \sqrt{ \frac{\sum E_i (i - i_\mathrm{max})^2}{\sum E_i}
-%%   \end{equation}
-%%   %
-%%   mide el ancho de la lluvia electromagnetica a lo largo de eta en la primera capa
-%%   del calorimetro electromagnetico usando solo la banda con mayor deposicion de energia ($E_{i_\mathrm{max}}$)
-%%   y sus vecina inmediatas.
-
-%%   RMS del perfil lateral de energia en eta (total)
-
-%%   $w_{s,\mathrm{tot}}$ esta definida de la misma forma que $w_{s,3}$, pero utiliza todas las bandas de la
-%%   primera capa del calorimetro electromagnetica en una ventana $\Delta\eta \times \Delta\phi = 0.0625 \times 0.2$,
-%%   que corresponde aproximadamente a $20 \times 2$ bandas en $\eta \times \phi$.
-
-
-%%   Diferencia al segundo maximo
-
-%%   \begin{equation}
-%%     \Delta E = (E^{s1}_{2^{\mathrm{do}} max} - E_\mathrm{min}^{s1} )
-%%   \end{equation}
-%%   %
-%%   es la diferencia entre la energia de la banda con la segunda energia mas grande ($E^{s1}_{2^{\mathrm{do}} max}$)
-%%   , y lla minima energia ($E_\mathrm{min}^{s1}$) entre la anterior y la celda con la maxima deposicion. En caso
-%%   de no haber segundo maximo se fija $\Delta E = 0$.
-
-
-%%   Asimetria de los dos maximos locales en $\eta$
-
-%%   \begin{equation}
-%%     E_\mathrm{ratio} = \frac{ E^{s1}_{1^{\mathrm{st}} max} - E^{s1}_{2^{\mathrm{nd}} max} }{ E^{s1}_{1^{\mathrm{st}} max} + E^{s1}_{2^{\mathrm{nd}} max} }
-%%   \end{equation}
-%%   %
-%%   mide la diferencia relativa entre las energias de las dos celdas con maxima deposicion. En caso de no haber segundo maximo
-%%   se fija $E_\mathrm{ratio} = 1$.
 
 
 
@@ -461,7 +466,7 @@ transversa de aislamiento {\etiso}.
   \caption{Esquema ilustrando el calculo de la energía de aislamiento del fotón. La grid representa
     la granularidad de las celdas del calorímetro electromagnético. La energía del candidato a fotón o electrón
     esta mayormente contenida en el rectángulo central de $5 \times 7$ en $\Delta\eta \times \Delta\phi$. El
-    cono de color gris de radio R rodea al candidato}
+    cono de color gris de radio $R$ rodea al candidato}
   \label{fig:topoetcone}
 
 \end{figure}
@@ -494,8 +499,8 @@ $5\times 7$ celdas (en $\Delta\eta \times \Delta\phi$ en la segunda capa del
 calorimetro) centrado en el candidato, a fin de remover la energia del propio
 foton o electron.
 
-Igalemte, una fraccion de la energia (que aumenta con {\pt}) se filtra fuera de
-este rectangulo. Es necesario aplicar una correccion debido a esta filtracion
+Igualmente, una fracción de la energía (que aumenta con {\pt}) se filtra fuera de
+este rectángulo. Es necesario aplicar una corrección debido a esta filtración
 basada en Monte Carlo.
 
 
