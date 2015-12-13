@@ -1,27 +1,24 @@
 \chapter{Análisis Estadístico y Resultados}
 
-En este capítulo se introducen algunos conceptos básicos necesarios
-para el análisis estadístico de los datos, focalizandolnos en la
-búsqueda de nuevas se\~nales en física de altas energías.
+En este Capítulo se presentan los resultados, y el analisis estadistico
+de los datos. Como se explica en el \cref{cap:estadistica}, se utiliza
+como estadistico de prueba el \emph{profile likelihood ratio}
 
 
-\section{Herramientas para el análisis estadístico}
 
-Para el analisis estadistico se utilizo el software \texttt{HistFitter}
-desarrollado dentro del grupo de SUSY en ATLAS, que es una interfaz para herramientas
-como \texttt{RooFit}, \texttt{RooStats}\cite{Moneta:2010pm} y \texttt{HistFactory}
-\cite{Cranmer:1456844} y ademas posee una serie de scripts que facilitan el analisis cuando este
-es muy complejo.
+Para el analisis estadistico se utiliza \texttt{HistFitter}[], una herrmienta
+desarrollada dentro del grupo de SUSY en ATLAS, y es basicamente una interfaz
+de \texttt{RooFit}, \texttt{RooStats}\cite{Moneta:2010pm} y
+\texttt{HistFactory} \cite{Cranmer:1456844}, de forma de facilitar el analisis
+estadistico. Ademas el hecho de utilizar una misma herramienta en distintos
+analisis dentro de ATLAS, permite que su combinacion estadistica sea mas sencilla.
 
-%% En este capítulo se presenta el análisis estadístico de los datos. La compatibilidad con el Modelo Estándar,
-%% los limites en la sección eficaz y los limites de exclusión son obtenidos utilizando el profile log likelihood ratio {LLR}.
 
-%% En esta seccion se describira el procedimiento general para la busqueda de nueva fisica en el
-%% contexto de un test estadistico frecuentista.
+En este capítulo se presenta el análisis estadístico de los datos. La
+compatibilidad con el Modelo Estándar, los limites en la sección eficaz y los
+limites de exclusión son obtenidos utilizando el profile log likelihood ratio
+LLR.
 
-%% The statistical treatment of the results is presented in this section.
-%% The compatibility with the Standard Model, limits on the visible cross sections and the exclusions are
-%% assessed with a profile log likelihood ratio (LLR) approach.
 
 %% The profile LLR is obtained from a simultaneous fit to the contributions
 %% from Standard Model background and supersymmetric signal
@@ -31,24 +28,11 @@ es muy complejo.
 %% boundaries and the propagation of statistical and systematic uncertainties is cleanly taken into account.
 
 
-%% \section{Configuracion del fit} \label{sec:fitconfig}
-
-%% La configuracion del fit esta basada en las SR y CR descriptas en las tablas \XXX\ y
-%% considera todos las incertezas sistematicas discutidas en seccion \XXX.
-
+% Cuando se realiza el ajuste simultaneo en las CR,
 %% When fitting CRs simultaneously, common normalizations are allowed in order to correctly take into
 %% account the other background contamination in a given CR. Experimental systematic uncertainties are
 %% correlated across the CRs and a SR. Sample-dependent theory systematics are uncorrelated.
 
-%% La función likelihood para cada canal el producto de distribuciones de Poisson, una para la region
-%% de se\~nal y otra para cada region de control que se utilizan para constraint \wgamma\ (CRLW),
-%% \ttbargam\ (CRLT) and fake-\MET\ (CRM) events, labeled as $P_\text{SR}$, $P_\text{CRLW}$,
-%% $P_\text{CRLT}$, $P_\text{CRM}$, respectively, and of the PDFs constraining the systematic
-%% uncertainties $C_\text{syst}$:
-
-%% \begin{equation} \label{eq:likelihood}
-%%     L({\mathbf n}|\mu,{\mathbf s},{\mathbf b},\alpha) = P_\text{SR} \times P_\text{CRLW} \times P_\text{CRLT} \times P_\text{CRM} \times C_\text{syst}
-%% \end{equation}
 
 %% Cada función de Poisson $P_{i}$ refleja el numero de eventos medidos en la region $i$,
 %% ${\mathbf n_{i}}$, y el n\'umero de eventos esperados para las componentes de se\~nal
@@ -62,23 +46,13 @@ es muy complejo.
 %% sistematicas se describe en la seccion \ref{}.
 
 
-%% The inputs to the fit are summarized as follows:
-%% \begin{itemize}
-%% \item The observed number of events in the CRLW, CRLT, CRM and the number expected from initial background predictions.
-%% %• A transfer factor (TF) which is a multiplicative factor that propagates the event count from each CR to each SR for tt¯, Z +jets and multi-jets, respectively.
-%% \item Fixed data-driven expectations for the number of events for electron and jet fakes events (weighted as discussed in \Sec \ref{sec:efakes} and \ref{sec:jetfakes}, respectively).
-%% \item Fixed MC expectations for the number of events from the remaining backgrounds (\zgam).
-%% \end{itemize}
-
 %% By the simultaneous fit to the data in CRs or to the data in CRs and in a SR, these free and nuisance
 %% parameters above can  be optimized with proper correlations and errors. In addition, by constraining the
 %% parameters on background components mainly by the control regions with large statistics, the impacts of
 %% these uncertainties in the SRs are reduced.
 
-%% The results presented below in \Sec \ref{sec:results} are obtained in steps, for three kinds of fit configurations, as follows:
 
 %% \begin{itemize}
-%% \item {\bf Bkg-only fit:} the normalization for each background component and the fitted parameters are obtained simultaneously according to the data in their designed CR only
 %% \item {\bf Discovery fit:} the SR is added to the fit together with a generic non-SM signal component, which is neglected in the CRs. The background prediction achieved is this
 %% way conservative since any signal contribution in the CRs is attributed to background and thus results in a possible overestimation of the background in the SRs. As shown above, however, this contribution is expected to be negligible.
 %% \item {\bf Exclusion fit} both CRs and SRs are used in the fit. The signal contribution is taken into account as predicted by the tested SUSY model in all the regions.
@@ -86,130 +60,212 @@ es muy complejo.
 
 
 
+\section{Validación del Modelo o Ajuste de solo-fondo} \label{sec:bkgonlyfit}
 
 
-\section{Validación del Modelo} \label{sec:bkgonlyfit}
+%--------------
+% Bkg-only fit
+%--------------
 
-%% In each channel, the background fit performed to the CR data by maximising the likelihood in \Eq\ \ref{eq:likelihood} but neglecting signal component, in order to determine the normalisation of background components, the fitted nuisance parameters and their correlations.
 
-%% A comparison of the background predictions and the observed data in the CRs after the background only fit is shown in \Fig \ref{fig:bkgfit_CR2_after} and \ref{fig:bkgfit_CR3_after} for some representative variables used in SR2 and SR3. A complete comparison of the distributions before and after the fit can be found in \App\ \ref{sec:ap_before_after}. The results of the fits are tabulated in \Tab \ref{tab:fit_result_cr2} and \ref{tab:fit_result_cr3}, for SR2 and SR3, respectively.
-%% As seen in \Fig \ref{fig:sig_CR}, the signal contamination in the CRs is expected to be small. For CRM, the low \MET cut kills most of the signal events, keeping its fraction below 0.5\% across the whole grid and decreasing with the gluon mass. In CRLW and CRLT, the signal fraction is $<3\%$ for most of the grid, although it can be as big as 60(35)\% for the latter for a few signal points with light gluinos and heavy neutrinos for SR2(3) selections. In all cases, the signal contamination is anyways taken into account in the final exclusion fit.
+% Control Regions
+\subsection{Resultados en las regiones de control}
 
-\begin{figure}[ph!]
-  \begin{center}
-    \includegraphics[width=0.49\textwidth]{figures/can2_CRM_met_et_afterFit}
-    \includegraphics[width=0.49\textwidth]{figures/can2_CRM_jet1_pt_afterFit} \\
-    \includegraphics[width=0.49\textwidth]{figures/can2_CRM_dphi_jetmet_afterFit}
-    \includegraphics[width=0.49\textwidth]{figures/can2_CRM_rt4_afterFit} \\
-    \includegraphics[width=0.49\textwidth]{figures/can2_CRLW_met_et_afterFit}
-    \includegraphics[width=0.49\textwidth]{figures/can2_CRLW_jet1_pt_afterFit} \\
-    \includegraphics[width=0.49\textwidth]{figures/can2_CRLW_dphi_jetmet_afterFit}
-    \includegraphics[width=0.49\textwidth]{figures/can2_CRLW_rt4_afterFit} \\
-    %\caption{Observed distributions in SR2 control regions CRM (top) and CRLW (bottom) after fit.}
-    \label{fig:bkgfit_CR2_after}
-  \end{center}
-\end{figure}
+Para validar el modelo propuesto y la metods utilizados para estimar los fondos,
+se realiza un ajute simultaneo utilizando unicamente las CR. De este ajuste se
+obtienen los factores de normalizacion de los fondos {\wgam} ($\mu_Q$), {\ttgam}
+($\mu_T$) y {\gjet} ($\mu_Q$).
 
- \begin{figure}[ph!]
-  \begin{center}
-    \includegraphics[width=0.49\textwidth]{figures/can3_CRM_met_et_afterFit}
-    \includegraphics[width=0.49\textwidth]{figures/can3_CRM_ht_afterFit} \\
-    \includegraphics[width=0.49\textwidth]{figures/can3_CRM_dphi_jetmet_afterFit}
-    \includegraphics[width=0.49\textwidth]{figures/can3_CRM_rt2_afterFit} \\
-    \includegraphics[width=0.49\textwidth]{figures/can3_CRLW_met_et_afterFit}
-    \includegraphics[width=0.49\textwidth]{figures/can3_CRLW_ht_afterFit} \\
-    \includegraphics[width=0.49\textwidth]{figures/can3_CRLW_dphi_jetmet_afterFit}
-    \includegraphics[width=0.49\textwidth]{figures/can3_CRLW_rt2_afterFit} \\
-    %\caption{Observed distributions in SR3 control regions CRM (top) and CRLW (bottom) after fit.}
-    \label{fig:bkgfit_CR3_after}
-  \end{center}
-\end{figure}
 
-%% \begin{figure}[ht!]
-%%   \begin{center}
-%%      \includegraphics[width=0.49\textwidth]{figures/signal_contamination_CRM_2}
-%%      \includegraphics[width=0.49\textwidth]{figures/signal_contamination_CRM_3} \\
-%%      \includegraphics[width=0.49\textwidth]{figures/signal_contamination_CRLW_2}
-%%      \includegraphics[width=0.49\textwidth]{figures/signal_contamination_CRLW_3} \\
-%%      \includegraphics[width=0.49\textwidth]{figures/signal_contamination_CRLT_2}
-%%      \includegraphics[width=0.49\textwidth]{figures/signal_contamination_CRLT_3} \\
-%%      \caption{Signal contamination expected in the control regions associated to SR2 (left) and SR3 (right).}
-%%      \label{fig:sig_CR}
-%%   \end{center}
-%% \end{figure}
+Los resultados del ajuste y el numero de eventos en los datos observados se
+presnetan en la \cref{tab:fit_result_vrl,tab:fit_result_vrh} para las distintas
+regiones de validacion.
 
-%% The fit results and data event counts in the several validation regions for SR2 and SR3 are presented in \Tab \ref{tab:fit_result_vr2} and \ref{tab:fit_result_vr3}, respectively. The distributions of several selection variables in these regions are shown in \App \ref{sec:ap_before_after}, before and after the fit. The fitted background predictions agree well with the data event counts within the uncertainties. The normalization factors determined for \wgamma\ ($\mu_{W}$), \ttbargam\ ($\mu_{T}$) and QCD prompt photon production ($\mu_{Q}$) are shown in \Tab \ref{tab:fit_bkgonly_mus}. %The $\mu_{W}$ value is consistent
+% The distributions of several selection variables in these regions are shown in \App \ref{sec:ap_before_after}, before and after the fit. The fitted background predictions agree well with the data event counts within the uncertainties. The normalization factors determined for \wgamma\ ($\mu_{W}$), \ttbargam\ ($\mu_{T}$) and QCD prompt photon production ($\mu_{Q}$) are shown in \Tab \ref{tab:fit_bkgonly_mus}. %The $\mu_{W}$ value is consistent
 %% %% %with unity within uncertinties. %As expected, $\mu_{Q}$ is way smaller, since the statistics for the smeared pseudo-data is artificially enhanced.
 %% The systematic uncertainties in the two signal regions  after the background fit are summarized in \Fig \ref{fig:fit_unc_nuisance_SR}. No profiling of the systematics uncertainties is observed. %hopefully
 %% The correlations of these systematics uncertainties and the normalizations are shown in \Fig \ref{fig:fit_corr_SR}. % What do we observe here?
 
-%% \begin{table}[h!]
-%%   \centering
-%%   \caption{Normalization factors for \wgamma\ ($\mu_{W}$), \ttbargam\ ($\mu_{T}$) and \gjet\ ($\mu_{Q}$) backgrounds, as obtained from the background-only fit for region SR2 and SR3. The uncertainties shown are those from the fit only.}
-%%   \vspace{1pt}
-%%   \begin{tabular}{|c|ccc|}
-%%     \hline
-%%     \multicolumn{4}{|c|} {\bf Normalization factors} \\
-%%     \hline
-%%     \hline
-%%         {\bf SR} & \gjet\ ($\mu_{Q}$) & \wgamma\ ($\mu_{W}$) & \ttbargam\ ($\mu_{T}$) \\
-%%         \hline
-%%         {\bf SR2} & $0.94 \pm 0.44$ & $1.34 \pm 0.89$ & $1.40 \pm 0.77$ \\
-%%         {\bf SR3} & $1.22 \pm 0.58$ & $1.24 \pm 0.39$ & $0.54 \pm 0.37$ \\
-%%         \hline
-%%   \end{tabular}
-%%   \label{tab:fit_bkgonly_mus}
-%% \end{table}
+\begin{table}[!htbp]
+  \centering
+
+  \caption{Factores de normalización utilizados para normalizar los fondos
+    {\wgam} ($\mu_{W}$), {\ttgam} ($\mu_{T}$) y {\gjet} ($\mu_{Q}$), obtenidos
+    del ajuste combinado de las CR. Las incertezas mostradas son las
+    del ajuste.}
+  \label{tab:fit_bkgonly_mus}
+
+  \begin{tabularx}{0.8\textwidth}{CCCC} %cccc}
+    \hline
+    &       $\mu_{Q}$ &       $\mu_{W}$ &       $\mu_{T}$ \\
+    \hline
+    {\bf \SRL} & $0.94 \pm 0.44$ & $1.34 \pm 0.89$ & $1.40 \pm 0.77$ \\
+    {\bf \SRH} & $1.22 \pm 0.58$ & $1.24 \pm 0.39$ & $0.54 \pm 0.37$ \\
+    \hline
+  \end{tabularx}
+
+\end{table}
 
 
-%% %% ------
-%% %%  SR2
-%% %% ------
-\begin{table}[ht!]
-  %\caption{Background fit results for SR2 control regions with an integrated luminosity of 20.3 \ifb. Nominal MC and data-driven expectations are given for comparison. The uncertainties shown are statistical + systematic.}
-  \input{tables/table_SR2_CR.tex}
+\begin{table}[!htbp]
+  \centering
+
+  \caption{Resultados del ajuste en las CR correspondientes a {\SRL}, con una luminosidad integrada total de 20.3 \ifb.
+    El numero de eventos observado es comparado con el numero de eventos esperado de fondo, despues de la correspondiente
+    normalizacion en las CR. En la parte inferior de la tabla se muestran tambien lo valores nominales del fondo antes de
+    la correspondiente normalizacion. Las incertezas incluyen la incerteza estadistica y sistematica.}
   \label{tab:fit_result_cr2}
+
+  %\resizebox{\textwidth}{!}
+  {\small\input{tables/table_SR2_CR.tex}}
+
 \end{table}
 
-\begin{table}[ht!]
-  %\caption{Background fit results for SR2 validation regions with an integrated luminosity of 20.3 \ifb. Nominal MC and data-driven expectations are given for comparison. The uncertainties shown are statistical + systematic.}
-  \input{tables/table_SR2_VR.tex}
-  \label{tab:fit_result_vr2}
-\end{table}
 
+\begin{table}[!htbp]
 
-%% ------
-%%  SR3
-%% ------
-\begin{table}[ht!]
-  %\caption{Background fit results for SR3 control regions with an integrated luminosity of 20.3 \ifb. Nominal MC and data-driven expectations are given for comparison. The uncertainties shown are statistical + systematic.}
+  \caption{Resultados del ajuste en las CR correspondientes a {\SRH}, con una luminosidad integrada total de 20.3 \ifb.
+    El numero de eventos observado es comparado con el numero de eventos esperado de fondo, despues de la correspondiente
+    normalizacion en las CR. En la parte inferior de la tabla se muestran tambien lo valores nominales del fondo antes de
+    la correspondiente normalizacion. Las incertezas incluyen la incerteza estadistica y sistematica.}
+  \label{tab:fit_result_cr3}
+
   \input{tables/table_SR3_CR.tex}
-\label{tab:fit_result_cr3}
+
 \end{table}
 
-\begin{table}[ht!]
-  %\caption{Background fit results for SR3 validation regions with an integrated luminosity of 20.3 \ifb. Nominal MC and data-driven expectations are given for comparison. The uncertainties shown are statistical + systematic.}
-  \input{tables/table_SR3_VR.tex}
+
+\begin{figure}[!htbp]
+  \centering
+
+  \includegraphics[width=0.49\textwidth]{can_crql_met_et_afterFit}
+  \includegraphics[width=0.49\textwidth]{can_crql_rt4_afterFit} \\
+
+  \includegraphics[width=0.49\textwidth]{can_crwl_met_et_afterFit}
+  \includegraphics[width=0.49\textwidth]{can_crwl_rt4_afterFit} \\
+
+  \includegraphics[width=0.49\textwidth]{can_crtl_met_et_afterFit}
+  \includegraphics[width=0.49\textwidth]{can_crtl_rt4_afterFit} \\
+
+  \caption{Distribuciones observadas en las regiones de control {\CRQL}, {\CRWL}
+    y {\CRTL}, después del ajuste combinado.}
+  \label{fig:bkgfit_crl_after}
+
+\end{figure}
+
+
+\begin{figure}[!htbp]
+  \centering
+
+  \includegraphics[width=0.49\textwidth]{can_crqh_met_et_afterFit}
+  \includegraphics[width=0.49\textwidth]{can_crqh_rt4_afterFit} \\
+
+  \includegraphics[width=0.49\textwidth]{can_crwh_met_et_afterFit}
+  \includegraphics[width=0.49\textwidth]{can_crwh_rt4_afterFit} \\
+
+  \includegraphics[width=0.49\textwidth]{can_crth_met_et_afterFit}
+  \includegraphics[width=0.49\textwidth]{can_crth_rt4_afterFit} \\
+
+  \caption{Distribuciones observadas en las regiones de control {\CRQH}, {\CRWH}
+    y {\CRTH},  después del ajuste combinado.}
+  \label{fig:bkgfit_CRh_after}
+
+\end{figure}
+
+
+
+
+
+%% Validation Regions
+\subsection{Resultados en las regiones de validación}
+
+\begin{table}[!htbp]
+
+  \caption{Resultados del ajuste en las VR correspondientes a {\SRL}, con una luminosidad integrada total de 20.3 \ifb.
+    El numero de eventos observado es comparado con el numero de eventos esperado de fondo, despues de la correspondiente
+    normalizacion en las CR. En la parte inferior de la tabla se muestran tambien lo valores nominales del fondo antes de
+    la correspondiente normalizacion. Las incertezas incluyen la incerteza estadistica y sistematica.}
+  \label{tab:fit_result_vr2}
+
+  \input{tables/table_SR2_VR.tex}
+
+\end{table}
+
+
+\begin{table}[!htbp]
+
+  \caption{Resultados del ajuste en las VR correspondientes a {\SRH}, con una luminosidad integrada total de 20.3 \ifb.
+    El numero de eventos observado es comparado con el numero de eventos esperado de fondo, despues de la correspondiente
+    normalizacion en las CR. En la parte inferior de la tabla se muestran tambien lo valores nominales del fondo antes de
+    la correspondiente normalizacion. Las incertezas incluyen la incerteza estadistica y sistematica.}
   \label{tab:fit_result_vr3}
+
+  \input{tables/table_SR3_VR.tex}
+
 \end{table}
 
-%% \begin{figure}[h!]
-%%   \begin{center}
-%%      \includegraphics[width=\textwidth]{figures/syst_pull_afterFit_SR2.eps} \\
-%%      \includegraphics[width=\textwidth]{figures/syst_pull_afterFit_SR3.eps}
-%%      \caption{Summary of the the systematic uncertainties after the background fit for SR2 (top) and SR3 (bottom).}
-%%      \label{fig:fit_unc_nuisance_SR}
-%%   \end{center}
-%% \end{figure}
 
-%% \begin{figure}[h!]
-%%   \begin{center}
-%%      \includegraphics[width=\textwidth]{figures/corrMatrix_SR2} \\
-%%      \includegraphics[width=\textwidth]{figures/corrMatrix_SR3} \\
-%%      \caption{Correlation matrix of the background fit for SR2 (top) and SR3 (bottom).}
-%%      \label{fig:fit_corr_SR}
-%%   \end{center}
-%% \end{figure}
+\begin{figure}[!htbp]
+  \centering
+
+  \includegraphics[width=0.49\textwidth]{figura}
+  \includegraphics[width=0.49\textwidth]{figura} \\
+
+  \includegraphics[width=0.49\textwidth]{figura}
+  \includegraphics[width=0.49\textwidth]{figura} \\
+
+  \includegraphics[width=0.49\textwidth]{figura}
+  \includegraphics[width=0.49\textwidth]{figura} \\
+
+  \caption{Distribuciones observadas en las regiones de validación, después del ajuste combinado.}
+  \label{fig:bkgfit_crl_after}
+
+\end{figure}
+
+
+\begin{figure}[!htbp]
+  \centering
+
+  \includegraphics[width=0.49\textwidth]{figura}
+  \includegraphics[width=0.49\textwidth]{figura} \\
+
+  \includegraphics[width=0.49\textwidth]{figura}
+  \includegraphics[width=0.49\textwidth]{figura} \\
+
+  \includegraphics[width=0.49\textwidth]{figura}
+  \includegraphics[width=0.49\textwidth]{figura} \\
+
+  \caption{Distribuciones observadas en las regiones de validación,  después del ajuste combinado.}
+  \label{fig:bkgfit_CRh_after}
+
+\end{figure}
+
+\clearpage
+
+
+\subsection{Parámetros del ajuste}
+
+\begin{figure}[!htbp]
+  \centering
+
+  \includegraphics[width=\textwidth]{syst_pull_afterFit_SR2} \\
+  \includegraphics[width=\textwidth]{syst_pull_afterFit_SR3}
+
+  \caption{Resumen de los parametros despues del ajuste para {\SRL} (arriba) y {\SRH} (abajo).}
+  \label{fig:fit_unc_nuisance_SR}
+
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+
+  \includegraphics[width=\textwidth]{figures/corrMatrix_SR2} \\
+  \includegraphics[width=\textwidth]{figures/corrMatrix_SR3} \\
+
+  \caption{Matriz de correlacion de los parametros del ajuste, correspondientes a {\SRL} (arriba) y {\SRH} (abajo).}
+  \label{fig:fit_corr_SR}
+
+\end{figure}
 
 
 %% The background predictions from the fit in SR2 and SR3 are presented in \Tab \ref{tab:fit_result_sr}. Both the nominal estimates
@@ -229,27 +285,64 @@ es muy complejo.
 %% Similar breakdown tables but separated on each background prediction in each SR are presented in \Tab \ref{tab:fit_result_sr2_syst_perbkg}-\ref{tab:fit_result_sr3_syst_perbkg}.
 
 
-\begin{figure}[h!]
-  \begin{center}
-    \includegraphics[width=0.6\textwidth]{figures/region_composition_SR2} \\
-    \includegraphics[width=0.6\textwidth]{figures/region_composition_SR3}
-    %%\caption{Background fit results in all SR/CR/VR regions, for SR2 (top) and SR3 (bottom) analyses.}
-    \label{fig:fit_region_composition}
-  \end{center}
+\subsection{Regiones de Señal}
+
+
+\begin{table}[!htbp]
+  \centering
+
+  \caption{Resultados del ajuste en las SR, con una luminosidad integrada total de 20.3 \ifb.
+    El numero de eventos observado es comparado con el numero de eventos esperado de fondo, despues de la correspondiente
+    normalizacion en las CR. En la parte inferior de la tabla se muestran tambien lo valores nominales del fondo antes de
+    la correspondiente normalizacion. Las incertezas incluyen la incerteza estadistica y sistematica.}
+  \label{tab:fit_result_sr}
+
+  \input{tables/table_SR.tex}
+
+\end{table}
+
+
+\begin{figure}[!htbp]
+  \centering
+
+  \includegraphics[width=0.6\textwidth]{region_composition_srl}
+  \includegraphics[width=0.6\textwidth]{region_composition_srh}
+
+  \caption{Background fit results in all SR/CR/VR regions, for SR2 (top) and SR3 (bottom) analyses.}
+  \label{fig:fit_region_composition}
+
 \end{figure}
 
+
+\begin{figure}[!htbp]
+
+  \centering
+
+  \includegraphics[width=0.49\textwidth]{figura}
+  \includegraphics[width=0.49\textwidth]{figura}
+
+  \caption{Comparación datos/MC de algunas variables discriminatorias
+    para {\SRL}, despues del ajuste final.}
+  \label{fig:unblind_dist_2}
+
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering
+
+  \includegraphics[width=0.49\textwidth]{figura}
+  \includegraphics[width=0.49\textwidth]{figura}
+
+  \caption{Comparación datos/MC de algunas variables discriminatorias
+    para {\SRH}, despues del ajuste final.}
+  \label{fig:unblind_dist_3}
+
+\end{figure}
 
 
 %% %The additional checks on the fit results are performed, following the recommendation on SUSYChekList twiki \cite{}.
 %% % The results are shown in \App \ref{sec:ap:fitchecks} and conﬁrmed all expected.
 
-\begin{table}[ht!]
-  \centering
-  %% \caption{Background predictions in SR2 and SR3, obtained with the background fit for an integrated luminosity of 20.3 \ifb.
-  %%   Nominal MC and data-driven expectations are given for comparison. The uncertainties shown are statistical + systematic.}
-  \input{tables/table_SR.tex}
-  \label{tab:fit_result_sr}
-\end{table}
 
 
 %% %% \begin{table}
@@ -286,21 +379,6 @@ es muy complejo.
 
 %% \clearpage
 
-\section{Estudios sobre la extrapolación}
-%% \label{sec:vr_extrapolation}
-
-En la definicion de las regiones de control, algunos criterios
-de seleccion fueron relajados para ganar estadistica. Por este
-motivo se realizaron algunos estudios para validar la extrapolacion,
-ajustando los cortes en las CR de a uno:
-
-\begin{itemize}
-\item \textbf{VCRLWrt:}  igual que CRLW pero con el corte en {\rt} como en la SR.
-\item \textbf{VCRLWmet:} igual que CRLW pero con el corte en {\met} como en la SR.
-\item \textbf{VCRLWht:}  igual que CRLW pero con el corte en {\HT} como en la SR.
-\end{itemize}
-
-%% Similar regions were defined for CRLT control region. The results are tabulated in \Tab\ \ref{tab:fit_result_vr_ext2} and \ref{tab:fit_result_vr_ext3}. As good agreement was found in all cases, no extra systematic was considered in this analysis.
 
 %% %% \begin{table}[ht!]
 %% %%   \caption{Background fit results for SR2 validation regions with an integrated luminosity of 20.3 \ifb. Nominal MC and data-driven expectations are given for comparison. The uncertainties shown are statistical + systematic.}
@@ -319,23 +397,6 @@ ajustando los cortes en las CR de a uno:
 %% For the jet energy scale (JES) uncertainty, only one nuisance parameter is used. However, an alternative background-only fit was performed using the reduced list of JES components to check potential correlation effects on the final results.
 %% The list of components provided by the JetEtmiss group is:
 
-%% {\footnotesize
-%% \begin{itemize}
-%% \item[.] \texttt{EffectiveNP\_1, EffectiveNP\_2, EffectiveNP\_3, EffectiveNP\_4, EffectiveNP\_5, EffectiveNP\_6,}
-%% \item[.] \texttt{EtaIntercalibration\_Modelling},
-%% \item[.] \texttt{EtaIntercalibration\_StatAndMethod},
-%% \item[.] \texttt{SingleParticle\_HighPt},
-%% \item[.] \texttt{RelativeNonClosure\_Pythia8},
-%% \item[.] \texttt{PileupOffsetTermMu},
-%% \item[.] \texttt{PileupOffsetTermNPV},
-%% \item[.] \texttt{PileupPtTerm},
-%% \item[.] \texttt{PileupRhoTopology},
-%% \item[.] \texttt{CloseBy},
-%% \item[.] \texttt{FlavorCompUncert},
-%% \item[.] \texttt{FlavorResponseUncert},
-%% \item[.] \texttt{BJes}.
-%% \end{itemize}
-%% }
 
 %% The breakdown of the dominant systematics uncertainties on the total backgrounds in this new configuration can be
 %% seen in \Tab\ \ref{tab:fulljes_check_sr2} and \ref{tab:fulljes_check_sr3}, for SR2 and SR3 respectively. The difference in the final
@@ -364,103 +425,28 @@ ajustando los cortes en las CR de a uno:
 
 %% \clearpage
 
-\section{Distribuciones en las regiones de se\~nal}
+%% \section{Distribuciones en las regiones de se\~nal}
 
 %% The unblinded distributions of some of the discriminating variables in SR2 and SR3 are shown in \Fig \ref{fig:unblind_dist_2} and \ref{fig:unblind_dist_3},
 %% respectively. The statistical prediction of the background is described in the next sections.
 %% Details and event displays for the 4 events surviving the SR selections are included in \App \ref{sec:ap:atlantis}.
 
-\begin{figure}[ht!]
-  \begin{center}
-   \includegraphics[width=0.49\textwidth]{figures/can2_SR_ph_pt_afterFit}
-   \includegraphics[width=0.49\textwidth]{figures/can2_SR_jet1_pt_afterFit}\\
-   \includegraphics[width=0.49\textwidth]{figures/can2_SR_ht_afterFit}
-   \includegraphics[width=0.49\textwidth]{figures/can2_SR_met_et_afterFit}
-   \caption{Comparación datos/MC de algunas variables discriminatorias
-     para {\SRL}, despues del ajuste final.}
-    \label{fig:unblind_dist_2}
-  \end{center}
-\end{figure}
 
-\begin{figure}[h!]
-  \begin{center}
-   \includegraphics[width=0.49\textwidth]{figures/can3_SR_ph_pt_afterFit}
-   \includegraphics[width=0.49\textwidth]{figures/can3_SR_jet1_pt_afterFit}\\
-   \includegraphics[width=0.49\textwidth]{figures/can3_SR_ht_afterFit}
-   \includegraphics[width=0.49\textwidth]{figures/can3_SR_met_et_afterFit}
-   \caption{Comparación datos/MC de algunas variables discriminatorias
-     para {\SRH}, despues del ajuste final.}
-    \label{fig:unblind_dist_3}
-  \end{center}
-\end{figure}
-
-\clearpage
-
-\section{Interpretaciones} \label{sec:interpretations}
-
-Debido a que no se observa un exceso significativo por
-arriba del fondo esperado del {\SM} en las regiones de
-señal, se obtendrán los limites de exclusión en el modelo
-de SUSY GGM considerado. Los limites superiores son obtenidos
-utilizando el método del {\cls} descripto en []. Estos limites
-son recalculados con una sección eficaz de $\pm 1 \sigma$ en la
-incerteza teórica siguiendo la recomendación de ATLAS y el acuerdo
-para presencian de resultados en el LHC.
-
-También se obtienen limites independientes del modelo en la siguiente
-sección.
-
-\subsection{Limites generales} \label{sec:model_independent}
-
-%% The discovery fit is performed to the CR data and SR data by maximizing the likelihood in \Eq \ref{eq:likelihood} but
-%%  with the signal component only in the SR. The discovery test is done by the background-only hypothesis
-%% and quantified using pseudo-experiments by p-value $p_b = P(q \leq q_{obs}|b)$ where $q$ is the test statistics.
-%% In the absence of a statistically significant excess, limits are set on contributions to the SRs from new
-%% physics. Calculated p-values and model independent limits on the number of new physics contribution
-%% by each SR are listed in \Tab \ref{tab:upperlimits}. Two sets of results are obtained with 3000 toy experiments and with
-%% asymptotic approximation, respectively. Although the observed limits on the visible cross sections are not much different,
-%% the asymptotic approximation is supposed to hold only for high statistics scenarios. Thus, we decided to keep all the
-%% limit results with toys. The results with asymptotic approximation are also shown in \App \ref{sec:ap:asym_limits} for comparison.
-
-%% %Since the limit numbers between the two sets are not much different, we expect that the model-dependent limits will not change.
-
-\begin{table}[h!]
-  \caption{Limite independiente del modelo de señal.}
-    %% Signal-model-independent 95\% CL upper limits on the observed ($\langle\epsilon{\rm \sigma}\rangle_{\rm obs}^{95}$) %and expected ($\langle\epsilon{\rm \sigma}\rangle_{\rm exp}^{95}$)
-    %% visible cross-section, and on the observed ($S_{\rm obs}^{95}$) and expected ($S_{\rm exp}^{95}$) number of beyond-SM
-    %% events in the various SRs. The fourth line indicates the CLB value, i.e. the observed confidence level for
-    %% the background-only hypothesis. The last line (p0) indicates the probability of the observation being
-    %% consistent with the estimated background. Two sets of results are obtained with 3000 toy experiments
-    %% (top-half) and with asymptotic approximation (lower-half).}
-  \begin{center}
-    \setlength{\tabcolsep}{0.0pc}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccccc}
-      \noalign{\smallskip}\hline\noalign{\smallskip}
-              {\bf Region de señal}                   & {\SRL} & {\SRH} \\
-              \noalign{\smallskip}\hline\noalign{\smallskip}
-              Fondo esperado   &   $0.78\pm 0.42$   &  $0.84 \pm 0.49$  \\
-              Eventos observados   &   2  &  2  \\
-              \noalign{\smallskip}\hline\noalign{\smallskip}
-              $\avg{\epsilon{\rm \sigma}}_\text{obs}^{95}$[fb]  & 0.28  & 0.28 \\
-              $S_\text{obs}^{95}$  & 5.7 & 5.7 \\
-              $S_\text{exp}^{95}$ & ${4.0}^{+1.6}_{-0.1}$ & ${4.1}^{+1.7}_{-0.1}$ \\
-              $CL_{B}$ & 0.86 & 0.83 \\
-              $p(s=0)$  & 0.16 &  0.19 \\
-              \noalign{\smallskip}\hline\noalign{\smallskip}
-              %
-              $\avg{\epsilon{\rm \sigma}}_\text{obs}^{95}$[fb]  & 0.27  & 0.28 \\
-              $S_\text{obs}^{95}$  & 5.5 & 5.6 \\
-              $S_\text{exp}^{95}$ &  ${3.9}^{+2.1}_{-1.3}$ & ${4.1}^{+2.2}_{-1.1}$ \\
-              $CL_{B}$ &  $0.76$  & $0.73$ \\
-              $p(s=0)$  &  $0.18$ & $0.21$ \\
-              \noalign{\smallskip}\hline\noalign{\smallskip}
-    \end{tabular*}
-  \end{center}
-  \label{tab:upperlimits}
-\end{table}
+%% \clearpage
 
 
-\subsection{Limites de exclusión sobre el modelo de SUSY}
+%-------------------------
+% SUSY Exclusion limit
+%-------------------------
+\section{Limites de exclusión sobre el modelo de SUSY}
+
+Debido a que no se observa un exceso significativo por arriba del fondo esperado
+del {\SM} en las regiones de señal, se obtuvieron los limites de exclusión en el
+modelo de SUSY considerado. Los limites superiores son obtenidos utilizando el
+método del {\cls} descripto en la \cref{sec:limits}. Estos limites son
+calculados para la seccion eficaz nominal del modelo y tambien con una sección
+eficaz de $\pm 1 \sigma$ en la incerteza teórica, siguiendo la recomendación de
+ATLAS y el acuerdo para presentar los resultados en el LHC.
 
 La \cref{fig:limit_SR_toys} muestra los limites de exclusión
 esperados y observados para las dos SR de forma separada. Los limites
@@ -481,35 +467,133 @@ el limite combinando ambas regiones de señal, eligiendo en cada punto
 la que provee el mejor limite.
 
 
-\begin{figure}[h!]
-  \begin{center}
-     \includegraphics[width=0.8\textwidth]{figures/limitPlot_SR2_toys} \\
-     \vspace{1cm}
-     \includegraphics[width=0.8\textwidth]{figures/limitPlot_SR3_toys}
-     \caption{Limites de exclusión a 95\% CL para {\SRL}  (arriba) y {\SRH} (abajo).}
-     \label{fig:limit_SR_toys}
-  \end{center}
+\begin{figure}[!htbp]
+  \centering
+
+  \includegraphics[width=0.49\textwidth]{figura} %limitPlot_SR2toys}
+  \includegraphics[width=0.49\textwidth]{figura} %limitPlot_SR3_toys}
+
+  \caption{Limites de exclusión a 95\% CL para {\SRL}  (izquierda) y {\SRH} (derecha).}
+  \label{fig:limit_SR_toys}
 \end{figure}
 
 
-\begin{figure}[h!]
-  \begin{center}
-     \includegraphics[width=0.8\textwidth]{figures/limitPlot_SR2_SR3_toys} \\
-     \caption{Limites de exclusión para {\SRL} y {\SRH} combinados.
-       Los limites son obtenidos usando la region de senal con mejor sensibilidad
-       en cada punto.}
-     \label{fig:limit_SR_combined_toys}
-  \end{center}
+\begin{figure}[!htbp]
+  \centering
+
+  \includegraphics[width=0.8\textwidth]{figura}
+
+  \caption{Limites de exclusión para {\SRL} y {\SRH} combinados.
+    Los limites son obtenidos usando la región de señal con mejor sensibilidad
+    en cada punto.}
+  \label{fig:limit_SR_combined_toys}
+
 \end{figure}
 
-\begin{figure}[h!]
-  \begin{center}
-     \includegraphics[width=0.8\textwidth]{figures/limitPlot_SR2_SR3_BestSR_toys}
-     \caption{Limites de exclusión para {\SRL} y {\SRH} combinados.
-       Los limites son obtenidos usando la region de senal con mejor sensibilidad
-       en cada punto, la cual es indicada con el numero en gris.}
-     \label{fig:limit_SR_combined_best}
-  \end{center}
-\end{figure}
+%% \begin{figure}[!htbp]
+%%   \centering
 
-%\clearpage
+%%   \includegraphics[width=0.8\textwidth]{figures/limitPlot_SR2_SR3_BestSR_toys}
+
+%%   \caption{Limites de exclusión para {\SRL} y {\SRH} combinados.
+%%     Los limites son obtenidos usando la region de senal con mejor sensibilidad
+%%     en cada punto, la cual es indicada con el numero en gris.}
+%%   \label{fig:limit_SR_combined_best}
+
+%% \end{figure}
+
+
+
+A search for the experimental signature of an isolated high-\pt\ photon, jets
+and high missing transverse momentum has been performed using 20.3 \ifb\ of pp
+collision data at 8 \tev\ produced by the LHC and collected by the ATLAS
+detector. No excess has been observed over the Standard Model predictions.
+Limits are set in a GGM scenario with a NLSP neutralino that is a mixture of
+higgsino and bino. For a neutralino mass range $m_{\neut}<{840}\gev$, gluino
+production is excluded at 95\% CL at a minimum (maximum) mass of 1190 (1320)
+\gev. For a gluino mass below 1TeV, a bino-higgsino NLSP is excluded at 95\% CL
+between 150 \gev\ and $m_{\gluino}-m_{\neut}>50\gev$.
+
+
+
+%-------------------------
+% Model independent limit
+%-------------------------
+\section{Limites a eventos de Nueva Física} \label{sec:model_independent}
+
+%% Mas alla de los limites en el modelo de senal de SUSY estudiado en esta Tesis,
+%% el analisis que busca nueva fisica puede imponer limites en el numero de eventos
+%% de nueva fisica por sobre el fondo esperado en cada SR. De esta forma, para cada
+%% modelo de senal de interes, cualquiera puede estimar el numero de eventos de
+%% senal predichos en una SR y chequear si el modelo es excluido o no de acuerdo a
+%% los datos observados en el analisis.
+
+
+Ademas de los limites en el modelo de SUSY considerado en esta Tesis,
+resulta util proveer el limite superior en el numero de eventos de nueva fisica,
+independientes del modelo. Este limite, provisto para cada region de senal,
+hace posible aplicarlos a cualquier otro model, simplemente contando
+el numero de eventos de senal que se espera que contribuyan a la regon en cuestion
+y verdificar que el numero no exceda el limite superior.
+
+%Este limite se obtiene del ajuste combinado
+Con este objetivo se realiza un ajuste combinado teniendo en cuenta las regiones
+de control y cada una de las regiones de senal. Se supone que la contaminacion
+de senal en las CR es nula, pero no se realiza ninguna otra suposicion acerca
+del modelo de senal. El numero de eventos de senal en la SR se agrega como un
+el parametro de interes del ajuste. Se realiza un ``scan'' sobre este parametro,
+y el limite superior en el numero de eventos de nueva fisica se encuentra para el
+valor en el cual el {\cls} cae debajo del 5\%. El limite superior en el numero de
+eventos puede transformarse en el limite superior en la seccion eficaz visible diviendolo
+por la luminosidad utilizada, 20.3 \ifb.
+
+Estos resultados se detallan en \cref{tab:upperlimits} para las dos SR. Debido a que el
+numero esperado de eventos de fondo es bajo, no es posible utilizar la aproximacion asintotica,
+y se generaron pseudo-experimentos MC.
+
+%% Los resultados se obtienen de forma independiente utilizando 3000 pseudo-experimentos, y la
+%% aproximacion asintotica.
+%% The discovery fit is performed to the CR data and SR data by maximizing the likelihood in \Eq \ref{eq:likelihood} but
+%%  with the signal component only in the SR. The discovery test is done by the background-only hypothesis
+%% and quantified using pseudo-experiments by p-value $p_b = P(q \leq q_{obs}|b)$ where $q$ is the test statistics.
+%% In the absence of a statistically significant excess, limits are set on contributions to the SRs from new
+%% physics. Calculated p-values and model independent limits on the number of new physics contribution
+%% by each SR are listed in \Tab \ref{tab:upperlimits}. Two sets of results are obtained with 3000 toy experiments and with
+%% asymptotic approximation, respectively. Although the observed limits on the visible cross sections are not much different,
+%% the asymptotic approximation is supposed to hold only for high statistics scenarios. Thus, we decided to keep all the
+%% limit results with toys. The results with asymptotic approximation are also shown in \App \ref{sec:ap:asym_limits} for comparison.
+
+%% %Since the limit numbers between the two sets are not much different, we expect that the model-dependent limits will not change.
+
+\begin{table}[!htbp]
+  \centering
+
+  \caption{Limite independiente del modelo de señal a 95\% de CL en la
+    seccion eficaz visible observada ($\langle\epsilon{\rm \sigma}\rangle_{\rm obs}$),
+    y el límite en el número de eventos de nueva física observado
+    $S_\text{obs}$ y esperado $S_\text{exp}$ para las dos SR.
+    La última linea ($p_0$) indica el {\pvalue} de la hipotesis de solo-fondo.}
+    %% Signal-model-independent 95\% CL upper limits on the observed ($\langle\epsilon{\rm \sigma}\rangle_{\rm obs}^{95}$) %and expected ($\langle\epsilon{\rm \sigma}\rangle_{\rm exp}^{95}$)
+    %% visible cross-section, and on the observed ($S_{\rm obs}^{95}$) and expected ($S_{\rm exp}^{95}$) number of beyond-SM
+    %% events in the various SRs. The fourth line indicates the CLB value, i.e. the observed confidence level for
+    %% the background-only hypothesis. The last line (p0) indicates the probability of the observation being
+    %% consistent with the estimated background. Two sets of results are obtained with 3000 toy experiments
+    %% (top-half) and with asymptotic approximation (lower-half).}
+  \label{tab:upperlimits}
+
+  \begin{tabularx}{\textwidth}{LRR}
+    \noalign{\smallskip}\hline\noalign{\smallskip}
+            {\bf Region de señal}                   & {\bf \SRL} & {\bf \SRH} \\
+            \noalign{\smallskip}\hline\noalign{\smallskip}
+            Eventos SM esperados   &   $0.78\pm 0.42$   &  $0.84 \pm 0.49$  \\
+            Eventos observados   &   2  &  2  \\
+            \noalign{\smallskip}\hline\noalign{\smallskip}
+            $\avg{\epsilon{\sigma}}_\text{obs} \, [\mathrm{fb}]$  & 0.28  & 0.28 \\
+            $S_\text{obs}$  & 5.7 & 5.7 \\
+            $S_\text{exp}$ & ${4.0}^{+1.6}_{-0.1}$ & ${4.1}^{+1.7}_{-0.1}$ \\
+            %% {\clb} & 0.86 & 0.83 \\
+            $p_0$  & 0.16 &  0.19 \\
+            \noalign{\smallskip}\hline\noalign{\smallskip}
+  \end{tabularx}
+
+\end{table}
