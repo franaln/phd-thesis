@@ -5,18 +5,7 @@
 %% \usetikzlibrary{calc}
 %% \usetikzlibrary{decorations}
 %% \usetikzlibrary{decorations.pathmorphing}
-
-
-%% \tikzset{
-%%   proton/.style={line width=1pt,preaction={preaction={draw,line width=5pt},draw,white,line width=3pt}},
-%%   photon/.style={decorate, decoration={snake}, draw=black},
-%%   higgs/.style={draw, dashed},
-%%   fermion/.style={draw=black, postaction={decorate},decoration={markings}},
-%%   gluon/.style ={decorate, decoration={coil,amplitude=2pt, segment length=2.5pt}},
-%%   gluino/.style={decorate, decoration={coil,amplitude=4pt, segment length=5pt}, preaction={draw}},
-%%   vertex/.style={draw,shape=circle,fill=black,minimum size=0pt,inner sep=0pt},
-%% }
-
+%% \usetikzlibrary{decorations.pathreplacing}
 
 \begin{tikzpicture}
 
@@ -46,7 +35,7 @@
 
   \draw[gluon] (p1) -- (-1.2, 2);
   \draw (-1.2,2) -- (-0.74,1.4);
-  \draw[gluon] (-0.74,1.4) -- (0, 0.5);
+  \draw[gluon] (-0.74,1.4) -- (-0.05, 0.55);
   \draw (-1.2,2) -- (-0.3, 2.5);
   \draw (-0.74,1.4) -- (0, 1.8);
 
@@ -72,29 +61,32 @@
   \draw[gluon] (-1.2,-2) -- (0,-2.5);
   \draw[gluon] (0,-2.5) -- (0.5,-2);
   \draw[gluon] (0,-2.5) -- (0.5,-3);
-  \draw[gluon] (-0.55,-1.2) -- (-0,-1.5);
+  \draw[gluon] (-0.55,-1.2) -- (0,-1.5);
 
   \draw (3,2) -- (3.5,2.5);
   \draw (3,2) -- (3.5,1.5);
 
   \draw[gluon] (3.5,-0.25) -- (4,-0.5);
 
-  \node at (1,1.2) {$\tilde{g}$};
-  \node at (1,-1.2) {$\tilde{q}$};
+  \node at (1,1.1) {$\tilde{g}$};
+  \node at (1,-1.1) {$\tilde{q}$};
   \node at (4,-1.8) {$\tilde{\chi}^0_1$};
   \node at (3.9,1.5) {$\tilde{\chi}^0_1$};
 
-  \draw[dashed,blue1,line width=1] (0,0) circle(0.8);
-  %%\node[blue1] at (-1.3,0) {(1)};
-  \node[blue1] at (-1.3,0) {Interacción dura};
-  %\node[blue1] at (0.1,2.2) {(2)};
-  \node[blue1] at (0.1,2.2) {ISR, FSR};
-  %\node[blue1] at (2.5,2) {(3)};
-  \node[blue1] at (2.5,2) {Decaimientos};
-  %\node[blue1] at (4.5, -0.3) {(4)};
-  \node[blue1] at (4.5, -0.3) {Hadronización};
-  %\node[blue1] at (0,-3.8) {(5)};
-  \node[blue1] at (0,-3.8) {Remanentes};
+  \draw[dashed,blue,line width=1] (0,0) circle(0.8);
+
+  \node[blue] at (-1.75,0) {Interacción};
+  \node[blue] at (-1.75,-0.5) {dura};
+
+  \node[blue] at (0.1,2.0) {ISR, FSR};
+  \node[blue,rotate=45] at (2.5,2) {Decaimientos};
+
+
+  \draw[blue, decorate,decoration={brace,amplitude=4pt}] (4.2,0.23) -- (4.2,-0.55);
+  \node[blue] at (5.6, -0.1) {Hadronización};
+
+  \draw[blue, decorate,decoration={brace,amplitude=4pt}] (-0.2,-3.2) -- (-0.2,-4);
+  \node[blue] at (1,-3.6) {Remanentes};
 
   \draw[fill=white] (p1) circle(0.25);
   \draw[fill=white] (p2) circle(0.25);
