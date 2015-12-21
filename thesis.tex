@@ -21,20 +21,20 @@
 \input{tikz/common.tex}
 
 \usepackage[]{units}
-
 \usepackage{cleveref}
 \crefname{figure}{Figura}{Figuras}
 \crefname{table}{Tabla}{Tablas}
 \crefname{equation}{ecuación}{ecuaciones}
-\crefname{section}{Sección}{secciones}
-\crefname{chapter}{Capítulo}{capitulos}
+\crefname{section}{Sección}{Secciones}
+\crefname{chapter}{Capítulo}{Capítulos}
 \newcommand{\crefpairconjunction}{ y }
-\newcommand{\crefmiddleconjunction}{, }
+\newcommand{\crefmiddleconjunction}{,}
 \newcommand{\creflastconjunction}{ y }
 \newcommand{\crefrangeconjunction}{-}
 
 \usepackage[labelfont=bf]{caption}
 \usepackage{tabularx}
+\usepackage{wrapfig}
 
 \setlength{\textfloatsep}{20.0pt plus 2.0pt minus 4.0pt}
 \setlength{\intextsep}{30.0pt plus 2.0pt minus 2.0pt}
@@ -44,30 +44,47 @@
 }
 
 \newcolumntype{x}[1]{>{\centering\arraybackslash}m{#1}}
-\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{z}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{y}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}%
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}%
+\newcolumntype{C}{>{\centering\arraybackslash}X}%
+\def\tabularxcolumn#1{m{#1}}
+
+
+\newcommand{\blankpage}{%
+  \mbox{}
+  \thispagestyle{empty}
+  \newpage
+}
 
 \begin{document}
 
-% title
-%% \include{title}
+%% title
+\include{title}
+\blankpage
 
-%%\tableofcontents
+\include{resumen}
+\blankpage
 
-%  body
+\include{abstract}
+\blankpage
+
+\tableofcontents
+
+%% body
 \include{introduccion}
 
-%%\part{Motivación teórica}
+\part{Motivación teórica}
 \include{sm}
 \include{susy}
 
-%%\part{Experimento}
+\part{Experimento}
 \include{detector}
 \include{objetos}
 
-%%\part{Análisis de Datos} % Análisis de Datos o
+\part{Análisis de Datos}
 \include{estadistica}
 \include{estrategia}
 \include{simulaciones}
@@ -78,11 +95,11 @@
 
 \include{conclusion}
 
-% apendix
+%% apendix
 
-% bibliography
-%%\bibliographystyle{bibstyle}
-\bibliographystyle{plain}
+%% bibliography
+\bibliographystyle{bibstyle}
+%\bibliographystyle{unsrt}
 \bibliography{thesis}
 
 \end{document}

@@ -26,6 +26,7 @@
 \LoadClass{book}
 
 %%-- Load additional packages and commands.
+%\RequirePackage{etex}
 \RequirePackage[final]{microtype}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
@@ -48,7 +49,6 @@
 \RequirePackage{rotating}
 \RequirePackage{accents}
 \RequirePackage{enumitem}
-\RequirePackage{subfig}
 \RequirePackage{lineno}
 
 %%-- Additional TeX/LaTeX code...

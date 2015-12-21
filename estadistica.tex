@@ -1,7 +1,7 @@
 \chapter{Métodos estadísticos para la búsqueda de nueva física}
 \label{cap:estadistica}
 
-En este capítulo se introducen los conceptos básicos necesarios para entender el
+En este Capítulo se introducen los conceptos básicos necesarios para entender el
 tratamiento estadístico de los datos. Esta enfocado en la búsqueda de nueva
 física en altas energías, su descubrimiento y/o el establecimiento de límites de
 exclusión.
@@ -49,10 +49,10 @@ caso especial es cuando $\mu=0$ y $\sigma=1$, la cual se denomina Gaussiana
 Estándar.
 %% $\phi(x) = \frac{1}{\sqrt{2\pi}} \exp(-x^2/2)$.
 La importancia de la distribución normal proviene del Teorema Central del
-Limite. El teorema dice que la suma de $n$ variables continuas independientes
+Límite. El teorema dice que la suma de $n$ variables continuas independientes
 $x_i$ con media $\mu_i$ y varianza $\sigma_i^2$ esta distribuida de acuerdo a
 una Gaussiana con media $\mu = \sum_{i=1}^n \mu_i$ y varianza $\sigma^2 =
-\sum_{i=1}^n \sigma_i^2$ en el limite de $n\to\infty$. Esto se satisface (bajo
+\sum_{i=1}^n \sigma_i^2$ en el límite de $n\to\infty$. Esto se satisface (bajo
 ciertas condiciones generales) sin importar las pdfs individuales de $x_i$.
 
 
@@ -376,7 +376,7 @@ con muchos parámetros libres. Sin embargo, hay una generalización natural basa
 en el PLR. De la \cref{eq:lambdamu} se puede ver que $0 \leq \lambda \leq 1$, con
 $\lambda$ cercano a 1 implica un buen acuerdo entre datos y el valor hipotético de $\mu$.
 De forma equivalente conviene utilizar como estadistico de prueba $t_\mu = -2 \ln \lambda(\mu)$.
-En el limite asintotico ($N\to\infty$) el teorema de Wilk\cite{WilkTheo} muestra
+En el límite asintotico ($N\to\infty$) el teorema de Wilk\cite{WilkTheo} muestra
 que $-2 \ln \lambda(\mu)$ sigue una distribucion $\chi^2$ con un grado de libertad.
 Esta propiedad sera útil para aproximar la pdf del estadístico
 de prueba (ver \cref{sec:aprox}).
@@ -454,7 +454,7 @@ significa que todos los valores de $\mu$ bajo $H_1$ estén excluidos.
 En particular, hay valores de $\mu$ a los que el análisis no es sensible
 y valores que los datos observados no permite excluir.
 
-Para establecer limites superiores en el parámetro $\mu$ se considera
+Para establecer límites superiores en el parámetro $\mu$ se considera
 $q_\mu$,
 
 \begin{equation}
@@ -539,14 +539,14 @@ acuerdo a este, se dice que una señal está excluida a 95\% CL, si ${\clsb} \le
 {\clsb} sea menor o igual que 0.05 con una probabilidad de 5\%}. Esto significa
 que el 5\% de los análisis estarían excluyendo modelos con cero señal. Otro
 problema del {\clsb} es que para dos experimentos con el mismo número chico de
-eventos de señal esperado pero con un numero de eventos de fondo distinto, el
+eventos de señal esperado pero con un número de eventos de fondo distinto, el
 experimento con mayor fondo va a imponer mejores límites.
 
 Con motivo de solucionar estos inconvenientes se introduce el método de {\cls}\cite{ReadCLs}.
 %% Se define el {\clb},
 
 %% Los intervalos de confianza frecuentistas cubren e
-%% Un limite superior con 95\% de nivel de confianza cubre al valor verdadero con una probabilidad de
+%% Un límite superior con 95\% de nivel de confianza cubre al valor verdadero con una probabilidad de
 %% 95\%. Eso sinifica que un 5\% de las veces no lo cubre. Esto significa, que si no hay senal, el 5\% de las veces
 %% se esta excluyendo cualquier valor positivo de XS.
 
@@ -581,7 +581,7 @@ Para poder calcular el {\pvalue} de una hipótesis utilizando las ecuaciones
 \eqref{eq:p0} y \eqref{eq:pmu} es necesario conocer las distribuciones muestrales
 del estadístico de prueba, $f(q_\mu)$.
 
-Como se dijo anteriormente, el teorema de Wilk establece que para el limite de
+Como se dijo anteriormente, el teorema de Wilk establece que para el límite de
 $N\to\infty$, el estadístico de prueba $t_\mu = -2\ln \lambda$ sigue una
 distribución $\chi^2$ con un grado de libertad, cuando la hipótesis nula es verdadera.
 
@@ -647,7 +647,7 @@ Estas aproximaciones permiten conocer las distribuciones muestrales y calcular
 valores-$p$ y significancias en el caso de un gran número de datos, de una forma
 simple y computacionalmente poco costosa. A pesar de que estrictamente es valido
 para $N\to\infty$, esta aproximación es suficientemente precisa para un número
-de eventos de fondo $\smallrel\gtrsim \mathcal{O}(10)$.
+de eventos de fondo $\gtrsim \mathcal{O}(10)$.
 
 Para muestras de datos muy pequeñas, o en casos donde la precisión es
 importante, siempre pueden validarse estas aproximaciones utilizando la
@@ -696,7 +696,7 @@ en este caso igual a la media, es $s+b$,
 \end{equation}
 %
 que es la ecuación conocida. %% Y para generalizar esta ecuación para el caso de que el
-%% numero de eventos de fondo tenga una incerteza sistemática
+%% número de eventos de fondo tenga una incerteza sistemática
 
 %% utilizando la aproximación
 %% asintotica de la seccion anterior,

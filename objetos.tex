@@ -1,12 +1,12 @@
 \chapter{Reconstrucción e identificación de objetos físicos}
-\label{sec:obj_selection}
+\label{cap:objetos}
 
-En esta sección se describe la reconstrucción, calibración e identificación de
+En este Capítulo se describe la reconstrucción, calibración e identificación de
 los principales objetos físicos utilizados en el presente análisis: fotones,
 jets, muones, electrones y energía faltante. Notar que la correcta
-identificación de todos los objetos en el evento es requerida para que el calculo de la
-energía faltante, que es la energía de las partículas que escapan el detector,
-sea lo mas preciso posible.
+identificación de todos los objetos en el evento es requerida para que el
+cálculo de la energía faltante, que es la energía de las partículas que escapan
+el detector, sea lo mas preciso posible.
 
 
 
@@ -32,7 +32,7 @@ esperadas en cada caso, y tambien criterios de aislamiento.
 La lógica de reconstrucción se basa en un algoritmo de clusterización que busca
 deposiciones locales de energía en el calorímetro electromagnético dentro de una
 ventana rectangular en el plano $(\eta, \phi)$ de tamaño fijo (\emph{sliding
-  window algorithm}) \note{ATL-COM-PHYS-2014-949}. La posición de la ventana se
+  window algorithm}) \cite{Delmastro:1747242}. La posición de la ventana se
 ajusta buscando que la energía transversa de todas las celdas contenidas sea un
 máximo local, con un mínimo de 2.5 \gev. El tamaño óptimo de la ventana depende
 del tipo de partícula a reconstruir y de la región del calorímetro. Las lluvias
@@ -114,6 +114,7 @@ electrones con $\et>15 \gev$). %% de ATLAS-CONF-2014-032
 
 
 \subsection{Identificación de fotones}
+\label{sec:fotones}
 
 Para distinguir entre candidatos a ser fotones reales de fotones de fondo, es
 necesario contar con un algoritmo de identificación con una alta eficiencia y un alto rechazo
@@ -193,7 +194,7 @@ bandas (strips) que permiten una muy buena separación entre fotones aislados y
 fotones provenientes del decaimimietno del $\pi^0$. La fig muestra el perfil de
 una lluvia electromagnética típica de cada tipo en eventos de datos reales donde
 se puede apreciar la estructura del perfil de energía en la primera capa del
-ECAL en el caso de un decamiento $\pi^0 \toi \gam\gam$.
+ECAL en el caso de un decamiento $\pi^0 \to \gam\gam$.
 
 \begin{itemize}\itemsep0.2cm\parskip0.2cm
 \item Perfil lateral de enrgia en $\eta$
@@ -292,62 +293,62 @@ transversa $\et>40 \gev$ y un alto rechazo de fondo\cite{PhotonPerf}.
     Categoria    & Descripción                                      & Nombre                  & L & T & L & M & T \\
     \hline
 
-  Aceptancia     & $|\eta|<2.37$, excluyendo $1.37<|\eta|<1.52$       & -                       &   & x &   & x & x \\
+  Aceptancia     & $|\eta|<2.37$, excluyendo $1.37<|\eta|<1.52$       & -                       &   & $\times$ &   & $\times$ & $\times$ \\
 
 
   Fuga hadrónica & Cociente entre {\et} en la primera capa del
                    calorímetro hadrónico y {\et} del
                    cluster electromagnético
-                   ($|\eta|<0.8$ y $|\eta|\geq1.37$)                & $R_{\mathrm{had}_1}$    & x & x & x & x & x \\
+                   ($|\eta|<0.8$ y $|\eta|\geq1.37$)                & $R_{\mathrm{had}_1}$    & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\
 
                  & Cociente entre {\et} en todo el calorímetro
                    hadrónico y {\et} del cluster electromagnético
-                   ($|\eta|\leq0.8$ y $|\eta|<1.37$)                & $R_{\mathrm{had}}$      & x & x & x & x & x \\
+                   ($|\eta|\leq0.8$ y $|\eta|<1.37$)                & $R_{\mathrm{had}}$      & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\
 
 
   EM ($2^\mathrm{da}$ capa)  & Cociente entre la suma de las energías de las
                    $3\times7$ celdas y la suma de $5\times 7$
-                   celdas, ambas en torno al centro del cluster     & $R_\eta$                & x & x & x & x & x \\
+                   celdas, ambas en torno al centro del cluster     & $R_\eta$                & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\
 
                  & Ancho lateral de la lluvia en dirección de
-                   $\eta$                                           & $w_{\eta_2}$            & x & x & x & x & x \\
+                   $\eta$                                           & $w_{\eta_2}$            & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\
 
                  & Cociente entre la suma de las energías de las
                    $3\times 3$ celdas y la suma de $3\times 7$
-                   celdas, ambas en torno al centro del cluster     & $R_\phi$                &   & x & x & x & x \\
+                   celdas, ambas en torno al centro del cluster     & $R_\phi$                &   & $\times$ & $\times$ & $\times$ & $\times$ \\
 
 
   EM ($1^\mathrm{ra}$ capa) & Ancho lateral de la lluvia en 3 strips alrededor
-                  del máximo                                        & $w_{s,3}$               &   & x &   & x & x \\
+                  del máximo                                        & $w_{s,3}$               &   & $\times$ &   & $\times$ & $\times$ \\
 
-                & Ancho lateral total de la lluvia                  & $w_{s,\mathrm{tot}}$    &   & x &   & x & x \\
+                & Ancho lateral total de la lluvia                  & $w_{s,\mathrm{tot}}$    &   & $\times$ &   & $\times$ & $\times$ \\
 
                 & Fracción de energía fuera de las 3 strips
-                  centrales pero dentro de las 7                    & $F_{\mathrm{side}}$     &   & x &   & x & x \\
+                  centrales pero dentro de las 7                    & $F_{\mathrm{side}}$     &   & $\times$ &   & $\times$ & $\times$ \\
 
                 & Diferencia entre la energía de la strip con el
                   segundo mayor depósito y la menor energía entre
-                  los dos primeros máximos locales                  & $\Delta E$              &   & x &   & x & x \\
+                  los dos primeros máximos locales                  & $\Delta E$              &   & $\times$ &   & $\times$ & $\times$ \\
 
-                & Asimetría entre el primer y segundo máximo        & $E_{\mathrm{ratio}}$    &   & x &   & x & x \\
+                & Asimetría entre el primer y segundo máximo        & $E_{\mathrm{ratio}}$    &   & $\times$ &   & $\times$ & $\times$ \\
 
 
   ID            & Impactos en el Pixel $\geq 1$ y en el
-                  SCT $\geq 7$                                      & -                       &   &   &   & x & x \\
+                  SCT $\geq 7$                                      & -                       &   &   &   & $\times$ & $\times$ \\
 
-                & Parámetro de impacto $\leq \unit[1]{mm}$          & -                       &   &   &   & x & x \\
+                & Parámetro de impacto $\leq \unit[1]{mm}$          & -                       &   &   &   & $\times$ & $\times$ \\
 
 
   EM+ID         & $\Delta\eta,\Delta\phi$ entre la traza
-                  extrapolada al calorímetro y el cluster           & $\Delta\eta,\Delta\phi$ &  &   &   & x & x \\
+                  extrapolada al calorímetro y el cluster           & $\Delta\eta,\Delta\phi$ &  &   &   & $\times$ & $\times$ \\
 
                 & Cociente entre la energía del cluster y el impulso
-                  de la traza                                       & $E/p$                   &  &   &   & x & x \\
+                  de la traza                                       & $E/p$                   &  &   &   & $\times$ & $\times$ \\
 
 
-  TRT           & Impactos en el TRT                                & -                       &  &   &   & x & x \\
+  TRT           & Impactos en el TRT                                & -                       &  &   &   & $\times$ & $\times$ \\
 
-                & Fracción de impactos de alto umbral en el TRT     & -                       &  &   &   & x & x \\
+                & Fracción de impactos de alto umbral en el TRT     & -                       &  &   &   & $\times$ & $\times$ \\
   \hline
   \end{tabular}
 
@@ -463,7 +464,7 @@ transversa de aislamiento {\etiso}.
     \input{tikz/topoetcone_sketch.tex}
   }
 
-  \caption{Esquema ilustrando el calculo de la energía de aislamiento del fotón. La grid representa
+  \caption{Esquema ilustrando el cálculo de la energía de aislamiento del fotón. La grid representa
     la granularidad de las celdas del calorímetro electromagnético. La energía del candidato a fotón o electrón
     esta mayormente contenida en el rectángulo central de $5 \times 7$ en $\Delta\eta \times \Delta\phi$. El
     cono de color gris de radio $R$ rodea al candidato}
@@ -729,7 +730,7 @@ que contengan hadrones $b$.
 %% with any such objects are included in the SoftTerm. The \met\ is calculated as the sum of the following terms:
 
 
-La energía faltante transversa es calculada con un algoritmo basado en objetos\note{Not public yet! ATL-COM-PHYS-2015-341}.
+La energía faltante transversa es calculada con un algoritmo basado en objetos\cite{Khoo:2012749}.
 El algoritmo utiliza para el calculo de la energía faltante, los objetos físicos
 reconstruidos y calibrados descriptos en las secciones anteriores. Los depósitos
 de energía en el calorímetro (topo-clusters) son asociados a los objetos de alto
