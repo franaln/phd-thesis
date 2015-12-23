@@ -27,34 +27,40 @@ en energía faltante instrumental. %% debido a alguno de estos problemas.
 
 
 
-\section{Trigger\note{Explicar mejor}}\label{sec:trigger}
+\section{Trigger}\label{sec:trigger}
 
 Los datos fueron colectados utilizando un trigger de un fotón (\trigchain), que
 selecciona eventos con al menos un fotón loose con momento transverso mayor a
 120 \gev.
 
 La eficiencia de este trigger fue calculada utilizando el método bootstrap
-siguiendo las prescripciones descriptas en \cref{Damazio:1609629} y es de
-$100^{+0}_{-1.41}\stat \, {}^{+0}_{-0.7}\syst \%$, con respecto a candidatos a
-fotones aislados con $\pt>125 \gev$.
-En la \cref{fig:trigger_perf} s se puede ver el resultado como función del {\pt}
-y $\eta$ del fotón. \note{Buscar referencia y eta plot}
+siguiendo las prescripciones descriptas en \cite{ATLAS-CONF-2011-114,Damazio:1609629}.
+Cuando se calcula la eficiencia del trigger utilizando el metodo bootstrap, se factoriza
+la eficiencia como el producto de la eficiencia del EF respecto a la eficiencia del L1,
+por la eficiencia de la seleccion de L1 .
 
-\begin{figure}[!htbp]
-  \centering
-  \includegraphics[width=0.45\textwidth]{figures/EffPtg120_loose}
-  \includegraphics[width=0.45\textwidth]{figures/EffPtg120_loose}
-  \caption{Eficiencia del trigger {\trigchain} como función del {\pt} (izquierda)
-    y $\eta$ (derecha) del fotón.}
-  \label{fig:trigger_perf}
-\end{figure}
+La eficiencia de {\trigchain} respecto a fotones aislados con $\pt>125\gev$ resulta en
+$100^{+0}_{-1.41}\stat \, {}^{+0}_{-0.7}\syst \%$.
 
+En la \cref{fig:trigger_perf} se puede ver el resultado como función del {\pt}
+del fotón.
 A pesar de la escasa estadística, es claro que la eficiencia alcanza una meseta,
 en la cual la eficiencia es máxima, antes de $125 \gev$. La incerteza total
 tiene en cuenta la limitada estadística de la muestra de datos y también la
 incerteza en la corrección debido a la pureza de los fotones. El desempeño del
 trigger se mantuvo estable durante todo el periodo de la toma de datos
 considerado.
+
+\begin{figure}[!htbp]
+  \centering
+
+  \includegraphics[width=0.45\textwidth]{EffPtg120_loose}
+
+  \caption{Eficiencia del trigger {\trigchain} como función del {\pt} del fotón.}
+  \label{fig:trigger_perf}
+\end{figure}
+
+
 
 
 
