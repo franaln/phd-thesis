@@ -11,15 +11,17 @@ y la construcción del modelo estadístico utilizado en el análisis.
 %% impulsadas por la fenomenología de los estados finales.
 
 El análisis realizado para esta Tesis consiste en la búsqueda de Supersimetría
-en eventos con un fotón aislado muy energético, jets y gran cantidad de energía faltante.
-La estretegia general consistó en un experimento de conteo, es decir, considerando el número de eventos observado en
-una cierta región del espacio de observables. Un experimento de conteo puede
-pensarse en el contexto del likelihood extendido, \cref{eq:likelihood_ext}, con
-$f(x) = 1$, el cual se reduce solo al término de Poisson. En el caso de que el
-número de eventos observado sea compatible con el número de eventos esperado
-debido a procesos del SM, pueden establecerse límites en la sección eficaz
-de nueva física. Y en particular en esta Tesis, se consideró un modelo
-de Supersimetría que puede dar lugar a este tipo de estados finales.
+en eventos con un fotón aislado muy energético, jets y gran cantidad de energía
+faltante. La estrategia general consistió en un experimento de conteo, es decir,
+considerando el número de eventos observado en una cierta región del espacio de
+observables. Un experimento de conteo puede pensarse en el contexto del
+likelihood extendido, \cref{eq:likelihood_ext}, con $f(x) = 1$, el cual se
+reduce solo al término de Poisson. En el caso de que el número de eventos
+observado sea compatible con el número de eventos esperado debido a procesos del
+SM, pueden establecerse límites en la sección eficaz de nueva física. En
+particular en esta Tesis, se consideró un modelo de Supersimetría que puede dar
+lugar a este tipo de estados finales, y también se darán resultados independientes
+de cualquier modelo.
 
 %% Para poder determinar compatibilidad entre los eventos observados con los
 %% predichos es necesario
@@ -51,7 +53,7 @@ Y por último, también podemos tener procesos que a pesar de no generar energí
 faltante real, poseen lo que se denomina energía faltante instrumental,
 proveniente generalmente de la incorrecta reconstrucción de la energía de los
 jets. De esta manera, pueden dar lugar a eventos con el estado final de interés,
-los procesos QCD de $\gamma+$jets y multijet (este ultimo con alguno de los jets
+los procesos QCD de $\gamma+$jets y multijet (este último con alguno de los jets
 identificado como fotón) y también $Z(\to ll)+$jets, donde un leptón o un jet es
 identificado como un fotón.
 
@@ -172,19 +174,19 @@ o utilizar métodos basados en los propios datos observados.
 %% estimar la distribución subyacente $f(x)$ creando un histograma del observable
 %% $x$ con la muestra simulada.
 
-La validez de la simulaciones MC esta fundamentalmente relacionada a como la
+La validez de la simulaciones MC está fundamentalmente relacionada a cómo la
 teoría subyacente modela las observaciones experimentales. Las debilidades de la
 estimación del fondo a partir de las simulaciones derivan de las debilidades de
-los modelos propiamente dichos. En este caso existe una motivación para utilizar
-métodos que puedan dar una estimación de los fondos a partir de los datos
-experimentales. Existen distintas formas para estimar un fondo a partir de los
-datos observados. En el \cref{cap:fondos} se describirán las utilizadas en este
-análisis.
+los modelos teóricos propiamente dichos. En este caso existe una motivación para
+utilizar métodos que puedan dar una estimación de los fondos a partir de los
+datos experimentales. Existen distintas formas para estimar un fondo a partir de
+los datos observados. En el \cref{cap:fondos} se describirán los métodos
+específicos utilizados en este análisis.
 
 %% En el caso de que no se puedan estimar utilizando los datos, existe una tercera
 %% forma
 En algunos casos se utiliza un tercer método para estimar los fondos, que consiste en
-utilizar la estimación proveniente de las simulaciones MC, pero corregirla
+utilizar la estimación proveniente de las simulaciones MC, pero corregida
 utilizando los datos. Para esto se define una región de control (CR) en
 la cual el fondo dominante pueda ser controlado comparándolo con los datos
 observados en esa misma región. Las CR son diseñadas especialmente para tener
@@ -192,7 +194,7 @@ una alta pureza en uno de los procesos de fondo y deben estar libres de
 contaminación de señal.
 
 A través del ajuste a los datos, el número de eventos observado en una CR es
-usado para \emph{normalizar} el número de eventos estimado de fondo en todas las
+usado para normalizar el número de eventos estimado de fondo en todas las
 regiones, especialmente en la SR. Es decir, las predicciones iniciales de las
 simulaciones MC son llevadas al nivel observado en la correspondiente CR,
 usando un factor de normalización calculado en el ajuste. Este factor es
@@ -220,7 +222,7 @@ anteriormente.
 Es importante que las CR, VR y SR sean estadísticamente independientes para
 poder combinar la pdf que modela cada región en una pdf conjunta. Esto es
 fundamental ya que al ajustar los parámetros de la función likelihood se deberá
-hacer un ajuste simultáneo, lo cual es importante para poder compartir los
+hacer un ajuste simultáneo, que es importante para poder compartir los
 parámetros de los fondos y las incertezas sistemáticas entre las distintas
 regiones de forma consistente.
 
@@ -231,21 +233,22 @@ regiones de forma consistente.
 \section{Extrapolación y factores de transferencia}
 
 Una de las suposiciones realizada en la Sección anterior fue que las variables
-cinemáticas que se usan para diferencias CR y SR están bien modeladas después de
+cinemáticas que se usan para diferenciar CR y SR están bien modeladas después de
 haber ajustado la pdf total a los datos en las CR. Una vez que los procesos de
 fondo dominantes son normalizados en las CR, las correspondientes modificaciones
 en la pdf pueden ser extrapoladas a las VR, las cuales son utilizadas para
 verificar la validez de esta suposición inicial. Una vez que se demuestra el
 acuerdo entre las predicciones del fondo normalizadas y los datos observados en
-las VR, las predicciones del fondo son extrapoladas a las SR, y comparadas con
-los datos observados allí. Este proceso es llamado \emph{unblinding} y es
-utilizado ampliamente en física para tener confianza en los métodos usados y
+las VR, las predicciones del fondo son extrapoladas a las SR.
+Es en este oasi que los datos observados en las SR son considerados por primera
+vez para el analisis. Este proceso es llamado \emph{unblinding} y es
+utilizado para tener confianza en los métodos usados y
 evitar utilizar predicciones prematuras y un posible sesgo en el
 resultado final.
 
-En este procedimiento se utiliza de forma implícita los
-denominados \emph{factores de transferencia}. Las predicciones de los fondo
-normalizadas en el ajuste son:
+En este procedimiento se utilizan de forma implícita los
+denominados \emph{factores de transferencia}, como se explica a continuación.
+Las predicciones de los fondo normalizadas en el ajuste son:
 
 \begin{align}
   N_p^{\text{est}}(\text{CR}) &= \mu_p \times \text{MC}_p (\text{CR})
@@ -283,7 +286,7 @@ reducir las incertezas en la SR.
 %--------
 % Modelo
 %--------
-\section{Modelo estadístico}
+\section{Construcción del modelo estadístico}
 
 %% \note{Algo asi?}
 %% El modelo, que es simplemente una familia de pdfs despcripta por un numero finioto
