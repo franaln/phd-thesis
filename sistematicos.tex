@@ -1,4 +1,5 @@
-\chapter{Determinación de las incertezas sistemáticas}
+%\chapter{Determinación de las incertezas sistemáticas}
+\section{Determinación de las incertezas sistemáticas}
 \label{cap:sistematicos}
 
 Las incertezas sistemáticas están asociadas a las predicciones de todas las
@@ -16,7 +17,7 @@ datos.
 
 
 
-\section{Incertezas Experimentales}\label{sec:expsyst}
+\subsection{Incertezas Experimentales}\label{sec:expsyst}
 
 En esta sección se describe los procedimientos realizados para evaluar
 las incertezas experimentales comunes para todos los procesos.
@@ -28,7 +29,7 @@ Las incertezas sistemáticas de las estimaciones de los fondos de electrones
 de los datos ya se discutieron en \cref{sec:efakes,sec:jfakes}. La incerteza del
 trigger tambien se discutió en \cref{sec:trigger} ($\alpha_\text{TRIG}$).
 
-\subsection{Incerteza en la luminosidad}
+\subsubsection{Incerteza en la luminosidad}
 
 La incerteza en la luminosidad integrada es de $\pm$2.8\% \cite{lumi2012}.
 Esta es derivada siguiendo la misma metodología que la que se detalla en \cite{lumi2011},
@@ -36,7 +37,7 @@ a partir de la calibración preliminar  de la escala de luminosidad derivada
 de los scans de separación de haz realizados durante Noviembre de 2012.
 
 
-\subsection{Incerteza debida al pile-up ($\alpha_\mathrm{PRW}$)}
+\subsubsection{Incerteza debida al pile-up ($\alpha_\mathrm{PRW}$)}
 
 Como se explicó en la \cref{sec:prw} es necesario realizar
 un repesado evento a evento en las muestras simuladas para modelar las condiciones
@@ -76,7 +77,7 @@ se varian los factores de escala dentro de su incerteza.
 
 
 
-\subsection{Incerteza en la identificación, escala de energía y resolución de fotones y leptones}
+\subsubsection{Incerteza en la identificación, escala de energía y resolución de fotones y leptones}
 
 Como se menciona en \cref{sec:fotones}, es necesario aplicar factores de escala a los fotones en las
 muestras MC para corregir su eficiencia. La incerteza en estos factores es propagada
@@ -118,7 +119,7 @@ y \cite{MCPTwiki}.
 
 
 
-\subsection{Escala de energía de jets ($\alpha_\mathrm{JES}$)}
+\subsubsection{Escala de energía de jets ($\alpha_\mathrm{JES}$)}
 
 La energia de los jets es aumentada y disminuida (de forma correlacionada) en
 $\pm1\sigma$ de la incerteza total de la escala de energia de jets, utilizando
@@ -136,7 +137,7 @@ del jet, el $\Delta R$ al jet mas cercano, y la composicion media quark-gluon de
 %% set of JES components on the fit results is within 1\% (see
 %% \cref{sec:JEScheck}).
 
-\subsection{Resolucion de la energia de jets ($\alpha_\mathrm{JER}$)}
+\subsubsection{Resolucion de la energia de jets ($\alpha_\mathrm{JER}$)}
 
 A fin de tener en cuenta una posible subestimacion de la resolucion de energia de los jets
 en la simulacion MC, se realiza un smearing del {\pt} de los jets en funcion de su \pt y su $\eta$.
@@ -152,7 +153,7 @@ de ATLAS.
  %% so found yield differences are then applied as a $\pm$ uncertainty.
 
 
-\subsection{Eficiencia de identificación de {\bjets} ($\alpha_\text{BJET}$)}
+\subsubsection{Eficiencia de identificación de {\bjets} ($\alpha_\text{BJET}$)}
 
 La identificacion de {\bjets} solo es utilizado en la seleccion de las regiones de control CRW y CRT.
 En estas regiones, se evalua la incerteza del mismo, variando los factores de escala
@@ -168,7 +169,7 @@ que refleja la incerteza sistematica en la eficiencia medida de identificacion d
 %% leading to three uncorrelated systematic uncertainties.
 
 
-\subsection{Término soft de \MET ($\alpha_\text{SCALEST}$, $\alpha_\text{RESOST}$)}
+\subsubsection{Término soft de \MET ($\alpha_\text{SCALEST}$, $\alpha_\text{RESOST}$)}
 
 Al modificar la escala de enegia de los objetos o la resolucion de energia de los jets, esto
 se propaga al termino correspondiente en el calculo de {\met}.
@@ -186,10 +187,10 @@ Tambien se tiene en cuenta la incerteza de la resolucion en el termino soft.
 
 
 
-\section{Incertezas Teóricas}\label{sec:theosyst}
+\subsection{Incertezas Teóricas}\label{sec:theosyst}
 
 
-\subsection{Señal}\label{sec:syst_signal}
+\subsubsection{Señal}\label{sec:syst_signal}
 
 La sección eficaz para la producción de pares de gluinos  fue calculada utilizando
 el programa {\nllfast} de acuerdo a las recomendaciones explicadas en \cref{sec:xs_calc}.
@@ -249,7 +250,7 @@ la \cref{tab:signal_xs_theo_unc}. Las incertezas totales van de 22.5\% para 800
 \end{sidewaystable}
 
 
-\subsection{Producción de \ttgam}\label{sec:syst_ttbargamma}
+\subsubsection{Producción de \ttgam}\label{sec:syst_ttbargamma}
 
 La incerteza teórica asociada a la elección de la configuracion
 utilizada en la simulación MC es
@@ -277,8 +278,8 @@ total. %%o get the total theoretical uncertainty (denoted as {\bf theoSysTopG} i
 
 \begin{table}[ht!]
   \centering
-  \caption{Resumen de las incertezas teoricas del {\ttgam} obtenidas en cada region de senal.
-    Todos ls números estan en porcentage.}
+  \caption{Resumen de las incertezas teoricas del {\ttgam} obtenidas en cada región de señal.
+    Todos los números están en porcentaje.}
   \label{tab:syst_ttbargam_truth}
 
   \begin{tabular}{l|cc}
@@ -303,7 +304,7 @@ evento son las mas sensitivas a las variaciones de escala.
 
 
 
-\subsection{Producción de {\wgam} ($\alpha_{\tgam}$)}\label{sec:syst_wgamma}
+\subsubsection{Producción de {\wgam} ($\alpha_{\tgam}$)}\label{sec:syst_wgamma}
 
 Similar a lo que se realizo para estimar las incertezas teóricas del {\ttgam}, las incertezas
 en el número estimado de eventos de {\wgam} fue determinada realizando el análisis a nivel
@@ -349,7 +350,7 @@ donde la incerteza total  es de  $73$\% y $39$\% para {\SRL} y
 
 
 
-\subsection{Producción de fotones directos}
+\subsubsection{Producción de fotones directos}
 
 La normalización del fondo de {\gjet} es tomado del ajuste a datos en la CR
 como se describe en \cref{bkg_gjet}. Una incerteza adicional es agregada comparando el
@@ -359,7 +360,7 @@ Esto se realizo a nivel generador para no contar nuevamente los efectos del
 detector, y se incluyo en el ajuste como $\alpha_{\gamma j}$.
 
 
-\subsection{Otros fondos MC}
+\subsubsection{Otros fondos MC}
 
 La mayor contribucion de procesos de fondo de MC en las regiones de senial viene
 del {\zgam}, para el cual se utilizo una incerteza conservativa del 100\%.
