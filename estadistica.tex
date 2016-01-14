@@ -2,7 +2,7 @@
 \label{cap:estadistica}
 
 En este Capítulo se introducen los conceptos básicos necesarios para entender el
-tratamiento estadístico de los datos. Esta enfocado en la búsqueda de nueva
+tratamiento estadístico de los datos. Está enfocado en la búsqueda de nueva
 física en altas energías, su descubrimiento y/o el establecimiento de límites de
 exclusión.
 
@@ -15,7 +15,7 @@ del SM.
 Este Capítulo utiliza como referencia los libros \cite{Cowan,James}. Muchos de
 los métodos estadísticos mas avanzados fueron desarrollados especialmente para
 el LHC, y se encuentran descriptos en los artículos
-\cite{AsymAprox,ReadCLs,medsigNote,Cranmer:2015nia}. Ademas se utilizaron los
+\cite{AsymAprox,ReadCLs,medsigNote,Cranmer:2015nia}. Además se utilizaron los
 manuales y artículos que describen las herramientas estadísticas utilizadas
 \cite{Cranmer:1456844,HistFitter}.
 
@@ -26,8 +26,8 @@ Un observable $x$ es por naturaleza \emph{frecuentista}, es decir, si realizamos
 el experimento muchas veces, vamos a obtener distintos valores para $x$ y este
 conjunto de valores dará lugar a una función densidad de probabilidad (pdf)
 de $x$, que llamamos $f(x)$. En el caso más general, se cuenta con una familia
-de pdfs $f(x;\btheta)$ a la cual se denomina \emph{modelo}. Los parámetros del
-modelo representan, por ejemplo, parámetros de la teoría física, alguna
+de pdfs $f(x;\btheta)$ a la cual se denomina \emph{modelo}, y cuyos parámetros
+representan, por ejemplo, parámetros de la teoría física, alguna
 propiedad desconocida de la respuesta del detector, o incertezas sistemáticas
 del análisis.
 
@@ -45,7 +45,7 @@ se define como:
 
 Los nombres de los parámetros están claramente motivados por los valores del
 valor esperado y la varianza de $x$, ya que $E[x] = \mu$ y $V[x] = \sigma^2$. Un
-caso especial es cuando $\mu=0$ y $\sigma=1$, la cual se denomina Gaussiana
+caso especial es cuando $\mu=0$ y $\sigma=1$, que se denomina Gaussiana
 Estándar.
 %% $\phi(x) = \frac{1}{\sqrt{2\pi}} \exp(-x^2/2)$.
 La importancia de la distribución normal proviene del Teorema Central del
@@ -164,7 +164,7 @@ estimador puede ser más eficiente. Para un número finito de eventos $N$, sin
 embargo, el MLE tiene un sesgo proporcional a $1/N$.
 
 
-Cuando se repite un experimento con las mismas condiciones muchas veces, el
+Cuando se repite un experimento muchas veces bajo las mismas condiciones, el
 número de eventos $n$ de un proceso fluctúa de acuerdo a una distribución
 de Poisson alrededor del valor esperado $\nu$. Este término de Poisson puede
 incorporarse entonces a la función likelihood, obteniendo lo que se llama
@@ -184,14 +184,14 @@ observados para estimar parámetros. En esta sección se describirá cómo estos
 datos experimentales también pueden ser usados para contrastar hipótesis, es
 decir, para rechazar una teoría o hipótesis, o también para elegir
 entre hipótesis alternativas. %% Cuando la hipótesis a contrastar involucra el
-valor de
+%%valor de
 %% un parámetro, estos dos temas están relacionados.
 
 En general, se llama hipótesis nula ($H_0$) a la hipótesis sujeta a prueba y
 usualmente corresponde a la hipótesis que consideramos verdadera. Esta hipótesis
 es comparada contra una hipótesis alternativa $H_1$, o varias, distintas a $H_0$.
 
-En el caso de búsqueda de nueva física, la hipótesis que juega el rol de
+En el caso de búsqueda de nueva física en altas energías, la hipótesis que juega el rol de
 hipótesis nula es la hipótesis de que solo los procesos del SM contribuyen a los
 datos observados. Esta hipótesis también suele llamarse hipótesis de
 \emph{solo-fondo}. La hipótesis alternativa es la hipótesis en la cual, además
@@ -218,7 +218,7 @@ alternativa tiende a tener valores de $t$ mayores que bajo $H_0$, la región
 critica corresponde a $t \geq t_c$ (ver \cref{fig:stat_test}).
 
 Si el valor observado se encuentra fuera de la región critica (dentro de la
-región de aceptancia) la hipótesis $H_0$ no puede ser rechazada, y si esta
+región de aceptancia) la hipótesis $H_0$ no puede ser rechazada, y si está
 dentro es rechazada.
 
 \begin{figure}[h]
@@ -255,7 +255,7 @@ La probabilidad de rechazar $H_0$ siendo ésta verdadera es denominado tamaño d
 \end{equation}
 %
 lo cual también, determina el nivel de significancia como
-$(100 - \alpha) \%$. Este error, de rechazar $H_0$ cuando la hipotesis es verdadera, es llamado
+$(100 - \alpha) \%$. Este error, de rechazar $H_0$ cuando la hipótesis es verdadera, es llamado
 error de tipo I. Por otro lado el error de aceptar $H_0$ cuando es falsa se
 llama error de tipo II, y su probabilidad de ocurrencia, $\beta$, depende de la
 hipótesis alternativa $H_1$ y del poder del test que se define como $(1-\beta)$:
@@ -306,7 +306,7 @@ contra de $H_0$.
 %% pruebas de significancia, donde la cuantificaci´on del concepto abstracto de significancia
 %% es el p-valor
 Se dice que la hipótesis es excluida si el {\pvalue} se encuentra por debajo de un valor
-especifico dado por el tama\~no del test $\alpha$, donde $\alpha \in [0,1]$.
+específico dado por el tama\~no del test $\alpha$, donde $\alpha \in [0,1]$.
 
 En física de partículas es usual convertir el {\pvalue} en la significancia
 equivalente, $Z$, definida de forma tal que una variable distribuida normalmente
@@ -355,7 +355,7 @@ definir el \emph{profile likelihood ratio} (PLR),
 \end{equation}
 %
 donde en el denominador, los valores $\hat{\btheta}$ y $\hat{\mu}$ son los
-valores estimados MLE. Y en el numerador, los parámetros {$\doublehat{\btheta}$}
+valores estimados MLE. En el numerador, los parámetros {$\doublehat{\btheta}$}
 son los valores que maximizan la función likelihood para un valor fijo de $\mu$,
 es decir que es una función multidimensional que depende solo del parámetro $\mu$.
 Este proceso de elegir valores específicos de los parámetros
@@ -471,7 +471,7 @@ $q_\mu$,
 La razón para poner $q_\mu = 0$ para $\hat{\mu} > \mu$ es que cuando se
 establece un límite superior, el hecho de que $\hat{\mu} > \mu$ representa menos
 compatibilidad con $\mu$ que los datos obtenidos, y por lo tanto no se considera
-parte de la región de rechazo de la constrastación.
+parte de la región de rechazo de la contrastación.
 
 También es importante notar que $q_0$ (utilizado como estadístico de prueba para
 descubrimiento) no es simplemente un caso especial de la
@@ -543,7 +543,6 @@ eventos de señal esperado pero con un número de eventos de fondo distinto, el
 experimento con mayor fondo va a imponer mejores límites.
 
 Con motivo de solucionar estos inconvenientes se introduce el método de {\cls}\cite{ReadCLs}.
-%% Se define el {\clb},
 
 %% Los intervalos de confianza frecuentistas cubren e
 %% Un límite superior con 95\% de nivel de confianza cubre al valor verdadero con una probabilidad de
@@ -609,7 +608,7 @@ Entonces, en el límite asintótico, el estadistico $q_\mu$ puede aproximarse po
   \end{cases}
 \end{equation}
 %
-y el {\pvalue} de la hipotesis $H_\mu$ es,
+y el {\pvalue} de la hipótesis $H_\mu$ es,
 
 \begin{equation}
   p_\mu = \int_{q_{\mu,\text{obs}}}^{\infty} f(q_\mu|\mu) \, dq_\mu = 1 - \Phi(\sqrt{q_\mu})
@@ -621,7 +620,7 @@ y su correspondiente significancia equivalente,
   Z_\mu = \Phi^{-1}(1-p_\mu) = \sqrt{q_\mu}
 \end{equation}
 
-Siguiendo los mismos argumentos, el estadistico $q_0$ puede aproximarse con,
+Siguiendo los mismos argumentos, el estadístico $q_0$ puede aproximarse con,
 
 \begin{equation}
   q_0 =
@@ -645,7 +644,7 @@ y la correspondiente significancia,
 
 Estas aproximaciones permiten conocer las distribuciones muestrales y calcular
 valores-$p$ y significancias en el caso de un gran número de datos, de una forma
-simple y computacionalmente poco costosa. A pesar de que estrictamente es valido
+simple y computacionalmente poco costosa. A pesar de que estrictamente es válido
 para $N\to\infty$, esta aproximación es suficientemente precisa para un número
 de eventos de fondo $\gtrsim \mathcal{O}(10)$.
 
