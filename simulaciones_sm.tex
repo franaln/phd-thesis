@@ -9,10 +9,10 @@
   , así como también la luminosidad integrada correspondiente
   a la estadística total de cada muestra.}
 
-Las muestras simuladas con MC utilizadas en este análisis se describen
+Las muestras  de los procesos de fondo contaminante simuladas con MC utilizadas en este análisis se describen
 a continuación. Como se discutirá en la \cref{sec:background_estimation},
 la contaminación de fotones mal identificados provenientes de jets y electrones
-es estimado con métodos basados en datos. Sin embargo, las muestras MC también
+es estimada con métodos basados en datos. Sin embargo, las muestras MC también
 han sido consideradas en estos casos para los estudios de optimización y la
 evaluación de las incertezas sistemáticas.
 
@@ -21,16 +21,16 @@ evaluación de las incertezas sistemáticas.
 Se espera que la producción de {\wgam} y {\zgam} sea un fondo importante
 para esta búsqueda. Ambas muestras fueron generadas usando el generador
 de eventos {\sherpa} v1.4.1\cite{SherpaGen}, con hasta 3 partones en el
-ME+PS y usando las funciones de densidad partonica CT10.
-La combinación de los elementos de matriz con las lluvias partonicas
+ME+PS y usando las funciones de densidad partónica CT10.
+La combinación de los elementos de matriz con las lluvias partónicas
 es realizada de acuerdo a un procedimiento mejorado CKKW\cite{Catani:2001cc,Krauss:2002up}.
 Un filtro a nivel generados es aplicado requiriendo al menos un fotón
 con $\pt > 80(70) \gev$ en el estado final de las muestras de {\wgam} (\zgam).
-Todos los decaimientos leptonicos del bosón $Z$ fueron considerados,
+Todos los decaimientos leptónicos del bosón $Z$ fueron considerados,
 incluyendo el decaimiento invisible $Z\to\nu\nu$.
 También se tuvo en cuenta un muestra de $V(\to qq)+\gamma  (V=W,Z/\gamma*)$
 debido a que cierta energía faltante real puede  ser producida en el caso
-de heavy flavour decays.
+de decaimientos de sabores pesados.
 
 \begin{table}[!htbp]
   \centering
@@ -82,28 +82,28 @@ de heavy flavour decays.
 
 Se espera que la producción de W$^{\pm}$ y bosones $Z$ en asociación con jets
 contribuya a esta búsqueda, con los fotones provenientes de electrones y jets
-mal identificados. Especialmente para los segundos, esta contaminación no esta
+mal identificados. Especialmente para los segundos, esta contaminación no está
 bien descripta por el MC. Por esta razón se utilizan métodos basados en datos
 para estimar su contribución en las diferentes regiones de señal y control, como
 se describe en el \cref{cap:fondos}. De igual manera varias muestras de MC
 fueron consideradas para validar los métodos.
 
 Como se describe en el \cref{cap:seleccion} la selección de señal involucra
-muchos jets en el estado final, es importante modelar los estados final multipartonicos
+muchos jets en el estado final, es importante modelar los estados final multipartónicos
 de forma adecuada. Con esto en mente, el generador de eventos {\alpgen} (v 2.14)
 fue utilizado, incluyendo los efectos EWK y QCD a LO para los procesos de interacción
-fuerte multipartonicos. La producción de jets fue generada for up to five-parton
-matrix elements. Este generados fue interfaceado con {\herwig} v6.5.2
+fuerte multipartónicos.
+Este generador fue interfaceado con {\herwig} v6.5.2
 para la simulación de las lluvias y los procesos de fragmentación y con {\jimmy}
-para la simulación de los eventos subyacentes. Las funciones de densidad partónico
+para la simulación de los eventos subyacentes. Las funciones de densidad partónica
 utilizadas fueron las CTEQ6L1. La normalización a la luminosidad integrada acumulada
-fue hecha escalenado la sección eficaz mostrada en la \cref{tab:bkg_wzjets_samples}
-usando cálculos QCD a NNLO de el programa FEWZ\cite{Anastasiou:2003ds}.
+se realizó a partir de la sección eficaz mostrada en la \cref{tab:bkg_wzjets_samples}
+usando cálculos QCD a NNLO del programa FEWZ\cite{Anastasiou:2003ds}.
 En cada caso los mismos factores de normalización fueron aplicados a los elementos
 de matriz de {\alpgen}.
 
-Finalmente, se realiza la remoción de eventos para evitar el conteo doble de eventos
-que ya fueron tenidos en cuenta por las muestras de Z$\gamma$ y W$\gamma$.
+Finalmente, se realizó la remoción de eventos para evitar el conteo doble de eventos
+que ya fueron tenidos en cuenta en las muestras de Z$\gamma$ y W$\gamma$.
 Para esto, los eventos de $W(Z)+\text{jets}$ con fotones con $\pt > 80(70)\gev$
 y $\Delta{\rm R}(e/\mu/\tau/$light-quarks$, \gamma) > 0.1$ fueron removidos
 de las muestras.
@@ -164,12 +164,13 @@ de las muestras.
 Otro fondo importante para este análisis es el {\ttgam}. Esta muestra fue
 generada utilizando {\madgraph}\cite{Alwall:2007st} y la PDF CTEQ6L1.
 {\pythiasix}\cite{pythia} fue usado para la simulación de las lluvias
-partonicas, fragmentación y eventos subyacentes. La radiación de fotones fue
+partónicas, fragmentación y eventos subyacentes. La radiación de fotones fue
 agregadas utilizando {\photos}\cite{photos}, y los decaimientos de los leptones
 tau con {\tauola}\cite{tauola}. Se requirió que los fotones a nivel generador
 tengan un $\pt > 80 \gev$. Para evitar efectos cinemáticos introducidos por el
 filtro, el corte en el {\pt} del fotón en la muestra reconstruida se aumento a
-95 {\gev}. Se utilizo un factor-$k$\note{definir} de $1.9 \pm 0.4$\cite{Melnikov:2011ta, tth}.
+95 {\gev}. Se utilizo un factor-$k$\note{definir} de $1.9 \pm 0.4$\cite{Melnikov:2011ta, tth}
+para tener en cuenta efectos de mayor orden en teoria de perturbaciones.
 Los detalles de la simulación se encuentran en la \cref{tab:bkg_ttbar_samples}.
 Se utilizaron además algunas muestras a nivel generador como variaciones para calcular
 las incertezas sistemáticas como se explica en la \cref{sec:syst_ttbargamma}.
@@ -181,13 +182,16 @@ en la etapa de optimización y para realizar chequeos de los métodos utilizados
 La
 muestra MC fue generada utilizando
 {\powheg}\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd} con la lluvia
-partonica y fragmentación hecha por {\pythia}. Para el UE se utilizo Perugia
+partonica y fragmentación hecha por {\pythia}. Para el UE se utilizó Perugia
 2011C con el
 conjunto de PDFs CTEQ6L1 LO. La radiación de fotones adicional fue agregada con
-{\photos}\cite{photos}. Overlap removal is performed to prevent double-counting
-the phase-space covered by the {\ttgam} MC sample. Events with truth prompt
-photons with $\pt > 95 \gev$ and $\Delta{\rm R}(e/\mu/\tau/g/$light-quarks$,
-\gamma) > 0.1$ are removed from the \ttbar\ sample\note{Revisar!}.
+{\photos}\cite{photos}.
+
+Por último, se realizó la remocion
+de los eventos con un foton real con $\pt > 95 \gev$ y $\Delta{\rm R}(e/\mu/\tau/g/$light-quarks$,
+\gamma) > 0.1$ de la muestra de {\ttbar} para evitar la superposicion con los eventos
+considerados en las muestras de {\ttgam}.
+
 
 \begin{table}[!htbp]
   \centering
@@ -219,10 +223,7 @@ photons with $\pt > 95 \gev$ and $\Delta{\rm R}(e/\mu/\tau/g/$light-quarks$,
 
 La producción de un quark top con un fotón asociado fue generado utilizando
 \textsc{Whizard} 2.1.1 \cite{whizard, whizard2}.
-%% , con 4-flavor/5-flavor matching provided
-%% using Hoppet~\cite{hoppet}.
-
-El fotón extra puede estar tanto en la producción del top o en los decaimientos
+El fotón extra puede estar tanto en la producción del top como en los decaimientos
 sucesivos. Sin embargo, la producción y el decaimiento son tratados de forma
 separada, por lo que los efectos de interferencia pueden ser ignorados. Para las
 lluvias partónicas y la fragmentación fue utilizado {\pythia}\cite{pythia}. La
@@ -370,7 +371,7 @@ sistemáticas, generadas con {\pythiaeight} (usando CTEQ6L1) y {\alpgen} v2.14
 
 Los procesos de diboson (WW, WZ, y ZZ) fueron generados utilizando
 {\sherpa} y usando la PDF CT10, con la sección eficaz provista por
-MCFM\cite{Campbell:2011bn}. Solo los decaimientos leptonicos para
+MCFM\cite{Campbell:2011bn}. Solo los decaimientos leptónicos para
 ambos bosones fueron considerados.
 
 \begin{table}[ht!]
