@@ -2,39 +2,43 @@
 \section{Determinación de las incertezas sistemáticas}
 \label{cap:sistematicos}
 
+Uno de los aspectos más importantes de las investigaciones con datos colectados por ATLAS
+es la determinacion de todas las incertezas sistematicas que afectan a los resultados.
 Las incertezas sistemáticas están asociadas a las predicciones de todas las
 componentes del fondo y a los valores esperados de señal. Estas incertezas
-pueden ser clasificadas en dos tipos: incertezas experimentales e incertezas
-teóricas. Estas incertezas pueden tener impacto en el número de eventos esperado
-en las CR y SR como también en los parámetros $\mu_p$ utilizados en la
+pueden ser clasificadas en dos tipos: de origen experimental o teórico.
+Estas incertezas pueden tener un impacto importante en el número de eventos esperado
+en las CR y SR como así también en los parámetros $\mu_p$ utilizados en la
 extrapolación del fondo esperado.
 
-En este Capítulo se presentan las incertezas sistemáticas consideradas y su
-determinación. En la determinación de los resultados finales utilizando el
-ajuste con el PLR, las predicciones de los fondos se permiten variar dentro del
-tamaño de las incertezas sistemáticas y por lo tanto son restringidas por los
-datos.
-
+En esta sección se presentan todas las fuentes posibles de incertezas sistemáticas
+y la determinación de las mismas.
+%% En la determinación de los resultados finales utilizando el
+%% ajuste con el PLR, las predicciones de los fondos se permiten variar dentro del
+%% tamaño de las incertezas sistemáticas y por lo tanto son restringidas por los
+%% datos.
 
 
 \subsection{Incertezas Experimentales}\label{sec:expsyst}
 
-En esta sección se describe los procedimientos realizados para evaluar
-las incertezas experimentales comunes para todos los procesos.
-%% Para esto
-%% se utilizó la herramienta oficial de ATLAS. %% (\textsc{SUSYTools}). %%\footnote{\texttt{SUSYTools v00-03-24-02}}.
+A continuación se describen los procedimientos realizados para evaluar
+las incertezas experimentales comunes para todos los procesos tanto de señal como
+de fondo considerados en el análisis.
+%% \footnote{Para esto
+%% se utilizó la herramienta oficial de ATLAS: \texttt{SUSYTools v00-03-24-02}}.
 
 Las incertezas sistemáticas de las estimaciones de los fondos de electrones
 ($\alpha_{e\to\gamma}$) y jets ($\alpha_{j\to\gamma}$) mal identificados a partir
-de los datos ya se discutieron en \cref{sec:efakes,sec:jfakes}. La incerteza del
-trigger tambien se discutió en \cref{sec:trigger} ($\alpha_\text{TRIG}$).
+de los datos ya han sido discutidos en las \cref{sec:efakes,sec:jfakes}. La incerteza del
+trigger se presentó en la \cref{sec:trigger} ($\alpha_\text{TRIG}$).
+
 
 \subsubsection{Incerteza en la luminosidad}
 
 La incerteza en la luminosidad integrada es de $\pm$2.8\% \cite{lumi2012}.
 Esta es derivada siguiendo la misma metodología que la que se detalla en \cite{lumi2011},
 a partir de la calibración preliminar  de la escala de luminosidad derivada
-de los scans de separación de haz realizados durante Noviembre de 2012.
+de los scans de\note{van der Meer?} separación de haz realizados durante Noviembre de 2012.
 
 
 \subsubsection{Incerteza debida al pile-up ($\alpha_\mathrm{PRW}$)}
@@ -52,46 +56,17 @@ se varian los factores de escala dentro de su incerteza.
 %% de su incerteza.
 
 
-
-
-
-%% \subsection{Incerteza en la eficiencia del trigger}
-
-%% La eficiencia del trigger de fotones utilizado {\trigchain} es de $100^{+0}_{-1.41}$ (stat) ${}^{+0}_{-0.7}$(syst) \%,
-%% relativo a candidatos a fotones aislados con $\pt > 125 \gev$ y satisfaciendo los requerimientos
-%% de la selección de la región de señal descripta en la \cref{sec:event_selection}.
-%% Esta fue calculada utilizando el método de \emph{bootstrap} siguiendo la descripción en \cite{Damazio:1609629}
-%% y se muestra en la {\fig} \ref{fig:trigger_perf} como función del {\pt} del fotón.
-
-%% Mas allá de la poca estadística, es claro que la eficiencia llega a un plateau antes del threshold
-%% en el pt que se utiliza en este análisis. La incerteza total tiene en cuenta la limitada estadística de
-%% la muestra de referencia y correciones debido a la pureza también son aplicadas.
-
-%% \begin{figure*}[ht!]
-%%   \centering
-%%   \includegraphics[width=0.49\textwidth]{figures/figura}
-%%   \caption{Eficiencia del trigger para {\trigchain} como funcion del {\pt} del fotón,
-%%     medida a partir de los datos.}
-%%   \label{fig:trigger_perf}
-%% \end{figure*}
-
-
-
 \subsubsection{Incerteza en la identificación, escala de energía y resolución de fotones y leptones}
 
-Como se menciona en \cref{sec:fotones}, es necesario aplicar factores de escala a los fotones en las
-muestras MC para corregir su eficiencia. La incerteza en estos factores es propagada
-a través del análisis, siguiendo \cite{PhoEffTwiki}. %to obtain the number of tight identified photons and related variables.
-
-La incerteza en la escala de energia de los fotones y electrones se tiene en cuenta de acuerdo a cuatro componentes\cite{EGScaleTwiki}:
-
-\begin{itemize}\itemsep0.2cm\parskip0.2cm
-\item $\alpha_\text{EGZEE}$: incerteza debido a la diferencia en la escala del $Z$
-\item $\alpha_\text{EGMAT}$: incerteza debida al material
-\item $\alpha_\text{EGPS}$: presampler
-\item $\alpha_\text{EGLOW}$: incerteza para electrones de bajo {\pt}.
-\end{itemize}
-
+Como se menciona en la \cref{sec:fotones}, es necesario aplicar factores de
+escala a los fotones en las muestras MC para corregir su eficiencia. La
+incerteza en estos factores es propagada a través del análisis, siguiendo
+\cite{PhoEffTwiki}. %to obtain the number of tight identified photons and
+related variables. La incerteza en la escala de energia de los fotones y
+electrones se tiene en cuenta de acuerdo a cuatro
+componentes\cite{EGScaleTwiki}: $\alpha_\text{EGZEE}$ (incerteza debido a la
+diferencia en la escala de energia proveniente del $Z$), $\alpha_\text{EGMAT}$ (incerteza debido al material),
+$\alpha_\text{EGPS}$ (presampler), y $\alpha_\text{EGLOW}$ (electrones de bajo \pt).
 
 Los factores de escala están basadas en la combinación de varias medidas data-driven.
 %% Los valores centrales y las incertezas son provistos por el grupo Egamma mediante la herrmaienta
@@ -252,20 +227,12 @@ la \cref{tab:signal_xs_theo_unc}. Las incertezas totales van de 22.5\% para 800
 
 \subsubsection{Producción de \ttgam}\label{sec:syst_ttbargamma}
 
-La incerteza teórica asociada a la elección de la configuracion
+La incerteza teórica asociada a la elección de la configuración
 utilizada en la simulación MC es
 tenida en cuenta considerando variaciones en la generación de eventos
 con respecto a la configuración nominal. Las variaciones consideradas
 incluyen las escalas de factorización y renormalización ($0.5\times, 2\times$),
 $\alpha_{s}$ y el modelo ISR/FSR (ver \cref{tab:mc_ttbar_samples}).
-
-%are summarized below:
-%
-%\begin{description}
-%\item {\bf Factorization and Renormalization scales}    ...
-%\item $\mathbf{\alpha_s}$   ...
-%\item {\bf ISR/FSR} ...
-%\end{description}
 
 La \cref{tab:syst_ttbargam_truth} resume los cambios relativos en el
 número de eventos esperado en cada región de señal para cada una de las
@@ -278,7 +245,7 @@ total. %%o get the total theoretical uncertainty (denoted as {\bf theoSysTopG} i
 
 \begin{table}[ht!]
   \centering
-  \caption{Resumen de las incertezas teoricas del {\ttgam} obtenidas en cada región de señal.
+  \caption{Resumen de las incertezas teóricas del {\ttgam} obtenidas en cada región de señal.
     Todos los números están en porcentaje.}
   \label{tab:syst_ttbargam_truth}
 
@@ -298,34 +265,33 @@ total. %%o get the total theoretical uncertainty (denoted as {\bf theoSysTopG} i
 \end{table}
 
 La diferencia principal entre todas las variaciones y la configuración nominal
-aparece mayormente en los cortes en {\HT} y {\rt}. Además del efecto estadístico
-obvio, es algo esperado ya que las propiedades de la actividad hadrónica del
-evento son las mas sensitivas a las variaciones de escala.
+aparece mayormente en los cortes en {\HT} y {\rt}, como es esperado ya que las
+propiedades de la actividad hadrónica del
+evento son las mas sensibles a las variaciones de escala.
 
 
 
 \subsubsection{Producción de {\wgam} ($\alpha_{\tgam}$)}\label{sec:syst_wgamma}
 
-Similar a lo que se realizo para estimar las incertezas teóricas del {\ttgam}, las incertezas
-en el número estimado de eventos de {\wgam} fue determinada realizando el análisis a nivel
-partícula para las muestras con variaciones descriptas en \cref{tab:bkg_wzgamma_samples}.
-Además de las incertezas provenientes del ajuste simultaneo descripta en \cref{sec:fitconfig},
-las siguientes incertezas en la aceptancia de la selección fueron consideradas:
+Similar a lo que se realizo para estimar las incertezas teóricas del {\ttgam},
+las incertezas en el número estimado de eventos de {\wgam} fue determinada
+realizando el análisis a nivel partícula para las muestras con variaciones
+descriptas en \cref{tab:bkg_wzgamma_samples}. Además de las incertezas
+provenientes del ajuste simultaneo descripta en \cref{sec:fitconfig}, las
+siguientes incertezas en la aceptancia de la selección fueron consideradas:
+la incerteza debida a la escala de factorización y renormalización corresponde a
+la diferencia relativa entre el número esperado de eventos predicho
+para la SR con las muestras {\sherpa} en las cuales se vario la escala
+de factorización y renormalización de forma independiente por $2\times$
+y $0.5\times$ de la escala nominal, y la escala de matching\note{arreglar}
+The nominal matching scale between the ME and PS is 20 GeV. Alternative samples
+were generated with this scale changed to 15 and 30 \gev. The corresponding
+relative variation of yields in SR is considered as a systematic uncertainty.
 
-\begin{description}
-\item[Escala de factorización y renormalización] La incerteza corresponde
-  a la diferencia relativa entre el número esperado de eventos predicho
-  para la SR con las muestras {\sherpa} en las cuales se vario la escala
-  de factorización y renormalización de forma independiente por $2\times$
-  y $0.5\times$ de la escala nominal.
 
-\item[Matching scale] The nominal matching scale between the ME and PS is 20 GeV. Alternative samples
-  were generated with this scale changed to 15 and 30 \gev. The corresponding
-  relative variation of yields in SR is considered as a systematic uncertainty.
-\end{description}
-
-Los valores obtenidos están resumidos en la \cref{tab:syst_wgamma_truth},
-donde la incerteza total  es de  $73$\% y $39$\% para {\SRL} y
+Los valores obtenidos a partir de las diferentes fuentes de incertezas sistematicas
+se resumen en la \cref{tab:syst_wgamma_truth},
+donde el valor total es de  $73$\% y $39$\% para {\SRL} y
 {\SRH}, respectivamente.
 
 \begin{table}[ht!]
@@ -353,17 +319,17 @@ donde la incerteza total  es de  $73$\% y $39$\% para {\SRL} y
 \subsubsection{Producción de fotones directos}
 
 La normalización del fondo de {\gjet} es tomado del ajuste a datos en la CR
-como se describe en \cref{bkg_gjet}. Una incerteza adicional es agregada comparando el
+como se describe en \cref{bkg_gjet}. Una incerteza adicional es obtenida comparando el
 número de eventos en las distintas regiones de señal entre la muestra nominal
 (\sherpa) y los obtenidos con otra muestra generada con {\pythia}.
-Esto se realizo a nivel generador para no contar nuevamente los efectos del
-detector, y se incluyo en el ajuste como $\alpha_{\gamma j}$.
+Este estudio se realizó a nivel generador para no contar nuevamente los efectos del
+detector, y la incerteza se incluyó en el ajuste como $\alpha_{\gamma j}$.
 
 
 \subsubsection{Otros fondos MC}
 
-La mayor contribucion de procesos de fondo de MC en las regiones de senial viene
-del {\zgam}, para el cual se utilizo una incerteza conservativa del 100\%.
+La mayor contribución de procesos de fondo de MC en las regiones de se\~nal proviene
+del {\zgam}, para el cual se utilizó una incerteza conservativa del 100\%.
 
 
 %% \section{Resumen de las incertezas sistemáticas}\label{sec:syst_break}
