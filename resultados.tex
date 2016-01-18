@@ -47,35 +47,8 @@ desarrollada por el grupo de SUSY de ATLAS, que es básicamente una interfaz de
 \textsc{RooFit}, \textsc{RooStats}\cite{Moneta:2010pm} y
 \textsc{HistFactory}\cite{Cranmer:1456844}, de forma de facilitar el análisis
 estadístico. Además el hecho de utilizar una misma herramienta en distintos
-análisis dentro de la Colaboración, permite que su combinación estadística sea mas
+análisis dentro de la colaboración, permite que su combinación estadística sea mas
 sencilla.
-
-
-%% The profile LLR is obtained from a simultaneous fit to the contributions
-%% from Standard Model background and supersymmetric signal
-%% models in a given signal region and its associated background
-%% control regions, which are all by design statistically independent.
-%% Cross-contamination of backgrounds across control region
-%% boundaries and the propagation of statistical and systematic uncertainties is cleanly taken into account.
-
-
-% Cuando se realiza el ajuste simultaneo en las CR,
-%% When fitting CRs simultaneously, common normalizations are allowed in order to correctly take into
-%% account the other background contamination in a given CR. Experimental systematic uncertainties are
-%% correlated across the CRs and a SR. Sample-dependent theory systematics are uncorrelated.
-
-
-%% By the simultaneous fit to the data in CRs or to the data in CRs and in a SR, these free and nuisance
-%% parameters above can  be optimized with proper correlations and errors. In addition, by constraining the
-%% parameters on background components mainly by the control regions with large statistics, the impacts of
-%% these uncertainties in the SRs are reduced.
-
-
-%% \begin{itemize}
-%% \item {\bf Discovery fit:} the SR is added to the fit together with a generic non-SM signal component, which is neglected in the CRs. The background prediction achieved is this
-%% way conservative since any signal contribution in the CRs is attributed to background and thus results in a possible overestimation of the background in the SRs. As shown above, however, this contribution is expected to be negligible.
-%% \item {\bf Exclusion fit} both CRs and SRs are used in the fit. The signal contribution is taken into account as predicted by the tested SUSY model in all the regions.
-%% \end{itemize}
 
 
 %--------------
@@ -123,10 +96,12 @@ en las distintas regiones del análisis.
 
 En la \cref{tab:bkgonly_mus} se presentan los parámetros de normalización de
 los fondos {\wgam} ($\mu_W$), {\ttgam} ($\mu_T$) y {\gjet}
-($\mu_Q$), obtenidos del ajuste realizado en las regiones de control correspondientes.
+($\mu_Q$), obtenidos del ajuste realizado en las regiones de control.
+En general, los factores resultan consistentes con la unidad dentro de sus incertezas.
+
 El número de eventos predicho para cada proceso de fondo antes y después del ajuste en
 las regiones de control puede verse en \cref{tab:fit_result_crl,tab:fit_result_crh}, al
-igual que el número de eventos observado\note{comentario respecto a los valores que dan los mus. Consistentes con 1?}.
+igual que el número de eventos observado.
 
 
 \begin{table}[!htbp]
@@ -137,14 +112,14 @@ igual que el número de eventos observado\note{comentario respecto a los valores
     del ajuste combinado en las CR. Las incertezas mostradas son solo estadísticas.}
   \label{tab:bkgonly_mus}
 
-  \begin{tabularx}{0.8\textwidth}{LCCC} %cccc}
+  \begin{tabular}{lccc}
     \hline
     &       $\mu_{Q}$ &       $\mu_{W}$ &       $\mu_{T}$ \\
     \hline
     \SRL & $0.94 \pm 0.44$ & $1.34 \pm 0.89$ & $1.40 \pm 0.77$ \\
     \SRH & $1.22 \pm 0.58$ & $1.24 \pm 0.39$ & $0.54 \pm 0.37$ \\
     \hline
-  \end{tabularx}
+  \end{tabular}
 
 \end{table}
 
@@ -188,7 +163,7 @@ igual que el número de eventos observado\note{comentario respecto a los valores
   \includegraphics[width=0.49\textwidth]{can_crtl_met_et_afterFit}
   \includegraphics[width=0.49\textwidth]{can_crtl_rt4_afterFit} \\
 
-   \caption{Distribuciones observadas de V1 (izquierda) y V2 (derecha) en las
+   \caption{Distribuciones observadas de {\met} (izquierda) y {\rt} (derecha) en las
      regiones de control {\CRQL} (arriba), {\CRWL} (medio) y {\CRTL} (abajo),
      después del ajuste combinado.}
    \label{fig:bkgfit_crl_after}
@@ -200,15 +175,15 @@ igual que el número de eventos observado\note{comentario respecto a los valores
   \centering
 
   \includegraphics[width=0.49\textwidth]{can_crqh_met_et_afterFit}
-  \includegraphics[width=0.49\textwidth]{can_crqh_rt4_afterFit} \\
+  \includegraphics[width=0.49\textwidth]{can_crqh_ht_afterFit} \\
 
   \includegraphics[width=0.49\textwidth]{can_crwh_met_et_afterFit}
-  \includegraphics[width=0.49\textwidth]{can_crwh_rt4_afterFit} \\
+  \includegraphics[width=0.49\textwidth]{can_crwh_ht_afterFit} \\
 
   \includegraphics[width=0.49\textwidth]{can_crth_met_et_afterFit}
-  \includegraphics[width=0.49\textwidth]{can_crth_rt4_afterFit} \\
+  \includegraphics[width=0.49\textwidth]{can_crth_ht_afterFit} \\
 
-  \caption{Distribuciones observadas de V1 (izquierda) y V2 (derecha) en las
+  \caption{Distribuciones observadas de {\met} (izquierda) y {\HT} (derecha) en las
     regiones de control {\CRQH} (arriba), {\CRWH} (medio) y {\CRTH} (abajo),
     después del ajuste combinado.}
   \label{fig:bkgfit_crh_after}
@@ -228,19 +203,17 @@ en las VR, donde se compara el fondo esperado con los datos observados, para
 validar la extrapolación que luego se hará a la SR.
 
 Las distribuciones de algunos observables en estas regiones pueden verse en
-\cref{fig:bkgfit_vrl,fig:bkgfit_crh}. El número de eventos de fondo predicho
-est\'a en buen acuerdo con el número de eventos observado dentro de las
+\cref{fig:bkgfit_vr}. El número de eventos de fondo predicho
+está en buen acuerdo con el número de eventos observado dentro de las
 incertezas, lo que permite validar el método empleado y la viabilidad de
 utilizar la estimación del número de eventos de fondo en las SR.
 
 Habiendo validado el método de obtención del fondo contaminante en la región
 donde se espera la señal de nueva física, se procedió a la utilización de los
 datos experimentales en las denominadas regiones de señal, cuyos resultados
-pueden verse en la siguiente Sección.
+pueden verse en la siguiente sección.
 
 
-
-%%ors determined for \wgamma\ ($\mu_{W}$), \ttbargam\ ($\mu_{T}$) and QCD prompt photon production ($\mu_{Q}$) are shown in \Tab \ref{tab:fit_bkgonly_mus}. %The $\mu_{W}$ value is consistent
 %% %% %with unity within uncertinties. %As expected, $\mu_{Q}$ is way smaller, since the statistics for the smeared pseudo-data is artificially enhanced.
 %% The systematic uncertainties in the two signal regions  after the background fit are summarized in \Fig \ref{fig:fit_unc_nuisance_SR}. No profiling of the systematics uncertainties is observed. %hopefully
 %% The correlations of these systematics uncertainties and the normalizations are shown in \Fig \ref{fig:fit_corr_SR}. % What do we observe here?
@@ -301,35 +274,14 @@ pueden verse en la siguiente Sección.
 \begin{figure}[!htbp]
   \centering
 
-  \includegraphics[width=0.49\textwidth]{figura}
-  \includegraphics[width=0.49\textwidth]{figura} \\
+  \includegraphics[width=0.49\textwidth]{can_vrm75l_met_et_afterFit}
+  \includegraphics[width=0.49\textwidth]{can_vrm75l_rt4_afterFit} \\
 
-  \includegraphics[width=0.49\textwidth]{figura}
-  \includegraphics[width=0.49\textwidth]{figura} \\
+  \includegraphics[width=0.49\textwidth]{can_vrh_met_et_afterFit}
+  \includegraphics[width=0.49\textwidth]{can_vrh_ht_afterFit} \\
 
-  \includegraphics[width=0.49\textwidth]{figura}
-  \includegraphics[width=0.49\textwidth]{figura} \\
-
-  \caption{Distribuciones observadas en las regiones de validación, después del ajuste combinado.}
-  \label{fig:bkgfit_vrl}
-
-\end{figure}
-
-
-\begin{figure}[!htbp]
-  \centering
-
-  \includegraphics[width=0.49\textwidth]{figura}
-  \includegraphics[width=0.49\textwidth]{figura} \\
-
-  \includegraphics[width=0.49\textwidth]{figura}
-  \includegraphics[width=0.49\textwidth]{figura} \\
-
-  \includegraphics[width=0.49\textwidth]{figura}
-  \includegraphics[width=0.49\textwidth]{figura} \\
-
-  \caption{Distribuciones observadas en las regiones de validación,  después del ajuste combinado.}
-  \label{fig:bkgfit_vrh}
+  \caption{Distribuciones observadas en algunas de las regiones de validación, después del ajuste combinado.}
+  \label{fig:bkgfit_vr}
 
 \end{figure}
 
@@ -339,14 +291,14 @@ pueden verse en la siguiente Sección.
 
 \subsection{Resultados en las regiones de señal}
 
-Las predicciones del fondo luego del ajuste simultáneo en las CR son presentadas en la
-\cref{tab:fit_result_sr} para las regiones de señal {\SRL} y {\SRH}, conjuntamente con
-el número de eventos de datos observados.
-El acuerdo entre los datos observados y el fondo esperado es bueno y no se observa un exceso
-significativo de datos por sobre los predichos en ninguna de las SR.
-Como se desprende de la Tabla, el número de eventos predicho en la region {\SRL} y {\SRH} es
-de $1.27\pm0.43$ y $0.84\pm0.38$, respectivamente, mientras que el número de eventos
-observado en ambas SR es de 2.
+Las predicciones del fondo luego del ajuste simultáneo en las CR son presentadas
+en la \cref{tab:fit_result_sr} para las regiones de señal {\SRL} y {\SRH},
+conjuntamente con el número de eventos de datos observados. El acuerdo entre los
+datos observados y el fondo esperado es bueno y no se observa un exceso
+significativo de datos por sobre los predichos en ninguna de las SR. Como se
+desprende de la Tabla, el número de eventos predicho en la region {\SRL} y
+{\SRH} es de $1.27\pm0.43$ y $0.84\pm0.38$, respectivamente, mientras que el
+número de eventos observado en ambas SR es de 2.
 
 \begin{table}[!htbp]
   \centering
@@ -357,7 +309,7 @@ observado en ambas SR es de 2.
     las CR. En la parte inferior de la tabla se muestran también lo valores
     nominales del fondo antes de la correspondiente normalización. Las
     incertezas incluyen la incerteza estadística y sistemática.}
-  \label{tab:bkgfit_sr}
+  \label{tab:fit_result_sr}
 
   \input{tables/table_sr.tex}
 
@@ -388,7 +340,6 @@ flechas indican la zona de las SR.
 El resumen de los resultados para todas las regiones pueden verse en
 \cref{fig:fit_region_composition}.
 
-
 \begin{figure}[!htbp]
   \centering
 
@@ -403,22 +354,21 @@ El resumen de los resultados para todas las regiones pueden verse en
 \end{figure}
 
 
-Las incertezas sistemáticas dominantes  en el número total predicho de fondo en cada SR,
-se presentan en \cref{tab:fit_result_sr2_syst,tab:fit_result_sr3_syst}.
+Las incertezas sistemáticas dominantes en el número total predicho de fondo en
+cada SR, se presentan en \cref{tab:syst_srl,tab:syst_srh}.
 Debido a que las incertezas individuales pueden estar correlacionadas y las
 correlaciones negativas entre normalizaciones (representando el impacto de la
 estadística en las CR en la incerteza total), la incerteza total no es
-necesariamente la suma en cuadratura de las mismas.
-La incerteza estadística se ilustra con el valor de la raíz cuadrada del número de eventos esperado con
-la finalidad de mostrar el impacto relativo de la incerteza estadística con respecto a la
-incerteza total del fondo. Las incertezas sistemáticas relativas con respecto a
-las predicciones del fondo son del orden de 54\% (58\%) para {\SRL}
-(\SRH). En {\SRL} las incertezas dominantes provienen de la
-normalización y de las incertezas teóricas del fondo de {\ttgam}, seguidas por la
-incerteza en la escala de energía de los jets y la estadística en la SR. En
-{\SRH}, las incertezas están dominadas por las incertezas teóricas del fondo
-{\zgam} y {\gjet}, y la incerteza estadística y de normalización del fondo
-{\wgam}.
+necesariamente la suma en cuadratura de las mismas. La incerteza estadística se
+ilustra con el valor de la raíz cuadrada del número de eventos esperado con la
+finalidad de mostrar el impacto relativo de la incerteza estadística con
+respecto a la incerteza total del fondo. Las incertezas sistemáticas relativas
+con respecto a las predicciones del fondo son del orden de 54\% (58\%) para
+{\SRL} (\SRH). En {\SRL} las incertezas dominantes provienen de la normalización
+y de las incertezas teóricas del fondo de {\ttgam}, seguidas por la incerteza en
+la escala de energía de los jets y la estadística en la SR. En {\SRH}, las
+incertezas están dominadas por las incertezas teóricas del fondo {\zgam} y
+{\gjet}, y la incerteza estadística y de normalización del fondo {\wgam}.
 
 %% Since the individual uncertainties can be correlated and the negative correlations between normalizations (representing the
 %% impact of the CR statistics on the total uncertainty) and systematic uncertainties are observed as expected, they
@@ -439,7 +389,7 @@ incerteza en la escala de energía de los jets y la estadística en la SR. En
     en {\SRL}. Notar que las incertezas individuales pueden estar correlacionadas, y la incerteza
     total no es necesariamente la suma en cuadratura de estas. Los porcentajes muestran el tamaño
     de la incerteza relativo al fondo esperado total.}
-  \label{tab:fit_result_srl_syst}
+  \label{tab:syst_srl}
 
   \input{tables/table_srl_syst.tex}
 \end{table}
@@ -451,7 +401,7 @@ incerteza en la escala de energía de los jets y la estadística en la SR. En
     en {\SRH}. Notar que las incertezas individuales pueden estar correlacionados, y la incerteza
     total no es necesariamente la suma en cuadratura de estas. Los porcentajes muestran el tamano
     de la incerteza relativo al fondo esperado total.}
-  \label{tab:fit_result_srh_syst}
+  \label{tab:syst_srh}
 
   \input{tables/table_srh_syst.tex}
 
@@ -486,17 +436,21 @@ incerteza en la escala de energía de los jets y la estadística en la SR. En
 
 \subsection{Eventos en las regiones de señal}
 
-Como se mostró en la \cref{tab:bkgfit_sr}, solo dos eventos pasan la selección de cada una de las regiones de
-señal.
-Un esquema del detector y las senales dejadas por los distintos objetos en el mismo puede verse en las
-\cref{fig:evdisplay_sr2_1,fig:evdisplay_sr2_2} para los eventos observados en la {\SRL} y en las
-\cref{fig:evdisplay_sr3_1,fig:evdisplay_sr3_2} para los eventos en la {\SRH}.
+Como se mostró en la \cref{tab:fit_result_sr}, solo dos eventos pasan la
+selección de cada una de las regiones de señal. Un esquema del detector y las
+se\~nales dejadas por los distintos objetos en el mismo puede verse en las
+\cref{fig:evdisplay_srl} para los eventos observados en la {\SRL} y en las
+\cref{fig:evdisplay_srh} para los eventos en la {\SRH}.
+
+En la parte superior izquierda se puede ver el corte transversal del detector
+junto con el corte transversal en el panel inferior. En estas vistas se puede ver
+los depositos de energia en los calorimetros en color amarillo. Los conos de distintos
+colores representan los jets reconstruidos
 
 \hl{Aca explicar que significan cada cosa del plot...}
 
-
-Las visualizaciones
-de los eventos es generada con \textsc{Atlantis}\cite{atlantis}.
+Las visualizaciones de los eventos es generada con
+\textsc{Atlantis}\cite{atlantis}.
 
 
 \begin{figure}[!htbp]
@@ -509,7 +463,7 @@ de los eventos es generada con \textsc{Atlantis}\cite{atlantis}.
     \includegraphics[height=0.45\textheight]{EvtDisplay_212144_201737678}
 
     \caption{Visualización de uno de los eventos que sobreviven la selección de {\SRL}. Ver detalles en el texto.} %%. Run 212103, Evento 73661974.}
-    \label{fig:evdisplay_sr2_1}
+    \label{fig:evdisplay_srl}
   \end{center}
 \end{figure}
 
@@ -530,7 +484,7 @@ de los eventos es generada con \textsc{Atlantis}\cite{atlantis}.
     \includegraphics[height=0.45\textheight]{EvtDisplay_212967_66359411}
 
   \caption{Visualización de los eventos que sobreviven la selección de {\SRH}. Ver detalles en el texto.} %%. Run 203875, Evento 14229699.}
-  \label{fig:evdisplay_sr3_1}
+  \label{fig:evdisplay_srh}
   \end{center}
 \end{figure}
 
@@ -551,23 +505,27 @@ de los eventos es generada con \textsc{Atlantis}\cite{atlantis}.
 %% los datos observados en el analisis.
 
 
-Además de los límites en el modelo de SUSY considerado en esta Tesis, resulta
-útil proveer el límite superior en el número de eventos de nueva física
-impuesto por este análisis.. Este límite, provisto para cada región de señal, hace
-posible su aplicación a cualquier otro modelo, simplemente contando el número de
-eventos de señal que se espera que contribuyan a la región en cuestión y
-verificando que el número no exceda el límite superior.
+Además de los límites en el modelo de SUSY especifico que motivó el análisis de
+esta Tesis, resulta % útil proveer el límite superior en el número de eventos de
+nueva física impuesto por los resultados obtenidos. Este límite, provisto para
+cada región de señal, hace posible su aplicación a cualquier otro modelo de
+nueva física, simplemente calculando el número de eventos de señal que se espera
+en la región en cuestión y verificando que dicho número no exceda el límite
+superior. Por supuesto que los valores de eficiencia y aceptancia deben ser
+tenidos en cuenta, razón por lo que también se proveen estos valores\note{citar
+  hepdata}.
 
-%Este límite se obtiene del ajuste combinado
-Con este objetivo se realiza un ajuste combinado teniendo en cuenta las regiones
-de control y cada una de las regiones de señal. Se supone que la contaminación
-de señal en las CR es nula, pero no se realiza ninguna otra suposición acerca
-del modelo de señal. El número de eventos de señal en la SR se agrega como
-el parámetro de interés y se deja libre en el ajuste. Se realiza un \emph{scan} sobre este parámetro,
-y el límite superior en el número de eventos de nueva física se encuentra para el
-valor en el cual el {\cls} cae debajo del 5\%. El límite superior en el número de
-eventos puede transformarse en el límite superior en la sección eficaz visible utilizando
-por la luminosidad considerada en el análisis (20.3 \ifb).
+Con el objetivo de obtener los limites independientes del modelo se realiza un
+ajuste combinado teniendo en cuenta las regiones de control y cada una de las
+regiones de señal. Se supone que la contaminación de señal en las CR es nula,
+pero no se realiza ninguna otra suposición acerca del modelo de nueva física. El
+número de eventos de señal en la SR se agrega como el parámetro de interés y se
+deja libre en el ajuste. Se realiza un \emph{scan} sobre este parámetro, y el
+límite superior en el número de eventos de nueva física se encuentra para el
+valor en el cual el {\cls} cae debajo del 5\%. El límite superior en el número
+de eventos puede transformarse en el límite superior de la sección eficaz
+visible\note{definir footnote} utilizando por la luminosidad considerada en el análisis
+(20.3 \ifb).
 
 %% Estos resultados se detallan en \cref{tab:upperlimits} para las dos SR. Debido a que el
 %% número esperado de eventos de fondo es bajo, no es posible utilizar la aproximacion asintotica,
@@ -609,6 +567,7 @@ por la luminosidad considerada en el análisis (20.3 \ifb).
 
 %% \hll{Poner el plot del scan para este límite}
 %% \hll{Límite 1D para EWK?}
+
 
 %-------------------------
 % SUSY Exclusion limit
@@ -669,13 +628,16 @@ regiones de señal, eligiendo en cada punto la que provee el mejor límite.
 \end{figure}
 
 
-Como se ve de los graficos, la produccion de gluino es excluida a 95\% {\cl} para
-una masa minima (maxima) de 1190 (1320) \gev, para $m_{\ninoone}<{840}\gev$.
-Para masas de gluino menores a $1\tev$, un neutralino NLSP es excluido entre
-$150\gev$ y $m_{\gluino}-m_{\ninoone}>50\gev$. \note{Tiene sentido esto? Capaz mejor el
-número que usamos para el summar plot.}
+Como se desprende de los gráficos de los límites de exclusión, la produccion de
+gluino es excluida a 95\% {\cl} para una masa mínima (máxima) de 1190 (1320)
+\gev, para $m_{\ninoone}<{840}\gev$. Para masas de gluino menores a $1\tev$, un
+neutralino NLSP es excluido entre $150\gev$ y $m_{\gluino}-m_{\ninoone}>50\gev$.
 
-Hacer referencia al summary plot...
+En la \cref{fig:susy_summary} puede verse un resumen de los limites obtenidos en
+las masas de las partículas supersimétricas buscadas en una selección de los
+análisis realizados por ATLAS. En la Figura se encuentra el resultado obtenido
+por el análisis presentado en esta Tesis, al igual que los otros análisis
+complementarios de búsqueda de modelos GGM.
 
 
 \begin{figure}[!htbp]
@@ -683,11 +645,15 @@ Hacer referencia al summary plot...
 
   \includegraphics[width=\textwidth]{atlas_susy_run1_summary}
 
-  \caption{Resumen de los límites de exclusion en la masa de las particulas supersimetricas por distintos analisis realizados en ATLAS.
-    Solo una seleccion representativa de los resultados dispobibles es mostrada\cite{susy_summary}.}
+  \caption{Resumen de los límites de exclusión en la masa de las párticulas
+    supersimétricas por distintos análisis realizados en ATLAS. Solo una
+    selección representativa de los resultados disponibles es
+    mostrada\cite{susy_summary}.}
   \label{fig:susy_summary}
 
 \end{figure}
 
 
 \section{Resultados con 13 \tev}
+
+\hl{Agregar}
