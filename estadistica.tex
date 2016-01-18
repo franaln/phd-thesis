@@ -1,7 +1,7 @@
 \chapter{Métodos estadísticos para la búsqueda de nueva física}
 \label{cap:estadistica}
 
-En este Capítulo se introducen los conceptos básicos necesarios para entender el
+En este capítulo se introducen los conceptos básicos necesarios para entender el
 tratamiento estadístico de los datos. Está enfocado en la búsqueda de nueva
 física en altas energías, su descubrimiento y/o el establecimiento de límites de
 exclusión.
@@ -183,9 +183,7 @@ En las secciones anteriores se describió cómo pueden utilizarse los datos
 observados para estimar parámetros. En esta sección se describirá cómo estos
 datos experimentales también pueden ser usados para contrastar hipótesis, es
 decir, para rechazar una teoría o hipótesis, o también para elegir
-entre hipótesis alternativas. %% Cuando la hipótesis a contrastar involucra el
-%%valor de
-%% un parámetro, estos dos temas están relacionados.
+entre hipótesis alternativas.
 
 En general, se llama hipótesis nula ($H_0$) a la hipótesis sujeta a prueba y
 usualmente corresponde a la hipótesis que consideramos verdadera. Esta hipótesis
@@ -535,8 +533,8 @@ confianza del 95\% se obtiene resolviendo la siguiente ecuación:
 
 Sin embargo el límite superior calculado de esta forma tiene un problema: de
 acuerdo a este, se dice que una señal está excluida a 95\% CL, si ${\clsb} \leq
-0.05$. \hl{Si se considera el caso de $\mu=0$, se espera que por construcción el
-{\clsb} sea menor o igual que 0.05 con una probabilidad de 5\%}. Esto significa
+0.05$. Si se considera el caso de $\mu=0$, se espera que por construcción el
+{\clsb} sea menor o igual que 0.05 con una probabilidad de 5\%. Esto significa
 que el 5\% de los análisis estarían excluyendo modelos con cero señal. Otro
 problema del {\clsb} es que para dos experimentos con el mismo número chico de
 eventos de señal esperado pero con un número de eventos de fondo distinto, el
@@ -565,8 +563,9 @@ $p_{\mu_\text{up}} = 0.05$. Se rechazan los valores de $\mu$ si $\mu <
 \mu_\text{up}$ con un nivel de confianza de 95\%.
 
 Para una observación cercana al número de eventos esperado de sólo-fondo ($\clb
-\sim 0.05$) el {\cls} \hl{da un valor del orden de dos veces el obtenido utilizando
-el {\clsb}}.
+\sim 0.05$) el {\cls} da un valor del orden de dos veces el obtenido utilizando
+el {\clsb}.
+
 %% Entonces, el método {\cls} evita no sólo el problema descripto anteriormente, sino también
 %% la propiedad indeseable del {\clsb} que para dos
 
@@ -585,14 +584,14 @@ $N\to\infty$, el estadístico de prueba $t_\mu = -2\ln \lambda$ sigue una
 distribución $\chi^2$ con un grado de libertad, cuando la hipótesis nula es verdadera.
 
 El teorema de Wald\cite{WaldTheo} generaliza este teorema para el caso de la hipótesis no nula.
-En este caso el estadístico $-2\ln\lambda$ sigue una distribución $\chi^2$ \hl{no central}.
+En este caso el estadístico $-2\ln\lambda$ sigue una distribución $\chi^2$ no central.
 A partir de este resultado puede mostrarse que para el caso de un solo parámetro de interés vale:
 
 \begin{equation}
   -2 \ln \lambda(\mu) = \frac{(\mu - \hat{\mu})^2}{\sigma^2} + \mathcal{O}(1/\sqrt{N})
 \end{equation}
 %
-donde $\hat{\mu}$ sigue una distribución normal con media \hl{$\mu'$} y desviación
+donde $\hat{\mu}$ sigue una distribución normal con media $\mu'$ y desviación
 estándar $\sigma$. Si $\hat{\mu}$ se encuentra distribuido normalmente y se
 desprecian los términos $\mathcal{O}(1/\sqrt{N})$, se puede mostrar que en el
 régimen asintótico, el estadístico $q_\mu$ sigue una distribución $\chi^2$ no
