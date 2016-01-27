@@ -1,34 +1,32 @@
-%--------
-% Fondos
-%--------
 \section{Simulación de los fondos del SM}
 \label{sec:bkg_samples}
 
 \newcommand{\mccaption}{Se detallan la sección eficaz a LO para cada modo de decaimiento,
-  los factores $k$ (para la normalización NLO) y las eficiencias del filtro
-  , así como también la luminosidad integrada correspondiente
+  los factores $k$ (para la normalización NLO) y las eficiencias del filtro,
+  así como también la luminosidad integrada correspondiente
   a la estadística total de cada muestra.}
 
-Las muestras  de los procesos de fondo contaminante simuladas con MC utilizadas en este análisis se describen
-a continuación. Como se discutirá en la \cref{sec:background_estimation},
-la contaminación de fotones mal identificados provenientes de jets y electrones
-es estimada con métodos basados en datos. Sin embargo, las muestras MC también
-han sido consideradas en estos casos para los estudios de optimización y la
-evaluación de las incertezas sistemáticas.
 
-\subsection{$W/Z + \gamma$}
+Las muestras de los procesos de fondo contaminante simuladas con MC utilizadas
+en este análisis se describen a continuación. Como se discutirá en la
+\cref{cap:fondos}, la contaminación de fotones mal identificados
+provenientes de jets y electrones es estimada con métodos basados en datos. Sin
+embargo, las muestras MC también han sido consideradas en estos casos para los
+estudios de optimización y la evaluación de las incertezas sistemáticas.
+
+\subsection{$W/Z$ + $\gamma$}
 
 Se espera que la producción de {\wgam} y {\zgam} sea un fondo importante
 para esta búsqueda. Ambas muestras fueron generadas usando el generador
-de eventos {\sherpa} v1.4.1\cite{SherpaGen}, con hasta 3 partones en el
-ME+PS y usando las funciones de densidad partónica CT10.
+de eventos {\sherpa} v1.4.1\cite{SherpaGen}, con hasta 3 partones y
+usando las funciones de distribución partónica CT10.
 La combinación de los elementos de matriz con las lluvias partónicas
 es realizada de acuerdo a un procedimiento mejorado CKKW\cite{Catani:2001cc,Krauss:2002up}.
 Un filtro a nivel generados es aplicado requiriendo al menos un fotón
 con $\pt > 80(70) \gev$ en el estado final de las muestras de {\wgam} (\zgam).
 Todos los decaimientos leptónicos del bosón $Z$ fueron considerados,
 incluyendo el decaimiento invisible $Z\to\nu\nu$.
-También se tuvo en cuenta un muestra de $V(\to qq)+\gamma  (V=W,Z/\gamma*)$
+También se tuvo en cuenta un muestra de $V(\to qq)+\gamma\,  (V=W,Z/\gamma*)$
 debido a que cierta energía faltante real puede  ser producida en el caso
 de decaimientos de sabores pesados.
 
@@ -52,30 +50,31 @@ de decaimientos de sabores pesados.
     {\znngam}   & {\sherpa} &  0.7625  &  1.0  &  1.0  &  655.74 \\
     {\vqqgam} & {\sherpa}  &  6.756  &  1.0  &  1.0  &  89.0 \\
     \hline
-    \multicolumn{5}{c}{Variaciones sistemáticas} \\
-    \hline
-    {\wenugam} (fact. 0.25x)    & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.05 \\
-    {\wenugam} (fact. 4x)       & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.05 \\
-    {\wenugam} (renorm. 0.25x)  & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.05 \\
-    {\wenugam} (renorm. 4x)     & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.05 \\
-    {\wenugam} (ckkw 15)        & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.05 \\
-    {\wenugam} (ckkw 30)        & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.05 \\
-    {\wmunugam} (fact. 0.25x)   & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.63 \\
-    {\wmunugam} (fact. 4x)      & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.63 \\
-    {\wmunugam} (renorm. 0.25x) & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.63 \\
-    {\wmunugam} (renorm. 4x)    & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.63 \\
-    {\wmunugam} (ckkw 15)       & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.63 \\
-    {\wmunugam} (ckkw 30)       & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.63 \\
-    {\wtaunugam} (fact. 0.25x)  & {\sherpa} &  0.7193  &  1.0  &  1.0  &  277.81 \\
-    {\wtaunugam} (fact. 4x)     & {\sherpa} &  0.7193  &  1.0  &  1.0  &  277.81 \\
-    {\wtaunugam} (renorm. 0.25x)& {\sherpa} &  0.7193  &  1.0  &  1.0  &  277.81 \\
-    {\wtaunugam} (renorm. 4x)   & {\sherpa} &  0.7193  &  1.0  &  1.0  &  277.81 \\
-    {\wtaunugam} (ckkw 15)      & {\sherpa} &  0.7193  &  1.0  &  1.0  &  277.81 \\
-    {\wtaunugam} (ckkw 30)      & {\sherpa} &  0.7193  &  1.0  &  1.0  &  277.81 \\
-    \hline
+    %% \multicolumn{5}{c}{Variaciones sistemáticas} \\
+    %% \hline
+    %% {\wenugam} (fact. 0.25x)    & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.05 \\
+    %% {\wenugam} (fact. 4x)       & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.05 \\
+    %% {\wenugam} (renorm. 0.25x)  & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.05 \\
+    %% {\wenugam} (renorm. 4x)     & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.05 \\
+    %% {\wenugam} (ckkw 15)        & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.05 \\
+    %% {\wenugam} (ckkw 30)        & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.05 \\
+    %% {\wmunugam} (fact. 0.25x)   & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.63 \\
+    %% {\wmunugam} (fact. 4x)      & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.63 \\
+    %% {\wmunugam} (renorm. 0.25x) & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.63 \\
+    %% {\wmunugam} (renorm. 4x)    & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.63 \\
+    %% {\wmunugam} (ckkw 15)       & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.63 \\
+    %% {\wmunugam} (ckkw 30)       & {\sherpa} &  0.7193  &  1.0  &  1.0  &  278.63 \\
+    %% {\wtaunugam} (fact. 0.25x)  & {\sherpa} &  0.7193  &  1.0  &  1.0  &  277.81 \\
+    %% {\wtaunugam} (fact. 4x)     & {\sherpa} &  0.7193  &  1.0  &  1.0  &  277.81 \\
+    %% {\wtaunugam} (renorm. 0.25x)& {\sherpa} &  0.7193  &  1.0  &  1.0  &  277.81 \\
+    %% {\wtaunugam} (renorm. 4x)   & {\sherpa} &  0.7193  &  1.0  &  1.0  &  277.81 \\
+    %% {\wtaunugam} (ckkw 15)      & {\sherpa} &  0.7193  &  1.0  &  1.0  &  277.81 \\
+    %% {\wtaunugam} (ckkw 30)      & {\sherpa} &  0.7193  &  1.0  &  1.0  &  277.81 \\
+    %% \hline
   \end{tabular}
   \label{tab:bkg_wzgamma_samples}
 \end{table}
+
 
 \subsection{$W/Z$ + jets}
 \label{mc_wzjets}
@@ -89,24 +88,22 @@ se describe en el \cref{cap:fondos}. De igual manera varias muestras de MC
 fueron consideradas para validar los métodos.
 
 Como se describe en el \cref{cap:seleccion} la selección de señal involucra
-muchos jets en el estado final, es importante modelar los estados final multipartónicos
-de forma adecuada. Con esto en mente, el generador de eventos {\alpgen} (v 2.14)
-fue utilizado, incluyendo los efectos EWK y QCD a LO para los procesos de interacción
-fuerte multipartónicos.
-Este generador fue interfaceado con {\herwig} v6.5.2
-para la simulación de las lluvias y los procesos de fragmentación y con {\jimmy}
-para la simulación de los eventos subyacentes. Las funciones de densidad partónica
-utilizadas fueron las CTEQ6L1. La normalización a la luminosidad integrada acumulada
-se realizó a partir de la sección eficaz mostrada en la \cref{tab:bkg_wzjets_samples}
-usando cálculos QCD a NNLO del programa FEWZ\cite{Anastasiou:2003ds}.
-En cada caso los mismos factores de normalización fueron aplicados a los elementos
-de matriz de {\alpgen}.
+muchos jets en el estado final, es importante modelar los estados final
+multipartónicos de forma adecuada. Con esto en mente, el generador de eventos
+{\alpgen} (v 2.14) fue utilizado, incluyendo los efectos EWK y QCD a LO para los
+procesos de interacción fuerte multipartónicos. Este generador fue interfaceado
+con {\herwig} v6.5.2 para la simulación de las lluvias y los procesos de
+fragmentación y con {\jimmy} para la simulación de los eventos subyacentes. Las
+funciones de densidad partónica utilizadas fueron las CTEQ6L1. La normalización
+a la luminosidad integrada acumulada se realizó a partir de la sección eficaz
+mostrada en la \cref{tab:bkg_wzjets_samples} usando cálculos QCD a NNLO del
+programa FEWZ\cite{Anastasiou:2003ds}. En cada caso los mismos factores de
+normalización fueron aplicados a los elementos de matriz de {\alpgen}.
 
-Finalmente, se realizó la remoción de eventos para evitar el conteo doble de eventos
-que ya fueron tenidos en cuenta en las muestras de Z$\gamma$ y W$\gamma$.
-Para esto, los eventos de $W(Z)+\text{jets}$ con fotones con $\pt > 80(70)\gev$
-y $\Delta{\rm R}(e/\mu/\tau/$light-quarks$, \gamma) > 0.1$ fueron removidos
-de las muestras.
+Finalmente, se realizó la remoción de eventos para evitar el conteo doble de
+eventos que ya fueron tenidos en cuenta en las muestras de Z$\gamma$ y
+W$\gamma$. Para esto, los eventos de $W(Z)+\text{jets}$ con fotones con $\pt>80(70)\gev$ y $\Delta{\rm R}(e/\mu/\tau/q, \gamma) > 0.1$ fueron
+removidos de las muestras.
 
 \begin{table}[!htbp]
   \centering
@@ -158,7 +155,7 @@ de las muestras.
 \end{table}
 
 
-\subsection{Pares de tops ($+\gam$)}
+\subsection{Pares de tops (+ $\gam$)}
 \label{sec:mcttbargam}
 
 Otro fondo importante para este análisis es el {\ttgam}. Esta muestra fue
@@ -171,7 +168,7 @@ tengan un $\pt > 80 \gev$. Para evitar efectos cinemáticos introducidos por el
 filtro, el corte en el {\pt} del fotón en la muestra reconstruida se aumento a
 95 {\gev}. Se utilizo un factor-$k$\note{definir} de $1.9 \pm 0.4$\cite{Melnikov:2011ta, tth}
 para tener en cuenta efectos de mayor orden en teoria de perturbaciones.
-Los detalles de la simulación se encuentran en la \cref{tab:bkg_ttbar_samples}.
+Los detalles de la simulación se encuentran en la \cref{tab:mc_ttbar_samples}.
 Se utilizaron además algunas muestras a nivel generador como variaciones para calcular
 las incertezas sistemáticas como se explica en la \cref{sec:syst_ttbargamma}.
 
@@ -193,7 +190,7 @@ de los eventos con un foton real con $\pt > 95 \gev$ y $\Delta{\rm R}(e/\mu/\tau
 considerados en las muestras de {\ttgam}.
 
 
-\begin{table}[!htbp]
+\begin{table}[!htb]
   \centering
   \caption{Muestras de {\ttgam}. {\mccaption}}
   \begin{tabular}{lccccc}
@@ -206,15 +203,15 @@ considerados en las muestras de {\ttgam}.
     {\ttgam} (lep) & \madgraph & 0.09873 & 1.90 & 1.00 & 1066.2 \\
     {\ttgam} (had) & \madgraph  & 0.068599 & 1.90 & 1.00 & 1534.5 \\
     \hline
-    \multicolumn{6}{c}{Variaciones sistematicas} \\
-    \hline
-        {\ttgam} (lep) (scale$^{+}$) & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
-        {\ttgam} (lep) (scale$^{-}$) & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
-        {\ttgam} (lep) ($\alphas^{+}$)  & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
-        {\ttgam} (lep) ($\alphas^{-}$)  & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
-        {\ttgam} (lep) (FSR$^{+}$) & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
-        {\ttgam} (lep) (FSR$^{-}$) & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
-    \hline
+    %% \multicolumn{6}{c}{Variaciones sistematicas} \\
+    %% \hline
+    %%     {\ttgam} (lep) (scale$^{+}$) & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
+    %%     {\ttgam} (lep) (scale$^{-}$) & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
+    %%     {\ttgam} (lep) ($\alphas^{+}$)  & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
+    %%     {\ttgam} (lep) ($\alphas^{-}$)  & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
+    %%     {\ttgam} (lep) (FSR$^{+}$) & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
+    %%     {\ttgam} (lep) (FSR$^{-}$) & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
+    %% \hline
   \end{tabular}
   \label{tab:mc_ttbar_samples}
 \end{table}
@@ -247,7 +244,7 @@ la sección eficaz calculada en \cite{Kidonakis:2010ux}.
 %% to be negligible.
 %%Se removieron los  Overlap between the single top and single top $\gamma$ samples has been removed.
 
-\begin{table}[!htbp]
+\begin{table}[!htb]
   \centering
   \caption{Muestras de quark top y {\tgam}. La sección eficaz a
     NNLO, eficiencia del filtro, y luminosidad integrada correspondiente a la estadística total de cada muestra
@@ -278,7 +275,7 @@ la sección eficaz calculada en \cite{Kidonakis:2010ux}.
 \end{table}
 
 
-\subsection{{\gjet} y multijet}
+\subsection{{\gjet} y multijets}
 
 La contaminación debido a la produccion QCD de fotones directos y multijets,
 es en todos los casos el resultado de eventos patológicos

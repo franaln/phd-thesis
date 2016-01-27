@@ -1,22 +1,36 @@
 \chapter{Modelo de señal y generación de eventos Monte Carlo}
 \label{cap:simulaciones}
 
+La simulación de los distintos procesos fisicos y la respuesta del detector a
+los mismos es necesaria para poder optimizar y estimar el desempeno de los
+diferentes análisis. Además permite que las estrategias utilizadas en la
+identificación de partículas pueden ser desarrolladas con anterioridad y las
+eficiencias de los algoritmos pueden ser puestos a prueba. La preparación de las
+búsquedas de nueva física necesitan una simulación detallada del detector para
+estimar su potencial de descubrimiento y para buscar métodos para medir las
+propiedades de las partículas. Es fundamental un correcto entendimiento de los
+procesos de señal y de fondo para poder distinguir entre ambos. Una vez que los
+datos de colisiones reales están disponibles, los datos simulados también
+resultan necesarios tanto para aplicar correcciones a los datos reales como para
+poder encontrar desviaciones del SM.
+
+La estructura de los eventos de colisiones de altas energías son realmente
+complejos y no predecibles de primeros principios. Los generadores de eventos
+permiten separar el problema es varios pasos más simples, algunos de los cuales
+pueden ser descriptos por primeros principios, y otros necesitan ser basados en
+modelos apropiados con parámetros ajustados a los datos. Un aspecto central de
+los generadores es que proveen una descripción detallada del estado final para
+poder construir cualquier observable y compararlos con los datos de colisiones
+reales.
+
 En este capítulo se describe como fueron simulados los procesos del modelo de
 SUSY (\cref{sec:sig_samples}) y los procesos del SM (\cref{sec:bkg_samples}) que
 dan lugar al estado final de interés. Todas las muestras fueron simuladas
-utilizando generadores Monte Carlo a $\sqrt{s}=8\tev$, y a continuación se simuló
-el pasaje por el detector ATLAS para luego ser reconstruidas con los mismos
-algoritmos que los datos observados.
-
-%% Todas las muestras fueron pasadas a través de la simulación completa basada en Geant4\cite{Geant4,AtlasSim} o rápida
-%% ATLFAST-II\cite{Richter-Was:683751} del detector ATLAS, y reconstruidas con los mismos algoritmos
-%% que se utilizaron para los datos.
+utilizando generadores Monte Carlo a $\sqrt{s}=8\tev$, a continuación se simuló
+el pasaje de las particulas generadas por el detector ATLAS, para finalmente ser
+reconstruidas con los mismos algoritmos que los datos de colisiones reales.
 
 
-\hll{Explicar mejor que significa un evento}
-\hll{Estan los slha publicos? Citar HEPDATA}
-
-
-
+\input{generacion_mc.tex}
 \input{simulaciones_susy.tex}
 \input{simulaciones_sm.tex}

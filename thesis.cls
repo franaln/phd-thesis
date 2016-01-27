@@ -67,7 +67,7 @@
 \renewcommand{\arraystretch}{1.25}
 
 % enter only chapters and sections in TOC---subsecs as a try
-\setcounter{tocdepth}{1}
+% \setcounter{tocdepth}{1}
 
 % enume\rate down to subsections
 \setcounter{secnumdepth}{2}

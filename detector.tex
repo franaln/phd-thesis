@@ -137,7 +137,7 @@ están ubicados como discos consecutivos perpendiculares a la dirección del haz
 \begin{figure}[!htbp]
   \centering
 
-  \includegraphics[width=0.9\textwidth]{how_atlas_works}
+  \includegraphics[width=0.9\textwidth]{figura} %how_atlas_works}
 
   \caption{Esquema del corte transversal del detector de ATLAS, ilustrando los distintos
   sub-detectores y el pasaje de las distintas particulas y en que detector depositan su energia.}
@@ -467,13 +467,19 @@ en los calorimetros
 %---------
 \section{El sistema de Trigger}
 
-Bajo las condiciones nominales de diseño del LHC, la tasa de interacción $pp$ en
-el LHC es de $\mathcal{O}(1)$ GHz, considerando una frecuencia de cruce de haces
-de $\unit[40]{MHz}$ y $\sim$ 23 interacciones por cruce. Dado que la mayoría de
+La parte central del sistema de adquisición de datos de ATLAS es el
+\emph{trigger}. El sistema de trigger puede ser pensado como un filtro que
+selecciona, del gran número de colisiones que tienen lugar en el experimento,
+los eventos que serán almacenadas para su posterior procesamiento y análisis.
+
+El LHC esta disenado para proveer colisionesión $pp$
+de $\mathcal{O}(1)$ GHz, considerando una frecuencia de cruce de haces
+de $\unit[40]{MHz}$ y $\sim$ 23 interacciones por cruce.
+Dado que la mayoría de
 los eventos son de baja energía y no son de interés para los análisis de fisica,
 y también debido a las limitaciones de almacenamiento y de
 poder de computo, el flujo de datos incidente debe ser reducido al máximo
-permitido para su almacenamiento permanente ($\sim 200$ Hz). El tamaño típico
+permitido para su almacenamiento permanente ($\sim 200$ Hz) \cite{Aad:2012xs}. El tamaño típico
 por evento es de $\sim 1.4$ MB, lo que resulta en un ancho de banda requerido de
 $\sim 300$ MB/$s$. Esta reducción se logra mediante una rápida y eficiente
 preselección de eventos, conocida como \emph{trigger}.
@@ -623,11 +629,16 @@ con los datos experimentales.
 
 \section{Datos de colisiones $pp$ a $\sqrt{s} = 8$ \tev}
 
-\hl{Explicar como se divide la toma de datos, criterios de calidad, GRL, ...}
+%%\hl{Explicar como se divide la toma de datos, criterios de calidad, GRL, ...}
+
+Durante el ano 2012 ATLAS colecto datos de las colisiones $pp$ provistas
+por el LHC a una energia de centro de masa $\sqrt{s} = 8\tev$. La toma de datos
+
+
 
 El presente análisis utiliza el conjunto de eventos colectados de las colisiones
 $pp$ a una energía de centro de masa $\sqrt{s} = 8\tev$ con el detector ATLAS
-durante el ano 2012. Estos eventos colectados corresponden a una luminosidad
+durante el a\~no 2012. Estos eventos colectados corresponden a una luminosidad
 total integrada de $21.7 \ifb$. Dado que en el análisis se utilizan fotones, electrones,
 muones, jets y energía faltante, es imprescindible que todos los sub-sistemas
 del detector ATLAS hayan operado en condiciones normales durante la toma
@@ -644,7 +655,7 @@ $\sim 6\%$, dejando una luminosidad total de $\int L\, dt = 20.3 \pm 0.6\, (2.8
 
   \begin{tabular}{ccr}
     \hline
-    Periodo & Runs & Luminosidad $[\ipb]$ \\
+    Período & Runs & Luminosidad $[\ipb]$ \\
     \hline
     A & 200804 - 201556 & 795.91 \\
     B & 202660 - 205113 & 5113.61 \\
@@ -694,25 +705,23 @@ $\sim 6\%$, dejando una luminosidad total de $\int L\, dt = 20.3 \pm 0.6\, (2.8
 %% like Gaudi and CLHEP, are summarized in Table 2.
 
 
-%% El mecanismo de seleccion se basa en el
-%% concepto de bloques de luminosidad (LB). Cada toma de datos (Run) en ATLAS se
-%% divide en estos pequenos intervalos de aproximadamente 2 minutos, dentro de los
-%% cuales la luminosidad instantanea es esencialmente constante.
+El mecanismo de seleccion se basa en el
+concepto de bloques de luminosidad (LB). Cada toma de datos (Run) en ATLAS se
+divide en estos pequenos intervalos de aproximadamente 2 minutos, dentro de los
+cuales la luminosidad instantanea es esencialmente constante.
 
 
-%% Producto de la complejidad de un experimento de la magnitud de ATLAS y de las\note{Cambiar y mover a ATLAS}
-%% demandantes condiciones de funcionamiento del LHC, se pueden observar
-%% ocasionalmente ciertas ineficiencias en los diversos sub-detectores y/o en la
-%% cadena de procesamiento de los datos colectados. Para asegurar la calidad de los
-%% datos a ser considerados en los análisis físicos de ATLAS, los grupos
-%% responsables de cada sub-detector definen un conjunto de criterios de
-%% calidad\note{Ref?}, con los cuales se construyen listas, llamadas GRL, de las
-%% Runs y los rangos de LB dentro de ellas que son apropiadas para cada tipo de
-%% análisis. Se producen de forma centralizada para brindar listas oficiales
-%% comunes para los distintos grupos dentro de ATLAS, distribuidas en un formato
-%% \textsc{XML} para luego ser utilizadas durante el análisis final.
-
-
+Producto de la complejidad de un experimento de la magnitud de ATLAS y de las
+demandantes condiciones de funcionamiento del LHC, se pueden observar
+ocasionalmente ciertas ineficiencias en los diversos sub-detectores y/o en la
+cadena de procesamiento de los datos colectados. Para asegurar la calidad de los
+datos a ser considerados en los análisis físicos de ATLAS, los grupos
+responsables de cada sub-detector definen un conjunto de criterios de
+calidad [], con los cuales se construyen listas, llamadas GRL, de las
+Runs y los rangos de LB dentro de ellas que son apropiadas para cada tipo de
+análisis. Se producen de forma centralizada para brindar listas oficiales
+comunes para los distintos grupos dentro de ATLAS, distribuidas en un formato
+\textsc{XML} para luego ser utilizadas durante el análisis final.
 
 \begin{figure}[!htbp]
   \centering
@@ -730,6 +739,7 @@ $\sim 6\%$, dejando una luminosidad total de $\int L\, dt = 20.3 \pm 0.6\, (2.8
   \label{fig:lumi}
 
 \end{figure}
+
 
 \section{Datos de colisiones $pp$ a $\sqrt{s} = 13$ \tev}
 

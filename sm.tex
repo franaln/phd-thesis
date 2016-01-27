@@ -1,7 +1,7 @@
 \chapter{Conceptos básicos del \SM}
 \label{cap:sm}
 
-El {\SM} de la física de altas energías (SM) describe correctamente a los
+El {\SM} de la física de altas energías (SM) describe a los
 constituyentes de la materia y sus interacciones. Esta teoría fue formulada en
 varios trabajos a partir de la segunda mitad del siglo XX y prácticamente todos
 los datos obtenidos con los experimentos de altas energías pueden explicarse
@@ -9,7 +9,7 @@ dentro de este marco. Sin embargo este modelo tiene algunas debilidades tanto
 teóricas como experimentales y por lo tanto no puede ser considerado como una
 teoría fundamental.
 
-En este Capítulo se describen brevemente las características más relevantes de
+En este capítulo se describen brevemente las características más relevantes de
 esta teoría y se detallan algunas de las debilidades que dan lugar a
 los modelos de física mas allá del SM.
 
@@ -17,7 +17,7 @@ los modelos de física mas allá del SM.
 \section{Las partículas fundamentales y sus interacciones}
 
 De acuerdo al SM toda la materia esta compuesta por un número peque\~no de
-partículas fundamentales de espín $1/2$, fermiones, que se
+partículas fundamentales de espín $\frac{1}{2}$, fermiones, que se
 dividen en dos tipos: quarks y leptones (ver \cref{tab:fermions}). Hasta el
 momento, ningún experimento ha podido encontrar evidencia de que estos fermiones
 tengan una subestructura interna. Los quarks y leptones además están divididos
@@ -26,17 +26,18 @@ de las generaciones más altas tienen mayor masa y son inestables, decayendo
 en partículas de generaciones más bajas. Es por este motivo que la materia
 ordinaria esta formada por partículas de la primer generación.
 
-\begin{table}[!ht]
+\begin{table}[!htb]
   \centering
 
   \caption{Partículas fundamentales de materia del SM. Las tres columnas internas representan las
     tres generaciones, ordenadas segun su masa. En la segunda y tercer columna se encuentra
-    la masa y la carga electrica, respectivamente.}
+    la masa y la carga eléctrica, respectivamente. En el caso de los neutrinos solo existen
+    cotas superiores de su masa.}
   \label{tab:fermions}.
 
   \begin{tabularx}{\textwidth}{Cx{0.6cm}x{0.6cm}x{0.6cm}CCCC}
     \hline
-    & \multicolumn{3}{c}{Partícula} & \multicolumn{3}{c}{Masa} & Carga Eléctrica \\
+    & \multicolumn{3}{c}{\textbf{Partícula}} & \multicolumn{3}{c}{\textbf{Masa}} & \textbf{Carga Eléctrica} \\
 
     \hline
     \multirow{2}{*}{Leptones}
@@ -44,8 +45,8 @@ ordinaria esta formada por partículas de la primer generación.
     & $\nu_e$ & $\nu_\mu$ & $\nu_\tau$ & $<2.2 \eV$ & $< 0.17 \mev$ & $<15.5 \mev$ & 0 \\
     \hline
     \multirow{2}{*}{Quarks}
-    & $u$ & $c$ & $t$ & 2.4 \mev & 1.27 \gev & 171.2 \gev & 2/3 \\
-    & $d$ & $s$ & $b$ & 4.8 \mev & 104 \mev & 4.2 \gev & -1/3 \\
+    & $u$ & $c$ & $t$ & 2.4 \mev & 1.27 \gev & 171.2 \gev & $\frac{2}{3}$ \\
+    & $d$ & $s$ & $b$ & 4.8 \mev & 104 \mev & 4.2 \gev & -$\frac{1}{3}$ \\
     \hline
   \end{tabularx}
 \end{table}
@@ -78,21 +79,23 @@ interactúan además de débil y electromagnéticamente, por medio de la
 interacción fuerte. Esta es la distinción fundamental entre quarks y leptones.
 
 
-\begin{table}[!ht]
+\begin{table}[!htb]
   \centering
 
-  \caption{Interacciones y los bosones de gauge mediadores de las mismas.}
+  \caption{Bosones de gauge mediadores de las diferentes interacciones fundamentales incluidas en el SM,
+    junto con su masa y carga eléctrica.}
   \label{tab:bosons}
 
-  \begin{tabularx}{\textwidth}{CCC}
+  \begin{tabularx}{0.9\textwidth}{CCCC}
     \hline
-    Fuerza & Partícula & Masa \\
+    \textbf{Fuerza} & \textbf{Partícula} & \textbf{Masa} & \textbf{Carga Eléctrica} \\
     \hline
-    Débil    &   $W^\pm$ y $Z^0$ & 80.398 y 91.1876  \\ %%$\mu$ &  $\tau$ & 511 \kev & 105.7 \mev & 1768 \mev & -1  \\
+    \multirow{2}{*}{Débil}  &   $W^\pm$ & 80.398 \gev  & $\pm1$ \\
+    &   $Z^0$ & 91.1876 \gev  & 0 \\
     \hline
-    Electromagnética & $\gamma$ & 0 \\
+    Electromagnética & $\gamma$ & 0 & 0 \\
     \hline
-    Fuerte & $g$ & 0\\
+    Fuerte & $g$ & 0 & 0 \\
     \hline
   \end{tabularx}
 
@@ -118,10 +121,10 @@ bajo transformaciones de gauge locales del grupo de simetría:
   \text{SU}(3)_C \times \text{SU}(2)_L \times \text{U}(1)_Y
 \end{equation}
 %
-donde $Y$, la hipercarga, $L$, la helicidad izquierda, y $C$, la carga de color,
+donde la hipercarga ($Y$), la helicidad izquierda ($L$), y la carga de color ($C$),
 representan las cantidades conservadas del grupo de simetría. El subgrupo
 $\text{SU}(2)_L \times \text{U}(1)_Y$ representa el sector electrodébil, es
-decir, la electrodinámica cuántica (QED) mas las interacciones débiles.
+decir, la electrodinámica cuántica (QED) más las interacciones débiles.
 %% La electrodinamica cuantica (QED) es una descripcion precisa
 %% de las interacciones electromagneticas. Esta teoria fue una de
 %% los logros mas importantes del siglo XX.
@@ -134,13 +137,13 @@ decir, la electrodinámica cuántica (QED) mas las interacciones débiles.
 %% entro dos particulas cargadas esta carazterizada por el itercambio
 %% de un campo cuantico: el foton. En 1954 Yang and Robert Mills
 %% formularon un principio general de invarianza de gauge}
-La adición del grupo $\text{SU}(3)_C$ incluye la cromodinámica cuántica, que
+La adición del grupo $\text{SU}(3)_C$ incluye la cromodinámica cuántica (QCD), que
 es la teoría de campos de gauge que describe las interacciones fuertes de los
 quarks y gluones que poseen carga de color.
 
-La masa de las partículas en el SM es introducida mediante el llamado
-mecanismo de Brout-Englert-Higgs\cite{PhysRevLett.13.321, PhysRevLett.13.508}, vía la ruptura
-espontánea de la simetría electrodébil.
+La masa de las partículas en el SM es introducida mediante el llamado mecanismo
+de Brout-Englert-Higgs\cite{PhysRevLett.13.321,PhysRevLett.13.508}, vía la
+ruptura espontánea de la simetría electrodébil:
 
 \begin{equation}
   \text{SU}(3)_C \times \text{SU}(2)_L \times \text{U}(1)_Y \to \text{SU}(3)_C
@@ -156,7 +159,7 @@ Weinberg y Salam fueron los primeros en aplicar el mecanismo de Higgs al
 rompimiento de la simetría electrodébil
 \cite{PhysRevLett.19.1264,PhysRev.127.965} y mostraron como este mecanismo podía
 ser incorporado a la teoría electrodébil de Glashow \cite{Glashow1961579}, dando
-inicios a lo que hoy conocemos como SM de la física de partículas.
+inicios a lo que hoy conocemos como el {\SM} de la física de partículas.
 
 La relación entre las masas de los bosones $W^\pm$ y $Z$ predicha por el SM esta
 dada por $m_W/m_Z = \cos \theta_W$, donde $\theta_W$ es el ángulo de
@@ -184,22 +187,83 @@ El detalle de estas mediciones  puede verse en la \cref{fig:higgs_cms_atlas}.
 El descubrimiento del bosón de Higgs completó el espectro de partículas del SM.
 
 \begin{figure}[!htbp]
-  \centering \includegraphics[width=0.8\textwidth]{figures/higgs_atlas_cms_mass}
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/higgs_atlas_cms_mass}
   \caption{Resumen de las mediciones de la masa del bosón de Higgs de los
     distintos análisis de ATLAS y CMS, y del análisis combinado. Se indican las
     incertezas sistemáticas (bandas de color magenta), estadísticas (bandas de
-    color amarillo), y total (bandas negras). La linea roja vertical y la
+    color amarillo), y total (lineas negras). La linea roja vertical y la
     correspondiente sombra gris indican el valor central y la incerteza total de
     la medida combinada, respectivamente\cite{HiggsMass_ATLAS_CMS}.}
   \label{fig:higgs_cms_atlas}
 \end{figure}
 
-Todas las observaciones experimentales son compatibles con el SM a un nivel de
-muy alta precisión. La \cref{fig:sm_atlas_xs} muestra el buen acuerdo entre la
-sección eficaz de algunos procesos del SM medidas por ATLAS y las predicciones
-teóricas.
 
-\begin{figure}[!htbp]
+
+\section{QCD y física en el LHC}
+
+%% * From CERN-THESIS-2011-120.pdf y tincho
+
+%% QCD, el modelo partónico y la descripción de las colisiones $pp$ en el LHC
+%% ---------------------------------------------------------------------------
+
+La cromodinámica cuántica (QCD) \cite{Ellis:1991qj} es la teoría de campos de gauge
+renormalizable que describe la interacción fuerte entre las partículas que
+poseen carga de color: quarks y gluones. A diferencia del fotón, los gluones,
+que son los mediadores de la interaccion, poseen carga de color, por lo que
+pueden interactuar entre ellos, dando lugar al comportamiento inusual de la
+interacción fuerte. La fuerza fuerte aumenta linealmente con la distancia entre
+dos cargas. La constante de acoplamiento efectiva $\alpha_s$ depende entonces de
+la distancia entre las cargas o de la escala de energía de la interacción. Se
+dice que la constante ``corre'', siendo grande a bajas energía (o grandes
+distancias) y haciéndose mas chica a altas energías (o menores distancias).
+
+El efecto neto de esta característica del acoplamiento fuerte es el
+confinamiento, es decir, que las partículas con color no puedan existir
+libremente. Solo estados de color neutro de múltiples partículas de color pueden
+ser observados en la naturaleza viajando distancias macroscópicas. Los estados
+que consisten en un par quark-antiquark son denominados mesones. Por ejemplo un
+pión neutro $\pi^0$ es un estado $u\bar{u}$ con cargas opuestas de color. Los
+estados formados por tres quarks son denominados bariones. El protón en un
+barión constituido por dos quarks $u$ y uno $d$, donde cada quark tiene uno de
+los tres posibles cargas de color para dejar un estado neutro. Estos tres quarks
+son llamados quarks de valencia del protón, pero estos están rodeados por un mar
+de gluones y pares de quark-antiquark que surgen de fluctuaciones cuánticas.
+Otra consecuencia de la estructura de la interaccion fuerte es que los calculos
+perturbativos no son posibles en el regimen de grandes valores de $\alpha_s$.
+
+El LHC es un colisionador de protones, por lo tanto es esencial una precisa
+descripción de la estructura del protón, ya que una colisión $pp$ a altas
+energías es básicamente una colisión de dos constituyentes del mismo. Es
+necesaria una descripción de los constituyentes del protón a la escala de
+energía $Q$ de la dispersión fuerte.
+
+Los quarks de valencia y los quarks y antiquarks del mar junto con los gluones
+son llamados \emph{partones} del protón. Cada partón lleva solo una fracción del
+momento y la energía del protón. Para la medición de una sección eficaz de
+dispersión fuerte que involucre quarks y gluones en el estado inicial, es
+necesario conocer el momento de las partículas incidentes. Como los partones
+solo llevan una fracción del momento, y están en interacción permanente entre
+ellos, el momento es desconocido, por lo que el $Q$ de las colisiones varía.
+Además los quarks y gluones salientes no pueden observarse directamente debido
+al confinamiento, pero entran en el detector como jets. Entonces no podemos
+medir una seccion eficaz partonica como $\sigma(qg\toqg)$, pero se puede hacer
+una medida inclusiva, como la seccion eficaz hadronica $\sigma(pp\to jj)$ con
+dos jets en el estado final. En teoría de perturbaciones, para poder volver
+desde la sección eficaz hadrónica a la sección eficaz partónica es necesario
+conocer la probabilidad de que un partón de tipo $n$ sea encontrado con una
+fracción de momento $x$, es decir, las funciones de distribución partónica
+(PDF). Estas funciones son determinadas a partir de datos obtenidos de los
+propios experimentos de altas energías, ya que no pueden determinarse a partir
+de la teoría.
+
+Todas las observaciones experimentales realizadas en LHC son compatibles con el SM a un nivel de
+muy alta precisión.
+La \cref{fig:sm_atlas_xs} muestra el buen acuerdo entre la
+sección eficaz de algunos procesos del SM medidas por ATLAS y las predicciones
+teóricas, a modo de ejemplo.
+
+\begin{figure}[!htb]
   \centering
   \includegraphics[width=1\textwidth]{figures/ATLAS_a_SMSummary_TotalXsect.pdf}
   \caption{Resumen de las distintas medidas de sección eficaz de producción de
@@ -207,6 +271,7 @@ teóricas.
     Los valores teóricos esperados fueron calculados como mínimo a NLO\cite{ATLASSM}.}
   \label{fig:sm_atlas_xs}
 \end{figure}
+
 
 
 \section{Física más allá del SM}
@@ -224,7 +289,7 @@ unificado. El descubrimiento de los bosones $Z$ y $W$, tal como fueron predichos
 por la teoría electrodébil, significaron un triunfo de la idea de una teoría unificada de las
 fuerzas. Cabe destacarse que los resultados de las medidas de precisión de la sección
 eficaz diferencial de las corrientes cargadas y neutras en la dispersión inelastica
-profunda, obtenidos en HERA, proporcionaron una clara evidencia de la unificación
+profunda, obtenidos en HERA \cite{Hera}, proporcionaron una clara evidencia de la unificación
 electrodébil.
 
 Todo parece indicar que el SM es una teoría efectiva a bajas energías, muy precisa hasta
@@ -261,10 +326,10 @@ Desde el punto de vista experimental, también existen algunos resultados que no
 pueden acomodarse dentro del SM. El SM considera a los neutrinos como partículas
 no masivas, pero distintos
 experimentos\cite{PhysRevLett.101.111301,PhysRevD.78.032002} han observado
-oscilaciones de sabor en los neutrinos, lo que puede explicarse en el caso en
+que los mismos presentan oscilaciones de sabor, lo que puede explicarse en el caso en
 que estos tengan una masa no nula. Por el momento sólo existen límites
-superiores para estas estas masas (ver \cref{tab:fermions}). Los neutrinos
-tienen masas muy peque\~nas comparadas con los demás fermiones. El término de
+superiores para estas estas masas (ver \cref{tab:fermions}), que son muy peque\~nas
+comparadas con las de los demás fermiones. El término de
 masa para fermiones puede escribirse usando el doblete de Higgs si existen los
 fermiones de helicidad izquierda y derecha para un dado sabor. La masa obtenida
 por esta interacción es llamada masa de Dirac. Para que este mecanismo puede ser
@@ -275,7 +340,7 @@ oscura. La existencia de la materia oscura fue inferida por primera vez como
 resultado de las inconsistencias observadas entre la masa estimada de las curvas
 de rotación galácticas y de su luminosidad\cite{DM1}.
 Solo el 4\% del universo consiste en la materia que
-conocemos\cite{DM2}. Cerca del 73\% consiste en energía oscura, y el restante
+conocemos\cite{DM2}, cerca del 73\% consiste en energía oscura, y el restante
 23\% es materia oscura. Como esta materia oscura no interactúa por medio de
 interacciones fuerte y electromagnética, y la interacción débil es despreciable
 en largas distancias, la materia oscura solo interactúa vía gravedad. La única
@@ -295,7 +360,7 @@ puede descartarse.
 %% ser el resultado de una nueva simetría.
 
 Son varias las teorías que intentan explicar parcial o totalmente los problemas
-mencionados. Estas se conocen como teorías de física mas allá del SM y entre
+mencionados anteriormente. Estas se conocen como teorías de física mas allá del SM y entre
 ellas se encuentra la Supersimetría, modelos con dimensiones extra, teoría de
 cuerdas, teorías technicolor, etc. En el siguiente capítulo se explicará brevemente
 en qué consiste una de las teorías de física mas allá del SM mas motivadas desde

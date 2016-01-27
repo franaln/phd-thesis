@@ -1,11 +1,10 @@
 \chapter{Selección de eventos}
 \label{cap:seleccion}
 
-
-Como se describe en la \cref{sec:regiones} las regiones de señal son un componente clave del
+Como se discutió en la \cref{sec:regiones} las regiones de señal son un componente clave del
 análisis dado que son aquellas en las que se espera la presencia de eventos de
-nueva fisica. En este capitulo se describe la selección de eventos que definen
-las regiones de señal del analisis de esta Tesis. Esta seleccion fue optimizada
+nueva fisica. En este capítulo se describe la selección de eventos que definen
+las regiones de señal del análisis de esta Tesis. Esta selección fue optimizada
 en base a la significancia esperada de descubrimiento utilizando las muestras MC
 de señal y fondos del SM.
 
@@ -22,7 +21,7 @@ experimento y la estabilidad del haz en el acelerador, contiene aquellos eventos
 donde todos los sub-detectores se encontraban funcionando en su plena capacidad.
 
 Adicionalmente se eliminan los eventos que contengan algún tipo de problema,
-como ruido en el calorímetro LAr, o celdas no operativas, que pueda resultar
+como ruido en el calorímetro, o celdas no operativas, que pueda resultar
 en energía faltante instrumental. %% debido a alguno de estos problemas.
 
 
@@ -38,7 +37,6 @@ siguiendo las prescripciones descriptas en \cite{ATLAS-CONF-2011-114,Damazio:160
 Cuando se calcula la eficiencia del trigger utilizando el metodo bootstrap, se factoriza
 la eficiencia como el producto de la eficiencia del EF respecto a la eficiencia del L1,
 por la eficiencia de la seleccion de L1 .
-
 La eficiencia de {\trigchain} respecto a fotones aislados con $\pt>125\gev$ resulta en
 $100^{+0}_{-1.41}\stat \, {}^{+0}_{-0.7}\syst \%$.
 
@@ -48,7 +46,7 @@ A pesar de la escasa estadística, es claro que la eficiencia alcanza una meseta
 en la cual la eficiencia es máxima, antes de $125 \gev$. La incerteza total
 tiene en cuenta la limitada estadística de la muestra de datos y también la
 incerteza en la corrección debido a la pureza de los fotones. El desempeño del
-trigger se mantuvo estable durante todo el periodo de la toma de datos
+trigger se mantuvo estable durante todo el período de la toma de datos
 considerado.
 
 \begin{figure}[!htbp]
@@ -61,38 +59,35 @@ considerado.
 \end{figure}
 
 
-
-
-
-\section{Preselección}\label{sec:base_seleccion}
+\section{Preselección}
+\label{sec:base_seleccion}
 
 \subsection{Vértice Primario}
 
-Como se describe en \XXX\ los candidatos a vértices de la interacción $pp$ son
+Como se describe en la \cref{sec:obj_vertex} los candidatos a vértices de la interacción $pp$ son
 reconstruidos en cada eventos utilizando las trazas en el detector interno. El
 vértice primario, correspondiente a la interacción dura de dispersión, es el
 candidato con la mayor suma de $p_{T}^{2}$ para las trazas asociadas. Solo se
 consideran los eventos donde el vértice primario tiene al menos cinco trazas
-cargadas. \note{Por que?}
-
+cargadas. %%\note{Por que?}
 
 
 \subsection{Objetos}
-
+\label{sec:preselection}
 %% Antes de aplicar los cortes cinemáticos, se realiza la siguiente
 %% preselección y limpieza.
 
 En primero lugar se realiza una preselección de los objetos que se consideran en cada
-eventos como se detalla a continuación y en la \cref{tab:base_sel}: se
-consideran fotones a todos aquellos candidatos a fotón que pasen el criterio de
+eventos como se detalla a continuación y en la \cref{tab:base_sel}. Se
+consideran fotones todos aquellos candidatos a fotón que pasen el criterio de
 identificación \emph{tight}, que tengan $\pt>75\gev$ y $|\eta|<2.37$. Se
-consideran electronesa los candidatos que pasan el criterio de identificación \emph{medium}, y
+consideran electrones los candidatos que pasan el criterio de identificación \emph{medium}, y
 que tengan un $\pt>10\gev$ y $|\eta|<2.47$, y muones a aquellos que pasan un criterio de
 identificación \emph{loose} con $\pt>6 \gev$ y $|\eta|<2.5$. Para el caso de
 jets, se consideran los que tienen $\pt>20\gev$ y $|\eta|<2.8$.
 
 
-\begin{table}[ht!]
+\begin{table}[!htbp]
   \centering
 
   \caption{Preselección de objetos. Criterio de identificación (ID) y cortes de
@@ -102,7 +97,7 @@ jets, se consideran los que tienen $\pt>20\gev$ y $|\eta|<2.8$.
     decir, con $1.37 < |\eta| < 1.52$.}
   \label{tab:base_sel}
 
-  \begin{tabularx}{\textwidth}{LCCC}
+  \begin{tabularx}{0.8\textwidth}{LCCC}
     \hline
     & ID & $\pt$ & $|\eta|$ \\
     \hline
@@ -148,9 +143,9 @@ detalla a continuación en ese orden:
 \end{itemize}
 
 
-\subsection{Limpieza de eventos}
+%% \subsection{Limpieza de eventos}
 
-Para asegurar el correcto calculo de la energía faltante, y eliminar
+Por último, para asegurar el correcto cálculo de la energía faltante, y eliminar
 los eventos con energía faltante instrumental, los eventos que satisfacen
 alguna de las condiciones siguientes son descartados.
 
@@ -159,7 +154,7 @@ alguna de las condiciones siguientes son descartados.
   un jet que falla los cortes de limpieza de jets que se definen en
   \cref{sec:jet_obj}.
 
-\item Eventos con muones cósmicos: cuando el evento tiene al menos un muon con $|z_{0}| > \unit[1]{mm}$ o $|d_0| >
+\item Eventos con muones cósmicos: cuando el evento tiene al menos un muón con $|z_{0}| > \unit[1]{mm}$ o $|d_0| >
   \unit[0.2]{mm}$, donde estos valores son calculados con respecto al vértice
   primario. %%Estos muones tienen altas posibilidades de ser muones cosmicos \note{Check!}
 \end{itemize}
@@ -170,7 +165,7 @@ en \cref{sec:met_obj}.
 
 
 
-\section{Optimización de las regiones de señal}
+\section{Optimización de la selección de las regiones de señal}
 
 %% Después de la preselección descripta en las secciones anteriores, es necesario
 %% definir las regiones de señal, es decir, las regiones enriquecidas en eventos
@@ -179,7 +174,7 @@ en \cref{sec:met_obj}.
 %% de cortes) en ciertos observables.
 
 Como primer paso se seleccionan eventos que contengan el estado final buscado:
-un fotón, al menos un jet y energía faltante. Y a partir de esa selección
+un fotón, al menos un jet y energía faltante, y, a partir de esa selección
 inicial, se eligen observables que permitan separar la señal del fondo y se
 optimizan los cortes en estos observables.
 
@@ -190,11 +185,11 @@ optimizan los cortes en estos observables.
 %% haciendo uso de las muestras simuladas con MC tanto para señal como para los
 %% procesos del SM.
 
-Del estudio realizado en la sección {\XXX}, resultan evidentes las diferencias
+Del estudio realizado en la \cref{sec:susy_studies}, resultan evidentes las diferencias
 cinemáticas y topológicas de los eventos en las distintas regiones del
 espacio de parámetros {\mgmn} del modelo de SUSY.
 Es por esta razón que resulta conveniente tener mas de una región de señal,
-cada una destinada a una zona particular de la grid de señal.
+cada una destinada a una zona particular de la grid de señal en {\mgmn}.
 
 %% que lo mas conveniente es
 %% definir dos regiones de señal, cada una de ellas optimizada para las dos
@@ -202,11 +197,11 @@ cada una destinada a una zona particular de la grid de señal.
 %% topológicas.
 
 Por tal motivo, se dividió el análisis en dos regiones de señal, a las que se
-llamó {\SRL} y {\SRH}. La primera región de señal, \SRL, donde la busqueda se focaliza en a la zona en la que
+llamó {\SRL} y {\SRH}. La primera de ellas, \SRL, donde la búsqueda se focaliza en la zona en la que
 los gluinos decaen en cascada hasta neutralinos NLSP de baja y
 moderada masa. Los eventos de señal en esta región se caracterizan por una gran
 multiplicidad de jets y actividad hadrónica, debido a que involucra cadenas de
-decaimiento largas de gluinos pesados a través de producción de charginos\note{Explicar de donde salen los jets}.
+decaimiento largas de gluinos pesados a través de la producción de charginos y quarks.
 Cuanto mas baja la masa del {\ninoone}, más baja sera la energía del fotón y
 menor es la cantidad de energía faltante. La segunda región de señal, \SRH,
 tiene como motivación los escenarios donde la masa del gluino y del neutralino
@@ -216,7 +211,7 @@ neutralino pesado, fotones de alto {\pt} y gran cantidad de energía faltante en
 el estado final.
 
 En la \cref{fig:srs_motivation} puede verse esquemáticamente a que región del espacio
-de parámetros de la señal {\mgmn} esta destinada cada SR.
+de parámetros de la señal {\mgmn} está destinada cada SR.
 
 \begin{figure}[!htbp]
   \centering
@@ -243,14 +238,14 @@ fondo de 25\%. Todas las muestras MC fueron normalizadas a una luminosidad total
 integrada de $20.3 \ifb$. La significancia esperada se calculó utilizando la
 \cref{eq:Za}, y para evitar una selección muy restringida, se requiere al menos
 un evento de fondo en cada SR. Además de evaluar la significancia esperada para
-distintos cortes también se tuvo en cuenta que la eficiencia de señal no sea
-menor a 20\%.
+distintos cortes también se tuvo en cuenta que la eficiencia de señal sea
+superior al 20\%.
 
--- Los cortes fueron optimizados en el orden de poder discriminatorio, uno a la
+Los cortes fueron optimizados en el orden de poder discriminatorio, uno a la
 vez, y aplicados en el orden descripto a continuación, monitoreando la
-significancia para distintos cortes en las variables discriminatorias.\note{chequear esto}
+significancia para distintos cortes en las variables discriminatorias.
 
--- Como ya se ha mencionado el estado final buscado en este análisis consiste en un
+Como ya se ha mencionado, el estado final buscado en este análisis consiste en un
 único fotón, jets y energía faltante. Por lo que la definición de las SR
 comienza optimizando los cortes en las variables cinemáticas del fotón, los jets
 y el corte en energía faltante.
@@ -275,15 +270,14 @@ y el corte en energía faltante.
 
 El primer paso para definir la SR consistió en seleccionar eventos con un único
 fotón de los previamente seleccionados con {\pt} mayor a 125 \gev. Este valor
-fue elegido para que esté por encima de la meseta de la eficiencia del trigger,
-en la cual es máxima.
+fue elegido para asegurar la máxima eficiencia del trigger.
 %% En la \cref{fig:photon_pt} se muestra las distribuciones del {\pt} del fotón
 %% para los eventos de fondo del {\SM} como también para algunos puntos de señal.
 
 Los eventos con un segundo fotón con $\pt > 75 \gev$ fueron vetados. El corte en
 {\pt} de $75\gev$ fue elegido para que las SR sean ortogonales a las SR del
-análisis de ATLAS que busca dos fotones\cite{ATLAS-CONF-2014-001} y la posible
-combinación estadística entre ambos. Este otro análisis fue diseñado para
+análisis de ATLAS que busca dos fotones\cite{ATLAS-CONF-2014-001} garantizando la
+posible combinación estadística entre ambos. Este análisis fue diseñado para
 buscar SUSY en escenarios GGM, pero particularmente en el caso de que el
 neutralino NLSP sea mayoritariamente bino, y el decaimiento a fotones sea
 dominante.
@@ -301,7 +295,7 @@ dominante.
 
 Como se menciona en la \cref{sec:pho_obj}, para seleccionar los fotones se
 aplica un corte en la energía transversa de aislamiento (\etiso). Se estudiaron distintos
-criterios de aislamiento, en los que varía el tamaño del cono ($R$) en el cual se
+criterios de aislamiento, variando el tamaño del cono ($R$) en el cual se
 calcula esta energía.
 
 %% La optimización de este criterio de aislamiento  fue realizada mirando el desempe\~no
@@ -365,9 +359,10 @@ de este efecto es discutido en la \cref{sec:jfake_sig_template,sec:expsyst}.
 
 Además del veto a los eventos con un segundo fotón, también se remueven
 los eventos que contienen leptones ($e$ o $\mu$) con el objetivo de que las
-SR no tengan un solapamiento con las SR del análisis que busca un fotón, un
-leptón y energía faltante\note{cite?} que busca... . La perdida en la eficiencia
-debido a este veto es de XXX \%.
+SR no tengan un solapamiento con las SR del análisis que busca estados finales
+con un fotón, un leptón y energía faltante [].
+%% que busca... . La perdida en la eficiencia
+%% debido a este veto es de XXX \%.
 
 
 
@@ -403,9 +398,9 @@ es posible aplicar un corte más alto ($>300\gev$).
 \subsection{Multiplicidad y {\pt} de los jets} \label{sec:opt_njet}
 
 En la \cref{fig:jets_npv} se muestra el valor medio del número de jets
-seleccionados como función del número de vertices en el evento, para distintos
-cortes en el {\pt} de los jets. Notar que el número de vertices en un evento
-esta relacionado con el \emph{pile-up}. A medida que aumenta el corte en {\pt}
+seleccionados como función del número de vértices en el evento, para distintos
+cortes en el {\pt} de los jets. Notar que el número de vértices en un evento
+está relacionado con el \emph{pile-up}. A medida que aumenta el corte en {\pt}
 el número de jets se hace mas estable con el \emph{pile-up}, y por lo tanto en
 este análisis se consideran los jets con $\pt>40\gev$
 
@@ -501,8 +496,8 @@ más energéticos tengan $\pt>100 \gev$.
 \subsection{Separación angular entre jets y \met}
 \label{sec:dphi_obj}
 
-Como se mencionó, en los eventos de señal, la energía faltante es producida por los dos
-gravitinos. Se espera por lo tanto que la dirección de {\met} sea aleatoria,
+Como se mencionó más arriba, en los eventos de señal, la energía faltante es producida por los dos
+gravitinos que escapan la detección. Se espera por lo tanto que la dirección de {\met} sea aleatoria,
 sin estar correlacionada con ninguno de los demás objetos del evento. Por otro
 lado, si la {\met} es originada a partir de efectos instrumentales o de neutrinos
 energéticos en $b$-jets o $c$-jets, la dirección de {\met} estará
@@ -590,8 +585,8 @@ en esta variable.
 
 %photon \pt,  \etmiss, jet multiplicity, two leading jets  \pt,   jet-\etmiss\  and jet-photon $\phi$ separation cuts.
 
-En {\SRH} un corte en este observable $\HT>800\gev$ ayuda a reducir el restante
-fondo. Dada la masa alta del neutralino, la mayor contribución de {\HT} proviene
+En {\SRH} un corte en este observable $\HT>800\gev$ ayuda a reducir el fondo restante.
+Dada la masa alta del neutralino, la mayor contribución de {\HT} proviene
 del fotón muy energético producido en el evento.
 
 
@@ -611,7 +606,7 @@ del fotón muy energético producido en el evento.
 
 \subsection{Variables de forma adicionales}\label{sec:shape_vars}
 
-Adicionalmente, muchas variables de forma fueron exploradas para poder obtener
+Varias variables de forma fueron exploradas para poder obtener
 una discriminación adicional entre señal y fondo. En especial se estudió el
 observable $R_T^n$ definido como
 
@@ -629,7 +624,7 @@ de los jets. En el caso que $n \sim N_\mathrm{jet}$ el denominador y el
 numerador son casi idénticos y el cociente es $\sim 1$, y es exactamente 1
 cuando son iguales.
 Para los procesos de señal en los que $n$ es mucho menor al número de jets en el
-evento, la distribución sera menor a 1.
+evento, la distribución será menor a 1.
 
 %% depends on the multiplicity and hardness of the jets. As shown in previous
 %% sections, the SUSY signals here considered are characterized by hard multijet
@@ -686,7 +681,8 @@ Cada región de señal queda definida entonces por los cortes de selección deta
   \label{tab:final_sel_sr}
 
   %\begin{tabular}{x{0.25\textwidth}x{0.25\textwidth}x{0.25\textwidth}}
-    \begin{tabularx}{\textwidth}{CCC}
+    %%\begin{tabular}{ccc}
+  \begin{tabularx}{0.8\textwidth}{CCC}
     \hline
     & {\bf \SRL} & {\bf \SRH} \\
     \hline
@@ -702,7 +698,8 @@ Cada región de señal queda definida entonces por los cortes de selección deta
     $H_T$ & - & $>800 \gev$ \\
     $\Delta\phi(\gam,\mathrm{jet})$ & - & $<2.0$ \\
     \hline
-  \end{tabularx}
+    \end{tabularx}
+
 
 \end{table}
 
@@ -723,7 +720,7 @@ Z$) y {\ttgam}. La contaminación de {\vgam} en {\SRL} es de 0.13, de los cuales
 0.10 corresponden a {\wgam} y 0.03 a {\znngam}. Para {\SRH} el número de eventos
 de {\vgam} es de 0.66, de los cuales 0.44 de {\wgam} y 0.22 de {\znngam}. En la
 {\SRL} también existe una contaminación de eventos de procesos {\ttbar} en los
-que un electron es identificados como fotones.
+que un electrón es identificado como fotón.
 
 La significancia esperada en la grid de señal completa se puede ver en la
 \cref{fig:opt_exp_significance}, incluyendo el mejor valor de ambas regiones. Es
@@ -878,7 +875,7 @@ donde $N_\mathrm{fiducial}$ es el número de eventos que pasan los cortes
 fiduciales que están basados en los objetos a nivel generador incluyendo los
 cortes de {\pt} y $\eta$ del análisis. Además se remueven los objetos
 superpuestos en el espacio {\etaphi} como se describe en
-\cref{sec:overlap_romoval_event_veto}. Y $N_\mathrm{total}$ es el número total
+\cref{sec:overlap_romoval_event_veto}. $N_\mathrm{total}$ es el número total
 de eventos.
 
 La eficiencia se define como:
@@ -894,9 +891,9 @@ las ineficiencias de reconstrucción, los cortes de identificación de
 partículas, y los efectos de resolución e ineficiencias del trigger.
 
 La aceptancia por la eficiencia ($A\times\epsilon$) fue calculada para las dos
-regiones a partir de las muestras MC, para asegurar que el proceso de
-optimización no dejó regiones sin tener en cuenta en el espacio de parámetros, o
-que no haya caídas bruscas en la eficiencia de selección. En la
+regiones a partir de las muestras MC, para asegurar que en el proceso de
+optimización se tuvieron en cuenta todas las regiones del espacio de parámetros,
+y evitar que haya caídas bruscas en la eficiencia de selección. En la
 \cref{fig:atimeseff}, se puede ver que hay una buena cobertura de toda la grid
 de señal.
 %% Los valores de $A\times\epsilon$ están detallados en la
