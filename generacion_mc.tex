@@ -147,6 +147,10 @@ final.
 %% %% SUSY, se pueden simular los posibles estados finales que se esperan a partir de
 %% %% un cierto modelo.
 
+%% La simulación de las partículas producidas a partir de colisiones en
+%% colisionadores hadrónicos, como el LHC, puede descomponerse en varios pasos
+%% descriptos a continuación (y esquematizados en la
+%% \cref{fig:mc_event_generator}):
 
 
 %% \begin{itemize}
@@ -302,10 +306,14 @@ electromagnéticas de baja energía y se las reemplaza con lluvias
 electromagnéticas pre-simuladas. De esta forma se reduce el consumo de CPU
 notablemente considerando las características de la física en cuestión.
 
+En las simulaciones Monte Carlo, el \emph{pile-up in-time} es incorporado
+superponiendo las señales de los procesos físicos de interés con señales
+correspondientes a un dado número de colisiones adicionales independientes de
+\emph{minimum-bias}.
 Cada evento en una muestra Monte Carlo es producido bajo ciertas condiciones
-particulares del detector, y bajo un valor particular de pile-up. Existen
-algunas diferencias en el perfil del pile-up de los datos reales y las muestras
+particulares del detector, y bajo un valor particular de \emph{pile-up}. Existen
+algunas diferencias en el perfil del \emph{pile-up} de los datos reales y las muestras
 MC, en particular debido a que las muestras MC son simuladas previo a la toma de
-datos con el pile-up previsto que no es exactamente igual al real. Para
+datos con el \emph{pile-up} previsto que no es exactamente igual al real. Para
 solucionar esto, se aplica un repesado evento a evento a las muestras MC de
 manera de modelar las condiciones reales de la muestra de datos bajo estudio.
