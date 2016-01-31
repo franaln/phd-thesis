@@ -2,9 +2,9 @@
 \label{cap:estadistica}
 
 En este capítulo se introducen los conceptos básicos necesarios para entender el
-tratamiento estadístico de los datos. Está enfocado en la búsqueda de nueva
-física en altas energías, su descubrimiento y/o el establecimiento de límites de
-exclusión.
+tratamiento estadístico de los datos realizado para esta Tesis. Está enfocado en
+la búsqueda de nueva física en altas energías, su descubrimiento y/o el
+establecimiento de límites de exclusión.
 
 Dada la naturaleza probabilística de las colisiones en el LHC y el bajo número
 de eventos esperado en las búsquedas de nueva física, es necesario contar con
@@ -12,7 +12,7 @@ una poderosa estructura estadística para interpretar los resultados, especialme
 para identificar una nueva señal sobre las posibles fluctuaciones de los fondos
 del SM.
 
-Este Capítulo utiliza como referencia los libros \cite{Cowan,James}. Muchos de
+Este capítulo utiliza como referencia los libros \cite{Cowan,James}. Muchos de
 los métodos estadísticos mas avanzados fueron desarrollados especialmente para
 el LHC, y se encuentran descriptos en los artículos
 \cite{AsymAprox,ReadCLs,medsigNote,Cranmer:2015nia}. Además se utilizaron los
@@ -123,7 +123,7 @@ Algunas propiedades que es importante que cumplan los estimadores son:
   un estimador es no sesgado cuando el sesgo es cero.
 
 \item {\bf Eficiencia:} Un estimador es eficiente si su varianza
-  $V[\hat{\btheta}]$ es lo mas pequena posible.
+  $V[\hat{\btheta}]$ es lo mas peque\~na posible.
 \end{itemize}
 
 Los dos métodos mas utilizados para la estimación de parámetros son el de
@@ -133,9 +133,9 @@ Los dos métodos mas utilizados para la estimación de parámetros son el de
 \section{Método del likelihood máximo}\label{sec:MLE}
 
 Para $N$ mediciones estadísticamente independientes cada una descripta por una
-pdf $f(x, \btheta)$, la pdf conjunta para los valores observados $x$ esta dada
+pdf $f(x, \btheta)$, la pdf conjunta para los valores observados $x$ está dada
 por $f(\bm{x}, \btheta) = \prod_i f(x_i, \btheta)$. La función \emph{likelihood}
-se define como la pdf conjunta evaluada en los datos observados,
+se define como la pdf conjunta evaluada en los datos observados,\note{Chequear lo de $n$ y $N$}
 
 \begin{equation}
   L(\btheta) = f((x_1, x_2, \ldots, x_n); \btheta) = \prod_{i=1}^{N} f(x_i;
@@ -252,7 +252,7 @@ La probabilidad de rechazar $H_0$ siendo ésta verdadera es denominado tamaño d
   \alpha = \int_{R} g(t|H_0)\, dt
 \end{equation}
 %
-lo cual también, determina el nivel de significancia como
+lo cual también determina el nivel de significancia como
 $(100 - \alpha) \%$. Este error, de rechazar $H_0$ cuando la hipótesis es verdadera, es llamado
 error de tipo I. Por otro lado el error de aceptar $H_0$ cuando es falsa se
 llama error de tipo II, y su probabilidad de ocurrencia, $\beta$, depende de la
@@ -279,7 +279,7 @@ estadístico de prueba con mayor poder para un tama\~no esta dado por:
   t(\bm{x}) = \frac{f(\bm{x}|H_1)}{f(\bm{x}|H_0)}
 \end{equation}
 %
-y la mejor región critica consiste en los $\bm{x}$ que satisface $t(\bm{x}) > c_\alpha$
+y la mejor región crítica consiste en los $\bm{x}$ que satisfacen $t(\bm{x}) > c_\alpha$
 donde $c_\alpha$ es una constante que se ajusta para que el tama\~no sea $\alpha$.
 Este estadístico de prueba es esencialmente el cociente de los likelihoods
 para las dos hipótesis.
@@ -371,10 +371,10 @@ simples esta dado por el cociente de los likelihoods de las dos hipótesis, de a
 al teorema de Neyman-Pearson.
 Desafortunadamente no hay un equivalente al lema de Neyman-Pearson para modelos
 con muchos parámetros libres. Sin embargo, hay una generalización natural basada
-en el PLR. De la \cref{eq:lambdamu} se puede ver que $0 \leq \lambda \leq 1$, con
+en el PLR. De la \cref{eq:lambdamu} se puede ver que $0 \leq \lambda \leq 1$, y
 $\lambda$ cercano a 1 implica un buen acuerdo entre datos y el valor hipotético de $\mu$.
-De forma equivalente conviene utilizar como estadistico de prueba $t_\mu = -2 \ln \lambda(\mu)$.
-En el límite asintotico ($N\to\infty$) el teorema de Wilk\cite{WilkTheo} muestra
+De forma equivalente conviene utilizar como estadístico de prueba $t_\mu = -2 \ln \lambda(\mu)$.
+En el límite asintótico ($N\to\infty$) el teorema de Wilk\cite{WilkTheo} muestra
 que $-2 \ln \lambda(\mu)$ sigue una distribucion $\chi^2$ con un grado de libertad.
 Esta propiedad sera útil para aproximar la pdf del estadístico
 de prueba (ver \cref{sec:aprox}).
@@ -531,7 +531,7 @@ confianza del 95\% se obtiene resolviendo la siguiente ecuación:
   p_{\mu_\text{up}} = 0.05
 \end{equation}
 
-Sin embargo el límite superior calculado de esta forma tiene un problema: de
+Sin embargo, el límite superior calculado de esta forma tiene un problema: de
 acuerdo a este, se dice que una señal está excluida a 95\% CL, si ${\clsb} \leq
 0.05$. Si se considera el caso de $\mu=0$, se espera que por construcción el
 {\clsb} sea menor o igual que 0.05 con una probabilidad de 5\%. Esto significa
@@ -559,10 +559,10 @@ donde $p_b$ es el valor del mismo test bajo la hipótesis de solo-fondo,
 \end{equation}
 
 El límite superior {\cls} en $\mu$, $\mu_\text{up}$ se obtiene resolviendo
-$p_{\mu_\text{up}} = 0.05$. Se rechazan los valores de $\mu$ si $\mu <
+$\cls = 0.05$. Se rechazan los valores de $\mu$ si $\mu <
 \mu_\text{up}$ con un nivel de confianza de 95\%.
 
-Para una observación cercana al número de eventos esperado de sólo-fondo ($\clb
+Cabe mencionarse para una observación cercana al número de eventos esperado de sólo-fondo ($\clb
 \sim 0.05$) el {\cls} da un valor del orden de dos veces el obtenido utilizando
 el {\clsb}.
 
@@ -743,9 +743,9 @@ correspondientes a cada región:
   L(s, \btheta) = \Pois (n;s+b) \Pois(m;\tau b)
 \end{equation}
 
-Utilizando la aproximación $Z = \sqrt{q_0}$, valida en el límite de una muestra
-grande de datos y teniendo en cuenta que los valores esperados son $s+b$ y $\tau
-b$ para obtener la significancia esperada, tenemos:
+Utilizando la aproximación $Z = \sqrt{q_0}$, válida en el límite de una muestra
+grande de datos y teniendo en cuenta que los valores esperados son $s+b$ y $\taub$
+para obtener la significancia esperada, tenemos:
 
 \begin{equation}
   Z_A = \left[ 2 \left( (s+b) \ln \left[ \frac{s+(1+\tau)b}{(1+\tau)(s+b)}
@@ -755,8 +755,8 @@ b$ para obtener la significancia esperada, tenemos:
 \end{equation}
 
 Es útil expresar la \cref{eq:Za1} en términos de la incerteza que uno
-quiere atribuirle al fondo basados en la medida de control $m$. El estimador
-para $b$ esta dado por $\hat{b} = m/\tau$, y como la varianza de $m$ es igual a
+quiere atribuirle al fondo basada en la medida de control $m$. El estimador
+para $b$ está dado por $\hat{b} = m/\tau$, y como la varianza de $m$ es igual a
 su media $\tau b$, la varianza de $\hat{b}$ es $V[\hat{b}] = \sigma_b^2 =
 b/\tau$. Usando esto para eliminar $\tau$ de la \cref{eq:Za1}
 obtenemos:
