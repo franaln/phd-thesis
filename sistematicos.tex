@@ -1,224 +1,255 @@
-%\chapter{Determinación de las incertezas sistemáticas}
-\section{Determinación de las incertezas sistemáticas}
-\label{cap:sistematicos}
+\section{Incertezas sistemáticas}
+\label{sec:sistematicos}
 
-Uno de los aspectos más importantes de las investigaciones con datos colectados por ATLAS
-es la determinacion de todas las incertezas sistematicas que afectan a los resultados.
-Las incertezas sistemáticas están asociadas a las predicciones de todas las
-componentes del fondo y a los valores esperados de señal. Estas incertezas
-pueden ser clasificadas en dos tipos: de origen experimental o teórico.
-Estas incertezas pueden tener un impacto importante en el número de eventos esperado
+Uno de los aspectos más importantes de las investigaciones con datos colectados
+por ATLAS es la determinación de todas las incertezas sistemáticas que afectan a
+los resultados. Las incertezas sistemáticas están asociadas a las predicciones
+de todas las componentes del fondo y a los valores esperados de señal. Estas
+incertezas pueden ser clasificadas en dos tipos: de origen experimental o
+teórico, y pueden tener un impacto importante en el número de eventos esperado
 en las CR y SR como así también en los parámetros $\mu_p$ utilizados en la
-extrapolación del fondo esperado.
+extrapolación del fondo. En esta sección se presentan todas las fuentes
+posibles de incertezas sistemáticas incluidas en el presente análisis.
 
-En esta sección se presentan todas las fuentes posibles de incertezas sistemáticas
-y la determinación de las mismas.
-%% En la determinación de los resultados finales utilizando el
-%% ajuste con el PLR, las predicciones de los fondos se permiten variar dentro del
-%% tamaño de las incertezas sistemáticas y por lo tanto son restringidas por los
-%% datos.
+Cabe mencionarse que, en la determinación de los resultados finales utilizando
+el ajuste con el PLR, las predicciones de los fondos se permiten variar dentro
+del tamaño de las incertezas sistemáticas y por lo tanto son restringidas por
+los datos.
 
 
 \subsection{Incertezas Experimentales}\label{sec:expsyst}
 
-A continuación se describen los procedimientos realizados para evaluar
-las incertezas experimentales comunes para todos los procesos tanto de señal como
-de fondo considerados en el análisis.
-%% \footnote{Para esto
-%% se utilizó la herramienta oficial de ATLAS: \texttt{SUSYTools v00-03-24-02}}.
-
-Las incertezas sistemáticas de las estimaciones de los fondos de electrones
-($\alpha_{e\to\gamma}$) y jets ($\alpha_{j\to\gamma}$) mal identificados a partir
-de los datos ya han sido discutidos en las \cref{sec:efakes,sec:jfakes}. La incerteza del
-trigger se presentó en la \cref{sec:trigger} ($\alpha_\text{TRIG}$).
+A continuación se describen los procedimientos realizados para evaluar las
+incertezas experimentales comunes para todos los procesos tanto de señal como de
+fondo considerados en el análisis.
 
 
-\subsubsection{Incerteza en la luminosidad}
+\subsubsection{Luminosidad}
 
-La incerteza en la luminosidad integrada es de $\pm$2.8\% \cite{lumi2012}.
-Esta es derivada siguiendo la misma metodología que la que se detalla en \cite{lumi2011},
-a partir de la calibración preliminar  de la escala de luminosidad derivada
-de los scans de\note{van der Meer?} separación de haz realizados durante Noviembre de 2012.
+Existen dos detectores dise\~nados específicamente para la medida de la
+luminosidad en ATLAS: LUCID y BCM \cite{lumi2011}. La luminosidad es calculada
+midiendo la tasa de interacción durante la toma de datos mediante estos
+dispositivos dispuestos a cada lado de ATLAS, a pequeños ángulos respecto de la
+dirección del haz. La calibración absoluta se ha determinado a partir de los
+parámetros del acelerador mediante una serie de estudios dedicados, conocidos
+como \emph{Van der Meer scans} \cite{vanderMeer:296752}, realizados durante el
+mes de Noviembre del a\~no 2012. La incerteza sistemática relativa en la medida
+de la luminosidad integrada estimada es $\pm$2.8\% \cite{lumi2012}.
 
-
-\subsubsection{Incerteza debida al pile-up ($\alpha_\mathrm{PRW}$)}
-
-Como se explicó en la \cref{sec:prw} es necesario realizar
-un repesado evento a evento en las muestras simuladas para modelar las condiciones
-de pile-up de los datos. Para calcular la incerteza asociada a estre procedimiento
-se varian los factores de escala dentro de su incerteza.
-
-%% Siguiendo las recomendaciones de ATLAS, se utiliza
-%% un factor de $1.09 \pm 0.04$ aplicado al valor medio del número de
-%% interacciones por cruce de haz ($\avg{\mu}$) en el repesado debido al pile-up en las muestras simuladas
-%% para describir mejor la multiplicidad de vértices del minimum bias en los datos.
-%% La incerteza asociada es calculada variando este factor de escala dentro
-%% de su incerteza.
+Esta incerteza debe ser propagada a todas las muestras simuladas utilizadas
+para la estimación de fondo y señal ya que estas son normalizadas a la
+luminosidad de datos analizada.
 
 
-\subsubsection{Incerteza en la identificación, escala de energía y resolución de fotones y leptones}
+\subsubsection{Trigger}
+
+La estimación de la eficiencia del trigger de fotones utilizado y su incerteza se presentó
+en la \cref{sec:trigger}. La incerteza sistemática resulta $< 1\%$. %%, siendo esta igual a $100^{+0}_{-1.41}\stat \, {}^{+0}_{-0.7}\syst \%$.
+
+
+
+\subsubsection{Pile-up}
+
+En la \cref{sec:sim_atlas} se presentó la necesidad de realizar un repesado
+evento a evento en las muestras simuladas para modelar las condiciones de
+\emph{pile-up} de los datos, ya que las muestras MC se simulan con un perfil de
+\emph{pile-up} fijo. Para calcular la incerteza asociada a este procedimiento se
+varia el valor medio del número de interacciones por cruce de \emph{bunches} en
+$\pm 10\%$.
+
+%% %% Siguiendo las recomendaciones de ATLAS, se utiliza
+%% %% un factor de $1.09 \pm 0.04$ aplicado al valor medio del número de
+%% %% interacciones por cruce de haz ($\avg{\mu}$) en el repesado debido al pile-up en las muestras simuladas
+%% %% para describir mejor la multiplicidad de vértices del minimum bias en los datos.
+%% %% La incerteza asociada es calculada variando este factor de escala dentro
+%% %% de su incerteza.
+
+
+\subsubsection{Escala de energía y resolución de energía de fotones y leptones}
 
 Como se menciona en la \cref{sec:fotones}, es necesario aplicar factores de
-escala a los fotones en las muestras MC para corregir su eficiencia. La
-incerteza en estos factores es propagada a través del análisis, siguiendo
-\cite{PhoEffTwiki}. %to obtain the number of tight identified photons and
-related variables. La incerteza en la escala de energia de los fotones y
-electrones se tiene en cuenta de acuerdo a cuatro
-componentes\cite{EGScaleTwiki}: $\alpha_\text{EGZEE}$ (incerteza debido a la
-diferencia en la escala de energia proveniente del $Z$), $\alpha_\text{EGMAT}$ (incerteza debido al material),
-$\alpha_\text{EGPS}$ (presampler), y $\alpha_\text{EGLOW}$ (electrones de bajo \pt).
+escala a las muestras MC para corregir la eficiencia de  identificación
+de electrones y fotones. Estos factores son provistos por los grupos
+de \textsc{Egamma} de ATLAS, y la incerteza en estos factores, la cual es menor al 3\%, es propagada
+a través del análisis, siguiendo \cite{PhoEffTwiki,EleEffTwiki,EGScaleTwiki,MCPTwiki}.
 
-Los factores de escala están basadas en la combinación de varias medidas data-driven.
-%% Los valores centrales y las incertezas son provistos por el grupo Egamma mediante la herrmaienta
-%% \texttt{PhotonEfficiencyCorrectionTool}. %and propagated here to the MC background predictions ({\bf systPhId}).
-%% Sin embargo, el requerimiento de aislamiento aplicado para derivar los SFs
-%% (\texttt{topoEtcone40} $< 4\gev$) no es el mismo que el utilizado en este análisis. Para tener esto
-%% en cuenta,
+La estimación de la incerteza en la escala y resolución de energía de los fotones y
+electrones \cite{EGScaleTwiki} también es considerada y posee el mismo orden de magnitud.
 
-%% the tight identification efficiency was evaluated after each isolation criteria
-%% for photons with $\pt>125\gev$ in both signal and \gjet\ MC. The effect is found to be very small ($<1\%$) and it is neglected.
-
-%% Uncertainties on photon energy scale and resolution are also considered following \Ref \cite{EGScaleTwiki}.
-
-
-
-%% \subsection{Incerteza en la identificación, escala de energía y resolución de leptones}
-%%($\alpha_\text{EGZEE}$, $\alpha_\text{EGMAT}$, $\alpha_\text{EGPS}$, $\alpha_\text{EGLOW}$, $\alpha_\text{EGRES}$)}
-
-
-Similar a los fotones, la incerteza en la eficiencia de identificación ($\alpha_\text{EEFF}$), y resolución de
-la enegia ($\alpha_\text{EGRES}$) son consideradas siguiendo \cite{EleEffTwiki}, \cite{EGScaleTwiki}
-y \cite{MCPTwiki}.
+Como el requerimiento de aislamiento de fotones aplicado por la herramienta oficial para derivar los factores de corrección
+es distinto al utilizado en el análisis, la eficiencia de identificación es evaluada nuevamente
+para los distintos criterios de aislamiento para fotones con $\pt>125\gev$ en muestras MC
+de señal y fondo. Se encuentra que el efecto es $<1\%$ y por lo tanto es despreciado.
 
 
 
 
+\subsubsection{Escala y resolución de energía de los jets}
 
-\subsubsection{Escala de energía de jets ($\alpha_\mathrm{JES}$)}
+%% La energia de los jets es aumentada y disminuida (de forma correlacionada) en
+%% $\pm1\sigma$ de la incerteza total de la escala de energia de jets, utilizando
+%% una herramienta (\textsc{JetUncertainties}) provista por el grupo de Jet/Etmiss de ATLAS \cite{JesTwiki}.
 
-La energia de los jets es aumentada y disminuida (de forma correlacionada) en
-$\pm1\sigma$ de la incerteza total de la escala de energia de jets, utilizando
-una herramienta (\textsc{JetUncertainties}) provista por el grupo de Jet/Etmiss de ATLAS \cite{JesTwiki}.
-Esta herramienta provee la incerteza relativa en la escala de energia de los jets,
-que es la suma en cuadratura de tres componentes dependientes de: el {\pt} y $\eta$
-del jet, el $\Delta R$ al jet mas cercano, y la composicion media quark-gluon de la muestra.
-
-
-%% The jet energy is scaled up and down (in a fully correlated way) by the
-%% $\pm1\sigma$ total uncertainty on the jet energy scale obtained using the
-%% {\small \texttt{JetUncertainties}} package (v00-08-07) provided by the
-%% Jet/Etmiss group \cite{JesTwiki}. The nominal analysis uses only the total JES
-%% uncertainty, although it has been checked that the effect of using the reduced
-%% set of JES components on the fit results is within 1\% (see
-%% \cref{sec:JEScheck}).
-
-\subsubsection{Resolucion de la energia de jets ($\alpha_\mathrm{JER}$)}
-
-A fin de tener en cuenta una posible subestimacion de la resolucion de energia de los jets
-en la simulacion MC, se realiza un smearing del {\pt} de los jets en funcion de su \pt y su $\eta$.
-Cada jet es smeareado de acuerdo a una distribucion Gausiana, de media unidad y un ancho
-dado por una funcion de resolucion dependiente de {\pt} y $\eta$. Para evaluar el impacto
-de la incerteza sistematica debida a la resolucion de energia, el número de eventos obtenido utilizando
-los jets nominales es comparado con los resultados obtenidos de los jets smeareados.
-Este procedimiento tambien se realiza utilizando una herramienta provista por el grupo de Jet/Etmiss
-de ATLAS.
- %% An extra \pt smearing is added to the jets based on their \pt and $\eta$ to
- %% account for a possible underestimate of the jet energy resolution in the MC
- %% simulation. This is done using the \texttt{JetResolution-02-00-03} package. The
- %% so found yield differences are then applied as a $\pm$ uncertainty.
+%% %% The jet energy is scaled up and down (in a fully correlated way) by the
+%% %% $\pm1\sigma$ total uncertainty on the jet energy scale obtained using the
+%% %% {\small \texttt{JetUncertainties}} package (v00-08-07) provided by the
+%% %% Jet/Etmiss group \cite{JesTwiki}. The nominal analysis uses only the total JES
+%% %% uncertainty, although it has been checked that the effect of using the reduced
+%% %% set of JES components on the fit results is within 1\% (see
+%% %% \cref{sec:JEScheck}).
 
 
-\subsubsection{Eficiencia de identificación de {\bjets} ($\alpha_\text{BJET}$)}
+La calibración de la escala de energía de los jets a la escala hadrónica correspondiente,
+tiene una incerteza asociada debida a distintas fuentes, entre las que se encuentran
+la respuesta del calorímetro y el \emph{pile-up}.
+La sobre-estimación o subestimación de la de energía puede resultar
+en que se seleccione un conjunto distinto de jets para el análisis. debido a que la corrección
+no es la misma para todos los jets y depende de sus propiedades. Para evaluar el efecto
+de esta incerteza en los eventos seleccionados, la corrección es modificada
+en $\pm 1\sigma$, utilizando una herramienta provista por el grupo de \textsc{Jet/Etmiss}
+de ATLAS \cite{JesTwiki}.
 
-La identificacion de {\bjets} solo es utilizado en la seleccion de las regiones de control CRW y CRT.
-En estas regiones, se evalua la incerteza del mismo, variando los factores de escala
-aplicados a cada jet en las simulaciones, que dependen de $\eta$, {\pt}, dentro del rango
-que refleja la incerteza sistematica en la eficiencia medida de identificacion de {\bjets}.
+El impacto de la incerteza asociada a la resolución de energía
+de los jets es considerando comparando el número de eventos obtenidos
+utilizando los jets nominales considerados en el análisis con los obtenidos modificando
+la energía de los jets de acuerdo a una distribución Gausiana, de media 1 y ancho igual
+a la incerteza.
+
+%% A fin de tener en cuenta una posible subestación de la resolución de energía de los jets
+%% en la simulación MC, se realiza un smearing del {\pt} de los jets en función de su \pt y su $\eta$.
+%% Cada jet es smeareado de acuerdo a una distribución Gausiana, de media unidad y un ancho
+%% dado por una función de resolución dependiente de {\pt} y $\eta$. Para evaluar el impacto
+%% de la incerteza sistemática debida a la resolución de energía, el número de eventos obtenido utilizando
+%% los jets nominales es comparado con los resultados obtenidos de los jets smeareados.
+%% Este procedimiento también se realiza utilizando una herramienta provista por el grupo de Jet/Etmiss
+%%de ATLAS.
+
+%% Los jets producidos depositan su energia en los acalorimetros,
+%% pero esta energia medida no se corresponde con la energia real del quark original que
+%% produjo el jet. La calibracion JES corrige la energia medida por los calorimetros. La
+%% incerteza de esta correccion aparece debido a distintas fuentes incluyendo la respuesta
+%% del calorimtro y el pile-up.
 
 
-%% information in this analysis. In this particular region, the b-tagging
-%% uncertainty is evaluated by varying the $\eta-$, $\pt-$ and flavour-dependent
-%% scale factors applied to each jet in the simulation within a range that reflects
-%% the systematic uncertainty on the measured tagging efficiency and mistag rates.
-%% These variations are applied separately to B-jets, C-jets and light jets,
-%% leading to three uncorrelated systematic uncertainties.
+%% Esta herramienta provee la incerteza relativa en la escala de energia de los jets,
+%% que es la suma en cuadratura de tres componentes dependientes de: el {\pt} y $\eta$
+%% del jet, el $\Delta R$ al jet mas cercano, y la composicion media quark-gluon de la muestra.
+
+%% There is an uncertainty associated with the jet energy scale (JES) calibration of
+%% jets to the hadronic scale [114]. Jets produced at ATLAS provide energy deposits
+%% in the calorimeters, and the energy measured will not correspond to the true energy
+%% of the original quark producing the jet. The JES calibration offers a correction to
+%% the calorimeter-measured energy, scaling it to better represent the energy of the
+%% particles in the jet. The uncertainty on this correction arises from many sources
+%% including calorimeter response and pile-up of events at the interaction point. An
+%% over- or under-estimate of the JES can result in a different set of jets being selected
+%% for analysis since the correction is not the same for all jets and depends on their
+%% properties. To evaluate the effect of the JES uncertainty on the data selections
+%% the corrections associated with each JES component are fluctuated up and down
+%% resulting in separate distributions from the ±1σ variations.
+
+%% A total of seven JES
+%% parameters are used for these variations, with these being associated to the flavour
+%% composition and response of the simulated sample, the η-calibration modelling,
+%% the b-jet energy scale, the topology of pile-up interactions and those from in-situ
+%% jet-balance measurements.
 
 
-\subsubsection{Término soft de \MET ($\alpha_\text{SCALEST}$, $\alpha_\text{RESOST}$)}
 
-Al modificar la escala de enegia de los objetos o la resolucion de energia de los jets, esto
-se propaga al termino correspondiente en el calculo de {\met}.
+%% \subsubsection{Resolucion de la energia de jets ($\alpha_\mathrm{JER}$)}
 
-Adicionalmente, el tambien se evalua la incerteza en el termino soft de {\met}, variando
-la escala de energia de los clusters, utilizando una herramienta provista por
-el grupo Jet/Etmiss de ATLAS. %% (\textsc{MissingETUtility}).
-Tambien se tiene en cuenta la incerteza de la resolucion en el termino soft.
 
-%% The impact of the scales uncertainties on the soft term which enters in \MET\ is
-%% estimated by varying these scales up and down using the
-%% \texttt{MissingETUtility-01-03-03} package. The resolution uncertainty on the
-%% cell out term is also included.
+%%  %% An extra \pt smearing is added to the jets based on their \pt and $\eta$ to
+%%  %% account for a possible underestimate of the jet energy resolution in the MC
+%%  %% simulation. This is done using the \texttt{JetResolution-02-00-03} package. The
+%%  %% so found yield differences are then applied as a $\pm$ uncertainty.
 
+
+\subsubsection{Eficiencia de identificación de {\bjets}} %% ($\alpha_\text{BJET}$)}
+
+La identificación de {\bjets} solo es utilizada en la selección de las regiones
+de control CRW y CRT. En estas regiones, se evaluó la incerteza
+variando los factores de escala aplicados a cada jet en las simulaciones, que
+dependen de $\eta$ y {\pt}, dentro del rango que refleja la incerteza sistemática
+en la eficiencia medida de identificación de {\bjets}. Esta eficiencia fue
+medida en datos y para el algoritmo utilizado MV1 (y la configuración que se
+corresponde a una eficiencia de 70\% para una muestra $t\bar{t}$), la
+incerteza varía entre 5\% y 19\%, aumentando con el {\pt} del jet
+\cite{btagging}.
+
+
+
+\subsubsection{Energía faltante}
+
+Al modificar la escala de energía de los objetos o la resolución de energía de los jets, el
+efecto se propaga al término correspondiente en el cálculo de {\met}.
+Adicionalmente, también se evalúa la incerteza en el término \emph{soft} de {\met}, variando
+la escala y resolución de energía de los \emph{clusters}, utilizando una herramienta provista por
+el grupo \textsc{Jet/Etmiss} de ATLAS.
+
+
+\subsubsection{Estimación de los fondos de electrones y jets mal identificados}
+
+La estimación de los fondos provenientes de la mala identificación de electrones
+o jets a partir de los datos ha sido discutida en detalle en las \cref{sec:efakes,sec:jfakes}.
+
+En el caso de electrones dicha estimación se obtiene multiplicando el número de eventos
+de una muestra de electrones en cada región de señal por el factor {\feg} relacionado
+con la probabilidad de que un electrón sea identificado como un fotón.
+Este factor es calculado a partir de una muestra de datos {\Zee} y varía entre 1.4\% y 3.3\%
+dependiendo del {\abseta} del electrón, con una incerteza sistemática del 25\%-35\%.
+El efecto de la incerteza sistemática en el factor {\feg} se propaga en
+el análisis comparando el número de eventos obtenido en las SR, modificando este factor
+en $\pm 1\sigma$.
+
+El fondo de jets identificados como fotones es estimado teniendo en cuenta las
+diferencias en el perfil de la energía de aislamiento entre fotones reales y falsos. A partir
+de estas diferencias se calcula la fracción de fotones falsos $f_{j\to\gamma} = 0.0857 \pm 0.0002 \stat \pm 0.04 \;\syst$.
+La incerteza sistemática en esta fracción tiene en cuenta las posibles incertezas
+del método utilizado, y se propaga al número de eventos en las SR, variando
+este factor en $\pm 1\sigma$.
 
 
 
 \subsection{Incertezas Teóricas}\label{sec:theosyst}
 
 
-\subsubsection{Señal}\label{sec:syst_signal}
+\subsubsection{Señal de SUSY}\label{sec:syst_signal}
 
-La sección eficaz para la producción de pares de gluinos  fue calculada utilizando
-el programa {\nllfast} de acuerdo a las recomendaciones explicadas en \cref{sec:xs_calc}.
+La sección eficaz de producción de pares de gluinos fue calculada utilizando
+el programa {\nllfast}, al igual que las incertezas asociadas debido la elección
+de la escala de renormalización y factorización, y a la elección de la PDF.
+Para ello se siguen las recomendaciones PDF4LHC \cite{Botje:2011sn} como
+se describe en detalle en la \cref{sec:xs_calc}.
 
-%% For the case of CTEQ6.6, three types of uncertainties, namely the PDF uncertainty, the scale un-
-%% certainty and the αs uncertainty are taken into account. The PDF uncertainty is the 68% C.L. ranges
-%% estimated with the error PDF sets for each PDF, where in case of CTEQ6.6 (MSTW2008 NLO) the varia-
-%% tions of 22 (20) parameters spanning to the range of experimental uncertainties gives 44 (40) diﬀerent
-%% outcomes of cross sections. The αs uncertainty is deﬁned as one half of the diﬀerence between the two
-%% extreme variations in CTEQ6.6AS PDF sets.
-%% The scale uncertainty is the deviations in the cross section central value by varying the factorisation
-%% and the renormalisation scales by factors of two or one half. Three components are considered to be
-%% independent and summed in quadrature. The same procedure is applied in case of the MSTW2008 NLO
-%% except for the αs uncertainty, which is absent for MSTW2008 NLO. The nominal value is taken to be the
-%% midpoint of the upper and lower envelopes. The uncertainty is assigned as the half of the full width of
-%% the envelop. From deﬁnition, the uncertainty is symmetric in plus and minus sides.
-
-%% For the $\gluino\gluino$ grid the squarks and all other SUSY partner masses are effectively set to
-%% a very large scale (2.5 \TeV), so to suppress their production. Defining this large scale is arbitrary and in some cases it may
-%% have a non-negligible impact in the production of the SUSY particles residing at the TeV scale (e.g. squarks at
-%% high scales can still contribute to the gluino pair production process via a t-channel exchange). Thus, instead of
-%% setting an explicit arbitrary value for the mass of the decoupled particle, the NLO+NLL calculation implemented
-%% in {\sc NLL-Fast} assumes that this production does not interfere in any possible way with the production processes of
-%% the rest of the particles.
-%Thus, the particle is completely decoupled from the rest of the phenomenology at the TeV
-%scale.
-
-Los valores centrales y sus incertezas para la grid de señal están resumidos en
-la \cref{tab:signal_xs_theo_unc}. Las incertezas totales van de 22.5\% para 800
-{\GeV} hasta 36.8\% para 1.3 \tev.
+Los valores centrales y sus incertezas para las diferentes masas de gluinos consideradas están resumidos en
+la \cref{tab:signal_xs_theo_unc}. Las incertezas totales varían entre 22.5\% para $m_{\gluino} = 800\GeV$
+y 36.8\% para $m_{\gluino} = 1.3 \tev$.
 
 \begin{sidewaystable}[!htbp]
   \centering
-  \caption{La sección eficaz total NLO+NLL con sus incertezas y factores $k$ para los puntos de se\~nal.}
+  \caption{La sección eficaz total NLO+NLL con sus incertezas en función de la masa de los gluinos. Se detallan
+    las diferentes contribuciones a la incerteza asociadas a la elección de la PDF,  la escala de renormalización
+    y factorización, y el valor de $\alpha_s$. Los detalles del cálculo se encuentran en \cref{sec:xs_calc}.}
   \label{tab:signal_xs_theo_unc}
 
   \begin{tabular}{l|rrrrrrrrrrr}
     \hline
-    $M_3$ [\gev]                     & 800                & 850               & 900                & 950               & 1000             & 1050             & 1100             & 1150             & 1200             & 1250        & 1300 \\
-    $m_{\tilde{g}}$ [\gev]           & 885              & 932             & 978              & 1023            & 1068           & 1113           & 1157           & 1202           & 1246           & 1290      & 1333 \\
+    $M_3$ [\gev]                             & 800                & 850               & 900                & 950               & 1000             & 1050             & 1100             & 1150             & 1200             & 1250        & 1300 \\
+    $m_{\tilde{g}}$ [\gev]                   & 885              & 932             & 978              & 1023            & 1068           & 1113           & 1157           & 1202           & 1246           & 1290      & 1333 \\
     \hline
-    Sección eficaz (Mejor) [pb]      & 0.0690             & 0.0449            & 0.0297             & 0.01984           & 0.01341          & 0.00910          & 0.00628          & 0.00432          & 0.00301          & 0.00210     & 0.00149 \\
-    Incerteza     [$\%$]             & 22.5               & 23.8              & 25.2               & 26.5         & 27.7             & 29.0             & 30.4             & 32.0             & 33.7             & 35.2        & 36.8 \\[5pt]
-    PDF enc. {\cteq} [$\%$]             & \unc{22.5}{15.3}    & \unc{23.5}{15.9}   & \unc{24.6}{16.5}    & \unc{25.8}{17.1}   & \unc{26.9}{17.7}  & \unc{28.2}{18.4}  & \unc{29.4}{19.0}  & \unc{30.7}{19.7}  & \unc{32.0}{20.4}  & \unc{33.4}{21.1}    & \unc{34.8}{21.8} \\[5pt]
-    PDF enc. {\mstw} [$\%$]             & \unc{9.5}{9.1}      & \unc{9.9}{9.4}     & \unc{10.2}{9.7}     & \unc{5.6}{5.0}     & \unc{10.9}{10.3}  & \unc{11.3}{10.6}  & \unc{11.8}{10.9}  & \unc{12.2}{11.2}  & \unc{12.6}{11.6}  & \unc{13.1}{11.9}    & \unc{13.6}{12.3} \\[5pt]
-    Scale enc. {\cteq} [$\%$]           & \unc{9.8}{9.8}      & \unc{9.9}{9.9}     & \unc{9.9}{10.0}     & \unc{5.0}{5.0}     & \unc{10.2}{10.1}  & \unc{10.3}{10.2}  & \unc{10.4}{10.3}  & \unc{10.5}{10.4}  & \unc{10.5}{10.5}  & \unc{10.7}{10.6}    & \unc{10.8}{10.7} \\[5pt]
-    Scale enc. {\mstw} [$\%$]           & \unc{10.3}{10.1}    & \unc{10.4}{10.2}   & \unc{10.5}{10.2}    & \unc{5.6}{5.3}     & \unc{10.7}{10.4}  & \unc{10.8}{10.4}  & \unc{10.9}{10.5}  & \unc{11.0}{10.6}  & \unc{11.2}{10.7}  & \unc{11.3}{10.8}    & \unc{11.4}{11.0} \\[5pt]
-    $\alpha_{s}$ enc. {\cteq} [$\%$]    & \unc{6.9}{4.7}      & \unc{7.0}{4.8}     & \unc{7.2}{4.9}      & \unc{7.4}{5.0}     & \unc{7.5}{5.1}    & \unc{7.7}{5.2}    & \unc{7.9}{5.4}    & \unc{8.1}{5.5}    & \unc{8.3}{5.6}    & \unc{8.5}{5.7}      & \unc{8.7}{5.8} \\[5pt]
-    $\alpha_{s}$ enc. {\mstw} [$\%$]    & \unc{3.2}{3.1}      & \unc{3.3}{3.1}     & \unc{3.3}{3.1}      & \unc{3.4}{3.1}     & \unc{3.4}{3.1}    & \unc{3.5}{3.0}    & \unc{3.5}{3.0}    & \unc{3.6}{3.0}    & \unc{3.6}{3.0}    & \unc{3.6}{2.9}      & \unc{3.7}{2.9} \\[5pt]
-    Sección eficaz NLL (\cteq) [pb]  & 0.0674             & 0.044             & 0.0292             & 0.0195            & 0.0132           & 0.00896          & 0.0062           & 0.00428          & 0.00299          & 0.00209     & 0.00148 \\
-    Sección eficaz NLO (\cteq) [pb]  & 0.0618             & 0.0402            & 0.0265             & 0.0177            & 0.0119           & 0.00811          & 0.00559          & 0.00384          & 0.00266          & 0.00186     & 0.00131 \\
-    Sección eficaz LO  (\cteq) [pb]  & 0.0289             & 0.0186            & 0.0121             & 0.00801           & 0.00534          & 0.00358          & 0.00244          & 0.00165          & 0.00113          & 0.000776   & 0.000539 \\
-    Factor $k$ (Best CS/LO)          & 2.4                & 2.41              & 2.46               & 2.48              & 2.51             & 2.54             & 2.57             & 2.62             & 2.67             & 2.71      & 2.76 \\
+    Sección eficaz (Mejor) [pb]              &           0.0690    & 0.0449            & 0.0297             & 0.01984           & 0.01341          & 0.00910          & 0.00628          & 0.00432          & 0.00301          & 0.00210     & 0.00149 \\
+    Incerteza     [$\%$]                     &             22.5    & 23.8              & 25.2               & 26.5         & 27.7             & 29.0             & 30.4             & 32.0             & 33.7             & 35.2        & 36.8 \\[5pt]
+    Incerteza PDF {\cteq} [$\%$]             & \unc{22.5}{15.3}    & \unc{23.5}{15.9}   & \unc{24.6}{16.5}    & \unc{25.8}{17.1}   & \unc{26.9}{17.7}  & \unc{28.2}{18.4}  & \unc{29.4}{19.0}  & \unc{30.7}{19.7}  & \unc{32.0}{20.4}  & \unc{33.4}{21.1}    & \unc{34.8}{21.8} \\[5pt]
+    Incerteza PDF {\mstw} [$\%$]             &   \unc{9.5}{9.1}    & \unc{9.9}{9.4}     & \unc{10.2}{9.7}     & \unc{5.6}{5.0}     & \unc{10.9}{10.3}  & \unc{11.3}{10.6}  & \unc{11.8}{10.9}  & \unc{12.2}{11.2}  & \unc{12.6}{11.6}  & \unc{13.1}{11.9}    & \unc{13.6}{12.3} \\[5pt]
+    Incerteza Escala {\cteq} [$\%$]          &   \unc{9.8}{9.8}    & \unc{9.9}{9.9}     & \unc{9.9}{10.0}     & \unc{5.0}{5.0}     & \unc{10.2}{10.1}  & \unc{10.3}{10.2}  & \unc{10.4}{10.3}  & \unc{10.5}{10.4}  & \unc{10.5}{10.5}  & \unc{10.7}{10.6}    & \unc{10.8}{10.7} \\[5pt]
+    Incerteza Escala {\mstw} [$\%$]          & \unc{10.3}{10.1}    & \unc{10.4}{10.2}   & \unc{10.5}{10.2}    & \unc{5.6}{5.3}     & \unc{10.7}{10.4}  & \unc{10.8}{10.4}  & \unc{10.9}{10.5}  & \unc{11.0}{10.6}  & \unc{11.2}{10.7}  & \unc{11.3}{10.8}    & \unc{11.4}{11.0} \\[5pt]
+    Incerteza $\alpha_{s}$ {\cteq} [$\%$]    &   \unc{6.9}{4.7}    & \unc{7.0}{4.8}     & \unc{7.2}{4.9}      & \unc{7.4}{5.0}     & \unc{7.5}{5.1}    & \unc{7.7}{5.2}    & \unc{7.9}{5.4}    & \unc{8.1}{5.5}    & \unc{8.3}{5.6}    & \unc{8.5}{5.7}      & \unc{8.7}{5.8} \\[5pt]
+    Incerteza $\alpha_{s}$ {\mstw} [$\%$]    &   \unc{3.2}{3.1}    & \unc{3.3}{3.1}     & \unc{3.3}{3.1}      & \unc{3.4}{3.1}     & \unc{3.4}{3.1}    & \unc{3.5}{3.0}    & \unc{3.5}{3.0}    & \unc{3.6}{3.0}    & \unc{3.6}{3.0}    & \unc{3.6}{2.9}      & \unc{3.7}{2.9} \\[5pt]
+    Sección eficaz NLL (\cteq) [pb]          &           0.0674       & 0.044             & 0.0292             & 0.0195            & 0.0132           & 0.00896          & 0.0062           & 0.00428          & 0.00299          & 0.00209     & 0.00148 \\
+    Sección eficaz NLO (\cteq) [pb]          &           0.0618       & 0.0402            & 0.0265             & 0.0177            & 0.0119           & 0.00811          & 0.00559          & 0.00384          & 0.00266          & 0.00186     & 0.00131 \\
+    Sección eficaz LO  (\cteq) [pb]          &           0.0289       & 0.0186            & 0.0121             & 0.00801           & 0.00534          & 0.00358          & 0.00244          & 0.00165          & 0.00113          & 0.000776   & 0.000539 \\
+    Factor $k$ ($\sigma_{\text{best}}/\sigma_{\text{LO}}$)          & 2.4                & 2.41              & 2.46               & 2.48              & 2.51             & 2.54             & 2.57             & 2.62             & 2.67             & 2.71      & 2.76 \\
     \hline
   \end{tabular}
 
@@ -232,21 +263,20 @@ utilizada en la simulación MC es
 tenida en cuenta considerando variaciones en la generación de eventos
 con respecto a la configuración nominal. Las variaciones consideradas
 incluyen las escalas de factorización y renormalización ($0.5\times, 2\times$),
-$\alpha_{s}$ y el modelo ISR/FSR (ver \cref{tab:mc_ttbar_samples}).
+$\alpha_{s}$, y el modelo ISR/FSR. %% (ver \cref{tab:mc_ttbar_samples}).
 
 La \cref{tab:syst_ttbargam_truth} resume los cambios relativos en el
 número de eventos esperado en cada región de señal para cada una de las
-variaciones con respecto a la muestra nominal a nivel generador.
-
-La incerteza de cada una de las tres variaciones es simetrizada, a la mayor
-entre los valores por encima y debajo, y luego sumadas en cuadratura
-a la incerteza debida a la sección eficaz para obtener la incerteza teórica
-total. %%o get the total theoretical uncertainty (denoted as {\bf theoSysTopG} in the fit).
+variaciones con respecto a la muestra nominal como resultado de un estudio realizado a nivel generador.
+La diferencia principal entre todas las variaciones y la configuración nominal
+aparece mayormente en los cortes en {\HT} y {\rt}, como es esperado ya que las
+propiedades de la actividad hadrónica del
+evento son las mas sensibles a las variaciones de escala.
 
 \begin{table}[ht!]
   \centering
-  \caption{Resumen de las incertezas teóricas del {\ttgam} obtenidas en cada región de señal.
-    Todos los números están en porcentaje.}
+  \caption{Resumen de las incertezas teóricas de la producción de {\ttgam}
+    obtenidas en cada región de señal. Todos los números están en porcentaje.}
   \label{tab:syst_ttbargam_truth}
 
   \begin{tabular}{l|cc}
@@ -264,32 +294,24 @@ total. %%o get the total theoretical uncertainty (denoted as {\bf theoSysTopG} i
 
 \end{table}
 
-La diferencia principal entre todas las variaciones y la configuración nominal
-aparece mayormente en los cortes en {\HT} y {\rt}, como es esperado ya que las
-propiedades de la actividad hadrónica del
-evento son las mas sensibles a las variaciones de escala.
+La incerteza de cada una de las variaciones es simetrizada y luego se suman
+en cuadratura para obtener la incerteza teórica
+total, que resulta en 56\% y 28 \% para {\SRL} y {\SRH}, respectivamente.
 
 
+\subsubsection{Producción de {\wgam}} %% ($\alpha_{\tgam}$)}\label{sec:syst_wgamma}
 
-\subsubsection{Producción de {\wgam} ($\alpha_{\tgam}$)}\label{sec:syst_wgamma}
-
-Similar a lo que se realizo para estimar las incertezas teóricas del {\ttgam},
+De manera similar a lo realizado para estimar las incertezas teóricas de la
+producción  de {\ttgam},
 las incertezas en el número estimado de eventos de {\wgam} fue determinada
-realizando el análisis a nivel partícula para las muestras con variaciones
-descriptas en \cref{tab:bkg_wzgamma_samples}. Además de las incertezas
-provenientes del ajuste simultaneo descripta en \cref{sec:fitconfig}, las
-siguientes incertezas en la aceptancia de la selección fueron consideradas:
-la incerteza debida a la escala de factorización y renormalización corresponde a
-la diferencia relativa entre el número esperado de eventos predicho
-para la SR con las muestras {\sherpa} en las cuales se vario la escala
-de factorización y renormalización de forma independiente por $2\times$
-y $0.5\times$ de la escala nominal, y la escala de matching\note{arreglar}
-The nominal matching scale between the ME and PS is 20 GeV. Alternative samples
-were generated with this scale changed to 15 and 30 \gev. The corresponding
-relative variation of yields in SR is considered as a systematic uncertainty.
+realizando el análisis a nivel generador para las muestras simuladas con variaciones
+de la configuración nominal. Para la incertezas
+debidas a la elección de escala de factorización/renormalización, se simularon muestras
+modificando la escala al doble y la mitad. También se consideró la incerteza debida
+a la escala de asociación entre  ME y PS, cuyo valor nominal es de 20 \gev, y para el caso de las variaciones se
+modificó a 15 y 30 \gev.
 
-
-Los valores obtenidos a partir de las diferentes fuentes de incertezas sistematicas
+Los valores obtenidos a partir de las diferentes fuentes de incertezas sistemáticas
 se resumen en la \cref{tab:syst_wgamma_truth},
 donde el valor total es de  $73$\% y $39$\% para {\SRL} y
 {\SRH}, respectivamente.
@@ -297,7 +319,7 @@ donde el valor total es de  $73$\% y $39$\% para {\SRL} y
 \begin{table}[ht!]
   \centering
 
-  \caption{Resumen de las incertezas teóricas del {\wgam} obtenida en cada región de señal.
+  \caption{Resumen de las incertezas teóricas de la producción de {\wgam} obtenidas en cada región de señal.
     Todos los números están en porcentaje.}
   \label{tab:syst_wgamma_truth}
 
@@ -307,7 +329,7 @@ donde el valor total es de  $73$\% y $39$\% para {\SRL} y
     \hline
     Escala de factorización   & $0$  & $16$ \\
     Escala de renormalización & $71$ & $33$ \\
-    Escala de CKKW matching scale   & $14$ & $12$ \\
+    Escala de asociación ME/PS (CKKW)   & $14$ & $12$ \\
     \hline
     Total  &   $73$    &  $39$     \\
     \hline
@@ -318,43 +340,16 @@ donde el valor total es de  $73$\% y $39$\% para {\SRL} y
 
 \subsubsection{Producción de fotones directos}
 
-La normalización del fondo de {\gjet} es tomado del ajuste a datos en la CR
-como se describe en \cref{bkg_gjet}. Una incerteza adicional es obtenida comparando el
+La normalización del fondo de {\gjet} y sus incertezas es tomada del ajuste a datos en la CR
+como se describe en \cref{sec:bkg_gjet}. Una incerteza adicional es obtenida comparando el
 número de eventos en las distintas regiones de señal entre la muestra nominal
-(\sherpa) y los obtenidos con otra muestra generada con {\pythia}.
-Este estudio se realizó a nivel generador para no contar nuevamente los efectos del
-detector, y la incerteza se incluyó en el ajuste como $\alpha_{\gamma j}$.
+(\sherpa) y los obtenidos con otra muestra generada con otro generador ({\pythia}).
+Este estudio se realizó a nivel generador para evitar tener en cuenta nuevamente los efectos del
+detector. Esta incerteza resultó del 45\%.
 
 
 \subsubsection{Otros fondos MC}
 
-La mayor contribución de procesos de fondo de MC en las regiones de se\~nal proviene
-del {\zgam}, para el cual se utilizó una incerteza conservativa del 100\%.
-
-
-%% \section{Resumen de las incertezas sistemáticas}\label{sec:syst_break}
-%% \hl{Agregar tabla resumiendo todas las incertezas sistemáticas}
-
-
-%% \begin{tabular}{cc}
-
-%%   \hline
-%%   \multicolumn{2}{c}{Incertezas experimentales} \\
-%%   pile-up   & \\
-%%   lumi      & \\
-%%   trigger   & \\
-%%   foton     & \\
-%%   leptones  & \\
-%%   jets      & \\
-%%   met       & \\
-%%   b-tagging & \\
-
-%%   \hline
-%%   \multicolumn{2}{c}{Incertezas teoricas} \\
-%%   senal     & \\
-%%   ttgam     & \\
-%%   wgam      & \\
-%%   phjet     & \\
-%%   others    & \\
-%%   \hline
-%% \end{tabular}
+La mayor contribución de procesos de fondo que se estiman directamente de las simulaciones
+MC en las regiones de se\~nal proviene
+del {\zgam}, para el que se utilizó una incerteza conservativa del 100\%.
