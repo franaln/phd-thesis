@@ -14,13 +14,13 @@ profundidad variable entre 50 y 174 m de la superficie.
 El complejo de aceleradores del CERN (ver \cref{fig:lhc_complex}) es una
 sucesión de aceleradores, en la cual cada acelerador inyecta el haz de protones
 en el siguiente, que se encarga de elevar la energía un poco más. El LHC, que es
-el último elemento en la cadena, esta diseñado para acelerar cada haz de
+el último elemento en la cadena, está diseñado para acelerar cada haz de
 protones a 7 \tev, alcanzando en las colisiones, energías de centro de masa de
 14 \tev, y una luminosidad de $10^{34}$ cm$^{-2}$s$^{-1}$. Los demás
 aceleradores en la cadena poseen además otros experimentos que utilizan los
 haces a energías menores.
 
-El número de eventos producidos en el LHC esta dado
+El número de eventos producidos en un colisionador, como el LHC, está dado
 por:
 
 \begin{equation}
@@ -35,7 +35,7 @@ acelerador.
 
 La luminosidad instantánea es uno de los parámetros mas importantes para
 caracterizar el funcionamiento del acelerador, definida como el número de
-partículas (protones en el caso del LHC) por unidad de tiempo y unidad de
+partículas (protones o iones pesados en el caso del LHC) por unidad de tiempo y unidad de
 área, y puede calcularse mediante la relación:
 
 \begin{equation}
@@ -45,7 +45,7 @@ partículas (protones en el caso del LHC) por unidad de tiempo y unidad de
 donde $f_\text{rev}$ es la frecuencia de revolución ($\sim 11$ kHz), $n_b$ es el número de
 \emph{bunches} (paquetes de protones) por haz, $N_i$ es el número de partículas
 en cada bunch y $A$ es la sección efectiva del haz, que puede expresarse en
-termino de los parámetros del acelerador como:
+término de los parámetros del acelerador como:
 
 \begin{equation}
   A = \frac{4\pi \epsilon_n \beta^{*}}{\gamma F}
@@ -58,13 +58,13 @@ impulsos), $\beta^{*}$ es la función de amplitud en el punto de interacción
 factor relativista de Lorentz y $F$ es un factor de reducción geométrico, debido
 al ángulo de cruce de los haces en el punto de interacción.
 
-\begin{figure}[!htbp]
+\begin{figure}[!htb]
   \centering
 
   \includegraphics[width=\textwidth]{lhc_complex}
 
   \caption{Complejo de aceleradores del CERN, incluyendo al LHC y a la serie
-    de aceleradores utilizados para proveer de protones al LHC. Tambien pueden verse
+    de aceleradores utilizados para proveer de protones al LHC. También pueden verse
     los diferentes experimentos ubicados en el acelerador.}
   \label{fig:lhc_complex}
 
@@ -72,7 +72,7 @@ al ángulo de cruce de los haces en el punto de interacción.
 
 El diseño del LHC contempla trenes de 2808 paquetes de $\sim 10^{11}$ protones cada uno,
 espaciados temporalmente en $\unit[25]{ns}$.
-Para acelerar los haces de protones y mantenerlos en sus orbitas circulares el
+Para acelerar los haces de protones y mantenerlos en sus órbitas circulares el
 LHC cuenta con 1232 dipolos magnéticos superconductores que generan un campo
 magnético de $\unit[8.4]{T}$ enfriados a $\unit[1.9]{K}$. El sistema de focalización de los haces
 consiste de 392 cuadrupolos magnéticos que generan campos magnéticos de $\unit[6.8]{T}$.
@@ -83,25 +83,28 @@ Durante el año 2012, las colisiones se realizaron a $4\TeV$ por haz ($\sqrt{s} 
 8 \TeV$) y con una luminosidad que fue incrementándose hasta alcanzar los
 $\unit[2 \cdot 10^{32}]{cm^{-2}s^{-1}}$ en Octubre. Durante los a\~nos 2013 y 2014
 el LHC no estuvo en funcionamiento, y se utilizó este tiempo para prepararlo para
-la nueva etapa que comenzó en el a\~no 2015, en el cual se alcanzo una energía de $\sqrt{s} = 13 \tev$,
+la nueva etapa que comenzó en el a\~no 2015, en el cual se alcanzó una energía de $\sqrt{s} = 13 \tev$,
 una energía que nunca antes había sido alcanzada y cercana a la de su diseño
-original.
+original ($\sqrt{s} = 14 \tev$).
 
 
 
 
 \section{El detector ATLAS}
 
-ATLAS (del inglés \emph{A Torodial LHC AparatuS}) es un detector de partículas multipropósito del LHC,
-diseñado y construido para estudiar las colisiones protón-protón y un gran espectro de procesos fisicos
-en la escala de energia del \tev.
+ATLAS (\emph{A Torodial LHC AparatuS}) es un detector de partículas
+multipropósito del LHC, diseñado y construido para estudiar las colisiones
+protón-protón (y de iones pesados) y un gran espectro de procesos físicos en la
+escala de energía del \tev.
 
-\begin{figure}[!htbp]
+\begin{figure}[!htb]
   \centering
 
   \includegraphics[width=\textwidth]{atlas}
   \caption{Esquema general del detector de ATLAS. Las dimensiones del detector
-  son $\unit[25]{m}$ de altura y $\unit[44]{m}$ de largo. El peso promedio es de aproximadamente 7000 toneladas.}\label{fig:atlas}
+    son $\unit[25]{m}$ de altura y $\unit[44]{m}$ de largo. El peso promedio es
+    de aproximadamente 7000 toneladas.}
+  \label{fig:atlas}
 
 \end{figure}
 
@@ -140,10 +143,11 @@ están ubicados como discos consecutivos perpendiculares a la dirección del haz
   \includegraphics[width=0.9\textwidth]{figura} %how_atlas_works}
 
   \caption{Esquema del corte transversal del detector de ATLAS, ilustrando los distintos
-  sub-detectores y el pasaje de las distintas particulas y en que detector depositan su energia.}
+  sub-detectores y el pasaje de las distintas partículas.}
   \label{fig:how_atlas_works}
 
 \end{figure}
+
 
 \subsection{Sistema de coordenadas}
 
@@ -154,7 +158,7 @@ están ubicados como discos consecutivos perpendiculares a la dirección del haz
 
 El sistema de coordenadas y la nomenclatura utilizada para describir el detector
 ATLAS y las trayectorias de las partículas que emergen de las colisiones son
-resumidas en esta Sección, ya que se utilizaran a lo largo de la Tesis. Se
+resumidas en esta sección, ya que se utilizarán a lo largo de la Tesis. Se
 define como origen de coordenadas al punto de interacción nominal, mientras que
 la dirección del haz define el eje $z$ y el plano $x-y$ es el transversal a la
 dirección del haz. El eje $x$ se define desde el punto de interacción, apuntando
@@ -199,8 +203,8 @@ aplicar leyes de conservación sobre la cinemática de cada evento. Sin embargo,
 dado que los protones inciden a lo largo de la dirección del haz, el impulso
 total transverso es conservado durante la colisión. Por esta razón, solo las
 componentes transversales son utilizadas en la descripción de la cinemática del
-evento, por ejemplo $\et (= E \sin \theta)$ y $\pt (= p \sin \theta)$. En términos de
-la pseudo-rapidez, la energía transversa de una partícula resulta:
+evento, por ejemplo $\pt (= p \sin \theta)$. En términos de
+la pseudo-rapidez, se define la energía transversa ($\et = E \sin \theta$) de una partícula como:
 
 
 \begin{equation}
@@ -230,10 +234,10 @@ dentro del solenoide que provee un campo magnético nominal de $\unit[2]{T}$.
 
   \includegraphics[width=0.6\textwidth]{detector_interno}
   \caption{Esquema del detector interno mostrando la traza de una partícula
-    cargada de $\pt = 10\gev$ atravezándolo. La trayectoria atraviesa el
+    cargada de $\pt = 10\gev$ atravesándolo. La trayectoria atraviesa el
     tubo del haz de berilio (\emph{beam-pipe}), las tres capas del detector de píxeles de silicio (\emph{Pixel}),
     las cuatro capas dobles de sensores semiconductores (SCT), y
-    aproximadamente 36 tubos contenidos en los modulos del detector por radiación
+    aproximadamente 36 tubos contenidos en los módulos del detector por radiación
   de transición (TRT).}\label{fig:detector_interno}
 
 \end{figure}
@@ -253,7 +257,7 @@ discos en cada \emph{end-cap}.
 %% Proveen mediciones de altísima precisión y
 %% granularidad tan cerca del punto de interacción como es posible.
 El sistema
-contiene en total 80 millones de elementos, capaces de resolver la posición de las partículas mejor que 14$\mu$m.
+contiene en total 80 millones de sensores electrónicos, capaces de resolver la posición de las partículas mejor que 14$\mu$m.
 
 
 \subsubsection{SCT}
@@ -267,6 +271,7 @@ $\sim$200 $ \mu$m. El SCT cubre el rango de pseudorapidez de $|\eta|<$2.5.
 
 
 \subsubsection{TRT}
+
 La parte más externa del detector de trazas es el detector de radiación de
 transición (TRT). Este detector está basado en el uso de detectores tubos que
 pueden operar a alta frecuencia de eventos gracias a su pequeño diámetro (4mm) y
@@ -277,7 +282,7 @@ de transición que permite distinguir entre partículas cargadas pesadas y
 livianas. La separación entre señales de trazas y de radiación por transición se
 hace analizando tubo por tubo impactos de alto umbral e impactos de baja señal.
 El largo de los tubos varía segun la zona del detector, llegando hasta los 144
-cm en la zona del barril. El Barril contiene 50000 tubos y las tapas contienen
+cm en la zona central. El \emph{barrel} contiene 50000 tubos y las \emph{end-caps} contienen
 320000 tubos orientados radialmente. El número total de canales es de 420000 y
 la resolución espacial es de 0.17mm.
 
@@ -307,10 +312,9 @@ plomo. El espesor total del calorimetro electromagnetico\ es $>$24 $X_0$ en el
 barril y $>$26 $X_0$ en las tapas, ($X_0$ = longitud de radiación).
 
 En la región dedicada a los estudios de física de precisión ($|\eta|<$2.5) el
-calorímetro electromagnético está segmentado en tres secciones longitudinales.%
-%como se esquematiza en la figura \ref{fig:caloem}.
+calorímetro electromagnético está segmentado en tres secciones longitudinales.
 
-\begin{figure}[!htbp]
+\begin{figure}[!htb]
   \centering
 
   \includegraphics[width=0.9\textwidth]{calorimetros}
@@ -365,12 +369,13 @@ muones \cite{muonTDR} se encuentra situado en la parte más exterior del detecto
 ATLAS, alrededor del sistema de imanes de toroides, y está diseñado para obtener
 mediciones de alta precisión de posición e impulso de muones de alto \pt.
 
-%% \begin{figure}[H]
-%%   \centering \includegraphics[width=0.7\textwidth]{figures/figura}
-%%   \caption{Espectrómetro de muones del detector de ATLAS}\label{fig:especmuones}
-%% \end{figure}
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/figura}
+  \caption{Espectrómetro de muones del detector de ATLAS}\label{fig:especmuones}
+\end{figure}
 
-La figura \ref{fig:especmuones} muestra un esquema del espectrómetro de muones
+La \cref{fig:especmuones} muestra un esquema del espectrómetro de muones
 de ATLAS. Es el subdetector más grande y el que le da a ATLAS su tamaño.
 
 La región del barril está compuesta por tres capas concéntricas de cámaras de
@@ -380,13 +385,13 @@ por cuatro capas de cámaras de trigger y cámaras de precisión a $|z|$= 7.4m,
 10.8m, 14m y 21.5m cubriendo el rango de 1.0$<|\eta|<$2.7. Hay una pequeña
 brecha en $|z|=0$ que permite el acceso de los servicios al ID.
 
-El espectrometro de muones es el sub-detector mas grande de ATLAS, construido
+El espectrómetro de muones es el sub-detector mas grande de ATLAS, construido
 dentro y alrededor de los imanes toroidales. Los muones son altamente penetrantes
-y son las unicas particulas (excepto las invisibles que interacuan) que lelgan
-a el sistema de muones. Los muones pierden parte de su energia mientras penetran
-las capas internas de ATLAS antes de llegar al espectrometro de muones. La perdida
-de energia tiene que ser tenida en cuenta utilizando los depositos de energia
-en los calorimetros
+y son las únicas partículas (excepto las invisibles que no interactúan) que llegan
+a el sistema de muones. Los muones pierden parte de su energía mientras penetran
+las capas internas de ATLAS antes de llegar al espectrómetro de muones. La perdida
+de energía tiene que ser tenida en cuenta utilizando los depósitos de energía
+en los calorímetros.
 
 %% The muon system is exposed to challenging background conditions. Final state
 %% particles undergoing secondary interactions in the detector, shielding or surround-
@@ -476,15 +481,15 @@ El LHC esta disenado para proveer colisionesión $pp$
 de $\mathcal{O}(1)$ GHz, considerando una frecuencia de cruce de haces
 de $\unit[40]{MHz}$ y $\sim$ 23 interacciones por cruce.
 Dado que la mayoría de
-los eventos son de baja energía y no son de interés para los análisis de fisica,
+los eventos son de \hl{baja energía} y no son de interés para los análisis de fisica,
 y también debido a las limitaciones de almacenamiento y de
 poder de computo, el flujo de datos incidente debe ser reducido al máximo
-permitido para su almacenamiento permanente ($\sim 200$ Hz) \cite{Aad:2012xs}. El tamaño típico
+permitido para su almacenamiento permanente ($\sim 200$ Hz)\note{400?} \cite{Aad:2012xs}. El tamaño típico
 por evento es de $\sim 1.4$ MB, lo que resulta en un ancho de banda requerido de
 $\sim 300$ MB/$s$. Esta reducción se logra mediante una rápida y eficiente
 preselección de eventos, conocida como \emph{trigger}.
 
-Esencialmente, el sistema de \emph{trigger} de ATLAS[ref] consiste en una selección
+Esencialmente, el sistema de \emph{trigger} de ATLAS\hl{[ref]} consiste en una selección
 de eventos basada en tres niveles:
 Nivel 1 (L1), Nivel 2 (L2) y Filtro de eventos (EF), donde
 los dos últimos conforman el \emph{High Level Trigger} (HLT). Cada nivel permite
@@ -515,7 +520,7 @@ hadrónico.
 %% El \emph{trigger} de muones en el L1 utiliza las medidas de las trayectorias en
 %% las diferentes estaciones de las cámaras de trigger: las RPCs en la región del
 %% barrel y las TGCs en los endcaps.
-La aceptancia geométrica del L1 esta ligada al diseño del detector, donde las medidas de precisión en los
+La aceptancia geométrica del L1 está ligada al diseño del detector, donde las medidas de precisión en los
 calorímetros y la cobertura del detector interno están limitadas a la región
 $\abseta < 2.5$. El trigger de fotones, electrones, muones y taus debe asegurar
 la cobertura en esta región. En el caso del trigger de jets, las torres del \emph{trigger}
@@ -526,7 +531,7 @@ en el \emph{Central Trigger Processor} (CTP), en donde se aplica una serie de
 selecciones definidas como una combinación de criterios
 individuales, que pueden ser ajustados según la luminosidad y los requerimientos
 físicos particulares de cada toma de datos. Un total de 256 configuraciones
-(\emph{items}) estan disponibles en el L1, donde se programa el tipo de RoI (EM,
+(\emph{items}) están disponibles en el L1, donde se programa el tipo de RoI (EM,
 TAU, JET, etc.) y los umbrales de energía total y de aislamiento requeridos en
 cada caso. Por ejemplo, el item L1EM14 acepta eventos donde al menos un (dos)
 cluster(s) en el calorímetro electromagnético posee(n) $\et \geq 14 \GeV$.
@@ -546,7 +551,7 @@ En general, si bien la selección se basa en las mismas variables que la
 identificación offline descripta en la \cref{sec:obj_photons} (sobre las características de
 las lluvias electromagnéticas), los valores de corte en cada variable son
 relajados (o a lo sumo igualados) respecto a la selección offline, para evitar
-el rechazo prematuro de candidatos que satisfacen los criterios identificación
+el rechazo prematuro de candidatos que satisfacen los criterios de identificación
 durante el análisis final. La última etapa de la selección del trigger se lleva
 a cabo en el EF, que reduce la frecuencia de eventos a $\sim
 \unit[200]{Hz}$ ($\sim \unit[300]{MB/s}$). En este nivel se tiene acceso a toda
@@ -581,11 +586,11 @@ una de las \emph{cadenas} del trigger, que toman el nombre de la signature del
 HLT (es decir,  \texttt{ipX\_Y} según la convención anterior) y conforman el \emph{menu} final
 del trigger.
 
-Para cada item del trigger a Nivel 1 (L2/EF) se puede asignar además
+Para cada item del trigger se puede asignar además
 un factor de escala o prescale (PS), que define la frecuencia con la que un dado
 item es evaluado por el trigger (es decir solo en uno de cada PS eventos).
 Se habla de una cadena de trigger \emph{unprescaled} si su factor de escala es
-$PS = 1$ en cada nivel, e decir, es evaluada en todos los eventos. La asignación de estos
+$\text{PS} = 1$ en cada nivel, es decir, es evaluada en todos los eventos. La asignación de estos
 factores se hace incluso dinámicamente durante una toma de datos, para tener en
 cuenta el descenso de la luminosidad instantánea con el tiempo y mantener la
 tasa de procesamiento aproximadamente constante.
@@ -599,10 +604,10 @@ miembros de la colaboración un acceso ágil, directo y distribuido a la gran
 cantidad de datos colectados por el detector ($\sim \text{PB}/\text{a\~no}$),
 así como a las diversas simulaciones MC. El modelo se basa en la tecnología
 GRID, compartiendo el poder de procesamiento y la capacidad de almacenamiento
-disponibles en distintos centros de computo asociados alrededor del mundo.
+disponibles en distintos centros de cómputo asociados alrededor del mundo.
 
 El software de ATLAS se desarrolla dentro un entorno C++ común llamado
-\textsc{Athena} \cite{CompuTDR,Lenzi:1214931,Calafiura:865624}, basado en el projecto GAUDI \cite{Gaudi}. Todo el
+\textsc{Athena} \cite{CompuTDR,Lenzi:1214931,Calafiura:865624}, basado en el proyecto GAUDI \cite{Gaudi}. Todo el
 procesamiento de los datos en ATLAS se realiza dentro de este entorno,
 incluyendo la implementación y configuración del HLT, la simulación de la
 respuesta del detector, la generación de las muestras MC de los distintos
@@ -626,10 +631,28 @@ modelo de análisis único y garantizar la consistencia en la comparación de es
 con los datos experimentales.
 
 
-
 \section{Datos de colisiones $pp$ a $\sqrt{s} = 8$ \tev}
 
-%%\hl{Explicar como se divide la toma de datos, criterios de calidad, GRL, ...}
+Un concepto importante es el de \emph{pile-up}, que significa que las partículas
+producidas en mas de una colisión partícula-partícula llegan al detector al
+mismo tiempo, o mas generalmente que sus señales se superponen de una forma que
+no puede ser separadas. Cuando los \emph{bunches} de protones colisionan, la
+probabilidad de una interacción es proporcional a la densidad de partículas, o
+mejor, al flujo de partículas, el cual se expresa con la luminosidad
+instantánea. El numero de colisiones de partículas real que tienen lugar cuando
+los dos \emph{bunches} se cruzan es una variable aleatoria que sigue una
+distribución de Poisson. Para bajas luminosidades, en la mayoría de los cruces
+de haces, nada pasa. Para luminosidades instantánea altas, en la mayoría de los
+cruces se producen muchas colisiones de partículas al mismo tiempo. En lo
+siguiente $\avg{\mu}$ se define como el valor medio (esperado) de interacciones
+inelasticas $pp$ por cruce de \emph{bunches}. Es una medida cuantitativa
+importante de la actividad en el event y puede ser calculada a partir de la
+luminosidad instanea. Al igual que $L$, $\avg{\mu}$ depende del numero de
+protones que contienen los \emph{bunches}, que no es necesariamente el mismo
+para todos los \emph{bunches} en el acelerador.
+
+
+\hl{Explicar como se divide la toma de datos, criterios de calidad, GRL, ...}
 
 Durante el ano 2012 ATLAS colecto datos de las colisiones $pp$ provistas
 por el LHC a una energia de centro de masa $\sqrt{s} = 8\tev$. La toma de datos
