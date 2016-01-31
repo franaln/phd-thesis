@@ -1,19 +1,19 @@
 \chapter{Estimación de los fondos} \label{cap:fondos}
 
-Como se describe en el Capítulo (\cref{sec:signal_regions}), a partir de las
+Como se describe en el \cref{sec:signal_regions}, utilizando las
 muestras MC, se estima que la contribución dominante de fondos del Modelo
 Estándar es la producción de {\wgam} y {\ttgam}. Además en la {\SRL} también se
 espera una contribución de procesos de {\ttbar} en los que un electrón es mal
 identificado como fotón.
 
-En este Capítulo se describe la estrategia utilizada para la estimación de los
+En este capítulo se describe la estrategia utilizada para la estimación de los
 fondos contaminantes provenientes de procesos del SM.
 %% En elcaso de que estos
 %% no puedan ser calculados a partir de simulaciones MC debido a que los modelos
 %% son incompletos
 Los fondos provenientes de electrones o jets mal identificados como fotones son
 estimados a partir los datos observados como se describe en
-\cref{sec:efakes,sec:jetfakes}. Para los fondos mas importantes, {\wgam} y
+\cref{sec:efakes,sec:jetfakes}\note{Revisar parrafo}. Para los fondos mas importantes, {\wgam} y
 {\ttgam}, como no es posible obtener una estimación de los datos, se
 utilizan las muestras simuladas por MC pero corregidas usando los datos en
 una región de control, como se explica en la \cref{sec:bkg_wgam_ttgam}. La
@@ -35,7 +35,7 @@ las regiones de señal, se estimaron directamente de las muestras MC.
 Los eventos provenientes de la producción de {\wgam} y {\ttgam} son las
 contribuciones dominantes al fondo en ambas regiones de señal.
 
-La producción de {\wgam} es básicamente $pp \to W\gamma + X \to \nu_l
+La producción de {\wgam} dominante es básicamente $pp \to W\gamma + X \to \nu_l
 \bar{l}\gamma + X$. Cuando el leptón no es reconstruido o se pierde por la
 aceptancia del detector, pueden entrar en la SR. En el caso que el $W$
 decaiga hadrónicamente no hay energía faltante y se espera de simulaciones MC que
@@ -53,7 +53,7 @@ pide un fotón, un leptón, jets y \met. Para {\CRW} se pide además que no haya
 {\bjets} en el evento para reducir la contaminación de {\ttgam}, mientras que
 para {\CRT} se requiere la presencia de al menos uno.
 Los cortes de selección se mantienen lo
-mas similares posibles a la correspondiente SR para minimizar el efecto de la
+más similares posibles a la correspondiente SR para minimizar el efecto de la
 extrapolación, mientras que se remueven o relajan
 algunos cortes para aumentar la estadística. En especial, se relaja el corte en
 {\met} y no se aplican los cortes en {\HT} y en {\rt}. Un esquema muy simple de
@@ -67,7 +67,7 @@ dos regiones de control asociadas a cada SR.
 
   \resizebox{0.5\textwidth}{!}{\input{tikz/regions_bjets_leptons.tex}}
 
-  \caption{Regiones de control definidas para normalizar el fondo de {\wgam} (CRW) y {\ttgam} (CRT). En este contexto 'leptón' se refiere solo a electrones o muones.}
+  \caption{Regiones de control definidas para normalizar el fondo de {\wgam} (CRW) y {\ttgam} (CRT). En este contexto <<leptón>> se refiere solo a electrones o muones.}
   \label{fig:bkg_crt_crw}
 \end{figure}
 
@@ -135,14 +135,14 @@ grid, aunque es mayor (hasta 70\%) para algunos puntos de baja masa de gluino en
 \begin{figure}[!htbp]
   \centering
 
-  \includegraphics[width=0.49\textwidth]{signal_contamination_crql}
-  \includegraphics[width=0.49\textwidth]{signal_contamination_crqh}
-
   \includegraphics[width=0.49\textwidth]{signal_contamination_crwl}
   \includegraphics[width=0.49\textwidth]{signal_contamination_crwh}
 
   \includegraphics[width=0.49\textwidth]{signal_contamination_crtl}
   \includegraphics[width=0.49\textwidth]{signal_contamination_crth}
+
+  \includegraphics[width=0.49\textwidth]{signal_contamination_crql}
+  \includegraphics[width=0.49\textwidth]{signal_contamination_crqh}
 
 
   \caption{Contaminación de señal esperada en las regiones de control {\CRQ} (arriba), {\CRW} (medio) {\CRT} (abajo) asociadas a {\SRL} (izquierda) y {\SRH} (derecha).}
@@ -213,7 +213,8 @@ estos procesos es muy alta, puede resulta en una contaminación significativa.
 
 Para determinar este fondo no es posible confiar plenamente en las simulaciones
 MC, debido a que la baja cantidad de eventos similares a la señal implicaría
-usar una muestra con una muy alta cantidad de eventos. Por este motivo se diseñó
+usar una muestra con una muy alto número de eventos que resulta dificultoso desde un
+punto de vista computacional. Por este motivo se diseñó
 una región de control dominada por eventos de {\gjet} a la que se llamó {\CRQ}.
 Los detalles de la selección se pueden ver en la \cref{tab:bkg_crs}. Básicamente
 es la misma selección que la SR pero requiriendo baja energía faltante ($\met <
@@ -310,9 +311,9 @@ lluvias electromagnéticas muy similares en el detector. Los algoritmos de
 reconstrucción de fotones están diseñados para reducir la identificación errónea
 de electrones como fotones aunque, sin embargo, para poder mantener una alta
 eficiencia de reconstrucción, no se realiza una distinción demasiado estricta. En
-caso de duda, los clusters electromagnéticos, son reconstruidos bajo ambas
+caso de duda, los clusters electromagnéticos son reconstruidos bajo ambas
 hipótesis (electrón o fotón) y guardados (duplicados) en ambas categorías. Esto
-implica que electrones pueden terminar siendo reconstruidos como fotones, y si estos
+implica que algunos electrones pueden terminar siendo reconstruidos como fotones, y si estos
 pasan la selección de fotones utilizada en el
 análisis, contribuiran al fondo por mala identificación $e\to\gamma$.
 
@@ -392,7 +393,7 @@ probabilidad de identificación errónea decrece con el {\pt} del electrón
 \cite{Kuhl:1604846}.
 
 Como modelo de señal se utiliza la suma de función \emph{Crystall-Ball} y una
-Gausiana, mientras que para el modelo de fondo se utiliza un polinomio de grado
+Gausiana\footnote{porque...}, mientras que para el modelo de fondo se utiliza un polinomio de grado
 dos. En la \cref{fig:invmass_pairs} se pueden ver las distribuciones de la masa
 invariante para pares de $ee$ y $e\gam$, para la selección inclusiva, y los
 correspondientes ajustes del modelo.
@@ -438,7 +439,7 @@ convertidos y no-convertidos de forma separada.
 
 \begin{table}[!htbp]
   \centering
-  \caption{Probabilidad de que un electrón real sea identificado como un fotón,
+  \caption{Probabilidad de que un electrón real sea identificado como un fotón
     como función de la pseudo-rapidez del objeto \emph{probe}. El valor
     calculado a partir de los datos es comparado con el valor calculado con las
     muestras MC de eventos de {\Zee} utilizando dos generadores distintos.}
@@ -486,7 +487,7 @@ calculado variando el tamaño de la ventana de masa del $Z$, y sin la sustracci�
 del fondo. Como se aprecia en la \cref{tab:efake_syst} la mayor variación se
 obtine en el caso de no realizar la sustracción del fondo y por lo tanto se
 utiliza este valor como la incerteza sistemática del método, a pesar de que
-resulta el límite mas desfavorable.
+resulta el límite más desfavorable.
 
 \begin{table}[!htbp]
   \centering
@@ -519,7 +520,7 @@ El valor calculado del factor de identificación errónea de electrón en fotón
   \label{tab:efake_final}
 
   %\begin{tabular*}{0.8\textwidth}{@{\extracolsep{\fill}}cc}
-  \begin{tabularx}{0.8\textwidth}{CC}
+  \begin{tabularx}{0.8\textwidth}{LC}
 
     \hline
      Región                &  $f(e\to \gamma)$  \\
@@ -533,10 +534,10 @@ El valor calculado del factor de identificación errónea de electrón en fotón
 \end{table}
 
 
-En la {\SRL} se observaron 28 eventos que pasaban la seleccion al invertir el
-rol de foton y electron, lo que corresponde a una estimacion del fondo de
+En la {\SRL} se observaron 28 eventos que pasaban la selección al invertir el
+rol de fotón y electrón, lo que corresponde a una estimación del fondo de
 $N^{\SRL}_{e\to\gamma} = 0.38\, \pm\, 0.10$. En {\SRH}, dado el alto corte en
-{\met}, no se observo ningun evento en la muestra de electrones.
+{\met}, no se observó ningún evento en la muestra de electrones.
 
 
 
@@ -553,7 +554,7 @@ mayoritariamente de multijets, {\wjets} y eventos {\ttbar} decayendo
 semi-leptónicamente, y puede ser una fuente importante de contaminación debido a
 la gran sección eficaz de producción de estos procesos. Como la proporción de
 jets mal identificados como fotones no está bien descripta por el MC, se la
-determina utilizando un método a partir de los datos. La idea es utilizar las
+determina utilizando un método especialmente desarrollado a partir de los datos. La idea es utilizar las
 diferencias en la distribución de energía de aislamiento esperada para fotones
 reales y falsos, como se describe a continuación.
 
@@ -562,8 +563,8 @@ reales y falsos, como se describe a continuación.
 Para reducir significativamente el fondo proveniente de jets, en el análisis
 se utilizan fotones que satisfacen un criterio de selección \emph{tight}, como se
 describe en \cref{sec:obj_photons}. Esta selección es inclusiva respecto a los
-fotones reales, tiene una moderada contaminación de jets, y es por definición un
-criterio mas ajustado que el trigger de fotones utilizado para la toma de los
+fotones reales, tiene una moderada contaminación de jets y es, por definición, un
+criterio más ajustado que el trigger de fotones utilizado para la toma de los
 datos. Por esta razón, hay una suficiente cantidad de candidatos a fotones provenientes de jets
 que fallan la selección \emph{tight} pero satisfacen una selección
 intermedia. Estos jets más similares a un fotón real, llamados
@@ -596,9 +597,9 @@ forma la proporción de jets mal identificados como fotones, \fjg, resulta:
 donde $x$ es la variable de energía de aislamiento \etiso, y $S(x)$ y $B(x)$
 son las distribuciones de señal y fondo en el ajuste combinado, respectivamente.
 Esta fracción de fotones falsos es estimada en una región de control, y luego
-utilizada para pesar la muestra de fotones en la SR para estimar el número de
-eventos provenientes de jets mal identificados. Este resultado se discute en
-\cref{sec:jet_fake_results}.
+utilizada para pesar la muestra de fotones en la SR a fin de estimar el número de
+eventos provenientes de jets mal identificados. %% Este resultado se discute en
+%% \cref{sec:jet_fake_results}.
 
 
 
@@ -685,7 +686,7 @@ con el factor de corrección como se describió anteriormente. Puede verse, a pa
 del cociente en el panel inferior,
 el buen acuerdo entre las distribuciones de {\etiso} de fotones y
 electrones, en particular después de aplicar la corrección, dando confianza en la
-hipotesis de usar electrones para modelar los fotones.
+hipótesis de usar electrones para modelar los fotones.
 
 %% Vale la pena nota que el espectro de {\pt} de fotones tan bajo en estos
 %% procesos (ver {\fig} \ref{fig:zllg_pt}) as compared to the generally broader electron \pt\ spectrum from Z decay. %of the electrons (see {\fig} \ref{fig:zeeg_pt}). \tosolve{add this last plot}
@@ -717,8 +718,8 @@ hipotesis de usar electrones para modelar los fotones.
 Para estudiar el efecto en las distribuciones obtenidas de {\Zee} en distintas
 regiones cinemáticas, en la \cref{fig:electron_iso_HT}, se presentan las
 distribuciones agregando un corte en {\HT} para muestras MC y datos {\Zee}. Como
-es de esperar, la energía de aislamiento es mas alta y la distribución se hace
-mas ancha con \HT.
+es de esperar, la energía de aislamiento es más alta y la distribución se hace
+más ancha con \HT.
 Desafortunadamente, la escasa estadística impide el uso del corte en {\HT} de la
 SR. En cualquier caso, el efecto se considera como una posible fuente de
 incerteza sistemática.
@@ -792,11 +793,11 @@ por lo tanto es posible la extrapolación a la SR.
 
 \end{figure}
 
-Mas aún, como se ve en la \cref{fig:jetfake_pseudo_data_pt}, los fotones L'NT
+Más aún, como se ve en la \cref{fig:jetfake_pseudo_data_pt}, los fotones L'NT
 reproducen mejor el espectro de {\pt} de los fotones \emph{tight}, y no hace falta aplicar
 una correcion por el {\pt}. Similarmente,
-\cref{fig:jetfake_pseudo_data_BE} muestra la unica pequeña diferencia en la
-región barrel y endcap.
+\cref{fig:jetfake_pseudo_data_BE} muestra la única pequeña diferencia en la
+región \emph{barrel} y \emph{end-cap}.
 
 %% Particularly for fake events, the extrapolation from the region used to derive the faking probability ratio and
 %% the respective signal region might suffer from different topology and kinematics of the events in each case.
@@ -866,8 +867,10 @@ región barrel y endcap.
 
 \end{figure}
 
-Finalmente, se encuentra que la distribucion de los psuedo-fotones está bien descripta en la región CRFJ por una función
-\emph{Crystall-Ball}. La distribución en datos y el ajuste puede verse en la \cref{fig:jetfake_sigbkg}.
+Finalmente, se encuentra que la distribucion de los pseudo-fotones está bien
+descripta en la región CRFJ por una función \emph{Crystall-Ball}. La
+distribución en datos y el ajuste puede verse en la \cref{fig:jetfake_sigbkg}.
+
 %% The parametrized template is used in the combined
 %% fit to tight photon data to derive the jet fake rate.
 
@@ -900,7 +903,7 @@ el fondo, y se los permite variar dentro de su incerteza
 Para estimar la incerteza sistemática, el ajuste combinado es realizado
 sin ninguna limitación en los parámetros. La incerteza obtenida es del
 50\% del valor de $f_{j\to\gamma}$, lo suficientemente grande para contener
-cualquier potencial problema en el modelado de la señal y el fondo.
+cualquier potencial inexactitud en el modelado de la señal y el fondo.
 
 %The fitted parameters for the signal, background and combined fits are tabulated in \Tab \ref{tab:jetfake_fit_pars}.
 %% Los parametros estimados del ajuste combinado estan tabulados en la
@@ -1003,13 +1006,14 @@ Los valores de $a$ y $b$ obtenidos del ajuste se muestran en la
 
 La contaminación esperada de jets falsos en las SR se estima integrando la
 parametrización de $N_{j\to\gam}$ sobre la región de {\met} de cada SR.
-Debido a que las incertezas son de igual o mayor magnitud que los valores centrales,
-se utilizaron los valores de estas como la estimacion final en las SR.
 
 \begin{align}
   N_{j\to\gam}^\text{\SRL} &= \int_{200}^{\infty} N_\text{fakes}(\met) \, d\met = 0.01 \pm 0.02 \\
   N_{j\to\gam}^\text{\SRH} &= \int_{300}^{\infty} N_\text{fakes}(\met) \, d\met = 0.0001 \pm 0.0001
 \end{align}
+
+Debido a que las incertezas son de igual o mayor magnitud que los valores centrales,
+se utilizaron los valores de estas como la estimación final en las SR.
 
 
 \begin{figure}[!htbp]
