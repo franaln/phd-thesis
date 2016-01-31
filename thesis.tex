@@ -1,5 +1,5 @@
 \RequirePackage[final]{graphicx}
-\documentclass[draft]{thesis}
+\documentclass[draft,print]{thesis}
 
 % Setting pdf metadata
 \hypersetup{
@@ -25,8 +25,8 @@
 \crefname{figure}{Figura}{Figuras}
 \crefname{table}{Tabla}{Tablas}
 \crefname{equation}{ecuación}{ecuaciones}
-\crefname{section}{Sección}{Secciones}
-\crefname{chapter}{Capítulo}{Capítulos}
+\crefname{section}{sección}{secciones}
+\crefname{chapter}{capítulo}{capítulos}
 \newcommand{\crefpairconjunction}{ y }
 \newcommand{\crefmiddleconjunction}{,}
 \newcommand{\creflastconjunction}{ y }
@@ -35,6 +35,8 @@
 \usepackage[labelfont=bf]{caption}
 \usepackage{tabularx}
 \usepackage{wrapfig}
+\usepackage{cite}
+\usepackage[nottoc]{tocbibind}
 
 \setlength{\textfloatsep}{20.0pt plus 2.0pt minus 4.0pt}
 \setlength{\intextsep}{30.0pt plus 2.0pt minus 2.0pt}
@@ -90,16 +92,18 @@
 \include{simulaciones}
 \include{seleccion}
 \include{fondos}
-\include{sistematicos}
 \include{resultados}
 
 \include{conclusion}
 
+\include{agradecimientos}
+
 %% apendix
 
 %% bibliography
+%%\addcontentsline{toc}{chapter}{Agradecimientos}
 \bibliographystyle{bibstyle}
-%\bibliographystyle{unsrt}
+%% %\bibliographystyle{unsrt}
 \bibliography{thesis}
 
 \end{document}

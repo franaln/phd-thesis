@@ -18,7 +18,7 @@ estudios de optimización y la evaluación de las incertezas sistemáticas.
 
 Se espera que la producción de {\wgam} y {\zgam} sea un fondo importante
 para esta búsqueda. Ambas muestras fueron generadas usando el generador
-de eventos {\sherpa} v1.4.1\cite{SherpaGen}, con hasta 3 partones y
+de eventos {\sherpa} v1.4.1\cite{SherpaGen} y
 usando las funciones de distribución partónica CT10.
 La combinación de los elementos de matriz con las lluvias partónicas
 es realizada de acuerdo a un procedimiento mejorado CKKW\cite{Catani:2001cc,Krauss:2002up}.
@@ -35,8 +35,8 @@ de decaimientos de sabores pesados.
   \caption{Muestras de W/Z$+\gamma$.
     La sección eficaz a LO se especifica para cada modo de decaimiento,
     al igual que los factores $k$, y las eficiencias del filtro.
-    La luminosidad integrada correspondiente a la estadística total
-    de cada muestra esta también presente.}
+    La última columna contiene la luminosidad integrada correspondiente a la estadística total
+    de cada muestra.}
   \begin{tabular}{lccccc}
     \hline
     Proceso & Generador & $\sigma~[pb]$ & $k$ & Eficiencia & $L [fb^{-1}]$ \\
@@ -80,15 +80,15 @@ de decaimientos de sabores pesados.
 \label{mc_wzjets}
 
 Se espera que la producción de W$^{\pm}$ y bosones $Z$ en asociación con jets
-contribuya a esta búsqueda, con los fotones provenientes de electrones y jets
+contribuya a los fondos contaminantes de esta búsqueda, con los fotones provenientes de electrones y jets
 mal identificados. Especialmente para los segundos, esta contaminación no está
 bien descripta por el MC. Por esta razón se utilizan métodos basados en datos
 para estimar su contribución en las diferentes regiones de señal y control, como
-se describe en el \cref{cap:fondos}. De igual manera varias muestras de MC
+se describe en el \cref{cap:fondos}. Varias muestras de MC
 fueron consideradas para validar los métodos.
 
 Como se describe en el \cref{cap:seleccion} la selección de señal involucra
-muchos jets en el estado final, es importante modelar los estados final
+muchos jets en el estado final, razón por lo que es importante modelar los estados final
 multipartónicos de forma adecuada. Con esto en mente, el generador de eventos
 {\alpgen} (v 2.14) fue utilizado, incluyendo los efectos EWK y QCD a LO para los
 procesos de interacción fuerte multipartónicos. Este generador fue interfaceado
@@ -107,7 +107,7 @@ removidos de las muestras.
 
 \begin{table}[!htbp]
   \centering
-  \caption{Muestras de $W/Z+\text{jets}$. \mccaption.}
+  \caption{Muestras de $W/Z+\text{jets}$. \mccaption}
   \begin{tabular}{lccccc}
     \hline
     Proceso & Generador & $\sigma$ [pb] & factor-$k$ & Eficiencia & $L$ [fb$^{-1}$] \\
@@ -165,8 +165,8 @@ partónicas, fragmentación y eventos subyacentes. La radiación de fotones fue
 agregadas utilizando {\photos}\cite{photos}, y los decaimientos de los leptones
 tau con {\tauola}\cite{tauola}. Se requirió que los fotones a nivel generador
 tengan un $\pt > 80 \gev$. Para evitar efectos cinemáticos introducidos por el
-filtro, el corte en el {\pt} del fotón en la muestra reconstruida se aumento a
-95 {\gev}. Se utilizo un factor-$k$\note{definir} de $1.9 \pm 0.4$\cite{Melnikov:2011ta, tth}
+filtro, el corte en el {\pt} del fotón en la muestra reconstruida se aumentó a
+95 {\gev}. Se utilizó un factor-$k$ de $1.9 \pm 0.4$\cite{Melnikov:2011ta, tth}
 para tener en cuenta efectos de mayor orden en teoria de perturbaciones.
 Los detalles de la simulación se encuentran en la \cref{tab:mc_ttbar_samples}.
 Se utilizaron además algunas muestras a nivel generador como variaciones para calcular
@@ -185,8 +185,7 @@ conjunto de PDFs CTEQ6L1 LO. La radiación de fotones adicional fue agregada con
 {\photos}\cite{photos}.
 
 Por último, se realizó la remocion
-de los eventos con un foton real con $\pt > 95 \gev$ y $\Delta{\rm R}(e/\mu/\tau/g/$light-quarks$,
-\gamma) > 0.1$ de la muestra de {\ttbar} para evitar la superposicion con los eventos
+de los eventos con un foton real con $\pt > 95 \gev$ y $\Delta{\rm R}(e/\mu/\tau/g/q,\gamma) > 0.1$ de la muestra de {\ttbar} para evitar la superposicion con los eventos
 considerados en las muestras de {\ttgam}.
 
 
@@ -277,13 +276,13 @@ la sección eficaz calculada en \cite{Kidonakis:2010ux}.
 
 \subsection{{\gjet} y multijets}
 
-La contaminación debido a la produccion QCD de fotones directos y multijets,
+La contaminación debido a la producción QCD de fotones directos y multijets,
 es en todos los casos el resultado de eventos patológicos
 (jets mal-identificados como fotones, y jets o fotones mal reconstruidos dejando
 una alta cantidad de energía faltante). Sin embargo, no se espera que sea un
 fondo dominante en el espacio de fase explorado en este análisis. La
 contribución de eventos con jets mal identificados como fotones se estima a
-partir de los datos en la \cref{sec:jetfakes}.
+partir de los datos en la \cref{sec:jfakes}.
 
 Las muestras de multijets listadas en la \cref{tab:bkg_qcd_samples} fueron
 utilizadas para el proceso de optimización y estudios de sensibilidad
@@ -302,7 +301,7 @@ sistemáticas, generadas con {\pythiaeight} (usando CTEQ6L1) y {\alpgen} v2.14
   \caption{Muestras de QCD {\gjet} y multijet utilizadas en este análisis.
     La sección eficaz a LO para cada modo de decaimiento,
     y las eficiencias del filtro están detalladas,
-    así como tabine la luminosidad integrada correspondiente a la estadística
+    así como también la luminosidad integrada correspondiente a la estadística
     total de cada muestra.}
 
    \begin{tabular}{lcccc}

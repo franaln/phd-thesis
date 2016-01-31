@@ -32,7 +32,7 @@ utilizadas.
 
   \scalebox{0.71}{\input{tikz/mc_sketch.tex}}
 
-  \caption{Etapas de la generación de eventos de un modelo de SUSY.}
+  \caption{Etapas de la simulación de eventos de un modelo particular de SUSY.}
   \label{fig:mc_sketch}
 \end{figure}
 
@@ -71,7 +71,7 @@ pueden usarse como entrada en los generadores de eventos.
 
 \subsection{Generador de eventos}
 
-Los programas descriptos anteriormente permiten pasar de un modelo especifico a las
+Los programas descriptos anteriormente permiten pasar de un modelo específico a las
 predicciones en la producción de partículas y sus anchos de decaimientos en
 estados finales de quarks, leptones, fotones y gluones (y LSP en modelos donde
 se conserva paridad-R).
@@ -82,7 +82,7 @@ se conserva paridad-R).
 %% producción de las partículas en el estado final a ser medidas en el detector.
 
 El paso siguiente consiste en la generación de los eventos Monte Carlo.
-Para un dado tipo de colisionador y una dada energia de centro de masa,
+Para un dado tipo de colisionador y una dada energía de centro de masa,
 el generador se encarga de generar los eventos esperados para el modelo
 considerado.
 
@@ -92,10 +92,10 @@ gluones. La interacción total de los dos protones es complicada, como se muestr
 en la \cref{fig:mc_event_generator} y se puede descomponer en distintos pasos.
 En todos los componentes del diagrama excepto en la interacción fuerte, dominan los procesos de QCD.
 
-Las protones aceleradas por el LHC interactúan para producir las partículas
-predichas por la teoria. Este proceso de interacción fuerte involucra los
+Los protones acelerados por el LHC interactúan para producir las partículas
+predichas por la teoría. Este proceso de interacción fuerte involucra los
 partones de los hadrones intervinientes en el proceso. El cálculo se realiza, en
-general, a primer orden (LO) en teoría de perturbaciones, aunque algunos
+general, a primer orden (LO) en teoría de perturbaciones aunque algunos
 programas pueden incluir algunos procesos a NLO. Esta etapa involucra la
 convolución con las funciones de distribución partónicas para obtener las
 secciones eficaces de producción.
@@ -107,16 +107,16 @@ repositorio con una gran
 cantidad de PDF. Por defecto, y a menos que se indique lo contrario las PDFs
 CTEQ \cite{Nadolsky:2008zw} son las utilizadas en ATLAS.
 
-A partir de la colisión inicial y la producción de las particulas finales (en el
-caso de SUSY será un par de particulas supersimetricas) se
-modela el decaimiento de las mismas (posiblemente en un varios pasos) hasta el
+A partir de la colisión inicial y la producción de las partículas finales (en el
+caso de SUSY será un par de partículas supersimétricas) se
+modela el decaimiento de las mismas (posiblemente en varios pasos) hasta el
 estado final partónico, de acuerdo a los BR predichos por el modelo.
 
 La multiplicidad de partones en el estado final depende, además de los partones producidos en la interacción
-fuerte, de la radiación en el evento. Puede producirse partones extra por
-radiación de un gluón o quark ya sea antes de la interacción fuerte (llamado
+fuerte, de la radiación en el evento. Pueden producirse partones adicionales por
+radiación de un gluón o quark ya sea antes de la interacción fuerte (llamada
 \emph{Initial State Radiation}, ISR) o después de la interacción fuerte, en la fase de
-fragmentación (llamadao \emph{Final State Radiation}, FSR).
+fragmentación (llamada \emph{Final State Radiation}, FSR).
 Cada uno de los partones en el estado
 final comienzan a perder energía, a través de la radiación de gluones. Estos
 gluones fragmentan en gluones adicionales y pares quark-antiquark. Esto continua
@@ -133,7 +133,7 @@ para obtener una descripción válida de la física incluyendo no solo la
 interaccion dura sino los procesoso ``soft'', lo que suele llamarse evento
 subyacente (UE).
 
-Todos estos proceso se repiten hasta generar un gran número de eventos, donde cada
+Todos estos procesos se repiten hasta generar un gran número de eventos, donde cada
 evento consiste básicamente en los vectores de todas las partículas en el estado
 final.
 
@@ -147,16 +147,6 @@ final.
 %% %% SUSY, se pueden simular los posibles estados finales que se esperan a partir de
 %% %% un cierto modelo.
 
-%% La simulación de las partículas producidas a partir de colisiones en
-%% colisionadores hadrónicos, como el LHC, puede descomponerse en varios pasos
-%% descriptos a continuación (y esquematizados en la
-%% \cref{fig:mc_event_generator}):
-
-%% ---
-
-%% %% Fragmentación, hadronizacion y decaimiento. .
-
-%% --
 
 
 %% \begin{itemize}
@@ -281,19 +271,20 @@ final.
 
 
 \subsection{Simulación del detector ATLAS}
+\label{sec:sim_atlas}
 
 Para algunos estudios aproximados es posible utilizar directamente las
-particulas producidas por los generadores Monte Carlo. Pero en el caso general
-es necesario simular el pasaje de estar particulas por el detector.
+partículas producidas por los generadores Monte Carlo. Pero en el caso general
+es necesario simular el pasaje de estas partículas por el detector.
 
-Para poder estudiar la respuesta del detector para un gran número de procesos
+A fin de poder estudiar la respuesta del detector para un gran número de procesos
 físicos y escenarios, se ha implementado una simulación detallada que lleva los
 eventos de la generación a un formato que es idéntico a las señales en el
-detector verdadero\cite{AtlasSim}. La simulación esta integrada al software de
+detector verdadero\cite{AtlasSim}. La simulación está integrada al software de
 ATLAS (\textsc{Athena}), y utiliza el paquete de simulación
 {\geant}4\cite{Geant4}.
 
-La simulación esta dividida así en tres etapas: generación del evento y los
+La simulación está dividida así en tres etapas: generación del evento y los
 decaimientos inmediatos, simulación del detector, y digitalización de
 los depósitos de energía en las regiones sensibles del detector en los voltajes
 y corrientes que se encuentran a la salida del detector. Luego, la salida de
@@ -311,7 +302,6 @@ electromagnéticas de baja energía y se las reemplaza con lluvias
 electromagnéticas pre-simuladas. De esta forma se reduce el consumo de CPU
 notablemente considerando las características de la física en cuestión.
 
-
 Cada evento en una muestra Monte Carlo es producido bajo ciertas condiciones
 particulares del detector, y bajo un valor particular de pile-up. Existen
 algunas diferencias en el perfil del pile-up de los datos reales y las muestras
@@ -319,14 +309,3 @@ MC, en particular debido a que las muestras MC son simuladas previo a la toma de
 datos con el pile-up previsto que no es exactamente igual al real. Para
 solucionar esto, se aplica un repesado evento a evento a las muestras MC de
 manera de modelar las condiciones reales de la muestra de datos bajo estudio.
-
-%% Monte Carlo (MC) event samples, including a full simulation
-%% [10] of the ATLAS detector within geant4 [11],
-%% are used to compare the data to the SM signal and background
-%% expectations. All MC samples are simulated with
-%% in-time pile-up (an average of four pp interactions within
-%% a single bunch crossing) and out-of-time pile-up (signals
-%% from neighbouring bunch crossings). The simulated
-%% events are weighted such that the distribution of multiple
-%% collisions per bunch crossing matches what is observed in
-%% the data for the period used in this analysis.

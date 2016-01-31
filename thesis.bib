@@ -1519,19 +1519,29 @@ doi = "http://dx.doi.org/10.1016/j.physletb.2015.03.017",
 }
 
 % LUMI determination
+@techreport{vanderMeer:296752,
+      author        = "van der Meer, S",
+      title         = "{Calibration of the effective beam height in the ISR}",
+      institution   = "CERN",
+      address       = "Geneva",
+      number        = "CERN-ISR-PO-68-31. ISR-PO-68-31",
+      year          = "1968",
+      url           = "https://cds.cern.ch/record/296752",
+}
+
 @article{lumi2011,
-collaboration={ATLAS},
-year={2013},
-issn={1434-6044},
-journal={The European Physical Journal C},
-volume={73},
-number={8},
-doi={10.1140/epjc/s10052-013-2518-3},
-title={Improved luminosity determination in pp collisions at $\sqrt{s} = 7 \tev$ using the ATLAS detector at the LHC},
-url={http://dx.doi.org/10.1140/epjc/s10052-013-2518-3},
-publisher={Springer Berlin Heidelberg},
-pages={1-39},
-language={English}
+    collaboration={ATLAS},
+    year={2013},
+    issn={1434-6044},
+    journal={The European Physical Journal C},
+    volume={73},
+    number={8},
+    doi={10.1140/epjc/s10052-013-2518-3},
+    title={Improved luminosity determination in pp collisions at $\sqrt{s} = 7 \tev$ using the ATLAS detector at the LHC},
+    url={http://dx.doi.org/10.1140/epjc/s10052-013-2518-3},
+    publisher={Springer Berlin Heidelberg},
+    pages={1-39},
+    language={English}
 }
 
 @misc{lumi2012,
@@ -1710,6 +1720,18 @@ language={English}
       url           = "https://cds.cern.ch/record/1747242",
 }
 
+@techreport{ATLAS-CONF-2014-032,
+      title         = "{Electron efficiency measurements with the ATLAS detector
+                   using the 2012 LHC proton-proton collision data}",
+      institution   = "CERN",
+      address       = "Geneva",
+      number        = "ATLAS-CONF-2014-032",
+      month         = "Jun",
+      year          = "2014",
+      reportNumber  = "ATLAS-CONF-2014-032",
+      url           = "https://cds.cern.ch/record/1706245",
+}
+
 @techreport{Khoo:2012749,
       author        = "Khoo, Teng Jian and Klein, Matthew Henry and Okawa, Hideki
                    and Schaefer, Douglas and Williams, Sarah",
@@ -1815,18 +1837,18 @@ language={English}
       url           = "https://cds.cern.ch/record/1375551",
 }
 
-@techreport{Damazio:1609629,
-      author        = "Damazio, D and Kono, T and Monticelli, F and Pasztor, G",
-      title         = "{Performance of the ATLAS Electron and Photon Triggers in
-                   $\textit{p-p}$ Collisions at $\sqrt{s} = 8$~TeV in 2012}",
-      institution   = "CERN",
-      address       = "Geneva",
-      number        = "ATL-COM-DAQ-2013-121",
-      month         = "Oct",
-      year          = "2013",
-      reportNumber  = "ATL-COM-DAQ-2013-121",
-      url           = "https://cds.cern.ch/record/1609629",
-}
+@Comment @techreport{Damazio:1609629,
+@Comment       author        = "Damazio, D and Kono, T and Monticelli, F and Pasztor, G",
+@Comment       title         = "{Performance of the ATLAS Electron and Photon Triggers in
+@Comment                    $\textit{p-p}$ Collisions at $\sqrt{s} = 8$~TeV in 2012}",
+@Comment       institution   = "CERN",
+@Comment       address       = "Geneva",
+@Comment       number        = "ATL-COM-DAQ-2013-121",
+@Comment       month         = "Oct",
+@Comment       year          = "2013",
+@Comment       reportNumber  = "ATL-COM-DAQ-2013-121",
+@Comment       url           = "https://cds.cern.ch/record/1609629",
+@Comment }
 
 % LEP
 @book{LEP,
@@ -1993,7 +2015,8 @@ language={English}
       title         = "{Measurement of the b-tag efficiency in a sample of jets
                        containing muons with 5 fb$^{-1}$ of data from the ATLAS
                        detector}",
-      institution   = "CERN",
+    author = "ATLAS Collaboration",
+    institution   = "CERN",
       collaboration = "ATLAS Collaboration",
       address       = "Geneva",
       number        = "ATLAS-CONF-2012-043",
@@ -2144,4 +2167,33 @@ abstract = "We present a software architecture and framework that can be used to
       year           = "1996",
       pages          = "1-435",
       SLACcitation   = "%%CITATION = CMPCE,8,1;%%"
+}
+
+%% Twikis
+@misc{JesTwiki,
+    title = "Jet/Etmiss Recommendations 2012",
+    url={https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/JetEtmissRecommendations2012}
+}
+
+@misc{PhoEffTwiki,
+    title = "Photon Identification 2012",
+    url={https://twiki.cern.ch/twiki/bin/view/AtlasProtected/PhotonID2012}
+}
+
+@misc{EGScaleTwiki,
+    title = "Egamma Calibration",
+    url={https://twiki.cern.ch/twiki/bin/view/AtlasProtected/EGammaCalibrationGEO20}
+}
+
+@misc{MCPTwiki,
+    url={https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/MCPAnalysisGuidelinesData2012}
+}
+
+@misc{PhotonCleaning,
+    title = "Cleaning and object quality in the LAr calorimeter",
+    url={https://twiki.cern.ch/twiki/bin/view/AtlasProtected/LArCleaningAndObjectQuality}
+}
+@misc{EleEffTwiki,
+    title = "Efficiency Measurements",
+    url={https://twiki.cern.ch/twiki/bin/viewauth/AtlasProtected/EfficiencyMeasurements}
 }
