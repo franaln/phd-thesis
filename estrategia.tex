@@ -3,8 +3,8 @@
 
 En el \cref{cap:estadistica} se describieron los conceptos básicos de estadística
 necesarios para poder realizar un análisis de búsqueda de nueva física. En este
-Capítulo, haciendo uso de estos conceptos, se describe la estrategia general
-y la construcción del modelo estadístico utilizado en el análisis.
+capítulo, haciendo uso de estos conceptos, se describe la estrategia general
+y la construcción del modelo estadístico utilizado en el presente análisis.
 
 %% Como se ha mencionado en el \cref{cap:susy}, debido al gran número de parámetros
 %% libres en los modelos de SUSY, las búsquedas de supersimetría en ATLAS están
@@ -16,21 +16,24 @@ faltante. La estrategia general consistió en un experimento de conteo, es decir
 considerando el número de eventos observado en una cierta región del espacio de
 observables. Un experimento de conteo puede pensarse en el contexto del
 likelihood extendido, \cref{eq:likelihood_ext}, con $f(x) = 1$, el cual se
-reduce solo al término de Poisson. En el caso de que el número de eventos
+reduce solo al término de Poisson.
+
+En el caso de que el número de eventos
 observado sea compatible con el número de eventos esperado debido a procesos del
 SM, pueden establecerse límites en la sección eficaz de nueva física. En
 particular en esta Tesis, se consideró un modelo de Supersimetría que puede dar
 lugar a este tipo de estados finales, y también se darán resultados independientes
 de cualquier modelo.
 
-%% Para poder determinar compatibilidad entre los eventos observados con los
-%% predichos es necesario
-Para poder realizar cualquier descubrimiento de nueva física es fundamental entender
-y tener bajo control los fondos del SM.
-Existen muchos procesos del SM que pueden dar lugar a una estado final con un fotón,
-jets y energía faltante. Estos pueden dividirse en varias categorías. Por un lado, los
-procesos que dan lugar a eventos con un fotón y energía faltante real, es decir, los
-que llamamos fondos irreducibles son:
+
+\section{Fondos del {\SM}}
+
+El mayor desafío para poder realizar cualquier descubrimiento de nueva física es
+entender y tener bajo control los fondos del SM. Existen muchos procesos del SM
+que pueden dar lugar a un estado final con un fotón, jets y energía faltante,
+emulando la senal buscada. Estos pueden dividirse en varias categorías. Por un
+lado, los procesos que dan lugar a eventos con un fotón y energía faltante real,
+es decir, los que llamamos fondos irreducibles son:
 
 \begin{itemize}
 \item $Z(\to\nu\nu)+\gamma$
@@ -139,7 +142,7 @@ o utilizar métodos basados en los propios datos observados.
 %% lo llamaremos muestra en referencia a la muestra correspondiente generada con
 %% Monte Carlo.
 
-%% Para cada proceso físico tenemos que el numero de eventos esperado por unidad de
+%% Para cada proceso físico tenemos que el número de eventos esperado por unidad de
 %% tiempo (tasa) estará dado por:
 
 %% \begin{equation}
@@ -149,13 +152,13 @@ o utilizar métodos basados en los propios datos observados.
 %% %
 %% donde la sección eficaz esta predicha por la teoría, el flujo es controlado por
 %% el acelerador, y la eficiencia y la aceptancia son propiedades del detector y
-%% los criterios de la selección de eventos. Esta relación no es mas que la
+%% los criterios de la selección de eventos. Esta relación no es más que la
 %% refórmalo invariante de la probabilidad de dispersión predicha por primeros
 %% principios de la mecánica cuántica $P(i\to f) =
 %% |\braket{i}{f}|^2/(\braket{i}{i}\braket{f}{f})$.
 
 %% Si llamamos seccion eficaz efectiva $\sigma_\text{eff}$ al producto de la
-%% sección eficaz, la eficiencia y la aceptancia, el numero de eventos esperado
+%% sección eficaz, la eficiencia y la aceptancia, el número de eventos esperado
 %% para un dado proceso ($\nu$) va a ser el producto de la luminosidad integrada en
 %% el tiempo $L$ y la sección eficaz efectiva:
 
@@ -237,11 +240,11 @@ cinemáticas que se usan para diferenciar CR y SR están bien modeladas después
 haber ajustado la pdf total a los datos en las CR. Una vez que los procesos de
 fondo dominantes son normalizados en las CR, las correspondientes modificaciones
 en la pdf pueden ser extrapoladas a las VR, las cuales son utilizadas para
-verificar la validez de esta suposición inicial. Una vez que se demuestra el
+verificar la validez de esta suposición inicial. Solo cuando se demuestra el
 acuerdo entre las predicciones del fondo normalizadas y los datos observados en
 las VR, las predicciones del fondo son extrapoladas a las SR.
-Es en este oasi que los datos observados en las SR son considerados por primera
-vez para el analisis. Este proceso es llamado \emph{unblinding} y es
+Es en este paso que los datos observados en las SR son considerados por primera
+vez para el análisis. Este proceso es llamado \emph{unblinding} y es
 utilizado para tener confianza en los métodos usados y
 evitar utilizar predicciones prematuras y un posible sesgo en el
 resultado final.
@@ -289,7 +292,7 @@ reducir las incertezas en la SR.
 \section{Construcción del modelo estadístico}
 
 %% \note{Algo asi?}
-%% El modelo, que es simplemente una familia de pdfs despcripta por un numero finioto
+%% El modelo, que es simplemente una familia de pdfs despcripta por un número finioto
 %% de parametros, describe la prediccion nominal (junsto con sus variaciones sistematicas
 %% asociadas) de las multiples senales y procesos de fondo en las multiples regiones.
 
@@ -329,7 +332,7 @@ valor esperado de señal. %% para el valor nominal de modelo bajo consideración
 Las incertezas sistemáticas son incluidas usando la pdf
 $C_\text{syst}(\btheta^0, \btheta)$, donde $\btheta^0$ son los valores centrales
 de las medidas auxiliares alrededor de los cuales $\btheta$ puede variarse al
-maximizar el likelihood. El impacto de los cambios en los parámetros nuisance,
+maximizar el likelihood. El impacto de los cambios en los parámetros nuisance
 en los valores esperados están completamente descriptos por las funciones que
 predicen la cantidad de señal y fondo, $\lambda_i$. Para parámetros nuisance
 independientes $C_\text{syst}$ es simplemente el producto de las pdf
@@ -347,7 +350,7 @@ medidas auxiliares $\theta^0_j$ son típicamente fijadas a cero, pero pueden
 variar cuando se generan los pseudo-experimentos.
 
 
-%% \section{Ajustes}
+%% \section{Ajuste simultaneo y resultados}
 
 %% \subsection{Ajuste solo-fondo}
 
@@ -355,15 +358,15 @@ variar cuando se generan los pseudo-experimentos.
 %% suposiscion del modelo de senal. Solo se utilizan las muestras de fondo en el
 %% modelo. Las CR se suponene  libres de contaminacion de senal y el ajuste
 %% solo se realiza en las CR y los procesos de fondo dominantes se normalizan al
-%% numero de eventos observados en esas regiones. Se utilizan la ec {\XXX} sin el termino
+%% número de eventos observados en esas regiones. Se utilizan la ec {\XXX} sin el termino
 %% de la SR.
 
 %% Se comparten todos los parametros del ajuste, por lo tanto se usan para predecir
-%% el numero de eventos de fondo en SR y VR.
+%% el número de eventos de fondo en SR y VR.
 
-%% Estas predicciones de fondo son independientes del numero de eventos observado
+%% Estas predicciones de fondo son independientes del número de eventos observado
 %% en la SR (y VR) ya que solo las CR se usan en el ajuste. Esto permite una
-%% comparasion no sesgada entre las predicciones y el numero de evnetos observado
+%% comparasion no sesgada entre las predicciones y el número de evnetos observado
 %% en esas regiones.
 
 %% \section{Fit}
