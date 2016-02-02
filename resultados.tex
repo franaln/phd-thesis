@@ -1,7 +1,7 @@
 \chapter{Resultados e interpretación}
 \label{cap:resultados}
 
-Como se describiera en el \cref{cap:estrategia} en el que se presentó la
+Como se describió en el \cref{cap:estrategia}, en el que se presentó la
 estrategia general para la búsqueda de nueva física realizada en esta Tesis, a
 fin de obtener los resultados finales es necesario realizar un complejo análisis
 estadístico. Los detalles de este análisis se describen en la
@@ -18,7 +18,7 @@ la \cref{sec:model_independent}. Estos resultados son finalmente interpretados
 en el contexto de un modelo particular de Supersimetría, el cual motiva el
 trabajo de esta Tesis, en la \cref{sec:susy_limits}.
 
-Por último, en la \cref{sec:13tev}, se muestran los primeros ... de 13 TeV ...
+%% Por último, en la \cref{sec:13tev}, se muestran los primeros ... de 13 TeV ...
 
 
 \section{Análisis Estadístico}
@@ -39,8 +39,8 @@ un lado los parámetros de normalización de los fondos ($\bm{\mu}_p$), en este
 caso $\mu_Q$ para el fondo de {\gjet}, $\mu_W$ para {\wgam} y $\mu_T$ para
 {\ttgam}. El número de eventos esperado de señal y fondo en cada región está
 dado por $\bm{s}$ y $\bm{b}$ respectivamente, y provienen de las muestras MC o
-de aquellos calculados a partir de los datos como se describe en el
-\cref{cap:fondos}. Los parámetros $\alpha$ parametrizan las incertezas
+de aquellos calculados a partir de los datos como se describió en el
+\cref{cap:fondos}. Los parámetros $\bm{\alpha}$ parametrizan las incertezas
 sistemáticas en la señal y el fondo utilizando una distribución Gausiana.
 
 Con la función likelihood, se construye el estadístico de prueba como el
@@ -48,7 +48,7 @@ Con la función likelihood, se construye el estadístico de prueba como el
 
 \begin{equation}
   q_{\mu_s} = -2 \ln \left( \frac{L(\mu_s,
-    \doublehat{\btheta})}{L(\hat{\mu_s},\hat{\btheta})} \right)
+    \doublehat{\btheta})}{L(\hat{\mu}_s,\hat{\btheta})} \right)
 \end{equation}
 %
 que será utilizado en este análisis para poner a prueba la compatibilidad de los
@@ -63,11 +63,11 @@ reduce el impacto de estas incertezas estadísticas en las SR.
 
 El análisis estadístico se implementó utilizando
 \textsc{HistFitter}\cite{HistFitter}, una herramienta desarrollada por el grupo
-de SUSY de ATLAS, que es básicamente una interfaz de \textsc{RooFit},
+de SUSY de ATLAS, la cual utiliza las librerias \textsc{RooFit},
 \textsc{RooStats}\cite{Moneta:2010pm} y
-\textsc{HistFactory}\cite{Cranmer:1456844}. Además, el hecho de utilizar una
+\textsc{HistFactory}\cite{Cranmer:1456844}. El hecho de utilizar una
 misma herramienta en distintos análisis dentro de la colaboración, permite que
-su combinación estadística sea mas sencilla.
+su combinación estadística sea más sencilla.
 
 
 %--------------
@@ -101,8 +101,8 @@ de este ajuste extrapolados a las SR, también son importantes para que grupos
 externos al experimento puedan hacer una prueba de hipótesis en un modelo de
 nueva física, no considerado por ninguno de los experimentos del LHC.
 
-En las siguientes secciones se muestran los resultados obtenidos
-en las distintas regiones del análisis.
+En las siguientes secciones se muestran los resultados obtenidos en las
+distintas regiones del análisis.
 
 
 % Control Regions
@@ -398,7 +398,7 @@ tanto en las regiones de validación como en las de señal.
 
 
 Las incertezas sistemáticas dominantes en el número total predicho de fondo en
-cada SR, se presentan en \cref{tab:syst_srl,tab:syst_srh}.
+cada SR, se presentan en \cref{tab:syst}.
 Debido a que las incertezas individuales pueden estar correlacionadas y las
 correlaciones negativas entre normalizaciones (representando el impacto de la
 estadística en las CR en la incerteza total), la incerteza total no es
@@ -421,7 +421,7 @@ incertezas están dominadas por las incertezas teóricas del fondo {\zgam} y
     en {\SRL} y {\SRH}. Notar que las incertezas individuales pueden estar correlacionadas, y la incerteza
     total no es necesariamente la suma en cuadratura de estas. Los porcentajes muestran el tamaño
     de la incerteza relativo al fondo esperado total.}
-  \label{tab:syst_srl}
+  \label{tab:syst}
 
   \input{tables/table_syst.tex}
 \end{table}
@@ -453,7 +453,7 @@ Las visualizaciones de los eventos es generada con
 En la parte superior izquierda se puede ver el corte transversal del detector
 junto con el corte transversal en el panel inferior. En estas vistas se presentan
 los depósitos de energía en los calorímetros en color amarillo. Los conos de
-distintos colores representan los jets reconstruidos... \hl{seguir}
+distintos colores representan los jets reconstruidos...
 
 
 
@@ -495,14 +495,6 @@ distintos colores representan los jets reconstruidos... \hl{seguir}
 %-------------------------
 \section{Límites a procesos de nueva física} \label{sec:model_independent}
 
-%% Mas alla de los límites en el modelo de senal de SUSY estudiado en esta Tesis,
-%% el analisis que busca nueva fisica puede imponer límites en el número de eventos
-%% de nueva fisica por sobre el fondo esperado en cada SR. De esta forma, para cada
-%% modelo de senal de interes, cualquiera puede estimar el número de eventos de
-%% senal predichos en una SR y chequear si el modelo es excluido o no de acuerdo a
-%% los datos observados en el analisis.
-
-
 Resulta útil proveer el límite superior en el número de eventos de
 nueva física impuesto por los resultados obtenidos, mostrados en la sección
 anterior. Este límite, provisto para
@@ -513,7 +505,7 @@ superior obtenido en el presente análisis. Por supuesto que los valores de efic
 tenidos en cuenta.
 Para que puedan realizarse este tipo de interpretaciones de otros modelos, todos
 los valores y datos relevantes de este analisis son publicados en \textsc{HepData}
-para su utilización \cite{hepdata}.\note{Un poco mas de hepdata}
+para su utilización \cite{hepdata}...
 
 Con el objetivo de obtener los limites independientes del modelo se realiza un
 ajuste combinado teniendo en cuenta las regiones de control y cada una de las
@@ -524,8 +516,8 @@ deja libre en el ajuste. Se realiza un muestreo de este parámetro, y el
 límite superior en el número de eventos de nueva física se encuentra para el
 valor en el cual el {\cls} cae debajo del 5\%. El límite superior en el número
 de eventos puede transformarse en el límite superior de la sección eficaz
-visible\footnote{La sección eficaz visible se refiere a que tiene en cuenta
-  la aceptancia y eficiencia de la selección del análisis, $\sigma_{\text{vis}} = \epsilon\sigma$}
+visible\footnote{La sección eficaz visible tiene en cuenta
+  la aceptancia y eficiencia de selección del análisis, es decir, $\sigma_{\text{vis}} = \epsilon\sigma$}
 utilizando la luminosidad considerada en el análisis
 (20.3 \ifb).
 
@@ -582,7 +574,7 @@ para las variaciones de la sección eficaz de la señal debido a la incerteza
 teórica en la misma.
 
 Por diseño, la {\SRL} es importante en la zona de neutralinos livianos, mientras que
-la {\SRH} cubre la región mas comprimida del espacio de fases. En la
+la {\SRH} cubre la región más comprimida del espacio de fases. En la
 \cref{fig:limit_combined}, se muestra el límite combinando ambas
 regiones de señal, eligiendo en cada punto la que provee el mejor límite.
 
@@ -601,7 +593,7 @@ regiones de señal, eligiendo en cada punto la que provee el mejor límite.
 \begin{figure}[!htb]
   \centering
 
-  \includegraphics[width=0.8\textwidth]{limitplot_combined}
+  \includegraphics[width=0.7\textwidth]{limitplot_combined}
 
   \caption{Límites de exclusión para {\SRL} y {\SRH} combinados.
     Los límites son obtenidos usando la región de señal con mejor sensibilidad
@@ -626,7 +618,7 @@ A modo de completitud, en la \cref{fig:susy_summary} se presenta un resumen de l
 las masas de las partículas supersimétricas buscadas en una selección de los
 análisis más sensibles realizados por ATLAS. La Figura incluye el resultado obtenido
 por el análisis presentado en esta Tesis, al igual que los análisis
-complementarios de búsqueda de modelos GGM \note{Citar aca nuestro paper?}.
+complementarios de búsqueda de modelos GGM. %% \note{Citar aca nuestro paper?}.
 
 
 \begin{figure}[!htb]
@@ -643,7 +635,7 @@ complementarios de búsqueda de modelos GGM \note{Citar aca nuestro paper?}.
 \end{figure}
 
 
-\section{Resultados con 13 \tev}
-\label{sec:13tev}
+%% \section{Resultados con 13 \tev}
+%% \label{sec:13tev}
 
-\hl{Agregar}
+%% Agregar...

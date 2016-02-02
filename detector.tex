@@ -30,10 +30,10 @@ por:
 donde $\sigma$ es la sección eficaz del proceso físico y $L$ es la luminosidad instantánea del
 acelerador.
 
-%% La luminosidad instantanea se define como el numero de protones que pasan por unidad
+%% La luminosidad instantanea se define como el número de protones que pasan por unidad
 %% de area y unidad de tiempo.
 
-La luminosidad instantánea es uno de los parámetros mas importantes para
+La luminosidad instantánea es uno de los parámetros más importantes para
 caracterizar el funcionamiento del acelerador, definida como el número de
 partículas (protones o iones pesados en el caso del LHC) por unidad de tiempo y unidad de
 área, y puede calcularse mediante la relación:
@@ -140,7 +140,7 @@ están ubicados como discos consecutivos perpendiculares a la dirección del haz
 \begin{figure}[!htbp]
   \centering
 
-  \includegraphics[width=0.9\textwidth]{figura} %how_atlas_works}
+  \includegraphics[width=0.9\textwidth]{how_atlas_works}
 
   \caption{Esquema del corte transversal del detector de ATLAS, ilustrando los distintos
   sub-detectores y el pasaje de las distintas partículas.}
@@ -246,7 +246,7 @@ dentro del solenoide que provee un campo magnético nominal de $\unit[2]{T}$.
 
 Más cerca del punto de interacción se encuentra el detector de píxeles
 \cite{Wermes:381263}, cuyo objetivo principal consiste en la medición de la
-posición de trazas de partículas cargadas con la mas alta precisión posible y es
+posición de trazas de partículas cargadas con la más alta precisión posible y es
 de vital importancia para la reconstrucción de los vértices primarios y
 secundarios. El principio de detección para partículas cargadas es la medida de
 la deposición de la carga inducida en una capa de silicio por ionización.
@@ -336,7 +336,7 @@ $\Delta \phi \times \Delta \eta=$0.025 $\times$ 0.025 (4 $\times$ 4 cm$^2$ en
 $\eta=0$). El espesor total del detector hasta el final de la sección del medio
 es $\sim$24$X_0$.
 
-La sección mas externa tiene una granularidad de
+La sección más externa tiene una granularidad de
 $\Delta\phi\times\Delta\eta=$0.025 $\times$ 0.05 y su espesor varía entre 2 y 12
 $X_0$.
 
@@ -368,15 +368,16 @@ poder de penetración y son poco interactuantes. Por ello el espectrómetro de
 muones \cite{muonTDR} se encuentra situado en la parte más exterior del detector
 ATLAS, alrededor del sistema de imanes de toroides, y está diseñado para obtener
 mediciones de alta precisión de posición e impulso de muones de alto \pt.
+Este es el subdetector más grande y el que le da a ATLAS su tamaño.
 
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[width=0.7\textwidth]{figures/figura}
-  \caption{Espectrómetro de muones del detector de ATLAS}\label{fig:especmuones}
-\end{figure}
+%% \begin{figure}[!htb]
+%%   \centering
+%%   \includegraphics[width=0.7\textwidth]{figures/}
+%%   \caption{Espectrómetro de muones del detector de ATLAS}\label{fig:especmuones}
+%% \end{figure}
 
-La \cref{fig:especmuones} muestra un esquema del espectrómetro de muones
-de ATLAS. Es el subdetector más grande y el que le da a ATLAS su tamaño.
+%% La \cref{fig:especmuones} muestra un esquema del espectrómetro de muones
+%% de ATLAS.
 
 La región del barril está compuesta por tres capas concéntricas de cámaras de
 trigger y de cámaras de precisión posicionadas a 5m, 7.5m y 10m del tubo del
@@ -385,7 +386,7 @@ por cuatro capas de cámaras de trigger y cámaras de precisión a $|z|$= 7.4m,
 10.8m, 14m y 21.5m cubriendo el rango de 1.0$<|\eta|<$2.7. Hay una pequeña
 brecha en $|z|=0$ que permite el acceso de los servicios al ID.
 
-El espectrómetro de muones es el sub-detector mas grande de ATLAS, construido
+El espectrómetro de muones es el sub-detector más grande de ATLAS, construido
 dentro y alrededor de los imanes toroidales. Los muones son altamente penetrantes
 y son las únicas partículas (excepto las invisibles que no interactúan) que llegan
 a el sistema de muones. Los muones pierden parte de su energía mientras penetran
@@ -481,15 +482,15 @@ El LHC esta disenado para proveer colisionesión $pp$
 de $\mathcal{O}(1)$ GHz, considerando una frecuencia de cruce de haces
 de $\unit[40]{MHz}$ y $\sim$ 23 interacciones por cruce.
 Dado que la mayoría de
-los eventos son de \hl{baja energía} y no son de interés para los análisis de fisica,
+los eventos no son de interés para los análisis de fisica,
 y también debido a las limitaciones de almacenamiento y de
-poder de computo, el flujo de datos incidente debe ser reducido al máximo
-permitido para su almacenamiento permanente ($\sim 200$ Hz)\note{400?} \cite{Aad:2012xs}. El tamaño típico
+poder de cómputo, el flujo de datos incidente debe ser reducido al máximo
+permitido para su almacenamiento permanente ($\sim 200$ Hz) \cite{Aad:2012xs}. El tamaño típico
 por evento es de $\sim 1.4$ MB, lo que resulta en un ancho de banda requerido de
 $\sim 300$ MB/$s$. Esta reducción se logra mediante una rápida y eficiente
 preselección de eventos, conocida como \emph{trigger}.
 
-Esencialmente, el sistema de \emph{trigger} de ATLAS\hl{[ref]} consiste en una selección
+Esencialmente, el sistema de \emph{trigger} de ATLAS \cite{trigger} consiste en una selección
 de eventos basada en tres niveles:
 Nivel 1 (L1), Nivel 2 (L2) y Filtro de eventos (EF), donde
 los dos últimos conforman el \emph{High Level Trigger} (HLT). Cada nivel permite
@@ -567,7 +568,7 @@ los análisis subsecuentes.
 
 %% Cabe mencionar que el sistema de TDAQ permite, en principio, una tasa de
 %% procesamiento/almacenamiento por encima de estos parámetros de dise\~no, por
-%% periodos cortos de tiempo. Por ejemplo, durante el periodo de mas baja
+%% periodos cortos de tiempo. Por ejemplo, durante el periodo de más baja
 %% luminosidad instantánea en el 2010 ($L\sim 10^{32} \text{cm}^{-2} s^{-1}$) se
 %% alcanzaron frecuencias de lectura a la salida del EF de $\sim 600$ Hz, para
 %% beneficiar los primeros análisis físicos de ATLAS. Asimismo, el tiempo medio de
@@ -601,7 +602,7 @@ tasa de procesamiento aproximadamente constante.
 
 El modelo computacional de ATLAS esta diseñado para permitir a todos los
 miembros de la colaboración un acceso ágil, directo y distribuido a la gran
-cantidad de datos colectados por el detector ($\sim \text{PB}/\text{a\~no}$),
+cantidad de datos recolectados por el detector ($\sim \text{PB}/\text{a\~no}$),
 así como a las diversas simulaciones MC. El modelo se basa en la tecnología
 GRID, compartiendo el poder de procesamiento y la capacidad de almacenamiento
 disponibles en distintos centros de cómputo asociados alrededor del mundo.
@@ -633,35 +634,35 @@ con los datos experimentales.
 
 \section{Datos de colisiones $pp$ a $\sqrt{s} = 8$ \tev}
 
-Un concepto importante es el de \emph{pile-up}, que significa que las partículas
-producidas en mas de una colisión partícula-partícula llegan al detector al
-mismo tiempo, o mas generalmente que sus señales se superponen de una forma que
-no puede ser separadas. Cuando los \emph{bunches} de protones colisionan, la
-probabilidad de una interacción es proporcional a la densidad de partículas, o
-mejor, al flujo de partículas, el cual se expresa con la luminosidad
-instantánea. El numero de colisiones de partículas real que tienen lugar cuando
-los dos \emph{bunches} se cruzan es una variable aleatoria que sigue una
-distribución de Poisson. Para bajas luminosidades, en la mayoría de los cruces
-de haces, nada pasa. Para luminosidades instantánea altas, en la mayoría de los
-cruces se producen muchas colisiones de partículas al mismo tiempo. En lo
-siguiente $\avg{\mu}$ se define como el valor medio (esperado) de interacciones
-inelasticas $pp$ por cruce de \emph{bunches}. Es una medida cuantitativa
-importante de la actividad en el event y puede ser calculada a partir de la
-luminosidad instanea. Al igual que $L$, $\avg{\mu}$ depende del numero de
-protones que contienen los \emph{bunches}, que no es necesariamente el mismo
-para todos los \emph{bunches} en el acelerador.
+%% Un concepto importante es el de \emph{pile-up}, que significa que las partículas
+%% producidas en más de una colisión partícula-partícula llegan al detector al
+%% mismo tiempo, o más generalmente que sus señales se superponen de una forma que
+%% no puede ser separadas. Cuando los \emph{bunches} de protones colisionan, la
+%% probabilidad de una interacción es proporcional a la densidad de partículas, o
+%% mejor, al flujo de partículas, el cual se expresa con la luminosidad
+%% instantánea. El número de colisiones de partículas real que tienen lugar cuando
+%% los dos \emph{bunches} se cruzan es una variable aleatoria que sigue una
+%% distribución de Poisson. Para bajas luminosidades, en la mayoría de los cruces
+%% de haces, nada pasa. Para luminosidades instantánea altas, en la mayoría de los
+%% cruces se producen muchas colisiones de partículas al mismo tiempo. En lo
+%% siguiente $\avg{\mu}$ se define como el valor medio (esperado) de interacciones
+%% inelasticas $pp$ por cruce de \emph{bunches}. Es una medida cuantitativa
+%% importante de la actividad en el event y puede ser calculada a partir de la
+%% luminosidad instanea. Al igual que $L$, $\avg{\mu}$ depende del número de
+%% protones que contienen los \emph{bunches}, que no es necesariamente el mismo
+%% para todos los \emph{bunches} en el acelerador.
 
 
-\hl{Explicar como se divide la toma de datos, criterios de calidad, GRL, ...}
+%% \hl{Explicar como se divide la toma de datos, criterios de calidad, GRL, ...}
 
-Durante el ano 2012 ATLAS colecto datos de las colisiones $pp$ provistas
-por el LHC a una energia de centro de masa $\sqrt{s} = 8\tev$. La toma de datos
+%% Durante el ano 2012 ATLAS recolectó datos de las colisiones $pp$ provistas
+%% por el LHC a una energia de centro de masa $\sqrt{s} = 8\tev$. La toma de datos
 
 
 
-El presente análisis utiliza el conjunto de eventos colectados de las colisiones
+El presente análisis utiliza el conjunto de eventos recolectados de las colisiones
 $pp$ a una energía de centro de masa $\sqrt{s} = 8\tev$ con el detector ATLAS
-durante el a\~no 2012. Estos eventos colectados corresponden a una luminosidad
+durante el a\~no 2012. Estos eventos recolectados corresponden a una luminosidad
 total integrada de $21.7 \ifb$. Dado que en el análisis se utilizan fotones, electrones,
 muones, jets y energía faltante, es imprescindible que todos los sub-sistemas
 del detector ATLAS hayan operado en condiciones normales durante la toma
@@ -728,16 +729,16 @@ $\sim 6\%$, dejando una luminosidad total de $\int L\, dt = 20.3 \pm 0.6\, (2.8
 %% like Gaudi and CLHEP, are summarized in Table 2.
 
 
-El mecanismo de seleccion se basa en el
-concepto de bloques de luminosidad (LB). Cada toma de datos (Run) en ATLAS se
-divide en estos pequenos intervalos de aproximadamente 2 minutos, dentro de los
-cuales la luminosidad instantanea es esencialmente constante.
+%% El mecanismo de seleccion se basa en el
+%% concepto de bloques de luminosidad (LB). Cada toma de datos (Run) en ATLAS se
+%% divide en estos pequenos intervalos de aproximadamente 2 minutos, dentro de los
+%% cuales la luminosidad instantanea es esencialmente constante.
 
 
 Producto de la complejidad de un experimento de la magnitud de ATLAS y de las
 demandantes condiciones de funcionamiento del LHC, se pueden observar
 ocasionalmente ciertas ineficiencias en los diversos sub-detectores y/o en la
-cadena de procesamiento de los datos colectados. Para asegurar la calidad de los
+cadena de procesamiento de los datos recolectados. Para asegurar la calidad de los
 datos a ser considerados en los análisis físicos de ATLAS, los grupos
 responsables de cada sub-detector definen un conjunto de criterios de
 calidad [], con los cuales se construyen listas, llamadas GRL, de las
@@ -764,6 +765,6 @@ comunes para los distintos grupos dentro de ATLAS, distribuidas en un formato
 \end{figure}
 
 
-\section{Datos de colisiones $pp$ a $\sqrt{s} = 13$ \tev}
+%% \section{Datos de colisiones $pp$ a $\sqrt{s} = 13$ \tev}
 
-\hl{Agregar si usamos datos de 13 TeV}
+%% \hl{Agregar si usamos datos de 13 TeV}
