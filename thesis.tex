@@ -3,7 +3,7 @@
 
 % Setting pdf metadata
 \hypersetup{
-  pdftitle = {Búsqueda de Supersimetría en eventos con un fóton, %
+  pdftitle = {Búsqueda de Supersimetría en eventos con un fotón, %
     jets y energía faltante con el detector ATLAS},
   pdfauthor = {Francisco Alonso},
   pdfkeywords = {SUSY} {GGM} {ATLAS} {LHC}
@@ -54,6 +54,7 @@
 \newcolumntype{C}{>{\centering\arraybackslash}X}%
 \def\tabularxcolumn#1{m{#1}}
 
+\raggedbottom % not vertical justification
 
 \newcommand{\blankpage}{%
   \mbox{}
@@ -70,8 +71,8 @@
 \include{resumen}
 \blankpage
 
-\include{abstract}
-\blankpage
+%% \include{abstract}
+%% \blankpage
 
 \tableofcontents
 
@@ -79,8 +80,7 @@
 \include{introduccion}
 
 \part{Motivación teórica}
-\include{sm}
-\include{susy}
+\include{teoria}
 
 \part{Experimento}
 \include{detector}
@@ -93,17 +93,21 @@
 \include{seleccion}
 \include{fondos}
 \include{resultados}
-
 \include{conclusion}
 
-\include{agradecimientos}
+
+\bookmarksetup{startatroot}% this is it
+\addtocontents{toc}{\bigskip}% perhaps as well
+
+
+%% \include{agradecimientos}
 
 %% apendix
 
 %% bibliography
 %%\addcontentsline{toc}{chapter}{Agradecimientos}
 \bibliographystyle{bibstyle}
-%% %\bibliographystyle{unsrt}
+%%\bibliographystyle{unsrt}
 \bibliography{thesis}
 
 \end{document}
