@@ -2,7 +2,7 @@
 \label{cap:resultados}
 
 Como se describió en el \cref{cap:estrategia}, en el que se presentó la
-estrategia general para la búsqueda de nueva física realizada en esta Tesis, a
+estrategia general para la búsqueda de nueva física realizada en esta tesis, a
 fin de obtener los resultados finales es necesario realizar un complejo análisis
 estadístico. Los detalles de este análisis se describen en la
 \cref{sec:analisis}. Este se lleva a cabo utilizando las regiones de control
@@ -16,7 +16,7 @@ Los resultados del ajuste del likelihood se presentan en la
 resultados obtenidos, establecer los límites a los procesos de nueva física en
 la \cref{sec:model_independent}. Estos resultados son finalmente interpretados
 en el contexto de un modelo particular de Supersimetría, el cual motiva el
-trabajo de esta Tesis, en la \cref{sec:susy_limits}.
+trabajo de esta tesis, en la \cref{sec:susy_limits}.
 
 %% Por último, en la \cref{sec:13tev}, se muestran los primeros ... de 13 TeV ...
 
@@ -25,7 +25,7 @@ trabajo de esta Tesis, en la \cref{sec:susy_limits}.
 \label{sec:analisis}
 
 A partir de la función likelihood general (\cref{eq:model}), se define la
-función likelihood utilizada en el análisis específico de esta Tesis como:
+función likelihood utilizada en el análisis específico de esta tesis como:
 
 \begin{equation}
   L(\bm{n}|\mu_s, \bm{\mu}_p, \bm{s}, \bm{b}, \bm{\alpha}) = \mathcal{P}_\text{SR} \, \times \, \mathcal{P}_\text{CRQ} \, \times \, \mathcal{P}_\text{CRW} \, \times \, \mathcal{P}_\text{CRT} \, \times \, \mathcal{C}_\text{syst}
@@ -99,10 +99,10 @@ eventos observado en cada SR y VR, lo que permite una comparación no sesgada
 entre el número de eventos predicho y observado en cada región. Los resultados
 de este ajuste extrapolados a las SR, también son importantes para que grupos
 externos al experimento puedan hacer una prueba de hipótesis en un modelo de
-nueva física, no considerado por ninguno de los experimentos del LHC.
+nueva física no considerado por ninguno de los experimentos del LHC.
 
-En las siguientes secciones se muestran los resultados obtenidos en las
-distintas regiones del análisis.
+En las siguientes secciones se muestran los resultados obtenidos a partir
+de esta ajuste en las distintas regiones del análisis.
 
 
 % Control Regions
@@ -136,7 +136,7 @@ y el valor central es practicamente cero.
 Los puntos de la derecha de la \cref{fig:fit_unc_nuisance}, después de la linea
 punteada, representan los parámetros de normalización de los distintos fondos. Se
 puede ver que todos los valores centrales estan contenidos dentro de una desviación estándar.
-La correlación de los distintos parámetros se muestran en la \cref{fig:fit_corrmatrix}.
+%% La correlación de los distintos parámetros se muestran en la \cref{fig:fit_corrmatrix}.
 
 \begin{table}[!htb]
   \centering
@@ -197,56 +197,56 @@ La correlación de los distintos parámetros se muestran en la \cref{fig:fit_cor
 \end{figure}
 
 
+%% \begin{figure}[!htb]
+%%   \centering
+
+%%   \includegraphics[width=0.49\textwidth]{corr_matrix_srl}
+%%   \includegraphics[width=0.49\textwidth]{corr_matrix_srh}
+
+%%   \caption{Matriz de correlación de los parámetros del ajuste, correspondientes a {\SRL} (izquierda) y {\SRH} (derecha).}
+%%   \label{fig:fit_corrmatrix}
+
+%% \end{figure}
+
+
 \begin{figure}[!htb]
   \centering
 
-  \includegraphics[width=0.49\textwidth]{corr_matrix_srl}
-  \includegraphics[width=0.49\textwidth]{corr_matrix_srh}
+  \includegraphics[width=0.49\textwidth]{can_crwl_ph_pt_afterFit}
+  \includegraphics[width=0.49\textwidth]{can_crwl_rt4_afterFit} \\
 
-  \caption{Matriz de correlación de los parámetros del ajuste, correspondientes a {\SRL} (izquierda) y {\SRH} (derecha).}
-  \label{fig:fit_corrmatrix}
+  \includegraphics[width=0.49\textwidth]{can_crtl_ph_pt_afterFit}
+  \includegraphics[width=0.49\textwidth]{can_crtl_rt4_afterFit} \\
+
+  \includegraphics[width=0.49\textwidth]{can_crql_ph_pt_afterFit}
+  \includegraphics[width=0.49\textwidth]{can_crql_rt4_afterFit} \\
+
+   \caption{Distribuciones observadas de $\pt^\gamma$ (izquierda) y {\rt} (derecha) en las
+     regiones de control {\CRWL} (arriba), {\CRTL} (medio) y {\CRQL} (abajo),
+     después del ajuste.}
+   \label{fig:bkgfit_crl_after}
 
 \end{figure}
 
 
-%% \begin{figure}[!htbp]
-%%   \centering
+\begin{figure}[!htb]
+  \centering
 
-%%   \includegraphics[width=0.49\textwidth]{can_crql_met_et_afterFit}
-%%   \includegraphics[width=0.49\textwidth]{can_crql_rt4_afterFit} \\
+  \includegraphics[width=0.49\textwidth]{can_crwh_ph_pt_afterFit}
+  \includegraphics[width=0.49\textwidth]{can_crwh_ht_afterFit} \\
 
-%%   \includegraphics[width=0.49\textwidth]{can_crwl_met_et_afterFit}
-%%   \includegraphics[width=0.49\textwidth]{can_crwl_rt4_afterFit} \\
+  \includegraphics[width=0.49\textwidth]{can_crth_ph_pt_afterFit}
+  \includegraphics[width=0.49\textwidth]{can_crth_ht_afterFit} \\
 
-%%   \includegraphics[width=0.49\textwidth]{can_crtl_met_et_afterFit}
-%%   \includegraphics[width=0.49\textwidth]{can_crtl_rt4_afterFit} \\
+  \includegraphics[width=0.49\textwidth]{can_crqh_ph_pt_afterFit}
+  \includegraphics[width=0.49\textwidth]{can_crqh_ht_afterFit} \\
 
-%%    \caption{Distribuciones observadas de {\met} (izquierda) y {\rt} (derecha) en las
-%%      regiones de control {\CRQL} (arriba), {\CRWL} (medio) y {\CRTL} (abajo),
-%%      después del ajuste combinado.}
-%%    \label{fig:bkgfit_crl_after}
+  \caption{Distribuciones observadas de $\pt^\gamma$ (izquierda) y {\HT} (derecha) en las
+    regiones de control {\CRWH} (arriba), {\CRTH} (medio) y {\CRQH} (abajo),
+    después del ajuste.}
+  \label{fig:bkgfit_crh_after}
 
-%% \end{figure}
-
-
-%% \begin{figure}[!htbp]
-%%   \centering
-
-%%   \includegraphics[width=0.49\textwidth]{can_crqh_met_et_afterFit}
-%%   \includegraphics[width=0.49\textwidth]{can_crqh_rt4_afterFit} \\
-
-%%   \includegraphics[width=0.49\textwidth]{can_crwh_met_et_afterFit}
-%%   \includegraphics[width=0.49\textwidth]{can_crwh_rt4_afterFit} \\
-
-%%   \includegraphics[width=0.49\textwidth]{can_crth_met_et_afterFit}
-%%   \includegraphics[width=0.49\textwidth]{can_crth_rt4_afterFit} \\
-
-%%   \caption{Distribuciones observadas de {\met} (izquierda) y {\HT} (derecha) en las
-%%     regiones de control {\CRQH} (arriba), {\CRWH} (medio) y {\CRTH} (abajo),
-%%     después del ajuste combinado.}
-%%   \label{fig:bkgfit_crh_after}
-
-%% \end{figure}
+\end{figure}
 
 
 
@@ -313,20 +313,30 @@ pueden verse en la siguiente sección.
 \end{table}
 
 
-\begin{figure}[!htbp]
+\begin{figure}[!htb]
   \centering
 
-  \includegraphics[width=0.49\textwidth]{can_vrm75l_met_et_afterFit}
-  \includegraphics[width=0.49\textwidth]{can_vrm75l_rt4_afterFit} \\
+  \includegraphics[width=0.49\textwidth]{plot_vrm75_l_met_et_after}
+  \includegraphics[width=0.49\textwidth]{plot_vrm75_l_rt4_after} \\
 
-  \includegraphics[width=0.49\textwidth]{can_vrh_met_et_afterFit}
-  \includegraphics[width=0.49\textwidth]{can_vrh_ht_afterFit} \\
+  \includegraphics[width=0.49\textwidth]{plot_vrr_l_met_et_after}
+  \includegraphics[width=0.49\textwidth]{plot_vrr_l_rt4_after} \\
 
-  \caption{Distribuciones observadas en algunas de las regiones de validación, después del ajuste combinado.}
-  \label{fig:bkgfit_vr}
+  \caption{Distribuciones observadas de {\met} (izquierda) y {\rt} (derecha) para algunas de las regiones de validación
+    correspondientes a {\SRL}: VRM75 (arriba) y VRR (abajo). }
+  \label{fig:bkgfit_vr_l}
 
 \end{figure}
 
+%% \begin{figure}[!htb]
+%%   \centering
+
+%%   \includegraphics[width=0.49\textwidth]{plot_vrh_l_met_et_after}
+%%   \includegraphics[width=0.49\textwidth]{plot_vrh_l_rt4_after} \\
+
+%%   \caption{Distribuciones observadas de {\met} (izquierda) y {\HT} (derecha) para la región de validación VRH asociada a {\SRH}.}
+%%   \label{fig:bkgfit_vr}
+%% \end{figure}
 
 
 
@@ -377,6 +387,7 @@ del presente análisis.
 
 \end{figure}
 
+
 Una comparación entre el número de eventos observado y esperado en cada una de las
 regiones se presenta en la \cref{fig:fit_region_composition} a modo de resumen, donde
 el panel inferior muestra el \emph{pull} de cada región. Se puede ver el buen acuerdo
@@ -386,8 +397,8 @@ tanto en las regiones de validación como en las de señal.
 \begin{figure}[!htbp]
   \centering
 
-  \includegraphics[width=0.9\textwidth]{histpull_SRL}
-  \includegraphics[width=0.9\textwidth]{histpull_SRH}
+  \includegraphics[width=0.95\textwidth]{histpull_SRL}
+  \includegraphics[width=0.95\textwidth]{histpull_SRH}
 
   \caption{Comparación entre el número de eventos observado y esperado en cada
     una de las regiones correspondientes a {\SRL} (arriba) y {\SRH} (abajo).}
@@ -426,18 +437,6 @@ incertezas están dominadas por las incertezas teóricas del fondo {\zgam} y
   \input{tables/table_syst.tex}
 \end{table}
 
-%% \begin{table}[!htbp]
-%%   \centering
-
-%%   \caption{Resumen de las incertezas sistematicas dominantes en la estimacion del fondo total
-%%     en {\SRH}. Notar que las incertezas individuales pueden estar correlacionados, y la incerteza
-%%     total no es necesariamente la suma en cuadratura de estas. Los porcentajes muestran el tamano
-%%     de la incerteza relativo al fondo esperado total.}
-%%   \label{tab:syst_srh}
-
-%%   \input{tables/table_srh_syst.tex}
-
-%% \end{table}
 
 
 \subsection{Eventos en las regiones de señal}
@@ -617,7 +616,7 @@ neutralino NLSP es excluido entre $150\gev$ y $m_{\gluino}-m_{\ninoone}>50\gev$.
 A modo de completitud, en la \cref{fig:susy_summary} se presenta un resumen de los límites obtenidos en
 las masas de las partículas supersimétricas buscadas en una selección de los
 análisis más sensibles realizados por ATLAS. La Figura incluye el resultado obtenido
-por el análisis presentado en esta Tesis, al igual que los análisis
+por el análisis presentado en esta tesis, al igual que los análisis
 complementarios de búsqueda de modelos GGM. %% \note{Citar aca nuestro paper?}.
 
 
@@ -629,7 +628,7 @@ complementarios de búsqueda de modelos GGM. %% \note{Citar aca nuestro paper?}.
   \caption{Resumen de los límites de exclusión en la masa de las párticulas
     supersimétricas por distintos análisis realizados en ATLAS. Solo una
     selección representativa de los resultados disponibles es
-    presentada\cite{susy_summary}, incluyendo los obtenidos en esta Tesis.}
+    presentada\cite{susy_summary}, incluyendo los obtenidos en esta tesis.}
   \label{fig:susy_summary}
 
 \end{figure}
