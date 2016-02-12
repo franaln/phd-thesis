@@ -15,7 +15,7 @@ Los resultados del ajuste del likelihood se presentan en la
 \cref{sec:bkgonlyfit} para las distintas regiones, para luego, de acuerdo a los
 resultados obtenidos, establecer los límites a los procesos de nueva física en
 la \cref{sec:model_independent}. Estos resultados son finalmente interpretados
-en el contexto de un modelo particular de Supersimetría, el cual motiva el
+en el contexto de un modelo particular de supersimetría, el cual motiva el
 trabajo de esta tesis, en la \cref{sec:susy_limits}.
 
 %% Por último, en la \cref{sec:13tev}, se muestran los primeros ... de 13 TeV ...
@@ -141,7 +141,7 @@ puede ver que todos los valores centrales estan contenidos dentro de una desviac
 \begin{table}[!htb]
   \centering
 
-  \caption{Resultados del ajuste en las CR correspondientes a {\SRL}, con una luminosidad integrada total de 20.3 \ifb.
+  \caption{Resultados del ajuste en las CR correspondientes a {\SRL}.
     El número de eventos observado es comparado con el número de eventos esperado de fondo, después de la correspondiente
     normalización en las CR. En la parte inferior de la tabla se muestran también lo valores nominales del fondo antes de
     la correspondiente normalización. Las incertezas incluyen la incerteza estadística y sistemática.}
@@ -154,7 +154,7 @@ puede ver que todos los valores centrales estan contenidos dentro de una desviac
 
 \begin{table}[!htb]
 
-  \caption{Resultados del ajuste en las CR correspondientes a {\SRH}, con una luminosidad integrada total de 20.3 \ifb.
+  \caption{Resultados del ajuste en las CR correspondientes a {\SRH}.
     El número de eventos observado es comparado con el número de eventos esperado de fondo, después de la correspondiente
     normalización en las CR. En la parte inferior de la tabla se muestran también lo valores nominales del fondo antes de
     la correspondiente normalización. Las incertezas incluyen la incerteza estadística y sistemática.}
@@ -165,7 +165,7 @@ puede ver que todos los valores centrales estan contenidos dentro de una desviac
 \end{table}
 
 
-\begin{table}[!htb]
+\begin{table}[!h]
   \centering
 
   \caption{Factores de normalización para los fondos
@@ -173,14 +173,14 @@ puede ver que todos los valores centrales estan contenidos dentro de una desviac
     del ajuste combinado en las CR. Las incertezas mostradas son solo estadísticas.}
   \label{tab:bkgonly_mus}
 
-  \begin{tabular}{lccc}
+  \begin{tabularx}{0.6\textwidth}{LCCC}
     \hline
     &       $\mu_{Q}$ &       $\mu_{W}$ &       $\mu_{T}$ \\
     \hline
     \SRL & $0.94 \pm 0.44$ & $1.34 \pm 0.89$ & $1.40 \pm 0.77$ \\
     \SRH & $1.22 \pm 0.58$ & $1.24 \pm 0.39$ & $0.54 \pm 0.37$ \\
     \hline
-  \end{tabular}
+  \end{tabularx}
 
 \end{table}
 
@@ -212,14 +212,14 @@ puede ver que todos los valores centrales estan contenidos dentro de una desviac
 \begin{figure}[!htb]
   \centering
 
-  \includegraphics[width=0.49\textwidth]{can_crwl_ph_pt_afterFit}
-  \includegraphics[width=0.49\textwidth]{can_crwl_rt4_afterFit} \\
+  \includegraphics[width=0.45\textwidth]{plot_crw_l_ph_pt_after}
+  \includegraphics[width=0.45\textwidth]{plot_crw_l_rt4_after} \\
 
-  \includegraphics[width=0.49\textwidth]{can_crtl_ph_pt_afterFit}
-  \includegraphics[width=0.49\textwidth]{can_crtl_rt4_afterFit} \\
+  \includegraphics[width=0.45\textwidth]{plot_crt_l_ph_pt_after}
+  \includegraphics[width=0.45\textwidth]{plot_crt_l_rt4_after} \\
 
-  \includegraphics[width=0.49\textwidth]{can_crql_ph_pt_afterFit}
-  \includegraphics[width=0.49\textwidth]{can_crql_rt4_afterFit} \\
+  \includegraphics[width=0.45\textwidth]{plot_crq_l_ph_pt_after}
+  \includegraphics[width=0.45\textwidth]{plot_crq_l_rt4_after} \\
 
    \caption{Distribuciones observadas de $\pt^\gamma$ (izquierda) y {\rt} (derecha) en las
      regiones de control {\CRWL} (arriba), {\CRTL} (medio) y {\CRQL} (abajo),
@@ -232,14 +232,14 @@ puede ver que todos los valores centrales estan contenidos dentro de una desviac
 \begin{figure}[!htb]
   \centering
 
-  \includegraphics[width=0.49\textwidth]{can_crwh_ph_pt_afterFit}
-  \includegraphics[width=0.49\textwidth]{can_crwh_ht_afterFit} \\
+  \includegraphics[width=0.45\textwidth]{plot_crw_h_ph_pt_after}
+  \includegraphics[width=0.45\textwidth]{plot_crw_h_ht_after} \\
 
-  \includegraphics[width=0.49\textwidth]{can_crth_ph_pt_afterFit}
-  \includegraphics[width=0.49\textwidth]{can_crth_ht_afterFit} \\
+  \includegraphics[width=0.45\textwidth]{plot_crt_h_ph_pt_after}
+  \includegraphics[width=0.45\textwidth]{plot_crt_h_ht_after} \\
 
-  \includegraphics[width=0.49\textwidth]{can_crqh_ph_pt_afterFit}
-  \includegraphics[width=0.49\textwidth]{can_crqh_ht_afterFit} \\
+  \includegraphics[width=0.45\textwidth]{plot_crq_h_ph_pt_after}
+  \includegraphics[width=0.45\textwidth]{plot_crq_h_ht_after} \\
 
   \caption{Distribuciones observadas de $\pt^\gamma$ (izquierda) y {\HT} (derecha) en las
     regiones de control {\CRWH} (arriba), {\CRTH} (medio) y {\CRQH} (abajo),
@@ -263,7 +263,7 @@ validar la extrapolación que luego se hará a la SR.
 En las \cref{tab:fit_result_vrl,tab:fit_result_vrh} se presentan los resultados
 para las distintas regiones de validación asociadas a {\SRL} y {\SRH},
 respectivamente, y en las \cref{fig:bkgfit_vr} pueden verse las distribuciones
-de algunos observables en estas mismas regiones. En general, el número de
+de algunos observables en algunas de estas regiones. En general, el número de
 eventos de fondo predicho está en buen acuerdo con el número de eventos
 observado dentro de las incertezas, lo que permite validar el método empleado y
 la viabilidad de utilizar la estimación del número de eventos de fondo en las
@@ -284,8 +284,9 @@ pueden verse en la siguiente sección.
 \begin{table}[!htb]
 
   \caption{Resultados del ajuste en las VR correspondientes a {\SRL}.
-    El número de eventos observado es comparado con el número de eventos esperado de fondo, después de la correspondiente
-    normalización en las CR. Las incertezas incluyen la incerteza estadística y sistemática.}
+    El número de eventos observado es comparado con el número de eventos
+    esperado de fondo, después de la correspondiente normalización en las CR.
+    Las incertezas incluyen la incerteza estadística y sistemática.}
   \label{tab:fit_result_vrl}
 
   \input{tables/table_vrl_1.tex}
@@ -300,8 +301,9 @@ pueden verse en la siguiente sección.
 \begin{table}[!htb]
 
   \caption{Resultados del ajuste en las VR correspondientes a {\SRH}.
-    El número de eventos observado es comparado con el número de eventos esperado de fondo, después de la correspondiente
-    normalización en las CR. Las incertezas incluyen la incerteza estadística y sistemática.}
+    El número de eventos observado es comparado con el número de eventos
+    esperado de fondo, después de la correspondiente normalización en las CR.
+    Las incertezas incluyen la incerteza estadística y sistemática.}
   \label{tab:fit_result_vrh}
 
   \input{tables/table_vrh_1.tex}
@@ -316,27 +318,17 @@ pueden verse en la siguiente sección.
 \begin{figure}[!htb]
   \centering
 
-  \includegraphics[width=0.49\textwidth]{plot_vrm75_l_met_et_after}
-  \includegraphics[width=0.49\textwidth]{plot_vrm75_l_rt4_after} \\
+  \includegraphics[width=0.45\textwidth]{plot_vrm75_l_met_et_after}
+  \includegraphics[width=0.45\textwidth]{plot_vrm75_l_rt4_after} \\
 
-  \includegraphics[width=0.49\textwidth]{plot_vrr_l_met_et_after}
-  \includegraphics[width=0.49\textwidth]{plot_vrr_l_rt4_after} \\
+  \includegraphics[width=0.45\textwidth]{plot_vrr_l_met_et_after}
+  \includegraphics[width=0.45\textwidth]{plot_vrr_l_rt4_after} \\
 
   \caption{Distribuciones observadas de {\met} (izquierda) y {\rt} (derecha) para algunas de las regiones de validación
     correspondientes a {\SRL}: VRM75 (arriba) y VRR (abajo). }
-  \label{fig:bkgfit_vr_l}
+  \label{fig:bkgfit_vr}
 
 \end{figure}
-
-%% \begin{figure}[!htb]
-%%   \centering
-
-%%   \includegraphics[width=0.49\textwidth]{plot_vrh_l_met_et_after}
-%%   \includegraphics[width=0.49\textwidth]{plot_vrh_l_rt4_after} \\
-
-%%   \caption{Distribuciones observadas de {\met} (izquierda) y {\HT} (derecha) para la región de validación VRH asociada a {\SRH}.}
-%%   \label{fig:bkgfit_vr}
-%% \end{figure}
 
 
 
@@ -355,8 +347,7 @@ número de eventos observado en ambas SR es de 2.
 \begin{table}[!htbp]
   \centering
 
-  \caption{Resultados del ajuste en las SR, con una luminosidad integrada total
-    de 20.3 \ifb. El número de eventos observado es comparado con el número de
+  \caption{Resultados del ajuste en las SR. El número de eventos observado es comparado con el número de
     eventos esperado de fondo, después de la correspondiente normalización en
     las CR. Las incertezas incluyen la incerteza estadística y sistemática.}
   \label{tab:fit_result_sr}
@@ -376,13 +367,14 @@ del presente análisis.
 
   \centering
 
-  \includegraphics[width=0.49\textwidth]{plot_after_SRL_met_et}
-  \includegraphics[width=0.49\textwidth]{plot_after_SRH_met_et}
+  \includegraphics[width=0.45\textwidth]{plot_after_SRL_met_et}
+  \includegraphics[width=0.45\textwidth]{plot_after_SRH_met_et}
 
   \caption{Distribución de {\met} comparando datos y el fondo esperado para la
     selección de la región {\SRL} (izquierda) y {\SRH} (derecha), sin el corte
     en {\met}. La distribución esperada para dos muestras de señal es también
-    graficada para su comparación.}
+    graficada para su comparación. Las lineas punteadas y las flechas negras indican
+    la región de señal.}
   \label{fig:met_sr}
 
 \end{figure}
@@ -425,7 +417,7 @@ incertezas están dominadas por las incertezas teóricas del fondo {\zgam} y
 {\gjet}, y la incerteza en la normalización del fondo {\wgam}.
 
 
-\begin{table}[!htbp]
+\begin{table}[!htb]
   \centering
 
   \caption{Resumen de las incertezas sistemáticas dominantes en la estimación del fondo total
@@ -448,45 +440,47 @@ se\~nales dejadas por los distintos objetos en el mismo puede verse en las
 \cref{fig:evdisplay_srh} para los dos eventos en la {\SRH}.
 
 Las visualizaciones de los eventos es generada con
-\textsc{Atlantis}\cite{atlantis}.
-En la parte superior izquierda se puede ver el corte transversal del detector
-junto con el corte transversal en el panel inferior. En estas vistas se presentan
-los depósitos de energía en los calorímetros en color amarillo. Los conos de
-distintos colores representan los jets reconstruidos...
+\textsc{Atlantis}\cite{atlantis}. En la parte superior izquierda se puede ver el
+corte transversal del detector junto con el corte longitudinal en el panel
+inferior. En estas vistas se presentan los depósitos de energía en los
+calorímetros en color amarillo. Los conos de distintos colores representan los
+distintos jets reconstruidos en el evento, y su tama\~no es proporcinal a la
+energia del jet. La linea gruesa de color amarillo representa un fotón
+reconstruido y la linea roja punteada la energía faltante.
 
 
 
-\begin{figure}[!htbp]
-  \begin{center}
+%% \begin{figure}[!htbp]
+%%   \begin{center}
 
-    \includegraphics[height=0.45\textheight]{EvtDisplay_212103_73661974}
+%%     \includegraphics[height=0.45\textheight]{EvtDisplay_212103_73661974}
 
-    \vspace{1cm}
+%%     \vspace{1cm}
 
-    \includegraphics[height=0.45\textheight]{EvtDisplay_212144_201737678}
+%%     \includegraphics[height=0.45\textheight]{EvtDisplay_212144_201737678}
 
-    \caption{Visualización de los dos eventos que sobreviven la selección de {\SRL}. Ver detalles en el texto.}
-    \label{fig:evdisplay_srl}
-  \end{center}
-\end{figure}
-
-
-\begin{figure}[!htbp]
-  \begin{center}
-
-    \includegraphics[height=0.45\textheight]{EvtDisplay_203875_14229699}
-
-    \vspace{1cm}
-
-    \includegraphics[height=0.45\textheight]{EvtDisplay_212967_66359411}
-
-  \caption{Visualización de los dos eventos que sobreviven la selección de {\SRH}. Ver detalles en el texto.}
-  \label{fig:evdisplay_srh}
-  \end{center}
-\end{figure}
+%%     \caption{Visualización de los dos eventos que sobreviven la selección de {\SRL}. Ver detalles en el texto.}
+%%     \label{fig:evdisplay_srl}
+%%   \end{center}
+%% \end{figure}
 
 
-%% \clearpage
+%% \begin{figure}[!htbp]
+%%   \begin{center}
+
+%%     \includegraphics[height=0.45\textheight]{EvtDisplay_203875_14229699}
+
+%%     \vspace{1cm}
+
+%%     \includegraphics[height=0.45\textheight]{EvtDisplay_212967_66359411}
+
+%%   \caption{Visualización de los dos eventos que sobreviven la selección de {\SRH}. Ver detalles en el texto.}
+%%   \label{fig:evdisplay_srh}
+%%   \end{center}
+%% \end{figure}
+
+
+\clearpage
 
 
 %-------------------------
@@ -504,7 +498,7 @@ superior obtenido en el presente análisis. Por supuesto que los valores de efic
 tenidos en cuenta.
 Para que puedan realizarse este tipo de interpretaciones de otros modelos, todos
 los valores y datos relevantes de este analisis son publicados en \textsc{HepData}
-para su utilización \cite{hepdata}...
+para su utilización \cite{hepdata}.
 
 Con el objetivo de obtener los limites independientes del modelo se realiza un
 ajuste combinado teniendo en cuenta las regiones de control y cada una de las
@@ -547,6 +541,7 @@ respectivamente, lo cual se traduce en un limite en la sección eficaz visible d
 %% \hll{Poner el plot del scan para este límite}
 %% \hll{Límite 1D para EWK?}
 
+\clearpage
 
 %-------------------------
 % SUSY Exclusion limit
@@ -557,7 +552,10 @@ respectivamente, lo cual se traduce en un limite en la sección eficaz visible d
 Debido a que no se observa un exceso significativo por encima del fondo esperado
 del {\SM} en las regiones de señal, se obtuvieron los límites de exclusión en el
 modelo de SUSY considerado. Los límites superiores son obtenidos utilizando el
-método del {\cls} descripto en la \cref{sec:limits}. Estos límites son
+método {\cls} descripto en la \cref{sec:limits}. Para ello se utiliza la función
+likelihood \cref{eq:likelihood} incluyendo cada región de señal, y las muestras
+de señal consideradas.
+Estos límites son
 calculados para la sección eficaz nominal del modelo y también con una sección
 eficaz de $\pm 1 \sigma$ en la incerteza teórica, siguiendo la recomendación de
 ATLAS y el acuerdo de los experimentos del LHC para presentar los resultados.
@@ -581,8 +579,8 @@ regiones de señal, eligiendo en cada punto la que provee el mejor límite.
 \begin{figure}[!htb]
   \centering
 
-  \includegraphics[width=0.49\textwidth]{limitplot_srl}
-  \includegraphics[width=0.49\textwidth]{limitplot_srh}
+  \includegraphics[width=0.45\textwidth]{limitplot_srl}
+  \includegraphics[width=0.45\textwidth]{limitplot_srh}
 
   \caption{Límites de exclusión a 95\% CL para {\SRL}  (izquierda) y {\SRH} (derecha).}
   \label{fig:limit_srs}
@@ -594,11 +592,11 @@ regiones de señal, eligiendo en cada punto la que provee el mejor límite.
 
   \includegraphics[width=0.7\textwidth]{limitplot_combined}
 
-  \caption{Límites de exclusión para {\SRL} y {\SRH} combinados.
-    Los límites son obtenidos usando la región de señal con mejor sensibilidad
-    en cada punto.
-    La línea punteada azul muestra el límite esperado a 95\% CL, con las bandas amarillas indicando la desviación a
-    $1\sigma$ que tiene en cuenta las incertezas teóricas y experimentales. Los
+  \caption{Límites de exclusión para {\SRL} y {\SRH} combinados. Los límites
+    son obtenidos usando la región de señal con mejor sensibilidad en cada punto.
+    La línea punteada azul muestra el límite esperado a 95\% CL, con las bandas
+    amarillas indicando la desviación a $1\sigma$ que tiene en cuenta las incertezas
+    teóricas y experimentales. Los
     límites observados están indicados por las lineas en rojo oscuro, donde la línea
     sólida representa el límite nominal y las líneas punteadas representan el límite
     para las variaciones de la sección eficaz de la señal debido a la incerteza
@@ -608,22 +606,25 @@ regiones de señal, eligiendo en cada punto la que provee el mejor límite.
 \end{figure}
 
 
-Como se desprende de los gráficos de los límites de exclusión, la produccion de
-gluino es excluida a 95\% {\cl} para una masa mínima (máxima) de 1190 (1320)
-\gev, para $m_{\ninoone}<{840}\gev$. Para masas de gluino menores a $1\tev$, un
-neutralino NLSP es excluido entre $150\gev$ y $m_{\gluino}-m_{\ninoone}>50\gev$.
+Como se desprende de los gráficos de los límites de exclusión, considerando
+el contorno de $-1\sigma$ en la sección eficaz de SUSY,
+la produccion de
+gluino es excluida a 95\% {\cl} para una masa de hasta 1250 \gev,
+para $m_{\ninoone}<{840}\gev$. Este límite disminuye para neutralinos
+de baja masa debido a la caida en la aceptancia en esa región, lo cual también ocurre
+cuando la masa de gluinos y neutralinos es similar.
 
 A modo de completitud, en la \cref{fig:susy_summary} se presenta un resumen de los límites obtenidos en
 las masas de las partículas supersimétricas buscadas en una selección de los
 análisis más sensibles realizados por ATLAS. La Figura incluye el resultado obtenido
 por el análisis presentado en esta tesis, al igual que los análisis
-complementarios de búsqueda de modelos GGM. %% \note{Citar aca nuestro paper?}.
+complementarios de búsqueda de modelos GGM.
 
 
 \begin{figure}[!htb]
   \centering
 
-  \includegraphics[width=\textwidth]{atlas_susy_run1_summary}
+  \includegraphics[width=0.9\textwidth]{atlas_susy_run1_summary}
 
   \caption{Resumen de los límites de exclusión en la masa de las párticulas
     supersimétricas por distintos análisis realizados en ATLAS. Solo una
@@ -632,9 +633,3 @@ complementarios de búsqueda de modelos GGM. %% \note{Citar aca nuestro paper?}.
   \label{fig:susy_summary}
 
 \end{figure}
-
-
-%% \section{Resultados con 13 \tev}
-%% \label{sec:13tev}
-
-%% Agregar...
