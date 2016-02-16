@@ -17,7 +17,7 @@
 }
 
 %%-- Execute default options
-\ExecuteOptions{a4paper,12pt,twoside}
+\ExecuteOptions{9pt,twoside}
 
 %%-- Process given options
 \ProcessOptions\relax
@@ -40,6 +40,7 @@
 \RequirePackage{titlesec} % to format chapter title pages
 \RequirePackage[final]{graphicx}
 \RequirePackage[unicode=true]{hyperref}
+\RequirePackage{bookmark}
 \RequirePackage[spanish]{babel}
 \RequirePackage{multirow}
 \RequirePackage{pgfplots}
@@ -53,8 +54,8 @@
 
 %%-- Additional TeX/LaTeX code...
 \renewcommand\baselinestretch{1.2}
-\pdfpagewidth=\the\paperwidth
-\pdfpageheight=\the\paperheight
+%% \pdfpagewidth=\the\paperwidth
+%% \pdfpageheight=\the\paperheight
 
 % increase headheight to accomodate fancy headers
 \addtolength{\headheight}{2.5pt}
@@ -67,7 +68,7 @@
 \renewcommand{\arraystretch}{1.25}
 
 % enter only chapters and sections in TOC---subsecs as a try
-% \setcounter{tocdepth}{1}
+\setcounter{tocdepth}{2}
 
 % enume\rate down to subsections
 \setcounter{secnumdepth}{2}
@@ -84,11 +85,9 @@
 
 %-- Draft mode
 \if@draftmode
-%%\RequirePackage[a4paper,centering,marginparwidth=2.5cm]{geometry}
 \RequirePackage[colorinlistoftodos,textsize=footnotesize,textwidth=2.5cm]{todonotes} % draft with TODOs
 \else
 \usepackage[disable]{todonotes} % final without TODOs
-\setlength{\marginparwidth}{2cm}
 \fi
 
 %% %%Add  line numbers
@@ -162,8 +161,8 @@
       anchorcolor=black
     }
 
-    \RequirePackage[pdftex,paper=a4paper,hmarginratio=1:1,
-      vmarginratio=1:1,scale=0.75,bindingoffset=5mm]{geometry}
+    \RequirePackage[pdftex,paper=a4paper,hmarginratio=1:1,vmarginratio=1:1,scale=0.75,bindingoffset=5mm,
+      top=25mm,bottom=25mm,left=25mm,right=25mm]{geometry}
     \hypersetup{pdfpagelayout=OneColumn}
 \else
     % For PDF Online version
