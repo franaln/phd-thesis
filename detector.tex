@@ -1,6 +1,16 @@
 \chapter{El LHC y el detector ATLAS}
 \label{cap:detector}
 
+%% Para explorar la región de energías del {\tev}, en el laboratorio CERN se construyó
+%% el Gran Colisionador de Hadrones,
+%% diseñado para colisionar protones a una energía de centro de masa de $\sqrt{s} = 14 \tev$.
+
+
+%% Uno de los detectores multipropósito del LHC es ATLAS.
+
+%% En este capítulo se realiza una breve descripción del LHC y en particular
+%% del detector ATLAS.
+
 
 \section{LHC}
 
@@ -18,7 +28,7 @@ el último elemento en la cadena, está diseñado para acelerar cada haz de
 protones a 7 \tev, alcanzando en las colisiones, energías de centro de masa de
 14 \tev, y una luminosidad de $10^{34}$ cm$^{-2}$s$^{-1}$. Los demás
 aceleradores en la cadena poseen además otros experimentos que utilizan los
-haces a energías menores.
+haces a menores energías.
 
 El número de eventos producidos en un colisionador, como el LHC, está dado
 por:
@@ -44,7 +54,7 @@ partículas (protones o iones pesados en el caso del LHC) por unidad de tiempo y
 %
 donde $f_\text{rev}$ es la frecuencia de revolución ($\sim 11$ kHz), $n_b$ es el número de
 \emph{bunches} (paquetes de protones) por haz, $N_i$ es el número de partículas
-en cada bunch y $A$ es la sección efectiva del haz, que puede expresarse en
+en cada \emph{bunch} y $A$ es la sección efectiva del haz, que puede expresarse en
 término de los parámetros del acelerador como:
 
 \begin{equation}
@@ -53,8 +63,8 @@ término de los parámetros del acelerador como:
 %
 donde $\epsilon_n$ es la emitancia transversal normalizada (la dispersión
 transversal media de las partículas del haz en el espacio de coordenadas e
-impulsos), $\beta^{*}$ es la función de amplitud en el punto de interacción
-(IP), relacionada al poder de focalización de los cuadrupolos), $\gamma$ es el
+impulsos), $\beta^{*}$ es la función de amplitud en el punto de interacción,
+relacionada al poder de focalización de los cuadrupolos), $\gamma$ es el
 factor relativista de Lorentz y $F$ es un factor de reducción geométrico, debido
 al ángulo de cruce de los haces en el punto de interacción.
 
@@ -79,14 +89,13 @@ consiste de 392 cuadrupolos magnéticos que generan campos magnéticos de $\unit
 Los haces circulan en direcciones opuestas en cavidades de ultra alto vacío
 a presión de $\unit[10^{-10}]{torr}$.
 
-Durante el año 2012, las colisiones se realizaron a $4\TeV$ por haz ($\sqrt{s} =
-8 \TeV$) y con una luminosidad que fue incrementándose hasta alcanzar los
+Durante el año 2012, las colisiones se realizaron a $4\TeV$ por haz ($\sqrt{s} = 8 \TeV$)
+y con una luminosidad que fue incrementándose hasta alcanzar los
 $\unit[2 \cdot 10^{32}]{cm^{-2}s^{-1}}$ en Octubre. Durante los a\~nos 2013 y 2014
 el LHC no estuvo en funcionamiento, y se utilizó este tiempo para prepararlo para
 la nueva etapa que comenzó en el a\~no 2015, en el cual se alcanzó una energía de $\sqrt{s} = 13 \tev$,
 una energía que nunca antes había sido alcanzada y cercana a la de su diseño
-original ($\sqrt{s} = 14 \tev$).
-
+original (14 \tev).
 
 
 
@@ -110,29 +119,28 @@ escala de energía del \tev.
 
 El esquema general del detector se muestra en la \cref{fig:atlas}, donde se
 señalan los componentes principales. ATLAS está diseñado en capas de
-sub-detectores que cumplen diferentes roles en la identificación de las
+subdetectores que cumplen diferentes roles en la identificación de las
 partículas producidas durante las colisiones (ver \cref{fig:how_atlas_works}).
 Desde el punto de la colisión
 hacia afuera ATLAS se compone de un detector interno de trazas (ID) compuesto de
 un detector de píxeles, un detector de bandas de silicio (SCT) y un detector de
 radiación de transición (TRT).
 Por sobre el detector interno se encuentra un
-solenoide superconductor que genera un campo magnético de $\sim 2$ Tesla, a fin
+solenoide superconductor que genera un campo magnético de $\sim \unit[2]{T}$, a fin
 de curvar la trayectoria de las partículas cargadas.
 A continuación están ubicados los calorímetros. En primer lugar el calorímetro
 electromagnético para medir la energía cinética de electrones y fotones, y
 posteriormente el calorímetro hadrónico para medir la energía de los jets.
-
 En la capa más externa se encuentra el espectrómetro de muones que le da a ATLAS
 el tamaño total de aproximadamente $\unit[45]{m}$ de largo y más de
 $\unit[25]{m}$ de alto. Intercalado con éste se encuentra el sistema de toroides
-que genera el campo magnético de $\sim$ 4 Tesla para curvar la trayectoria de
+que genera el campo magnético de $\sim \unit[4]{T}$ para curvar la trayectoria de
 los muones hacia el final de su pasaje por el detector ATLAS.
 
 El detector ATLAS se divide geométricamente en dos regiones, la parte central
-denominada \emph{barrel}, y la región de las tapas llamadas \emph{end-cap}.
+denominada \emph{barrel}, y la región de las tapas llamadas \emph{end-caps}.
 En cada una de estas regiones la ubicación de los
-sub-detectores es distinta. En la región \emph{barrel}, los sub-detectores están
+subdetectores es distinta. En la región \emph{barrel}, los subdetectores están
 ubicadas como cilindros concéntricos, mientras que en la región \emph{end-cap}
 están ubicados como discos consecutivos perpendiculares a la dirección del haz.
 
@@ -143,7 +151,7 @@ están ubicados como discos consecutivos perpendiculares a la dirección del haz
   \includegraphics[width=0.8\textwidth]{how_atlas_works}
 
   \caption{Esquema del corte transversal del detector de ATLAS, ilustrando los distintos
-  sub-detectores y el pasaje de las distintas partículas.}
+  subdetectores y el pasaje de las distintas partículas.}
   \label{fig:how_atlas_works}
 
 \end{figure}
@@ -168,7 +176,7 @@ al centro del anillo del LHC, y el eje $y$ se define apuntando hacia arriba.
 %% desde el origen en dirección hacia el centro del anillo del LHC y hacia la
 %% superficie, respectivamente.
 Para describir la posición de los distintos
-sub-detectores y la trayectoria de las partículas dentro de ATLAS se utilizan
+subdetectores y la trayectoria de las partículas dentro de ATLAS se utilizan
 frecuentemente sistemas de coordenadas cilíndricas o polares. El radio $R$ se
 define como la distancia perpendicular al eje del haz. El ángulo azimutal $\phi
 $ es medido alrededor del eje del haz, mientras que el angulo polar $\theta$
@@ -193,10 +201,10 @@ aproxima (en forma exacta para objetos no masivos) por la llamada
 La razón detrás de esta transformación de coordenadas es el hecho que la
 multiplicidad de partículas producidas es aproximadamente constante como función
 de $\eta$, y que la diferencia de pseudo-rapidez entre dos partículas es
-invariante frente a transformaciones (boosts) de Lorentz a lo largo de la
-dirección del haz. En el caso de colisiones hadronicas, la fracción del impulso
-del protón adquirida por cada uno de las partones interactuantes es desconocida;
-parte de este impulso es transferido en la interacción dura, mientras cierta
+invariante frente a transformaciones (\emph{boosts}) de Lorentz a lo largo de la
+dirección del haz. En el caso de colisiones hadrónicas, la fracción del impulso
+del protón adquirida por cada uno de las partones interactuantes es desconocida.
+Parte de este impulso es transferido en la interacción dura, mientras cierta
 fracción remanente escapa el detector a lo largo del haz. Así, no es posible
 reconstruir el movimiento longitudinal del centro de masa en la interacción, y
 aplicar leyes de conservación sobre la cinemática de cada evento. Sin embargo,
@@ -214,9 +222,9 @@ la pseudo-rapidez, se define la energía transversa ($\et = E \sin \theta$) de u
 donde $E$ es su energía total.
 
 
-\section{Los sub-detectores de ATLAS}
+\section{Los subdetectores de ATLAS}
 
-%% A continuación se describen brevemente cada uno de los sub-detectores,
+%% A continuación se describen brevemente cada uno de los subdetectores,
 %% particularmente aquellos subsistemas utilizados para la identificación de
 %% electrones y fotones, pertinentes al análisis presentado en esta Tesis.
 
@@ -235,14 +243,14 @@ magnético nominal de $\unit[2]{T}$.
   \includegraphics[width=0.6\textwidth]{detector_interno}
   \caption{Esquema del detector interno mostrando la traza de una partícula
     cargada de $\pt = 10\gev$ atravesándolo. La trayectoria atraviesa el
-    tubo del haz de berilio (\emph{beam-pipe}), las tres capas del detector de píxeles de silicio (\emph{Pixel}),
+    tubo del haz de berilio, las tres capas del detector de píxeles de silicio (Pixels),
     las cuatro capas dobles de sensores semiconductores (SCT), y
     aproximadamente 36 tubos contenidos en los módulos del detector por radiación
   de transición (TRT).}\label{fig:detector_interno}
 
 \end{figure}
 
-\subsubsection{Pixel}
+\subsubsection{Detector de Píxeles}
 
 Más cerca del punto de interacción se encuentra el detector de píxeles
 \cite{Wermes:381263}, cuyo objetivo principal consiste en la medición de la
@@ -250,31 +258,30 @@ posición de trazas de partículas cargadas con la más alta precisión posible 
 de vital importancia para la reconstrucción de los vértices primarios y
 secundarios. El principio de detección para partículas cargadas es la medida de
 la deposición de la carga inducida en una capa de silicio por ionización.
-
-Se compone de
-tres capas en la region \emph{barrel} (a 4, 10 y 13 cm del tubo del haz) y tres
-discos en cada \emph{end-cap}.
-%% Proveen mediciones de altísima precisión y
-%% granularidad tan cerca del punto de interacción como es posible.
-El sistema
-contiene en total 80 millones de sensores electrónicos, capaces de resolver la posición de las partículas mejor que 14$\mu$m.
+Se compone de tres capas en la region \emph{barrel} (a 4, 10 y 13 cm del tubo
+del haz) y tres discos en cada \emph{end-cap}.
+La primer capa, conocida como capa-$B$, está ubicada a $\unit[50.5]{mm}$ del
+punto de interacción, permitiendo obtener una resolución óptima del parámetro de impacto.
+El sistema contiene en total 80 millones de sensores electrónicos, capaces de
+resolver la posición de las partículas mejor que $\unit[14]{\mu m}$.
 
 
-\subsubsection{SCT}
+\subsubsection{Detector Semiconductor de Trazas (SCT)}
 
 Por fuera del detector de píxeles se encuentra el detector semiconductor de
 trazas (SCT) que consta de ocho capas de detectores de micro bandas de silicio
-que provee puntos de alta precisión en las coordenadas (R$\phi$,z). La
+que provee puntos de alta precisión en las coordenadas (R$\phi$,z).
+La
 resolución espacial es de 16 $\mu$m en R$\phi$ y de 580 $\mu$m en z y tiene 6.2
 millones de canales. Las trazas pueden distinguirse si están separadas más de
 $\sim$200 $ \mu$m. El SCT cubre el rango de pseudorapidez de $|\eta|<$2.5.
 
 
-\subsubsection{TRT}
+\subsubsection{Detector de Radiación de Transición (TRT)}
 
 La parte más externa del detector de trazas es el detector de radiación de
 transición (TRT). Este detector está basado en el uso de detectores tubos que
-pueden operar a alta frecuencia de eventos gracias a su pequeño diámetro (4mm) y
+pueden operar a alta frecuencia de eventos gracias a su pequeño diámetro ($\unit[4]{mm}$) y
 la aislación de sus hilos centrales en volúmenes de gas individuales.
 
 El TRT además de detectar el pasaje de partículas cargadas, detecta la radiación
@@ -282,9 +289,9 @@ de transición que permite distinguir entre partículas cargadas pesadas y
 livianas. La separación entre señales de trazas y de radiación por transición se
 hace analizando tubo por tubo impactos de alto umbral e impactos de baja señal.
 El largo de los tubos varía segun la zona del detector, llegando hasta los 144
-cm en la zona central. El \emph{barrel} contiene 50000 tubos y las \emph{end-caps} contienen
-320000 tubos orientados radialmente. El número total de canales es de 420000 y
-la resolución espacial es de 0.17mm.
+cm en la zona central. El \emph{barrel} contiene 50000 tubos y las
+\emph{end-caps} contienen 320000 tubos orientados radialmente. El número total
+de canales es de 420000 y la resolución espacial es de $\unit[0.17]{mm}$.
 
 
 \subsection{Calorímetros}
@@ -293,26 +300,10 @@ Una vista de los calorímetros de ATLAS puede verse en la \cref{fig:calorimetros
 Consiste en un calorímetro electromagnético cubriendo la región de pseudorapidez
 $|\eta| < 3.2$, un calorímetro hadrónico en la sección \emph{barrel} cubriendo
 la región $|\eta| < 3.2$, calorímetro hadrónicos en las \emph{end-cap} cubriendo
-la región $1.5 < |\eta| < 3.2$, y calorímetros \emph{forward} cubriendo $3.1 <
-|\eta| < 4.9$.
+la región $1.5 < |\eta| < 3.2$, y calorímetros \emph{forward} cubriendo $3.1 < |\eta| < 4.9$.
 
 
 \subsubsection{Calorímetro electromagnético}
-
-El calorímetro electromagnético \cite{caloemTDR} se divide en una parte central
-(\emph{barrel}): $|\eta|<$1.475) y los extremos (\emph{end-caps}):
-1.375$<|\eta|<$3.2. El barril está compuesto por dos mitades, separadas por una
-distancia pequeña (6 mm) a $z = 0$. Las tapas del calorímetro están divididas en
-dos ruedas coaxiales: una rueda externa cubriendo la región 1.375$<|\eta|<$2.5 y
-una parte interna que cubre la región 2.5$<|\eta|<$3.2.
-
-El calorímetro electromagnético es un detector de muestreo de Argón Líquido
-(LAr) con electrodos de kaptón en forma de acordeón y planchas absorbentes de
-plomo. El espesor total del calorimetro electromagnetico\ es $>$24 $X_0$ en el
-barril y $>$26 $X_0$ en las tapas, ($X_0$ = longitud de radiación).
-
-En la región dedicada a los estudios de física de precisión ($|\eta|<$2.5) el
-calorímetro electromagnético está segmentado en tres secciones longitudinales.
 
 \begin{figure}[!tb]
   \centering
@@ -324,21 +315,35 @@ calorímetro electromagnético está segmentado en tres secciones longitudinales
 
 \end{figure}
 
+El calorímetro electromagnético \cite{caloemTDR} se divide en una parte central
+($|\eta|<$1.475) y los \emph{end-caps} (1.375$<|\eta|<$3.2). La parte central
+está compuesto por dos mitades, separadas por una
+distancia pequeña ($\unit[6]{mm}$) a $z = 0$. Las tapas del calorímetro están divididas en
+dos ruedas coaxiales, una rueda externa cubriendo la región 1.375$<|\eta|<$2.5 y
+una parte interna que cubre la región 2.5$<|\eta|<$3.2.
+
+El calorímetro electromagnético es un detector de muestreo de argón líquido
+(LAr) con electrodos de kapton en forma de acordeón y planchas absorbentes de
+plomo. El espesor total del calorímetro electromagnetico es $>24 X_0$ en el
+barril y $>26 X_0$ en las tapas, donde $X_0$ es la longitud de radiación.
+
+En la región dedicada a los estudios de física de precisión ($|\eta|<$2.5) el
+calorímetro electromagnético está segmentado en tres secciones longitudinales.
+
 La sección de las bandas (\emph{strips}) que tiene un espesor constante de
-$\sim$6 $X_0$ en función de $\eta$, está equipado con bandas finas de $\unit[4]{mm}$ de
+$\sim 6 X_0$ en función de $\eta$, está equipado con bandas finas de $\unit[4]{mm}$ de
 largo en la dirección $\eta$. Esta sección actúa como un detector de pre-cascada
 aumentando la capacidad de identificación de partículas,
 (como por ejemplo la distinción entre $\gamma$ y $\pi_0$ o entre electrón y
 $\pi^\pm$) y dando una precisa medición de la posición en $\eta$.
-
 La sección del medio está segmentada transversalmente en torres cuadradas de
-$\Delta \phi \times \Delta \eta=$0.025 $\times$ 0.025 (4 $\times$ 4 cm$^2$ en
+$\Delta \phi \times \Delta \eta = 0.025 \times 0.025$ ($4 \times \unit[4]{cm^2}$ en
 $\eta=0$). El espesor total del detector hasta el final de la sección del medio
-es $\sim$24$X_0$.
-
+es $\sim 24 X_0$.
 La sección más externa tiene una granularidad de
-$\Delta\phi\times\Delta\eta=$0.025 $\times$ 0.05 y su espesor varía entre 2 y 12
+$\Delta\phi\times\Delta\eta = 0.025 \times 0.05$ y su espesor varía entre 2 y 12
 $X_0$.
+
 
 \subsubsection{Calorímetro hadrónico}
 
@@ -380,13 +385,13 @@ Este es el subdetector más grande y el que le da a ATLAS su tamaño.
 %% de ATLAS.
 
 La región del barril está compuesta por tres capas concéntricas de cámaras de
-trigger y de cámaras de precisión posicionadas a 5m, 7.5m y 10m del tubo del
+\emph{trigger} y de cámaras de precisión posicionadas a 5m, 7.5m y 10m del tubo del
 LHC, cubriendo la región $|\eta|<1$. Las regiones de las tapas están compuestas
-por cuatro capas de cámaras de trigger y cámaras de precisión a $|z|$= 7.4m,
+por cuatro capas de cámaras de \emph{trigger} y cámaras de precisión a $|z|$= 7.4m,
 10.8m, 14m y 21.5m cubriendo el rango de 1.0$<|\eta|<$2.7. Hay una pequeña
 brecha en $|z|=0$ que permite el acceso de los servicios al ID.
 
-El espectrómetro de muones es el sub-detector más grande de ATLAS, construido
+El espectrómetro de muones es el subdetector más grande de ATLAS, construido
 dentro y alrededor de los imanes toroidales. Los muones son altamente penetrantes
 y son las únicas partículas (excepto las invisibles que no interactúan) que llegan
 a el sistema de muones. Los muones pierden parte de su energía mientras penetran
@@ -471,71 +476,65 @@ en los calorímetros.
 %---------
 % Trigger
 %---------
-\section{El sistema de Trigger}
+\section{El sistema de \emph{trigger}}
 
 La parte central del sistema de adquisición de datos de ATLAS es el
-\emph{trigger}. El sistema de trigger puede ser pensado como un filtro que
+<<\emph{trigger}>>. El sistema de \emph{trigger} puede ser pensado como un filtro que
 selecciona, del gran número de colisiones que tienen lugar en el experimento,
 los eventos que serán almacenadas para su posterior procesamiento y análisis.
 
-El LHC esta disenado para proveer colisionesión $pp$
-de $\mathcal{O}(1)$ GHz, considerando una frecuencia de cruce de haces
-de $\unit[40]{MHz}$ y $\sim$ 23 interacciones por cruce.
-Dado que la mayoría de
-los eventos no son de interés para los análisis de fisica,
-y también debido a las limitaciones de almacenamiento y de
-poder de cómputo, el flujo de datos incidente debe ser reducido al máximo
-permitido para su almacenamiento permanente ($\sim 200$ Hz) \cite{Aad:2012xs}. El tamaño típico
-por evento es de $\sim 1.4$ MB, lo que resulta en un ancho de banda requerido de
-$\sim 300$ MB/$s$. Esta reducción se logra mediante una rápida y eficiente
-preselección de eventos, conocida como \emph{trigger}.
+El LHC esta disenado para proveer colisionesión $pp$ de $\mathcal{O}(1)$ GHz,
+considerando una frecuencia de cruce de haces de $\unit[40]{MHz}$ y $\sim$ 23
+interacciones por cruce. Dado que la mayoría de los eventos no son de interés
+para los análisis de fisica, y también debido a las limitaciones de
+almacenamiento y de poder de cómputo, el flujo de datos incidente debe ser
+reducido al máximo permitido para su almacenamiento permanente ($\sim 400$ Hz)
+\cite{Aad:2012xs}.
+Esta reducción se logra mediante una rápida y eficiente preselección de eventos,
+conocida como \emph{trigger}.
 
-Esencialmente, el sistema de \emph{trigger} de ATLAS \cite{trigger} consiste en una selección
-de eventos basada en tres niveles:
-Nivel 1 (L1), Nivel 2 (L2) y Filtro de eventos (EF), donde
-los dos últimos conforman el \emph{High Level Trigger} (HLT). Cada nivel permite
-analizar los eventos con mayor detalle, aumentando la precisión de los criterios
-de selección y la complejidad de los algoritmos utilizados. El sistema de
-adquisición de datos (DAQ) transfiere y almacena los datos seleccionados por el
-\emph{trigger}.
+Esencialmente, el sistema de \emph{trigger} de ATLAS \cite{atlas} consiste en
+una selección de eventos basada en tres niveles: Nivel 1 (L1), Nivel 2 (L2) y
+Filtro de eventos (EF), donde los dos últimos conforman el \emph{High Level
+  Trigger} (HLT). Cada nivel permite analizar los eventos con mayor detalle,
+aumentando la precisión de los criterios de selección y la complejidad de los
+algoritmos utilizados. El sistema de adquisición de datos transfiere y
+almacena los datos seleccionados por el \emph{trigger}.
 
-El primer nivel del \emph{trigger} se encarga de la selección inicial, reduciendo la
-frecuencia de eventos que pasaran al siguiente nivel a $\sim 75$ kHz. Debido al
-tamaño limitado de las memorias temporales donde se guardan los datos
-de cada sub-detector y al considerable tiempo de vuelo de las partículas hasta el
-espectrómetro de muones, la decisión debe tomarse en una escala de tiempo muy
-limitada ($2.5 \mu s$). El L1 esta basado en hardware y selecciona objetos
-de alto {\pt} construidos a partir de la información de varios subdetectores.
-Los muones son identificados en las cámaras de trigger descriptas en la \cref{sec:espectrometro_muones},
-mientras que la información de los calorímetros, con una resolución reducida, se
-utiliza para identificar candidatos a electrones, fotones, jets y taus decayendo
-hadrónicamente.
-La posición de cada objeto encontrado define una \emph{region de
-  interés} (RoI) en un evento potencialmente interesante, que se extiende como
-un cono desde el punto de interacción a lo largo del detector.
+El L1 se encarga de la selección inicial, reduciendo la frecuencia de eventos
+que pasan al siguiente nivel a $\sim 75$ kHz. Debido al tamaño limitado de las
+memorias temporales donde se guardan los datos de cada subdetector y al
+considerable tiempo de vuelo de las partículas hasta el espectrómetro de muones,
+la decisión debe tomarse en una escala de tiempo muy limitada ($\unit[2.5]{\mu
+  s}$). El L1 esta basado en hardware y selecciona objetos de alto {\pt}
+construidos a partir de la información de varios subdetectores. Los muones son
+identificados en las cámaras de trigger descriptas en la
+\cref{sec:espectrometro_muones}, mientras que la información de los
+calorímetros, con una resolución reducida, se utiliza para identificar
+candidatos a electrones, fotones, jets y taus decayendo hadrónicamente. La
+posición de cada objeto encontrado define una <<región de interés>> (RoI) en
+un evento potencialmente interesante, que se extiende como un cono desde el
+punto de interacción a lo largo del detector.
 
 En el calorímetro, el L1 se basa en las señales analógicas obtenidas en cada
-torre del trigger, es decir en la suma de celdas en una ventana $\Delta \eta \times \Delta
-\phi = 0.1 \times 0.1$, definida separadamente para el calorímetro electromagnético y
-hadrónico.
-%% El \emph{trigger} de muones en el L1 utiliza las medidas de las trayectorias en
-%% las diferentes estaciones de las cámaras de trigger: las RPCs en la región del
-%% barrel y las TGCs en los endcaps.
-La aceptancia geométrica del L1 está ligada al diseño del detector, donde las medidas de precisión en los
-calorímetros y la cobertura del detector interno están limitadas a la región
-$\abseta < 2.5$. El trigger de fotones, electrones, muones y taus debe asegurar
-la cobertura en esta región. En el caso del trigger de jets, las torres del \emph{trigger}
-se extienden hasta $\abseta < 3.2$, mientras que para el cálculo de la energía
+torre del trigger, es decir en la suma de celdas en una ventana $\Delta \eta
+\times \Delta \phi = 0.1 \times 0.1$, definida separadamente para el calorímetro
+electromagnético y hadrónico. La aceptancia geométrica del L1 está ligada al
+diseño del detector, donde las medidas de precisión en los calorímetros y la
+cobertura del detector interno están limitadas a la región $\abseta < 2.5$. El
+trigger de fotones, electrones, muones y taus debe asegurar la cobertura en esta
+región. En el caso del trigger de jets, las torres del \emph{trigger} se
+extienden hasta $\abseta < 3.2$, mientras que para el cálculo de la energía
 transversa total (faltante) se utiliza todo el sistema calorimétrico (es decir,
 $\abseta < 4.9$). Los resultados de los subsistemas del trigger son procesados
-en el \emph{Central Trigger Processor} (CTP), en donde se aplica una serie de
-selecciones definidas como una combinación de criterios
-individuales, que pueden ser ajustados según la luminosidad y los requerimientos
-físicos particulares de cada toma de datos. Un total de 256 configuraciones
-(\emph{items}) están disponibles en el L1, donde se programa el tipo de RoI (EM,
-TAU, JET, etc.) y los umbrales de energía total y de aislamiento requeridos en
-cada caso. Por ejemplo, el item L1EM14 acepta eventos donde al menos un (dos)
-cluster(s) en el calorímetro electromagnético posee(n) $\et \geq 14 \GeV$.
+en el \emph{Central Trigger Processor}, en donde se aplica una serie de
+selecciones definidas como una combinación de criterios individuales, que pueden
+ser ajustados según la luminosidad y los requerimientos físicos particulares de
+cada toma de datos. Las distintas configuraciones (\emph{items}) están
+disponibles en el L1, donde se programa el tipo de RoI (EM, TAU, JET, etc.) y
+los umbrales de energía total y de aislamiento requeridos en cada caso. Por
+ejemplo, el item L1EM14 acepta eventos donde al menos un (dos) cluster(s) en el
+calorímetro electromagnético posee(n) $\et \geq 14 \GeV$.
 
 El segundo nivel del trigger (L2) se centra únicamente en las RoIs donde el L1
 encontró actividad, combinando información de todos los subdetectores dentro de
@@ -549,13 +548,13 @@ calcular las variables calorimétricas con mayor precisión y hacer uso de la
 información de las trazas reconstruidas, haciendo posible la distinción entre
 fotones y electrones, y el rechazo de fondo proveniente en su mayoría de jets.
 En general, si bien la selección se basa en las mismas variables que la
-identificación offline descripta en la \cref{sec:obj_photons} (sobre las características de
+identificación \emph{offline} descripta en la \cref{sec:obj_photons} (sobre las características de
 las lluvias electromagnéticas), los valores de corte en cada variable son
 relajados (o a lo sumo igualados) respecto a la selección offline, para evitar
 el rechazo prematuro de candidatos que satisfacen los criterios de identificación
 durante el análisis final. La última etapa de la selección del trigger se lleva
-a cabo en el EF, que reduce la frecuencia de eventos a $\sim
-\unit[200]{Hz}$ ($\sim \unit[300]{MB/s}$). En este nivel se tiene acceso a toda
+a cabo en el EF, que reduce la frecuencia de eventos a $\sim \unit[400]{Hz}$.
+En este nivel se tiene acceso a toda
 la información del evento en los distintos subdetectores de ATLAS, con la máxima
 granularidad e incluyendo detalles sobre la calibración de energía de los
 calor metros, la alineación de los subdetectores y el mapa de campo magnético. El
@@ -563,24 +562,16 @@ tiempo de latencia relativamente largo disponible para tomar la decisión final
 sobre el evento ($\avg{t} \sim \unit[4]{s}$) permite la reconstrucción completa
 del mismo, y el refinamiento de las variables y criterios de selección al nivel
 de aquellos implementados en el análisis offline. Los eventos aceptados por el
-EF son finalmente grabados a disco y distribuidos, accesibles offline para todos
+EF son finalmente grabados a disco y distribuidos, accesibles \emph{offline} para todos
 los análisis subsecuentes.
 
-%% Cabe mencionar que el sistema de TDAQ permite, en principio, una tasa de
-%% procesamiento/almacenamiento por encima de estos parámetros de dise\~no, por
-%% periodos cortos de tiempo. Por ejemplo, durante el periodo de más baja
-%% luminosidad instantánea en el 2010 ($L\sim 10^{32} \text{cm}^{-2} s^{-1}$) se
-%% alcanzaron frecuencias de lectura a la salida del EF de $\sim 600$ Hz, para
-%% beneficiar los primeros análisis físicos de ATLAS. Asimismo, el tiempo medio de
-%% procesamiento por evento del EF fue de $\sim \unit[400]{ms}$, muy por debajo del
-%% esperado.
-Al igual que en el Level 1, en cada nivel del HLT se configuran ciertos
+Al igual que en el L1, en cada nivel del HLT se configuran ciertos
 criterios según el tipo y multiplicidad de la partícula que se busca en el
 evento, y el conjunto de cortes de identificación aplicados. La nomenclatura
 adoptada como convención en el trigger de ATLAS tiene la forma general
 \texttt{L\_ipX\_Y}, donde \texttt{L} es el nivel del trigger (L2,EF), \texttt{i}
 la multiplicidad, \texttt{p} la partícula de interés (por ejemplo
-\texttt{g}=fotón, \texttt{e}=electrón), \texttt{X} el {\pt} mínimo requerido e
+\texttt{g} = fotón, \texttt{e} = electrón), \texttt{X} el {\pt} mínimo requerido e
 \texttt{Y} el tipo de identificación aplicada (loose, tight, etc.). Los
 distintos criterios del L2/EF y su item asociado en el L1 definen en conjunto
 una de las \emph{cadenas} del trigger, que toman el nombre de la signature del
@@ -608,99 +599,31 @@ GRID, compartiendo el poder de procesamiento y la capacidad de almacenamiento
 disponibles en distintos centros de cómputo asociados alrededor del mundo.
 
 El software de ATLAS se desarrolla dentro un entorno C++ común llamado
-\textsc{Athena} \cite{CompuTDR,Lenzi:1214931,Calafiura:865624}, basado en el proyecto GAUDI \cite{Gaudi}. Todo el
-procesamiento de los datos en ATLAS se realiza dentro de este entorno,
-incluyendo la implementación y configuración del HLT, la simulación de la
-respuesta del detector, la generación de las muestras MC de los distintos
-procesos físicos, y la reconstrucción y análisis de los datos. Los eventos
-aceptados por el trigger deben ser procesados para reducir su tamaño y ser
-utilizados para los análisis offline. A la salida del EF, los eventos son
-almacenados como RDOs (\emph{Raw Data Objects}). Luego de aplicar los algoritmos de
-reconstrucción y calibración, las colecciones de los distintos objetos físicos
-obtenidas (fotones, electrones, etc.) son almacenadas en formato ESD (\emph{Event
-Summary Data}) y AOD (\emph{Analysis Data Object}), una versión reducida del primero
-($\sim 100$ kB/evento). A partir de las ESD/AOD, se ha definido un formato de
-datos significativamente más pequeño (10-15 kB/evento) conocido como D3PD
-(\emph{Derived Physics Data}), sobre el que se realiza el análisis final. Las \emph{D3PD} son
-ntuplas almacenadas en un formato de archivo accesibles vía el entorno de análisis de datos ROOT
-\cite{Brun199781}, que contienen un conjunto de variables para diferentes objetos físicos,
-según las necesidades de cada grupo de análisis dentro de ATLAS. Para el
-análisis de esta tesis, se utilizaron las D3PD definidas y producidas en forma
-centralizada por el grupo de SUSY. La misma cadena de reconstrucción y
-distribución se aplica a las simulaciones Monte Carlo, a fin de conservar un
-modelo de análisis único y garantizar la consistencia en la comparación de estas
-con los datos experimentales.
+\textsc{Athena} \cite{CompuTDR,Lenzi:1214931,Calafiura:865624}, basado en el
+proyecto GAUDI \cite{Gaudi}. Todo el procesamiento de los datos en ATLAS se
+realiza dentro de este entorno, incluyendo la implementación y configuración del
+HLT, la simulación de la respuesta del detector, la generación de las muestras
+MC de los distintos procesos físicos, y la reconstrucción y análisis de los
+datos. Los eventos aceptados por el trigger deben ser procesados para reducir su
+tamaño y ser utilizados para los análisis offline. A la salida del HLT, los
+eventos son almacenados como RDOs (\emph{Raw Data Objects}). Luego de aplicar
+los algoritmos de reconstrucción y calibración, las colecciones de los distintos
+objetos físicos obtenidas (fotones, electrones, etc.) son almacenadas en formato
+ESD (\emph{Event Summary Data}) y AOD (\emph{Analysis Data Object}), una versión
+reducida del primero ($\sim 100$ kB/evento). A partir de las ESD/AOD, se ha
+definido un formato de datos significativamente más pequeño (10-15 kB/evento)
+conocido como D3PD (\emph{Derived Physics Data}), sobre el que se realiza el
+análisis final. Las \emph{D3PD} son ntuplas almacenadas en un formato de archivo
+accesibles vía el entorno de análisis de datos ROOT \cite{Brun199781}, que
+contienen un conjunto de variables para diferentes objetos físicos, según las
+necesidades de cada grupo de análisis dentro de ATLAS. Para el análisis de esta
+tesis, se utilizaron las D3PD definidas y producidas en forma centralizada por
+el grupo de SUSY. La misma cadena de reconstrucción y distribución se aplica a
+las simulaciones Monte Carlo, a fin de conservar un modelo de análisis único y
+garantizar la consistencia en la comparación de estas con los datos
+experimentales.
 
-
-\section{Datos de colisiones $pp$ a $\sqrt{s} = 8$ \tev}
-
-%% Un concepto importante es el de \emph{pile-up}, que significa que las partículas
-%% producidas en más de una colisión partícula-partícula llegan al detector al
-%% mismo tiempo, o más generalmente que sus señales se superponen de una forma que
-%% no puede ser separadas. Cuando los \emph{bunches} de protones colisionan, la
-%% probabilidad de una interacción es proporcional a la densidad de partículas, o
-%% mejor, al flujo de partículas, el cual se expresa con la luminosidad
-%% instantánea. El número de colisiones de partículas real que tienen lugar cuando
-%% los dos \emph{bunches} se cruzan es una variable aleatoria que sigue una
-%% distribución de Poisson. Para bajas luminosidades, en la mayoría de los cruces
-%% de haces, nada pasa. Para luminosidades instantánea altas, en la mayoría de los
-%% cruces se producen muchas colisiones de partículas al mismo tiempo. En lo
-%% siguiente $\avg{\mu}$ se define como el valor medio (esperado) de interacciones
-%% inelasticas $pp$ por cruce de \emph{bunches}. Es una medida cuantitativa
-%% importante de la actividad en el event y puede ser calculada a partir de la
-%% luminosidad instanea. Al igual que $L$, $\avg{\mu}$ depende del número de
-%% protones que contienen los \emph{bunches}, que no es necesariamente el mismo
-%% para todos los \emph{bunches} en el acelerador.
-
-
-%% \hl{Explicar como se divide la toma de datos, criterios de calidad, GRL, ...}
-
-%% Durante el ano 2012 ATLAS recolectó datos de las colisiones $pp$ provistas
-%% por el LHC a una energia de centro de masa $\sqrt{s} = 8\tev$. La toma de datos
-
-
-
-El presente análisis utiliza el conjunto de eventos recolectados de las colisiones
-$pp$ a una energía de centro de masa $\sqrt{s} = 8\tev$ con el detector ATLAS
-durante el a\~no 2012. Estos eventos recolectados corresponden a una luminosidad
-total integrada de $21.7 \ifb$. Dado que en el análisis se utilizan fotones, electrones,
-muones, jets y energía faltante, es imprescindible que todos los sub-sistemas
-del detector ATLAS hayan operado en condiciones normales durante la toma
-de datos. Este requerimiento adicional resulta en una reducción de los datos de
-$\sim 6\%$, dejando una luminosidad total de $\int L\, dt = 20.3 \pm 0.6\, (2.8
-\%) \, \ifb$\cite{lumi2012} para análisis físicos.
-
-\begin{table}[!htbp]
-  \centering
-  \caption{Luminosidad integrada de cada período de toma de datos de colisiones
-    $pp$ a una energía de centro de masa de $8 \tev$ utilizada en este
-    análisis.}
-  \label{tab:data_periods}
-
-  \begin{tabular}{ccr}
-    \hline
-    Período & Runs & Luminosidad $[\ipb]$ \\
-    \hline
-    A & 200804 - 201556 & 795.91 \\
-    B & 202660 - 205113 & 5113.61 \\
-    C & 206248 - 207397 & 1409.06 \\
-    D & 207447 - 209025 & 3297.54 \\
-    E & 209074 - 210308 & 2534.11 \\
-    G & 211522 - 212272 & 1279.54 \\
-    H & 212619 - 213359 & 1449.04 \\
-    I & 213431 - 213819 & 1018.45 \\
-    J & 213900 - 215091 & 2605.48 \\
-    L & 215414 - 215643 & 841.634 \\
-    \hline
-    Total & 200804 - 215643 & 20344.37 \\
-    \hline
-  \end{tabular}
-
-\end{table}
-
-
-
-%% 2 ATLAS Offline Software Overview
+%% 2 ATLAS \emph{offline} Software Overview
 %% The ATLAS software framework, Athena [3], uses Python
 %% as an object-oriented scripting and interpreter language
 %% to configure and load C++ algorithms and objects.
@@ -729,25 +652,69 @@ $\sim 6\%$, dejando una luminosidad total de $\int L\, dt = 20.3 \pm 0.6\, (2.8
 %% like Gaudi and CLHEP, are summarized in Table 2.
 
 
-%% El mecanismo de seleccion se basa en el
-%% concepto de bloques de luminosidad (LB). Cada toma de datos (Run) en ATLAS se
-%% divide en estos pequenos intervalos de aproximadamente 2 minutos, dentro de los
-%% cuales la luminosidad instantanea es esencialmente constante.
 
+\section{Datos de colisiones $pp$ a $\sqrt{s} = 8$ \tev}
 
-Producto de la complejidad de un experimento de la magnitud de ATLAS y de las
-demandantes condiciones de funcionamiento del LHC, se pueden observar
-ocasionalmente ciertas ineficiencias en los diversos sub-detectores y/o en la
-cadena de procesamiento de los datos recolectados. Para asegurar la calidad de los
-datos a ser considerados en los análisis físicos de ATLAS, los grupos
-responsables de cada sub-detector definen un conjunto de criterios de
-calidad [], con los cuales se construyen listas, llamadas GRL, de las
-Runs y los rangos de LB dentro de ellas que son apropiadas para cada tipo de
-análisis. Se producen de forma centralizada para brindar listas oficiales
-comunes para los distintos grupos dentro de ATLAS, distribuidas en un formato
-\textsc{XML} para luego ser utilizadas durante el análisis final.
+Durante la operación del detector ATLAS, cada toma de datos (\emph{Run}) durante
+un haz estable provisto por el LHC, es dividida en bloques de luminosidad
+(\emph{LB}) de aproximadamente dos minutos, dentro de los cuales la luminosidad
+instantánea es prácticamente constante, y en el que se espera que las
+condiciones del haz sean estables. Producto de la complejidad del experimento y
+de las demandantes condiciones de funcionamiento del LHC, se pueden observar
+ocasionalmente ciertas ineficiencias en los diversos subdetectores y/o en la
+cadena de procesamiento de los datos recolectados. Durante cada \emph{Run} los
+distintos subcomponentes del detector son monitoreados y cada problema es
+registrado, incluyendo que componenentes están inactivos, o si hay problemas en
+la infraestructura o en el haz.
 
-\begin{figure}[!htbp]
+Para asegurar la calidad de los datos a ser considerados en los análisis físicos
+de ATLAS, los grupos responsables de cada subdetector definen un conjunto de
+criterios de calidad \cite{GRL}, con los cuales se construyen listas, llamadas
+GRL (\emph{Good Runs List}), de las Runs y los rangos de LB dentro de ellas que
+son apropiados para cada tipo de análisis. Se producen de forma centralizada
+para brindar listas oficiales comunes para los distintos grupos dentro de ATLAS
+y son distribuidas en un formato \textsc{XML} para luego ser utilizadas durante
+el análisis final. Cada análisis elije que GRL utiliza dependiendo de su
+tolerancia a las fallas de los subdetectores.
+
+El presente análisis utiliza el conjunto de eventos recolectados de las colisiones
+$pp$ a una energía de centro de masa $\sqrt{s} = 8\tev$ con el detector ATLAS
+durante el a\~no 2012. Estos eventos recolectados corresponden a una luminosidad
+total integrada de 21.7 \ifb. Dado que en el análisis se utilizan fotones, electrones,
+muones, jets y energía faltante, es imprescindible que todos los sub-sistemas
+del detector ATLAS hayan operado en condiciones normales durante la toma
+de datos. Este requerimiento adicional resulta en una reducción de los datos de
+$\sim 6\%$, dejando una luminosidad total de $\int L\, dt = 20.3 \pm 0.6\, (2.8
+\%) \, \ifb$\cite{lumi2012} para análisis físicos.
+
+Otro concepto importante de la toma de datos en ATLAS es el \emph{pile-up}, el
+cual ocurre cuando las partículas producidas en más de una colisión
+partón-partón llegan al detector al mismo tiempo, o más generalmente que sus
+señales se superponen de una forma que no puede ser separadas. Cuando los
+\emph{bunches} de protones colisionan, la probabilidad de una interacción es
+proporcional a la densidad de partículas, o mejor, al flujo de partículas, el
+cual se expresa con la luminosidad instantánea. El número de colisiones de
+partículas real que tienen lugar cuando dos \emph{bunches} se cruzan es una
+variable aleatoria que sigue una distribución de Poisson. Para bajas
+luminosidades, en la mayoría de los cruces de haces, no ocurre nada, pero para
+luminosidades instantáneas altas, en la mayoría de los cruces se producen muchas
+colisiones de partículas al mismo tiempo. Dependiendo del subdetector y el tipo
+de medición, puede o no ser posible distinguir entre las partículas provenientes
+de diferentes interacciones simultáneas. Esto es llamado \emph{pile-up in-time}.
+En cambio, el \emph{pile-up out-of-time} incluye los efectos que se originan
+cuando el tiempo que el detector necesita para volver a su estado de espera es
+mayor al tiempo entre cruces de \emph{bunches}. Una medida cuantitativa del
+\emph{pile-up} y la actividad en el eventos es el valor medio de interacciones
+inelásticas $pp$ por cruce de \emph{bunches}, $\avg{\mu}$.
+
+Durante el período de toma de datos del 2012, el pico de luminosidad instantánea
+aumento desde $\unit[2.74 \cdot 10^{30}]{cm^{-2} s^{-1}}$ hasta
+$\unit[7.61 \cdot 10^{33}]{cm^{-2} s^{-1}}$, y el número medio de interacciones por cruce
+de haz varió entre 5.9 y 36.53. La distribución de la luminosidad acumulada
+durante la toma de datos y del número de interacciones por colisión pude verse en
+la \cref{fig:lumi}.
+
+\begin{figure}[!htb]
   \centering
 
   \includegraphics[width=0.49\textwidth]{intlumivstime2012DQ}
@@ -755,7 +722,7 @@ comunes para los distintos grupos dentro de ATLAS, distribuidas en un formato
 
   \caption{Izquierda: Luminosidad acumulada como función del tiempo, entregada por el LHC (verde),
     guardada por ATLAS (amarillo), y que pasa los criterios de calidad (azul),
-    durante haces estables en colisiones $pp$ a $\sqrt{s}=8\tev$ durante el a\~no 2012\cite{lumiplots}.
+    durante el funcionamiento del LHC con haces estables en colisiones $pp$ a $\sqrt{s}=8\tev$ durante el a\~no 2012\cite{lumiplots}.
     Derecha: Distribución del valor medio del número de interacciones por cruce
     de haz ($\mu$) durante la toma de datos en el a\~no 2012 pesado con la luminosidad.
     La luminosidad integrada y el valor medio de $\mu$ están detallados en la figura.
@@ -763,8 +730,3 @@ comunes para los distintos grupos dentro de ATLAS, distribuidas en un formato
   \label{fig:lumi}
 
 \end{figure}
-
-
-%% \section{Datos de colisiones $pp$ a $\sqrt{s} = 13$ \tev}
-
-%% \hl{Agregar si usamos datos de 13 TeV}
