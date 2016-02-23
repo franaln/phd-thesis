@@ -1,40 +1,38 @@
 \chapter{Selección de eventos: definición de las regiones de señal}
 \label{cap:seleccion}
 
-Como se discutió en la \cref{sec:regiones}, las regiones de señal son un componente clave del
-análisis dado que son aquellas en las que se espera la presencia de eventos de
-nueva fisica. En este capítulo se describe la selección de eventos que definen
-las regiones de señal del análisis de esta tesis. Esta selección fue optimizada
-en base a la significancia esperada de descubrimiento utilizando las muestras MC
-de señal y fondos del SM.
+Como se discutió en la \cref{sec:regiones}, las regiones de señal son un
+componente clave del análisis dado que son aquellas en las que se espera la
+presencia de eventos de nueva física. En este capítulo se describe la selección
+de eventos que definen las regiones de señal del análisis de esta tesis. Esta
+selección fue optimizada en base a la significancia esperada de descubrimiento
+utilizando las muestras MC de señal y fondos del SM.
 
 
 
 \section{Criterios de calidad sobre los datos}
 
-%% % GRL: data12_8TeV.periodAllYear_DetStatus-v61-pro14-02_DQDefects-00-01-00_PHYS_StandardGRL_All_Good.xml
+%% GRL: data12_8TeV.periodAllYear_DetStatus-v61-pro14-02_DQDefects-00-01-00_PHYS_StandardGRL_All_Good.xml
 
-Para este análisis se ha utilizado una
-GRL %%\footnote{\texttt{data12\_8TeV.periodAllYear\_DetStatus-v61-pro14-02\_DQDefects-00-01-00\_PHYS\_StandardGRL\_All\_Good.xml}}
-que, además de aplicar requerimientos generales sobre la operación del
-experimento y la estabilidad del haz en el acelerador, contiene aquellos eventos
-donde todos los sub-detectores se encontraban funcionando en su plena capacidad.
+Para este análisis se ha utilizado una GRL que, además de aplicar requerimientos
+generales sobre la operación del experimento y la estabilidad del haz en el
+acelerador, contiene aquellos eventos donde todos los subdetectores se
+encontraban funcionando en su plena capacidad.
 
 Adicionalmente se eliminan los eventos que contengan algún tipo de problema,
-como ruido en el calorímetro, o celdas no operativas, que pueda resultar
-en energía faltante instrumental. %% debido a alguno de estos problemas.
+como ruido en el calorímetro, o celdas no operativas, que pueda resultar en
+energía faltante instrumental.
 
 
+\section{\emph{Trigger}}\label{sec:trigger}
 
-\section{Trigger}\label{sec:trigger}
-
-Los datos fueron recolectados utilizando un trigger de un fotón (\trigchain), que
-selecciona eventos con al menos un fotón loose con momento transverso mayor a
+Los datos fueron recolectados utilizando un \emph{trigger} de un fotón (\trigchain), que
+selecciona eventos con al menos un fotón \emph{loose} con momento transverso mayor a
 120 \gev.
 
-La eficiencia de este trigger fue calculada utilizando el método \emph{bootstrap}
+La eficiencia de este \emph{trigger} fue calculada utilizando el método \emph{bootstrap}
 siguiendo las prescripciones descriptas en \cite{ATLAS-CONF-2011-114,Damazio:1609629}.
-Cuando se calcula la eficiencia del trigger utilizando el método \emph{bootstrap}, se factoriza
+Cuando se calcula la eficiencia del \emph{trigger} utilizando el método \emph{bootstrap}, se factoriza
 la eficiencia como el producto de la eficiencia del EF respecto a la eficiencia del L1
 por la eficiencia de la seleccion de L1.
 La eficiencia de {\trigchain} respecto a fotones aislados con $\pt>125\gev$ resulta en
@@ -46,7 +44,7 @@ A pesar de la escasa estadística, es claro que la eficiencia alcanza una meseta
 en la cual la eficiencia es máxima, antes de $125 \gev$. La incerteza total
 tiene en cuenta la limitada estadística de la muestra de datos y también la
 incerteza en la corrección debido a la pureza de los fotones. El desempeño del
-trigger se mantuvo estable durante todo el período de la toma de datos
+\emph{trigger} se mantuvo estable durante todo el período de la toma de datos
 considerado.
 
 \begin{figure}[!htb]
@@ -54,7 +52,7 @@ considerado.
 
   \includegraphics[width=0.45\textwidth]{EffPtg120_loose}
 
-  \caption{Eficiencia del trigger {\trigchain} como función del {\pt} del fotón.}
+  \caption{Eficiencia del \emph{trigger} {\trigchain} como función del {\pt} del fotón.}
   \label{fig:trigger_perf}
 \end{figure}
 
@@ -235,7 +233,7 @@ representativos de la topología y el espacio de fase en cada caso.
 
 Como fondo se utilizaron las muestras MC, y se consideró una incerteza en la estimación del
 fondo de 25\%. Todas las muestras MC fueron normalizadas a una luminosidad total
-integrada de $20.3 \ifb$. La significancia esperada se calculó utilizando la
+integrada de 20.3 \ifb. La significancia esperada se calculó utilizando la
 \cref{eq:Za}, y para evitar una selección muy restringida, se requiere al menos
 un evento de fondo en cada SR. Además de evaluar la significancia esperada para
 distintos cortes también se tuvo en cuenta que la eficiencia de señal sea
@@ -338,7 +336,7 @@ de este efecto es discutido en la \cref{sec:jfake_sig_template,sec:expsyst}.
   \label{fig:photon_iso}
 \end{figure}
 
-\begin{figure}[!htbp]
+\begin{figure}[!h]
   \centering
 
   \includegraphics[width=0.3\textwidth]{figures/iso_20_sig}
@@ -361,7 +359,7 @@ de este efecto es discutido en la \cref{sec:jfake_sig_template,sec:expsyst}.
 Además del veto a los eventos con un segundo fotón, también se remueven
 los eventos que contienen leptones ($e$ o $\mu$) con el objetivo de que las
 SR no tengan un solapamiento con las SR del análisis que busca estados finales
-con un fotón, un leptón y energía faltante [ref].
+con un \note{fotón, un leptón y energía faltante}{Agregar ref}.
 %% que busca... . La perdida en la eficiencia
 %% debido a este veto es de XXX \%.
 
@@ -384,7 +382,7 @@ Un corte en {\met} relativamente bajo ($> 200 \gev$) es capaz de separar
 la señal y el fondo significativamente en {\SRL}, mientras que para {\SRH}
 es posible aplicar un corte más alto ($>300\gev$).
 
-\begin{figure}[!htbp]
+\begin{figure}[!h]
   \centering
   \includegraphics[width=0.49\textwidth]{met_et_base1}
   \includegraphics[width=0.49\textwidth]{met_et_base2}
@@ -408,7 +406,7 @@ este análisis se consideran los jets con $\pt>40\gev$
 %% El corte en {\pt} fue elegido para asegurar una selección robusta contra el pile-up.
 
 
-\begin{figure}[!htbp]
+\begin{figure}[!h]
   \centering
   \includegraphics[width=0.5\textwidth]{data_jets_npv}
   \caption{Valor medio del número de jets vs. el número de vértices primarios
@@ -433,7 +431,7 @@ multiplicidad es efectivamente esperada para {\SRL} debido a que su objetivo es
 la región de gluinos pesados donde el decaimiento dominante es el de producción
 de charginos por un decaimiento de tres cuerpos.
 
-\begin{figure}[!htbp]
+\begin{figure}[!h]
   \centering
   \includegraphics[width=0.49\textwidth]{jet_n_base1}
   \includegraphics[width=0.49\textwidth]{jet_n_base2}
@@ -516,7 +514,7 @@ de {\met} y la de los dos jets más energéticos.
 %% A lower bound $\dphijm>0.4$ cut is applied for the two signal regions,
 %% which helps to significantly reduce the QCD background and clean events with mis-reconstructed \etmiss.
 
-\begin{figure}[!htbp]
+\begin{figure}[!h]
   \centering
 
   \includegraphics[width=0.49\textwidth]{figures/dphi_jetmet_srl}
@@ -549,7 +547,7 @@ La distribución para la {\SRH} se puede ver en \cref{fig:opt_dphi_gamjet}.
 
  % shows the jet-photon $\phi$ separation for signal and backround in SR3, after applying the photon \pt\ ,  \etmiss,  jet  \pt\  and multiplicity as well as  $\Delta \phi \text{(jet, MET)}$ cuts.  The cut value chosen for jet-photon separation in this high mass signal region  is  $\Delta \phi \text{(jet}, \gamma) >2$.
 
-\begin{figure}[!htbp]
+\begin{figure}[!h]
   \centering
 
   \includegraphics[width=0.49\textwidth]{figures/dphi_gammet_srh}
@@ -590,7 +588,7 @@ Dada la masa alta del neutralino, la mayor contribución de {\HT} proviene
 del fotón muy energético producido en el evento.
 
 
-\begin{figure}[!htbp]
+\begin{figure}[!h]
   \centering
 
   \includegraphics[width=0.49\textwidth]{ht_srl}
@@ -632,7 +630,7 @@ evento, la distribución será menor a 1.
 %% comparatively harder than those in SM background events.
 
 
-\begin{figure}[!htbp]
+\begin{figure}[!h]
   \centering
 
   \includegraphics[width=0.49\textwidth]{figures/rt4_srl}
@@ -682,7 +680,7 @@ Cada región de señal queda definida entonces por los cortes de selección deta
 
   \begin{tabularx}{0.6\textwidth}{LCC}
     \hline
-    & {\bf \SRL} & {\bf \SRH} \\
+    & {\SRL} & {\SRH} \\
     \hline
     {\nphotons} & $=1$ & $=1$ \\
     \ptgam & $>125 \gev$ & $>300 \gev$ \\
@@ -720,7 +718,7 @@ de {\vgam} es de 0.66, de los cuales 0.44 de {\wgam} y 0.22 de {\znngam}. En la
 que un electrón es identificado como fotón.
 
 La significancia esperada de descubrimiento para los distintos puntos
-de la grid de señal en el plano {\mgmn} se puede ver en la
+de la \emph{grid} de señal en el plano {\mgmn} se puede ver en la
 \cref{fig:opt_discovery_exp}, junto con los contornos en los que la significancia
 es de $3\sigma$ y $5\sigma$.
 
@@ -730,7 +728,7 @@ simulaciones Monte Carlo. Los resultados finales son derivados utilizando los
 métodos de estimación de fondos descriptos en el \cref{cap:fondos}, y luego
 del ajuste combinado, y son descriptos en el \cref{cap:resultados}.
 
-\begin{table}[!htbp]
+\begin{table}[!h]
   \centering
   \caption{Número de eventos esperado para los fondos del {\SM}
     y algunos puntos de señal después de cada corte de la región
@@ -851,7 +849,7 @@ del ajuste combinado, y son descriptos en el \cref{cap:resultados}.
   \includegraphics[width=0.49\textwidth]{discovery_srl_syst}
   \includegraphics[width=0.49\textwidth]{discovery_srh_syst}
 
-  \caption{Significancia de descubrimiento esperada para todos los puntos de la grid de senal en el
+  \caption{Significancia de descubrimiento esperada para todos los puntos de la \emph{grid} de señal en el
     plano {\mgmn} para las dos regiones de senal {\SRL} (izquierda) y {\SRH} (derecha), junto
     con los contornos de $3\sigma$ y $5\sigma$.}
 
@@ -884,13 +882,13 @@ donde $N_\mathrm{fiducial,reco}$ es el número de eventos que pasan los cortes
 nominales del análisis aplicados a las variables a nivel detector. La
 eficiencia se diferencia de la aceptancia ya que incluye los efectos que provienen de
 las ineficiencias de reconstrucción, los cortes de identificación de
-partículas, y los efectos de resolución e ineficiencias del trigger.
+partículas, y los efectos de resolución e ineficiencias del \emph{trigger}.
 
 La aceptancia por la eficiencia ($A\times\epsilon$) fue calculada para las dos
 regiones a partir de las muestras MC, para asegurar que en el proceso de
 optimización se tuvieron en cuenta todas las regiones del espacio de parámetros,
 y evitar caídas bruscas en la eficiencia de selección. En la
-\cref{fig:atimeseff} se puede ver que hay una buena cobertura de toda la grid
+\cref{fig:atimeseff} se puede ver que hay una buena cobertura de toda la \emph{grid}
 de señal.
 %% Los valores de $A\times\epsilon$ están detallados en la
 %% \cref{tab:atimeseff_srl,tab:atimeseff_srh}.
