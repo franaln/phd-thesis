@@ -2,7 +2,7 @@
 \label{cap:estrategia}
 
 En el \cref{cap:estadistica} se describieron los conceptos básicos de estadística
-necesarios para poder realizar un análisis de búsqueda de nueva física. En este
+necesarios para realizar un análisis de búsqueda de nueva física. En este
 capítulo, haciendo uso de estos conceptos, se describe la estrategia general
 y la construcción del modelo estadístico utilizado en el presente análisis.
 
@@ -10,35 +10,30 @@ y la construcción del modelo estadístico utilizado en el presente análisis.
 %% libres en los modelos de SUSY, las búsquedas de supersimetría en ATLAS están
 %% impulsadas por la fenomenología de los estados finales.
 
-El análisis realizado para esta tesis consiste en la búsqueda de Supersimetría
-en eventos con un fotón aislado muy energético, jets y gran cantidad de energía
-faltante. La estrategia general consistió en un experimento de conteo, es decir,
-considerando el número de eventos observado en una cierta región del espacio de
-observables. Un experimento de conteo puede pensarse en el contexto del
-likelihood extendido, \cref{eq:likelihood_ext}, con $f(x) = 1$, el cual se
-reduce solo al término de Poisson.
 
-En el caso de que el número de eventos
-observado sea compatible con el número de eventos esperado debido a procesos del
-SM, pueden establecerse límites en la sección eficaz de nueva física. En
-particular en esta tesis, se consideró un modelo de Supersimetría que puede dar
-lugar a este tipo de estados finales, y también se darán resultados independientes
-de cualquier modelo.
+\section{Estrategia, señal y fondos del SM}
 
-
-\section{Fondos del {\SM}}
+El análisis realizado para esta tesis consiste en la búsqueda de Supersimetría en
+eventos con un fotón aislado muy energético, jets y gran cantidad de energía
+faltante. La estrategia general consistió en realizar un experimento de conteo,
+es decir, considerar como variable estadística el número de eventos observado en
+una cierta región del espacio de observables, rica en eventos de la señal considerada.
+Un experimento de conteo puede
+pensarse en el contexto del likelihood extendido, \cref{eq:likelihood_ext}, con
+$f(x) = 1$, el cual se reduce solo al término de Poisson.
 
 El mayor desafío para poder realizar cualquier descubrimiento de nueva física es
-entender y tener bajo control los fondos del SM. Existen muchos procesos del SM
-que pueden dar lugar a un estado final con un fotón, jets y energía faltante,
-emulando la senal buscada. Estos pueden dividirse en varias categorías. Por un
-lado, los procesos que dan lugar a eventos con un fotón y energía faltante real,
-es decir, los que llamamos fondos irreducibles son:
+entender los procesos del SM que pueden dar lugar a un estado final que emule
+la señal buscada (\emph{fondos}).
+En este caso van a ser los que tienen un fotón, jets y energía faltante en el estado final.
+Estos pueden dividirse en varias categorías.
+Por un lado, los procesos que dan lugar a eventos con un fotón y energía
+faltante real, es decir, los que llamamos fondos irreducibles son:
 
 \begin{itemize}
 \item $Z(\to\nu\nu)+\gamma$
-\item $W(\to e\nu)+\gamma$, $W(\to\mu\nu)+\gamma$ y $W(\to \tau\nu)+\gamma$ %(con decaimiento hadronico del $\tau$)
-\item $t\bar{t}+\gamma$ %(cuando el $e/\mu$ (si se produce) no es reconstruido)
+\item $W(\to l\nu)+\gamma$
+\item $t\bar{t}+\gamma$
 \end{itemize}
 %
 También es posible que, aunque el proceso no tenga fotones en el estado final, un
@@ -56,46 +51,13 @@ Y por último, también podemos tener procesos que a pesar de no generar energí
 faltante real, poseen lo que se denomina energía faltante instrumental,
 proveniente generalmente de la incorrecta reconstrucción de la energía de los
 jets. De esta manera, pueden dar lugar a eventos con el estado final de interés,
-los procesos QCD de $\gamma+$jets y multijet (este último con alguno de los jets
-identificado como fotón) y también $Z(\to ll)+$jets, donde un leptón o un jet es
-identificado como un fotón.
+los procesos QCD:
 
-
-%% \begin{itemize}
-%% \item {\MET} real (EWK)
-%%   \begin{itemize}
-%%   \item $\gamma$ real
-%%     \begin{itemize}
-%%     \item $Z(\to\nu\nu)+\gamma$
-%%     \item $W(\to\tau\nu)+\gamma$, con decaimiento hadronico del $\tau$
-%%     \item $W(\to e\nu)+\gamma$, donde el $e$ no es reconstruido
-%%     \item $W(\to\mu\nu)+\gamma$ y $W(\to\tau\nu)+\gamma$, el $\mu/\tau$ no es reconstruido
-%%     \item $t\bar{t}+\gamma$, donde el $e/\mu$ (si se produce) no es reconstruido
-%%     \end{itemize}
-
-%%   \item Electron/Jet mal identificado como un fotón
-%%     \begin{itemize}
-%%     \item $W(\to l\nu)$+jets
-%%     \item $Z(\to \nu\nu)+$jets
-%%     \item $t\bar{t}$
-%%     \item dibosons
-%%     \end{itemize}
-%%   \end{itemize}
-
-%% \item {\MET} instrumental
-%%   \begin{itemize}
-%%   \item $\gamma$ real
-%%     \begin{itemize}
-%%     \item  ($\gamma+$jets)
-%%     \end{itemize}
-%%   \item Electron/jet mal-identificado como $\gamma$
-%%     \begin{itemize}\itemsep0.2cm\parskip0.2cm
-%%     \item multijet
-%%     \item $Z(\to ll)+$jets)
-%%     \end{itemize}
-%%   \end{itemize}
-
-%% \end{itemize}
+\begin{itemize}
+\item $\gamma+$jets
+\item multijet, con alguno de los jets identificado como fotón
+\item $Z(\to ll)+$jets, donde un leptón o un jet es identificado como un fotón.
+\end{itemize}
 
 %% En el \cref{cap:simulaciones} se describen como estos procesos del SM son
 %% simulados utilizando generadores Monte Carlo. Aunque en general, para el LHC,
@@ -104,8 +66,30 @@ identificado como un fotón.
 %% resulta necesario desarrollar técnicas de estimación de los fondos utilizando los
 %% propios datos observados. Estos métodos se describen en el \cref{cap:fondos}.
 
+%% Es indispensable para el análisis contar con predicciones de los procesos
+%% fisicos conocidos como los de nueva fisica en esta región, para lo cual resulta fundamental
+%% la simulación de los mismos. Para ello se utilizan generadores Monte Carlo y
+%% una detallada simulación del detector, seguidamente de la reconstrucción con los mismos
+%% algoritmos utilizados en los datos de colisiones.
+%% Adicionalmente, la contribución de algunos fondos pueden ser estimada utilizando
+%% métodos basados únicamente en los datos.
 
+%% En el caso de que el número de eventos observado sea compatible con el número de
+%% eventos esperado debido a procesos del SM, pueden establecerse límites en la
+%% sección eficaz de nueva física.
 
+Otro componente importante del análisis es la simulación de los procesos de
+senal. Las muestras de señal pueden depender de uno o muchos parámetros del
+modelo considerado, como por ejemplo de las masas de las nuevas partículas
+predichas por Supersimetría. En el caso de considerar un espacio
+multidimensional del espacio de parámetros del modelo, se utiliza una
+<<\emph{grid}>> de escenarios de señal, en la cual cada punto de la \emph{grid}
+corresponde a un único punto el el espacio de parámetros. En particular en esta
+tesis, se consideró un modelo de Supersimetría que puede dar lugar a este tipo
+de estados finales, para lo cual es necesario contar con la simulacion de la
+senal considerada. En el caso de que no se observe un exceso de eventos en los
+datos, se pueden establecer limites de exclusión en la \emph{grid}, excluyendo
+un subconjunto de los valores de los parámetros considerados.
 
 
 %---------------
@@ -127,7 +111,7 @@ la misma región. A esta región enriquecida en señal se la llama región de se
 % Fondos/CR
 %-----------
 Una de las tareas fundamentales del análisis es entonces, estimar las
-contribuciones de los procesos del SM (lo que llamamos fondos) que contaminan la región de
+contribuciones de los procesos del SM que contaminan la región de
 señal.
 Para esto existen dos técnicas principales: utilizar directamente simulaciones Monte Carlo,
 o utilizar métodos basados en los propios datos observados.
@@ -186,8 +170,6 @@ datos experimentales. Existen distintas formas para estimar un fondo a partir de
 los datos observados. En el \cref{cap:fondos} se describirán los métodos
 específicos utilizados en este análisis.
 
-%% En el caso de que no se puedan estimar utilizando los datos, existe una tercera
-%% forma
 En algunos casos se utiliza un tercer método para estimar los fondos, que consiste en
 utilizar la estimación proveniente de las simulaciones MC, pero corregida
 utilizando los datos. Para esto se define una región de control (CR) en
@@ -350,35 +332,34 @@ medidas auxiliares $\theta^0_j$ son típicamente fijadas a cero, pero pueden
 variar cuando se generan los pseudo-experimentos.
 
 
-%% \section{Ajuste simultaneo y resultados}
+\section{Ajuste del modelo y resultados}
 
-%% \subsection{Ajuste solo-fondo}
+A partir de el modelo general descripto en la sección anterior, \cref{eq:model},
+se pueden realizar distintos tipos de ajuste, dependiendo las regiones utilizadas
+y si se incluyen o no las muestras de señal.
 
-%% El proposito es estimar el fondo total en las SR y VR, sin hacer ninguna
-%% suposiscion del modelo de senal. Solo se utilizan las muestras de fondo en el
-%% modelo. Las CR se suponene  libres de contaminacion de senal y el ajuste
-%% solo se realiza en las CR y los procesos de fondo dominantes se normalizan al
-%% número de eventos observados en esas regiones. Se utilizan la ec {\XXX} sin el termino
-%% de la SR.
+Como primer paso se realiza el ajuste únicamente utilizando las regiones de
+control, y sin incluir las muestras de señal. El propósito de este ajuste es
+estimar el fondo total esperado en las regiones de validación y las regiones de
+señal, sin hacer ningún tipo de suposición en algún modelo de señal. Solo se
+incluyen las muestras de fondo, y las CR se suponen en libres de contaminación
+de señal. El ajuste se realiza utilizando la \cref{eq:model} sin el término de
+la SR, y las contribuciones de los procesos de fondo dominantes se normalizan al
+número de eventos observados en esas regiones. A partir de los parámetros del
+ajuste se puede predecir el número de eventos de fondo en SR y VR. Estas
+predicciones de fondo son independientes del número de eventos observado en la
+SR (y VR) ya que solo las CR se usan en el ajuste. Esto permite una comparación
+no sesgada entre las predicciones y el número de eventos observado en esas
+regiones.
+A partir de este ajuste es posible ver si existe un exceso de datos respecto al
+fondo del SM en las SR, y cuantificar ese exceso calculando el {\pvalue} y la significancia
+del mismo.
 
-%% Se comparten todos los parametros del ajuste, por lo tanto se usan para predecir
-%% el número de eventos de fondo en SR y VR.
-
-%% Estas predicciones de fondo son independientes del número de eventos observado
-%% en la SR (y VR) ya que solo las CR se usan en el ajuste. Esto permite una
-%% comparasion no sesgada entre las predicciones y el número de evnetos observado
-%% en esas regiones.
-
-%% \section{Fit}
-
-%% Analyses generally rely on external predictions for the various background and signal components
-%% in the data to aid the interpretation of observations, where the signal component describes the
-%% process of interest. In particle physics, simulations of known and hypothesized physics processes
-%% are run through a detailed detector simulation, and are subsequently reconstructed with the same
-%% algorithms as the data. In addition, background samples can be constructed using data-driven
-%% methods. The simulated samples may depend on one or many model parameters, for example the
-%% masses of hypothesized new particles such as foreseen by supersymmetry. It may be required, for
-%% instance when signals are analyzed over a multi-dimensional space of model parameters, to sample
-%% from a “grid” of potential signal scenarios, with each point on that grid corresponding to a unique
-%% point in the multi-dimensional parameter space. If no excess is observed in the data, exclusion
-%% limits may be set within this grid, excluding a subset of the tested parameter values.
+En ausencia de un exceso de eventos significativo, para poder establecer limites
+en la señal, se incluye en el modelo las regiones de señal. El ajuste se realiza
+entonces simultáneamente en las CR y SR, incluyendo además la muestra de señal
+en todas las regiones, para tener en cuenta además la posible contaminación de
+señal en las CR. Este ajuste se realiza de forma independiente para cada SR, y
+se repite por cada punto de señal de la \emph{grid}, para probar el espacio de
+parámetros del modelo, y establecer limites en las masas de las partículas
+supersimétricas consideradas.
