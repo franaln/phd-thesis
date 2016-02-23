@@ -15,23 +15,46 @@ cálculo de la energía faltante, que es la energía de las partículas que esca
 el detector, sea lo más preciso posible.
 
 
-%% \section{Reconstrucción de trazas y vértices}
-%% \label{sec:obj_vertex}
+\section{Reconstrucción de trazas y vértices}
+\label{sec:obj_vertex}
 
-%% \hl{Explicar minimamente como se reconstruyen trazas y vertices}
+En cada colisión protón-protón del LHC, se produce un gran número de partículas
+cargadas, resultando en un gran número de impactos en el detector interno de
+ATLAS. El software encargado de la reconstrucción de trazas debe distinguir los
+impactos de las diferentes partículas cargadas y determinar las trayectorias que
+mejor se asocian a las mediciones. El detector interno permite la reconstrucción
+de las trazas de las partículas cargadas con un momento transverso $\pt>0.5 \gev$
+y $\abseta < 2.5$. Sin embargo, la eficiencia a bajo momento está
+limitada debido a la gran cantidad de material en el mismo.
 
-%% Inicialmente se utiliza la alta granularidad de los detectores de silicion
-%% del ID para crear
+La reconstrucción de trazas en el detector interno comienza conviertiendo la
+información de los subdetectores en puntos espaciales. Seguidamente se realiza
+la de búsqueda de trazas, para la cual se utilizan dos técnicas. Primero, a
+partir de la combinación de los puntos en el detector de pixeles y la primera
+capa del SCT, se forman los candidatos a trazas. Estos candidatos son ajustados
+y se realiza una limpieza aplicando distintos cortes de calidad. Luego, estas
+trazas seleccionadas son extendidas al TRT, y ajustadas nuevamente utilizando
+toda la información disponible. De forma complementaria se buscan segmentos de
+trazas en el TRT que no hayan sido utilizadas, y se extienden a los demás
+detectores.
 
-
-%% La reconstruccion del vertice primaro consta de dos pasos []. Primero se realiza
-%% la busqueda de los vertices
-%% reconstruye una coleccion de vertices a partir de las trazas reconstruidas en el
-%% detector interno, preseleccionadas a find de remover aquellas producidas en
-%% interacciones secundarias. La posicion del vertice es determinada mediante un
-%% algoritmo de ajuste $\chi^2$ sobre el vertice y las trazas de su entorno. Entre
-%% todos los candidatos hallados, se elige como primario aquel vertice que maximiza
-%% $\sum_{\text{trazas}} \pt^2$.
+La última etapa consiste en la reconstrucción de los vértices primarios
+utilizando un algoritmo dedicado, seguido de algoritmos para reconstruir
+conversiones de fotones y vértices secundarios.
+Encontrar los puntos de intersección entre las distintas trazas reconstruidas
+permite identificar el punto de interacción $pp$ como también los vértices de
+decaimiento de las partículas inestables producidas durante la colisión. La
+mayoría de las trazas reconstruidas van a originarse en el punto de colisión,
+indicando el vértice primario de la colisión. Además, algunas partículas pueden
+decaer a una distancia medible del vértice primario, y las trazas originadas de
+esos decaimientos pueden utilizarse para identificar los vértices secundarios.
+Un vértice primario es formado generalmente por la intersección de 20 o mas
+trazas reconstruidas, mientras que los vértices secundarios suelen tener solo 2
+o 3. Primero se realiza la búsqueda de los vértices a partir de todas las trazas
+reconstruidas en el detector interno. La posición de los vértices es determinada
+mediante un algoritmo de ajuste $\chi^2$ sobre los vértices y las trazas de su
+entorno. Entre todos los candidatos hallados, se elige como primario aquel
+vértice que maximiza $\sum_{\text{trazas}} \pt^2$.
 
 
 
@@ -72,12 +95,12 @@ se estima que la eficiencia de esta reconstrucción inicial sea del 100\% para
 objetos con $\et > 20 \gev$.
 
 Como punto de partida en la separación de electrones y fotones, las trazas,
-reconstruidas en el detector interno, son asociadas a un cluster si la distancia
-entre el baricentro del cluster y el punto de intersección de la traza
+reconstruidas en el detector interno, son asociadas a un \emph{cluster} si la distancia
+entre el baricentro del \emph{cluster} y el punto de intersección de la traza
 extrapolada con la segunda capa del calorímetro es menor a 0.05 en $\eta$ y 0.05
 (0.2) en $\phi$ en la dirección a (opuesto a) la curvatura de las trazas en el
 campo magnético del solenoide de ATLAS. Solo las trazas asociadas de esta forma
-con un cluster son retenidas para la reconstrucción de electrones y fotones.
+con un \emph{cluster} son retenidas para la reconstrucción de electrones y fotones.
 
 Aquellos clusters electromagnéticos asociados en el espacio $(\eta,\phi)$ con
 una traza reconstruida con $\pt > 0.5 \gev$ son clasificados como electrones. La
@@ -95,7 +118,7 @@ un cierto umbral en el TRT, forman un vértice consistente como provenientes de
 una partícula no masiva. Para aumentar la eficiencia de reconstrucción de
 fotones convertidos, los candidatos a conversión donde solo una de las dos
 trazas es reconstruida (y no tiene ningún impacto en la capa más interior del
-detector de pixeles) también son retenidas.
+detector de píxeles) también son retenidas.
 
 Un algoritmo final \cite{Delmastro:1747242} se utiliza para resolver la
 ambigüedad entre candidatos a fotones convertidos que son también reconstruidos
@@ -114,13 +137,13 @@ fotón convertido es retenido.
 %% sion vertex candidate, the converted photon candidate is removed, unless the track pT is smaller than that
 %% of the candidate converted photon pT.
 
-Cuando se calcula el {\pt} del fotón, la energía es tomada siempre del cluster
+Cuando se calcula el {\pt} del fotón, la energía es tomada siempre del \emph{cluster}
 del calorímetro, apropiadamente calibrada\cite{Banfi:1259219}. Para fotones
 no-convertidos, el $\eta$ es calculado usando las dos primeras capas del
 calorímetro electromagnético. Para fotones convertidos, donde la traza o las
 trazas que provienen del vértice de la conversión contiene más de tres impactos en
 el detector de silicio, la dirección $\eta$ se determina extrapolando del
-cluster del calorímetro al vértice de la conversión. Para fotones convertidos
+\emph{cluster} del calorímetro al vértice de la conversión. Para fotones convertidos
 que tienen trazas solo en el TRT, $\eta$ es calculada del calorímetro, % calorimeter pointing
 como en el caso de los no-convertidos.
 %% Además, la escala de energía
@@ -155,26 +178,28 @@ decaimientos aislados $\pi^0 \to \gam\gam$, están caracterizados por dos máxim
 locales de energía separados, en las \emph{strips} de la primer capa del calorímetro,
 debido a la presencia de los dos fotones cercanos.
 
-A continuación se detallan las variables discriminatorias utilizadas en la identificación de fotones. La primera
- variable utiliza la energía medida en el calorímetro hadrónico:
+A continuación se detallan las variables discriminatorias utilizadas en la
+identificación de fotones. La primera variable utiliza la energía medida en el
+calorímetro hadrónico:
 
 \begin{itemize}\itemsep0.2cm\parskip0.2cm
 
 \item Filtración hadrónica: es la energía transversa depositada en el
-  calorímetro hadrónico, normalizada a la energía transversa del cluster
+  calorímetro hadrónico, normalizada a la energía transversa del \emph{cluster}
   electromagnético
 
   \begin{equation}
     R_{\mathrm{had}_{(1)}} = \frac{\et^{\mathrm{had}}}{\et}
   \end{equation}
 
-  En la región de transición barrel-endcap del HCAL ($0.8\leq |\eta| \leq 1.37$) se utiliza
+  En la región de transición barrel-endcap del calorímetro hadrónico ($0.8\leq |\eta| \leq 1.37$) se utiliza
   el depósito de energía en todo el calorímetro hadrónico para minimizar los efectos de la
   degradación de resolución ($R_{\mathrm{had}}$). En el resto del detector, se mide solo la
-  energía hadrónica depositada en la primera capa del HCAL ($R_{\mathrm{had}_{(1)}}$).
+  energía hadrónica depositada en la primera capa del calorímetro hadrónico ($R_{\mathrm{had}_{(1)}}$).
 \end{itemize}
 
-Las siguientes variables utilizan la información de la segunda capa del calorímetro electromagnético:
+Las siguientes variables utilizan la información de la segunda capa del calorímetro
+electromagnético:
 
 \begin{itemize}\itemsep0.2cm\parskip0.2cm
 \item Perfil lateral de energía en $\eta$
@@ -205,13 +230,13 @@ Las siguientes variables utilizan la información de la segunda capa del calorí
     w_{\eta_2} = \sqrt{ \frac{\sum E_i \eta_i^2}{\sum E_i} - \left( \frac{\sum E_i \eta_i}{\sum E_i} \right) }
   \end{equation}
   %
-  mide el ancho lateral de las lluvias electromagnéticas, donde $E_i$ es la energía de la i-esima celda del
+  mide el ancho lateral de las lluvias electromagnéticas, donde $E_i$ es la energía de la i-ésima celda del
   calorímetro electromagnético contenida en una ventana $3 \times 5$ celdas en $\eta \times \phi$.
 \end{itemize}
 
 Las siguientes son las variables que utilizan la información de la primera capa
 del calorímetro electromagnético, la cual está compuesta por celdas en forma de
-bandas (strips) que permiten una muy buena separación entre fotones aislados y
+bandas (\emph{strips}) que permiten una muy buena separación entre fotones aislados y
 fotones provenientes del decaimimietno del $\pi^0$. La \cref{fig:photon_pi0}
 muestra el perfil de una lluvia electromagnética típica de cada tipo en eventos
 de datos reales donde se puede apreciar la estructura del perfil de energía en
@@ -223,7 +248,8 @@ la primera capa del calorímetro EM en el caso de un decamiento $\pi^0 \to \gam\
 
   \includegraphics[width=0.8\textwidth]{photon_vs_pion}
 
-  \caption{Deposiciones de energía típicas para un fotón aislado (izquierda) y para un $\pi^0$ decayendo a dos fotones (derecha).}
+  \caption{Deposiciones de energía típicas para un fotón aislado (izquierda)
+    y para un $\pi^0$ decayendo a dos fotones (derecha).}
   \label{fig:photon_pi0}
 \end{figure}
 
@@ -240,7 +266,7 @@ la primera capa del calorímetro EM en el caso de un decamiento $\pi^0 \to \gam\
   mide la contención lateral de la cascada electromagnética a lo largo de $\eta$.
   $E(\pm n)$ es la energía en las $\pm n$ celdas alrededor de aquella con la deposición máxima.
 
-\item RMS del perfil lateral de energía en $\eta$ (3 strips)
+\item RMS del perfil lateral de energía en $\eta$ (3 \emph{strips})
 
   \begin{equation}
     w_{s,3} = \sqrt{ \frac{\sum E_i (i - i_\mathrm{max})^2}{\sum E_i} }
@@ -250,42 +276,41 @@ la primera capa del calorímetro EM en el caso de un decamiento $\pi^0 \to \gam\
   del calorímetro electromagnético usando solo la banda con mayor deposición de energía ($E_{i_\mathrm{max}}$)
   y sus vecina inmediatas.
 
-\item RMS del perfil lateral de energia en eta (total)
+\item RMS del perfil lateral de energia en $\eta$ (total)
 
   $w_{s,\mathrm{tot}}$ esta definida de la misma forma que $w_{s,3}$, pero utiliza todas las bandas de la
   primera capa del calorímetro electromagnética en una ventana $\Delta\eta \times \Delta\phi = 0.0625 \times 0.2$,
   que corresponde aproximadamente a $20 \times 2$ bandas en $\eta \times \phi$.
 
-\item Diferencia al segundo maximo
+\item Diferencia al segundo máximo
 
   \begin{equation}
-    \Delta E = (E^{s1}_{2^{\mathrm{do}} max} - E_\mathrm{min}^{s1} )
+    \Delta E = (E^{s1}_{\mathrm{max},2} - E_\mathrm{min}^{s1} )
   \end{equation}
   %
-  es la diferencia entre la energía de la banda con la segunda energía más grande ($E^{s1}_{2^{\mathrm{do}} max}$),
+  es la diferencia entre la energía de la banda con la segunda energía más grande ($E^{s1}_{\mathrm{max},2}$),
   y la mínima energía ($E_\mathrm{min}^{s1}$) entre la anterior y la celda con la máxima deposición. En caso
   de no haber segundo máximo se fija $\Delta E = 0$.
 
 \item Asimetría de los dos máximos locales en $\eta$
 
   \begin{equation}
-    E_\mathrm{ratio} = \frac{ E^{s1}_{1^{\mathrm{st}} max} - E^{s1}_{2^{\mathrm{nd}} max} }{ E^{s1}_{1^{\mathrm{st}} max} + E^{s1}_{2^{\mathrm{nd}} max} }
+    E_\mathrm{ratio} = \frac{ E^{s1}_{\mathrm{max},1} - E^{s1}_{\mathrm{max},2} }{ E^{s1}_{\mathrm{max},1} + E^{s1}_{\mathrm{max},2} }
   \end{equation}
   %
-  mide la diferencia relativa entre las energías de las dos celdas con máxima deposición. En caso de no haber segundo máximo
-  se fija $E_\mathrm{ratio} = 1$.
+  mide la diferencia relativa entre las energías de las dos celdas con máxima
+  deposición. En caso de no haber segundo máximo se fija $E_\mathrm{ratio} = 1$.
 
 \end{itemize}
 
 
-A partir de estas variables discriminatorias se definen dos conjuntos de cortes: \emph{loose} y
-\emph{tight}.
+A partir de estas variables discriminatorias se definen dos conjuntos de cortes:
+\emph{loose} y \emph{tight}.
 La selección \emph{loose} se basa solo en las formas de la lluvia
 en la segunda capa del calorímetro EM y en la energía depositada en el
 calorímetro hadrónico, y es utilizada especialmente por el trigger. La selección
 \emph{tight} agrega además información de la capa de \emph{strips} del calorímetro, que
-provee un buen rechazo de fondo, %jets hadronicos en los cuales el mesón neutro lleva la mayor parte de la energía del jet
-además de ajustar los cortes en las
+provee un buen rechazo de fondo, además de ajustar los cortes en las
 demás variables. Las variables utilizadas en cada conjunto pueden verse detalladas
 en la \cref{tab:phel_id}.
 
@@ -297,7 +322,7 @@ del calorímetro.
 La selección \emph{tight} se optimiza de forma separada para
 fotones convertidos y no-convertidos para proveer una eficiencia de
 identificación de alrededor de 85\% para candidatos a fotón con energía
-transversa $\et>40 \gev$ y un alto rechazo de fondo\cite{Delmastro:1747242}.
+transversa $\et>40 \gev$ y un alto rechazo de fondo \cite{Delmastro:1747242}.
 
 %% En áreas donde un modulo de la b-layer esta muerto, los electrones son
 %% comúnmente reconstruido como fotones convertidos. Esta ambigüedad es resulta
@@ -313,7 +338,7 @@ transversa $\et>40 \gev$ y un alto rechazo de fondo\cite{Delmastro:1747242}.
 
   \caption{Definición de las diferentes variables usadas para la selección
     \emph{loose} (L), \emph{medium} (M) y \emph{tight} (T) de fotones y
-    electrones. Las cruces $\times$ indican las variables que son utilizadas en
+    electrones. Las cruces ``$\times$'' indican las variables que son utilizadas en
     cada selección. Además de las variables adicionales utilizadas en cada
     caso, también se incrementan los cortes en las mismas.}
   \label{tab:phel_id}
@@ -330,24 +355,24 @@ transversa $\et>40 \gev$ y un alto rechazo de fondo\cite{Delmastro:1747242}.
 
   Fuga hadrónica & Cociente entre {\et} en la primera capa del
                    calorímetro hadrónico y {\et} del
-                   cluster electromagnético
+                   \emph{cluster} electromagnético
                    ($|\eta|<0.8$ y $|\eta|\geq1.37$)                & $R_{\mathrm{had}_1}$    & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\
 
                  & Cociente entre {\et} en todo el calorímetro
-                   hadrónico y {\et} del cluster electromagnético
+                   hadrónico y {\et} del \emph{cluster} electromagnético
                    ($|\eta|\leq0.8$ y $|\eta|<1.37$)                & $R_{\mathrm{had}}$      & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\
 
 
   Calorímetro EM ($2^\mathrm{da}$ capa)  & Cociente entre la suma de las energías de las
                    $3\times7$ celdas y la suma de $5\times 7$
-                   celdas, ambas en torno al centro del cluster     & $R_\eta$                & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\
+                   celdas, ambas en torno al centro del \emph{cluster}     & $R_\eta$                & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\
 
                  & Ancho lateral de la lluvia en dirección de
                    $\eta$                                           & $w_{\eta_2}$            & $\times$ & $\times$ & $\times$ & $\times$ & $\times$ \\
 
                  & Cociente entre la suma de las energías de las
                    $3\times 3$ celdas y la suma de $3\times 7$
-                   celdas, ambas en torno al centro del cluster     & $R_\phi$                &   & $\times$ & $\times$ & $\times$ & $\times$ \\
+                   celdas, ambas en torno al centro del \emph{cluster}     & $R_\phi$                &   & $\times$ & $\times$ & $\times$ & $\times$ \\
 
 
    Calorímetro EM ($1^\mathrm{ra}$ capa) & Ancho lateral de la lluvia en 3 strips alrededor
@@ -372,10 +397,10 @@ transversa $\et>40 \gev$ y un alto rechazo de fondo\cite{Delmastro:1747242}.
 
 
   Calorímetro EM +
-  detector Interno         & $\Delta\eta,\Delta\phi$ entre la traza
-                  extrapolada al calorímetro y el cluster           & $\Delta\eta,\Delta\phi$ &  &   &   & $\times$ & $\times$ \\
+  Detector Interno         & $\Delta\eta,\Delta\phi$ entre la traza
+                  extrapolada al calorímetro y el \emph{cluster}           & $\Delta\eta,\Delta\phi$ &  &   &   & $\times$ & $\times$ \\
 
-                & Cociente entre la energía del cluster y el impulso
+                & Cociente entre la energía del \emph{cluster} y el impulso
                   de la traza                                       & $E/p$                   &  &   &   & $\times$ & $\times$ \\
 
 
@@ -477,7 +502,7 @@ transversa de aislamiento {\etiso}.
 
 %% Los fotones pre-seleccionados son entonces lo que tienen un {\pt} mayor a 20
 %% {\gev} con $|\eta| < 2.37$, removiendo los que se encuentran en la región del
-%% crack $1.37 < |\eta| < 1.52$, donde $\eta$ se mide en el cluster de la segunda
+%% crack $1.37 < |\eta| < 1.52$, donde $\eta$ se mide en el \emph{cluster} de la segunda
 %% capa del calorímetro.
 
 %% \subsection{Correciones para fotones}
@@ -506,20 +531,19 @@ transversa de aislamiento {\etiso}.
 La energía de aislamiento es una herramienta poderosa para distinguir electrones
 y fotones directos (producidos en las colisiones) de los falsos candidatos o
 fotones y electrones no directos provenientes de jets (producidos de
-decaimientos de hadrones). Esta energia de aislamiento se estima a partir de la energía depositada en un
+decaimientos de hadrones). Esta energía de aislamiento se estima a partir de la energía depositada en un
 cono alrededor del candidato a electrón o fotón. Para fotones y electrones
 directos, no hay energía depositada en este cono aparte de los objetos de baja
 energía provenientes de los remanentes de la colisión, interacciones múltiples y
-ruido de pile-up. El ruido electrónico del calorímetro también contribuye al
+ruido de \emph{pile-up}. El ruido electrónico del calorímetro también contribuye al
 aumento de la energía de aislamiento.
-
 En cambio, para los candidatos falsos y no-directos se observa una energía adicional
 (potencialmente grande) en dicho cono proveniente de los objetos que los acompañan en el jet.
 
 En la \cref{fig:topoetcone} se ilustra de forma esquemática como se construye
 la variable de aislamiento. Se considera un cono alrededor del candidato
 de un tamaño $R$ (generalmente 0.2 o 0.4) y se suma la energía de todas las
-celdas que pertenecen a un cluster topológico. Los clusters topológicos son
+celdas que pertenecen a un \emph{cluster} topológico. Los clusters topológicos son
 construidos usando el cociente senal-fondo de energía y sus vecinos próximos,
 y son tomados a la escala electromagnética (sin calibrar). La variable final de
 aislamiento es construida sumando la energía transversa de los clusters con
@@ -664,8 +688,8 @@ preseleccionada, formando un pre-cluster. A continuación, si la energía
 depositada en una de las celdas vecinas a la celda preseleccionada es mayor a
 2$\sigma$ por encima del valor de fondo de las celdas, estas son agregadas al
 pre-cluster. Finalmente se agrega una capa de celdas que rodean el pre-cluster
-formando lo que se llama un cluster topológico, o topo-cluster.
-Estos topo-clusters son usados por los algoritmos
+formando lo que se llama un \emph{cluster} topológico, o \emph{topo-cluster}.
+Estos emph{topo-clusters} son usados por los algoritmos
 utilizados para encontrar jets.
 
 Existen muchos algoritmos para la reconstrucción de jets, con sus ventajas y
@@ -831,21 +855,21 @@ contengan hadrones $b$.
 %-----
 % MET
 %-----
-\section{Energía faltante transversa}
+\section{Energía faltante}
 \label{sec:met_obj}
 
-La conservación del momento en el plano transversal al haz, $x-y$, implica que
+La conservación del momento en el plano transversal al haz ($x-y$) implica que
 el momento transverso en el estado final debe ser cero. Cualquier desbalance es
-lo que se llama momento faltante transverso ($\vec{\met}$) puede indicar la
-presencia de particulas indetectables como neutrinos o nuevas particulas
-estables, o que interactuan debilmente con la materia.
+lo que se llama momento faltante transverso ($\bm{\met}$) y puede indicar la
+presencia de partículas indetectables como neutrinos o nuevas partículas
+estables, o que interactúan débilmente con la materia.
 
-El momento faltante transverso es reconstruida del negativo de la suma del
-momento transverso (\pt) de todas las particulas detectadas, y su magnitud se
-denomina con el simbolo {\met}, y se la llama energia faltante. La medida de
-{\met} depende fundamentalmente del tratamiento y desempeno de los objetos
-fisicos reconstruidos como electroes, fotones, muones, taus, y jets, que son
-considerados en el calculo.
+El momento faltante transverso es reconstruido como el valor negativo de la suma del
+momento transverso ($\bm{\pt}$) de todas las partículas detectadas, y su magnitud se
+denomina con el símbolo {\met}, y se la llama energía faltante. La medida de
+{\met} depende fundamentalmente del tratamiento y desempeño de los objetos
+físicos reconstruidos como electrones, fotones, muones, taus, y jets, que son
+considerados en el cálculo.
 
 La energía faltante transversa es calculada con un algoritmo basado en objetos\cite{Khoo:2012749}.
 El algoritmo utiliza para el cálculo de la energía faltante, los objetos físicos
@@ -862,7 +886,6 @@ términos:
 %
 donde cada término es calculado como el negativo de la suma de los objetos reconstruidos y
 calibrados más el término \emph{soft}.
-
 El término de electrones $(E^{\mathrm{miss}}_{x(y)})^e$ incluye electrones que
 pasan el criterio de identificación \emph{medium} con $\pt>10\gev$. La
 contribución de fotones $(E^{\mathrm{miss}}_{x(y)})^{\gamma}$ utiliza los
@@ -875,7 +898,6 @@ exceptuando el criterio de aislamiento. El término restante
 $(E^{\mathrm{miss}}_{x(y)})^{\mathrm{soft}}$ es calculado de los topo-clusters
 calibrados y las trazas que no son asociadas a ninguno de los objetos
 reconstruidos, usando un algoritmo de flujo de energía.
-
 La falta del término de taus significa que los taus decayendo hadrónicamente se
 incluyen en el término de jets o el término soft dependiendo del {\pt} del jet
 asociado.
