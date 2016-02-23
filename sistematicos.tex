@@ -37,14 +37,14 @@ mes de Noviembre del a\~no 2012. La incerteza sistemática relativa en la medida
 de la luminosidad integrada estimada es $\pm$2.8\% \cite{lumi2012}.
 
 Esta incerteza debe ser propagada a todas las muestras simuladas utilizadas
-para la estimación de fondo y señal ya que estas son normalizadas a la
+para la estimación de fondo y señal, las que deben ser normalizadas a la
 luminosidad de datos analizada.
 
 
 \subsubsection{Trigger}
 
 La estimación de la eficiencia del trigger de fotones utilizado y su incerteza se presentó
-en la \cref{sec:trigger}. La incerteza sistemática resulta $< 1\%$. %%, siendo esta igual a $100^{+0}_{-1.41}\stat \, {}^{+0}_{-0.7}\syst \%$.
+en detalle en la \cref{sec:trigger}. La incerteza sistemática resulta $< 1\%$. %%, siendo esta igual a $100^{+0}_{-1.41}\stat \, {}^{+0}_{-0.7}\syst \%$.
 
 
 
@@ -54,7 +54,7 @@ En la \cref{sec:sim_atlas} se presentó la necesidad de realizar un repesado
 evento a evento en las muestras simuladas para modelar las condiciones de
 \emph{pile-up} de los datos, ya que las muestras MC se simulan con un perfil de
 \emph{pile-up} fijo. Para calcular la incerteza asociada a este procedimiento se
-varia el valor medio del número de interacciones por cruce de \emph{bunches} en
+varía el valor medio del número de interacciones por cruce de \emph{bunches} en
 $\pm 10\%$.
 
 %% %% Siguiendo las recomendaciones de ATLAS, se utiliza
@@ -76,44 +76,33 @@ a través del análisis, siguiendo \cite{PhoEffTwiki,EleEffTwiki,EGScaleTwiki,MC
 La estimación de la incerteza en la escala y resolución de energía de los fotones y
 electrones \cite{EGScaleTwiki} también es considerada y posee el mismo orden de magnitud.
 
-Como el requerimiento de aislamiento de fotones aplicado por la herramienta oficial para derivar los factores de corrección
-es distinto al utilizado en el análisis, la eficiencia de identificación es evaluada nuevamente
-para los distintos criterios de aislamiento para fotones con $\pt>125\gev$ en muestras MC
-de señal y fondo. Se encuentra que el efecto es $<1\%$ y por lo tanto es despreciado.
+Como el requerimiento de aislamiento de fotones aplicado por la herramienta
+oficial para derivar los factores de corrección es distinto al utilizado en este
+análisis, la eficiencia de identificación fue evaluada nuevamente para los
+distintos criterios de aislamiento para fotones con $\pt>125\gev$ en muestras MC
+de señal y fondo. Se encontró que el efecto es $<1\%$ y por lo tanto es
+despreciado.
 
 
 
 
 \subsubsection{Escala y resolución de energía de los jets}
 
-%% La energia de los jets es aumentada y disminuida (de forma correlacionada) en
-%% $\pm1\sigma$ de la incerteza total de la escala de energia de jets, utilizando
-%% una herramienta (\textsc{JetUncertainties}) provista por el grupo de Jet/Etmiss de ATLAS \cite{JesTwiki}.
-
-%% %% The jet energy is scaled up and down (in a fully correlated way) by the
-%% %% $\pm1\sigma$ total uncertainty on the jet energy scale obtained using the
-%% %% {\small \texttt{JetUncertainties}} package (v00-08-07) provided by the
-%% %% Jet/Etmiss group \cite{JesTwiki}. The nominal analysis uses only the total JES
-%% %% uncertainty, although it has been checked that the effect of using the reduced
-%% %% set of JES components on the fit results is within 1\% (see
-%% %% \cref{sec:JEScheck}).
-
-
 La calibración de la escala de energía de los jets a la escala hadrónica correspondiente,
 tiene una incerteza asociada debida a distintas fuentes, entre las que se encuentran
 la respuesta del calorímetro y el \emph{pile-up}.
-La sobre-estimación o subestimación de la de energía puede resultar
-en que se seleccione un conjunto distinto de jets para el análisis. debido a que la corrección
+La sobre-estimación o subestimación de la energía puede resultar
+en que se seleccione un conjunto distinto de jets para el análisis, debido a que la corrección
 no es la misma para todos los jets y depende de sus propiedades. Para evaluar el efecto
 de esta incerteza en los eventos seleccionados, la corrección es modificada
 en $\pm 1\sigma$, utilizando una herramienta provista por el grupo de \textsc{Jet/Etmiss}
 de ATLAS \cite{JesTwiki}.
 
-El impacto de la incerteza asociada a la resolución de energía
-de los jets es considerando comparando el número de eventos obtenidos
-utilizando los jets nominales considerados en el análisis con los obtenidos modificando
-la energía de los jets de acuerdo a una distribución Gausiana, de media 1 y ancho igual
-a la incerteza.
+El impacto de la incerteza asociada a la resolución de energía de los jets es
+considerado comparando el número de eventos obtenido utilizando los jets
+nominales seleccionados para el análisis con el obtenido modificando la energía
+de los jets de acuerdo a una distribución Gausiana, de media 1 y ancho igual a
+la incerteza.
 
 %% A fin de tener en cuenta una posible subestación de la resolución de energía de los jets
 %% en la simulación MC, se realiza un smearing del {\pt} de los jets en función de su \pt y su $\eta$.
@@ -217,19 +206,19 @@ este factor en $\pm 1\sigma$.
 \subsubsection{Señal de SUSY}\label{sec:syst_signal}
 
 La sección eficaz de producción de pares de gluinos fue calculada utilizando
-el programa {\nllfast}, al igual que las incertezas asociadas debido la elección
+el programa {\nllfast}, al igual que las incertezas asociadas debido a la elección
 de la escala de renormalización y factorización, y a la elección de la PDF.
 Para ello se siguen las recomendaciones PDF4LHC \cite{Botje:2011sn} como
 se describe en detalle en la \cref{sec:xs_calc}.
 
-Los valores centrales y sus incertezas para las diferentes masas de gluinos consideradas están resumidos en
+Los valores centrales y sus incertezas para las diferentes masas de gluinos consideradas se resumen en
 la \cref{tab:signal_xs_theo_unc}. Las incertezas totales varían entre 22.5\% para $m_{\gluino} = 800\GeV$
 y 36.8\% para $m_{\gluino} = 1.3 \tev$.
 
 \begin{sidewaystable}[!htbp]
   \centering
   \caption{La sección eficaz total NLO+NLL con sus incertezas en función de la masa de los gluinos. Se detallan
-    las diferentes contribuciones a la incerteza asociadas a la elección de la PDF,  la escala de renormalización
+    las diferentes contribuciones a la incerteza total asociadas a la elección de la PDF,  la escala de renormalización
     y factorización, y el valor de $\alpha_s$. Los detalles del cálculo se encuentran en la \cref{sec:xs_calc}.}
   \label{tab:signal_xs_theo_unc}
 
@@ -303,9 +292,9 @@ total, que resulta en 56 \% y 28 \% para {\SRL} y {\SRH}, respectivamente.
 
 De manera similar a lo realizado para estimar las incertezas teóricas de la
 producción  de {\ttgam},
-las incertezas en el número estimado de eventos de {\wgam} fue determinada
+las incertezas en el número estimado de eventos de {\wgam} fueron determinadas
 realizando el análisis a nivel generador para las muestras simuladas con variaciones
-de la configuración nominal. Para la incertezas
+de la configuración nominal. Para las incertezas
 debidas a la elección de escala de factorización/renormalización, se simularon muestras
 modificando la escala al doble y la mitad. También se consideró la incerteza debida
 a la escala de asociación entre  ME y PS, cuyo valor nominal es de 20 \gev, y para el caso de las variaciones se
@@ -340,11 +329,11 @@ donde el valor total es de  $73$\% y $39$\% para {\SRL} y
 
 \subsubsection{Producción de fotones directos}
 
-La normalización del fondo de {\gjet} y sus incertezas es tomada del ajuste a datos en la CR
+La normalización del fondo de {\gjet} y sus incertezas son tomadas del ajuste a datos en la CR
 como se describe en \cref{sec:bkg_gjet}. Una incerteza adicional es obtenida comparando el
 número de eventos en las distintas regiones de señal entre la muestra nominal
-(\sherpa) y los obtenidos con otra muestra generada con otro generador ({\pythia}).
-Este estudio se realizó a nivel generador para evitar tener en cuenta nuevamente los efectos del
+(\sherpa) y los obtenidos con una muestra generada con otro generador ({\pythia}).
+El estudio se realizó a nivel generador para evitar tener en cuenta nuevamente los efectos del
 detector. Esta incerteza resultó del 45\%.
 
 
