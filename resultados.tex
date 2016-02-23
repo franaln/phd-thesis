@@ -11,21 +11,23 @@ donde se espera la señal de nueva física, definidas en los capítulos anterior
 También deben ser incluidas las incertezas sistemáticas, tanto teóricas como
 experimentales, las cuales se presentan en la \cref{sec:sistematicos}.
 
-Los resultados del ajuste del likelihood se presentan en la
+Los resultados del ajuste del \emph{likelihood} se presentan en la
 \cref{sec:bkgonlyfit} para las distintas regiones, para luego, de acuerdo a los
 resultados obtenidos, establecer los límites a los procesos de nueva física en
 la \cref{sec:model_independent}. Estos resultados son finalmente interpretados
 en el contexto de un modelo particular de supersimetría, el cual motiva el
 trabajo de esta tesis, en la \cref{sec:susy_limits}.
 
-%% Por último, en la \cref{sec:13tev}, se muestran los primeros ... de 13 TeV ...
+Por último, en la \cref{sec:results13tev}, se muestra la significancia esperada
+para el análisis de los datos $\sqrt{s} = 13 \tev$ recolectados por ATLAS durante
+el a\~no 2015.
 
 
 \section{Análisis Estadístico}
 \label{sec:analisis}
 
-A partir de la función likelihood general (\cref{eq:model}), se define la
-función likelihood utilizada en el análisis específico de esta tesis como:
+A partir de la función \emph{likelihood} general (\cref{eq:model}), se define la
+función \emph{likelihood} utilizada en el análisis específico de esta tesis como:
 
 \begin{equation}
   L(\bm{n}|\mu_s, \bm{\mu}_p, \bm{s}, \bm{b}, \bm{\alpha}) = \mathcal{P}_\text{SR} \, \times \, \mathcal{P}_\text{CRQ} \, \times \, \mathcal{P}_\text{CRW} \, \times \, \mathcal{P}_\text{CRT} \, \times \, \mathcal{C}_\text{syst}
@@ -33,17 +35,17 @@ función likelihood utilizada en el análisis específico de esta tesis como:
 \end{equation}
 %
 donde $\bm{n}$ es el número de eventos observado en cada región (de control y
-señal), y $\mu_s$ es la intensidad de la señal y constituye el parámetro de
-interés del análisis. Los demás parámetros son parámetros \emph{nuisance}. Por
-un lado los parámetros de normalización de los fondos ($\bm{\mu}_p$), en este
+señal) y $\mu_s$ es la intensidad de la señal que constituye el parámetro de
+interés del análisis. Los demás son parámetros \emph{nuisance}. Por
+un lado, los parámetros de normalización de los fondos ($\bm{\mu}_p$), en este
 caso $\mu_Q$ para el fondo de {\gjet}, $\mu_W$ para {\wgam} y $\mu_T$ para
-{\ttgam}. El número de eventos esperado de señal y fondo en cada región está
-dado por $\bm{s}$ y $\bm{b}$ respectivamente, y provienen de las muestras MC o
+{\ttgam} así como  el número de eventos esperado de señal y fondo en cada región
+($\bm{s}$ y $\bm{b}$ respectivamente) que provienen de las muestras MC o
 de aquellos calculados a partir de los datos como se describió en el
-\cref{cap:fondos}. Los parámetros $\bm{\alpha}$ parametrizan las incertezas
-sistemáticas en la señal y el fondo utilizando una distribución Gausiana.
+\cref{cap:fondos}. Por otro lado, los parámetros $\bm{\alpha}$ parametrizan las incertezas
+sistemáticas en la señal y el fondo utilizando una distribución normal.
 
-Con la función likelihood, se construye el estadístico de prueba como el
+Con la función \emph{likelihood}, se construye el estadístico de prueba como el
 \emph{profile likelihood ratio},
 
 \begin{equation}
@@ -82,16 +84,16 @@ su combinación estadística sea más sencilla.
 \section{Ajuste simultáneo en las regiones de control}
 \label{sec:bkgonlyfit}
 
-Para validar los métodos utilizados para estimar los fondos, se realiza un
+Para validar los métodos utilizados en la estimación de los fondos, se realiza un
 ajuste simultáneo utilizando únicamente las CR. El objetivo de este ajuste es
 estimar el fondo total esperado en las VR y las SR, sin hacer ninguna suposición
-del modelo de señal. Solo las muestras de fondo son utilizadas en el modelo, y
+del modelo de señal. Solo las muestras de fondo son incorporadas al modelo, y
 las CR se suponen libres de contaminación de señal. Cabe destacarse que el
 ajuste se realiza solamente en las CR, y los procesos de fondo dominantes son
 normalizados al número de eventos observado en cada una de las regiones. La
-función likelihood utilizada es la de la \cref{eq:likelihood} sin el término de
+función \emph{likelihood} utilizada es la de la \cref{eq:likelihood} sin el término de
 la SR. Como los parámetros de la pdf correspondientes al fondo son compartidos
-entre las diferentes regiones, el resultado del ajuste puede ser utilizado
+entre las diferentes regiones, el resultado del ajuste puede ser usado
 luego, para predecir el número de eventos en las VR y SR.
 
 Las predicciones a partir del ajuste en las CR son independientes del número de
@@ -102,7 +104,7 @@ externos al experimento puedan hacer una prueba de hipótesis en un modelo de
 nueva física no considerado por ninguno de los experimentos del LHC.
 
 En las siguientes secciones se muestran los resultados obtenidos a partir
-de esta ajuste en las distintas regiones del análisis.
+de este ajuste en las distintas regiones del análisis.
 
 
 % Control Regions
@@ -111,9 +113,10 @@ de esta ajuste en las distintas regiones del análisis.
 El número de eventos predicho para cada proceso de fondo antes y después del ajuste en
 las regiones de control puede verse en \cref{tab:fit_result_crl,tab:fit_result_crh},
 comparado con el número de eventos observado.
-Estas regiones no solo determinan la normalización de los proceso de fondo dominante
-en cada una, sino que también restringen las incertezas sistemáticas aplicadas todos
-los fondos.
+Estas regiones no solo determinan la normalización de los procesos de fondo dominante
+en cada una, sino que también restringen las incertezas sistemáticas aplicadas a todos
+los fondos. Es importante observar que las variables relevantes del análisis se encuentren
+bien modeladas en las regiones de control, lo cual puede observarse en las \cref{fig:bkgfit_crl_after,fig:bkgfit_crh_after}.
 
 En la \cref{tab:bkgonly_mus} se presentan los parámetros de normalización de
 los fondos {\wgam} ($\mu_W$), {\ttgam} ($\mu_T$) y {\gjet}
@@ -256,23 +259,23 @@ puede ver que todos los valores centrales estan contenidos dentro de una desviac
 \subsection{Resultados en las regiones de validación}
 
 Los factores de normalización calculados a partir del ajuste simultáneo en las
-CR, y detallados en la \cref{tab:bkgonly_mus}, son utilizados para estimar los fondos
-en las VR, donde se compara el fondo esperado con los datos observados, a fin de
-validar la extrapolación que luego se hará a la SR.
+CR, y detallados en la \cref{tab:bkgonly_mus}, son utilizados para estimar los
+fondos en las VR, donde se compara el fondo esperado con los datos observados, a
+fin de validar la extrapolación que luego se hará a la SR.
 
 En las \cref{tab:fit_result_vrl,tab:fit_result_vrh} se presentan los resultados
 para las distintas regiones de validación asociadas a {\SRL} y {\SRH},
-respectivamente, y en las \cref{fig:bkgfit_vr} pueden verse las distribuciones
+respectivamente, y en la \cref{fig:bkgfit_vr} pueden verse las distribuciones
 de algunos observables en algunas de estas regiones. En general, el número de
 eventos de fondo predicho está en buen acuerdo con el número de eventos
 observado dentro de las incertezas, lo que permite validar el método empleado y
 la viabilidad de utilizar la estimación del número de eventos de fondo en las
-SR, lo cual puede observarse más fácilmente en la
+SR. Este resultado puede visualizarse más fácilmente en la
 \cref{fig:fit_region_composition} donde se presentan los \emph{pull} para las
-distintas regiones, definido como $\frac{n_\text{obs} - n_\text{exp}}{\sigma_\text{tot}}$.
-Decir lo que es sigmatot.
+distintas regiones, definido como $\frac{n_\text{obs} - n_\text{exp}}{\sigma_\text{tot}}$,
+donde $\sigma_\text{tot}$ es la suma de la incerteza estadística y sistemática.
 El mismo acuerdo puede verse de las distribuciones de los
-observables en las VR, las cuales muestran que no existen problemas en el
+observables en las VR, que confirman que no existen problemas en el
 modelado de los distintos observables.
 
 Habiendo validado el método de obtención del fondo contaminante en la región
@@ -335,14 +338,14 @@ pueden verse en la siguiente sección.
 \subsection{Resultados en las regiones de señal}
 
 Las predicciones del fondo luego del ajuste simultáneo en las CR son presentadas
-en la \cref{tab:fit_result_sr} para las regiones de señal, {\SRL} y {\SRH}, donde
-se espera señal de nueva física,
-conjuntamente con el número de eventos de datos observados. El acuerdo entre los
-datos observados y el fondo esperado es bueno y no se observa un exceso
-significativo de datos por sobre los predichos en ninguna de las SR.
-El número de eventos esperado a partir de procesos del {\SM}  en la region {\SRL} y
+en la \cref{tab:fit_result_sr} para las regiones de señal, {\SRL} y {\SRH},
+donde se espera señal de nueva física, conjuntamente con el número de eventos de
+datos observados. De la tabla se desprende que los datos están en
+buen acuerdo con el fondo esperado y no se observa un exceso estadísticamente
+significativo de datos por sobre los predichos en ninguna de las SR. El número
+de eventos esperado a partir de procesos del {\SM} en las regiones {\SRL} y
 {\SRH} es de $1.27\pm0.43$ y $0.84\pm0.38$, respectivamente, mientras que el
-número de eventos observado en ambas SR es de 2.
+número de eventos observado en ambas SR es 2.
 
 \begin{table}[!htbp]
   \centering
@@ -358,10 +361,11 @@ número de eventos observado en ambas SR es de 2.
 
 
 Las distribuciones de {\met} para {\SRL} y {\SRH} se muestran en la
-\cref{fig:met_sr} para datos y también para el fondo esperado después del
-ajuste en las CR. Se puede ver el buen acuerdo en la zona de bajo {\met} y las
-flechas indican la zona de las SR utilizadas para obtener los resultados finales
-del presente análisis.
+\cref{fig:met_sr} para datos y también para el fondo esperado después del ajuste
+en las CR, y puede verse el buen acuerdo en la zona de bajo {\met}. Las flechas
+indican el corte que define las regiones de señal utilizadas para obtener los
+resultados finales del presente análisis.
+
 
 \begin{figure}[!htbp]
 
@@ -373,17 +377,18 @@ del presente análisis.
   \caption{Distribución de {\met} comparando datos y el fondo esperado para la
     selección de la región {\SRL} (izquierda) y {\SRH} (derecha), sin el corte
     en {\met}. La distribución esperada para dos muestras de señal es también
-    graficada para su comparación. Las lineas punteadas y las flechas negras indican
+    graficada para su comparación. Las líneas punteadas y las flechas negras indican
     la región de señal.}
   \label{fig:met_sr}
 
 \end{figure}
 
-
 Una comparación entre el número de eventos observado y esperado en cada una de las
 regiones se presenta en la \cref{fig:fit_region_composition} a modo de resumen, donde
-el panel inferior muestra el \emph{pull} de cada región. Se puede ver el buen acuerdo
-tanto en las regiones de validación como en las de señal.
+el panel inferior muestra el \emph{pull} de cada región, dando una idea de la significancia
+estadística de los resultados.
+%% Se puede ver el buen acuerdo
+%% tanto en las regiones de validación como en las de señal.
 
 
 \begin{figure}[!htbp]
@@ -401,8 +406,8 @@ tanto en las regiones de validación como en las de señal.
 
 
 Las incertezas sistemáticas dominantes en el número total predicho de fondo en
-cada SR, se presentan en \cref{tab:syst}.
-Debido a que las incertezas individuales pueden estar correlacionadas y las
+cada SR, se presentan en la \cref{tab:syst}.
+Debido a que las incertezas individuales pueden estar correlacionadas y a las
 correlaciones negativas entre normalizaciones (representando el impacto de la
 estadística en las CR en la incerteza total), la incerteza total no es
 necesariamente la suma en cuadratura de las mismas. La incerteza estadística se
@@ -433,20 +438,21 @@ incertezas están dominadas por las incertezas teóricas del fondo {\zgam} y
 
 \subsection{Eventos en las regiones de señal}
 
-Solo dos eventos pasan la
-selección de cada una de las regiones de señal. Un esquema del detector y las
-se\~nales dejadas por los distintos objetos en el mismo puede verse en las
-\cref{fig:evdisplay_srl} para los dos eventos observados en la {\SRL} y en las
-\cref{fig:evdisplay_srh} para los dos eventos en la {\SRH}.
+Solo dos eventos pasan la selección de cada una de las regiones de señal y resulta
+instructivo una mirada detallada de los mismos. Un
+esquema del detector y las se\~nales dejadas por los distintos objetos en los diferentes
+subdetectores puede verse en la \cref{fig:evdisplay_srl} para los dos eventos
+observados en la {\SRL} y en la \cref{fig:evdisplay_srh} para los dos eventos
+en la {\SRH}.
 
 Las visualizaciones de los eventos es generada con
 \textsc{Atlantis}\cite{atlantis}. En la parte superior izquierda se puede ver el
 corte transversal del detector junto con el corte longitudinal en el panel
 inferior. En estas vistas se presentan los depósitos de energía en los
 calorímetros en color amarillo. Los conos de distintos colores representan los
-distintos jets reconstruidos en el evento, y su tama\~no es proporcinal a la
-energia del jet. La linea gruesa de color amarillo representa un fotón
-reconstruido y la linea roja punteada la energía faltante.
+distintos jets reconstruidos en el evento, y su tama\~no es proporcional a la
+energía del mismo. La línea gruesa de color amarillo representa un fotón
+reconstruido y la línea roja punteada la energía faltante.
 
 
 
@@ -488,19 +494,21 @@ reconstruido y la linea roja punteada la energía faltante.
 %-------------------------
 \section{Límites a procesos de nueva física} \label{sec:model_independent}
 
-Resulta útil proveer el límite superior en el número de eventos de
-nueva física impuesto por los resultados obtenidos, mostrados en la sección
-anterior. Este límite, provisto para
-cada región de señal, hace posible su aplicación a cualquier otro modelo de
-nueva física, a partir del cálculo del número de eventos de señal que se espera
-en la región en cuestión y verificando que dicho número no exceda el límite
-superior obtenido en el presente análisis. Por supuesto que los valores de eficiencia y aceptancia deben ser
+Una vez obtenidos los resultados finales en las regiones de señal en términos
+del número de eventos observado en relación al fondo esperado como se discutió
+en las secciones anteriores, resulta útil proveer el límite superior en el número de eventos de
+nueva física impuesto por dichos resultados. Este límite, obtenido de manera independiente de cualquier modelo,
+es provisto para cada región de señal, haciendo posible su aplicación a cualquier modelo de
+nueva física. Para esto debe calcularse
+el número de eventos de señal que se espera
+en la región en cuestión y verificar que dicho número no exceda el límite
+superior del presente análisis. Por supuesto que los valores de eficiencia y aceptancia deben ser
 tenidos en cuenta.
-Para que puedan realizarse este tipo de interpretaciones de otros modelos, todos
-los valores y datos relevantes de este analisis son publicados en \textsc{HepData}
+Para que puedan realizarse este tipo de interpretaciones en base a otros modelos, todos
+los valores y datos relevantes de este análisis son publicados en \textsc{HepData}
 para su utilización \cite{hepdata}.
 
-Con el objetivo de obtener los limites independientes del modelo se realiza un
+Con el objetivo de calcular los límites independientes del modelo se realiza un
 ajuste combinado teniendo en cuenta las regiones de control y cada una de las
 regiones de señal. Se supone que la contaminación de señal en las CR es nula,
 pero no se realiza ninguna otra suposición acerca del modelo de nueva física. El
@@ -516,11 +524,11 @@ utilizando la luminosidad considerada en el análisis
 
 Los resultados se detallan en la \cref{tab:upperlimits} para las dos regiones de
 señal. Debido a que el número esperado de eventos de fondo es bajo y no es
-posible utilizar la aproximación asintótica que fuera descriptos en la \cref{sec:aprox},
+posible utilizar la aproximación asintótica que fuera descripta en la \cref{sec:aprox},
 se utilizaron $\sim 3000$
-pseudo-experimentos obtenidos con el método Monte Carlo. El límite en el número
+pseudo-experimentos generados con el método Monte Carlo. El límite en el número
 de eventos de nueva física resulta en 5.5 y 5.6 para {\SRL} y {\SRH}
-respectivamente, lo cual se traduce en un limite en la sección eficaz visible de
+respectivamente, lo cual se traduce en un límite en la sección eficaz visible de
 0.27 y 0.28 fb.
 
 
@@ -543,18 +551,19 @@ respectivamente, lo cual se traduce en un limite en la sección eficaz visible d
 
 \clearpage
 
+
 %-------------------------
 % SUSY Exclusion limit
 %-------------------------
 \section{Límites de exclusión en el modelo de SUSY considerado}
 \label{sec:susy_limits}
 
-Debido a que no se observa un exceso significativo por encima del fondo esperado
+Debido a que no se observó un exceso significativo por encima del fondo esperado
 del {\SM} en las regiones de señal, se obtuvieron los límites de exclusión en el
-modelo de SUSY considerado. Los límites superiores son obtenidos utilizando el
+modelo de SUSY considerado. Los límites superiores son determinados con el
 método {\cls} descripto en la \cref{sec:limits}. Para ello se utiliza la función
-likelihood \cref{eq:likelihood} incluyendo cada región de señal, y las muestras
-de señal consideradas.
+likelihood, \cref{eq:likelihood}, incluyendo cada región de señal y las muestras
+de señal del modelo de SUSY que motivó este estudio.
 Estos límites son
 calculados para la sección eficaz nominal del modelo y también con una sección
 eficaz de $\pm 1 \sigma$ en la incerteza teórica, siguiendo la recomendación de
@@ -590,14 +599,14 @@ regiones de señal, eligiendo en cada punto la que provee el mejor límite.
 \begin{figure}[!htb]
   \centering
 
-  \includegraphics[width=0.7\textwidth]{limitplot_combined}
+  \includegraphics[width=0.9\textwidth]{limitplot_combined_rectangle}
 
   \caption{Límites de exclusión para {\SRL} y {\SRH} combinados. Los límites
     son obtenidos usando la región de señal con mejor sensibilidad en cada punto.
     La línea punteada azul muestra el límite esperado a 95\% CL, con las bandas
     amarillas indicando la desviación a $1\sigma$ que tiene en cuenta las incertezas
     teóricas y experimentales. Los
-    límites observados están indicados por las lineas en rojo oscuro, donde la línea
+    límites observados están indicados por las líneas en rojo oscuro, donde la línea
     sólida representa el límite nominal y las líneas punteadas representan el límite
     para las variaciones de la sección eficaz de la señal debido a la incerteza
     teórica en la misma.}
@@ -606,30 +615,167 @@ regiones de señal, eligiendo en cada punto la que provee el mejor límite.
 \end{figure}
 
 
-Como se desprende de los gráficos de los límites de exclusión, considerando
-el contorno de $-1\sigma$ en la sección eficaz de SUSY,
-la produccion de
-gluino es excluida a 95\% {\cl} para una masa de hasta 1250 \gev,
-para $m_{\ninoone}<{840}\gev$. Este límite disminuye para neutralinos
-de baja masa debido a la caida en la aceptancia en esa región, lo cual también ocurre
-cuando la masa de gluinos y neutralinos es similar.
+Como se desprende de los gráficos de los límites de exclusión, considerando el
+contorno de $-1\sigma$ en la sección eficaz de SUSY, la produccion de gluino es
+excluida a 95\% {\cl} para una masa de hasta 1250 \gev, para
+$m_{\ninoone}<{840}\gev$. Este límite disminuye para neutralinos de baja masa
+debido a la caída en la aceptancia en esa región, lo cual también ocurre cuando
+la masa de gluinos y neutralinos es similar.
 
-A modo de completitud, en la \cref{fig:susy_summary} se presenta un resumen de los límites obtenidos en
-las masas de las partículas supersimétricas buscadas en una selección de los
-análisis más sensibles realizados por ATLAS. La Figura incluye el resultado obtenido
-por el análisis presentado en esta tesis, al igual que los análisis
-complementarios de búsqueda de modelos GGM.
-
+A modo de completitud, en la \cref{fig:susy_summary} se presenta un resumen de
+los límites obtenidos en las masas de las partículas supersimétricas buscadas en
+una selección de los análisis más sensibles realizados con datos de ATLAS. La
+figura incluye el resultado obtenido por el análisis presentado en esta tesis,
+al igual que los análisis complementarios de búsqueda de modelos GGM.
+Puede observarse que los limites obtenidos, incluida la contribucion de esta tesis,
+alcanzan y superan la region del {\tev} para la masa de gluino.
 
 \begin{figure}[!htb]
   \centering
 
   \includegraphics[width=0.9\textwidth]{atlas_susy_run1_summary}
 
-  \caption{Resumen de los límites de exclusión en la masa de las párticulas
+  \caption{Resumen de los límites de exclusión en la masa de las partículas
     supersimétricas por distintos análisis realizados en ATLAS. Solo una
     selección representativa de los resultados disponibles es
     presentada\cite{susy_summary}, incluyendo los obtenidos en esta tesis.}
   \label{fig:susy_summary}
+
+\end{figure}
+
+
+
+\section{Búsqueda de señal de SUSY con datos a $\sqrt{s} = 13 \tev$}
+\label{sec:results13tev}
+
+Luego de la publicación de los resultados obtenidos con los datos de
+$\sqrt{s}=8\tev$, presentados en las secciones anteriores, se comenzó el
+análisis de los nuevos datos, a partir de las colisiones del llamado \emph{Run
+  2} del LHC que comenzaron en Junio de 2015 a una energía de centro de masa sin
+precedente, de $\sqrt{s} = 13 \tev$. Durante el a\~no 2015 el LHC funcionó a
+esta energía de centro de masa y el detector ATLAS recolectó datos
+correspondientes a una luminosidad total integrada de 3.2 \ifb.
+
+Además del cambio en la energía de las colisiones, se llevaron a cabo varias
+mejoras en el LHC y sus detectores. También se realizaron mejoras en el trigger, y en el
+software de reconstrucción y análisis.
+Durante los dos a\~nos que hubo entre las tomas de datos, el LHC fue mejorado
+ampliamente para poder aumentar la energía de los haces de protones a 6.5
+\tev, y disminuir el espaciado entre \emph{bunches} a $\unit[25]{ns}$.
+Al detector ATLAS también se le realizaron mejoras significativas durante este período.
+Se renovaron el tubo del haz, el sistema de imanes y los sistemas criogénicos. También se
+reemplazaron o reacondicionaron los módulos del detector interno y los
+calorímetros dañados, y para mejorar la reconstrucción de trazas y de vértices a
+luminosidades mayores, se agregó una cuarta capa al detector de píxeles a una
+distancia de 3.3 cm del tubo del haz.
+
+El aumento en la energía de las colisiones conlleva a un incremento en la
+sección eficaz de producción, mejorando el potencial de descubrimiento para
+física más allá del SM. En particular para SUSY, la sección eficaz esperada de
+producción de gluinos incrementa en un factor de 30 a 130 en el rango de masas
+1.5-2 {\tev}. En la \cref{fig:13tev_xs} puede verse la comparación entre la
+sección eficaz para las distintas energías de colisión.
+
+\begin{figure}[!htb]
+  \centering
+
+  \includegraphics[width=0.8\textwidth]{xs_run1grid_gg_8TeV_13TeV}
+
+  \caption{Sección eficaz de producción de pares de gluinos como función de la
+    masa del gluino para energías de centro de masa de $\sqrt{s} = 8 \tev$ y
+    $\sqrt{s} = 13 \tev$.}
+  \label{fig:13tev_xs}
+
+\end{figure}
+
+
+Para el nuevo análisis se dise\~nó un conjunto de puntos de se\~nal (ver
+\cref{fig:13tev_grid}), utilizando el mismo modelo considerado previamente y
+explicado en la \cref{sec:sig_samples}, aunque extendiendo el espacio de
+parámetros. Los mismos fueron generados utilizando
+{\herwigpp}. En este caso, la masa de los squarks se fijo en 5 \tev, mientras
+que todos los demás parámetros se mantuvieron iguales a la \emph{grid} anterior
+utilizada en esta tesis.
+
+
+\begin{figure}[!htb]
+  \centering
+
+  \includegraphics[width=0.7\textwidth]{grid_updated}
+
+  \caption{Conjunto de puntos (\emph{grid}) de señal simulados para el análisis
+    de Run 2. Los cuadrados azules representan los puntos de señal
+    generados con distintos valores de $m_{\gluino}$ y $m_{\ninoone}$.}
+
+  \label{fig:13tev_grid}
+
+\end{figure}
+
+
+Con las muestras generadas de señal y de los procesos del SM, y
+a partir de la selección de las dos regiones de señal {\SRL} y {\SRH} del análisis de \emph{Run 1},
+se optimizaron nuevamente los cortes, considerando una luminosidad total esperada de $\sim 4 \ifb$.
+El resultado de los cortes de selección de eventos es el que se detalla en la \cref{tab:13tev_selection}.
+El cambio más relevante respecto a la selección previa es la introducción del corte en $M_\text{eff} = \HT + \met$.
+En la \cref{tab:13tev_selection} puede verse además el fondo esperado para
+estas dos regiones de señal, considerando una luminosidad total integrada de $4 \ifb$.
+
+\begin{table}[!h]
+  \centering
+  \caption{Izquierda: Selección final para las regiones de se\~nal {\SRL} {\SRH} optimizadas
+    para el análisis de los datos de $\sqrt{s} = 13 \tev$. Derecha: Fondo esperado para región
+  de se\~nal, para una luminosidad total integrada de $4 \ifb$.}
+  \label{tab:13tev_selection}
+
+  \begin{tabularx}{0.45\textwidth}{ccc}
+    \hline
+    & \SRL & \SRH \\
+    \hline
+    \nphotons & $=1$ & $=1$ \\
+    $\pt^{\gamma}$ & $>145 \gev$ & $>400 \gev$ \\
+    \nleptons & 0 & 0 \\
+    \njets & $> 4$ & $> 2$ \\
+    $\Delta\phi(\text{jet}, \met)$ & $>0.4$ & $>0.4$ \\
+    $\Delta\phi(\gam, \met)$ & $>0.4$ & $>0.4$ \\
+           {\met} & $>200 \gev$ & $> 400 \gev$ \\
+       $M_{\text{eff}}$ & $>2000 \gev$ & $>2000\gev$ \\
+       $R_T^4$ & 0.90 & - \\
+
+       \hline
+  \end{tabularx}
+  \hfill
+  \begin{tabularx}{0.45\textwidth}{ccc}
+    \hline
+    & \SRL & \SRH \\
+    \hline
+    $\gamma$ + jet     &     0.01 $\pm$ 0.00    &     0.04 $\pm$ 0.01    \\
+    multijet           &     0.00 $\pm$ 0.00    &     0.01 $\pm$ 0.00    \\
+    $W\gamma$          &     0.17 $\pm$ 0.08    &     0.15 $\pm$ 0.07    \\
+    $Z(ll)\gamma$      &     0.00 $\pm$ 0.00    &     0.01 $\pm$ 0.01    \\
+    $Z(\nu\nu)\gamma$  &     0.01 $\pm$ 0.01    &     0.09 $\pm$ 0.05    \\
+    %% $t\bar{t}$        &     0.00 $\pm$ 0.00    &     0.00 $\pm$ 0.00    \\
+    $t\bar{t}\gamma$   &     0.08 $\pm$ 0.08    &     0.15 $\pm$ 0.10    \\
+    $W$+jets           &     0.00 $\pm$ 0.00    &     0.03 $\pm$ 0.02    \\
+    $Z$+jets           &     0.00 $\pm$ 0.00    &     0.07 $\pm$ 0.05    \\
+    \hline
+    Fondo total        &     0.27 $\pm$ 0.17    &     0.55 $\pm$ 0.30    \\
+    \hline
+  \end{tabularx}
+
+\end{table}
+
+En la \cref{fig:13tev_discovery} se encuentra la significancia esperada de descubrimiento,
+donde las líneas representan los contornos de $3\sigma$ y $5\sigma$.
+El análisis de datos se está llevando a cabo al presente y se espera que los resultados
+sean presentados en las conferencias de mediados de 2016 y publicados hacia fin de a\~no.
+
+\begin{figure}[!htb]
+  \centering
+
+  \includegraphics[width=0.8\textwidth]{discovery_combined_13tev}
+
+  \caption{Significancia de descubrimiento en el plano \mgmn. Los contornos
+    se corresponden con $3\sigma$ y $5\sigma$.}
+  \label{fig:13tev_discovery}
 
 \end{figure}

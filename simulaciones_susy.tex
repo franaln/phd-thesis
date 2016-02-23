@@ -38,21 +38,19 @@ Se utilizó un espectro simplificado en el cual, básicamente, el espacio de
 parámetros consiste en la escala de producción (por simplicidad, la masa del
 gluino) y la masa de la NLSP. Todos los demás estados fueron desacoplados ya que
 no juegan un rol importante en la producción o en el estado final de interés.
-Esta aproximación es similar a los denominados \emph{modelos simplificados}
+Esta aproximación es similar a los denominados <<modelos simplificados>>
 utilizados en otras búsquedas.
 La masa del gluino es el único parámetro libre de las partículas de color para
 poder determinar un límite conservativo en la masa del mismo. Todos los
-parámetros de masa soft de los squarks se fijan en 2.5 \tev.
+parámetros de masa \emph{soft} de los \emph{squarks} se fijan en 2.5 \tev.
 
 Para maximizar la probabilidad de tener un único fotón en el estado final, es
 necesario que $\mathrm{BR}(\ninoone \to \gam\,\gravino) \sim 50\%$. Esto resulta
-cuando el neutralino más liviano es una mezcla bino-higgsino.
-Además, el valor de $\mu$ debe ser positivo para
-suprimir el decaimiento a Higgs, que llevará a un estado final ya cubierto por
-otro análisis de ATLAS.
-Para lograr la BR
-deseada se variaron los parámetros de
-masa de bino ($M_1$) y higgsinos ($\mu$) para las diferentes masas del {\ninoone}, de tal forma que los BR del {\ninoone}
+cuando el neutralino más liviano es una mezcla bino-higgsino. Además, el valor
+de $\mu$ debe ser positivo para suprimir el decaimiento a Higgs, que llevará a
+un estado final ya cubierto por otro análisis de ATLAS. Para lograr la BR
+deseada se variaron los parámetros de masa de bino ($M_1$) y higgsinos ($\mu$)
+para las diferentes masas del {\ninoone}, de tal forma que los BR del {\ninoone}
 sean aproximadamente constantes:
 
 \begin{align}
@@ -81,9 +79,9 @@ rango de $\pm 10 \gev$.
 %% de $\tan\beta$\note{Hacer comentario de $\tan\beta$}
 
 A partir de estos estudios se procedió a simular un conjunto de puntos de señal
-(grid) en el plano ($m_{\gluino}$, $m_{\ninoone}$), variando los parámetros
+(\emph{grid}) en el plano ($m_{\gluino}$, $m_{\ninoone}$), variando los parámetros
 $M_3$ y $\mu$. El parámetro $M_1$ se ajustó, dependiendo del $\mu$ de forma de
-obtener las BR descriptas anteriormente. La grid cubre el espacio $150\gev <
+obtener las BR descriptas anteriormente. La \emph{grid} cubre el espacio $150\gev <
 m_{\ninoone} < 1250 \gev$ y $800\gev < m_{\gluino} < 1300 \gev$, con
 $m_{\ninoone} < m_{\gluino}$ (ver \cref{fig:gridpoints}).
 
@@ -91,8 +89,10 @@ $m_{\ninoone} < m_{\gluino}$ (ver \cref{fig:gridpoints}).
 \begin{figure}[!htb]
   \centering
   \includegraphics[width=0.9\textwidth]{figures/run1_grid}
-  \caption{Conjunto de puntos (grid) de señal simulada para el presente análisis. Los cuadrados azules representan los distintos puntos
-  de señal generados con distintos valores de $m_{\gluino}$ y $m_{\ninoone}$. También puede verse la relación con las masas $m_{\gluino}$ y $m_{\ninoone}$.}
+  \caption{Conjunto de puntos (\emph{grid}) de señal simulada para el presente
+    análisis. Los cuadrados azules representan los distintos puntos de señal
+    generados con distintos valores de $m_{\gluino}$ y $m_{\ninoone}$. También
+    puede verse la relación con las masas $m_{\gluino}$ y $m_{\ninoone}$.}
   \label{fig:gridpoints}
 \end{figure}
 
@@ -102,7 +102,7 @@ calculados a partir de estos parámetros utilizando {\suspect}
 (v2.41)\cite{Djouadi2007426}, {\sdecay} (v1.3b)\cite{Muhlleitner:2004mka} y
 {\hdecay} (v3.4)\cite{Djouadi:1997yw}, que forman parte del paquete {\susyhit}
 (v1.3)\cite{Djouadi:2006bz}. Algunos ejemplos del espectro de masas pueden verse
-en la \cref{fig:mass_spectra}, para algunos puntos de la grid, (xx y yy).
+en la \cref{fig:mass_spectra}, para algunos puntos de la \emph{grid}, \note{(xx y yy)}{Agregar}.
 
 \begin{figure}[!htb]
    \centering
@@ -111,13 +111,13 @@ en la \cref{fig:mass_spectra}, para algunos puntos de la grid, (xx y yy).
    \includegraphics[width=0.45\textwidth]{figures/masses_GGM_M3_mu_1450_1050}
 
    \caption{Espectro de masas de las particulas supersimetricas para dos puntos de la grid de senal.
-     En la izquierda para XXX y en la derecha XXX.}
+     En la izquierda para XXX y en la derecha \note{XXX}{Agregar}.}
      %% Solo $M_3$ y $\mu$ son los parámetros libres, en este caso
      %% $(M_3, \mu) = (800~\gev, 250~\gev)$. }
    \label{fig:mass_spectra}
 \end{figure}
 
-Para cada uno de los 124 puntos de señal que constituyen la grid se generaron
+Para cada uno de los 124 puntos de señal que constituyen la \emph{grid} se generaron
 5000 eventos, utilizando {\herwigpp} v2.5.2\cite{Bahr:2008pv} y el conjunto de
 PDFs CTEQ6L1\cite{Nadolsky:2008zw}. Se aplicó un filtro a nivel generador, que
 requería la presencia de un fotón con un {\pt} de al menos 100 \gev, para
@@ -196,35 +196,14 @@ detector ATLAS se realizó con la simulación rápida
 \end{table}
 
 
-
-%% \M{1} and $\mu$ determine the lightest neutralino mass, and are related in such a way that the branching ratios of the \ninoone\ are approximately constant,
-%% resulting in ${\rm BR}(\ninoone \to \gam + \gravino) \approx 50\%$, ${\rm BR}(\ninoone \to Z + \gravino) \approx 49\%$ and ${\rm BR}(\ninoone \to h + \gravino) \approx 1\%$,
-%% numbers which vary by $\pm 1\%$ throughout most of the grid ({\fig} \ref{fig:br_n1_x_grav}). For light neutralinos ($<200\gev$) the Higgs production is highly
-%% suppressed and ${\rm BR}(\ninoone \to \gam + \gravino)$ starts falling up to 40\%. The value of $\mu$ must also be positive in order to disfavor the branching ratio
-%% to the Higgs boson, which would lead to a signature already covered by a dedicated analysis in ATLAS \cite{Aad:2012jva}. Similarly, the branching ratio for
-%% ($\ninoone \to \gam + \gravino$) is such that maximizes the single photon final state. At larger values the diphoton topology starts to be favoured, which has been
-%% extensively searched for in the past \cite{Aad2012519,Aad:2011kz}. This leaves $M_3$ and $\mu$ as the only two free parameters of the model, spanning the space
-%% within $150\gev < m_{\ninoone} < 1250 \gev$ and $800\gev < m_{\gluino} < 1300 \gev$, with $m_{\ninoone} < m_{\gluino}$. The granularity of the simulation in each
-%% dimension is shown in {\tab}\ \ref{tab:signal_pars}, with the resulting value for the gluino and neutralino masses.
-
-
-
-
-%%The total decay branching ratios for \gluino-initiated \ninoone\ production are
-%% shown in {\fig} \ref{fig:br_gl_n1}, for 2-body\footnote{only effectively, the gluino decays through a virtual
-%% quark-squark loop in this case.} and 3-body gluino decays.
-
-
 \begin{table}[ht]
   \centering
-  %\small
+
   \footnotesize
   \caption{Eficiencia del filtro a nivel generador [\%]
     para los puntos de señal simulados.}
   \begin{tabular}{c|ccccccccccccccccc}
     \hline
-%       &    \multicolumn{11}{c}{Filter efficiency [\%]} \\
-%	\hline
      &   \multicolumn{14}{c}{ $M_3$ [\gev] } \\
     $\mu$ [\gev] &  800 & 850 & 900 & 950 & 1000 & 1050 & 1100 &1150 & 1200  & 1250 & 1300 & 1350 & 1400 & 1450 \\
     \hline
@@ -257,15 +236,15 @@ detector ATLAS se realizó con la simulación rápida
 
 
 
-\subsection{Estudios a nivel generador} %% \hl{Cambiar nombre...}}
+\subsection{Estudios a nivel generador}
 \label{sec:susy_studies}
 
 Se realizaron algunos estudios para entender mejor el estado final y poder
 identificar las distintas regiones en el espacio de fase, lo cual facilitaría el
 proceso de optimización de las posibles regiones de se\~nal. En la
 \cref{fig:signal_br_gl} se presentan los distintos BR de los gluinos para todos
-los puntos de la grid. Resulta evidente que la cadena de decaimiento dominante
-varía en las distintas regiones de la grid, dependiendo de la masa del gluino y
+los puntos de la \emph{grid}. Resulta evidente que la cadena de decaimiento dominante
+varía en las distintas regiones de la \emph{grid}, dependiendo de la masa del gluino y
 el neutralino. Se puede ver que el decaimiento dominante es a través de
 charginos, pero a medida que la masa del gluino y el neutralino se acercan,
 empieza a resultar más importante el decaimiento directo al neutralino más
@@ -284,7 +263,7 @@ al igual que la energía faltante.
 
   \includegraphics[width=0.9\textwidth]{figures/br_gl_X}
 
-  \caption{Tasas de decaimiento (BR) de los gluinos para los distintos puntos de la grid en
+  \caption{Tasas de decaimiento (BR) de los gluinos para los distintos puntos de la \emph{grid} en
     el plano \mgmn. Para cada punto de señal, la fracción del rectángulo de cada color representa
     el BR a cada uno de los posibles estados finales.}
   \label{fig:signal_br_gl}
@@ -309,7 +288,7 @@ al igual que la energía faltante.
 
 En la \cref{fig:signal_br_n1} se presentan las BR de decaimiento del neutralino
 mas liviano (\ninoone), compatibles con las esperadas a partir del modelo que se
-utilizará para el presente analisis (\cref{eq:n1_gam,eq:n1_z,eq:n1_h}). Estos
+utilizará para el presente análisis (\cref{eq:n1_gam,eq:n1_z,eq:n1_h}). Estos
 valores varían en menos del 1\% en los distintos puntos de la grid, salvo para
 neutralinos livianos ($<200\gev$) donde la producción de Higgs es altamente
 suprimida, mientras aumenta el decaimiento a $Z$, y $\mathrm{BR}(\ninoone \to
@@ -321,85 +300,14 @@ suprimida, mientras aumenta el decaimiento a $Z$, y $\mathrm{BR}(\ninoone \to
   \includegraphics[width=0.9\textwidth]{figures/br_n1_X}
 
   \caption{Tasas de decaimiento (BR) de los neutralinos LSP en $\gamma\gravino$, $\gamma Z$ y
-  $\gamma h$ para los distintos puntos de la grid en el plano \mgmn.}
+  $\gamma h$ para los distintos puntos de la \emph{grid} en el plano \mgmn.}
   \label{fig:signal_br_n1}
 \end{figure}
 
 
 
-
-
-%% \begin{figure}[h]
-%%   \centering
-%%   \includegraphics[width=0.8\textwidth]{figures/truth/br_gl_2b_vs_3b}
-%%   \caption{BR de los gluinos para los distintos puntos de la grid.}
-%% \end{figure}
-
-%% \begin{figure}[h]
-%%   \includegraphics[width=0.8\textwidth]{figures/truth/br_gl_X_2body}
-%%   \includegraphics[width=0.8\textwidth]{figures/truth/br_gl_X_3body}
-%%  \caption{BR de los gluinos para los distintos puntos de la grid.}
-%% \end{figure}
-
-
-%% \begin{figure}[h]
-%%   \centering
-%%   \includegraphics[width=0.8\textwidth]{figures/truth/br_c1_X}
-%%   \caption{BR de los gluinos para los distintos puntos de la grid.}
-%% \end{figure}
-
-%% \begin{figure}[h]
-%%   \centering
-%%   \includegraphics[width=0.8\textwidth]{figures/truth/br_n3_X}
-%%   \caption{BR de los gluinos para los distintos puntos de la grid.}
-%% \end{figure}
-
-%% \begin{figure}[h]
-%%   \centering
-%%   \includegraphics[width=0.8\textwidth]{figures/truth/br_n2_X}
-%%   \caption{BR de los gluinos para los distintos puntos de la grid.}
-%% \end{figure}
-
-%% \begin{figure}[h]
-%%   \centering
-%%   \includegraphics[width=0.8\textwidth]{figures/truth/br_n1_X}
-%%   \caption{BR de los gluinos para los distintos puntos de la grid.}
-%% \end{figure}
-
-
-%% \begin{figure}[ht!]
-%%    \centering
-%%    \includegraphics[width=0.32\textwidth]{figures/gl_n1g_full}
-%%    \includegraphics[width=0.32\textwidth]{figures/gl_n1qq_full}
-%%    \includegraphics[width=0.32\textwidth]{figures/gl_n1_full} \\
-%%    \includegraphics[width=0.32\textwidth]{figures/gl_n2g_full}
-%%    \includegraphics[width=0.32\textwidth]{figures/gl_n2qq_full}
-%%    \includegraphics[width=0.32\textwidth]{figures/gl_n2_full} \\
-%%    \includegraphics[width=0.32\textwidth]{figures/gl_n3g_full}
-%%    \includegraphics[width=0.32\textwidth]{figures/gl_n3qq_full}
-%%    \includegraphics[width=0.32\textwidth]{figures/gl_n3_full} \\
-%%    \includegraphics[width=0.32\textwidth]{figures/gl_c1qq_full} \\
-
-%%    \caption{Tasas de decaimiento para $\gluino \to \ninoone$,
-%%      para todas las posibles cadenas de decaimiento permitidas en la grid
-%%      de produccion fuerte. La mayoria de los graficos son la suma
-%%      de deciamientos de 2 cuerpos (izquierda) y 3 cuerpos (centro).
-%%      Para el decaimiento $\gluino \to \chinopm$), solo el decaimiento de
-%%      tres cuerpos es posible.}
-%%    \label{fig:br_gl_n1}
-%% \end{figure}
-
-
 \subsection{Sección eficaz de producción}
 \label{sec:xs_calc}
-
-%% La seccion eficaz de produccion y sus incertezas fue calculada usando el paquete SUSYSignalUncertainties \cite{SUSYsigunc}.
-%% La seccione eficaz para los procesos que in volucran la produccion de pares de gluinos fueron calculadas a NLO
-%% en la constante de acoplamiento fuerte, agregando la \hl{resummation of soft gluon emission at NLO+NLL}\cite{Beenakker:1996ch,Kulesza:2008jb,Kulesza:2009kq,Beenakker:2009ha,Beenakker:2011fu}.
-%% La seccion eficas de produccion electrodebil de $\tilde{\chi}\tilde{\chi}$ fue calculada
-%% a NLO en la constante de acoplamiento fuerte utilizando {\prospino} \cite{Beenakker:1999xh}.
-%% Las secciones eficacez y sus incertezas estan detalladas en la \cref{tab:signal_xs_strong,tab:signal_xs_ewk}
-%% y se muestran en las figuras...
 
 En el caso de procesos de producción de pares de gluinos o squarks, de los cuales
 existe el cálculo a NLL, la sección eficaz se toma a NLO en la constante de acoplamiento
@@ -464,7 +372,7 @@ fracción en la producción electrodébil comparada con la producción total.
 \begin{table}[!htb]
   \centering
   \caption{Sección eficaz a NLO+NLL para la producción de gluinos para los distintos
-    puntos de la grid de señal. La ultima columna es la incerteza teórica.}
+    puntos de la \emph{grid} de señal. La última columna es la incerteza teórica.}
   \begin{tabular}{cccc}
     \hline
     $M_3$ [\gev] & $m_{\gluino}$ [\gev] & $\sigma$(NLO+NLL) [fb] & Incerteza Total [$\%$]\tabularnewline
@@ -492,7 +400,7 @@ fracción en la producción electrodébil comparada con la producción total.
   \centering
   \caption{Sección eficaz total a NLO para la producción electrodébil de neutralinos y charginos
     para los distintos puntos de la grid de señal. La última columna  es la incerteza
-    teórica. más detalles se encuentran en la \cref{sec:syst_signal}.}
+    teórica. Más detalles se encuentran en la \cref{sec:syst_signal}.}
   \begin{tabular}{cccc}
     \hline
     $\mu$ [\gev] & $m_{\ninoone}$ [\gev] & $\sigma$(NLO) [fb] & Incerteza total [$\%$]\tabularnewline

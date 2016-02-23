@@ -1,16 +1,16 @@
 \chapter{Métodos estadísticos para la búsqueda de nueva física}
 \label{cap:estadistica}
 
-En este capítulo se introducen los conceptos básicos necesarios para entender el
-tratamiento estadístico de los datos realizado para esta tesis. Está enfocado en
-la búsqueda de nueva física en altas energías, su descubrimiento y/o el
-establecimiento de límites de exclusión.
-
 Dada la naturaleza probabilística de las colisiones en el LHC y el bajo número
 de eventos esperado en las búsquedas de nueva física, es necesario contar con
 una poderosa estructura estadística para interpretar los resultados, especialmente
 para identificar una nueva señal sobre las posibles fluctuaciones de los fondos
 del SM.
+
+En este capítulo se introducen los conceptos básicos necesarios para entender el
+tratamiento estadístico de los datos realizado para esta tesis. Está enfocado en
+la búsqueda de nueva física en altas energías, su descubrimiento y/o el
+establecimiento de límites de exclusión.
 
 Este capítulo utiliza como referencia los libros \cite{Cowan,James}. Muchos de
 los métodos estadísticos más avanzados fueron desarrollados especialmente para
@@ -22,21 +22,21 @@ manuales y artículos que describen las herramientas estadísticas utilizadas
 
 \section{Funciones de distribución de probabilidad}
 
-Un observable $x$ es por naturaleza \emph{frecuentista}, es decir, si realizamos
+Un observable $x$ es por naturaleza frecuentista, es decir, si realizamos
 el experimento muchas veces, vamos a obtener distintos valores para $x$ y este
 conjunto de valores dará lugar a una función densidad de probabilidad (pdf)
 de $x$, que llamamos $f(x)$. En el caso más general, se cuenta con una familia
-de pdfs $f(x;\btheta)$ a la cual se denomina \emph{modelo}, y cuyos parámetros
+de pdfs $f(x;\btheta)$ a la cual se denomina <<modelo>>, y cuyos parámetros
 representan, por ejemplo, parámetros de la teoría física, alguna
 propiedad desconocida de la respuesta del detector, o incertezas sistemáticas
 del análisis.
 
 A continuación se describen algunas funciones de probabilidad importantes que
-serán utilizadas a lo largo de este Capítulo.
+serán utilizadas a lo largo de este capítulo.
 
 \subsubsection{Distribución Gaussiana}
 
-La pdf Gaussiana (o normal) de una variable continua $x$ ($-\infty < x < \infty$)
+La pdf gaussiana (o normal) de una variable continua $x$ ($-\infty < x < \infty$)
 se define como:
 
 \begin{equation}
@@ -45,13 +45,12 @@ se define como:
 
 Los nombres de los parámetros están claramente motivados por los valores del
 valor esperado y la varianza de $x$, ya que $E[x] = \mu$ y $V[x] = \sigma^2$. Un
-caso especial es cuando $\mu=0$ y $\sigma=1$, que se denomina Gaussiana
-Estándar.
-%% $\phi(x) = \frac{1}{\sqrt{2\pi}} \exp(-x^2/2)$.
+caso especial es cuando $\mu=0$ y $\sigma=1$, que se denomina gaussiana
+estándar.
 La importancia de la distribución normal proviene del Teorema Central del
 Límite. El teorema dice que la suma de $n$ variables continuas independientes
 $x_i$ con media $\mu_i$ y varianza $\sigma_i^2$ esta distribuida de acuerdo a
-una Gaussiana con media $\mu = \sum_{i=1}^n \mu_i$ y varianza $\sigma^2 =
+una gaussiana con media $\mu = \sum_{i=1}^n \mu_i$ y varianza $\sigma^2 =
 \sum_{i=1}^n \sigma_i^2$ en el límite de $n\to\infty$. Esto se satisface (bajo
 ciertas condiciones generales) sin importar las pdfs individuales de $x_i$.
 
@@ -107,7 +106,7 @@ descripta por una función de densidad de probabilidad $f(x;\btheta)$ que no
 conocemos, donde $\btheta$ es un conjunto de parámetros con valores
 desconocidos, que tienen valor verdadero $\btheta_0$.
 
-Un \emph{estimador} es una función de los datos observados $\bm{x}$ que provee
+Un estimador es una función de los datos observados $\bm{x}$ que provee
 valores numéricos, los valores estimados $\hat{\btheta}$, para el vector de
 parámetros $\btheta$.
 
@@ -127,10 +126,10 @@ Algunas propiedades que es importante que cumplan los estimadores son:
 \end{itemize}
 
 Los dos métodos más utilizados para la estimación de parámetros son el de
-\emph{likelihood máximo} y el de \emph{cuadrados mínimos}.
+\emph{likelihood} máximo y el de cuadrados mínimos.
 
 
-\section{Método del likelihood máximo}\label{sec:MLE}
+\section{Método del \emph{likelihood} máximo}\label{sec:MLE}
 
 Para $N$ mediciones estadísticamente independientes cada una descripta por una
 pdf $f(x, \btheta)$, la pdf conjunta para los valores observados $x$ está dada
@@ -142,15 +141,16 @@ se define como la pdf conjunta evaluada en los datos observados,
   \btheta)
 \end{equation}
 
-El estimador de máximo likelihood (MLE) de los parámetros {\btheta} son los
-valores $\hat{\btheta}$ para los cuales la función likelihood $L(\btheta)$ tiene
-su máximo global. %% Una forma intuitiva de ver esto es la siguiente: si asumimos
+El estimador de máximo \emph{likelihood} (MLE) de los parámetros {\btheta} son los
+valores $\hat{\btheta}$ para los cuales la función \emph{likelihood} $L(\btheta)$ tiene
+su máximo global.
+%% Una forma intuitiva de ver esto es la siguiente: si asumimos
 %% que la pdf y los parámetros son correctos, esperamos valores altos de la función
 %% likelihood comparado con otros parámetros que no sean los verdaderos.
 %% Los valores estimados $\hat{\btheta}$ de los parámetros se obtienen buscando el
 %% máximo global de la función likelihood.
 En la práctica, es conveniente trabajar con el logaritmo de la función
-likelihood (log-likelihood), y buscar el mínimo del negativo de esta función:
+\emph{likelihood} (\emph{log-likelihood}), y buscar el mínimo del negativo de esta función:
 
 \begin{equation}
   - \ln L(\btheta) = - \sum_{i=1}^{N} \ln f(x_i; \btheta)
@@ -165,13 +165,13 @@ embargo, el MLE tiene un sesgo proporcional a $1/N$.
 
 
 Cuando se repite un experimento muchas veces bajo las mismas condiciones, el
-número de eventos $n$ de un proceso fluctúa de acuerdo a una distribución
+número de eventos $N$ de un proceso fluctúa de acuerdo a una distribución
 de Poisson alrededor del valor esperado $\nu$. Este término de Poisson puede
-incorporarse entonces a la función likelihood, obteniendo lo que se llama
-\emph{likelihood extendido}:
+incorporarse entonces a la función \emph{likelihood}, obteniendo lo que se llama
+<<\emph{likelihood} extendido>>:
 
 \begin{equation}
-  L(\nu,\btheta) = \Pois(n;\nu) \prod_{i=1}^{N} f(x_i; \btheta)
+  L(\nu,\btheta) = \Pois(N;\nu) \, \prod_{i=1}^{N} f(x_i; \btheta)
   \label{eq:likelihood_ext}
 \end{equation}
 
@@ -192,25 +192,25 @@ es comparada contra una hipótesis alternativa $H_1$, o varias, distintas a $H_0
 En el caso de búsqueda de nueva física en altas energías, la hipótesis que juega el rol de
 hipótesis nula es la hipótesis de que solo los procesos del SM contribuyen a los
 datos observados. Esta hipótesis también suele llamarse hipótesis de
-\emph{solo-fondo}. La hipótesis alternativa es la hipótesis en la cual, además
+<<solo-fondo>>. La hipótesis alternativa es la hipótesis en la cual, además
 de los procesos del SM, también contribuyen procesos de nueva física y se
-denomina hipótesis de \emph{se\~nal+fondo}.
+denomina hipótesis de <<se\~nal+fondo>>.
 
-Una hipótesis se dice \emph{simple} cuando está completamente determinada,
-mientras que si tiene uno o más parámetros libres, se dice \emph{compuesta}.
+Una hipótesis se dice simple cuando está completamente determinada,
+mientras que si tiene uno o más parámetros libres, se dice compuesta.
 Cada hipótesis queda determinada por la pdf que describe a los observables bajo
 esa hipótesis $f(\bm{x}|H)$.
 
 Una vez definidas las hipótesis, se quiere saber si los datos medidos son
 compatibles con la hipótesis nula o si la hipótesis nula puede ser rechazada en
-base a estos datos. Con este objetivo se define un \emph{estadístico de prueba}
+base a estos datos. Con este objetivo se define un <<estadístico de prueba>>
 $t(\bm{x})$ que es función de los datos observados. En el caso de considerar un
 estadístico de prueba escalar, $t(\bm{x}) \to \mathbb{R}$, éste contendrá toda la
 información de discriminación entre $H_0$ y $H_1$ en un solo número.
 
 Cada estadístico de prueba tendrá su pdf asociada $g(t|H)$ y la decisión sobre
 la hipótesis estará basada en el valor del estadístico observado $t_\text{obs}$
-y la definición de una \emph{región critica} $R$. La región critica queda
+y la definición de una región critica $R$. La región critica queda
 definida por un valor de corte $t_c$ y para el caso de que la hipótesis
 alternativa tiende a tener valores de $t$ mayores que bajo $H_0$, la región
 critica corresponde a $t \geq t_c$ (ver \cref{fig:stat_test}).
@@ -228,25 +228,8 @@ dentro es rechazada.
   \label{fig:stat_test}
 \end{figure}
 
-%% Asumiendo que $H_0$ es verdadera, se puede definir una región critica $R$ tal que la probabilidad
-%% de que $q$ pertenezca a $R$ sea igual o menor a un cierto valor. El hecho de que $q_\text{obs}$
-%% este dentro de $R$, implica que $H_0$ sea rechazada, y de lo contrario aceptada.
-
-%% Primero se define una \emph{región de aceptancia}, tal que si $T(\mathcal{d}) < k_\alpha$
-%% uno acepta la hipótesis nula. El contorno $T(\mathcal{d}) = k_\alpha$ delimita el espacio de datos,
-%% y es el borde de la región de aceptancia. Se define el tamaño del test, $\alpha$, como la
-%% probabilidad de que la hipótesis nula sea rechazada en el caso de ser verdadera (lo que se conoce
-%% como error de tipo I). Esto es equivalente a la probabilidad bajo la hipótesis nula de que los datos
-%% no sean encontrados en la región de aceptancia, es decir, $\alpha = P(T(\mathcal{D}) \geq k_\alpha|H_0)$
-
-%% En contraste, si uno acepta la hipótesis nula cuando la alternativa es verdadera, es llamado
-%% error de tipo II. La probabilidad de cometer este errores la denota $\beta$ y esta dada por
-%% $\beta = P(T(\mathcal{D}) < k_\alpha|H_1)$. Se llama \emph{poder del test} a $1-\beta$.
-
-%% Lo que se quiere encontrar es un test estadístico que maximiza el poder del test para un valor
-%% fijo de tamaño del test $\alpha$.
-
-La probabilidad de rechazar $H_0$ siendo ésta verdadera es denominado tamaño del test $\alpha$:
+La probabilidad de rechazar $H_0$ siendo ésta verdadera es denominada tamaño de la
+constrastación $\alpha$:
 
 \begin{equation}
   \alpha = \int_{R} g(t|H_0)\, dt
@@ -256,7 +239,7 @@ lo cual también determina el nivel de significancia como
 $(100 - \alpha) \%$. Este error, de rechazar $H_0$ cuando la hipótesis es verdadera, es llamado
 error de tipo I. Por otro lado el error de aceptar $H_0$ cuando es falsa se
 llama error de tipo II, y su probabilidad de ocurrencia, $\beta$, depende de la
-hipótesis alternativa $H_1$ y del poder del test que se define como $(1-\beta)$:
+hipótesis alternativa $H_1$ y del poder del constraste que se define como $(1-\beta)$:
 
 \begin{equation}
 1-\beta = \int_R g(t|H_1)\, dt
@@ -281,12 +264,12 @@ estadístico de prueba con mayor poder para un tama\~no esta dado por:
 %
 y la mejor región crítica consiste en los $\bm{x}$ que satisfacen $t(\bm{x}) > c_\alpha$
 donde $c_\alpha$ es una constante que se ajusta para que el tama\~no sea $\alpha$.
-Este estadístico de prueba es esencialmente el cociente de los likelihoods
+Este estadístico de prueba es esencialmente el cociente de los \emph{likelihoods}
 para las dos hipótesis.
 
 
 El nivel de acuerdo entre los datos observados y una hipótesis $H$ es
-cuantificado calculando el \emph{\pvalue}, es decir, la probabilidad, bajo la
+cuantificado calculando el <<\pvalue>>, es decir, la probabilidad, bajo la
 suposición de que $H$ es cierta, de observar datos de igual o menor
 compatibilidad con la predicción de $H$, respecto a los datos observados.
 
@@ -329,7 +312,7 @@ a la mediana de la hipótesis $H_1$.
 
 %% Si $\hat{\mu}$ y $\hat{\btheta}$ son los valores que maximizan $L(\mu,\btheta)$ o minimizan
 %% $- \ln L(\mu, \btheta)$ y $\bdtheta$ es el valor que maximiza $L$ para un valor fijo de $\mu$
-%% (the profile value of \btheta), el cociente de likelihood es,
+%% (the profile value of \btheta), el cociente de \emph{likelihood} es,
 
 Generalmente, cuando se modela un fenómeno aleatorio de interés, el modelo
 elegido para ajustar a las observaciones de dicho fenómeno suele tener varios
@@ -354,20 +337,20 @@ definir el \emph{profile likelihood ratio} (PLR),
 %
 donde en el denominador, los valores $\hat{\btheta}$ y $\hat{\mu}$ son los
 valores estimados MLE. En el numerador, los parámetros {$\doublehat{\btheta}$}
-son los valores que maximizan la función likelihood para un valor fijo de $\mu$,
+son los valores que maximizan la función \emph{likelihood} para un valor fijo de $\mu$,
 es decir que es una función multidimensional que depende solo del parámetro $\mu$.
 Este proceso de elegir valores específicos de los parámetros
 nuisance para un valor dado de $\mu$ se lo conoce como \emph{profiling}. El PLR
 depende explícitamente de $\mu$ pero es independiente de los parámetros
 nuisance que han sido ``eliminados'' vía el \emph{profiling}.
 La presencia de los parámetros nuisance que son ajustados a los datos ensanchan
-la función likelihood como función de $\mu$, respecto a la distribución si sus
+la función \emph{likelihood} como función de $\mu$, respecto a la distribución si sus
 valores estuvieran fijos. De cierta forma reflejan una pérdida de información
 sobre $\mu$ debido a estos parámetros desconocidos, que suelen ser
 las incertezas sistemáticas.
 
 En la sección anterior se mostró que el mejor estadístico de prueba para hipótesis
-simples esta dado por el cociente de los likelihoods de las dos hipótesis, de acuerdo
+simples esta dado por el cociente de los \emph{likelihoods} de las dos hipótesis, de acuerdo
 al teorema de Neyman-Pearson.
 Desafortunadamente no hay un equivalente al lema de Neyman-Pearson para modelos
 con muchos parámetros libres. Sin embargo, hay una generalización natural basada
@@ -401,7 +384,7 @@ de prueba (ver \cref{sec:aprox}).
 
 Un caso de especial importancia del estadístico $t_\mu$ es cuando $\mu=0$.
 Rechazar la hipótesis de $\mu=0$ es lo
-que llamamos \emph{descubrimiento} de una nueva señal.
+que llamamos descubrimiento de una nueva señal.
 Aunque es cierto que un valor de $\hat{\mu}$ mucho menor a cero representa
 evidencia contra el modelo de solo-fondo, este tipo de discrepancia no muestran
 que los datos contengan eventos de señal. Es por este motivo que sólo se
@@ -597,7 +580,7 @@ desprecian los términos $\mathcal{O}(1/\sqrt{N})$, se puede mostrar que en el
 régimen asintótico, el estadístico $q_\mu$ sigue una distribución $\chi^2$ no
 central con un grado de libertad.
 
-Entonces, en el límite asintótico, el estadistico $q_\mu$ puede aproximarse por
+Entonces, en el límite asintótico, el estadístico $q_\mu$ puede aproximarse por
 
 \begin{equation}
   q_\mu =
@@ -651,7 +634,7 @@ Para muestras de datos muy pequeñas, o en casos donde la precisión es
 importante, siempre pueden validarse estas aproximaciones utilizando la
 generación Monte Carlo.
 Para esto es necesario utilizar simulaciones Monte Carlo para generar lo que se
-denomina \emph{pseudo-experimentos}. El procedimiento consiste en generar el
+denomina <<pseudo-experimentos>>. El procedimiento consiste en generar el
 conjunto de observables $\bm{x}$ utilizando la pdf $f(\bm{x}|H)$ y calcular el
 valor del estadístico de prueba $t(\bm{x})$ para cada conjunto. Este proceso se
 repite hasta acumular suficiente estadística en la distribución muestral del
@@ -669,7 +652,7 @@ una medida de la significancia esperada de descubrimiento\cite{medsigNote}. La
 explicación detrás de esta formula es que una cantidad $n$ que sigue una
 distribución de Poisson con una media grande $s+b$ puede ser aproximada por una
 variable $x$ distribuida según una gaussiana con media $s+b$ y desviación
-estándar $\sqrt{s+b}$. En este caso el valor-$p$ de la hipótesis de sólo-fondo
+estándar $\sqrt{s+b}$. En este caso el {\pvalue} de la hipótesis de solo-fondo
 dada una observación $x$ esta dado por,
 
 \begin{equation}
@@ -693,13 +676,12 @@ en este caso igual a la media, es $s+b$,
   \label{eq:Zsimple}
 \end{equation}
 %
-que es la ecuación conocida. %% Y para generalizar esta ecuación para el caso de que el
-%% número de eventos de fondo tenga una incerteza sistemática
+que es la ecuación conocida.
 
 %% utilizando la aproximación
 %% asintotica de la seccion anterior,
 De forma general, para el caso de un número de eventos de fondo $b$ conocido con
-una incerteza despreciable, se puede escribir la función likelihood como,
+una incerteza despreciable, se puede escribir la función \emph{likelihood} como,
 
 \begin{equation}
   L(s) = \frac{(s+b)^n}{n!} e^{-(s+b)}
@@ -728,7 +710,7 @@ s/\sqrt{b} + \mathcal{O}(s/b)$ que es la expresión de la \cref{eq:Zsimple}
 y es válida sólo en el límite $s \ll b$.
 
 Si el número de eventos esperado de fondo $b$ no es conocido, uno debe incluirlo
-como un parámetro nuisance en la función likelihood. Pero como $b$ puede
+como un parámetro nuisance en la función \emph{likelihood}. Pero como $b$ puede
 ajustarse para cualquier número de eventos, es necesario introducir información
 adicional para restringir $b$. En general se suele hacer mediante una medida
 auxiliar, mirando el número de eventos observados $m$ en una región de control
@@ -736,7 +718,7 @@ donde se supone ausencia de señal, y considerando que $m$ sigue
 una distribución de Poisson con media $\tau b$, donde $\tau$ es un factor de
 extrapolación.
 
-La función likelihood total es el producto de las dos distribuciones de Poisson
+La función \emph{likelihood} total es el producto de las dos distribuciones de Poisson
 correspondientes a cada región:
 
 \begin{equation}
