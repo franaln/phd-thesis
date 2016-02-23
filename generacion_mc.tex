@@ -2,7 +2,7 @@
 
 La conexión entre la teoría/fenomenología de SUSY (o cualquier otra teoría de
 nueva física), y los datos observados en el detector de un colisionador se
-realiza por medio de un \emph{generador de eventos Monte Carlo}
+realiza por medio de un <<generador de eventos Monte Carlo>>
 \cite{Sjostrand:2006su,Dobbs:2004qw}. Dada una teoría de nueva física, que en
 general predice la existencia de nuevas partículas y/o interacciones, el
 generador de eventos permite calcular cómo esa teoría se manifestará en el
@@ -21,7 +21,7 @@ se simula el pasaje de las partículas por el detector.
 Para las distintas etapas suelen
 utilizarse herramientas diferentes, por lo que es fundamental contar con un
 forma estandarizada de intercambio de información entre ellas. Con este objetivo
-se creó un tipo de archivo llamado SLHA (SUSY Les Houches Accord)\cite{SLHA} que
+se creó un tipo de archivo llamado SLHA (\emph{SUSY Les Houches Accord})\cite{SLHA} que
 permite organizar toda la información de un cierto modelo de supersimetría
 (parámetros, masas, decaimientos) en un formato único, de modo que sea fácil de
 compartir entre los físicos y también entre las distintas herramientas
@@ -43,18 +43,18 @@ Los modelos de SUSY que se estudian en el LHC suelen ser la teoría efectiva a
 bajas energías que resulta de una teoría más general, como teoría de
 supercuerdas, o que involucre un mecanismo particular para el rompimiento de
 SUSY. Para especificar una teoría efectiva es necesario definir: la simetría de
-gauge, los campos que la componen y, el Lagrangiano. Como se describió en el
+gauge, los campos que la componen y, el lagrangiano. Como se describió en el
 \cref{cap:susy}, los efectos del rompimiento de SUSY están codificados en los
-términos de rompimiento soft del Lagrangiano. También es necesario especificar
+términos de rompimiento \emph{soft} del lagrangiano. También es necesario especificar
 la escala de energía a la cual la teoría efectiva y el lagrangiano son válidos.
 Como los experimentos prueban física a la escala del {\tev}, mientras que los
 parámetros del Lagrangiano son frecuentemente especificados a energías mucho mas
 altas ($M_\text{GUT}$ o $M_P$), debe usarse el grupo de ecuaciones de
 renormalización (RGE) para conectar las dos escalas del modelo. Una vez que los
-parámetros del Lagrangiano son conocidos a la escala electrodébil, pueden
+parámetros del lagrangiano son conocidos a la escala electrodébil, pueden
 identificarse las masas físicas de las partículas, diagonalizando las matrices
 de masa correspondientes, y luego, para tener la precisión suficiente, aplicar
-las correcciones a ordenes mayores (en general a 1 loop). A partir del modelo
+las correcciones a ordenes mayores (en general a 1 \emph{loop}). A partir del modelo
 también es posible calcular los anchos y tazas de decaimiento de todas las
 partículas supersimétricas.
 
@@ -73,13 +73,8 @@ pueden usarse como entrada en los generadores de eventos.
 
 Los programas descriptos anteriormente permiten pasar de un modelo específico a las
 predicciones en la producción de partículas y sus anchos de decaimientos en
-estados finales de quarks, leptones, fotones y gluones (y LSP en modelos donde
+estados finales de \emph{quarks}, leptones, fotones y gluones (y LSP en modelos donde
 se conserva paridad-R).
-
-%% Por lo tanto todavía falta un paso entre estos modelos y las partículas finales
-%% que dejas sus señales en los detectores, del cual se encarga el generador de
-%% eventos. A partir de la colisión hadrónica inicial, estos programas modelan la
-%% producción de las partículas en el estado final a ser medidas en el detector.
 
 El paso siguiente consiste en la generación de los eventos Monte Carlo.
 Para un dado tipo de colisionador y una dada energía de centro de masa,
@@ -87,7 +82,7 @@ el generador se encarga de generar los eventos esperados para el modelo
 considerado.
 
 La colisión de dos protones a altas energías en el LHC implica el estudio de las
-interacciones de los constituyentes de los protones, es decir, de los quarks y
+interacciones de los constituyentes de los protones, es decir, de los \emph{quarks} y
 gluones. La interacción total de los dos protones es complicada, como se muestra
 en la \cref{fig:mc_event_generator} y se puede descomponer en distintos pasos.
 En todos los componentes del diagrama excepto en la interacción fuerte, dominan los procesos de QCD.
@@ -114,23 +109,23 @@ estado final partónico, de acuerdo a los BR predichos por el modelo.
 
 La multiplicidad de partones en el estado final depende, además de los partones producidos en la interacción
 fuerte, de la radiación en el evento. Pueden producirse partones adicionales por
-radiación de un gluón o quark ya sea antes de la interacción fuerte (llamada
+radiación de un gluón o \emph{quark} ya sea antes de la interacción fuerte (llamada
 \emph{Initial State Radiation}, ISR) o después de la interacción fuerte, en la fase de
 fragmentación (llamada \emph{Final State Radiation}, FSR).
 Cada uno de los partones en el estado
 final comienzan a perder energía, a través de la radiación de gluones. Estos
-gluones fragmentan en gluones adicionales y pares quark-antiquark. Esto continua
+gluones fragmentan en gluones adicionales y pares \emph{quark-antiquark}. Esto continua
 hasta el punto en donde la energía es lo suficientemente baja para recombinar
 todas las partículas de color en mesones y bariones, proceso denominado
-\emph{hadronización}. Los hadrones decaen subsecuentemente en otros hadrones,
+<<hadronización>>. Los hadrones decaen subsecuentemente en otros hadrones,
 leptones y neutrinos. Cada partón proveniente de la interacción fuerte (y
 ISR/FSR) resulta en una lluvia de partículas, denominada colectivamente
-\emph{jet}.
+<<\emph{jet}>>.
 
 
 Finalmente, los remanentes de los haces iniciales tienen que ser modelados
 para obtener una descripción válida de la física incluyendo no solo la
-interaccion dura sino los procesoso ``soft'', lo que suele llamarse evento
+interaccion dura sino los procesos \emph{soft}, lo que suele llamarse evento
 subyacente (UE).
 
 Todos estos procesos se repiten hasta generar un gran número de eventos, donde cada
@@ -147,53 +142,8 @@ final.
 %% %% SUSY, se pueden simular los posibles estados finales que se esperan a partir de
 %% %% un cierto modelo.
 
-%% La simulación de las partículas producidas a partir de colisiones en
-%% colisionadores hadrónicos, como el LHC, puede descomponerse en varios pasos
-%% descriptos a continuación (y esquematizados en la
-%% \cref{fig:mc_event_generator}):
 
 
-%% \begin{itemize}
-
-%% \item Interacción fuerte:
-
-
-%% \item Cascadas partónicas:
-
-%%   Implementación de las lluvias partónicas para las partículas producidas en la
-%%   colisión (lluvia de estado final o FSR), para los partones iniciales
-%%   involucrados en la colisión (lluvia de estado inicial o ISR), y también para
-%%   otras partículas de color que puedan ser producidas como decaimiento de
-%%   partículas más pesadas.
-
-  %% implementación de las lluvias de partones para los estados de partículas
-  %% con color inicial y final, y para otras partículas con color que puedan ser
-  %% producidas como decaimiento de otros objetos más pesados,
-
-%% \item Decaimientos:
-
-%%   Las partículas supersimétricas producidas en la interacción dura decaen (en
-%%   general en forma de cascada) a otras partículas.
-
-%%   %% Las particulas fundamentales masivas, como el quark top,
-%%   %%   los bosones de gauge electrodebiles, los bosones de Higgs y particulas de nueva fisica, decaen
-%%   %%   en una escala de tiempo que es más corta o comparable a las lluvias partinicas QCD.
-%%   %%   Dependiendo de la naturaleza de las particulas y de si se producen particlas que interacctuen
-%%   %%   fuertementen en el decaimiento, estas marticulas pueden tambien iniciar lluvias partonicas
-%%   %%   antes y despues de su decaimiento.
-
-%% \item Hadronización y producción de partículas estables:
-
-%%   En esta etapa se implementa el modelo de hadronización que describe la
-%%   formación de mesones y bariones a partir de los quarks y gluones. También las
-%%   partículas inestables deben decaer a partículas (cuasi) estables que son
-%%   detectadas en el detector, con tasas y distribuciones que estén de acuerdo con
-%%   los valores medidos o predichos.
-
-%% \item Remanentes:
-
-
-%% \end{itemize}
 
 %% \begin{figure}[h]
 %%   \centering
@@ -204,7 +154,7 @@ final.
 %%   \label{fig:mc_event_generator}
 %% \end{figure}
 
-\begin{figure}[!htbp]
+\begin{figure}[!h]
   \centering
 
   \scalebox{0.9}{\input{tikz/mc_event_generator.tex}}
@@ -214,64 +164,6 @@ final.
   \label{fig:mc_event_generator}
 
 \end{figure}
-
-
-%% \item Lluvias de partones de estado inicial y final:
-%%     Las particulas de color en el evento son perturvativamente evolucionadas desde
-%%     la escala dura de la colision hasta el corte infrarojo.
-%%     Esto ocurre para las particulas producidas en la colision, la \emph{lluvia de estado final},
-%%     y los partones iniciales involucrados en la colision, la \emph{lluvia de estado inicial}.
-%%     La coherencia de la emision de gluones soft en las lluvias de partones de las particulas en
-%%     la colision dura es controlada por el flujo de color de la colision dura.
-
-%%     %% 3. Decay of heavy objects. Massive fundamental particles such as the top quark, electroweak
-%%     %% gauge bosons, Higgs bosons, and particles in many models of physics beyond the Standard
-%%     %% Model, decay on time-scales that are either shorter than, or comparable to that of the QCD
-%%     %% parton shower. Depending on the nature of the particles and whether or not strongly interacting
-%%     %% particles are produced in the decay, these particles may also initiate parton showers
-%%     %% both before and after their decay. One of the major features of the Herwig++ shower
-%%     %% algorithm is the treatment of radiation from such heavy objects in both their production
-%%     %% and decay. Spin correlations between the production and decay of such particles are also
-%%     %% correctly treated.
-%%   \item Decaimiento de objetos pesados: Las particulas fundamentales masivas, como el quark top,
-%%     los bosones de gauge electrodebiles, los bosones de Higgs y particulas de nueva fisica, decaen
-%%     en una escala de tiempo que es más corta o comparable a las lluvias partinicas QCD.
-%%     Dependiendo de la naturaleza de las particulas y de si se producen particlas que interacctuen
-%%     fuertementen en el decaimiento, estas marticulas pueden tambien iniciar lluvias partonicas
-%%     antes y despues de su decaimiento.
-
-%%   \item
-
-%%     4. Multiple scattering. For large centre-of-mass energies the parton densities are probed in a
-%%     kinematic regime where the probability of having multiple partonic scatterings in the same
-%%     hadronic collision becomes significant. For these energies, multiple scattering is the dominant
-%%     component of the underlying event that accompanies the main hard scattering. These
-%%     additional scatterings take place in the perturbative regime, above the infrared cut-off, and
-%%     therefore give rise to additional parton showers. We use an eikonal multiple scattering
-%%     model [8], which is based on the same physics as the FORTRAN JIMMY package [18], together
-%%     with some minor improvements. In addition to that we included non-perturbative
-%%     partonic scatters below the infrared cut-off [19], which enables us to simulate minimum
-%%     bias events as well as the underlying event in hard scattering processes.
-
-%%     5. Hadronization.
-%%     After the parton showers have evolved all partons involved in hard scatterings,
-%%     additional scatters and partonic decays down to low scales, the final state typically
-%%     consists of coloured partons that are close in momentum space to partons with which they
-%%     share a colour index, their colour ‘partner’ (in the large Nc limit this assignment is unique).
-%%     Herwig++ uses the cluster hadronization model [2] to project these colour–anticolour pairs
-%%     onto singlet states called clusters, which decay to hadrons and hadron resonances. The
-%%     original model of Ref. [2], which described this decay as pure phase space has been progressively
-%%     refined as described in Sect. 7. Clusters that are too massive or too light for decay
-%%     directly to hadrons to provide a good description are treated differently, again described in
-%%     Sect. 7.
-
-%%     6. Hadron decays. The hadron decays in Herwig++ are simulated using a matrix element
-%%     description of the distributions of the decay products, together with spin correlations between
-%%     the different decays, wherever possible. The treatment of spin correlations is fully
-%%     integrated with that used in perturbative production and decay processes so that correlations
-%%     between the production and decay of particles like the tau lepton, which can be
-%%     produced perturbatively but decays hadronically, can be treated consistently.
-
 
 
 \subsection{Simulación del detector ATLAS}

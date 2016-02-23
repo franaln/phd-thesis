@@ -6,29 +6,25 @@ necesarios para realizar un análisis de búsqueda de nueva física. En este
 capítulo, haciendo uso de estos conceptos, se describe la estrategia general
 y la construcción del modelo estadístico utilizado en el presente análisis.
 
-%% Como se ha mencionado en el \cref{cap:susy}, debido al gran número de parámetros
-%% libres en los modelos de SUSY, las búsquedas de supersimetría en ATLAS están
-%% impulsadas por la fenomenología de los estados finales.
-
 
 \section{Estrategia, señal y fondos del SM}
 
 El análisis realizado para esta tesis consiste en la búsqueda de Supersimetría en
 eventos con un fotón aislado muy energético, jets y gran cantidad de energía
 faltante. La estrategia general consistió en realizar un experimento de conteo,
-es decir, considerar como variable estadística el número de eventos observado en
+es decir, considerar como variable estadística al número de eventos observado en
 una cierta región del espacio de observables, rica en eventos de la señal considerada.
 Un experimento de conteo puede
-pensarse en el contexto del likelihood extendido, \cref{eq:likelihood_ext}, con
+pensarse en el contexto del \emph{likelihood} extendido, \cref{eq:likelihood_ext}, con
 $f(x) = 1$, el cual se reduce solo al término de Poisson.
 
 El mayor desafío para poder realizar cualquier descubrimiento de nueva física es
 entender los procesos del SM que pueden dar lugar a un estado final que emule
-la señal buscada (\emph{fondos}).
+la señal buscada (fondos).
 En este caso van a ser los que tienen un fotón, jets y energía faltante en el estado final.
 Estos pueden dividirse en varias categorías.
 Por un lado, los procesos que dan lugar a eventos con un fotón y energía
-faltante real, es decir, los que llamamos fondos irreducibles son:
+faltante real, es decir, los que llamamos fondos irreducibles. Estos son:
 
 \begin{itemize}
 \item $Z(\to\nu\nu)+\gamma$
@@ -79,16 +75,16 @@ los procesos QCD:
 %% sección eficaz de nueva física.
 
 Otro componente importante del análisis es la simulación de los procesos de
-senal. Las muestras de señal pueden depender de uno o muchos parámetros del
+señal. Las muestras de señal pueden depender de uno o muchos parámetros del
 modelo considerado, como por ejemplo de las masas de las nuevas partículas
 predichas por Supersimetría. En el caso de considerar un espacio
 multidimensional del espacio de parámetros del modelo, se utiliza una
-<<\emph{grid}>> de escenarios de señal, en la cual cada punto de la \emph{grid}
-corresponde a un único punto el el espacio de parámetros. En particular en esta
+<<\emph{grid}>> de escenarios de señal, en la que cada punto de la \emph{grid}
+corresponde a un único punto en el espacio de parámetros. En particular en esta
 tesis, se consideró un modelo de Supersimetría que puede dar lugar a este tipo
-de estados finales, para lo cual es necesario contar con la simulacion de la
-senal considerada. En el caso de que no se observe un exceso de eventos en los
-datos, se pueden establecer limites de exclusión en la \emph{grid}, excluyendo
+de estados finales, para lo cual es necesario contar con la simulación de la
+señal considerada. En el caso de que no se observe un exceso de eventos en los
+datos, se pueden establecer límites de exclusión en la \emph{grid}, excluyendo
 un subconjunto de los valores de los parámetros considerados.
 
 
@@ -170,9 +166,9 @@ datos experimentales. Existen distintas formas para estimar un fondo a partir de
 los datos observados. En el \cref{cap:fondos} se describirán los métodos
 específicos utilizados en este análisis.
 
-En algunos casos se utiliza un tercer método para estimar los fondos, que consiste en
+En algunos casos se emplea un tercer método para estimar los fondos, que consiste en
 utilizar la estimación proveniente de las simulaciones MC, pero corregida
-utilizando los datos. Para esto se define una región de control (CR) en
+a partir de los datos. Para esto se define una región de control (CR) en
 la cual el fondo dominante pueda ser controlado comparándolo con los datos
 observados en esa misma región. Las CR son diseñadas especialmente para tener
 una alta pureza en uno de los procesos de fondo y deben estar libres de
@@ -206,7 +202,7 @@ anteriormente.
 
 Es importante que las CR, VR y SR sean estadísticamente independientes para
 poder combinar la pdf que modela cada región en una pdf conjunta. Esto es
-fundamental ya que al ajustar los parámetros de la función likelihood se deberá
+fundamental ya que al ajustar los parámetros de la función \emph{likelihood} se deberá
 hacer un ajuste simultáneo, que es importante para poder compartir los
 parámetros de los fondos y las incertezas sistemáticas entre las distintas
 regiones de forma consistente.
@@ -217,7 +213,7 @@ regiones de forma consistente.
 %------------------------
 \section{Extrapolación y factores de transferencia}
 
-Una de las suposiciones realizada en la Sección anterior fue que las variables
+Una de las suposiciones realizada en la sección anterior fue que las variables
 cinemáticas que se usan para diferenciar CR y SR están bien modeladas después de
 haber ajustado la pdf total a los datos en las CR. Una vez que los procesos de
 fondo dominantes son normalizados en las CR, las correspondientes modificaciones
@@ -226,13 +222,13 @@ verificar la validez de esta suposición inicial. Solo cuando se demuestra el
 acuerdo entre las predicciones del fondo normalizadas y los datos observados en
 las VR, las predicciones del fondo son extrapoladas a las SR.
 Es en este paso que los datos observados en las SR son considerados por primera
-vez para el análisis. Este proceso es llamado \emph{unblinding} y es
-utilizado para tener confianza en los métodos usados y
-evitar utilizar predicciones prematuras y un posible sesgo en el
+vez para el análisis. Este proceso es llamado <<\emph{unblinding}>> y es
+utilizado para adquirir confianza en los métodos usados y
+evitar el uso de predicciones prematuras y un posible sesgo en el
 resultado final.
 
 En este procedimiento se utilizan de forma implícita los
-denominados \emph{factores de transferencia}, como se explica a continuación.
+denominados <<factores de transferencia>>, como se explica a continuación.
 Las predicciones de los fondo normalizadas en el ajuste son:
 
 \begin{align}
@@ -246,9 +242,6 @@ $\text{MC}_p^{\text{est}}(\text{CR})$ y $\text{MC}_p^{\text{est}}(\text{SR})$ es
 el número de eventos obtenido de las simulaciones MC. El factor $\mu_p$ es el
 factor de normalización obtenido en el ajuste a datos.
 
-%% En el ajuste, los valores estimados de fondo son tipicamente driven por la estadistica de las
-%% CRs.
-
 Definiendo $N_p^\text{fit}(\text{SR})$ como el valor ajustado en la CR, podemos
 escribir de forma equivalente:
 
@@ -257,10 +250,10 @@ escribir de forma equivalente:
   &\equiv N_p^\text{fit}(\text{CR}) \times \left[ \frac{\text{MC}_p(\text{SR})}{\text{MC}_p(\text{CR})} \right]
 \end{align}
 
-El cociente que aparece dentro de los corchete es llamado \emph{factor de
-  transferencia} (TF). Un aspecto importante de los TF es que que las incertezas
+El cociente que aparece dentro de los corchete es llamado factor de
+transferencia (TF). Un aspecto importante de los TF es que las incertezas
 sistemáticas de los valores estimados de fondo pueden ser parcialmente
-cancelados en la extrapolación. La incerteza total en el número de eventos de
+canceladas en la extrapolación. La incerteza total en el número de eventos de
 fondo en la SR es por lo tanto una combinación de las incertezas estadísticas en
 las CRs y la incerteza sistemática residual de la extrapolación. Por esta razón
 las CR suelen definirse con una selección un poco más relajada, para incrementar
@@ -273,7 +266,6 @@ reducir las incertezas en la SR.
 %--------
 \section{Construcción del modelo estadístico}
 
-%% \note{Algo asi?}
 %% El modelo, que es simplemente una familia de pdfs despcripta por un número finioto
 %% de parametros, describe la prediccion nominal (junsto con sus variaciones sistematicas
 %% asociadas) de las multiples senales y procesos de fondo en las multiples regiones.
@@ -289,41 +281,39 @@ reducir las incertezas en la SR.
 %% sistemáticas $\pm \sigma$ tenemos $\theta_i = \pm 1$ y $\theta_i = 0$ para el
 %% valor nominal.
 
-La función likelihood general para un experimento de conteo como el que se utiliza
+La función \emph{likelihood} general para un experimento de conteo como el que se utiliza
 en el análisis de esta tesis es el producto de los términos de Poisson del
 número de eventos en la SR y las CR, y una distribución adicional que implementa
 las restricciones en las incertezas sistemáticas. Puede escribirse como:
 
 \begin{align}
-  L(\mu_s, \bm{\mu}_p, \btheta) &= \mathcal{P}_\text{SR} \, \times \, \mathcal{P}_\text{CR} \, \times \,
-  \mathcal{C}_\text{syst} \nonumber \\
-  &= \Pois(n|\lambda(\mu_s, \bm{\mu}_p, \btheta)) \, \times \, \prod_{i \in \text{CR}}
-  \Pois(n_i|\lambda_i(\mu_s, \bm{\mu}_p, \btheta)) \times C_\text{syst} (\btheta^0, \btheta) \label{eq:model}
+  L(\mu_s, \bm{\mu}_p, \btheta) &= \mathcal{P}_\text{SR} \, \cdot \, \mathcal{P}_\text{CR} \, \cdot \, \mathcal{C}_\text{syst} \nonumber \\
+  &= \Pois(n|\lambda(\mu_s, \bm{\mu}_p, \btheta)) \, \cdot \, \prod_{i \,\in\, \text{CR}} \Pois(n_i|\lambda_i(\mu_s, \bm{\mu}_p, \btheta)) \, \cdot \, \mathcal{C}_\text{syst} (\btheta^0, \btheta) \label{eq:model}
 \end{align}
 %
 Los primeros dos factores ($\mathcal{P}_\text{SR}$ y $\mathcal{P}_\text{CR}$)
 reflejan las distribuciones de Poisson de $n$, $n_i$, el número de eventos observado
 en cada región. Los valores esperados de las distribuciones de Poisson $\lambda_i$ son
 funciones que dependen de las predicciones de señal y los distintos fondos $p$,
-los parámetros nuisance que parametrizan las incertezas sistemáticas $\btheta$,
+los parámetros \emph{nuisance} que parametrizan las incertezas sistemáticas $\btheta$,
 los factores de normalización para los procesos de fondo $\bm{\mu}_p$ y también
 la intensidad de la señal $\mu_s$. Para $\mu_s = 0$ tenemos la
-función likelihood para la hipótesis de solo-fondo y con $\mu_s = 1$ el
-valor esperado de señal. %% para el valor nominal de modelo bajo consideración.
+función \emph{likelihood} para la hipótesis de solo-fondo y con $\mu_s = 1$ el
+valor esperado de señal.
 
 Las incertezas sistemáticas son incluidas usando la pdf
-$C_\text{syst}(\btheta^0, \btheta)$, donde $\btheta^0$ son los valores centrales
+$\mathcal{C}_\text{syst}(\btheta^0, \btheta)$, donde $\btheta^0$ son los valores centrales
 de las medidas auxiliares alrededor de los cuales $\btheta$ puede variarse al
-maximizar el likelihood. El impacto de los cambios en los parámetros nuisance
+maximizar el \emph{likelihood}. El impacto de los cambios en los parámetros \emph{nuisance}
 en los valores esperados están completamente descriptos por las funciones que
 predicen la cantidad de señal y fondo, $\lambda_i$. Para parámetros nuisance
-independientes $C_\text{syst}$ es simplemente el producto de las pdf
+independientes $\mathcal{C}_\text{syst}$ es simplemente el producto de las pdf
 correspondientes a las mediciones auxiliares que describen cada una de las
 incertezas sistemáticas, típicamente una distribución gaussiana $G$ con ancho
 unidad,
 
 \begin{equation}
-  C_\text{syst} (\btheta^0, \btheta) = \prod_{j \in \text{S}} G(\theta_j^0 -
+  \mathcal{C}_\text{syst} (\btheta^0, \btheta) = \prod_{j \in \text{S}} G(\theta_j^0 -
   \theta_j)
 \end{equation}
 %
@@ -334,8 +324,8 @@ variar cuando se generan los pseudo-experimentos.
 
 \section{Ajuste del modelo y resultados}
 
-A partir de el modelo general descripto en la sección anterior, \cref{eq:model},
-se pueden realizar distintos tipos de ajuste, dependiendo las regiones utilizadas
+A partir del modelo general descripto en la sección anterior, \cref{eq:model},
+se pueden realizar distintos tipos de ajuste, dependiendo de las regiones utilizadas
 y si se incluyen o no las muestras de señal.
 
 Como primer paso se realiza el ajuste únicamente utilizando las regiones de
@@ -355,11 +345,11 @@ A partir de este ajuste es posible ver si existe un exceso de datos respecto al
 fondo del SM en las SR, y cuantificar ese exceso calculando el {\pvalue} y la significancia
 del mismo.
 
-En ausencia de un exceso de eventos significativo, para poder establecer limites
-en la señal, se incluye en el modelo las regiones de señal. El ajuste se realiza
-entonces simultáneamente en las CR y SR, incluyendo además la muestra de señal
-en todas las regiones, para tener en cuenta además la posible contaminación de
+En ausencia de un exceso de eventos significativo, para poder establecer límites
+en la señal, se incluyen en el modelo las regiones de señal. El ajuste se realiza
+entonces simultáneamente en las CR y SR, incorporando la muestra de señal
+en todas las regiones a fin de tener en cuenta la posible contaminación de
 señal en las CR. Este ajuste se realiza de forma independiente para cada SR, y
 se repite por cada punto de señal de la \emph{grid}, para probar el espacio de
-parámetros del modelo, y establecer limites en las masas de las partículas
+parámetros del modelo, y establecer límites en las masas de las partículas
 supersimétricas consideradas.
