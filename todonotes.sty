@@ -10,9 +10,9 @@
 \RequirePackage{calc}
 
 \newcommand{\@todonotes@text}{}%
-\newcommand{\@todonotes@backgroundcolor}{red!50}
-\newcommand{\@todonotes@linecolor}{red!60}
-\newcommand{\@todonotes@bordercolor}{red!60}
+\newcommand{\@todonotes@backgroundcolor}{yellow!50}
+\newcommand{\@todonotes@linecolor}{yellow!60}
+\newcommand{\@todonotes@bordercolor}{yellow!60}
 \newcommand{\@todonotes@textwidth}{\marginparwidth}
 \newcommand{\@todonotes@textsize}{\normalsize}
 \newcommand{\@todonotes@figwidth}{\columnwidth}
@@ -164,8 +164,8 @@
 \tikzstyle{connectstyle} = [thick, draw=\@todonotes@currentlinecolor]
 %% \tikzstyle{inlinenotestyle} = [notestyle, draw=yellow!50, fill=yellow!50, text width=\textwidth, anchor=text]
 %% \tikzstyle{intextnotestyle} = [rectangle, fill=yellow!50, anchor=text]
-\tikzstyle{inlinenotestyle} = [notestyle, draw=red!50, fill=red!50, text width=\textwidth, anchor=text]
-\tikzstyle{intextnotestyle} = [rectangle, fill=red!50, anchor=text]
+\tikzstyle{inlinenotestyle} = [notestyle, draw=yellow!50, fill=yellow!50, text width=\textwidth, anchor=text]
+\tikzstyle{intextnotestyle} = [rectangle, fill=yellow!50, anchor=text]
 \newcommand{\@todo}[2][]{%
 \renewcommand{\@todonotes@text}{#2}%
 \renewcommand{\@todonotes@caption}{#2}%
@@ -275,8 +275,9 @@
 \newcommand{\todo}[2][]{\@todo[#1]{#2}}
 
 % Commands
-\newcommand{\note}[1]{\todo{#1}}
 \newcommand{\hl}[1]{\todo[intext]{#1}}
 \newcommand{\hll}[1]{\todo[inline]{#1}}
+\newcommand{\note}[2]{\todo[intext]{#1}\todo{#2}}
+
 
 \endinput

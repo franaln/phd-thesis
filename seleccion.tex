@@ -4,7 +4,7 @@
 Como se discutió en la \cref{sec:regiones}, las regiones de señal son un
 componente clave del análisis dado que son aquellas en las que se espera la
 presencia de eventos de nueva física. En este capítulo se describe la selección
-de eventos que definen las regiones de señal del análisis de esta tesis. Esta
+de eventos que define las regiones de señal del análisis de esta tesis. Esta
 selección fue optimizada en base a la significancia esperada de descubrimiento
 utilizando las muestras MC de señal y fondos del SM.
 
@@ -50,7 +50,7 @@ considerado.
 \begin{figure}[!htb]
   \centering
 
-  \includegraphics[width=0.45\textwidth]{EffPtg120_loose}
+  \includegraphics[width=0.6\textwidth]{EffPtg120_loose}
 
   \caption{Eficiencia del \emph{trigger} {\trigchain} como función del {\pt} del fotón.}
   \label{fig:trigger_perf}
@@ -165,37 +165,19 @@ en \cref{sec:met_obj}.
 
 \section{Optimización de la selección de las regiones de señal}
 
-%% Después de la preselección descripta en las secciones anteriores, es necesario
-%% definir las regiones de señal, es decir, las regiones enriquecidas en eventos
-%% de señal en las cual se realizara el experimento de conteo.
-%% Definir una región de señal implica la definición de una selección (un conjunto
-%% de cortes) en ciertos observables.
-
 Como primer paso se seleccionan eventos que contengan el estado final buscado:
 un fotón, al menos un jet y energía faltante, y, a partir de esa selección
 inicial, se eligen observables que permitan separar la señal del fondo y se
 optimizan los cortes en estos observables.
 
-
-%% la selección final que se aplicara a los
-%% eventos, que deberá estar enriquecida en eventos de señal y tener un alto
-%% rechazo a eventos de fondo. Para lograr este objetivo se optimiza la selección
-%% haciendo uso de las muestras simuladas con MC tanto para señal como para los
-%% procesos del SM.
-
 Del estudio realizado en la \cref{sec:susy_studies}, resultan evidentes las diferencias
 cinemáticas y topológicas de los eventos en las distintas regiones del
 espacio de parámetros {\mgmn} del modelo de SUSY.
 Es por esta razón que resulta conveniente tener más de una región de señal,
-cada una destinada a una zona particular de la grid de señal en {\mgmn}.
-
-%% que lo más conveniente es
-%% definir dos regiones de señal, cada una de ellas optimizada para las dos
-%% regiones claramente distintas en cuanto a sus características cinemáticas y
-%% topológicas.
+cada una destinada a una zona particular del espacio de parámetros.
 
 Por tal motivo, se dividió el análisis en dos regiones de señal, a las que se
-llamó {\SRL} y {\SRH}. La primera de ellas, \SRL, donde la búsqueda se focaliza en la zona en la que
+llamó {\SRL} y {\SRH}. La primera de ellas, \SRL, se focaliza en la zona en la que
 los gluinos decaen en cascada hasta neutralinos NLSP de baja y
 moderada masa. Los eventos de señal en esta región se caracterizan por una gran
 multiplicidad de jets y actividad hadrónica, debido a que involucra cadenas de
@@ -203,7 +185,7 @@ decaimiento largas de gluinos pesados a través de la producción de charginos y
 Cuanto más baja la masa del {\ninoone}, más baja sera la energía del fotón y
 menor es la cantidad de energía faltante. La segunda región de señal, \SRH,
 tiene como motivación aquellos escenarios donde la masa del gluino y del neutralino
-mas liviano están cerca una de la otra. La cadena de decaimiento es por lo tanto
+más liviano están cerca una de la otra. La cadena de decaimiento es por lo tanto
 mucho más corta en este caso, con una menor multiplicidad de jets y, debido al
 neutralino pesado, fotones de alto {\pt} y gran cantidad de energía faltante en
 el estado final.
@@ -223,13 +205,14 @@ de parámetros de la señal {\mgmn} está destinada cada SR.
 
 
 Para la optimización de las SR, se utilizaron varios puntos de señal en cada región,
-representativos de la topología y el espacio de fase en cada caso.
+representativos de la topología y el espacio de fase en cada caso:
 
 \begin{itemize}\itemsep0.2cm\parskip0.2cm
-\item {\SRL}: (1150, 200) y (1150, 450)
-\item {\SRH}: (1150, 850) y (1150, 1050)
+\item {\SRL}: $(1150, 200)$ y $(1150, 450)$
+\item {\SRH}: $(1150, 850)$ y $(1150, 1050)$
 \end{itemize}
-
+%
+donde cada punto queda determinado por sus valores $(M_3, \mu)$.
 
 Como fondo se utilizaron las muestras MC, y se consideró una incerteza en la estimación del
 fondo de 25\%. Todas las muestras MC fueron normalizadas a una luminosidad total
@@ -359,7 +342,7 @@ de este efecto es discutido en la \cref{sec:jfake_sig_template,sec:expsyst}.
 Además del veto a los eventos con un segundo fotón, también se remueven
 los eventos que contienen leptones ($e$ o $\mu$) con el objetivo de que las
 SR no tengan un solapamiento con las SR del análisis que busca estados finales
-con un \note{fotón, un leptón y energía faltante}{Agregar ref}.
+con un fotón, un leptón y energía faltante \cite{ATLAS-CONF-2012-144}.
 %% que busca... . La perdida en la eficiencia
 %% debido a este veto es de XXX \%.
 
@@ -386,9 +369,11 @@ es posible aplicar un corte más alto ($>300\gev$).
   \centering
   \includegraphics[width=0.49\textwidth]{met_et_base1}
   \includegraphics[width=0.49\textwidth]{met_et_base2}
-  \caption{Energía faltante transversa para una luminosidad integrada de {\ilumi}
-    luego de que se aplica el corte en el {\pt} del fotón y en la energía de aislamiento
-    para los puntos de señal de {\SRL} (izquierda) y {\SRH} (derecha). }
+  \caption{Energía faltante transversa
+    luego de que se aplique el corte en el {\pt} del fotón y en la energía de aislamiento
+    para el fondo y los puntos de señal de {\SRL} (izquierda) y {\SRH} (derecha),
+    para una luminosidad integrada de {\ilumi}.}
+
   \label{fig:opt_met}
 \end{figure}
 
@@ -435,8 +420,8 @@ de charginos por un decaimiento de tres cuerpos.
   \centering
   \includegraphics[width=0.49\textwidth]{jet_n_base1}
   \includegraphics[width=0.49\textwidth]{jet_n_base2}
-  \caption{Distribuciones del número de jets en la {\SRL} (izquierda) y {\SRH} (derecha) con $\pt >
-    40 \gev$, después de la seleccion en el {\pt} del fotón y $\met > 150\gev$,
+  \caption{Distribuciones del número de jets con $\pt > 40 \gev$ en {\SRL} (izquierda) y {\SRH} (derecha),
+    después de la seleccion en el {\pt} del fotón y $\met > 150\gev$,
     para una luminosidad integrada de {\ilumi}.}
   \label{fig:opt_jet_n}
 \end{figure}
@@ -520,8 +505,8 @@ de {\met} y la de los dos jets más energéticos.
   \includegraphics[width=0.49\textwidth]{figures/dphi_jetmet_srl}
   \includegraphics[width=0.49\textwidth]{figures/dphi_jetmet_srh}
 
-  \caption{Distirbuciones de la separación angular $\Delta \phi \mathrm{(jet, \met)}$ para {\SRL} (izquierda) y {\SRH} (derecha),
-  para una luminosidad integrada de {\ilumi}.}
+  \caption{Separación angular $\Delta \phi \mathrm{(jet, \met)}$ para el fondo y los puntos de se\~nal para {\SRL} (izquierda) y {\SRH} (derecha),
+    para una luminosidad integrada de {\ilumi}.}
   \label{fig:opt_dphi_jetmet}
 \end{figure}
 
@@ -550,7 +535,7 @@ La distribución para la {\SRH} se puede ver en \cref{fig:opt_dphi_gamjet}.
 \begin{figure}[!h]
   \centering
 
-  \includegraphics[width=0.49\textwidth]{figures/dphi_gammet_srh}
+  \includegraphics[width=0.49\textwidth]{figures/dphi_gamjet_srh}
 
   \caption{Distribución de {\dphijg} para {\SRH}, despues de aplicar la selección completa, excepto este corte,
     para una luminosidad integrada de 20.3 \ifb.}
@@ -609,7 +594,7 @@ una discriminación adicional entre señal y fondo. En especial se estudió el
 observable $R_T^n$ definido como
 
 \begin{equation}\label{eq:rt_formula}
-  R_{T}^{n} = \frac{\sum_{i=1}^{n}p_\mathrm{T}^{j_i}}{\sum p_\mathrm{T}^{j}},
+  R_\mathrm{T}^{n} = \frac{\sum_{i=1}^{n}p_\mathrm{T}^{j_i}}{\sum p_\mathrm{T}^{j}},
 \end{equation}
 %
 es decir, el cociente entre la suma escalar de los {\pt} de $n$ jets y la suma
@@ -651,7 +636,7 @@ una pérdida muy chica en la eficiencia de señal.
 
 
 
-\section{Selección Final}\label{sec:signal_regions}
+\section{Selección final de las regiones de se\~nal}\label{sec:signal_regions}
 
 Como resultado del proceso de optimización descripto en la sección anterior,
 se definen las dos regiones de señal:
@@ -686,12 +671,12 @@ Cada región de señal queda definida entonces por los cortes de selección deta
     \ptgam & $>125 \gev$ & $>300 \gev$ \\
     {\nleptons} & $=0$ & $=0$ \\
     {\njets} & $\geq 4$ & $\geq 2$ \\
-    $\pt^{j1}$ & $>100 \gev$ & - \\
-    $\pt^{j2}$ & $>100 \gev$ & - \\
+    $\pt^{\mathrm{jet}_1}$ & $>100 \gev$ & - \\
+    $\pt^{\mathrm{jet}_2}$ & $>100 \gev$ & - \\
     $\Delta\phi(\mathrm{jet}, \met)$ & $>0.4$ & $>0.4$ \\
     {\met} & $>200 \gev$ & $> 300 \gev$ \\
-    $R_T^4$ & 0.85 & - \\
-    $H_T$ & - & $>800 \gev$ \\
+    $R_\mathrm{T}^4$ & 0.85 & - \\
+    $\HT$ & - & $>800 \gev$ \\
     $\Delta\phi(\gam,\mathrm{jet})$ & - & $<2.0$ \\
     \hline
     \end{tabularx}
@@ -700,8 +685,8 @@ Cada región de señal queda definida entonces por los cortes de selección deta
 
 
 El número esperado de eventos de fondos del {\SM} estimado a partir de de las
-muestras simuladas después de la selección final se muestra en las
-\cref{tab:exp_bkg_srl,tab:exp_bkg_srh}, para {\SRL} y {\SRH},
+muestras simuladas después de la selección final se muestra en la
+\cref{tab:exp_bkg_sr}, para {\SRL} y {\SRH},
 respectivamente. También se presenta el número de eventos esperado de señal y la
 significancia esperada para los dos puntos de referencia en cada SR.
 Adicionalmente, en la \cref{tab:mc_events_sr_phtype} se puede ver el número de
@@ -732,13 +717,14 @@ del ajuste combinado, y son descriptos en el \cref{cap:resultados}.
   \centering
   \caption{Número de eventos esperado para los fondos del {\SM}
     y algunos puntos de señal después de cada corte de la región
-    de señal {\SRL}, para una luminosidad integrada de {\ilumi}. Para los
+    de señal {\SRL} (arriba) y {\SRH} (abajo), para una luminosidad integrada de {\ilumi}. Para los
     puntos de señal, también se muestra en la última fila, la
-    significancia esperada ($Z$).}
-  \label{tab:exp_bkg_srl}
+    significancia esperada.}
+
+  \label{tab:exp_bkg_sr}
 
   \resizebox{\textwidth}{!}{
-    \begin{tabular}{rrrrrrrrrr}
+    \begin{tabular}{lrrrrrrrrr}
       \hline
       \multicolumn{1}{c}{\textbf{\SRL}}   & \multicolumn{1}{c}{(1150, 200)} & \multicolumn{1}{c}{(1150,450)} &  \multicolumn{1}{c}{V\gam} & \multicolumn{1}{c}{Diboson} & \multicolumn{1}{c}{V + jets} & \multicolumn{1}{c}{\gjet, multijet} & \multicolumn{1}{c}{\ttbar} & \multicolumn{1}{c}{\ttgam} & \multicolumn{1}{c}{Fondo total} \\
       \hline
@@ -746,28 +732,19 @@ del ajuste combinado, y son descriptos en el \cref{cap:resultados}.
       0 leptones        &  13.66 & 20.88 & 5433.21 & 166.08 &  7808.01 & 3101910.25 & 204.99 & 442.29 &  $3115964.83\pm1971.53$ \\
       \met              &   7.74 & 14.96 &  457.80 &  11.07 &   188.39 &      94.27 &   6.50 &  22.21 &        $780.24\pm55.42$ \\
       $N_\mathrm{jets}$ &   7.72 & 14.88 &   13.83 &   1.17 &     0.00 &       8.17 &   2.52 &   8.08 &         $33.76\pm12.09$ \\
-      $\pt^{j_1}$       &   7.72 & 14.86 &   12.97 &   1.17 &     0.00 &       8.17 &   2.44 &   7.44 &         $32.19\pm11.83$ \\
-      $\pt^{j_2}$       &   7.68 & 14.71 &    9.00 &   1.14 &     0.00 &       7.94 &   1.97 &   5.63 &         $25.69\pm10.66$ \\
+      $\pt^{\mathrm{jet}_1}$       &   7.72 & 14.86 &   12.97 &   1.17 &     0.00 &       8.17 &   2.44 &   7.44 &         $32.19\pm11.83$ \\
+      $\pt^{\mathrm{jet}_2}$       &   7.68 & 14.71 &    9.00 &   1.14 &     0.00 &       7.94 &   1.97 &   5.63 &         $25.69\pm10.66$ \\
       $\dphijm$         &   6.73 & 12.98 &    7.00 &   0.93 &     0.00 &       2.77 &   1.83 &   3.84 &         $16.37\pm8.58$ \\
       $R_T^4$           &   5.27 & 10.09 &    0.13 &   0.00 &     0.00 &       0.00 &   0.16 &   0.46 &          $0.75\pm1.46$ \\
       \hline
-      Z                 &   3.81 &  6.14 &  &  &  &  &  &  &  \\
+      Significancia                 &   3.81 &  6.14 &  &  &  &  &  &  &  \\
       \hline
 
     \end{tabular}
   }
-\end{table}
-
-\begin{table}[!htbp]
-
-  \centering
-  \caption{Número de eventos esperado para los fondos del {\SM}
-    y algunos puntos de señal después de cada corte de la región
-    de señal {\SRH}, para una luminosidad integrada de {\ilumi}. Para los
-    puntos de señal, también se muestra en la última fila, la
-    significancia esperada ($Z$).}
-  \label{tab:exp_bkg_srh}
-
+  %%
+  \vspace{0.4cm}
+  %%
   \resizebox{\textwidth}{!}{
     \begin{tabular}{lrrrrrrrrr}
 
@@ -850,7 +827,7 @@ del ajuste combinado, y son descriptos en el \cref{cap:resultados}.
   \includegraphics[width=0.49\textwidth]{discovery_srh_syst}
 
   \caption{Significancia de descubrimiento esperada para todos los puntos de la \emph{grid} de señal en el
-    plano {\mgmn} para las dos regiones de senal {\SRL} (izquierda) y {\SRH} (derecha), junto
+    plano {\mgmn} para las dos regiones de señal {\SRL} (izquierda) y {\SRH} (derecha), junto
     con los contornos de $3\sigma$ y $5\sigma$.}
 
   \label{fig:opt_discovery_exp}
@@ -895,10 +872,12 @@ de señal.
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=0.4\textwidth]{figures/acceptance_srl}
+
+  \includegraphics[width=0.45\textwidth]{acceptance_srl}
   \hspace{1cm}%
-  \includegraphics[width=0.4\textwidth]{figures/acceptance_srh}
-  \caption{Producto de la aceptancia y la eficiencia de selección para cada punto de señal
+  \includegraphics[width=0.45\textwidth]{acceptance_srh}
+
+  \caption{Producto de la aceptancia y la eficiencia  ($A \times \epsilon$) de selección para cada punto de señal
     en el plano {\mgmn} para la {\SRL} (izquierda) y {\SRH} (derecha).}
   \label{fig:atimeseff}
 \end{figure}

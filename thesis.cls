@@ -137,9 +137,10 @@
 \fancyfoot[RO,LE]{\thepage}
 \else
 \fancyhead{}
-\fancyhead[RO,LE]{\chaptername}
+\fancyhead[RO,LE]{}
+\renewcommand{\headrulewidth}{0pt}
 \fancyfoot{}
-\fancyfoot[RE,LO]{\thepage}
+\fancyfoot[RO,LE]{\thepage}
 \fi
 
 \if@printmode

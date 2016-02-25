@@ -29,10 +29,10 @@ limitada debido a la gran cantidad de material en el mismo.
 
 La reconstrucción de trazas en el detector interno comienza conviertiendo la
 información de los subdetectores en puntos espaciales. Seguidamente se realiza
-la de búsqueda de trazas, para la cual se utilizan dos técnicas. Primero, a
-partir de la combinación de los puntos en el detector de pixeles y la primera
+la búsqueda de trazas, utilizando dos técnicas. Primero, a
+partir de la combinación de los puntos en el detector de píxeles y la primera
 capa del SCT, se forman los candidatos a trazas. Estos candidatos son ajustados
-y se realiza una limpieza aplicando distintos cortes de calidad. Luego, estas
+y se realiza una limpieza aplicando distintos cortes de calidad. Las
 trazas seleccionadas son extendidas al TRT, y ajustadas nuevamente utilizando
 toda la información disponible. De forma complementaria se buscan segmentos de
 trazas en el TRT que no hayan sido utilizadas, y se extienden a los demás
@@ -87,11 +87,11 @@ del tipo de partícula a reconstruir y de la región del calorímetro. Las lluvi
 electromagnéticas iniciadas por electrones son en general más anchas que las de
 fotones, debido a su mayor probabilidad de interacción con el material previo al
 calorímetro electromagnético y a la radiación de fotones de bremsstrahlung. La
-energía total y la posición de estos clusters es luego calibrada, separadamente
+energía total y la posición de estos \emph{clusters} es luego calibrada, separadamente
 para electrones y fotones, a fin de tener en cuenta diversos efectos como la
 pérdida de energía en el material inactivo del calorímetro o la deposición
-lateral y longitudinal fuera del cluster. A partir de simulaciones Monte Carlo,
-se estima que la eficiencia de esta reconstrucción inicial sea del 100\% para
+lateral y longitudinal fuera del \emph{cluster}. A partir de simulaciones Monte Carlo,
+se estima que la eficiencia de esta reconstrucción inicial es del 100\% para
 objetos con $\et > 20 \gev$.
 
 Como punto de partida en la separación de electrones y fotones, las trazas,
@@ -118,7 +118,7 @@ un cierto umbral en el TRT, forman un vértice consistente como provenientes de
 una partícula no masiva. Para aumentar la eficiencia de reconstrucción de
 fotones convertidos, los candidatos a conversión donde solo una de las dos
 trazas es reconstruida (y no tiene ningún impacto en la capa más interior del
-detector de píxeles) también son retenidas.
+detector de píxeles) también son retenidos.
 
 Un algoritmo final \cite{Delmastro:1747242} se utiliza para resolver la
 ambigüedad entre candidatos a fotones convertidos que son también reconstruidos
@@ -126,16 +126,9 @@ como electrones y permite la recuperación de fotones que fueron inicialmente
 clasificados como candidatos a electrones.
 Para candidatos a fotones convertidos que también son reconstruidos como
 electrones, se evalúa la traza del electrón contra la traza originada del
-candidato a vértice de conversión asociada al mismo cluster. Si la traza
+candidato a vértice de conversión asociada al mismo \emph{cluster}. Si la traza
 coincide con una traza proveniente de un vértice de conversión, el candidato a
 fotón convertido es retenido.
-
-%% The only exception is the case of a double-track conversion vertex candidate where the coinciding track
-%% has a hit in the b-layer, while the other track lacks one (for this purpose, a missing hit in a disabled b-layer
-%% module is counted as a hit 2
-%% ). If the track does not coincide with any of the tracks assigned to the conver-
-%% sion vertex candidate, the converted photon candidate is removed, unless the track pT is smaller than that
-%% of the candidate converted photon pT.
 
 Cuando se calcula el {\pt} del fotón, la energía es tomada siempre del \emph{cluster}
 del calorímetro, apropiadamente calibrada\cite{Banfi:1259219}. Para fotones
@@ -162,11 +155,12 @@ electrones con $\et>15 \gev$)\cite{ATLAS-CONF-2014-032}.
 \subsection{Identificación de fotones}
 \label{sec:fotones}
 
-Para distinguir entre candidatos a ser fotones reales de fotones de fondo, es
+Para distinguir entre candidatos de fotones reales (provenientes de la colisión) de fotones de fondo
+(provenientes de decaimientos de hadrones), es
 necesario contar con un algoritmo de identificación con una alta eficiencia y un alto rechazo
 de fondo, para candidatos con {\et} desde los 10 {\gev} hasta la escala del
 {\tev}. La identificación de fotones se basa en un conjunto de cortes
-rectangulares en una serie de variables discriminatorias que (se detallan a continuación)
+rectangulares en una serie de variables discriminatorias
 que caracterizan el desarrollo lateral y longitudinal de la
 lluvia en el calorímetro electromagnético y la fracción de la lluvia filtrada en
 el calorímetro hadrónico. Los fotones reales producen generalmente depósitos de
@@ -192,10 +186,10 @@ calorímetro hadrónico:
     R_{\mathrm{had}_{(1)}} = \frac{\et^{\mathrm{had}}}{\et}
   \end{equation}
 
-  En la región de transición barrel-endcap del calorímetro hadrónico ($0.8\leq |\eta| \leq 1.37$) se utiliza
+  En la región de transición \emph{barrel-endcap} del calorímetro hadrónico ($0.8\leq |\eta| \leq 1.37$) se utiliza
   el depósito de energía en todo el calorímetro hadrónico para minimizar los efectos de la
   degradación de resolución ($R_{\mathrm{had}}$). En el resto del detector, se mide solo la
-  energía hadrónica depositada en la primera capa del calorímetro hadrónico ($R_{\mathrm{had}_{(1)}}$).
+  energía depositada en la primera capa del calorímetro hadrónico ($R_{\mathrm{had}_{(1)}}$).
 \end{itemize}
 
 Las siguientes variables utilizan la información de la segunda capa del calorímetro
@@ -243,7 +237,7 @@ de datos reales donde se puede apreciar la estructura del perfil de energía en
 la primera capa del calorímetro EM en el caso de un decamiento $\pi^0 \to \gam\gam$.
 
 
-\begin{figure}[!htb]
+\begin{figure}[!h]
   \centering
 
   \includegraphics[width=0.8\textwidth]{photon_vs_pion}
@@ -274,12 +268,12 @@ la primera capa del calorímetro EM en el caso de un decamiento $\pi^0 \to \gam\
   %
   mide el ancho de la lluvia electromagnética a lo largo de $\eta$ en la primera capa
   del calorímetro electromagnético usando solo la banda con mayor deposición de energía ($E_{i_\mathrm{max}}$)
-  y sus vecina inmediatas.
+  y sus vecinas inmediatas.
 
-\item RMS del perfil lateral de energia en $\eta$ (total)
+\item RMS del perfil lateral de energía en $\eta$ (total)
 
-  $w_{s,\mathrm{tot}}$ esta definida de la misma forma que $w_{s,3}$, pero utiliza todas las bandas de la
-  primera capa del calorímetro electromagnética en una ventana $\Delta\eta \times \Delta\phi = 0.0625 \times 0.2$,
+  $w_{s,\mathrm{tot}}$ está definida de la misma forma que $w_{s,3}$, pero utiliza todas las bandas de la
+  primera capa del calorímetro electromagnético en una ventana $\Delta\eta \times \Delta\phi = 0.0625 \times 0.2$,
   que corresponde aproximadamente a $20 \times 2$ bandas en $\eta \times \phi$.
 
 \item Diferencia al segundo máximo
@@ -512,17 +506,17 @@ transversa de aislamiento {\etiso}.
 %% pasar por el detector.
 
 
-\begin{figure}[!htb]
+\begin{figure}[!h]
   \centering
 
   \resizebox{0.5\textwidth}{!}{
     \input{tikz/topoetcone_sketch.tex}
   }
 
-  \caption{Esquema ilustrando el cálculo de la energía de aislamiento del fotón. La grid representa
-    la granularidad de las celdas del calorímetro electromagnético. La energía del candidato a fotón o electrón
-    está mayormente contenida en el rectángulo central de $5 \times 7$ en $\Delta\eta \times \Delta\phi$. El
-    cono de color gris de radio $R$ rodea al candidato.}
+  \caption{Esquema ilustrando el cálculo de la energía de aislamiento del fotón. La \emph{grid} representa
+    la granularidad de las celdas del calorímetro electromagnético. El
+    cono de color gris de radio $R$ rodea al candidato. La energía del candidato a fotón o electrón
+    está mayormente contenida en el rectángulo central de $5 \times 7$ en $\Delta\eta \times \Delta\phi$. }
   \label{fig:topoetcone}
 
 \end{figure}
@@ -543,10 +537,10 @@ En cambio, para los candidatos falsos y no-directos se observa una energía adic
 En la \cref{fig:topoetcone} se ilustra de forma esquemática como se construye
 la variable de aislamiento. Se considera un cono alrededor del candidato
 de un tamaño $R$ (generalmente 0.2 o 0.4) y se suma la energía de todas las
-celdas que pertenecen a un \emph{cluster} topológico. Los clusters topológicos son
-construidos usando el cociente senal-fondo de energía y sus vecinos próximos,
+celdas que pertenecen a un \emph{cluster} topológico. Los \emph{clusters} topológicos son
+construidos usando el cociente señal-fondo de energía y sus vecinos próximos,
 y son tomados a la escala electromagnética (sin calibrar). La variable final de
-aislamiento es construida sumando la energía transversa de los clusters con
+aislamiento es construida sumando la energía transversa de los \emph{clusters} con
 energía positiva cuyo baricentro yace dentro del cono de aislamiento. A esta
 energía se le resta la energía de las celdas del calorímetro en un rectángulo de
 $5\times 7$ celdas (en $\Delta\eta \times \Delta\phi$ en la segunda capa del
@@ -565,7 +559,7 @@ Criterios similares de calidad a los descriptos en la sección anterior
 se aplican a todos los candidatos a electrones para identificar candidatos
 falsos debido a problemas instrumentales.
 
-La energía de los electrones es reconstruida a partir de clusters en el calorímetro
+La energía de los electrones es reconstruida a partir de \emph{clusters} en el calorímetro
 electromagnético sin tener en cuenta su masa, mientras que la información del
 detector de trazas es usada para reconstruir su dirección. La escala de energía
 en MC es corregida para igualar la observada en datos.
@@ -589,7 +583,7 @@ eficiencia entre datos y MC.
 \label{sec:muon_obj}
 
 Los candidatos a muon son reconstruidos usando el algoritmo de reconstrucción
-\textsc{staco}\cite{ATLAS_TDR1} que combina la información del detector de
+\textsc{staco}\cite{staco} que combina la información del detector de
 trazas del espectrómetro de muones y el detector interno.
 
 Los muones son clasificados en dos categorías. La primera es denominada

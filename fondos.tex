@@ -62,7 +62,7 @@ dos regiones de control asociadas a cada SR.
   \resizebox{0.5\textwidth}{!}{\input{tikz/regions_bjets_leptons.tex}}
 
   \caption{Regiones de control definidas para normalizar el fondo de
-    {\wgam} (CRW) y {\ttgam} (CRT). En este contexto ``leptón'' se
+    {\wgam} (CRW) y {\ttgam} (CRT). En este contexto ``leptones'' se
     refiere solo a electrones o muones.}
   \label{fig:bkg_crt_crw}
 \end{figure}
@@ -85,10 +85,10 @@ dos regiones de control asociadas a cada SR.
                                      &      \CRWL &      \CRTL &  \CRQL &     \CRWH &    \CRTH  &   \CRQH \\
   \hline
   $\pt^\gamma$ [\gev] $>$            &        125 &        125 &    125 &       150 &      150  &     300 \\
-  $N_\mathrm{leptones}$              &          1 &    $\ge 1$ &      0 &         1 &  $\ge 1$  &       0 \\
+  $\nleptons$              &          1 &    $\ge 1$ &      0 &         1 &  $\ge 1$  &       0 \\
   {\met} [\gev]                      &  [100-200] &   [80-200] &  $<50$ &  [100-200] & [80-200] &   $<50$ \\
-  $N_\mathrm{jets} \ge$              &          4 &          4 &      4 &         2 &        2  &       2 \\
-  $N_{b\text{-jets}}$                &          0 &    $\ge 1$ &      - &         0 &  $\ge 1$  &       - \\
+  $\njets \ge$              &          4 &          4 &      4 &         2 &        2  &       2 \\
+  $\nbjets$                &          0 &    $\ge 1$ &      - &         0 &  $\ge 1$  &       - \\
   $\pt^{j_1},\pt^{j_2}$ [\gev] $>$   &        100 &        100 &    100 &        40 &       40  &      40 \\
   $\dphijm >$                        &        0.4 &        0.4 &    0.4 &       0.4 &      0.4  &     0.4 \\
   $\rt <$                            &          - &          - &   0.85 &         - &        -  &       - \\
@@ -178,10 +178,10 @@ detallada puede verse en \cref{tab:bkg_vrs1}.
                              &       VRWM &       VRWR &     VRTM &      VRTR &     VRWM &       VRWH &     VRTM &      VRTH \\
   \hline
   $\pt^\gamma$ [\gev] $>$    &        125 &        125 &      125 &      125  &      150 &        150 &      150 &      150  \\
-  $N_\mathrm{leptones}$      &          1 &          1 &  $\ge 1$ &  $\ge 1$  &        1 &          1 &  $\ge 1$ &  $\ge 1$  \\
+  $\nleptons$      &          1 &          1 &  $\ge 1$ &  $\ge 1$  &        1 &          1 &  $\ge 1$ &  $\ge 1$  \\
   {\met} [\gev]              &     $>200$ &  [100-200] &   $>200$ &  [80-200] &   $>300$ &  [100-200] &   $>300$ &  [80-200] \\
-  $N_\mathrm{jets} \ge$      &          4 &          4 &        4 &         4 &        2 &          2 &        2 &         2 \\
-  $N_{b\text{-jets}}$        &          0 &          0 &  $\ge 1$ &   $\ge 1$ &        0 &          0 &  $\ge 1$ &   $\ge 1$ \\
+  $\njets \ge$      &          4 &          4 &        4 &         4 &        2 &          2 &        2 &         2 \\
+  $\nbjets$        &          0 &          0 &  $\ge 1$ &   $\ge 1$ &        0 &          0 &  $\ge 1$ &   $\ge 1$ \\
   $\pt^{j_1},\pt^{j_2}$ [\gev] $>$     &        100 &        100 &      100 &       100 &       40 &         40 &       40 &        40 \\
   $\dphijm >$                &        0.4 &        0.4 &      0.4 &       0.4 &      0.4 &        0.4 &      0.4 &       0.4 \\
   $\rt <$                    &          - &       0.85 &        - &      0.85 &        - &          - &        - &         - \\
@@ -697,8 +697,8 @@ efecto se considera como una posible fuente de incerteza sistemática.
 \begin{figure}[!h]
   \centering
 
-  \includegraphics[width=0.49\textwidth]{electron_iso_ZeeHMC_corr}
-  \includegraphics[width=0.49\textwidth]{electron_iso_ZeeH_corr}
+  \includegraphics[width=0.45\textwidth]{electron_iso_ZeeHMC_corr}
+  \includegraphics[width=0.45\textwidth]{electron_iso_ZeeH_corr}
 
   \caption{Dependencia de la energía de aislamiento de electrones con {\HT}
     para MC (izquierda) y datos (derecha) \Zee}
@@ -740,8 +740,8 @@ por lo tanto es posible la extrapolación a la SR.
 \begin{figure}[!h]
   \centering
 
-  \includegraphics[width=0.49\textwidth]{bkg_mc_pseudo_data_SR_l_ptbin}
-  \includegraphics[width=0.49\textwidth]{bkg_mc_pseudo_data_SR_lp_ptbin}
+  \includegraphics[width=0.45\textwidth]{bkg_mc_pseudo_data_SR_l_ptbin}
+  \includegraphics[width=0.45\textwidth]{bkg_mc_pseudo_data_SR_lp_ptbin}
 
   \caption{Distribución de la energía de aislamiento para fotones falsos
     provenientes de decaimientos hadrónicos (a nivel generador), comparada con
@@ -758,7 +758,7 @@ aplicar ninguna correción adicional.
 \begin{figure}[!h]
   \centering
 
-  \includegraphics[width=0.5\textwidth]{bkg_data_pseudo_tight_data_VR}
+  \includegraphics[width=0.45\textwidth]{bkg_data_pseudo_tight_data_VR}
 
   \caption{Distribución del {\pt} del fotón para candidatos
     \emph{tight} y las dos definiciones diferentes de pseudo-fotones.}
@@ -801,7 +801,7 @@ sistemática.
     $\nleptons$                              &             0 \\ %           0 \\
     \met [\gev]                              &   $[50, 150]$ \\ % $[50, 150]$ \\
     $\njets \ge$                             &             2 \\ %           2 \\
-    $\pt^{j_1,j_2}$  [\gev]  $>$             &           100 \\ %         100 \\
+    $\pt^{\mathrm{jet}_1,\mathrm{jet}_2}$  [\gev]  $>$             &           100 \\ %         100 \\
     $\dphijm >$                              &           0.4 \\ %         0.4 \\
     \HT [\gev] $>$                           &           600 \\ %         200 \\
     \hline
@@ -826,8 +826,8 @@ sistemática.
 \begin{figure}[!htbp]
   \centering
 
-  \includegraphics[width=0.49\textwidth]{bkg_pseudo_data_SR_VR_l}
-  \includegraphics[width=0.49\textwidth]{bkg_pseudo_data_SR_VR_lp}
+  \includegraphics[width=0.45\textwidth]{bkg_pseudo_data_SR_VR_l}
+  \includegraphics[width=0.45\textwidth]{bkg_pseudo_data_SR_VR_lp}
 
   \caption{Distribución de la energía de aislamiento para pseudo-fotones
     \emph{loose-non-tight} (izquierda) y \emph{loose'-non-tight} (derecha),
@@ -838,7 +838,7 @@ sistemática.
 
 Finalmente, se encuentra que la distribución de los pseudo-fotones está bien
 descripta por una función \emph{Crystall-Ball}. La
-distribución en datos y el ajuste puede verse en la \cref{fig:jetfake_sigbkg}.
+distribución en datos y el ajuste puede verse en la \cref{fig:jetfake_combfit}.
 
 %% The parametrized template is used in the combined
 %% fit to tight photon data to derive the jet fake rate.
@@ -861,7 +861,7 @@ distribución en datos y el ajuste puede verse en la \cref{fig:jetfake_sigbkg}.
 A fin de modelar la forma de la energía de aislamiento de los fotones
 \emph{tight} en los datos, se utiliza el modelo de señal y fondo descriptos en
 las secciones anteriores, como se puede apreciar en la
-\cref{fig:jetfake_sigbkg}. La distribución de {\etiso} para todos los eventos
+\cref{fig:jetfake_combfit}. La distribución de {\etiso} para todos los eventos
 que pasan los criterios de selección de la región relajada CRJ es ajustada a una
 combinación lineal de los modelos de señal y fondo. El ajuste combinado y cada
 componente de la distribución pueden verse en \cref{fig:jetfake_combfit}. Los
@@ -901,26 +901,27 @@ en la \cref{eq:jfake_formula}:
 \begin{figure}[!h]
   \centering
 
-  \includegraphics[width=0.49\textwidth]{iso_fit_sig}  \hfill
-  \includegraphics[width=0.49\textwidth]{iso_fit_bkg}
+  \includegraphics[width=0.32\textwidth]{iso_fit_sig}
+  \includegraphics[width=0.32\textwidth]{iso_fit_bkg}
+  \includegraphics[width=0.32\textwidth]{iso_fit_sarange}
 
-  \caption{Ajuste a las distribuciones de {\etiso} de señal (izquierda)
-    y fondo (derecha) (derecha) en la región relajada CRJ.}
-  \label{fig:jetfake_sigbkg}
-
-\end{figure}
-
-\begin{figure}[!h]
-  \centering
-
-  \includegraphics[width=0.49\textwidth]{iso_fit_sarange}
-
-  \caption{Ajuste combinado a la distribución de {\etiso}
-    para los pseudo-fotones que pasan la selección de la región
-    relajada CRJ (ver texto para detalles).}
+  \caption{Ajuste a las distribuciones de {\etiso} de señal (izquierda),
+    fondo (centro) y combinado (derecha), en la región relajada CRJ.}
   \label{fig:jetfake_combfit}
 
 \end{figure}
+
+%% \begin{figure}[!h]
+%%   \centering
+
+%%   \includegraphics[width=0.49\textwidth]{iso_fit_sarange}
+
+%%   \caption{Ajuste combinado a la distribución de {\etiso}
+%%     para los pseudo-fotones que pasan la selección de la región
+%%     relajada CRJ (ver texto para detalles).}
+%%   \label{fig:jetfake_combfit}
+
+%% \end{figure}
 
 
 El número de jets identificados erróneamente como fotones puede ser estimado
@@ -956,8 +957,8 @@ La contaminación esperada de fotones falsos en las SR se estima integrando la
 parametrización de $N_{j\to\gam}$ sobre la región de {\met} de cada SR.
 
 \begin{align}
-  N_{j\to\gam}^\text{\SRL} &= \int_{200}^{\infty} N_\text{fakes}(\met) \, d\met = 0.01 \pm 0.02 \\
-  N_{j\to\gam}^\text{\SRH} &= \int_{300}^{\infty} N_\text{fakes}(\met) \, d\met = 0.0001 \pm 0.0001
+  N_{j\to\gam}^\text{\SRL} &= \int_{200}^{\infty} N_{j\to\gam}(\met) \, d\met = 0.01 \pm 0.02 \\
+  N_{j\to\gam}^\text{\SRH} &= \int_{300}^{\infty} N_{j\to\gam}(\met) \, d\met = 0.0001 \pm 0.0001
 \end{align}
 
 Debido a que las incertezas son de igual o mayor magnitud que los valores centrales,
@@ -966,8 +967,8 @@ se utilizaron los valores de estas como la estimación final en las SR.
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=0.49\textwidth]{nfakes_srl}  \hfill
-  \includegraphics[width=0.49\textwidth]{nfakes_srh}
+  \includegraphics[width=0.45\textwidth]{nfakes_srl}  \hspace{1cm}
+  \includegraphics[width=0.45\textwidth]{nfakes_srh}
   \caption{Parametrización del número de jets mal identificados como
     función de {\met} para {\SRL} (izquierda) y {\SRH} (derecha).}
   \label{fig:jetfake_nfakes_met}
