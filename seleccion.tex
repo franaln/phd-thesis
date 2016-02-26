@@ -343,8 +343,6 @@ Además del veto a los eventos con un segundo fotón, también se remueven
 los eventos que contienen leptones ($e$ o $\mu$) con el objetivo de que las
 SR no tengan un solapamiento con las SR del análisis que busca estados finales
 con un fotón, un leptón y energía faltante \cite{ATLAS-CONF-2012-144}.
-%% que busca... . La perdida en la eficiencia
-%% debido a este veto es de XXX \%.
 
 
 
@@ -370,7 +368,7 @@ es posible aplicar un corte más alto ($>300\gev$).
   \includegraphics[width=0.49\textwidth]{met_et_base1}
   \includegraphics[width=0.49\textwidth]{met_et_base2}
   \caption{Energía faltante transversa
-    luego de que se aplique el corte en el {\pt} del fotón y en la energía de aislamiento
+    luego de aplicar el corte en el {\pt} del fotón y en la energía de aislamiento
     para el fondo y los puntos de señal de {\SRL} (izquierda) y {\SRH} (derecha),
     para una luminosidad integrada de {\ilumi}.}
 
@@ -406,7 +404,7 @@ este análisis se consideran los jets con $\pt>40\gev$
 %% primarios. Luego, en la selección final, cortes más alto en el {\pt} de los jets
 %% son utilizados como se describe en \cref{sec:opt_njet}.
 
-La \cref{fig:opt_jet_n} muestra la multiplicidad de jets ($N_{\mathrm{jet}}$)
+La \cref{fig:opt_jet_n} muestra la multiplicidad de jets (\njets)
 para $\pt^{\mathrm{jet}} > 40$ \gev, después de los cortes optimizados en el
 fotón y la {\met} descriptos anteriormente. Mientras que la señal tiene
 típicamente un gran número de jets, la mayoría de los fondos W/Z+jets, diboson y
@@ -544,7 +542,7 @@ La distribución para la {\SRH} se puede ver en \cref{fig:opt_dphi_gamjet}.
 
 
 
-\subsection{Energia total transversa (\HT)}
+\subsection{Energía total transversa (\HT)}
 \label{sec:ht_obj}
 
 Dada la gran masa de los gluinos producidos en las colisiones, en el espacio de
@@ -594,7 +592,7 @@ una discriminación adicional entre señal y fondo. En especial se estudió el
 observable $R_T^n$ definido como
 
 \begin{equation}\label{eq:rt_formula}
-  R_\mathrm{T}^{n} = \frac{\sum_{i=1}^{n}p_\mathrm{T}^{j_i}}{\sum p_\mathrm{T}^{j}},
+  R_\mathrm{T}^{n} = \frac{\sum_{i=1}^{n}p_\mathrm{T}^{\text{jet}_i}}{\sum p_\mathrm{T}^{\text{jet}}},
 \end{equation}
 %
 es decir, el cociente entre la suma escalar de los {\pt} de $n$ jets y la suma
@@ -603,7 +601,7 @@ de jets requerido.
 
 Es evidente que la distribución de esta variable (como se explica en
 \cite{PhysRevD.84.055010}), depende de la multiplicidad y el momento transverso
-de los jets. En el caso que $n \sim N_\mathrm{jet}$ el denominador y el
+de los jets. En el caso que $n \sim \njets$ el denominador y el
 numerador son casi idénticos y el cociente es $\sim 1$, y es exactamente 1
 cuando son iguales.
 Para los procesos de señal en los que $n$ es mucho menor al número de jets en el
@@ -621,7 +619,9 @@ evento, la distribución será menor a 1.
   \includegraphics[width=0.49\textwidth]{figures/rt4_srl}
   \includegraphics[width=0.49\textwidth]{figures/rt2_srh}
 
-  \caption{Distribucion de {\rt} para {\SRL} y {\rtt} para {\SRH}}
+  \caption{Distribución de {\rt} para {\SRL}  (izquierda) y {\rtt} para {\SRH} (derecha)
+    para una luminosidad total integrada de 20.3 \ifb. Todos los cortes de la selección
+    de la SR son aplicados exceptuando el corte en $R_\mathrm{T}$.}
   \label{fig:opt_rt}
 \end{figure}
 
