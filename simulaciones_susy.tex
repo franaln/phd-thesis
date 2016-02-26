@@ -105,15 +105,17 @@ calculados a partir de estos parámetros utilizando {\suspect}
 en la \cref{fig:mass_spectra}, para algunos puntos de la \emph{grid}, (885, 146) y (1463, 1053).
 
 \begin{figure}[!htb]
-   \centering
-   \includegraphics[width=0.49\textwidth]{figures/masses_GGM_M3_mu_800_150}
-   %%\includegraphics[width=0.45\textwidth]{figures/masses_GGM_M3_mu_1000_750}
-   \includegraphics[width=0.49\textwidth]{figures/masses_GGM_M3_mu_1450_1050}
+  \centering
+
+  \resizebox{0.49\textwidth}{!}{\input{tikz/susy_GGM_M3_mu_850_150.tex}}
+  \resizebox{0.49\textwidth}{!}{\input{tikz/susy_GGM_M3_mu_1450_1050.tex}}
+
+   %% \includegraphics[width=0.49\textwidth]{figures/masses_GGM_M3_mu_800_150}
+   %% %%\includegraphics[width=0.45\textwidth]{figures/masses_GGM_M3_mu_1000_750}
+   %% \includegraphics[width=0.49\textwidth]{figures/masses_GGM_M3_mu_1450_1050}
 
    \caption{Espectro de masas de las partículas supersimétricas para dos puntos de la \emph{grid} de señal.
      En la izquierda para (885,146) y en la derecha (1463, 1053), en el plano \mgmn.}
-     %% Solo $M_3$ y $\mu$ son los parámetros libres, en este caso
-     %% $(M_3, \mu) = (800~\gev, 250~\gev)$. }
    \label{fig:mass_spectra}
 \end{figure}
 
@@ -202,6 +204,8 @@ detector ATLAS se realizó con la simulación rápida
   \footnotesize
   \caption{Eficiencia del filtro a nivel generador [\%]
     para los puntos de señal simulados.}
+
+  \scalebox{0.8}{
   \begin{tabular}{c|ccccccccccccccccc}
     \hline
      &   \multicolumn{14}{c}{ $M_3$ [\gev] } \\
@@ -231,6 +235,7 @@ detector ATLAS se realizó con la simulación rápida
     1250 &         &        &          &          &          &          &           &           &          &         &   16.1 &      &      &       \\
     \hline
   \end{tabular}
+  }
   \label{tab:signal_filter_eff}
 \end{table}
 
@@ -261,7 +266,7 @@ al igual que la energía faltante.
 \begin{figure}[!htb]
   \centering
 
-  \includegraphics[width=0.6\textwidth]{figures/br_gl_X}
+  \includegraphics[width=0.5\textwidth]{figures/br_gl_X}
 
   \caption{Tasas de decaimiento (BR) de los gluinos para los distintos puntos de la \emph{grid} en
     el plano \mgmn. Para cada punto de señal, la fracción del rectángulo de cada color representa
@@ -287,7 +292,7 @@ al igual que la energía faltante.
 
 
 En la \cref{fig:signal_br_n1} se presentan las BR de decaimiento del neutralino
-mas liviano (\ninoone), compatibles con las esperadas a partir del modelo que se
+más liviano (\ninoone), compatibles con las esperadas a partir del modelo que se
 utilizará para el presente análisis (\cref{eq:n1_gam,eq:n1_z,eq:n1_h}). Estos
 valores varían en menos del 1\% en los distintos puntos de la grid, salvo para
 neutralinos livianos ($<200\gev$) donde la producción de Higgs es altamente
@@ -297,7 +302,7 @@ suprimida, mientras aumenta el decaimiento a $Z$, y $\mathrm{BR}(\ninoone \to
 \begin{figure}[!htb]
   \centering
 
-  \includegraphics[width=0.6\textwidth]{figures/br_n1_X}
+  \includegraphics[width=0.5\textwidth]{figures/br_n1_X}
 
   \caption{Tasas de decaimiento (BR) de los neutralinos LSP en $\gamma\gravino$, $\gamma Z$ y
   $\gamma h$ para los distintos puntos de la \emph{grid} en el plano \mgmn.}
@@ -373,52 +378,54 @@ fracción en la producción electrodébil comparada con la producción total.
   \centering
   \caption{Sección eficaz a NLO+NLL para la producción de gluinos para los distintos
     puntos de la \emph{grid} de señal. La última columna es la incerteza teórica.}
-  \begin{tabular}{cccc}
+
+    \begin{tabular}{cccc}
     \hline
-    $M_3$ [\gev] & $m_{\gluino}$ [\gev] & $\sigma$(NLO+NLL) [fb] & Incerteza Total [$\%$]\tabularnewline
+    $M_3$ [\gev] & $m_{\gluino}$ [\gev] & $\sigma$(NLO+NLL) [pb] & Incerteza Total [$\%$]\tabularnewline
     \hline
-    800  &  885.5  & 69.05 & 22.5  \\
-    850  &  931.7  & 44.92 & 23.8  \\
-    900  &  977.6  & 29.73 & 25.2  \\
-    950  &  1023.1 & 19.83 & 26.5  \\
-    1000 &  1068.3 & 13.41 & 27.7  \\
-    1050 &  1113.3 & 9.10 & 29.0  \\
-    1100 &  1157.9 & 6.28 & 30.4  \\
-    1150 &  1202.3 & 4.32 & 32.0  \\
-    1200 &  1246.4 & 3.01 & 33.7  \\
-    1250 &  1290.3 & 2.10 & 35.2  \\
-    1300 &  1333.9 & 1.48 & 36.7  \\
-    1350 &  1377.3 & 1.05 & 38.2  \\
-    1400 &  1420.5 & 0.74 & 39.8  \\
-    1450 &  1463.4 & 0.53 & 41.5  \\
+    800  &  885.5  & 0.06905 & 22.5  \\
+    850  &  931.7  & 0.04492 & 23.8  \\
+    900  &  977.6  & 0.02973 & 25.2  \\
+    950  &  1023.1 & 0.01983 & 26.5  \\
+    1000 &  1068.3 & 0.01341 & 27.7  \\
+    1050 &  1113.3 & 0.00910 & 29.0  \\
+    1100 &  1157.9 & 0.00628 & 30.4  \\
+    1150 &  1202.3 & 0.00432 & 32.0  \\
+    1200 &  1246.4 & 0.00301 & 33.7  \\
+    1250 &  1290.3 & 0.00210 & 35.2  \\
+    1300 &  1333.9 & 0.00148 & 36.7  \\
+    1350 &  1377.3 & 0.00105 & 38.2  \\
+    1400 &  1420.5 & 0.00074 & 39.8  \\
+    1450 &  1463.4 & 0.00053 & 41.5  \\
     \hline
   \end{tabular}
+
   \label{tab:signal_xs_strong}
 \end{table}
 
 \begin{table}[!htb]
   \centering
   \caption{Sección eficaz total a NLO para la producción electrodébil de neutralinos y charginos
-    para los distintos puntos de la grid de señal. La última columna  es la incerteza
-    teórica. Más detalles se encuentran en la \cref{sec:syst_signal}.}
+    para los distintos puntos de la \emph{grid} de señal. La última columna  es la incerteza
+    teórica.}
   \begin{tabular}{cccc}
     \hline
-    $\mu$ [\gev] & $m_{\ninoone}$ [\gev] & $\sigma$(NLO) [fb] & Incerteza total [$\%$]\tabularnewline
+    $\mu$ [\gev] & $m_{\ninoone}$ [\gev] & $\sigma$(NLO) [pb] & Incerteza total [$\%$]\tabularnewline
     \hline
-    150   & & 2680 & 6.3  \\
-    175   & & 1420 & 6.7  \\
-    200   & & 840 & 6.9   \\
-    250   & & 280 & 6.4     \\
-    350   & & 50 & 7.0    \\
-    450   & & 13 & 7.6    \\
-    550   & & 4.1 & 8.0  \\
-    650   & & 1.4 & 8.5   \\
-    750   & & 0.53 & 8.9  \\
-    850   & & 0.21 & 9.3  \\
-    950   & & 0.0857 & 10.3  \\
-    1050  & & 0.0356 & 11.0  \\
-    1150  & & 0.0155 & 13.3   \\
-    1250  & & 0.00667 & 16.9   \\
+    150   & 147.0 & 2.68 & 6.3  \\
+    175   & 168.3 & 1.42 & 6.7  \\
+    200   & 190.3 & 0.84 & 6.9   \\
+    250   & 235.8 & 0.28 & 6.4     \\
+    350   & 332.4 & 0.050 & 7.0    \\
+    450   & 433.2 & 0.013 & 7.6    \\
+    550   & 535.6 & 4.1 $\cdot\, 10^{3}$ & 8.0  \\
+    650   & 638.3 & 1.4 $\cdot\, 10^{3}$ & 8.5   \\
+    750   & 742.0 & 5.3 $\cdot\, 10^{4}$ & 8.9  \\
+    850   & 846.7 & 2.1 $\cdot\, 10^{4}$ & 9.3  \\
+    950   & 949.6 & 8.57 $\cdot\, 10^{5}$ & 10.3  \\
+    1050  & 1053.0 & 3.56 $\cdot\, 10^{5}$ & 11.0  \\
+    1150  & 1157.5 & 1.55 $\cdot\, 10^{5}$ & 13.3   \\
+    1250  & 1260.6 & 6.67 $\cdot\, 10^{6}$ & 16.9   \\
     \hline
   \end{tabular}
   \label{tab:signal_xs_ewk}
@@ -427,11 +434,11 @@ fracción en la producción electrodébil comparada con la producción total.
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=0.49\textwidth]{figures/SigXsec_strong}
-  \includegraphics[width=0.49\textwidth]{figures/SigXsec_ewk}
+  \includegraphics[width=0.49\textwidth]{xs_run1_gg}
+  \includegraphics[width=0.49\textwidth]{xs_run1_ewk}
 
-  \caption{Sección eficaz de producción de pares de gluinos como función del parámetro $M_3$ (izquierda)
-    y de pares de neutralinos/charginos como función del parámetro $\mu$ (derecha).}
+  \caption{Sección eficaz de producción de pares de gluinos como función de $m_{\gluino}$ (izquierda)
+    y de pares de neutralinos/charginos como función de $m_{\ninoone}$ (derecha).}
   \label{fig:signal_xs}
 \end{figure}
 

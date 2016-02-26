@@ -25,8 +25,8 @@ El complejo de aceleradores del CERN (ver \cref{fig:lhc_complex}) es una
 sucesión de aceleradores, en la cual cada acelerador inyecta el haz de protones
 en el siguiente, que se encarga de elevar la energía un poco más. El LHC, que es
 el último elemento en la cadena, está diseñado para acelerar cada haz de
-protones a 7 \tev, alcanzando en las colisiones, energías de centro de masa de
-14 \tev, y una luminosidad de $10^{34}$ cm$^{-2}$s$^{-1}$. Los demás
+protones a 7 \tev, alcanzando en las colisiones energías de centro de masa de
+14 \tev y una luminosidad de $10^{34}$ cm$^{-2}$s$^{-1}$. Los demás
 aceleradores en la cadena poseen además otros experimentos que utilizan los
 haces a menores energías.
 
@@ -37,7 +37,7 @@ por:
   N = L \, \sigma
 \end{equation}
 %
-donde $\sigma$ es la sección eficaz del proceso físico y $L$ es la luminosidad instantánea del
+donde $\sigma$ es la sección eficaz del proceso físico y $L$ es la luminosidad integrada del
 acelerador.
 
 %% La luminosidad instantanea se define como el número de protones que pasan por unidad
@@ -49,7 +49,7 @@ partículas (protones o iones pesados en el caso del LHC) por unidad de tiempo y
 área, y puede calcularse mediante la relación:
 
 \begin{equation}
-  L = f_\text{rev} n_b \frac{N_1 N_2}{A}
+  \mathcal{L} = f_\text{rev} n_b \frac{N_1 N_2}{A}
 \end{equation}
 %
 donde $f_\text{rev}$ es la frecuencia de revolución ($\sim 11$ kHz), $n_b$ es el número de
@@ -296,10 +296,10 @@ de canales es de 420000 y la resolución espacial es de $\unit[0.17]{mm}$.
 
 \subsection{Calorímetros}
 
-Una vista de los calorímetros de ATLAS puede verse en la \cref{fig:calorimetros}.
-Consiste en un calorímetro electromagnético cubriendo la región de pseudorapidez
+Un esquema de los calorímetros de ATLAS puede verse en la \cref{fig:calorimetros}.
+Consta de un calorímetro electromagnético cubriendo la región de pseudorapidez
 $|\eta| < 3.2$, un calorímetro hadrónico en la sección \emph{barrel} cubriendo
-la región $|\eta| < 3.2$, calorímetro hadrónicos en las \emph{end-cap} cubriendo
+la región $|\eta| < 3.2$, calorímetros hadrónicos en las \emph{end-cap} cubriendo
 la región $1.5 < |\eta| < 3.2$, y calorímetros \emph{forward} cubriendo $3.1 < |\eta| < 4.9$.
 
 
@@ -317,14 +317,14 @@ la región $1.5 < |\eta| < 3.2$, y calorímetros \emph{forward} cubriendo $3.1 <
 
 El calorímetro electromagnético \cite{caloemTDR} se divide en una parte central
 ($|\eta|<$1.475) y los \emph{end-caps} (1.375$<|\eta|<$3.2). La parte central
-está compuesto por dos mitades, separadas por una
+está compuesta por dos mitades, separadas por una
 distancia pequeña ($\unit[6]{mm}$) a $z = 0$. Las tapas del calorímetro están divididas en
 dos ruedas coaxiales, una rueda externa cubriendo la región 1.375$<|\eta|<$2.5 y
 una parte interna que cubre la región 2.5$<|\eta|<$3.2.
 
 El calorímetro electromagnético es un detector de muestreo de argón líquido
-(LAr) con electrodos de kapton en forma de acordeón y planchas absorbentes de
-plomo. El espesor total del calorímetro electromagnetico es $>24 X_0$ en el
+(LAr) con electrodos de \emph{kapton} en forma de acordeón y planchas absorbentes de
+plomo. El espesor total del calorímetro electromagnético es $>24 X_0$ en el
 barril y $>26 X_0$ en las tapas, donde $X_0$ es la longitud de radiación.
 
 En la región dedicada a los estudios de física de precisión ($|\eta|<$2.5) el
@@ -358,7 +358,7 @@ espesor de las placas de acero en un período es de $\unit[14]{mm}$.
 El calorímetro de tejas se extiende radialmente desde un radio interno de $\unit[2.28]{m}$
 hasta un radio externo de $\unit[4.25]{m}$.
 
-En la región de \emph{end-caps}, el calorímetro hadrónico consiste en dos ruedas de
+En la región de \emph{end-caps}, el calorímetro hadrónico se compone de dos ruedas de
 $\unit[2.3]{m}$ de radio, perpendiculares al tubo del haz, hechas con placas de cobre y
 tungsteno como material absorbente y argón líquido como material activo. Estos
 detectores extienden la aceptancia del calorímetro de ATLAS hasta prácticamente
@@ -394,8 +394,8 @@ brecha en $|z|=0$ que permite el acceso de los servicios al ID.
 El espectrómetro de muones es el subdetector más grande de ATLAS, construido
 dentro y alrededor de los imanes toroidales. Los muones son altamente penetrantes
 y son las únicas partículas (excepto las invisibles que no interactúan) que llegan
-a el sistema de muones. Los muones pierden parte de su energía mientras penetran
-las capas internas de ATLAS antes de llegar al espectrómetro de muones. La perdida
+al sistema de muones. Los muones pierden parte de su energía mientras penetran
+las capas internas de ATLAS antes de llegar al espectrómetro de muones. La pérdida
 de energía tiene que ser tenida en cuenta utilizando los depósitos de energía
 en los calorímetros.
 
@@ -483,7 +483,7 @@ La parte central del sistema de adquisición de datos de ATLAS es el
 selecciona, del gran número de colisiones que tienen lugar en el experimento,
 los eventos que serán almacenadas para su posterior procesamiento y análisis.
 
-El LHC esta disenado para proveer colisionesión $pp$ de $\mathcal{O}(1)$ GHz,
+El LHC esta diseñado para proveer colisionesión $pp$ de $\mathcal{O}(1)$ GHz,
 considerando una frecuencia de cruce de haces de $\unit[40]{MHz}$ y $\sim$ 23
 interacciones por cruce. Dado que la mayoría de los eventos no son de interés
 para los análisis de fisica, y también debido a las limitaciones de
@@ -506,7 +506,7 @@ que pasan al siguiente nivel a $\sim 75$ kHz. Debido al tamaño limitado de las
 memorias temporales donde se guardan los datos de cada subdetector y al
 considerable tiempo de vuelo de las partículas hasta el espectrómetro de muones,
 la decisión debe tomarse en una escala de tiempo muy limitada ($\unit[2.5]{\mu
-  s}$). El L1 esta basado en hardware y selecciona objetos de alto {\pt}
+  s}$). El L1 está basado en hardware y selecciona objetos de alto {\pt}
 construidos a partir de la información de varios subdetectores. Los muones son
 identificados en las cámaras de trigger descriptas en la
 \cref{sec:espectrometro_muones}, mientras que la información de los
@@ -557,7 +557,7 @@ a cabo en el EF, que reduce la frecuencia de eventos a $\sim \unit[400]{Hz}$.
 En este nivel se tiene acceso a toda
 la información del evento en los distintos subdetectores de ATLAS, con la máxima
 granularidad e incluyendo detalles sobre la calibración de energía de los
-calor metros, la alineación de los subdetectores y el mapa de campo magnético. El
+calorímetros, la alineación de los subdetectores y el mapa de campo magnético. El
 tiempo de latencia relativamente largo disponible para tomar la decisión final
 sobre el evento ($\avg{t} \sim \unit[4]{s}$) permite la reconstrucción completa
 del mismo, y el refinamiento de las variables y criterios de selección al nivel
@@ -591,7 +591,7 @@ tasa de procesamiento aproximadamente constante.
 
 \section{Modelo computacional y distribución de datos}
 
-El modelo computacional de ATLAS esta diseñado para permitir a todos los
+El modelo computacional de ATLAS está diseñado para permitir a todos los
 miembros de la colaboración un acceso ágil, directo y distribuido a la gran
 cantidad de datos recolectados por el detector ($\sim \text{PB}/\text{a\~no}$),
 así como a las diversas simulaciones MC. El modelo se basa en la tecnología
@@ -674,7 +674,7 @@ GRL (\emph{Good Runs List}), de las \emph{Runs} y los rangos de LB dentro de ell
 son apropiados para cada tipo de análisis. Se producen de forma centralizada
 para brindar listas oficiales comunes para los distintos grupos dentro de ATLAS
 y son distribuidas en un formato \textsc{XML} para luego ser utilizadas durante
-el análisis final. Cada análisis elije que GRL utiliza dependiendo de su
+el análisis final. Cada análisis elige que GRL utiliza dependiendo de su
 tolerancia a las fallas de los subdetectores.
 
 El presente análisis utiliza el conjunto de eventos recolectados de las colisiones
@@ -696,7 +696,7 @@ proporcional a la densidad de partículas, o mejor, al flujo de partículas, el
 cual se expresa con la luminosidad instantánea. El número de colisiones de
 partículas real que tienen lugar cuando dos \emph{bunches} se cruzan es una
 variable aleatoria que sigue una distribución de Poisson. Para bajas
-luminosidades, en la mayoría de los cruces de haces, no ocurre nada, pero para
+luminosidades, en la mayoría de los cruces de haces, no ocurren colisiones, pero para
 luminosidades instantáneas altas, en la mayoría de los cruces se producen muchas
 colisiones de partículas al mismo tiempo. Dependiendo del subdetector y el tipo
 de medición, puede o no ser posible distinguir entre las partículas provenientes
@@ -704,11 +704,11 @@ de diferentes interacciones simultáneas. Esto es llamado \emph{pile-up in-time}
 En cambio, el \emph{pile-up out-of-time} incluye los efectos que se originan
 cuando el tiempo que el detector necesita para volver a su estado de espera es
 mayor al tiempo entre cruces de \emph{bunches}. Una medida cuantitativa del
-\emph{pile-up} y la actividad en el eventos es el valor medio de interacciones
+\emph{pile-up} y la actividad del evento, es el valor medio de interacciones
 inelásticas $pp$ por cruce de \emph{bunches}, $\avg{\mu}$.
 
 Durante el período de toma de datos del 2012, el pico de luminosidad instantánea
-aumento desde $\unit[2.74 \cdot 10^{30}]{cm^{-2} s^{-1}}$ hasta
+aumentó desde $\unit[2.74 \cdot 10^{30}]{cm^{-2} s^{-1}}$ hasta
 $\unit[7.61 \cdot 10^{33}]{cm^{-2} s^{-1}}$, y el número medio de interacciones por cruce
 de haz varió entre 5.9 y 36.53. La distribución de la luminosidad acumulada
 durante la toma de datos y del número de interacciones por colisión pude verse en
