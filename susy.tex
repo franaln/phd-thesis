@@ -15,10 +15,10 @@ extensión imaginable del SM.
 La parte eléctricamente neutra del campo de Higgs del SM es un escalar complejo
 $H$ con un potencial clásico $V=m_H^2 |H|^2 + \lambda|H|^4$. El SM necesita un
 valor de expectación del vacío (VEV) para $H$ no nulo, en el mínimo del potencial.
-Esto ocurre si $\lambda>0$ y $m_H^2<0$, resultando en $\avg{H} =
-\sqrt{-m_H^2/2\lambda}$. Como experimentalmente sabemos que $\avg{H}$ es
+Esto ocurre si $\lambda>0$ y $m_H^2<0$, resultando en $\avg{H} = \sqrt{-m_H^2/2\lambda}$.
+Como experimentalmente sabemos que $\avg{H}$ es
 aproximadamente 174 \gev, de las medidas de las propiedades de las interacciones
-débiles, el valor de $m_H^2$ debe ser del orden de $-(100 \gev)^2$.
+débiles, el valor de $m_H^2$ debe ser del orden de \note{$-(100 \gev)^2$}{Frase de Martin nueva}.
 
 \begin{figure}[!h]
   \centering \input{tikz/susy_loop_fermion.tex}
@@ -40,13 +40,13 @@ igual a $-\lambda_f H \bar{f}f$, el diagrama de Feynman en la \cref{fig:higgs_co
 \end{equation}
 %
 donde $\Lambda_\text{UV}$ es el corte usado para regular la integral en el
-\emph{loop}. Debe ser interpretado como la m\'inima escala de energ\'ia a la
+\emph{loop}. Debe ser interpretado como la mínima escala de energía a la
 cual entra la nueva física para alterar el comportamiento de la teoría a altas
 energías. Los puntos suspensivos representan términos proporcionales a $m_f^2$,
 que crecen a lo sumo logarítmicamente con $\Lambda_\text{UV}$. Cualquiera de los
 leptones o \emph{quarks} del SM puede jugar el rol de $f$ (para el caso de \emph{quarks} la
 corrección tiene que ser multiplicada por 3 para tener en cuenta el color) y
-la correción más grande será cuando $f$ es el \emph{quark top} con
+la corrección más grande será cuando $f$ es el \emph{quark top} con
 $\lambda_f \approx 1$.
 
 El problema aparece si $\Lambda_\text{UV}$ es del orden de $M_P$, ya que la
@@ -75,8 +75,8 @@ sufren de fallas de unitariedad o causalidad.
 \end{figure}
 
 En el caso de que exista un escalar complejo pesado $S$ con masa $m_S$ que se
-acopla al Higgs con un término en el lagrangiano $-\lambda_S \abs{H}^2
-\abs{S}^2$, el diagrama de Feynman es el que se muestra en la
+acopla al Higgs con un término en el lagrangiano $-\lambda_S \abs{H}^2 \abs{S}^2$,
+el diagrama de Feynman es el que se muestra en la
 \cref{fig:higgs_correction_s} y este da lugar a una corrección:
 
 \begin{equation}
@@ -109,7 +109,7 @@ ser un espinor anticonmutativo, con
 \end{equation}
 
 Los espinores son intrínsecamente objetos complejos, por lo tanto el conjugado
-hermitico de $Q$ es también un generador de la simetría. Debido a que $Q$ y
+hermítico de $Q$ es también un generador de la simetría. Debido a que $Q$ y
 $Q^\dagger$ son operadores fermiónicos, llevan momento angular de espín $\frac{1}{2}$, por
 lo tanto es claro que SUSY debe ser una simetría espacio-temporal y los
 operadores $Q$ y $Q^\dagger$ deben satisfacer un álgebra de la siguiente forma,
@@ -131,7 +131,7 @@ uno de otro.
 Los generadores $Q$ y $Q^\dagger$ conmutan con los generadores de las
 transformaciones de \emph{gauge}, por lo tanto las partículas en un mismo
 supermultiplete tienen que estar en la misma representación del grupo de \emph{gauge},
-y tener la misma carga eléctrica, isospin y color. Y como el operador de masa
+y tener la misma carga eléctrica, isoespín y color. Y como el operador de masa
 $-P^2$ también conmuta con los generadores y con todos los operadores de
 rotación y traslación, deberán tener los mismos autovalores de $-P^2$, y
 entonces la misma masa.
@@ -350,39 +350,6 @@ El conjunto de nuevos parámetros que aparece en el superpotencial de ruptura de
 \end{itemize}
 
 
-%% We finally present the MSSM spectrum that contains the SM particle content, extended with
-%% two Higgs doublets, and all their corresponding SUSY partners. There are the SUSY partners
-%% of the quarks, called squarks, the ones of the charged leptons and neutrinos, called charged
-%% sleptons and sneutrinos respectivelly, the gluinos being the superpartners of the gluons, and the
-%% SUSY partners of the electroweak gauge bosons, called gauginos, that after mixing with the
-%% SUSY partners of the Higgs bosons, called Higgsinos, give rise to the mass eigenstates named
-%% charginos and neutralinos. In Table 1.1, the full MSSM spectrum is illustrated in both the
-%% interaction eigenstate basis and the mass eigenstate basis. Here, the standard notation is used
-%% as explained, for instance, in [43, 44].
-
-
-%% Los parámetros del MSSM se pueden describir considerando de forma separada el
-%% sector que conserva SUSY del sector de rompimiento de SUSY
-%% \cite{PDG,Haber:1993wf}. Primero se tienen los parámetros usuales del SM: los
-%% acoplamientos de gauge $g_s$, $g$ y $g'$, correspondientes al grupo de gauge
-%% SU(3), SU(2) y U(1), respectivamente. Las constantes de acoplamiento entre
-%% fermiones y Higgs: $\lambda_u$, $\lambda_d$ y $\lambda_e$.
-%% Otro parámetro es el parámetro de masa del supercampo de Higgs $\mu$.
-
-%% Los demás parámetros del MSSM aparecen de los términos de rompimiento soft de
-%% SUSY. Estos incluyen tres parámetros de masa de los gauginos ($M_3, M_2$ y
-%% $M_1$), cinco parámetros de masa escalares para squarks y sleptones
-%% $M^2_{\susy{Q}}$, $M^2_{\susy{U}}$, $M^2_{\susy{D}}$, $M^2_{\susy{L}}$ y
-%% $M^2_{\susy{E}}$, términos de interacción triliniares Higgs-squark-squark y
-%% Higgs-slepton-slepton ($A_t$, $A_b$ y $A_\tau$), y los parámetros de masa del
-%% sector de Higgs ($m^2_{1H}$, $m^2_{2H}$ y $m^2_{12}$). Luego del rompimiento de
-%% la simetría electrodébil, los parámetros $m^2_{1H}$, $m^2_{2H}$ y $m^2_{12}$
-%% pueden ser expresados en términos de dos valores de expectación del vacío ($v_1$
-%% y $v_2$) y una masa física de Higgs (en general se elige la masa del Higgs
-%% escalar CP-impar, $m_{A^0}$). Como $v_1^2+v_2^2=(246 \gev)^2$ esta fijo por la
-%% masa del $W$ o $Z$, se suele escribir en términos de un parámetro definido como
-%% el cociente $\tan \beta \equiv v_2/v_1$.
-
 En un modelo con una sola generación de quarks, leptones y sus
 supercompa\~neros, el MSSM tendría 14 nuevos parámetros. En el modelo
 completo de tres generaciones, el número de nuevos parámetros es sustancialmente
@@ -518,8 +485,9 @@ sectores del modelo.
   pueden mezclarse entre ellos. Después del agregado de los términos del
   rompimiento \emph{soft} de la supersimetría, los autoestados de masa de los squarks y
   sleptones del MSSM pueden obtenerse diagonalizando tres matrices de $6\times6$
-  para \emph{squarks} \emph{up}, \emph{down} y sleptones cargados, y una matriz adicional de $3\times
-  3$ para los sneutrinos.
+  para \emph{squarks} \emph{up}, \emph{down} y sleptones cargados, y una matriz adicional de $3\times 3$
+  para los sneutrinos.
+
   %% La primera y segunda familia de squarks y sleptones
 %%   terminan con siete pares casi degenerados. En contraste, la tercera familia de
 %%   squarks y sleptones pueden tener masas muy distintas y una mezcla importante de
@@ -593,16 +561,6 @@ Para el caso de los neutralinos se utiliza la siguiente notación $\tilde{\chi}^
 y al igual que en el caso de los charginos son ordenados de forma ascendente según su masa (es decir,
 el $i=1$ es el más liviano).
 
-%% El neutralino más liviano
-%% {\ninoone}, suele ser la LSP, salvo que exista un {\gravino} más liviano
-%% o que la paridad-R no se conserve.
-
-%% Los autoestados de masas y la matriz de mezcla $N_{ij}$ pueden obtenerse en termino de los parámetros
-%% \M{1}, \M{2}, $\mu$ y $\tan\beta$.
-
-%% El sector de los neutralinos esta determinado por tres parámetros reales, \M{1}, $\tan\beta$ y
-%% $\mu$ (como también por supuesto $m_Z$ y $\theta_W$).
-
 Si un estado de chargino o neutralino se aproxima a un estado particular de
 gaugino o higgsino, es conveniente usar la nomenclatura correspondiente. Si
 $M_1$ y $M_2$ son pequeñas comparadas a $m_Z$ y $|\mu|$, el neutralino más
@@ -649,33 +607,34 @@ orden árbol, $M_3$, siendo $m_{\gluino} = M_3$.
 
 \item Sleptones y squarks
 
-Los sleptones puede decaer en un leptón y un chargino/neutralino,
+  Los sleptones puede decaer en un leptón y un chargino/neutralino,
 
-\begin{align}
-  \slepton &\to \ell \nino, \nu\chinopm \\ \snu &\to \nu\nino, \ell\chinopm
-\end{align}
+  \begin{align}
+    \slepton &\to \ell \nino, \nu\chinopm \\
+    \snu &\to \nu\nino, \ell\chinopm
+  \end{align}
 
-Como los sleptones derechos no se acoplan al gaugino de $\text{SU}(2)_\text{L}$,
-comúnmente prefieren el decaimiento directo a $\ell\ninoone$.
+  Como los sleptones derechos no se acoplan al gaugino de $\text{SU}(2)_\text{L}$,
+  comúnmente prefieren el decaimiento directo a $\ell\ninoone$.
 
-Los squarks pueden tener decaimiento a dos cuerpos en un squark-gluino si es
-cinemáticamente permitido, porque tienen acoplamiento fuerte. Por otro
-lado, los squarks pueden decaer en un quark y un neutralino/chargino.
+  Los squarks pueden tener decaimiento a dos cuerpos en un \emph{squark}-gluino si es
+  cinemáticamente permitido, porque tienen acoplamiento fuerte. Por otro
+  lado, los squarks pueden decaer en un quark y un neutralino/chargino.
 
-\begin{equation}
-  \susy{q} \to q\gluino, \, q\nino, \, q^\prime \chinopm
-\end{equation}
+  \begin{equation}
+    \susy{q} \to q\gluino, \, q\nino, \, q^\prime \chinopm
+  \end{equation}
 
 
 \item Neutralinos y charginos
 
-Como cada neutralino y chargino contiene al menos una mezcla de los gauginos
-electrodébiles {\bino}, $\susy{W}^0$ o $\susy{W}^{\pm}$ , heredan los
-acoplamientos de intensidad electrodébil a los pares de fermiones escalares. Si
-los sleptones o squarks son lo suficientemente livianos, un neutralino o
-chargino va a decaer a un par leptón+slepton o quark+squark. También pueden
-decaer en un neutralino o chargino más liviano y un Higgs escalar o un bosón
-de \emph{gauge} electrodébil. Los posibles decaimientos son
+  Como cada neutralino y chargino contiene al menos una mezcla de los gauginos
+  electrodébiles {\bino}, $\susy{W}^0$ o $\susy{W}^{\pm}$, heredan los
+  acoplamientos de intensidad electrodébil a los pares de fermiones escalares. Si
+  los sleptones o squarks son lo suficientemente livianos, un neutralino o
+  chargino va a decaer a un par leptón+slepton o \emph{quark+squark}. También pueden
+  decaer en un neutralino o chargino más liviano y un Higgs escalar o un bosón
+  de \emph{gauge} electrodébil. Los posibles decaimientos son
 
 \begin{align}
   &\susy{N}_i \to Z \susy{N}_j, \quad W \susy{C}_j, \quad h^0 \susy{N}_j, \quad
@@ -692,10 +651,10 @@ probables.
 
 \item Gluinos
 
-  El gluino solo puede decaer a través de un squark, ya sea \emph{on-shell} o virtual. Si
+  El gluino solo puede decaer a través de un \emph{squark}, ya sea \emph{on-shell} o virtual. Si
   el decaimiento a dos cuerpos está abierto, este va a dominar debido al
-  acoplamiento gluino-quark-squark es fuerte. En el caso de que todos
-  los squarks sean más pesados que el gluino, este va a decaer solo vía squarks
+  acoplamiento gluino-\emph{quark-squark} es fuerte. En el caso de que todos
+  los squarks sean más pesados que el gluino, este va a decaer solo vía \emph{squarks}
   virtuales.
 
   \begin{align}
@@ -733,7 +692,7 @@ del rompimiento de ésta, el rompimiento debe ser suave, incluyendo términos
 En el MSSM, el rompimiento de SUSY es introducido explícitamente. El rompimiento
 de una simetría global siempre implica un modo no masivo de Nambu-Goldstone con
 los mismos números cuánticos que el generador de la simetría rota. En el caso de
-la supersimetría global, el generador es la carga fermionica $Q_\alpha$, por lo
+la supersimetría global, el generador es la carga fermiónica $Q_\alpha$, por lo
 tanto la partícula de Nambu-Goldstone tiene que ser un fermión de Weyl no masivo
 neutro, llamado \emph{goldstino}. Es claro ahora que el rompimiento espontáneo
 de la supersimetría requiere la extensión del MSSM. El rompimiento espontáneo de
@@ -741,7 +700,7 @@ SUSY tiene que ocurrir en un <<sector oculto>> de partículas que no tienen
 acoplamientos directos con los supermultipletes quirales (<<sector visible>>)
 del MSSM. Sin embargo, estos dos sectores comparten algunas interacciones que
 son las responsables de mediar el rompimiento de la supersimetría desde el
-sector oculto al visible, resultando en los términos soft del MSSM (ver
+sector oculto al visible, resultando en los términos \emph{soft} del MSSM (ver
 \cref{fig:susy_breaking}).
 
 \begin{figure}[!htbp]
@@ -766,7 +725,7 @@ Si tenemos en cuenta a la gravedad, SUSY tiene que ser promovida a una simetría
 local. Esta teoría supersimétrica local es llamada \emph{supergravedad}. Esto
 unifica necesariamente las simetrías espacio-temporales ordinarias de la
 Relatividad General con las transformaciones locales supersimétricas. En esta
-teoría, el graviton de espín 2, tiene un supercompa\~nero fermión de espín $\frac{3}{2}$
+teoría, el gravitón de espín 2, tiene un supercompa\~nero fermión de espín $\frac{3}{2}$
 llamado \emph{gravitino}. Mientras la supersimetría no esté rota, el gravitón y
 el gravitino son no masivos con dos estados de helicidad de espín. Una vez que
 SUSY es espontáneamente rota, el gravitino adquiere una masa absorbiendo el
@@ -790,7 +749,7 @@ que incluye al gravitino.
 
 En los modelos de rompimiento de la supersimetría mediado por campos de \emph{gauge} o
 GMSB, las interacciones ordinarias de \emph{gauge} son las responsables de la aparición
-del rompimiento soft de la supersimetría en el MSSM.
+del rompimiento \emph{soft} de la supersimetría en el MSSM.
 La mediación por campos de \emph{gauge} es una de las maneras más simples y robustas
 para transmitir el rompimiento de SUSY al MSSM. A pesar de su simpleza, existe
 un gran número de modelos de GMSB. Para poder hacer un análisis fenomenológico
@@ -817,18 +776,6 @@ mediación por campos de \emph{gauge} dominen por sobre la mediación por graved
 Uno de los aspectos teóricos interesantes de SUSY es que si esta simetría es
 realizada como una simetría local, incorpora de forma necesaria y automática la
 gravedad.
-%% Esta conexión no tiene ninguna consecuencia en la mayor parte de la
-%% fenomenología en colisionadores, porque las interacciones gravitatorias no son
-%% relevantes. Sin embargo, esto no necesariamente cierto si el gravitino es muy
-%% liviano.
-%% El gravitino obtiene su masa absorbiendo el goldstino de espín 1/2 asociado al
-%% rompimiento espontáneo de la supersimetría. En el límite de altas energías, las
-%% interacciones de las componentes de helicidad $\pm 1/2$ del gravitino son las
-%% mismas que las del goldstino.
-%% Estas interacciones son proporcionales a $1/m_{\gravino}$ en el límite
-%% $m_{\gravino} \to 0$ y son potencialmente importantes incluso para procesos a
-%% energías ordinarias. Sin embargo, la intensidad de las interacciones del
-%% gravitino no puede ser arbitrariamente grande.
 La masa del gravitino está relacionada con la escala del rompimiento de SUSY por,
 
 \begin{equation}
@@ -966,10 +913,6 @@ Esta tesis se centrará en este último caso. En el \cref{cap:simulaciones}
 se describirá en detalle el modelo de se\~nal que motiva el estado final
 del presente análisis.
 
-%% Esta Tesis se centrara en un neutralino NLSP que es una mezcla mayoritaria
-%% de bino y higgsino, donde la probabilidad de decaimiento en fotones y $Z$
-%% es similar y esta suprimido el decaimiento a Higgs, dejando como estado
-%% final un único fotón, jets, y energía faltante.
 
 
 \subsection{Producción de partículas supersimétricas}
