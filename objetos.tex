@@ -4,8 +4,7 @@
 Los objetos físicos resultantes de las partículas originadas en las colisiones
 $pp$ son reconstruidos a partir de las señales provenientes del detector ATLAS.
 La reconstrucción de estos objetos no se realiza en tiempo real mientras se
-recolectan datos (\emph{online}), sino que se realiza luego de que la toma de
-datos fue realizada (\emph{offline}).
+recolectan datos (\emph{online}), sino luego de la toma de datos (\emph{offline}).
 
 En este capítulo se describe la reconstrucción, calibración e identificación de
 los principales objetos físicos utilizados en el presente análisis: fotones,
@@ -27,7 +26,7 @@ de las trazas de las partículas cargadas con un momento transverso $\pt>0.5 \ge
 y $\abseta < 2.5$. Sin embargo, la eficiencia a bajo momento está
 limitada debido a la gran cantidad de material en el mismo.
 
-La reconstrucción de trazas en el detector interno comienza conviertiendo la
+La reconstrucción de trazas en el detector interno comienza convirtiendo la
 información de los subdetectores en puntos espaciales. Seguidamente se realiza
 la búsqueda de trazas, utilizando dos técnicas. Primero, a
 partir de la combinación de los puntos en el detector de píxeles y la primera
@@ -35,11 +34,11 @@ capa del SCT, se forman los candidatos a trazas. Estos candidatos son ajustados
 y se realiza una limpieza aplicando distintos cortes de calidad. Las
 trazas seleccionadas son extendidas al TRT, y ajustadas nuevamente utilizando
 toda la información disponible. De forma complementaria se buscan segmentos de
-trazas en el TRT que no hayan sido utilizadas, y se extienden a los demás
+trazas en el TRT que no hayan sido usadas, y se extienden a los demás
 detectores.
 
 La última etapa consiste en la reconstrucción de los vértices primarios
-utilizando un algoritmo dedicado, seguido de algoritmos para reconstruir
+a partir de un algoritmo dedicado, seguido de algoritmos para reconstruir
 conversiones de fotones y vértices secundarios.
 Encontrar los puntos de intersección entre las distintas trazas reconstruidas
 permite identificar el punto de interacción $pp$ como también los vértices de
@@ -48,7 +47,7 @@ mayoría de las trazas reconstruidas van a originarse en el punto de colisión,
 indicando el vértice primario de la colisión. Además, algunas partículas pueden
 decaer a una distancia medible del vértice primario, y las trazas originadas de
 esos decaimientos pueden utilizarse para identificar los vértices secundarios.
-Un vértice primario es formado generalmente por la intersección de 20 o mas
+Un vértice primario es formado generalmente por la intersección de 20 o más
 trazas reconstruidas, mientras que los vértices secundarios suelen tener solo 2
 o 3. Primero se realiza la búsqueda de los vértices a partir de todas las trazas
 reconstruidas en el detector interno. La posición de los vértices es determinada
@@ -86,7 +85,7 @@ máximo local, con un valor mínimo de 2.5 \gev. El tamaño óptimo de la ventan
 del tipo de partícula a reconstruir y de la región del calorímetro. Las lluvias
 electromagnéticas iniciadas por electrones son en general más anchas que las de
 fotones, debido a su mayor probabilidad de interacción con el material previo al
-calorímetro electromagnético y a la radiación de fotones de bremsstrahlung. La
+calorímetro electromagnético y a la radiación de fotones de \emph{bremsstrahlung}. La
 energía total y la posición de estos \emph{clusters} es luego calibrada, separadamente
 para electrones y fotones, a fin de tener en cuenta diversos efectos como la
 pérdida de energía en el material inactivo del calorímetro o la deposición
@@ -102,17 +101,17 @@ extrapolada con la segunda capa del calorímetro es menor a 0.05 en $\eta$ y 0.0
 campo magnético del solenoide de ATLAS. Solo las trazas asociadas de esta forma
 con un \emph{cluster} son retenidas para la reconstrucción de electrones y fotones.
 
-Aquellos clusters electromagnéticos asociados en el espacio $(\eta,\phi)$ con
+Aquellos \emph{clusters} electromagnéticos asociados en el espacio $(\eta,\phi)$ con
 una traza reconstruida con $\pt > 0.5 \gev$ son clasificados como electrones. La
 definición para fotones es un poco más compleja ya que estos pueden convertir en
 un par $e^+e^-$ en el volumen anterior al calorímetro. Los fotones convertidos
 están caracterizados por la presencia de al menos una traza asociada proveniente
-de un vértice reconstruido en el ID. La probabilidad de conversión varia entre
+de un vértice reconstruido en el ID. La probabilidad de conversión varía entre
 un 40\% y un 80\%, aunque solo aquellas que ocurren antes del TRT son
 eficientemente reconstruidas.
 
 Los fotones son clasificados como \emph{no-convertidos} si no tienen trazas de
-un vértice de conversión asociadas al cluster, y como \emph{convertidos} en el
+un vértice de conversión asociadas al \emph{cluster}, y como \emph{convertidos} en el
 caso contrario. Un vértice de conversión es formado cuando dos trazas que pasan
 un cierto umbral en el TRT, forman un vértice consistente como provenientes de
 una partícula no masiva. Para aumentar la eficiencia de reconstrucción de
@@ -148,24 +147,24 @@ restante son incorrectamente reconstruidos como electrones \cite{Delmastro:17472
 
 En el caso de electrones, la eficiencia de reconstrucción es de alrededor de
 97\% para electrones con $\et=15 \gev$ y alcanza $99 \%$ para $\et=50\gev$. Esta
-eficiencia varia de 99\% a bajo $|\eta|$ hasta 95\% a alto $|\eta|$ (para
+eficiencia varía de 99\% a bajo $|\eta|$ hasta 95\% a alto $|\eta|$ (para
 electrones con $\et>15 \gev$)\cite{ATLAS-CONF-2014-032}.
 
 
 \subsection{Identificación de fotones}
 \label{sec:fotones}
 
-Para distinguir entre candidatos de fotones reales (provenientes de la colisión) de fotones de fondo
+\hl{Para distinguir entre candidatos de fotones reales (provenientes de la colisión) de fotones de fondo
 (provenientes de decaimientos de hadrones), es
 necesario contar con un algoritmo de identificación con una alta eficiencia y un alto rechazo
-de fondo, para candidatos con {\et} desde los 10 {\gev} hasta la escala del
-{\tev}. La identificación de fotones se basa en un conjunto de cortes
+de fondo para candidatos con {\et} desde los 10 {\gev} hasta la escala del
+{\tev}}. La identificación de fotones se basa en un conjunto de cortes
 rectangulares en una serie de variables discriminatorias
 que caracterizan el desarrollo lateral y longitudinal de la
 lluvia en el calorímetro electromagnético y la fracción de la lluvia filtrada en
 el calorímetro hadrónico. Los fotones reales producen generalmente depósitos de
 energía más angostos en el calorímetro electromagnético y tienen una menor
-filtración en el calorímetro hadrónico, comparado con los fotones de fondo
+filtración en el calorímetro hadrónico comparado con los fotones de fondo
 provenientes generalmente de jets, debido a la presencia de hadrones adicionales cercanos al
 candidato a fotón. Además, los candidatos provenientes de
 decaimientos aislados $\pi^0 \to \gam\gam$, están caracterizados por dos máximos
@@ -231,10 +230,10 @@ electromagnético:
 Las siguientes son las variables que utilizan la información de la primera capa
 del calorímetro electromagnético, la cual está compuesta por celdas en forma de
 bandas (\emph{strips}) que permiten una muy buena separación entre fotones aislados y
-fotones provenientes del decaimimietno del $\pi^0$. La \cref{fig:photon_pi0}
+fotones provenientes del decaimiento del $\pi^0$. La \cref{fig:photon_pi0}
 muestra el perfil de una lluvia electromagnética típica de cada tipo en eventos
 de datos reales donde se puede apreciar la estructura del perfil de energía en
-la primera capa del calorímetro EM en el caso de un decamiento $\pi^0 \to \gam\gam$.
+la primera capa del calorímetro EM en el caso de un decaimiento $\pi^0 \to \gam\gam$.
 
 
 \begin{figure}[!h]
@@ -302,7 +301,7 @@ A partir de estas variables discriminatorias se definen dos conjuntos de cortes:
 \emph{loose} y \emph{tight}.
 La selección \emph{loose} se basa solo en las formas de la lluvia
 en la segunda capa del calorímetro EM y en la energía depositada en el
-calorímetro hadrónico, y es utilizada especialmente por el trigger. La selección
+calorímetro hadrónico, y es utilizada especialmente por el \emph{trigger}. La selección
 \emph{tight} agrega además información de la capa de \emph{strips} del calorímetro, que
 provee un buen rechazo de fondo, además de ajustar los cortes en las
 demás variables. Las variables utilizadas en cada conjunto pueden verse detalladas
@@ -341,7 +340,7 @@ transversa $\et>40 \gev$ y un alto rechazo de fondo \cite{Delmastro:1747242}.
 
     \hline
     &            &                                       & \multicolumn{2}{c}{$\gamma$} & \multicolumn{3}{c}{$e$} \\
-    Categoria    & Descripción                                      & Nombre                  & L & T & L & M & T \\
+    Categoría    & Descripción                                      & Nombre                  & L & T & L & M & T \\
     \hline
 
   Aceptancia     & $|\eta|<2.37$, excluyendo $1.37<|\eta|<1.52$       & -                       &   & $\times$ &   & $\times$ & $\times$ \\
@@ -369,15 +368,15 @@ transversa $\et>40 \gev$ y un alto rechazo de fondo \cite{Delmastro:1747242}.
                    celdas, ambas en torno al centro del \emph{cluster}     & $R_\phi$                &   & $\times$ & $\times$ & $\times$ & $\times$ \\
 
 
-   Calorímetro EM ($1^\mathrm{ra}$ capa) & Ancho lateral de la lluvia en 3 strips alrededor
+   Calorímetro EM ($1^\mathrm{ra}$ capa) & Ancho lateral de la lluvia en 3 \emph{strips} alrededor
                   del máximo                                        & $w_{s,3}$               &   & $\times$ &   & $\times$ & $\times$ \\
 
                 & Ancho lateral total de la lluvia                  & $w_{s,\mathrm{tot}}$    &   & $\times$ &   & $\times$ & $\times$ \\
 
-                & Fracción de energía fuera de las 3 strips
+                & Fracción de energía fuera de las 3 \emph{strips}
                   centrales pero dentro de las 7                    & $F_{\mathrm{side}}$     &   & $\times$ &   & $\times$ & $\times$ \\
 
-                & Diferencia entre la energía de la strip con el
+                & Diferencia entre la energía de la \emph{strip} con el
                   segundo mayor depósito y la menor energía entre
                   los dos primeros máximos locales                  & $\Delta E$              &   & $\times$ &   & $\times$ & $\times$ \\
 
@@ -410,14 +409,11 @@ transversa $\et>40 \gev$ y un alto rechazo de fondo \cite{Delmastro:1747242}.
 
 \subsubsection{Corrección a las variables de identificación}
 
-%% Significant differences are observed between data and MC in the shower shape
-%% (isEM) distributions.
-
 Dado que la simulación del detector no es perfecta, las distribuciones de las variables
 discriminatorias utilizadas en la identificación
 de fotones presentan algunas diferencias que pueden resultar significativas entre datos y MC.
 Estas diferencias pueden parametrizarse a primer orden como variaciones simples
-y a partir de estos corregir el MC.
+y a partir de estas corregir el MC.
 Las diferencias para cada variable discriminatoria (DV$^i$) se calcula
 comparando las distribuciones de las mismas en los datos y en una muestra de
 Monte Carlo con una mezcla similar de eventos de señal y fondo.
@@ -569,9 +565,9 @@ Para electrones se definen tres conjuntos de cortes de identificación: \emph{lo
 en la \cref{tab:phel_id} pueden verse las variables discriminatorias utilizadas
 en cada uno.
 
-La eficiencia de identificacion fue medida utilizando electrones de los
-decamienitos de $J/\psi\to ee$ y $Z\to ee$ y se combinan para aumentar la
-precisión de resultados. Esta eficiencia tiene una alta dependencia con {\et} y, para
+La eficiencia de identificación fue medida utilizando electrones de los
+decaimientos de $J/\psi\to ee$ y $Z\to ee$ y se combinan para aumentar la
+precisión de resultados. Esta eficiencia tiene una alta dependencia con {\et} y para
 los criterios más ajustados también con $\eta$, y varía entre 96\% para el criterio
 \emph{loose} y 78\% para el criterio \emph{tight} para electrones con $\et>15\gev$.
 Al igual que en el caso de los fotones, se aplican factores de escala
@@ -614,7 +610,7 @@ definen los tres conjuntos de cortes: \emph{loose}, \emph{medium} y \emph{tight}
 Esencialmente, estos definen el umbral de {\pt}, el requerimiento en el número
 de impactos, el parámetro de impacto lateral y longitudinal con respecto al
 vértice primario para rechazar posibles rayos cósmicos, entre otros. Los
-criterios de identificación detallados pueden verse en \cite{MuonEff}.
+criterios de identificación detallados pueden verse en \cite{atlas}.
 
 %Todos los cortes de identificacion
 %provienen de las recomedndaciones propuestas por el grupo de muones \cite{MCPTwiki}.
@@ -646,14 +642,14 @@ criterios de identificación detallados pueden verse en \cite{MuonEff}.
 Se requiere además que los candidatos a muon pasen un criterio de aislamiento de
 la traza: que la suma del {\pt} de las trazas, excluyendo la traza del muon, en
 un cono de $\Delta R < 0.3$ sea menor que \unit[12]{\%} del {\pt} del muon. Las
-trazas tiene que tener cuatro impactos en el detector de silicio y el parámetro
+trazas tienen que tener cuatro impactos en el detector de silicio y el parámetro
 de impacto a lo largo de la línea del haz ($z_{0}$) debe ser de menos de
 $\unit[10]{mm}$.
 %% El corte en el {\pt} de muones para el
 %% veto se sube a $25 \gev$.
 Es necesario aplicar factores de corrección para que la eficiencia en el MC
 sea igual a la medida en datos a partir del decaimiento $Z\to\mu\mu$, los
-cuales son provistos por el grupo de performance de muones de ATLAS.
+cuales son provistos por el grupo de \emph{performance} de muones de ATLAS.
 
 
 
@@ -661,10 +657,10 @@ cuales son provistos por el grupo de performance de muones de ATLAS.
 \label{sec:jet_obj}
 
 Los partones originados en una colisión $pp$, se observan en el detector como
-jets de hadrones estables resultado de la hadronizacion de los mismos. Estos
+jets de hadrones estables resultado de la hadronización de los mismos. Estos
 jets atraviesan el detector interno, donde los hadrones cargados dejan su traza,
 antes de depositar su energía en los calorímetros electromagnético y hadrónico.
-Dada la complejidad de estos objetos, es necesario contar con un una definición
+Dada la complejidad de estos objetos, es necesario contar con una definición
 de los mismos, es decir, un algoritmo de reconstrucción.
 
 Los jets hadrónicos utilizados en los análisis de ATLAS son reconstruidos utilizando
@@ -673,32 +669,32 @@ electromagnéticas y hadrónicas en los calorímetros. El cuadrimomento es recon
 a partir de la energía y los ángulos respecto al vértice primario.
 
 Como en el caso de electrones y fotones, los depósitos de energía en los
-calorímetros son agrupadas en clusters. En este caso los clusters son
+calorímetros son agrupados en \emph{clusters}. En este caso los clusters son
 preseleccionados a partir de las celdas calorimétricas que tengan depósitos de
 energía con una magnitud mayor en al menos 4$\sigma$ del ruido esperado en las
 celdas. Las contribuciones de energía de todas las celdas vecinas a las celdas
 preseleccionadas (en 3 dimensiones) son sumadas a la energía de la celda
-preseleccionada, formando un pre-cluster. A continuación, si la energía
+preseleccionada, formando un \emph{pre-cluster}. A continuación, si la energía
 depositada en una de las celdas vecinas a la celda preseleccionada es mayor a
 2$\sigma$ por encima del valor de fondo de las celdas, estas son agregadas al
-pre-cluster. Finalmente se agrega una capa de celdas que rodean el pre-cluster
+\emph{pre-cluster}. Finalmente se agrega una capa de celdas que rodean el pre-cluster
 formando lo que se llama un \emph{cluster} topológico, o \emph{topo-cluster}.
-Estos emph{topo-clusters} son usados por los algoritmos
+Estos \emph{topo-clusters} son usados por los algoritmos
 utilizados para encontrar jets.
 
 Existen muchos algoritmos para la reconstrucción de jets, con sus ventajas y
 desventajas. Los jets utilizados en este análisis son reconstruidos usando el
 algoritmo anti-$k_t$\cite{Cacciari:2008gp} con un parámetro de distancia $D =
-0.4$ en el espacio $(\eta, \phi)$ a partir de clusters calorimétricos
+0.4$ en el espacio $(\eta, \phi)$ a partir de \emph{clusters} calorimétricos
 topológicos\cite{Lampl:1099735} formados como se describió previamente.
 
 %% El algoritmo anti-$k_t$ es un algoritmo del tipo de recombinacion secuencial.
 %% Este construye los jets combinando los objetos iniciales en objetos cada vez mas
 %% grandes de acuerdo a una condición bien definida, hasta que esta condicion no es
 %% más satisfecha por los restantes objetos.
-Este algoritmo hace uso del {\pt} de cada topo-cluster en el evento y su
-separación relativa. Para cada par de objetos (los topo-cluster individuales o
-varios topo-clusters que hayan sido agrupados por el algoritmo) $i$ y $j$ se
+Este algoritmo hace uso del {\pt} de cada \emph{topo-cluster} en el evento y su
+separación relativa. Para cada par de objetos (los \emph{topo-cluster} individuales o
+varios \emph{topo-clusters} que hayan sido agrupados por el algoritmo) $i$ y $j$ se
 define la cantidad $d_{ij}$:
 
 \begin{equation}
@@ -737,83 +733,22 @@ partículas dentro del jet verdadero que no son incluidas en el jet reconstruido
 Para compensar la diferencia entre la energía medida de los objetos puramente EM
 y la energía del jet hadrónico, debe aplicarse una calibración adicional para
 convertir la escala EM de los calorímetros de ATLAS a la escala hadrónica.
-En el caso más simple la energia medida del jet es corregida utilizando
-simulaciones MC y esta calibracion es llamada EM+JES.
+En el caso más simple la energía medida del jet es corregida utilizando
+simulaciones MC y esta calibración es llamada EM+JES.
 
 En este análisis se utiliza una calibración distinta, denominada LCW+JES. Como
-primer paso los clusters son calibrados usando el método de calibración por
-pesado de clusters locales (LCW), que consiste básicamente en pesar de forma
+primer paso los \emph{clusters} son calibrados usando el método de calibración por
+pesado de \emph{clusters} locales (LCW), que consiste básicamente en pesar de forma
 diferenciada los depósitos de energía que vienen de lluvias en el calorímetro
 electromagnético o hadrónico. Estas correcciones se aplican a la energía de los
-topo-clusters independientemente del algoritmo utilizado para la reconstrucción
+\emph{topo-clusters} independientemente del algoritmo utilizado para la reconstrucción
 de los jets y son derivadas de simulaciones Monte Carlo. La calibración final en
 la energía del jet también incluye la escala de energía (JES) que corrige la
 respuesta del calorímetro con la energía verdadera del jet proveniente de MC.
 
-%% Primero los clusters son calibrados usando el metodo de calibracion por pesado
-%% de clusters locales (LCW). Para ello como se determina la naturaleza de cada
-%% topo-cluster, es decir, si es hadronico o electromagnetico, y cada topo-cluster
-%% es corregido basado en esta clasificacion, donde estas correciones se derivan de
-%% simulaciones MC. Estas correcciones se aplican a los clusters independientemente
-%% del algoritmo utilizado para la reconstrucción de los jets. Luego los jets son
-%% reconstruidos utilizando estos topo-clusters ya corregidos. La calibracion LCW
-%% mejora la resolucion de energia de los jets aplicando distintos pesos a los
-%% depositos de energia de las lluvias electromagneticas y hadronicas.
-
-
-
-%% Excepto para el cálculo de {\met} y la limpieza de eventos, donde ningún corte
-%% en $\eta$ es aplicado, los jets solo son considerados si están en la región
-%% central del detector ($|\eta|<2.8$) y poseen un $\pt > 20\gev$.
-
-%% Como último paso, para reducir la contaminación de candidatos a jets falsos que
-%% no provengan de colisiones, y así mejorar la resolución en la reconstrucción de
-%% {\met}, los jets que fallen ciertos criterios de calidad (detallados en []) son
-%% removidos.
-
 Como último paso, se requiere que todos los jets reconstruidos pasen ciertos
-criterios de seleccion, para remover jets que no provengan de colisiones \cite{Aad:2010ad,ATLAS-CONF-2010-038}.
+criterios de selección, para remover jets que no provengan de colisiones \cite{Aad:2010ad,ATLAS-CONF-2010-038}.
 
-
-%% All reconstructed jets are required to pass several selection criteria, which re-
-%% move specific non-collision backgrounds [97, 98]. Conditions for these non-collision
-%% backgrounds are summarised in Table 5.4. Jet quality is assessed using a collection81
-%% 5.3. Jets
-%% of discriminating variables, which are summarised in Table 5.3.
-
-%% los eventos con al menos
-%% un jet que falla alguno de los siguientes criterios de calidad son removidos:
-
-%% \cite{JetCleaning}.
-
-%% \begin{itemize}\itemsep0.1cm
-%% \item Si la fraccion de energia en la endcap del calorimetro hadronico
-%%   es mayor a 0.5 $\left(\mathrm{HEC}f > 0.5\right)$, el valor absoluto
-%%   medido de la calidad del jet es mayor que 0.5 $\left(|\mathrm{HEC}Q| > 0.5\right)$,
-%%   y la calidad del jet normalizada calculada como el valor medio de la suma
-%%   cuadratica de la energia de las celdas, es mayor que 0.8 ($LArQmean > 0.8$).
-
-%% \item Si el valor absoluto de la energia total en celdas con un valor negativo es
-%%   mayor que $\unit[60]{GeV}$ el jet es considerado malo $\left(|\mathrm{neg.}\,E| > \unit[60]{GeV}\right)$.
-
-%%   %%   For this and the previous item, the signal is consistent with sporadic
-%% %%   noise in the hadronic endcap calorimeters.
-
-%% \item Si la fraccion de energia electromagnetica es mayor que 0.95
-%%   $\left(\mathrm{EM}f > 0.95\right)$, la valor absoluto de la calidad del jet
-%%   es mayor que 0.8 (0.8 $\left(|\mathrm{LAr}Q| > 0.8\right)$, and the normalized jet quality is larger than 0.8
-%% %%  $LArQmean > 0.8$ for jets with $|\eta| < 2.8$.
-%% \item If the electromagnetic energy fraction is less than 0.05
-%% %%   $\left(\mathrm{EM}f < 0.05\right)$ and the ratio of the sum \pt\ of the
-%% %%   tracks associated to the jets divided by the calibrated jet \pt\ is less than 0.05
-%% %%   $\left(\mathrm{ch}f < 0.05\right)$ for jets with $|\eta| < 2$.
-%% %%   In the case where the jet has $|\eta| \ge 2$ the jet is considered bad if
-%% %%   the electromagnetic energy fraction is less than 0.05 with no requirement on
-%% %%   the jet charge fraction.
-%% \item Si un jet tiene más del $99\%$ de su energia contenida en una sola capa
-%%   del calorimetro $(\mathrm{F}max > 0.99)$ y tiene $|\eta| < 2$, es consistente
-%%   con una senal de rayos cosmicos o \hl{beam halo muons}.
-%%   \end{itemize}
 
 
 \subsection{\bjets}
@@ -853,7 +788,7 @@ contengan hadrones $b$.
 \label{sec:met_obj}
 
 La conservación del momento en el plano transversal al haz ($x-y$) implica que
-el momento transverso en el estado final debe ser cero. Cualquier desbalance es
+el momento transverso en el estado final debe ser cero. Cualquier desequilibrio es
 lo que se llama momento faltante transverso ($\bm{\met}$) y puede indicar la
 presencia de partículas indetectables como neutrinos o nuevas partículas
 estables, o que interactúan débilmente con la materia.
@@ -868,7 +803,7 @@ considerados en el cálculo.
 La energía faltante transversa es calculada con un algoritmo basado en objetos\cite{Khoo:2012749}.
 El algoritmo utiliza para el cálculo de la energía faltante, los objetos físicos
 reconstruidos y calibrados descriptos en las secciones anteriores. Los depósitos
-de energía en el calorímetro (topo-clusters) son asociados a los objetos de alto
+de energía en el calorímetro (\emph{topo-clusters}) son asociados a los objetos de alto
 {\pt} en el siguiente orden: electrones, fotones, jets y muones. Los depósitos
 que no están asociados a ningún objeto son incluidos en el término \emph{soft}.
 La energía faltante es calculada entonces como la suma de los distintos
@@ -889,14 +824,14 @@ $(E^{\mathrm{miss}}_{x(y)})^{\text{jet}}$. La contribución de muones son
 incluidos en $(E^{\mathrm{miss}}_{x(y)})^{\mu}$ utilizando los muones que pasan
 los criterios de identificación descriptos anteriormente con $\pt>10\gev$
 exceptuando el criterio de aislamiento. El término restante
-$(E^{\mathrm{miss}}_{x(y)})^{\mathrm{soft}}$ es calculado de los topo-clusters
+$(E^{\mathrm{miss}}_{x(y)})^{\mathrm{soft}}$ es calculado de los \emph{topo-cluster}
 calibrados y las trazas que no son asociadas a ninguno de los objetos
 reconstruidos, usando un algoritmo de flujo de energía.
 La falta del término de taus significa que los taus decayendo hadrónicamente se
-incluyen en el término de jets o el término soft dependiendo del {\pt} del jet
+incluyen en el término de jets o el término \emph{soft} dependiendo del {\pt} del jet
 asociado.
 
-Finalmente, la energia faltante {\met} y el ángulo azimutal de la misma
+Finalmente, la energía faltante {\met} y el ángulo azimutal de la misma
 $\phi^\mathrm{miss}$ son calculados como:
 
 \begin{align}
