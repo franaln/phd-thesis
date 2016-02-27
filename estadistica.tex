@@ -229,7 +229,7 @@ dentro es rechazada.
 \end{figure}
 
 La probabilidad de rechazar $H_0$ siendo ésta verdadera es denominada tamaño de la
-constrastación $\alpha$:
+contrastación $\alpha$:
 
 \begin{equation}
   \alpha = \int_{R} g(t|H_0)\, dt
@@ -239,7 +239,7 @@ lo cual también determina el nivel de significancia como
 $(100 - \alpha) \%$. Este error, de rechazar $H_0$ cuando la hipótesis es verdadera, es llamado
 error de tipo I. Por otro lado el error de aceptar $H_0$ cuando es falsa se
 llama error de tipo II, y su probabilidad de ocurrencia, $\beta$, depende de la
-hipótesis alternativa $H_1$ y del poder del constraste que se define como $(1-\beta)$:
+hipótesis alternativa $H_1$ y del poder del contraste que se define como $(1-\beta)$:
 
 \begin{equation}
 1-\beta = \int_R g(t|H_1)\, dt
@@ -310,24 +310,20 @@ a la mediana de la hipótesis $H_1$.
 
 \section{Descubrimiento}
 
-%% Si $\hat{\mu}$ y $\hat{\btheta}$ son los valores que maximizan $L(\mu,\btheta)$ o minimizan
-%% $- \ln L(\mu, \btheta)$ y $\bdtheta$ es el valor que maximiza $L$ para un valor fijo de $\mu$
-%% (the profile value of \btheta), el cociente de \emph{likelihood} es,
-
 Generalmente, cuando se modela un fenómeno aleatorio de interés, el modelo
 elegido para ajustar a las observaciones de dicho fenómeno suele tener varios
 parámetros, de los cuales solo algunos pueden ser de interés. De manera formal a
-estos parámetros se los denomina parámetros de interés y al resto, parámetros
-\emph{nuisance}, y conviene separarlos explícitamente $\btheta \to (\mu, \btheta)$.
+estos parámetros se los denomina <<parámetros de interés>> y al resto, <<parámetros
+\emph{nuisance}>>, y conviene separarlos explícitamente $\btheta \to (\mu, \btheta)$.
 
 Para la búsqueda de nueva física es común definir como parámetro de interés a la
 intensidad de la señal de forma tal que la hipótesis de solo-fondo corresponde a
 $\mu = 0$ , y la hipótesis de señal+fondo a $\mu = 1$.
 En general, las incertezas sistemáticas son incluidas en el modelo
-utilizando parámetros nuisance.
+utilizando parámetros \emph{nuisance}.
 
 En este escenario, donde tenemos un sólo parámetro de interés
-$\mu$, y el resto de parámetros nuisance $\btheta$, es conveniente
+$\mu$, y el resto de parámetros \emph{nuisance} $\btheta$, es conveniente
 definir el \emph{profile likelihood ratio} (PLR),
 
 \begin{equation}
@@ -340,10 +336,10 @@ valores estimados MLE. En el numerador, los parámetros {$\doublehat{\btheta}$}
 son los valores que maximizan la función \emph{likelihood} para un valor fijo de $\mu$,
 es decir que es una función multidimensional que depende solo del parámetro $\mu$.
 Este proceso de elegir valores específicos de los parámetros
-nuisance para un valor dado de $\mu$ se lo conoce como \emph{profiling}. El PLR
+\emph{nuisance} para un valor dado de $\mu$ se lo conoce como \emph{profiling}. El PLR
 depende explícitamente de $\mu$ pero es independiente de los parámetros
-nuisance que han sido ``eliminados'' vía el \emph{profiling}.
-La presencia de los parámetros nuisance que son ajustados a los datos ensanchan
+\emph{nuisance} que han sido ``eliminados'' vía el \emph{profiling}.
+La presencia de los parámetros \emph{nuisance} que son ajustados a los datos ensanchan
 la función \emph{likelihood} como función de $\mu$, respecto a la distribución si sus
 valores estuvieran fijos. De cierta forma reflejan una pérdida de información
 sobre $\mu$ debido a estos parámetros desconocidos, que suelen ser
@@ -358,7 +354,7 @@ en el PLR. De la \cref{eq:lambdamu} se puede ver que $0 \leq \lambda \leq 1$, y
 $\lambda$ cercano a 1 implica un buen acuerdo entre datos y el valor hipotético de $\mu$.
 De forma equivalente conviene utilizar como estadístico de prueba $t_\mu = -2 \ln \lambda(\mu)$.
 En el límite asintótico ($N\to\infty$) el teorema de Wilk\cite{WilkTheo} muestra
-que $-2 \ln \lambda(\mu)$ sigue una distribucion $\chi^2$ con un grado de libertad.
+que $-2 \ln \lambda(\mu)$ sigue una distribución $\chi^2$ con un grado de libertad.
 Esta propiedad sera útil para aproximar la pdf del estadístico
 de prueba (ver \cref{sec:aprox}).
 
@@ -390,9 +386,6 @@ evidencia contra el modelo de solo-fondo, este tipo de discrepancia no muestran
 que los datos contengan eventos de señal. Es por este motivo que sólo se
 considera que los datos no tienen un buen acuerdo con la hipótesis de solo-fondo
 cuando $\hat{\mu}$ es mayor a cero.
-%% En otros experimentos, como los de
-%% oscilaciones de neutrinos por ejemplo, la hipótesis de señal puede predecir un
-%% número mayor o menor de eventos con respecto a la hipótesis de no oscilaciones.
 Para este caso se define $q_0$ como,
 
 \begin{equation}
@@ -446,9 +439,6 @@ $q_\mu$,
   \end{cases} \label{eq:qmu}
 \end{equation}
 
-%% Conviene notar que para establecer un límite superior, una fluctuación hacia
-%% arriba de los datos no representa una mayor incompatibilidad de la hipótesis
-%% $\mu$.
 La razón para poner $q_\mu = 0$ para $\hat{\mu} > \mu$ es que cuando se
 establece un límite superior, el hecho de que $\hat{\mu} > \mu$ representa menos
 compatibilidad con $\mu$ que los datos obtenidos, y por lo tanto no se considera
@@ -534,7 +524,7 @@ Con motivo de solucionar estos inconvenientes se introduce el método de {\cls}\
   \cls = \frac{p_\mu}{1-p_b}  \equiv \frac{\clsb}{\clb}
 \end{equation}
 %
-donde $p_b$ es el valor del mismo test bajo la hipótesis de solo-fondo,
+donde $p_b$ es el valor del mismo estadístico bajo la hipótesis de solo-fondo,
 
 \begin{equation}
   1 - p_b = \int_{q_\mu^\text{obs}}^{\infty}
@@ -548,9 +538,6 @@ $\cls = 0.05$. Se rechazan los valores de $\mu$ si $\mu <
 Cabe mencionarse para una observación cercana al número de eventos esperado de sólo-fondo ($\clb
 \sim 0.05$) el {\cls} da un valor del orden de dos veces el obtenido utilizando
 el {\clsb}.
-
-%% Entonces, el método {\cls} evita no sólo el problema descripto anteriormente, sino también
-%% la propiedad indeseable del {\clsb} que para dos
 
 
 % -----------------------
@@ -710,7 +697,7 @@ s/\sqrt{b} + \mathcal{O}(s/b)$ que es la expresión de la \cref{eq:Zsimple}
 y es válida sólo en el límite $s \ll b$.
 
 Si el número de eventos esperado de fondo $b$ no es conocido, uno debe incluirlo
-como un parámetro nuisance en la función \emph{likelihood}. Pero como $b$ puede
+como un parámetro \emph{nuisance} en la función \emph{likelihood}. Pero como $b$ puede
 ajustarse para cualquier número de eventos, es necesario introducir información
 adicional para restringir $b$. En general se suele hacer mediante una medida
 auxiliar, mirando el número de eventos observados $m$ en una región de control
