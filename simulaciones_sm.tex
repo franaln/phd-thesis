@@ -93,9 +93,8 @@ Como se describe en el \cref{cap:seleccion} la selección de señal involucra
 muchos jets en el estado final, razón por lo que es importante modelar los estados final
 multipartónicos de forma adecuada. Con esto en mente, el generador de eventos
 {\alpgen} (v 2.14) fue utilizado, incluyendo los efectos EWK y QCD a LO para los
-procesos de interacción fuerte multipartónicos. Este generador fue interfaceado
-con {\herwig} v6.5.2 para la simulación de las lluvias y los procesos de
-fragmentación y con {\jimmy} para la simulación de los eventos subyacentes. Las
+procesos de interacción fuerte multipartónicos. Se utilizó {\herwig} v6.5.2 para la simulación de las lluvias y los procesos de
+fragmentación y {\jimmy} para la simulación de los eventos subyacentes. Las
 funciones de densidad partónica utilizadas fueron las CTEQ6L1. La normalización
 a la luminosidad integrada acumulada se realizó a partir de la sección eficaz
 mostrada en la \cref{tab:bkg_wzjets_samples} usando cálculos QCD a NNLO del
@@ -171,7 +170,7 @@ tau con {\tauola}\cite{tauola}. Se requirió que los fotones a nivel generador
 tengan un $\pt > 80 \gev$. Para evitar efectos cinemáticos introducidos por el
 filtro, el corte en el {\pt} del fotón en la muestra reconstruida se aumentó a
 95 {\gev}. Se utilizó un factor-$k$ de $1.9 \pm 0.4$\cite{Melnikov:2011ta, tth}
-para tener en cuenta efectos de mayor orden en teoria de perturbaciones.
+para tener en cuenta efectos de mayor orden en teoría de perturbaciones.
 Los detalles de la simulación se encuentran en la \cref{tab:mc_ttbar_samples}.
 Se utilizaron además algunas muestras a nivel generador como variaciones para calcular
 las incertezas sistemáticas como se explica en la \cref{sec:syst_ttbargamma}.
@@ -183,13 +182,13 @@ en la etapa de optimización y para realizar chequeos de los métodos utilizados
 La
 muestra MC fue generada utilizando
 {\powheg}\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd} con la lluvia
-partonica y fragmentación hecha por {\pythia}. Para el UE se utilizó Perugia
+partónica y fragmentación hecha por {\pythia}. Para el UE se utilizó Perugia
 2011C con el
 conjunto de PDFs CTEQ6L1 LO. La radiación de fotones adicional fue agregada con
 {\photos}\cite{photos}.
 
-Por último, se realizó la remocion
-de los eventos con un foton real con $\pt > 95 \gev$ y $\Delta{\rm R}(e/\mu/\tau/g/q,\gamma) > 0.1$ de la muestra de {\ttbar} para evitar la superposicion con los eventos
+Por último, se realizó la remoción
+de los eventos con un fotón real con $\pt > 95 \gev$ y $\Delta{\rm R}(e/\mu/\tau/g/q,\gamma) > 0.1$ de la muestra de {\ttbar} para evitar la superposición con los eventos
 considerados en las muestras de {\ttgam}.
 
 
@@ -200,7 +199,7 @@ considerados en las muestras de {\ttgam}.
   \small
   \begin{tabular}{lccccc}
     \hline
-    Proceso & Generador & $\sigma$ [pb] & factor-$k$ & Eficiencia & $L [\mathrm{fb}^{-1}]$ \\
+    Proceso & Generador & $\sigma$ [pb] & factor-$k$ & Eficiencia & $L$ [\ifb] \\
     \hline
     {\ttbar} & \powheg+\pythia & 253.00 & 1.00 & 0.543 & 580 \\
     \hline
@@ -221,18 +220,18 @@ considerados en las muestras de {\ttgam}.
   \label{tab:mc_ttbar_samples}
 \end{table}
 
-\subsection{Top (+ $\gamma$)}
+\subsection{\emph{Top} (+ $\gamma$)}
 
-La producción de un quark top con un fotón asociado fue generado utilizando
+La producción de un \emph{quark top} con un fotón asociado fue generado utilizando
 \textsc{Whizard} 2.1.1 \cite{whizard, whizard2}.
-El fotón extra puede estar tanto en la producción del top como en los decaimientos
+El fotón extra puede estar tanto en la producción del \emph{top} como en los decaimientos
 sucesivos. Sin embargo, la producción y el decaimiento son tratados de forma
 separada, por lo que los efectos de interferencia pueden ser ignorados. Para las
 lluvias partónicas y la fragmentación fue utilizado {\pythia}\cite{pythia}. La
 radiación de fotones fue agregada con {\photos}\cite{photos}, y los
 decaimientos de los leptones tau con {\tauola}\cite{tauola}.
 
-La producción de tops resulta en un fondo poco importante para este análisis,
+La producción de \emph{tops} resulta en un fondo poco importante para este análisis,
 aunque de mayor importancia para las regiones de control y validación. La producción $Wt$
 fue generada utilizando {\powheg}, incluyendo correcciones a NLO en QCD. La lluvia
 partónica y la fragmentación fue simulada utilizando {\pythia} (con P2011).
@@ -251,7 +250,7 @@ la sección eficaz calculada en \cite{Kidonakis:2010ux}.
 
 \begin{table}[!htb]
   \centering
-  \caption{Muestras de quark top y {\tgam}. La sección eficaz a
+  \caption{Muestras de \emph{quark top} y {\tgam}. La sección eficaz a
     NNLO, eficiencia del filtro, y luminosidad integrada correspondiente a la estadística total de cada muestra
     están detalladas en la tabla.}
 
@@ -390,7 +389,7 @@ ambos bosones fueron considerados.
   \small
   \begin{tabular}{lccccc}
     \hline
-    Proceso & Generador & $\sigma [pb]$ & factor $k$ & Eficiencia & $L [fb^{-1}]$ \\
+    Proceso & Generador & $\sigma [pb]$ & factor $k$ & Eficiencia & $L$ [\ifb] \\
     \hline
     %% $WW(2l2\nu)$ \sherpa (126892)  & 5.50 & 1.07 & 1 & 458.9 \\
     %% $WZ(3l)$ \sherpa (126893) & 9.75 & 1.06 & 1 & 261.1 \\
