@@ -300,14 +300,14 @@ lluvias electromagnéticas muy similares en el detector. Los algoritmos de
 reconstrucción de fotones están diseñados para reducir la identificación errónea
 de electrones como fotones aunque, para poder mantener una alta eficiencia de
 reconstrucción, no se realiza una distinción demasiado estricta. En caso de
-duda, los clusters electromagnéticos son reconstruidos bajo ambas hipótesis
+duda, los \emph{clusters} electromagnéticos son reconstruidos bajo ambas hipótesis
 (electrón o fotón) y guardados (duplicados) en ambas categorías. Esto implica
 que algunos electrones pueden terminar siendo reconstruidos como fotones, y si
 estos pasan la selección de fotones utilizada en el análisis, contribuirán al
 fondo por mala identificación $e\to\gamma$.
 
-Los electrones son reconstruidos a partir de los clusters asociados a una traza,
-mientras que los fotones son reconstruidos de los clusters que no tienen ninguna
+Los electrones son reconstruidos a partir de los \emph{clusters} asociados a una traza,
+mientras que los fotones son reconstruidos de los \emph{clusters} que no tienen ninguna
 traza asociada (candidatos a fotones no-convertidos) o están asociados a un
 vértice de conversión (candidatos a fotones convertidos). Se consideran los
 vértices con una o dos trazas en la reconstrucción de fotones convertidos, y por
@@ -319,7 +319,7 @@ espera que una fracción de electrones pueda ser reconstruida como fotones
 convertidos, por ejemplo, si falla la asociación de la traza a un impacto en la
 capa-$B$, o si se asocia un vértice de conversión espurio a ella. Asimismo, el
 electrón puede ser reconstruido como un fotón no-convertido si falla el
-algoritmo que asocia la traza al cluster .
+algoritmo que asocia la traza al \emph{cluster}.
 
 La fracción de electrones reconstruidos como fotones, depende claramente del
 material en el detector, es por eso que pueden existir diferencias si se calcula
@@ -473,7 +473,7 @@ convertidos y no-convertidos de forma separada.
 Para estimar la incerteza sistemática del método utilizado, el factor {\feg} fue
 calculado variando el tamaño de la ventana de masa del $Z$, y sin la sustracción
 del fondo. Como se aprecia en la \cref{tab:efake_syst} la mayor variación se
-obtine en el caso de no realizar la sustracción del fondo y por lo tanto se
+obtiene en el caso de no realizar la sustracción del fondo y por lo tanto se
 utiliza este valor como la incerteza sistemática del método, a pesar de que
 resulta el límite más desfavorable.
 
@@ -551,7 +551,7 @@ Para reducir significativamente el fondo proveniente de jets, en el análisis se
 utilizan fotones que satisfacen un criterio de selección \emph{tight}, como se
 describe en \cref{sec:obj_photons}. Esta selección es inclusiva respecto a los
 fotones reales, tiene una moderada contaminación de jets y es, por definición,
-un criterio más ajustado que el trigger de fotones utilizado para la toma de los
+un criterio más ajustado que el \emph{trigger} de fotones utilizado para la toma de los
 datos. Por esta razón, hay una suficiente cantidad de candidatos a fotones
 provenientes de jets que fallan la selección \emph{tight} pero satisfacen una
 selección intermedia. Estos jets más similares a un fotón real, denominados
@@ -728,7 +728,7 @@ identificación \emph{loose}, pero fallan al menos uno de los cortes
 objetivo de modelar el fondo tanto en datos como en MC. Se obtiene un mejor
 acuerdo para la definición \emph{loose'-non-tight}, en la cual los
 fotones pasan todos los cortes \emph{tight} salvo (al menos) uno de las
-variables en la sección de bandas del calorimetro ($F_\text{side}$, $w_{s3}$, $E_\text{ratio}$,
+variables en la sección de bandas del calorímetro ($F_\text{side}$, $w_{s3}$, $E_\text{ratio}$,
 $\Delta E$). Estas variables son construidas con solo algunas bandas centrales
 alrededor de la dirección del fotón, y por lo tanto se espera que no tengan una
 correlación con la energía de aislamiento del fotón, para cuyo cálculo se excluye
@@ -753,7 +753,7 @@ por lo tanto es posible la extrapolación a la SR.
 
 Más aún, como se ve en la \cref{fig:jetfake_pseudo_data_pt}, los fotones \emph{loose'-non-tight}
 reproducen mejor el espectro de {\pt} de los fotones \emph{tight}, y no es necesario
-aplicar ninguna correción adicional.
+aplicar ninguna corrección adicional.
 
 \begin{figure}[!h]
   \centering
