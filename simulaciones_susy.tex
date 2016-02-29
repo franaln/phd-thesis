@@ -12,11 +12,28 @@ las colisiones del LHC va a proceder por medio de decaimientos en cascada hasta
 el neutralino NLSP que decaerá a un gravitino y una partícula del SM, que
 dependerá de la naturaleza de la NSLP. Distintas posibilidades para la
 naturaleza de la NLSP pueden ser consideradas, las cuales dan lugar a estados
-finales distintos y complementarios entre si, para cubrir las distintas regiones
+finales distintos y complementarios entre sí, para cubrir las distintas regiones
 del espacio de fase de los modelos GGM. Dentro de ATLAS se exploraron cuatro
 estados finales diferentes: dos fotones, un fotón y un leptón, un fotón y
 {\bjets}, y un fotón y jets, todos con energía faltante, correspondiente a los
-gravitinos LSP.
+gravitinos LSP. En la \cref{fig:ggm_diagrams} pueden verse los diagramas de
+los distintos estados finales posibles dependiendo de la composición del neutralino NLSP.
+
+
+\begin{figure}[!htb]
+  \centering
+
+  \includegraphics[width=0.35\textwidth,keepaspectratio]{gogo-qqqqphphGG-GMSB.pdf}\hspace{1cm}
+  \includegraphics[width=0.35\textwidth,keepaspectratio]{gogo-qqqqZZGG-GMSB.pdf}
+
+  \includegraphics[width=0.35\textwidth,keepaspectratio]{gogo-qqqqhphGG-GMSB.pdf}\hspace{1cm}
+  \includegraphics[width=0.35\textwidth,keepaspectratio]{gogo-qqqqphZGG-GMSB.pdf}
+
+  \caption{Diagramas de Feynman de producción de gluinos, ilustrando los distintos
+    estados finales dependiendo la composición del neutralino NLSP.}
+  \label{fig:ggm_diagrams}
+\end{figure}
+
 
 En particular en esta tesis se focalizó en el análisis de un estado final que
 consiste en un único fotón, jets y energía faltante.
@@ -24,15 +41,10 @@ La selección de eventos que se describe en el \cref{cap:seleccion} fue diseñad
 maximizar la sensibilidad a pequeñas señales con esta topología general.
 Cualquier imposición de cortes muy dependientes del modelo fueron evitadas,
 tratando de mantener el análisis lo más independiente del modelo como fuera
-posible. Sin embargo, una interpretación en el marco de un modelo especifico es
+posible. Sin embargo, una interpretación en el marco de un modelo específico es
 inevitable. Con tal motivo se simuló un conjunto de puntos de señal con
 distintos valores de los parámetros para cubrir la región del espacio de
 parámetros donde pueda manifestarse dicha señal.
-
-%% Se simularon puntos de senal para la produccion de gluinosLos resultados se interpretaron
-%% son interpretados en el contexto de GGM que
-%% incluyen la produccion de supercompaneras de particulas del SM que se acoplan
-%% fuertemente comot ambien de que poseen solo carga electrodebil.
 
 Se utilizó un espectro simplificado en el cual, básicamente, el espacio de
 parámetros consiste en la escala de producción (por simplicidad, la masa del
@@ -42,7 +54,7 @@ Esta aproximación es similar a los denominados <<modelos simplificados>>
 utilizados en otras búsquedas.
 La masa del gluino es el único parámetro libre de las partículas de color para
 poder determinar un límite conservativo en la masa del mismo. Todos los
-parámetros de masa \emph{soft} de los \emph{squarks} se fijan en 2.5 \tev.
+parámetros de masa \emph{soft} de los \emph{squarks} se fijaron en 2.5 \tev.
 
 Para maximizar la probabilidad de tener un único fotón en el estado final, es
 necesario que $\mathrm{BR}(\ninoone \to \gam\,\gravino) \sim 50\%$. Esto resulta
@@ -64,8 +76,8 @@ Los demás parámetros del modelo se fijan en $M_2=2.5\tev$, $\tan\beta=1.5$ y
 $c\tau_{\mathrm{NLSP}} < 0.1$ mm. Este último asegura que el neutralino decaiga
 rápidamente dentro del detector y se logra haciendo al gravitino lo
 suficientemente liviano ($m_{\tilde{G}}=10^{-9} \gev$). Todos los términos
-tri-lineares son fijados a cero y las masas de los sleptones a $2.5 \tev$.
-Las masas del higgs liviano ($h$) y el pseudoescalar ($A$) se fijan a
+trilineales son fijados a cero y las masas de los sleptones a $2.5 \tev$.
+Las masas del Higgs liviano ($h$) y el pseudoescalar ($A$) se fijan a
 $m_{h} = 126 \gev$ y $m_{A} = 2 \tev$.
 La masa del $h$ se considera a partir del valor
 medido de la masa del Higgs observado en el a\~no 2012.
@@ -82,7 +94,7 @@ A partir de estos estudios se procedió a simular un conjunto de puntos de seña
 (\emph{grid}) en el plano ($m_{\gluino}$, $m_{\ninoone}$), variando los parámetros
 $M_3$ y $\mu$. El parámetro $M_1$ se ajustó, dependiendo del $\mu$ de forma de
 obtener las BR descriptas anteriormente. La \emph{grid} cubre el espacio $150\gev <
-m_{\ninoone} < 1250 \gev$ y $800\gev < m_{\gluino} < 1300 \gev$, con
+m_{\ninoone} < 1250 \gev$ y $800\gev < m_{\gluino} < 1450 \gev$, con
 $m_{\ninoone} < m_{\gluino}$ (ver \cref{fig:gridpoints}).
 
 
@@ -91,7 +103,7 @@ $m_{\ninoone} < m_{\gluino}$ (ver \cref{fig:gridpoints}).
   \includegraphics[width=0.6\textwidth]{figures/run1_grid}
   \caption{Conjunto de puntos (\emph{grid}) de señal simulada para el presente
     análisis. Los cuadrados azules representan los distintos puntos de señal
-    generados con distintos valores de $m_{\gluino}$ y $m_{\ninoone}$. También
+    generados con distintos valores de $M_3$ y $\mu$. También
     puede verse la relación con las masas $m_{\gluino}$ y $m_{\ninoone}$.}
   \label{fig:gridpoints}
 \end{figure}
@@ -110,10 +122,6 @@ en la \cref{fig:mass_spectra}, para algunos puntos de la \emph{grid}, (885, 146)
   \resizebox{0.49\textwidth}{!}{\input{tikz/susy_GGM_M3_mu_850_150.tex}}
   \resizebox{0.49\textwidth}{!}{\input{tikz/susy_GGM_M3_mu_1450_1050.tex}}
 
-   %% \includegraphics[width=0.49\textwidth]{figures/masses_GGM_M3_mu_800_150}
-   %% %%\includegraphics[width=0.45\textwidth]{figures/masses_GGM_M3_mu_1000_750}
-   %% \includegraphics[width=0.49\textwidth]{figures/masses_GGM_M3_mu_1450_1050}
-
    \caption{Espectro de masas de las partículas supersimétricas para dos puntos de la \emph{grid} de señal.
      En la izquierda para (885,146) y en la derecha (1463, 1053), en el plano \mgmn.}
    \label{fig:mass_spectra}
@@ -122,7 +130,7 @@ en la \cref{fig:mass_spectra}, para algunos puntos de la \emph{grid}, (885, 146)
 Para cada uno de los 124 puntos de señal que constituyen la \emph{grid} se generaron
 5000 eventos, utilizando {\herwigpp} v2.5.2\cite{Bahr:2008pv} y el conjunto de
 PDFs CTEQ6L1\cite{Nadolsky:2008zw}. Se aplicó un filtro a nivel generador, que
-requería la presencia de un fotón con un {\pt} de al menos 100 \gev, para
+requería la presencia de al menos un fotón con $\pt > 100 \gev$, para
 optimizar la generación, especialmente en los puntos donde el
 neutralino tiene menor masa. La eficiencia del filtro para todas las muestras
 simuladas puede verse en la \cref{tab:signal_filter_eff}. La simulación del
@@ -247,7 +255,7 @@ detector ATLAS se realizó con la simulación rápida
 Se realizaron algunos estudios para entender mejor el estado final y poder
 identificar las distintas regiones en el espacio de fase, lo cual facilitaría el
 proceso de optimización de las posibles regiones de se\~nal. En la
-\cref{fig:signal_br_gl} se presentan los distintos BR de los gluinos para todos
+\cref{fig:signal_br} (izquierda) se presentan los distintos BR de los gluinos para todos
 los puntos de la \emph{grid}. Resulta evidente que la cadena de decaimiento dominante
 varía en las distintas regiones de la \emph{grid}, dependiendo de la masa del gluino y
 el neutralino. Se puede ver que el decaimiento dominante es a través de
@@ -266,33 +274,37 @@ al igual que la energía faltante.
 \begin{figure}[!htb]
   \centering
 
-  \includegraphics[width=0.5\textwidth]{figures/br_gl_X}
+  \includegraphics[width=0.49\textwidth]{figures/br_gl_X}
+  \includegraphics[width=0.49\textwidth]{figures/br_n1_X}
 
-  \caption{Tasas de decaimiento (BR) de los gluinos para los distintos puntos de la \emph{grid} en
-    el plano \mgmn. Para cada punto de señal, la fracción del rectángulo de cada color representa
+  \caption{Tasas de decaimiento (BR) de los gluinos (izquierda) y
+    de los neutralinos NLSP en $\gamma\gravino$, $\gamma Z$ y $\gamma h$ (izquierda)
+    para los distintos puntos de la \emph{grid} en el plano \mgmn.
+    Para cada punto de señal, la fracción del rectángulo de cada color representa
     el BR a cada uno de los posibles estados finales.}
-  \label{fig:signal_br_gl}
+  \label{fig:signal_br}
 \end{figure}
 
 
 \begin{figure}[!htb]
   \centering
 
-  \includegraphics[width=0.49\textwidth]{diagram_a}
-  \includegraphics[width=0.49\textwidth]{diagram_b}
+  \includegraphics[width=0.43\textwidth]{diagrama_a}\hspace{0.5cm}
+  \includegraphics[width=0.43\textwidth]{diagrama_b}
 
-  \includegraphics[width=0.49\textwidth]{diagram_c}
-  \includegraphics[width=0.49\textwidth]{diagram_d}
+  \vspace{1cm}
 
-  \caption{Diagramas de Feynman para la producción de gluinos y el subsiguiente
-    decaimiento de los mismos hasta el estado final. Los distintos diagramas ilustran
-    las posibles cadenas de decaimiento.}
+  \includegraphics[width=0.43\textwidth]{diagrama_c}\hspace{0.5cm}
+  \includegraphics[width=0.43\textwidth]{diagrama_d}
+
+  \caption{Diagramas de Feynman ilustrando las posibles cadenas de decaimiento que dan lugar
+    el estado final considerado.}
   \label{fig:signal_diagrams}
 
 \end{figure}
 
 
-En la \cref{fig:signal_br_n1} se presentan las BR de decaimiento del neutralino
+En la \cref{fig:signal_br} (derecha) se presentan las BR de decaimiento del neutralino
 más liviano (\ninoone), compatibles con las esperadas a partir del modelo que se
 utilizará para el presente análisis (\cref{eq:n1_gam,eq:n1_z,eq:n1_h}). Estos
 valores varían en menos del 1\% en los distintos puntos de la \emph{grid}, salvo para
@@ -300,16 +312,15 @@ neutralinos livianos ($<200\gev$) donde la producción de Higgs es altamente
 suprimida, mientras aumenta el decaimiento a $Z$, y $\mathrm{BR}(\ninoone \to
 \gam \gravino)$ empieza a caer llegando al 40\%.
 
-\begin{figure}[!htb]
-  \centering
+%% \begin{figure}[!h]
+%%   \centering
 
-  \includegraphics[width=0.5\textwidth]{figures/br_n1_X}
 
-  \caption{Tasas de decaimiento (BR) de los neutralinos LSP en $\gamma\gravino$, $\gamma Z$ y
-    $\gamma h$ para los distintos puntos de la \emph{grid} en el plano \mgmn. Para cada punto de señal,
-    la fracción del rectángulo de cada color representa el BR a cada uno de los posibles estados finales.}
-  \label{fig:signal_br_n1}
-\end{figure}
+%%   \caption{Tasas de decaimiento (BR) de los neutralinos NLSP en $\gamma\gravino$, $\gamma Z$ y $\gamma h$
+%%     para los distintos puntos de la \emph{grid} en el plano \mgmn. Para cada punto de señal,
+%%     la fracción del rectángulo de cada color representa el BR a cada uno de los posibles estados finales.}
+%%   \label{fig:signal_br_n1}
+%% \end{figure}
 
 
 
@@ -326,11 +337,11 @@ partículas supersimétricas, se utilizan
 las secciones eficaces calculadas a NLO usando {\prospino} \cite{Beenakker:1996ed}.
 
 
-\newcommand{\pdfcteqpm}{\ensuremath{\Delta\mathrm{PDF}^{\pm}(\mathrm{CTEQ})}}
-\newcommand{\scacteqpm}{\ensuremath{\Delta\mathrm{SCA}^{\pm}(\mathrm{CTEQ})}}
+\newcommand{\pdfcteqpm}{\ensuremath{\mathrm{PDF}^{\pm}_{\mathrm{CTEQ}}}}
+\newcommand{\scacteqpm}{\ensuremath{\mu^{\pm}_{\mathrm{CTEQ}}}}
 
-\newcommand{\pdfmstwpm}{\ensuremath{\Delta\mathrm{PDF}^{\pm}(\mathrm{MSTW})}}
-\newcommand{\scamstwpm}{\ensuremath{\Delta\mathrm{SCA}^{\pm}(\mathrm{MSTW})}}
+\newcommand{\pdfmstwpm}{\ensuremath{\mathrm{PDF}^{\pm}_{\mathrm{MSTW}}}}
+\newcommand{\scamstwpm}{\ensuremath{\mu^{\pm}_{\mathrm{MSTW}}}}
 
 \newcommand{\alphap}{\ensuremath{\alpha_s_+}}
 \newcommand{\alpham}{\ensuremath{\alpha_s^-}}
@@ -350,15 +361,15 @@ son las variaciones en $\pm 1\sigma$ en la PDF MSTW, y {\alphapm} son las
 correspondientes incertezas de la constante de acoplamiento fuerte, entonces,
 
 \begin{align}
-  \Delta\mathrm{CTEQ}^{\pm} &= \sqrt{(\pdfcteqpm)^2 + (\scacteqpm)^2 + (\alphapm)^2} \\
-  \Delta\mathrm{MSTW}^{\pm} &= \sqrt{(\pdfmstwpm)^2 + (\scamstwpm)^2}
+  \mathrm{CTEQ}^{\pm} &= \sqrt{(\pdfcteqpm)^2 + (\scacteqpm)^2 + (\alphapm)^2} \\
+  \mathrm{MSTW}^{\pm} &= \sqrt{(\pdfmstwpm)^2 + (\scamstwpm)^2}
 \end{align}
 
 Los correspondientes extremos por arriba y abajo de la envolvente pueden calcularse a partir de estos:
 
 \begin{align}
-  U &= \max(\Delta\mathrm{CTEQ}^\mathrm{nom} + \Delta\mathrm{CTEQ}^{+},\quad \Delta\mathrm{MSTW}^\mathrm{nom} + \Delta\mathrm{MSTW}^{+}) \\
-  L &= \min(\Delta\mathrm{CTEQ}^\mathrm{nom} - \Delta\mathrm{CTEQ}^{-},\quad \Delta\mathrm{MSTW}^\mathrm{nom} - \Delta\mathrm{MSTW}^{-})
+  U &= \max(\mathrm{CTEQ}^\mathrm{nom} + \mathrm{CTEQ}^{+},\quad \mathrm{MSTW}^\mathrm{nom} + \mathrm{MSTW}^{+}) \\
+  L &= \min(\mathrm{CTEQ}^\mathrm{nom} - \mathrm{CTEQ}^{-},\quad \mathrm{MSTW}^\mathrm{nom} - \mathrm{MSTW}^{-})
 \end{align}
 %
 y la sección eficaz final ($\sigma$) y su incerteza simétrica ($\Delta\sigma$) se obtiene como:
@@ -376,12 +387,12 @@ graficada la sección eficaz como función de la masa de las partículas
 producidas, mientras que en la \cref{fig:signal_xs_total} se puede apreciar la
 fracción en la producción electrodébil comparada con la producción total.
 
-\begin{table}[!htb]
+\begin{table}[!h]
   \centering
   \caption{Sección eficaz a NLO+NLL para la producción de gluinos para los distintos
     puntos de la \emph{grid} de señal. La última columna es la incerteza teórica.}
 
-    \begin{tabular}{cccc}
+    \begin{tabular}{ccrr}
     \hline
     $M_3$ [\gev] & $m_{\gluino}$ [\gev] & $\sigma$(NLO+NLL) [pb] & Incerteza Total [$\%$]\tabularnewline
     \hline
@@ -405,12 +416,12 @@ fracción en la producción electrodébil comparada con la producción total.
   \label{tab:signal_xs_strong}
 \end{table}
 
-\begin{table}[!htb]
+\begin{table}[!h]
   \centering
   \caption{Sección eficaz total a NLO para la producción electrodébil de neutralinos y charginos
     para los distintos puntos de la \emph{grid} de señal. La última columna  es la incerteza
     teórica.}
-  \begin{tabular}{cccc}
+  \begin{tabular}{ccrr}
     \hline
     $\mu$ [\gev] & $m_{\ninoone}$ [\gev] & $\sigma$(NLO) [pb] & Incerteza total [$\%$]\tabularnewline
     \hline
@@ -420,21 +431,21 @@ fracción en la producción electrodébil comparada con la producción total.
     250   & 235.8 & 0.28 & 6.4     \\
     350   & 332.4 & 0.050 & 7.0    \\
     450   & 433.2 & 0.013 & 7.6    \\
-    550   & 535.6 & 4.1 $\cdot\, 10^{3}$ & 8.0  \\
-    650   & 638.3 & 1.4 $\cdot\, 10^{3}$ & 8.5   \\
-    750   & 742.0 & 5.3 $\cdot\, 10^{4}$ & 8.9  \\
-    850   & 846.7 & 2.1 $\cdot\, 10^{4}$ & 9.3  \\
-    950   & 949.6 & 8.57 $\cdot\, 10^{5}$ & 10.3  \\
-    1050  & 1053.0 & 3.56 $\cdot\, 10^{5}$ & 11.0  \\
-    1150  & 1157.5 & 1.55 $\cdot\, 10^{5}$ & 13.3   \\
-    1250  & 1260.6 & 6.67 $\cdot\, 10^{6}$ & 16.9   \\
+    550   & 535.6 & 4.1 $\cdot\, 10^{-3}$ & 8.0  \\
+    650   & 638.3 & 1.4 $\cdot\, 10^{-3}$ & 8.5   \\
+    750   & 742.0 & 5.3 $\cdot\, 10^{-4}$ & 8.9  \\
+    850   & 846.7 & 2.1 $\cdot\, 10^{-4}$ & 9.3  \\
+    950   & 949.6 & 8.57 $\cdot\, 10^{-5}$ & 10.3  \\
+    1050  & 1053.0 & 3.56 $\cdot\, 10^{-5}$ & 11.0  \\
+    1150  & 1157.5 & 1.55 $\cdot\, 10^{-5}$ & 13.3   \\
+    1250  & 1260.6 & 6.67 $\cdot\, 10^{-6}$ & 16.9   \\
     \hline
   \end{tabular}
   \label{tab:signal_xs_ewk}
 \end{table}
 
 
-\begin{figure}[!htb]
+\begin{figure}[!h]
   \centering
   \includegraphics[width=0.49\textwidth]{xs_run1_gg}
   \includegraphics[width=0.49\textwidth]{xs_run1_ewk}
@@ -444,7 +455,7 @@ fracción en la producción electrodébil comparada con la producción total.
   \label{fig:signal_xs}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[!h]
   \centering
   \includegraphics[width=0.49\textwidth]{figures/SigXsec_total}
   \includegraphics[width=0.49\textwidth]{figures/SigXsec_ewkFrac}

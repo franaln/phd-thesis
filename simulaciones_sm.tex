@@ -39,9 +39,9 @@ de decaimientos de sabores pesados.
     de cada muestra.}
 
   \small
-  \begin{tabular}{lccccc}
+  \begin{tabularx}{\textwidth}{LCRRRR}
     \hline
-    Proceso & Generador & $\sigma~[pb]$ & $k$ & Eficiencia & $L$ [\ifb] \\
+    Proceso & Generador & $\sigma$ [pb] & Factor-$k$ & Eficiencia & $L$ [\ifb] \\
     \hline
     {\wenugam}    & {\sherpa} &  0.7193  &  1.0  &  1.0  &  695.16 \\
     {\wmunugam}   & {\sherpa} &  0.7178  &  1.0  &  1.0  &  696.56 \\
@@ -73,7 +73,7 @@ de decaimientos de sabores pesados.
     %% {\wtaunugam} (ckkw 15)      & {\sherpa} &  0.7193  &  1.0  &  1.0  &  277.81 \\
     %% {\wtaunugam} (ckkw 30)      & {\sherpa} &  0.7193  &  1.0  &  1.0  &  277.81 \\
     %% \hline
-  \end{tabular}
+  \end{tabularx}
   \label{tab:bkg_wzgamma_samples}
 \end{table}
 
@@ -103,57 +103,57 @@ normalización fueron aplicados a los elementos de matriz de {\alpgen}.
 
 Finalmente, se realizó la remoción de eventos para evitar el conteo doble de
 eventos que ya fueron tenidos en cuenta en las muestras de Z$\gamma$ y
-W$\gamma$. Para esto, los eventos de $W(Z)+\text{jets}$ con fotones con $\pt>80(70)\gev$ y $\Delta{\rm R}(e/\mu/\tau/q, \gamma) > 0.1$ fueron
+W$\gamma$. Para esto, los eventos de $W(Z)+\text{jets}$ con fotones con $\pt>80(70)\gev$ y $\Delta R(\ell/q/g, \gamma) > 0.1$ fueron
 removidos de las muestras.
 
 \begin{table}[!htbp]
   \centering
   \caption{Muestras de $W/Z+\text{jets}$. \mccaption}
 
-  \small
-  \begin{tabular}{lccccc}
+  \footnotesize
+  \begin{tabularx}{\textwidth}{z{4cm}CRy{1.5cm}y{1.5cm}y{1.5cm}}
     \hline
-    Proceso & Generador & $\sigma$ [pb] & factor-$k$ & Eficiencia & $L$ [\ifb] \\
+    Proceso & Generador & $\sigma$ [pb] & Factor-$k$ & Eficiencia & $L$ [\ifb] \\
     \hline
-    \zeenj{0} &  \alpgen+\jimmy  & 711.77 & 1.23 & 1.00 & 7.548 \\
-    \zeenj{1} &  \alpgen+\jimmy  & 155.17 & 1.23 & 1.00 & 6.994 \\
-    \zeenj{2} &  \alpgen+\jimmy  & 48.745 & 1.23 & 1.00 & 6.746 \\
-    \zeenj{3} &  \alpgen+\jimmy  & 14.225 & 1.23 & 1.00 & 6.286 \\
-    \zeenj{4} &  \alpgen+\jimmy  & 3.7595 & 1.23 & 1.00 & 6.487 \\
-    \zeenj{5} &  \alpgen+\jimmy  & 1.0945 & 1.23 & 1.00 & 7.428 \\
-    \zmmnj{0} &  \alpgen+\jimmy  & 712.11 & 1.23 & 1.00 & 7.557 \\
-    \zmmnj{1} &  \alpgen+\jimmy  & 154.77 & 1.23 & 1.00 & 7.011 \\
-    \zmmnj{2} &  \alpgen+\jimmy  & 48.912 & 1.23 & 1.00 & 6.731 \\
-    \zmmnj{3} &  \alpgen+\jimmy  & 14.226 & 1.23 & 1.00 & 6.286 \\
-    \zmmnj{4} &  \alpgen+\jimmy  & 3.7838 & 1.23 & 1.00 & 6.445 \\
-    \zmmnj{5} &  \alpgen+\jimmy  & 1.1148 & 1.23 & 1.00 & 7.292 \\
-    \zttnj{0} & \alpgen+\jimmy  & 711.81 & 1.23 & 1.00 &  7.560 \\
-    \zttnj{1} & \alpgen+\jimmy  & 155.13 & 1.23 & 1.00 &  6.996 \\
-    \zttnj{2} & \alpgen+\jimmy  & 48.804 & 1.23 & 1.00 &  6.746 \\
-    \zttnj{3} & \alpgen+\jimmy  & 14.160 & 1.23 & 1.00 &  6.315 \\
-    \zttnj{4} & \alpgen+\jimmy  & 3.7744 & 1.23 & 1.00 &  6.462 \\
-    \zttnj{5} & \alpgen+\jimmy  & 1.1163 & 1.23 & 1.00 &  7.283 \\
+    $Z\to ee$            &  \alpgen+\jimmy  & 711.77 & 1.23 & 1.00 & 7.548 \\
+    $Z\to ee$ (+ 1 jet)  &  \alpgen+\jimmy  & 155.17 & 1.23 & 1.00 & 6.994 \\
+    $Z\to ee$ (+ 2 jets) &  \alpgen+\jimmy  & 48.745 & 1.23 & 1.00 & 6.746 \\
+    $Z\to ee$ (+ 3 jets) &  \alpgen+\jimmy  & 14.225 & 1.23 & 1.00 & 6.286 \\
+    $Z\to ee$ (+ 4 jets) &  \alpgen+\jimmy  & 3.7595 & 1.23 & 1.00 & 6.487 \\
+    $Z\to ee$ (+ 5 jets) &  \alpgen+\jimmy  & 1.0945 & 1.23 & 1.00 & 7.428 \\
+    \zmm              &  \alpgen+\jimmy  & 712.11 & 1.23 & 1.00 & 7.557 \\
+    \zmm\ (+ 1 jet)   &  \alpgen+\jimmy  & 154.77 & 1.23 & 1.00 & 7.011 \\
+    \zmm\ (+ 2 jets)  &  \alpgen+\jimmy  & 48.912 & 1.23 & 1.00 & 6.731 \\
+    \zmm\ (+ 3 jets)  &  \alpgen+\jimmy  & 14.226 & 1.23 & 1.00 & 6.286 \\
+    \zmm\ (+ 4 jets)  &  \alpgen+\jimmy  & 3.7838 & 1.23 & 1.00 & 6.445 \\
+    \zmm\ (+ 5 jets)  &  \alpgen+\jimmy  & 1.1148 & 1.23 & 1.00 & 7.292 \\
+    \ztt              & \alpgen+\jimmy  & 711.81 & 1.23 & 1.00 &  7.560 \\
+    \ztt\ (+ 1 jet)   & \alpgen+\jimmy  & 155.13 & 1.23 & 1.00 &  6.996 \\
+    \ztt\ (+ 2 jets)  & \alpgen+\jimmy  & 48.804 & 1.23 & 1.00 &  6.746 \\
+    \ztt\ (+ 3 jets)  & \alpgen+\jimmy  & 14.160 & 1.23 & 1.00 &  6.315 \\
+    \ztt\ (+ 4 jets)  & \alpgen+\jimmy  & 3.7744 & 1.23 & 1.00 &  6.462 \\
+    \ztt\ (+ 5 jets)  & \alpgen+\jimmy  & 1.1163 & 1.23 & 1.00 &  7.283 \\
     \hline
-    \wenunj{0} & \alpgen+\jimmy  & 8037.10  & 1.186 & 1.00 & 0.362 \\
-    \wenunj{1} & \alpgen+\jimmy  & 1579.20  & 1.186 & 1.00 & 1.334 \\
-    \wenunj{2} & \alpgen+\jimmy  & 477.20   & 1.186 & 1.00 & 6.661 \\
-    \wenunj{3} & \alpgen+\jimmy  & 133.93   & 1.186 & 1.00 & 6.358 \\
-    \wenunj{4} & \alpgen+\jimmy  & 35.62    & 1.186 & 1.00 & 5.917 \\
-    \wenunj{5} & \alpgen+\jimmy  & 10.55    & 1.186 & 1.00 & 5.592 \\
-    \wmnunj{0} & \alpgen+\jimmy  & 8040.00  & 1.186 & 1.00 & 0.363 \\
-    \wmnunj{1} & \alpgen+\jimmy  & 1580.30  & 1.186 & 1.00 & 1.333 \\
-    \wmnunj{2} & \alpgen+\jimmy  & 477.50   & 1.186 & 1.00 & 6.656 \\
-    \wmnunj{3} & \alpgen+\jimmy  & 133.94   & 1.186 & 1.00 & 6.357 \\
-    \wmnunj{4} & \alpgen+\jimmy  & 35.64    & 1.186 & 1.00 & 6.033 \\
-    \wmnunj{5} & \alpgen+\jimmy  & 10.57    & 1.186 & 1.00 & 1.595 \\
-    \wtnunj{0} & \alpgen+\jimmy  & 8035.80  & 1.186 & 1.00 & 0.353 \\
-    \wtnunj{1} & \alpgen+\jimmy  & 1579.80  & 1.186 & 1.00 & 1.307 \\
-    \wtnunj{2} & \alpgen+\jimmy  & 477.55   & 1.186 & 1.00 & 6.567 \\
-    \wtnunj{3} & \alpgen+\jimmy  & 133.79   & 1.186 & 1.00 & 6.365 \\
-    \wtnunj{4} & \alpgen+\jimmy  & 35.58    & 1.186 & 1.00 & 5.921 \\
-    \wtnunj{5} & \alpgen+\jimmy  & 10.54    & 1.186 & 1.00 & 5.199 \\
+    \wenu             & \alpgen+\jimmy  & 8037.10  & 1.186 & 1.00 & 0.362 \\
+    \wenu\ (+ 1 jet)   & \alpgen+\jimmy  & 1579.20  & 1.186 & 1.00 & 1.334 \\
+    \wenu\ (+ 2 jets)  & \alpgen+\jimmy  & 477.20   & 1.186 & 1.00 & 6.661 \\
+    \wenu\ (+ 3 jets)  & \alpgen+\jimmy  & 133.93   & 1.186 & 1.00 & 6.358 \\
+    \wenu\ (+ 4 jets)  & \alpgen+\jimmy  & 35.62    & 1.186 & 1.00 & 5.917 \\
+    \wenu\ (+ 5 jets)  & \alpgen+\jimmy  & 10.55    & 1.186 & 1.00 & 5.592 \\
+    \wmnu             & \alpgen+\jimmy  & 8040.00  & 1.186 & 1.00 & 0.363 \\
+    \wmnu\ (+ 1 jet)  & \alpgen+\jimmy  & 1580.30  & 1.186 & 1.00 & 1.333 \\
+    \wmnu\ (+ 2 jets) & \alpgen+\jimmy  & 477.50   & 1.186 & 1.00 & 6.656 \\
+    \wmnu\ (+ 3 jets) & \alpgen+\jimmy  & 133.94   & 1.186 & 1.00 & 6.357 \\
+    \wmnu\ (+ 4 jets) & \alpgen+\jimmy  & 35.64    & 1.186 & 1.00 & 6.033 \\
+    \wmnu\ (+ 5 jets) & \alpgen+\jimmy  & 10.57    & 1.186 & 1.00 & 1.595 \\
+    \wtnu             & \alpgen+\jimmy  & 8035.80  & 1.186 & 1.00 & 0.353 \\
+    \wtnu\ (+ 1 jet)  & \alpgen+\jimmy  & 1579.80  & 1.186 & 1.00 & 1.307 \\
+    \wtnu\ (+ 2 jets) & \alpgen+\jimmy  & 477.55   & 1.186 & 1.00 & 6.567 \\
+    \wtnu\ (+ 3 jets) & \alpgen+\jimmy  & 133.79   & 1.186 & 1.00 & 6.365 \\
+    \wtnu\ (+ 4 jets) & \alpgen+\jimmy  & 35.58    & 1.186 & 1.00 & 5.921 \\
+    \wtnu\ (+ 5 jets) & \alpgen+\jimmy  & 10.54    & 1.186 & 1.00 & 5.199 \\
     \hline
-  \end{tabular}
+  \end{tabularx}
   \label{tab:bkg_wzjets_samples}
 \end{table}
 
@@ -188,7 +188,7 @@ conjunto de PDFs CTEQ6L1 LO. La radiación de fotones adicional fue agregada con
 {\photos}\cite{photos}.
 
 Por último, se realizó la remoción
-de los eventos con un fotón real con $\pt > 95 \gev$ y $\Delta{\rm R}(e/\mu/\tau/g/q,\gamma) > 0.1$ de la muestra de {\ttbar} para evitar la superposición con los eventos
+de los eventos con un fotón real con $\pt > 95 \gev$ y $\Delta R(\ell/g/q,\gamma) > 0.1$ de la muestra de {\ttbar} para evitar la superposición con los eventos
 considerados en las muestras de {\ttgam}.
 
 
@@ -197,9 +197,9 @@ considerados en las muestras de {\ttgam}.
   \caption{Muestras de {\ttgam}. {\mccaption}}
 
   \small
-  \begin{tabular}{lccccc}
+  \begin{tabularx}{\textwidth}{LCRRRR}
     \hline
-    Proceso & Generador & $\sigma$ [pb] & factor-$k$ & Eficiencia & $L$ [\ifb] \\
+    Proceso & Generador & $\sigma$ [pb] & Factor-$k$ & Eficiencia & $L$ [\ifb] \\
     \hline
     {\ttbar} & \powheg+\pythia & 253.00 & 1.00 & 0.543 & 580 \\
     \hline
@@ -216,7 +216,7 @@ considerados en las muestras de {\ttgam}.
     %%     {\ttgam} (lep) (FSR$^{+}$) & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
     %%     {\ttgam} (lep) (FSR$^{-}$) & \madgraph & 0.09873 & 1.9 & 1 & 1066.2 \\
     %% \hline
-  \end{tabular}
+  \end{tabularx}
   \label{tab:mc_ttbar_samples}
 \end{table}
 
@@ -250,31 +250,27 @@ la sección eficaz calculada en \cite{Kidonakis:2010ux}.
 
 \begin{table}[!htb]
   \centering
-  \caption{Muestras de \emph{quark top} y {\tgam}. La sección eficaz a
+  \caption{Muestras de \emph{quark top} + \gam. La sección eficaz a
     NNLO, eficiencia del filtro, y luminosidad integrada correspondiente a la estadística total de cada muestra
     están detalladas en la tabla.}
 
   \small
-  \begin{tabularx}{\textwidth}{z{4cm}CCCC}
+  \begin{tabularx}{\textwidth}{Lx{2.8cm}y{1.5cm}y{1.5cm}y{1.5cm}}
     \hline
     Proceso & Generador & $\sigma$ [pb] & Eficiencia & $L$ [\ifb] \\
     \hline
-    t-channel & \acermc   & 28.4 & 1.00 & 271 \\
-    Wt        & \powheg   & 22.4 & 1.00 & 892 \\
-    s-channel & \powheg   & 1.82 & 1.00 & 3299 \\
+    \emph{top} + $\gamma$ (en producción) & \wizhard+\pythia   & 0.187298 & 0.121980 & 4810 \\
+    \emph{top} + $\gamma$ (en decaimiento) & \wizhard+\pythia   & 0.313866 & 0.012927 & 4930 \\
     \hline
-    {\tgam} (t-channel) & \wizhard+\pythia   & 0.187298 & 0.121980 & 4810 \\
-    {\tgam} (t-channel) & \wizhard+\pythia   & 0.313866 & 0.012927 & 4930 \\
-    \hline
-    {\twgam} (dilep.) & \wizhard+\pythia          & 0.01292  & 0.16437 & 4710 \\
-    {\twgam} (dilep. tDec) & \wizhard+\pythia     & 0.01454  & 0.02875 & 12000 \\
-    {\twgam} (dilep. WDec) & \wizhard+\pythia     & 0.01041  & 0.07549 & 6370 \\
-    {\twgam} (tlepWhad) & \wizhard+\pythia        & 0.02583  & 0.16244 & 4770 \\
-    {\twgam} (tlepWhad tDec) & \wizhard+\pythia   & 0.02908  & 0.02761 & 6230 \\
-    {\twgam} (tlepWhad WDec) & \wizhard+\pythia   & 0.01159  & 0.06471 & 6660 \\
-    {\twgam} (thadWlep) & \wizhard+\pythia      & 0.02582  & 0.16178 & 4790 \\
-    {\twgam} (thadWlep tDec) & \wizhard+\pythia   & 0.02013  & 0.04198 & 5920 \\
-    {\twgam} (thadWlep WDec) & \wizhard+\pythia   & 0.02079  & 0.07574 & 3180 \\
+    $tW$ (lep) + $\gamma$ (en producción)                             & \wizhard+\pythia          & 0.01292  & 0.16437 & 4710 \\
+    $tW$ (lep) + $\gamma$ (en decaimiento del $t$)             & \wizhard+\pythia     & 0.01454  & 0.02875 & 12000 \\
+    $tW$ (lep) + $\gamma$ (en decaimiento del $W$)                    & \wizhard+\pythia     & 0.01041  & 0.07549 & 6370 \\
+    $t$(lep)$W$(had) + $\gamma$ (en producción)                 & \wizhard+\pythia        & 0.02583  & 0.16244 & 4770 \\
+    $t$(lep)$W$(had) + $\gamma$ (en decaimiento del $t$) & \wizhard+\pythia   & 0.02908  & 0.02761 & 6230 \\
+    $t$(lep)$W$(had) + $\gamma$ (en decaimiento del $W$)        & \wizhard+\pythia   & 0.01159  & 0.06471 & 6660 \\
+    $t$(had)$W$(lep) + $\gamma$ (en producción)                 & \wizhard+\pythia      & 0.02582  & 0.16178 & 4790 \\
+    $t$(had)$W$(lep) + $\gamma$ (en decaimiento del $t$) & \wizhard+\pythia   & 0.02013  & 0.04198 & 5920 \\
+    $t$(had)$W$(lep) + $\gamma$ (en decaimiento del $W$)        & \wizhard+\pythia   & 0.02079  & 0.07574 & 3180 \\
     \hline
   \end{tabularx}
   \label{tab:bkg_st_samples}
@@ -285,7 +281,7 @@ la sección eficaz calculada en \cite{Kidonakis:2010ux}.
 
 La contaminación debido a la producción QCD de fotones directos y multijets,
 es en todos los casos el resultado de eventos patológicos
-(jets mal-identificados como fotones, y jets o fotones mal reconstruidos dejando
+(jets mal identificados como fotones, y jets o fotones mal reconstruidos dejando
 una alta cantidad de energía faltante). Sin embargo, no se espera que sea un
 fondo dominante en el espacio de fase explorado en este análisis. La
 contribución de eventos con jets mal identificados como fotones se estima a
@@ -312,21 +308,21 @@ sistemáticas, generadas con {\pythiaeight} (usando CTEQ6L1) y {\alpgen} v2.14
     total de cada muestra.}
 
   \small
-   \begin{tabular}{lcccc}
+   \begin{tabularx}{\textwidth}{z{5.5cm}CRRR}
     \hline
-    Proceso & Generador & $\sigma [pb]$ & Eficiencia & $L$ [\ifb] \\
+    Proceso & Generador & $\sigma$ [pb] & Eficiencia & $L$ [\ifb] \\
     \hline
-    {\gjet} ($\pt>70\gev$)   & {\sherpa} &    2153.0  &  1.0  &  1.160 \\
-    {\gjet} ($\pt>140\gev$)  & {\sherpa} &    137.85  &  1.0  &  10.881 \\
-    {\gjet} ($\pt>280\gev$)  & {\sherpa} &     5.963  &  1.0  &  167.657 \\
-    {\gjet} ($\pt>500\gev$)  & {\sherpa} &     0.276  &  1.0  &  3617.291 \\
-    {\gjet} ($\pt>800\gev$)  & {\sherpa} &    0.0133  &  1.0  &  7492.807 \\
-    {\gjet} ($\pt>1000\gev$) & {\sherpa} &   0.00238  &  1.0  &  41980.269 \\
+    {\gjet} ($\pt^\gamma>70\gev$)   & {\sherpa} &    2153.0  &  1.0  &  1.160 \\
+    {\gjet} ($\pt^\gamma>140\gev$)  & {\sherpa} &    137.85  &  1.0  &  10.881 \\
+    {\gjet} ($\pt^\gamma>280\gev$)  & {\sherpa} &     5.963  &  1.0  &  167.657 \\
+    {\gjet} ($\pt^\gamma>500\gev$)  & {\sherpa} &     0.276  &  1.0  &  3617.291 \\
+    {\gjet} ($\pt^\gamma>800\gev$)  & {\sherpa} &    0.0133  &  1.0  &  7492.807 \\
+    {\gjet} ($\pt^\gamma>1000\gev$) & {\sherpa} &   0.00238  &  1.0  &  41980.269 \\
     \hline
-    {\gjet} ($\pt>70\gev$)   & {\pythiaeight} &   3425000  &  $0.00057$  &  1535.4  \\
-    {\gjet} ($\pt>140\gev$)  & {\pythiaeight} &    122170  &  $0.00097$  &  8449.2 \\
-    {\gjet} ($\pt>280\gev$)  & {\pythiaeight} &    3348.7  &  $0.00145$ &  206559.7 \\
-    {\gjet} ($\pt>500\gev$)  & {\pythiaeight} &    115.63  &  $0.0018$  &  4789097.0\\
+    {\gjet} ($\pt^\gamma>70\gev$)   & {\pythiaeight} &   3425000  &  $0.00057$  &  1535.4  \\
+    {\gjet} ($\pt^\gamma>140\gev$)  & {\pythiaeight} &    122170  &  $0.00097$  &  8449.2 \\
+    {\gjet} ($\pt^\gamma>280\gev$)  & {\pythiaeight} &    3348.7  &  $0.00145$ &  206559.7 \\
+    {\gjet} ($\pt^\gamma>500\gev$)  & {\pythiaeight} &    115.63  &  $0.0018$  &  4789097.0\\
 
     %% \hline
     %% \gjetnj{1} ($\pt>70\gev$)   & {\alpgen}+{\jimmy} &   577.480  &  1.0  &  0.147 \\
@@ -359,15 +355,15 @@ sistemáticas, generadas con {\pythiaeight} (usando CTEQ6L1) y {\alpgen} v2.14
     %% \gjetnj{5} ($\pt>500\gev$)   & {\alpgen}+{\jimmy} &   44.334  &  1.0  &  0.970 \\
 
     \hline
-    Multijet JZ1W ($\pt^{\mathrm{jet}} \in [20, 80] \gev$)     & {\pythia} &   $7.285 \cdot 10^{10}$ &  0.000129 & 0.00016 \\
-    Multijet JZ2W ($\pt^{\mathrm{jet}} \in [80, 200] \gev$)    & {\pythia} &   $2.634 \cdot 10^{7}$ &  0.003894 & 0.0142 \\
-    Multijet JZ3W ($\pt^{\mathrm{jet}} \in [200,500] \gev$)    & {\pythia} &   $5.442 \cdot 10^{5}$ &  0.001219 & 2.26 \\
-    Multijet JZ4W ($\pt^{\mathrm{jet}} \in [500,1000] \gev$)   & {\pythia} &   $0.006445$ &  0.000708 & 328 \\
-    Multijet JZ5W ($\pt^{\mathrm{jet}} \in [1000,1500] \gev$)  & {\pythia} &   39.74 &  0.002152 & 17400 \\
-    Multijet JZ6W ($\pt^{\mathrm{jet}} \in [1500,2000] \gev$)  & {\pythia} &   0.4161 &  0.004684 & $7.68 \cdot 10^{5}$ \\
-    Multijet JZ7W ($\pt^{\mathrm{jet}} > 2000 \gev$)           & {\pythia} &   0.04064 &  0.0146 & $2.52\cdot 10^{6}$ \\
+    Multijet ($\pt^{\mathrm{jet}} \in [20, 80] \gev$)     & {\pythia} &   $7.285 \cdot 10^{10}$ &  0.000129 & 0.00016 \\
+    Multijet ($\pt^{\mathrm{jet}} \in [80, 200] \gev$)    & {\pythia} &   $2.634 \cdot 10^{7}$ &  0.003894 & 0.0142 \\
+    Multijet ($\pt^{\mathrm{jet}} \in [200,500] \gev$)    & {\pythia} &   $5.442 \cdot 10^{5}$ &  0.001219 & 2.26 \\
+    Multijet ($\pt^{\mathrm{jet}} \in [500,1000] \gev$)   & {\pythia} &   $0.006445$ &  0.000708 & 328 \\
+    Multijet ($\pt^{\mathrm{jet}} \in [1000,1500] \gev$)  & {\pythia} &   39.74 &  0.002152 & 17400 \\
+    Multijet ($\pt^{\mathrm{jet}} \in [1500,2000] \gev$)  & {\pythia} &   0.4161 &  0.004684 & $7.68 \cdot 10^{5}$ \\
+    Multijet ($\pt^{\mathrm{jet}} > 2000 \gev$)           & {\pythia} &   0.04064 &  0.0146 & $2.52\cdot 10^{6}$ \\
     \hline
-  \end{tabular}
+  \end{tabularx}
   \label{tab:bkg_qcd_samples}
 \end{table}
 
@@ -387,9 +383,9 @@ ambos bosones fueron considerados.
     total de cada muestra.}
 
   \small
-  \begin{tabular}{lccccc}
+  \begin{tabularx}{\textwidth}{LCRRRR}
     \hline
-    Proceso & Generador & $\sigma [pb]$ & factor $k$ & Eficiencia & $L$ [\ifb] \\
+    Proceso & Generador & $\sigma$ [pb] & Factor-$k$ & Eficiencia & $L$ [\ifb] \\
     \hline
     %% $WW(2l2\nu)$ \sherpa (126892)  & 5.50 & 1.07 & 1 & 458.9 \\
     %% $WZ(3l)$ \sherpa (126893) & 9.75 & 1.06 & 1 & 261.1 \\
@@ -414,7 +410,7 @@ ambos bosones fueron considerados.
     $WW (\to \tau\nu qq)$         & {\sherpa}  & 7.274  & 1.06 & 1.00 & 100 \\
     $WZ (\to \tau\nu qq)$         & {\sherpa}  & 1.915  & 1.05 & 1.00 & 100 \\
     \hline
-  \end{tabular}
+  \end{tabularx}
   \label{tab:bkg_diboson_samples}
  \end{table}
 
