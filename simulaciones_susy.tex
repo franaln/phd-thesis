@@ -23,10 +23,10 @@ los distintos estados finales posibles dependiendo de la composición del neutra
 \begin{figure}[!htb]
   \centering
 
-  \includegraphics[width=0.35\textwidth,keepaspectratio]{gogo-qqqqphphGG-GMSB.pdf}\hspace{1cm}
+  \includegraphics[width=0.35\textwidth,keepaspectratio]{gogo-qqqqphphGG-GMSB.pdf}\hspace{1.5cm}
   \includegraphics[width=0.35\textwidth,keepaspectratio]{gogo-qqqqZZGG-GMSB.pdf}
 
-  \includegraphics[width=0.35\textwidth,keepaspectratio]{gogo-qqqqhphGG-GMSB.pdf}\hspace{1cm}
+  \includegraphics[width=0.35\textwidth,keepaspectratio]{gogo-qqqqhphGG-GMSB.pdf}\hspace{1.5cm}
   \includegraphics[width=0.35\textwidth,keepaspectratio]{gogo-qqqqphZGG-GMSB.pdf}
 
   \caption{Diagramas de Feynman de producción de gluinos, ilustrando los distintos
@@ -50,11 +50,11 @@ Se utilizó un espectro simplificado en el cual, básicamente, el espacio de
 parámetros consiste en la escala de producción (por simplicidad, la masa del
 gluino) y la masa de la NLSP. Todos los demás estados fueron desacoplados ya que
 no juegan un rol importante en la producción o en el estado final de interés.
-Esta aproximación es similar a los denominados <<modelos simplificados>>
+Esta aproximación es similar a los denominados modelos simplificados
 utilizados en otras búsquedas.
 La masa del gluino es el único parámetro libre de las partículas de color para
 poder determinar un límite conservativo en la masa del mismo. Todos los
-parámetros de masa \emph{soft} de los \emph{squarks} se fijaron en 2.5 \tev.
+parámetros de masa \emph{soft} de los squarks se fijaron en 2.5 \tev.
 
 Para maximizar la probabilidad de tener un único fotón en el estado final, es
 necesario que $\mathrm{BR}(\ninoone \to \gam\,\gravino) \sim 50\%$. Esto resulta
@@ -70,7 +70,6 @@ sean aproximadamente constantes:
   &\mathrm{BR}(\ninoone \to Z\, \gravino) \approx 49\%    \label{eq:n1_z} \\
   &\mathrm{BR}(\ninoone \to h\, \gravino) \approx 1\%     \label{eq:n1_h}
 \end{align}
-
 
 Los demás parámetros del modelo se fijan en $M_2=2.5\tev$, $\tan\beta=1.5$ y
 $c\tau_{\mathrm{NLSP}} < 0.1$ mm. Este último asegura que el neutralino decaiga
@@ -136,6 +135,18 @@ neutralino tiene menor masa. La eficiencia del filtro para todas las muestras
 simuladas puede verse en la \cref{tab:signal_filter_eff}. La simulación del
 detector ATLAS se realizó con la simulación rápida
 \textsc{ATLFAST-II}\cite{Richter-Was:683751}.
+
+Las muestras de la \emph{grid} mencionada anteriormente solo consideran la
+producción (fuerte) de pares de gluinos. Adicionalmente se simularon muestras
+de la producción electrodébil de gauginos, para las distintas masas de
+neutralino consideradas en la \emph{grid}, y utilizando la misma
+configuración. Como se detallará más adelante la sección eficaz de producción
+electrodébil es solo relevante, en el espacio de fase considerado, en la zona
+de baja masa de neutralino. Además el estado final en este caso estará
+caracterizado por una menor multiplicidad de jets, debido a la cadena de
+decaimiento más corta, y menor energía faltante. A pesar de que las regiones
+de señal fueron optimizadas para la producción de gluinos, ambas muestras son
+igualmente combinadas, en cada punto, a modo de completitud.
 
 
 \begin{table}[!htb]
@@ -312,22 +323,13 @@ neutralinos livianos ($<200\gev$) donde la producción de Higgs es altamente
 suprimida, mientras aumenta el decaimiento a $Z$, y $\mathrm{BR}(\ninoone \to
 \gam \gravino)$ empieza a caer llegando al 40\%.
 
-%% \begin{figure}[!h]
-%%   \centering
-
-
-%%   \caption{Tasas de decaimiento (BR) de los neutralinos NLSP en $\gamma\gravino$, $\gamma Z$ y $\gamma h$
-%%     para los distintos puntos de la \emph{grid} en el plano \mgmn. Para cada punto de señal,
-%%     la fracción del rectángulo de cada color representa el BR a cada uno de los posibles estados finales.}
-%%   \label{fig:signal_br_n1}
-%% \end{figure}
 
 
 
 \subsection{Sección eficaz de producción}
 \label{sec:xs_calc}
 
-En el caso de procesos de producción de pares de gluinos o \emph{squarks}, de los cuales
+En el caso de procesos de producción de pares de gluinos o squarks, de los cuales
 existe el cálculo a NLL, la sección eficaz se toma a NLO en la constante de acoplamiento
 fuerte, y se incluye la suma de la emisión de gluones \emph{soft} con precisión NLL,
 realizada utilizando {\nllfast}\cite{Kramer:2012bx,Beenakker:1996ch,Kulesza:2008jb,Kulesza:2009kq,Beenakker:2009ha,Beenakker:2011fu}.

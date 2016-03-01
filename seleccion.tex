@@ -9,7 +9,6 @@ selección fue optimizada en base a la significancia esperada de descubrimiento
 utilizando las muestras MC de señal y fondos del SM.
 
 
-
 \section{Criterios de calidad sobre los datos}
 
 %% GRL: data12_8TeV.periodAllYear_DetStatus-v61-pro14-02_DQDefects-00-01-00_PHYS_StandardGRL_All_Good.xml
@@ -65,7 +64,7 @@ considerado.
 Como se describe en la \cref{sec:obj_vertex} los candidatos a vértices de la interacción $pp$ son
 reconstruidos en cada evento utilizando las trazas en el detector interno. El
 vértice primario, correspondiente a la interacción dura de dispersión, es el
-candidato con la mayor suma de $p_{T}^{2}$ para las trazas asociadas. Solo se
+candidato con la mayor suma de $p_{\mathrm{T}}^{2}$ para las trazas asociadas. Solo se
 consideran los eventos donde el vértice primario tiene al menos cinco trazas
 cargadas.
 
@@ -131,7 +130,7 @@ detalla a continuación en ese orden:
 \begin{itemize}\itemsep0.1cm
 \item Si un fotón o electrón se encuentran dentro de $\Delta R < 0.01$, el
   objeto es considerado como un electrón, removiéndose el fotón correspondiente.
-  Esta elección reduce la taza de electrones mal reconstruidos como fotones.
+  Esta elección reduce la tasa de electrones mal reconstruidos como fotones.
 \item Los jets que estén cerca ($\Delta R<0.2$) de un electrón o fotón
   preseleccionado se remueven.
 \item Fotones y electrones preseleccionados son removidos si su distancia al jet
@@ -237,14 +236,6 @@ y el corte en energía faltante.
 %% A minimal pre-selection cut in $\met>150\gev$ was placed in the SR, which is highly efficient for the signal and very effective
 %% removing large part of the SM backgrounds, particularly the QCD multijet production. The final selection requirements are summarised in sec \ref{sec:signal_regions}.
 
-%% \begin{figure}[h!]
-%%   \centering
-%%   \includegraphics[width=0.5\textwidth]{figures/grid_regions.pdf}
-%%   \caption{Regiones de senal usadas en este analisis.
-%%     Los cuadrados azules corresponden a cada muestra de senal simulada en la
-%%     grid \M{3}-$\mu$.
-%%     El área gris es una región cismáticamente prohibida ($m_{\gluino}<m_{\ninoone}$).}\label{fig:SRegions}
-%% \end{figure}
 
 
 \subsection{Fotón}\label{sec:opt_ph_iso}
@@ -261,25 +252,11 @@ buscar SUSY en escenarios GGM, pero particularmente en el caso de que el
 neutralino NLSP sea mayoritariamente bino, y el decaimiento a fotones sea
 dominante.
 
-
-%% \begin{figure}[!htbp]
-%%   \centering
-%%   \includegraphics[width=0.45\textwidth]{figures/ph_pt_base1}
-%%   \includegraphics[width=0.45\textwidth]{figures/ph_pt_base2}
-%%   \caption{Distribución del {\pt} del fotón para señal y fondo MC en {\SRL} (izquierda) y
-%%     {\SRH} (derecha), correspondiente a una luminosidad integrada de {\ilumi} antes de que ningún
-%%     corte haya sido aplicado. }
-%%   \label{fig:photon_pt}
-%% \end{figure}
-
 Como se menciona en la \cref{sec:fotones}, para seleccionar los fotones se
 aplica un corte en la energía transversa de aislamiento (\etiso). Específicamente,
 para el presente análisis se estudiaron distintos
 criterios de aislamiento, variando el tamaño del cono ($R$) en el cual se
 calcula esta energía.
-
-%% La optimización de este criterio de aislamiento  fue realizada mirando el desempe\~no
-%% de los distintos tamaños de cono.
 
 En la \cref{fig:photon_iso} se muestran las distribuciones de la energía de
 aislamiento para varios valores de $R$ para las muestras de señal en las dos SR.
@@ -384,8 +361,6 @@ está relacionado con el \emph{pile-up}. A medida que aumenta el corte en {\pt}
 el número de jets se hace más estable con el \emph{pile-up}, y por lo tanto en
 este análisis se consideran los jets con $\pt>40\gev$
 
-%% El corte en {\pt} fue elegido para asegurar una selección robusta contra el pile-up.
-
 
 \begin{figure}[!h]
   \centering
@@ -395,12 +370,6 @@ este análisis se consideran los jets con $\pt>40\gev$
     \label{fig:jets_npv}
 \end{figure}
 
-
-
-%% Como se muestra en la \cref{fig:jets_npv}, el número medio de jets seleccionados
-%% es de esta forma una distribución \hl{flat} como función del número de vértices
-%% primarios. Luego, en la selección final, cortes más alto en el {\pt} de los jets
-%% son utilizados como se describe en \cref{sec:opt_njet}.
 
 La \cref{fig:opt_jet_n} muestra la multiplicidad de jets (\njets)
 para $\pt^{\mathrm{jet}} > 40$ \gev, después de los cortes optimizados en el
@@ -517,16 +486,6 @@ fotones directos, donde un fotón (real o falso) tiende a ser
 producido en la dirección opuesta al jet más energético.
 La distribución para la {\SRH} se puede ver en \cref{fig:opt_dphi_gamjet}.
 
-%% \begin{equation} \label{eq:dphi}
-%%   \cos \dphijg \equiv \frac{\vec{p}_\mathrm{T}^{\gamma} \cdot \vec{p}_\mathrm{T}^\mathrm{jet}}{|{p}_\mathrm{T}^{\gamma}| |\pt^\mathrm{jet}|}
-%% \end{equation}
-
-%
-
-%% for {\SRH} benchmark signal samples after all previous selection.
-%% The cut value chosen for this high gluino-neutralino mass region is $\dphijg<2$.
-
- % shows the jet-photon $\phi$ separation for signal and backround in SR3, after applying the photon \pt\ ,  \etmiss,  jet  \pt\  and multiplicity as well as  $\Delta \phi \text{(jet, MET)}$ cuts.  The cut value chosen for jet-photon separation in this high mass signal region  is  $\Delta \phi \text{(jet}, \gamma) >2$.
 
 \begin{figure}[!h]
   \centering
@@ -561,8 +520,6 @@ diferencia de masa entre el gluino y el neutralino NLSP. Sin embargo
 se encontró una variable más efectiva para la separación entre señal y
 fondo que se describe a continuación y por lo tanto no se aplica un corte
 en esta variable.
-
-%photon \pt,  \etmiss, jet multiplicity, two leading jets  \pt,   jet-\etmiss\  and jet-photon $\phi$ separation cuts.
 
 En {\SRH} un corte en este observable $\HT>800\gev$ ayuda a reducir el fondo restante.
 Dada la masa alta del neutralino, la mayor contribución de {\HT} proviene
@@ -604,11 +561,6 @@ numerador son casi idénticos y el cociente es $\sim 1$, y es exactamente 1
 cuando son iguales.
 Para los procesos de señal en los que $n$ es mucho menor al número de jets en el
 evento, la distribución será menor a 1.
-
-%% depends on the multiplicity and hardness of the jets. As shown in previous
-%% sections, the SUSY signals here considered are characterized by hard multijet
-%% events in a wide region of parameter space. Evenmore, the sub-leading jets are
-%% comparatively harder than those in SM background events.
 
 
 \begin{figure}[!h]

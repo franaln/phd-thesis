@@ -73,7 +73,7 @@ pueden usarse como entrada en los generadores de eventos.
 
 Los programas descriptos anteriormente permiten pasar de un modelo específico a las
 predicciones en la producción de partículas y sus anchos de decaimientos en
-estados finales de \emph{quarks}, leptones, fotones y gluones (y LSP en modelos donde
+estados finales de quarks, leptones, fotones y gluones (y LSP en modelos donde
 se conserva paridad-R).
 
 El paso siguiente consiste en la generación de los eventos Monte Carlo.
@@ -82,7 +82,7 @@ el generador se encarga de generar los eventos esperados para el modelo
 considerado.
 
 La colisión de dos protones a altas energías en el LHC implica el estudio de las
-interacciones de los constituyentes de los protones, es decir, de los \emph{quarks} y
+interacciones de los constituyentes de los protones, es decir, de los quarks y
 gluones. La interacción total de los dos protones es complicada, como se muestra
 en la \cref{fig:mc_event_generator} y se puede descomponer en distintos pasos.
 En todos los componentes del diagrama excepto en la interacción fuerte, dominan los procesos de QCD.
@@ -109,18 +109,18 @@ estado final partónico, de acuerdo a los BR predichos por el modelo.
 
 La multiplicidad de partones en el estado final depende, además de los partones producidos en la interacción
 fuerte, de la radiación en el evento. Pueden producirse partones adicionales por
-radiación de un gluón o \emph{quark} ya sea antes de la interacción fuerte (llamada
+radiación de un gluón o quark ya sea antes de la interacción fuerte (llamada
 \emph{Initial State Radiation}, ISR) o después de la interacción fuerte, en la fase de
 fragmentación (llamada \emph{Final State Radiation}, FSR).
 Cada uno de los partones en el estado
 final comienzan a perder energía, a través de la radiación de gluones. Estos
-gluones fragmentan en gluones adicionales y pares \emph{quark-antiquark}. Esto continúa
+gluones fragmentan en gluones adicionales y pares quark-antiquark. Esto continúa
 hasta el punto en donde la energía es lo suficientemente baja para recombinar
 todas las partículas de color en mesones y bariones, proceso denominado
 <<hadronización>>. Los hadrones decaen subsecuentemente en otros hadrones,
 leptones y neutrinos. Cada partón proveniente de la interacción fuerte (y
 ISR/FSR) resulta en una lluvia de partículas, denominada colectivamente
-<<\emph{jet}>>.
+<<jet>>.
 
 
 Finalmente, los remanentes de los haces iniciales tienen que ser modelados
@@ -132,27 +132,6 @@ Todos estos procesos se repiten hasta generar un gran número de eventos, donde 
 evento consiste básicamente en los vectores de todas las partículas en el estado
 final.
 
-%% %% Para un dado tipo de colisionador y una dada energía de centro de masa, y a partir
-%% %% de un modelo específico de SUSY,
-%% %% conjunto de eventos con pares de spartículas de acuerdo a su sección eficaz.
-%% %% Estas partículas supersimétricas van a decaer (posiblemente en una cascada de
-%% %% varios pasos) en un estado final partónico, de acuerdo a los BR fijados por el
-%% %% modelo. Este estado final partónico es convertido luego en uno con partículas
-%% %% que puede ser detectadas en el detector. Generando un gran número de eventos de
-%% %% SUSY, se pueden simular los posibles estados finales que se esperan a partir de
-%% %% un cierto modelo.
-
-
-
-
-%% \begin{figure}[h]
-%%   \centering
-%%   \includegraphics[width=0.6\textwidth]{figures/mc_event_generator}
-%%   \caption{Distintas etapas implementadas en los generadores de eventos Monte Carlo.
-%%     (1) Interacción dura (HS), (2) Lluvias de estado inicial y final (ISR, FSR),
-%%     (3) Decaimientos en cascada, (4) Hadronización, (5) Remanentes.}
-%%   \label{fig:mc_event_generator}
-%% \end{figure}
 
 \begin{figure}[!h]
   \centering
