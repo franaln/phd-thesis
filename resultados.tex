@@ -67,8 +67,7 @@ Con la función \emph{likelihood}, se construye el estadístico de prueba como e
 \emph{profile likelihood ratio},
 
 \begin{equation}
-  q_{\mu_s} = -2 \ln \left( \frac{L(\mu_s,
-    \doublehat{\btheta})}{L(\hat{\mu}_s,\hat{\btheta})} \right)
+  q_{\mu_s} = -2 \ln \left( \frac{L(\mu_s, \doublehat{\btheta})}{L(\hat{\mu}_s,\hat{\btheta})} \right)
 \end{equation}
 %
 que será utilizado en este análisis para poner a prueba la compatibilidad de los
@@ -670,8 +669,8 @@ alcanzan y superan la región del {\tev} para la masa de gluino.
 
 Luego de la publicación de los resultados obtenidos con los datos de
 $\sqrt{s}=8\tev$, presentados en las secciones anteriores, se comenzó el
-análisis de los nuevos datos a partir de las colisiones del llamado \emph{Run
-  2} del LHC a una energía de centro de masa sin
+análisis de los nuevos datos a partir de las colisiones del llamado \emph{Run}
+2 del LHC a una energía de centro de masa sin
 precedente, de $\sqrt{s} = 13 \tev$. Desde Junio a Diciembre del a\~no 2015 el LHC funcionó a
 esta energía de centro de masa y el detector ATLAS recolectó datos
 correspondientes a una luminosidad total integrada de 3.2 \ifb.
@@ -687,7 +686,7 @@ Se renovaron el tubo del haz, el sistema de imanes y los sistemas criogénicos. 
 reemplazaron o reacondicionaron los módulos del detector interno y los
 calorímetros dañados, y para mejorar la reconstrucción de trazas y de vértices a
 luminosidades mayores, se agregó una cuarta capa al detector de píxeles a una
-distancia de 3.3 cm del tubo del haz.
+distancia de $\unit[3.3]{cm}$ del tubo del haz.
 
 El aumento en la energía de las colisiones conlleva a un incremento en la
 sección eficaz de producción, mejorando el potencial de descubrimiento para
@@ -718,15 +717,17 @@ que todos los demás parámetros se mantuvieron iguales a la \emph{grid} anterio
 utilizada en esta tesis.
 
 
-\begin{figure}[!p]
+\begin{figure}[!h]
   \centering
 
   \includegraphics[width=0.45\textwidth]{grid_updated}\hspace{1cm}
   \includegraphics[width=0.45\textwidth]{discovery_combined_13tev}
 
-  \caption{Conjunto de puntos (\emph{grid}) de señal simulados para el análisis
-    de \emph{Run 2}. Los cuadrados azules representan los puntos de señal
-    generados con distintos valores de $m_{\gluino}$ y $m_{\ninoone}$.}
+  \caption{Izquierda: Conjunto de puntos (\emph{grid}) de señal simulados para el análisis
+    de \emph{Run} 2. Los cuadrados azules representan los puntos de señal
+    generados con distintos valores de $m_{\gluino}$ y $m_{\ninoone}$.
+    Derecha: Significancia de descubrimiento esperada para el análisis de datos de 13 \tev,
+    para una luminosidad total integrada de 4 \ifb. Los contornos se corresponden con $3\sigma$ y $5\sigma$.}
 
   \label{fig:13tev_grid}
 
@@ -734,7 +735,7 @@ utilizada en esta tesis.
 
 
 Con las muestras generadas de señal y de los procesos del SM, y
-a partir de la selección de las dos regiones de señal {\SRL} y {\SRH} del análisis de \emph{Run 1},
+a partir de la selección de las dos regiones de señal {\SRL} y {\SRH} del análisis de \emph{Run} 1,
 se optimizaron nuevamente los cortes, considerando una luminosidad total esperada de 4 \ifb.
 El resultado de los cortes de selección de eventos es el que se detalla en la \cref{tab:13tev_selection}.
 El cambio más relevante respecto a la selección previa es la introducción del corte en $M_\text{eff} = \HT + \met$.
@@ -748,24 +749,23 @@ estas dos regiones de señal, considerando una luminosidad total integrada de 4 
   de se\~nal, para una luminosidad total integrada de 4 \ifb.}
   \label{tab:13tev_selection}
 
-  \begin{tabularx}{0.45\textwidth}{lcc}
+  \begin{tabularx}{0.45\textwidth}{LRR}
     \hline
     & \SRL & \SRH \\
     \hline
     \nphotons & $=1$ & $=1$ \\
-    $\pt^{\gamma}$ & $>145 \gev$ & $>400 \gev$ \\
-    \nleptons & 0 & 0 \\
-    \njets & $> 4$ & $> 2$ \\
-    $\Delta\phi(\text{jet}, \met)$ & $>0.4$ & $>0.4$ \\
-    $\Delta\phi(\gam, \met)$ & $>0.4$ & $>0.4$ \\
-           {\met} & $>200 \gev$ & $> 400 \gev$ \\
-       $M_{\text{eff}}$ & $>2000 \gev$ & $>2000\gev$ \\
-       $R_T^4$ & 0.90 & - \\
-
-       \hline
+    $\pt^{\gamma}>$ & $145 \gev$ & $400 \gev$ \\
+    $\nleptons$ & 0 & 0 \\
+    $\njets >$ & $4$ & $2$ \\
+    $\Delta\phi(\text{jet}, \met) >$ & $0.4$ & $0.4$ \\
+    $\Delta\phi(\gam, \met) >$ & $0.4$ & $0.4$ \\
+    {\met} > & $200 \gev$ & $400 \gev$ \\
+    $M_{\text{eff}} >$ & $2000 \gev$ & $2000\gev$ \\
+    $R_T^4 <$ & 0.90 & - \\
+    \hline
   \end{tabularx}
   \hfill
-  \begin{tabularx}{0.45\textwidth}{lcc}
+  \begin{tabularx}{0.45\textwidth}{LRR}
     \hline
     & \SRL & \SRH \\
     \hline
@@ -776,8 +776,8 @@ estas dos regiones de señal, considerando una luminosidad total integrada de 4 
     $Z(\nu\nu)\gamma$  &     0.01 $\pm$ 0.01    &     0.09 $\pm$ 0.05    \\
     %% $t\bar{t}$        &     0.00 $\pm$ 0.00    &     0.00 $\pm$ 0.00    \\
     $t\bar{t}\gamma$   &     0.08 $\pm$ 0.08    &     0.15 $\pm$ 0.10    \\
-    $W$+jets           &     0.00 $\pm$ 0.00    &     0.03 $\pm$ 0.02    \\
-    $Z$+jets           &     0.00 $\pm$ 0.00    &     0.07 $\pm$ 0.05    \\
+    $W$ + jets           &     0.00 $\pm$ 0.00    &     0.03 $\pm$ 0.02    \\
+    $Z$ + jets           &     0.00 $\pm$ 0.00    &     0.07 $\pm$ 0.05    \\
     \hline
     Fondo total        &     0.27 $\pm$ 0.17    &     0.55 $\pm$ 0.30    \\
     \hline
@@ -785,7 +785,7 @@ estas dos regiones de señal, considerando una luminosidad total integrada de 4 
 
 \end{table}
 
-En la \cref{fig:13tev_discovery} se encuentra la significancia esperada de descubrimiento,
+En la \cref{fig:13tev_grid} (derecha) se encuentra la significancia esperada de descubrimiento,
 donde las líneas representan los contornos de $3\sigma$ y $5\sigma$.
 El análisis de datos se está llevando a cabo al presente y se espera que los resultados
 sean presentados en las conferencias de mediados de 2016 y publicados hacia fin de a\~no.
