@@ -103,7 +103,7 @@ valor verdadero.
 Supongamos un conjunto de $N$ observaciones $\bm{x} = (x_1, x_2, \ldots, x_N)$,
 donde las medidas $x_i$ son estadísticamente independientes y cada una está
 descripta por una función de densidad de probabilidad $f(x;\btheta)$ que no
-conocemos, donde $\btheta$ es un conjunto de parámetros con valores
+se conoce, donde $\btheta$ es un conjunto de parámetros con valores
 desconocidos, que tienen valor verdadero $\btheta_0$.
 
 Un estimador es una función de los datos observados $\bm{x}$ que provee
@@ -322,9 +322,9 @@ $\mu = 0$ , y la hipótesis de señal+fondo a $\mu = 1$.
 En general, las incertezas sistemáticas son incluidas en el modelo
 utilizando parámetros \emph{nuisance}.
 
-En este escenario, donde tenemos un sólo parámetro de interés
+En este escenario, donde hay un único parámetro de interés
 $\mu$, y el resto de parámetros \emph{nuisance} $\btheta$, es conveniente
-definir el \emph{profile likelihood ratio} (PLR),
+definir el <<\emph{profile likelihood ratio}>> (PLR),
 
 \begin{equation}
   \lambda(\mu) = \frac{L(\mu,\doublehat{\btheta})}{L(\hat{\mu},\hat{\btheta})}
@@ -383,7 +383,7 @@ Rechazar la hipótesis de $\mu=0$ es lo
 que llamamos descubrimiento de una nueva señal.
 Aunque es cierto que un valor de $\hat{\mu}$ mucho menor a cero representa
 evidencia contra el modelo de solo-fondo, este tipo de discrepancia no muestran
-que los datos contengan eventos de señal. Es por este motivo que sólo se
+que los datos contengan eventos de señal. Es por este motivo que solo se
 considera que los datos no tienen un buen acuerdo con la hipótesis de solo-fondo
 cuando $\hat{\mu}$ es mayor a cero.
 Para este caso se define $q_0$ como,
@@ -535,7 +535,7 @@ El límite superior {\cls} en $\mu$, $\mu_\text{up}$ se obtiene resolviendo
 $\cls = 0.05$. Se rechazan los valores de $\mu$ si $\mu <
 \mu_\text{up}$ con un nivel de confianza de 95\%.
 
-Cabe mencionarse para una observación cercana al número de eventos esperado de sólo-fondo ($\clb
+Cabe mencionarse para una observación cercana al número de eventos esperado de solo-fondo ($\clb
 \sim 0.05$) el {\cls} da un valor del orden de dos veces el obtenido utilizando
 el {\clsb}.
 
@@ -692,9 +692,9 @@ puede ser aproximada por $Z=\sqrt{q_0}$, lo que da como resultado,
   \label{eq:Z}
 \end{equation}
 
-Si expandimos el logaritmo en la ecuación anterior en $s/b$ tenemos $Z_A =
+Si se expande el logaritmo en la ecuación anterior en $s/b$ se tiene $Z_A =
 s/\sqrt{b} + \mathcal{O}(s/b)$ que es la expresión de la \cref{eq:Zsimple}
-y es válida sólo en el límite $s \ll b$.
+y es válida solo en el límite $s \ll b$.
 
 Si el número de eventos esperado de fondo $b$ no es conocido, uno debe incluirlo
 como un parámetro \emph{nuisance} en la función \emph{likelihood}. Pero como $b$ puede
@@ -714,7 +714,7 @@ correspondientes a cada región:
 
 Utilizando la aproximación $Z = \sqrt{q_0}$, válida en el límite de una muestra
 grande de datos y teniendo en cuenta que los valores esperados son $s+b$ y $\tau b$
-para obtener la significancia esperada, tenemos:
+para obtener la significancia esperada, se tiene:
 
 \begin{equation}
   Z_A = \left[ 2 \left( (s+b) \ln \left[ \frac{s+(1+\tau)b}{(1+\tau)(s+b)}
@@ -728,7 +728,7 @@ quiere atribuirle al fondo basada en la medida de control $m$. El estimador
 para $b$ está dado por $\hat{b} = m/\tau$, y como la varianza de $m$ es igual a
 su media $\tau b$, la varianza de $\hat{b}$ es $V[\hat{b}] = \sigma_b^2 =
 b/\tau$. Usando esto para eliminar $\tau$ de la \cref{eq:Za1}
-obtenemos:
+se obtiene:
 
 \begin{equation}
   Z_A = \left[ 2 \left( (s+b) \ln \left[
@@ -738,7 +738,7 @@ obtenemos:
   \label{eq:Za}
 \end{equation}
 %
-y, expandiendo en potencias de $s/b$ y $\sigma_b^2/b$, obtenemos,
+y, expandiendo en potencias de $s/b$ y $\sigma_b^2/b$, se obtiene:
 
 \begin{equation}
   Z_A = \frac{s}{\sqrt{b+\sigma_b^2}} \left( 1 + \mathcal{O}(s/b) + \mathcal{O}(\sigma_b^2/b) \right)
