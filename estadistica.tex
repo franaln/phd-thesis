@@ -254,10 +254,6 @@ tama\~no $\alpha$.
 Para el caso de hipótesis simples, el teorema de Neyman-Pearson\cite{Neyman289} afirma que el
 estadístico de prueba con mayor poder para un tama\~no esta dado por:
 
-%% Para el caso de dos hipótesis simples (sin parámetros), el test estadístico con mayor
-%% poder esta dado por el \emph{likelihood ratio} $T_\text{NP} = \vec{f}(\mathcal{D}|H_1)/\vec{f}(\mathcal{D}|H_0)$.
-%% Este resultado se conoce como lema de Neyman-Pearson.
-
 \begin{equation}
   t(\bm{x}) = \frac{f(\bm{x}|H_1)}{f(\bm{x}|H_0)}
 \end{equation}
@@ -287,7 +283,7 @@ contra de $H_0$.
 %% pruebas de significancia, donde la cuantificaci´on del concepto abstracto de significancia
 %% es el p-valor
 Se dice que la hipótesis es excluida si el {\pvalue} se encuentra por debajo de un valor
-específico dado por el tama\~no del test $\alpha$, donde $\alpha \in [0,1]$.
+específico dado por el tama\~no $\alpha$, donde $\alpha \in [0,1]$.
 
 En física de partículas es usual convertir el {\pvalue} en la significancia
 equivalente, $Z$, definida de forma tal que una variable distribuida normalmente
@@ -409,7 +405,7 @@ observado de $q_0$ se calcula el {\pvalue} como,
   \label{eq:p0}
 \end{equation}
 
-En el caso que $p_0 \leq \epsilon$ donde $\epsilon$ es un tamaño del test
+En el caso que $p_0 \leq \epsilon$ donde $\epsilon$ es el tamaño de la contrastación
 fijado anteriormente, se dice que hay un descubrimiento. En general en física de
 altas energías suele utilizarse $\epsilon = 2.87 \times 10^{-7}$, el cual
 corresponde a una significancia equivalente $Z=5\sigma$.
