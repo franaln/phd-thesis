@@ -24,18 +24,18 @@ FUNCTION {string.techrep} {"Tech. Rep."}
 FUNCTION {string.mastersthesis} {"Master's thesis"}
 FUNCTION {string.phdthesis} {"PhD thesis"}
 
-MACRO {jan} {"Jan."}
+MACRO {jan} {"Ene."}
 MACRO {feb} {"Feb."}
 MACRO {mar} {"Mar."}
-MACRO {apr} {"Apr."}
+MACRO {apr} {"Abr."}
 MACRO {may} {"May"}
-MACRO {jun} {"June"}
-MACRO {jul} {"July"}
-MACRO {aug} {"Aug."}
+MACRO {jun} {"Jun"}
+MACRO {jul} {"Jul"}
+MACRO {aug} {"Ago."}
 MACRO {sep} {"Sept."}
 MACRO {oct} {"Oct."}
 MACRO {nov} {"Nov."}
-MACRO {dec} {"Dec."}
+MACRO {dec} {"Dic."}
 MACRO {am} {"Acta Math."}
 MACRO {amj} {"Am. J. Phys."}
 MACRO {ap} {"Ann. Phys."}
