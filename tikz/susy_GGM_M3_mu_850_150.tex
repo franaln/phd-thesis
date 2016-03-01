@@ -1,0 +1,116 @@
+\begin{tikzpicture}[scale=0.6]
+  % y-scalefactor (GeV -> coords) = 5.133333e-03
+
+  %% Frame
+  \draw (-2.000000,0.000000) rectangle (19.000000,15.400000);
+
+  %% y-ticks
+  \draw (-2.000000,0.000000) node[left] {\large 0};
+
+  \draw (-2.000000,2.053333) node[left] {\large 400};
+  \draw (-1.700000,2.053333) -- (-2.000000,2.053333);
+  \draw (18.700000,2.053333) -- (19.000000,2.053333);
+
+  \draw (-2.000000,4.106667) node[left] {\large 800};
+  \draw (-1.700000,4.106667) -- (-2.000000,4.106667);
+  \draw (18.700000,4.106667) -- (19.000000,4.106667);
+
+  \draw (-2.000000,6.160000) node[left] {\large 1200};
+  \draw (-1.700000,6.160000) -- (-2.000000,6.160000);
+  \draw (18.700000,6.160000) -- (19.000000,6.160000);
+
+  \draw (-2.000000,8.213333) node[left] {\large 1600};
+  \draw (-1.700000,8.213333) -- (-2.000000,8.213333);
+  \draw (18.700000,8.213333) -- (19.000000,8.213333);
+
+  \draw (-2.000000,10.266667) node[left] {\large 2000};
+  \draw (-1.700000,10.266667) -- (-2.000000,10.266667);
+  \draw (18.700000,10.266667) -- (19.000000,10.266667);
+
+  \draw (-2.000000,12.320000) node[left] {\large 2400};
+  \draw (-1.700000,12.320000) -- (-2.000000,12.320000);
+  \draw (18.700000,12.320000) -- (19.000000,12.320000);
+
+  \draw (-2.000000,14.373333) node[left] {\large 2800};
+  \draw (-1.700000,14.373333) -- (-2.000000,14.373333);
+  \draw (18.700000,14.373333) -- (19.000000,14.373333);
+
+  \draw (-4,15.400000) node[left,rotate=90] {\large Mass [GeV]};
+
+  %% Particle lines
+  % pid25
+  \draw[color=blue,thick] (-0.200000,0.646800) -- (1.800000,0.646800);
+  % pid35
+  \draw[color=blue,thick] (-0.200000,10.287452) -- (1.800000,10.287452);
+  % pid36
+  \draw[color=blue,thick] (-0.200000,10.266667) -- (1.800000,10.266667);
+  % pid37
+  \draw[color=red,thick] (0.200000,10.277936) -- (2.200000,10.277936);
+  % pid1000001
+  \draw[color=blue,thick] (14.900000,12.801359) -- (16.900000,12.801359);
+  % pid1000005
+  \draw[color=black!50!blue!30!green,thick] (15.200000,12.799941) -- (17.200000,12.799941);
+  % pid1000006
+  \draw[color=red,thick] (15.200000,12.969641) -- (17.200000,12.969641);
+  % pid1000011
+  \draw[color=blue,thick] (4.800000,12.834192) -- (6.800000,12.834192);
+  % pid1000012
+  \draw[color=blue,thick] (4.800000,12.831692) -- (6.800000,12.831692);
+  % pid1000015
+  \draw[color=red,thick] (5.200000,12.833745) -- (7.200000,12.833745);
+  % pid1000016
+  \draw[color=red,thick] (5.200000,12.831692) -- (7.200000,12.831692);
+  % pid1000021
+  \draw[color=black!50!blue!30!green,thick] (14.700000,4.782759) -- (16.700000,4.782759);
+  % pid1000022
+  \draw[color=blue,thick] (9.800000,0.754562) -- (11.800000,0.754562);
+  % pid1000023
+  \draw[color=blue,thick] (9.800000,0.827094) -- (11.800000,0.827094);
+  % pid1000024
+  \draw[color=red,thick] (10.200000,0.813201) -- (12.200000,0.813201);
+  % pid1000025
+  \draw[color=blue,thick] (9.800000,1.673399) -- (11.800000,1.673399);
+  % pid1000035
+  \draw[color=blue,thick] (9.800000,13.116866) -- (11.800000,13.116866);
+  % pid1000037
+  \draw[color=red,thick] (10.200000,13.116862) -- (12.200000,13.116862);
+  % pid1000039
+  \draw[color=black!50!blue!30!green,thick] (10.150000,0.000000) -- (12.150000,0.000000);
+  % pid2000001
+  \draw[color=blue,thick] (14.900000,12.800219) -- (16.900000,12.800219);
+  % pid2000005
+  \draw[color=black!50!blue!30!green,thick] (15.200000,12.801653) -- (17.200000,12.801653);
+  % pid2000006
+  \draw[color=red,thick] (15.200000,13.792202) -- (17.200000,13.792202);
+  % pid2000011
+  \draw[color=blue,thick] (4.800000,12.834116) -- (6.800000,12.834116);
+  % pid2000015
+  \draw[color=red,thick] (5.200000,12.834569) -- (7.200000,12.834569);
+
+  %% Particle labels
+  \draw (-0.4,0.646800)  node[left]  {\large $h^0$};
+  \draw (-0.4,9.963600)  node[left]  {\large $A^0$};
+  \draw (-0.4,10.590518) node[left]  {\large $H^0$};
+  \draw (2.4,10.277936)  node[right] {\large $H^\pm$};
+  \draw (14.7,12.387330) node[left]  {\large $\tilde{q}_\text{R}$};
+  \draw (14.7,13.114248) node[left]  {\large $\tilde{q}_\text{L}$};
+  \draw (17.4,11.9) node[right] {\large $\tilde{b}_1$};
+  \draw (17.4,12.801653) node[right] {\large $\tilde{b}_2$};
+  \draw (17.4,13.511709) node[right] {\large $\tilde{t}_1$};
+  \draw (4.6,12.006024)  node[left]  {\large $\tilde{\nu}_\text{L}$};
+  \draw (4.6,12.834116)  node[left]  {\large $\tilde{\ell}_\text{R}$};
+  \draw (4.6,13.459860)  node[left]  {\large $\tilde{\ell}_\text{L}$};
+  \draw (7.4,12.206212)  node[right] {\large $\tilde{\nu}_\tau$};
+  \draw (7.4,12.833745)  node[right] {\large $\tilde{\tau}_1$};
+  \draw (7.4,13.460049)  node[right] {\large $\tilde{\tau}_2$};
+  \draw (14.500000,4.782759)  node[left]  {\large $\tilde{g}$};
+  \draw (9.600000,0.407369)   node[left]  {\large $\tilde{\chi}_1^0$};
+  \draw (9.600000,1.104287)   node[left]  {\large $\tilde{\chi}_2^0$};
+  \draw (12.350000,0.32)  node[right] {\large $\tilde{G}$};
+  \draw (12.4,1.1)  node[right] {\large $\tilde{\chi}_1^\pm$};
+  \draw (9.6,1.97)   node[left]  {\large $\tilde{\chi}_3^0$};
+  \draw (9.6,13.116866)  node[left]  {\large $\tilde{\chi}_4^0$};
+  \draw (12.4,13.116862) node[right] {\large $\tilde{\chi}_2^\pm$};
+  \draw (17.4,14.092202) node[right] {\large $\tilde{t}_2$};
+
+\end{tikzpicture}
