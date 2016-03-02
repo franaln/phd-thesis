@@ -10,7 +10,6 @@ common_mistakes = [
     'energia',
     'numero',
     'analisis',
-    'Lagrangiano',
     'auto-estado',
     'capitulo',
     'seccion',
@@ -32,6 +31,21 @@ common_mistakes = [
     'simetria',
     'calculo',
     'senal',
+    'linea',
+    'limite',
+    'supersimetria',
+    'test',
+    'tamano',
+    'debil',
+    'senal',
+    'asume',
+    'fermion',
+    'lepton',
+    'boson',
+    'sleptón',
+    'limite',
+    'limites',
+    # 'esta',
 ]
 
 files = [
@@ -83,3 +97,10 @@ for fname in files:
                 if w.endswith('emos'):
                     print(line.replace(w, C_RED+w+C_RESET))
                     break
+
+            if 'Sección' in words:
+                print(line)
+            if 'Capítulo' in words:
+                print(line)
+            if 'Tesis' in words:
+                print(line)
