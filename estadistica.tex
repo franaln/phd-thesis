@@ -49,7 +49,7 @@ caso especial es cuando $\mu=0$ y $\sigma=1$, que se denomina gaussiana
 estándar.
 La importancia de la distribución normal proviene del Teorema Central del
 Límite. El teorema dice que la suma de $n$ variables continuas independientes
-$x_i$ con media $\mu_i$ y varianza $\sigma_i^2$ esta distribuida de acuerdo a
+$x_i$ con media $\mu_i$ y varianza $\sigma_i^2$ está distribuida de acuerdo a
 una gaussiana con media $\mu = \sum_{i=1}^n \mu_i$ y varianza $\sigma^2 =
 \sum_{i=1}^n \sigma_i^2$ en el límite de $n\to\infty$. Esto se satisface (bajo
 ciertas condiciones generales) sin importar las pdfs individuales de $x_i$.
@@ -66,7 +66,7 @@ define como:
 %
 donde $n$ es llamado el número de grados de libertad.
 Dadas $N$ variables $x_i$ gaussianas con media $\mu_i$ y $\sigma_i^2$, la
-variable $z = \sum_{i=1}^{N} \frac{(x_i-\mu_i)^2}{\sigma_i^2}$ esta distribuida
+variable $z = \sum_{i=1}^{N} \frac{(x_i-\mu_i)^2}{\sigma_i^2}$ está distribuida
 de acuerdo a una distribución $\chi^2$ con $N$ grados de libertad.
 
 
@@ -80,7 +80,7 @@ clicks de un contador Geiger en un determinado intervalo de tiempo.
 
 Se la puede pensar como un límite de la distribución binomial cuando el número ($N$)
 de experimentos tiende a infinito y la probabilidad ($p$) a cero, pero el producto es
-constantes $Np = \nu$. En ese caso la función de probabilidad esta dada por:
+constantes $Np = \nu$. En ese caso la función de probabilidad está dada por:
 
 \begin{equation}
   \Pois(n;\nu) = \frac{\nu^n}{n!} e^{-\nu}
@@ -117,7 +117,7 @@ Algunas propiedades que es importante que cumplan los estimadores son:
   consistente) si converge al valor verdadero $\btheta_{0}$ con el número de
   medidas $N$: $\lim_{N \to \infty} \hat{\btheta} = \btheta_0$.
 
-\item {\bf Sesgo:} El sesgo esta definido como la diferencia entre el valor
+\item {\bf Sesgo:} El sesgo está definido como la diferencia entre el valor
   esperado del estimador y el valor verdadero: $E[\hat{\btheta}] - \btheta_0$ y
   un estimador es no sesgado cuando el sesgo es cero.
 
@@ -252,7 +252,7 @@ busca el estadístico de prueba que tenga el mayor poder posible $(1-\beta)$, pa
 tama\~no $\alpha$.
 
 Para el caso de hipótesis simples, el teorema de Neyman-Pearson\cite{Neyman289} afirma que el
-estadístico de prueba con mayor poder para un tama\~no esta dado por:
+estadístico de prueba con mayor poder para un tama\~no está dado por:
 
 \begin{equation}
   t(\bm{x}) = \frac{f(\bm{x}|H_1)}{f(\bm{x}|H_0)}
@@ -342,7 +342,7 @@ sobre $\mu$ debido a estos parámetros desconocidos, que suelen ser
 las incertezas sistemáticas.
 
 En la sección anterior se mostró que el mejor estadístico de prueba para hipótesis
-simples esta dado por el cociente de los \emph{likelihoods} de las dos hipótesis, de acuerdo
+simples está dado por el cociente de los \emph{likelihoods} de las dos hipótesis, de acuerdo
 al teorema de Neyman-Pearson.
 Desafortunadamente no hay un equivalente al lema de Neyman-Pearson para modelos
 con muchos parámetros libres. Sin embargo, hay una generalización natural basada
@@ -632,11 +632,11 @@ estadístico $g(t|H)$.
 
 En física de partículas la cantidad $s/\sqrt{b}$ ha sido siempre utilizada como
 una medida de la significancia esperada de descubrimiento\cite{medsigNote}. La
-explicación detrás de esta formula es que una cantidad $n$ que sigue una
+explicación detrás de esta fórmula es que una cantidad $n$ que sigue una
 distribución de Poisson con una media grande $s+b$ puede ser aproximada por una
 variable $x$ distribuida según una gaussiana con media $s+b$ y desviación
 estándar $\sqrt{s+b}$. En este caso el {\pvalue} de la hipótesis de solo-fondo
-dada una observación $x$ esta dado por,
+dada una observación $x$ está dado por,
 
 \begin{equation}
   p = 1 - \Phi \left( \frac{x-\mu}{\sigma} \right) = 1 - \Phi \left(
