@@ -6,24 +6,21 @@
 \@draftmodefalse
 \DeclareOption{draft}{\@draftmodetrue}
 
-% Print/Online option
-\newif\if@printmode
-\@printmodefalse
-\DeclareOption{print}{\@printmodetrue}
-
 %%-- Fallback
 \DeclareOption*{
   \ClassWarning{myclass}{Unknown option '\CurrentOption'}
 }
 
 %%-- Execute default options
-\ExecuteOptions{9pt,twoside}
+%% \ExecuteOptions{9pt,twoside}
+\PassOptionsToClass{10pt,twoside}{book}
 
 %%-- Process given options
 \ProcessOptions\relax
 
 %%-- Load base
 \LoadClass{book}
+
 
 %%-- Load additional packages and commands.
 %\RequirePackage{etex}
@@ -53,12 +50,11 @@
 \RequirePackage{lineno}
 
 %%-- Additional TeX/LaTeX code...
-\renewcommand\baselinestretch{1.2}
-%% \pdfpagewidth=\the\paperwidth
-%% \pdfpageheight=\the\paperheight
+\usepackage[nodisplayskipstretch]{setspace}
+\setstretch{1.2}
 
 % increase headheight to accomodate fancy headers
-\addtolength{\headheight}{2.5pt}
+%% \addtolength{\headheight}{2.5pt}
 
 % minor changes to tables
 %%\setlength{\extrarowheight}{2pt}
@@ -66,6 +62,7 @@
 %% \setlength{\doublerulesep}{0pt}
 %% \setlength{\tabcolsep}{15pt}
 \renewcommand{\arraystretch}{1.25}
+
 
 % enter only chapters and sections in TOC---subsecs as a try
 \setcounter{tocdepth}{2}
@@ -85,17 +82,11 @@
 
 %-- Draft mode
 \if@draftmode
-\RequirePackage[colorinlistoftodos,textsize=footnotesize,textwidth=2.5cm]{todonotes} % draft with TODOs
+  \RequirePackage[colorinlistoftodos,textsize=footnotesize,textwidth=2.5cm]{todonotes} % draft with TODOs
 \else
-\usepackage[disable]{todonotes} % final without TODOs
+  \usepackage[disable]{todonotes} % final without TODOs
 \fi
 
-%% %%Add  line numbers
-%% \AtBeginDocument{
-%%   \if@draftmode
-%%   \linenumbers
-%%   \fi
-%% }
 
 % Redefine '/chapter' to always start on an odd page. Should make no difference in singleside mode.
 \def\chapter{\cleardoublepage	% Starts new page.
@@ -105,9 +96,6 @@
   \secdef\@chapter\@schapter}	% to \@afterindenttrue to have indent.
 
 % format chapter title pages
-\definecolor{gray75}{gray}{0.75}
-\newcommand{\hsp}{\hspace{20pt}}
-%%\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{$|$ }\hsp}{0pt}{\Huge\bfseries}
 \titleformat{\chapter}
             [display] % shape/type of title
             {} % formatting commands applied to both label and title
@@ -130,69 +118,44 @@
 \RequirePackage{fancyhdr}
 \pagestyle{fancy}
 \if@draftmode
-\fancyhead{}
-\fancyhead[RO,LE]{{\bf \fbox{DRAFT $\cdot$ \today}}}
-\renewcommand{\headrulewidth}{0pt}
-\fancyfoot{}
-\fancyfoot[RO,LE]{\thepage}
+  \fancyhead{}
+  \fancyhead[RO,LE]{{\bf \fbox{DRAFT $\cdot$ \today}}}
+  \renewcommand{\headrulewidth}{0pt}
+  \fancyfoot{}
+  \fancyfoot[RO,LE]{\thepage}
 \else
-\fancyhead{}
-\fancyhead[RO,LE]{}
-\renewcommand{\headrulewidth}{0pt}
-\fancyfoot{}
-\fancyfoot[RO,LE]{\thepage}
+  \fancyhead{}
+  \fancyhead[RO,LE]{}
+  \renewcommand{\headrulewidth}{0pt}
+  \fancyfoot{}
+  \fancyfoot[RO,LE]{\thepage}
 \fi
 
-\if@printmode
-% For Print version
-    \hypersetup{
-      final=true,
-      plainpages=false,
-      pdfstartview=FitV,
-      pdftoolbar=true,
-      pdfmenubar=true,
-      bookmarksopen=true,
-      bookmarksnumbered=true,
-      breaklinks=true,
-      linktocpage,
-      colorlinks=true,
-      linkcolor=black,
-      urlcolor=black,
-      citecolor=black,
-      anchorcolor=black
-    }
+\hypersetup{
+  final=true,
+  plainpages=false,
+  pdfstartview=FitV,
+  pdftoolbar=true,
+  pdfmenubar=true,
+  bookmarksopen=true,
+  bookmarksnumbered=true,
+  breaklinks=true,
+  linktocpage,
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=black,
+  citecolor=black,
+  anchorcolor=black,
+  pdfpagelayout=OneColumn
+}
 
-    \RequirePackage[pdftex,paper=a4paper,hmarginratio=1:1,vmarginratio=1:1,scale=0.75,bindingoffset=5mm,
-      top=25mm,bottom=25mm,left=25mm,right=25mm]{geometry}
-    \hypersetup{pdfpagelayout=OneColumn}
-\else
-    % For PDF Online version
-    \hypersetup{
-      final=true,
-      plainpages=false,
-      pdfstartview=FitV,
-      pdftoolbar=true,
-      pdfmenubar=true,
-      bookmarksopen=true,
-      bookmarksnumbered=true,
-      breaklinks=true,
-      linktocpage,
-      colorlinks=true,
-      linkcolor=blue,
-      urlcolor=blue,
-      citecolor=blue,
-      anchorcolor=green,
-      pdfpagelayout=OneColumn
-    }
+\RequirePackage[pdftex,paper=a4paper,hmarginratio=1:1,vmarginratio=1:1,scale=0.75,bindingoffset=5mm,
+  top=25mm,bottom=25mm,left=25mm,right=25mm]{geometry}
 
-    \RequirePackage[pdftex,paper=a4paper,hmarginratio=1:1,
-      vmarginratio=1:1,scale=0.75,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
-\fi
+%% \RequirePackage{etoolbox}
+%% \makeatletter
+%% \patchcmd{\@addmarginpar}{\ifodd\c@page}{\ifodd\c@page\@tempcnta\m@ne}{}{}
+%% \makeatother
+%% \reversemarginpar
 
-\RequirePackage{etoolbox}
-\makeatletter
-\patchcmd{\@addmarginpar}{\ifodd\c@page}{\ifodd\c@page\@tempcnta\m@ne}{}{}
-\makeatother
-\reversemarginpar
-
-\endinput
+%% \endinput
