@@ -3,7 +3,6 @@
   %%\tikzstyle{region} = [rounded corners, fill]
   \tikzstyle{region} = [fill]
 
-
   \draw[line width=1, ->] (0,0) -- (5,0) node[below left] {\large observable 1};
   \draw[line width=1, ->] (0,0) -- (0,5) node[left=0.5,rotate=90] {\large observable 2};
 
@@ -14,8 +13,8 @@
   \draw[region, blue] (3.2,1.0) rectangle (4.9,2.8) node[midway,black] (VR1) {VR};
   \draw[region, blue] (1.2,3.2) rectangle (2.8,4.9) node[midway,black] (VR2) {VR};
 
-  \draw[->,gray, line width=0.8] (CR) -- (SR);
-  \draw[->,gray, line width=0.8] (CR) -- (VR1);
-  \draw[->,gray, line width=0.8] (CR) -- (VR2);
+  \draw[->,black!70,line width=0.8] (CR) -- (SR);
+  \draw[->,black!70,line width=0.8] (CR) -- (VR1);
+  \draw[->,black!70,line width=0.8] (CR) -- (VR2);
 
 \end{tikzpicture}
