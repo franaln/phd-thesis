@@ -640,14 +640,14 @@ dada una observación $x$ está dado por,
 
 \begin{equation}
   p = 1 - \Phi \left( \frac{x-\mu}{\sigma} \right) = 1 - \Phi \left(
-  \frac{x-b}{b} \right)
+  \frac{x-b}{\sqrt{b}} \right)
 \end{equation}
 %
 donde $\mu=b$ y $\sigma = \sqrt{b}$ se refieren a la media y la desviación
 estándar de $x$ suponiendo que $s=0$. Traduciendo este {\pvalue} a significancia,
 
 \begin{equation}
-  Z = \frac{x-b}{b}
+  Z = \frac{x-b}{\sqrt{b}}
 \end{equation}
 
 La significancia esperada, a diferencia de la observada, se calcula desde la mediana
@@ -688,7 +688,7 @@ puede ser aproximada por $Z=\sqrt{q_0}$, lo que da como resultado,
   \label{eq:Z}
 \end{equation}
 
-Si se expande el logaritmo en la ecuación anterior en $s/b$ se tiene $Z_A =
+Si se desarrolla el logaritmo en la ecuación anterior en $s/b$ se tiene $Z_A =
 s/\sqrt{b} + \mathcal{O}(s/b)$ que es la expresión de la \cref{eq:Zsimple}
 y es válida solo en el límite $s \ll b$.
 
@@ -734,7 +734,7 @@ se obtiene:
   \label{eq:Za}
 \end{equation}
 %
-y, expandiendo en potencias de $s/b$ y $\sigma_b^2/b$, se obtiene:
+y, desarrollando en potencias de $s/b$ y $\sigma_b^2/b$, se obtiene:
 
 \begin{equation}
   Z_A = \frac{s}{\sqrt{b+\sigma_b^2}} \left( 1 + \mathcal{O}(s/b) + \mathcal{O}(\sigma_b^2/b) \right)
