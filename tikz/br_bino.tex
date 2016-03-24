@@ -30,11 +30,11 @@
     \draw[tick] (1.1,0) -- (1.1,0.15) node at (1.1,-0.3) {\footnotesize 200};
     \draw[tick] (0.1,0) -- (0.1,0.15) node at (0.1,-0.3) {\footnotesize 0};
 
-    \draw[blue, line width=1] (0,0.1) -- (1.05,0.1);
-    \draw[blue,line width=1] plot[domain=1.05:5.5, samples=500] ({\x},{1.5*(1 - exp(-((\x-1)/0.8)))});
+    \draw[blue, line width=1] (0,0.1) -- (1.06,0.1);
+    \draw[blue,line width=1] plot[domain=1.04:5.5, samples=500] ({\x},{1.5*(1 - exp(-((\x-1)/0.6)))});
 
-    \draw[red, line width=1] (0,5.4) -- (1.05,5.4);
-    \draw[red,line width=1] plot[domain=1.05:5.5, samples=500] ({\x},{4.+1.5*(exp(-((\x-1)/0.8)))});
+    \draw[red, line width=1] (0,5.1) -- (1.1,5.1);
+    \draw[red,line width=1] plot[domain=1.1:5.5, samples=500] ({\x},{4.+1.5*(exp(-((\x-0.8)/1)))});
 
     \node[blue] at (4.5, 1.8) {$Z+ \tilde{G}$};
     \node[red]  at (4.5, 3.6) {$\gamma + \tilde{G}$};
