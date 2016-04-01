@@ -49,13 +49,13 @@ términos de rompimiento \emph{soft} del lagrangiano. También es necesario espe
 la escala de energía a la cual la teoría efectiva y el lagrangiano son válidos.
 Como los experimentos prueban física a la escala del {\tev}, mientras que los
 parámetros del lagrangiano son frecuentemente especificados a energías mucho más
-altas ($M_\text{GUT}$ o $M_P$), debe usarse el grupo de ecuaciones de
+altas ($M_\text{GUT}$ o $M_P$), deben usarse las ecuaciones del grupo de
 renormalización (RGE) para conectar las dos escalas del modelo. Una vez que los
 parámetros del lagrangiano son conocidos a la escala electrodébil, pueden
 identificarse las masas físicas de las partículas, diagonalizando las matrices
 de masa correspondientes, y luego, para tener la precisión suficiente, aplicar
 las correcciones a ordenes mayores (en general a 1 \emph{loop}). A partir del modelo
-también es posible calcular los anchos y tazas de decaimiento de todas las
+también es posible calcular los anchos y tasas de decaimiento de todas las
 partículas supersimétricas.
 
 Existe una gran variedad de programas que permiten realizar estos cálculos. En
@@ -78,7 +78,7 @@ se conserva paridad-R).
 
 El paso siguiente consiste en la generación de los eventos Monte Carlo.
 Para un dado tipo de colisionador y una dada energía de centro de masa,
-el generador se encarga de generar los eventos esperados para el modelo
+el generador MC se encarga de generar los eventos esperados para el modelo
 considerado.
 
 La colisión de dos protones a altas energías en el LHC implica el estudio de las
@@ -104,7 +104,7 @@ CTEQ \cite{Nadolsky:2008zw} son las utilizadas en ATLAS.
 
 A partir de la colisión inicial y la producción de las partículas finales (en el
 caso de SUSY será un par de partículas supersimétricas) se
-modela el decaimiento de las mismas (posiblemente en varios pasos) hasta el
+modela el decaimiento de las mismas (en general en varios pasos) hasta el
 estado final partónico, de acuerdo a los BR predichos por el modelo.
 
 La multiplicidad de partones en el estado final depende, además de los partones producidos en la interacción
@@ -118,7 +118,7 @@ gluones fragmentan en gluones adicionales y pares quark-antiquark. Esto continú
 hasta el punto en donde la energía es lo suficientemente baja para recombinar
 todas las partículas de color en mesones y bariones, proceso denominado
 <<hadronización>>. Los hadrones decaen subsecuentemente en otros hadrones,
-leptones y neutrinos. Cada partón proveniente de la interacción fuerte (y
+leptones y neutrinos. Cada partón proveniente de la interacción fuerte (e
 ISR/FSR) resulta en una lluvia de partículas, denominada colectivamente
 <<jet>>.
 
