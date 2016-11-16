@@ -152,10 +152,10 @@
 \RequirePackage[pdftex,paper=a4paper,hmarginratio=1:1,vmarginratio=1:1,scale=0.75,bindingoffset=5mm,
   top=25mm,bottom=25mm,left=25mm,right=25mm]{geometry}
 
-%% \RequirePackage{etoolbox}
-%% \makeatletter
-%% \patchcmd{\@addmarginpar}{\ifodd\c@page}{\ifodd\c@page\@tempcnta\m@ne}{}{}
-%% \makeatother
-%% \reversemarginpar
+\RequirePackage{etoolbox}
+\makeatletter
+\patchcmd{\@addmarginpar}{\ifodd\c@page}{\ifodd\c@page\@tempcnta\m@ne}{}{}
+\makeatother
+\reversemarginpar
 
-%% \endinput
+\endinput
