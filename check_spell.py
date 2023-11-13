@@ -46,6 +46,7 @@ common_mistakes = [
     'limite',
     'limites',
     # 'esta',
+    'invarianza',
 ]
 
 files = [
